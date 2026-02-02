@@ -5,6 +5,6 @@ date: '2026-02-02'
 category: featured-tools
 description: >-
   AdCreative.aiは、コンバージョンに最適化された広告クリエイティブをAIが自動生成するプラットフォームだ。バナー広告、SNS広告、動画広告のビジュアルとコピーを数秒で作成し、過去のパフォーマンスデータに基づいて
-image: /images/thumbnails/adcreative-ai-ad-creative-generator.svg
+image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=420&fit=crop"
 ---
 

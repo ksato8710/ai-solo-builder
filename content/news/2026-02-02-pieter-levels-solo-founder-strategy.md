@@ -6,7 +6,7 @@ category: case-study
 description: >-
   AIソロビルダーを語るうえで、Pieter
   Levels（ピーター・レベルス）を避けて通ることはできない。オランダ出身のこの38歳のプログラマーは、従業員ゼロ、VC資金ゼロ、オフィスなしで年間300万ドル（約4.5億円）*
-image: /images/thumbnails/pieter-levels-solo-founder-strategy.svg
+image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=420&fit=crop"
 ---
 - *Forbes「The Future Is Solo: AI Is Creating Billion-Dollar One-Person Companies」(2025年2月)*
 - *Forbes「As More Founders Aim To Build Billion-Dollar, One-Person Businesses」(2026年1月)*

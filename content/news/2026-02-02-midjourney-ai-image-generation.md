@@ -6,7 +6,7 @@ category: featured-tools
 description: >-
   Midjourneyは、AI画像生成の分野で最高の美的品質を誇るツールだ。2025年にリリースされたV7では、テキストレンダリングの精度が飛躍的に向上し、動画生成機能も追加。プロのクリエイター・デザイナーから個人ユーザー:**
   同じキャラクターの顔・服装・外見を複数画像間で一貫して維持
-image: /images/thumbnails/midjourney-ai-image-generation.svg
+image: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800&h=420&fit=crop"
 ---
 - **テキストレンダリング改善:** 画像内のテキスト生成精度が大幅に向上
 - **動画生成:** 静止画から短いアニメーション動画を生成する機能を追加

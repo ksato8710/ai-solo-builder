@@ -6,6 +6,6 @@ category: featured-tools
 description: >-
   Windsurf（旧Codeium）は、AIをコア機能として組み込んだネイティブなコーディングIDEだ。VS
   Codeベースの馴染みやすいインターフェースに、独自のAIエージェント「Cascade」を搭載。コードベース全
-image: /images/thumbnails/windsurf-ai-coding-ide.svg
+image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=420&fit=crop"
 ---
 

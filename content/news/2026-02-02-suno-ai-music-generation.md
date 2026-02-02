@@ -5,6 +5,6 @@ date: '2026-02-02'
 category: featured-tools
 description: >-
   Sunoは、テキストプロンプトからボーカル・楽器・歌詞を含むフル楽曲を生成するAI音楽プラットフォームだ。音楽理論の知識もDAW（デジタルオーディオワークステーション）の操作スキルも不要。「アップテンポなポップソングを作
-image: /images/thumbnails/suno-ai-music-generation.svg
+image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&h=420&fit=crop"
 ---
 

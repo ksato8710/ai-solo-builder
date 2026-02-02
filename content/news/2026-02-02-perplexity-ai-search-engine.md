@@ -6,6 +6,6 @@ category: featured-tools
 description: >-
   Perplexity
   AIは、従来のWeb検索を根本から再定義するAI検索エンジンだ。Googleのように「リンクの一覧」を返すのではなく、複数のWeb情報源を統合し、引用付きの簡潔なレポートとして回答を生成する。202
-image: /images/thumbnails/perplexity-ai-search-engine.svg
+image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=420&fit=crop"
 ---
 **Cometブラウザ:** [https://www.perplexity.ai/comet](https://www.perplexity.ai/comet)

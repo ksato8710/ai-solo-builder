@@ -8,7 +8,7 @@ description: >-
   … [Read more](https://ai.essential-navi
 readTime: 4
 featured: false
-image: /images/thumbnails/ai-solo-builder-era-2026.svg
+image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=420&fit=crop"
 ---
 
 2026年、「ソロファウンダー」による1億円規模のスタートアップが現実になりつつあります。AIツールの進化により、たった一人で100万ドル規模のビジネスを構築する起業家が急増中。この流れは日本にも確実に波及しています。

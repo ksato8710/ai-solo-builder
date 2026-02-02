@@ -6,6 +6,6 @@ category: featured-tools
 description: >-
   Runwayは、AI動画生成の最前線を走るクリエイティブプラットフォームだ。テキストや画像から高品質な動画を生成するGen-3 Alpha /
   Gen-4モデルを搭載し、映像制作のワークフローを根本から変革している。映画
-image: /images/thumbnails/runway-ai-video-generation.svg
+image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=420&fit=crop"
 ---
 

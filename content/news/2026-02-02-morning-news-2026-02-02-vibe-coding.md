@@ -6,7 +6,7 @@ category: morning-news
 description: >-
   おはようございます。AI Solo Builder 編集部です。 今週のAIソロ開発界隈は「バイブコーディング」一色。Scientific
   Americanがついに特集を組み、オープンソースの発見プラットフォームが5万件
-image: /images/thumbnails/morning-news-2026-02-02-vibe-coding.svg
+image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=420&fit=crop"
 ---
 ## 📚 Vybe Guide — バイブコーダー向けオープンソース発見プラットフォームが登場
 1月30日にローンチした**Vybe Guide**は、50,760件以上のオープンソースプロジェクトをインデックス化した、バイブコーダー専用の発見プラットフォーム。AIを使ったコーディングで「どのライブラリを使えばいいか」という永遠の課題に答えます。

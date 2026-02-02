@@ -6,6 +6,6 @@ category: featured-tools
 description: >-
   Fathomは、オンラインミーティングを自動で録画・文字起こし・要約するAIミーティングアシスタントだ。Zoom、Google Meet、Microsoft
   Teamsに対応し、無料プランでも録画・文字起こし・AI要約が
-image: /images/thumbnails/fathom-ai-meeting-assistant.svg
+image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=420&fit=crop"
 ---
 
