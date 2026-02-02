@@ -3,7 +3,7 @@ title: "AIソロビルダーの時代が来た — 一人で1億円ビジネス�
 slug: "ai-solo-builder-era-2026"
 date: "2026-02-02"
 category: "morning-news"
-description: "2026年、「ソロファウンダー」による1億円規模のスタートアップが現実になりつつあります。AIツールの進化により、たった一人で100万ドル規模のビジネスを構築する起業家が急増中。この流れは日本にも確実に波及しています。  … [Read more](https://ai.essential-navigator.com/ai-solo-builder-era-2026/)"
+description: "2026年、「ソロファウンダー」による1億円規模のスタートアップが現実になりつつあります。AIツールの進化により、たった一人で100万ドル規模のビジネスを構築する起業家が急増中。この流れは日本にも確実に波及しています。  … [Read more](https://ai.essential-navi"
 readTime: 4
 featured: false
 ---

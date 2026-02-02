@@ -1,27 +1,11 @@
 ---
 title: "AIソロビルダー朝刊 — 2026年2月2日（日）バイブコーディングが「誰でもできる」時代に突入"
-slug: "morning-news-2026-02-02-vibe-coding-mainstream"
+slug: "morning-news-2026-02-02-vibe-coding"
 date: "2026-02-02"
 category: "morning-news"
-description: "おはようございます。AI Solo Builder 編集部です。 今週のAIソロ開発界隈は「バイブコーディング」一色。Scientific Americanがついに特集を組み、オープンソースの発見プラットフォームが5万件 … [Read more](https://ai.essential-navigator.com/morning-news-2026-02-02-vibe-coding-main"
-readTime: 8
-featured: true
+description: "おはようございます。AI Solo Builder 編集部です。 今週のAIソロ開発界隈は「バイブコーディング」一色。Scientific Americanがついに特集を組み、オープンソースの発見プラットフォームが5万件"
+
 ---
-
-おはようございます。AI Solo Builder 編集部です。
-
-今週のAIソロ開発界隈は「バイブコーディング」一色。Scientific Americanがついに特集を組み、オープンソースの発見プラットフォームが5万件超のプロジェクトを索引化。一方、中国発のKimi K2.5は「動画からWebサイトを生成」という新次元に突入しました。一人で開発する私たちにとって、追い風が止まりません。
-
-## 🔥 Scientific American「Claude Codeがバイブコーディングを全ての人に届ける」
-1月31日、**Scientific American**がClaude Codeを特集。記事は「コーディングのGarageBandの瞬間が来た」と表現し、かつてAppleが音楽制作を、Microsoftが表計算を民主化したように、Claude Codeがソフトウェア開発を民主化していると論じています。
-
-著者のDeni Ellis Béchard氏は、WindsurfやReplitなど複数のプラットフォームを試した結果、**Claude Codeが「誰でもできる感覚」を初めて実現した**と評価。問題が発生しても自然言語で説明すれば修正してくれる点を高く評価しています。
-
-一方、ライバルのOpenAI Codexは2023年にいったん廃止された後、GPT-5.2ベースで復活。両者の競争がバイブコーディングの品質を底上げしている構図です。
-
-> **🎯 ソロビルダー的ポイント:** 非エンジニアでもプロダクトが作れる時代が「公式に」認められた。これはソロビルダーにとって最大の追い風。技術力ではなく「何を作るか」のアイデア勝負にシフトしている証拠です。自分の専門領域 × Claude Code で、今すぐプロトタイプを作り始めましょう。
-📎 [原文を読む（Scientific American）](https://www.scientificamerican.com/article/how-claude-code-is-bringing-vibe-coding-to-everyone/)
-
 ## 📚 Vybe Guide — バイブコーダー向けオープンソース発見プラットフォームが登場
 1月30日にローンチした**Vybe Guide**は、50,760件以上のオープンソースプロジェクトをインデックス化した、バイブコーダー専用の発見プラットフォーム。AIを使ったコーディングで「どのライブラリを使えばいいか」という永遠の課題に答えます。
 
