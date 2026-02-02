@@ -4,6 +4,17 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "AI Solo Builder — AIソロ開発者のための日本語ニュース",
   description: "グローバルのAI最新情報が、ここに集約されている。個人でAIエージェントとともにプロダクト開発する人のための、毎日見るサイト。",
+  openGraph: {
+    title: "AI Solo Builder",
+    description: "AIソロ開発者が毎日最初に見るサイト。グローバルのAI最新情報を日本語で。",
+    type: "website",
+    locale: "ja_JP",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Solo Builder",
+    description: "AIソロ開発者が毎日最初に見るサイト",
+  },
 };
 
 export default function RootLayout({
@@ -13,6 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+      </head>
       <body>
         {/* Header */}
         <header className="sticky top-0 z-50 border-b border-white/5" style={{ backgroundColor: 'rgba(15, 23, 42, 0.95)', backdropFilter: 'blur(12px)' }}>
@@ -29,7 +45,14 @@ export default function RootLayout({
                 <a href="/category/deep-dive" className="text-slate-400 hover:text-emerald-400 transition-colors">🔬 深掘り</a>
                 <a href="/category/case-study" className="text-slate-400 hover:text-amber-400 transition-colors">📊 事例</a>
               </nav>
-              <div className="text-xs text-slate-500">
+              {/* Mobile nav */}
+              <div className="sm:hidden flex items-center gap-3 text-xs">
+                <a href="/category/morning-news" className="text-slate-400">🌅</a>
+                <a href="/category/featured-tools" className="text-slate-400">🛠️</a>
+                <a href="/category/deep-dive" className="text-slate-400">🔬</a>
+                <a href="/category/case-study" className="text-slate-400">📊</a>
+              </div>
+              <div className="hidden sm:block text-xs text-slate-500">
                 ひとりで作る。AIと一緒に。
               </div>
             </div>

@@ -22,7 +22,13 @@ export default function CategorySection({ category, posts }: CategorySectionProp
           すべて見る →
         </a>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+      <div className={`grid gap-4 ${
+        posts.length === 1 
+          ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' 
+          : posts.length === 2 
+            ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+            : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'
+      }`}>
         {posts.slice(0, 5).map((post) => (
           <NewsCard key={post.slug} post={post} size="small" />
         ))}
