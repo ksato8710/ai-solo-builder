@@ -1,9 +1,12 @@
 ---
-title: "Midjourney — AI画像生成の最高峰、V7で動画生成にも対応"
-slug: "midjourney-ai-image-generation"
-date: "2026-02-02"
-category: "featured-tools"
-description: "Midjourneyは、AI画像生成の分野で最高の美的品質を誇るツールだ。2025年にリリースされたV7では、テキストレンダリングの精度が飛躍的に向上し、動画生成機能も追加。プロのクリエイター・デザイナーから個人ユーザー:** 同じキャラクターの顔・服装・外見を複数画像間で一貫して維持"
+title: Midjourney — AI画像生成の最高峰、V7で動画生成にも対応
+slug: midjourney-ai-image-generation
+date: '2026-02-02'
+category: featured-tools
+description: >-
+  Midjourneyは、AI画像生成の分野で最高の美的品質を誇るツールだ。2025年にリリースされたV7では、テキストレンダリングの精度が飛躍的に向上し、動画生成機能も追加。プロのクリエイター・デザイナーから個人ユーザー:**
+  同じキャラクターの顔・服装・外見を複数画像間で一貫して維持
+image: /images/thumbnails/midjourney-ai-image-generation.svg
 ---
 - **テキストレンダリング改善:** 画像内のテキスト生成精度が大幅に向上
 - **動画生成:** 静止画から短いアニメーション動画を生成する機能を追加

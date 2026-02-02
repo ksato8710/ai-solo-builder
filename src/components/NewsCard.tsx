@@ -18,10 +18,14 @@ export default function NewsCard({ post, size = 'medium' }: NewsCardProps) {
       <a href={`/news/${post.slug}`} className="group block">
         <div className="rounded-2xl overflow-hidden transition-all duration-300 hover:ring-1 hover:ring-white/10" 
              style={{ backgroundColor: '#1e293b' }}>
-          <div className="aspect-video bg-gradient-to-br from-slate-700 to-slate-800 relative">
-            <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-30">
-              {cat.emoji}
-            </div>
+          <div className="aspect-video bg-gradient-to-br from-slate-700 to-slate-800 relative overflow-hidden">
+            {post.image ? (
+              <img src={post.image} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-30">
+                {cat.emoji}
+              </div>
+            )}
             <div className="absolute top-4 left-4">
               <span className="text-xs font-semibold px-3 py-1 rounded-full" 
                     style={{ backgroundColor: cat.color + '22', color: cat.color }}>
@@ -51,10 +55,14 @@ export default function NewsCard({ post, size = 'medium' }: NewsCardProps) {
     <a href={`/news/${post.slug}`} className="group block">
       <div className="rounded-xl overflow-hidden transition-all duration-300 hover:ring-1 hover:ring-white/10 h-full flex flex-col"
            style={{ backgroundColor: '#1e293b' }}>
-        <div className="aspect-[16/9] bg-gradient-to-br from-slate-700 to-slate-800 relative flex-shrink-0">
-          <div className="absolute inset-0 flex items-center justify-center text-4xl opacity-20">
-            {cat.emoji}
-          </div>
+        <div className="aspect-[16/9] bg-gradient-to-br from-slate-700 to-slate-800 relative flex-shrink-0 overflow-hidden">
+          {post.image ? (
+            <img src={post.image} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center text-4xl opacity-20">
+              {cat.emoji}
+            </div>
+          )}
         </div>
         <div className="p-4 flex flex-col flex-1">
           <div className="flex items-center gap-2 mb-2">
