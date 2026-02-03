@@ -41,7 +41,7 @@ export default function RootLayout({
               </a>
               <nav className="hidden sm:flex items-center gap-6 text-sm">
                 <a href="/category/morning-news" className="text-slate-400 hover:text-blue-400 transition-colors">🌅 朝刊</a>
-                <a href="/category/featured-tools" className="text-slate-400 hover:text-violet-400 transition-colors">🛠️ ツール</a>
+                <a href="/category/products" className="text-slate-400 hover:text-violet-400 transition-colors">🏷️ プロダクト</a>
                 <a href="/category/deep-dive" className="text-slate-400 hover:text-emerald-400 transition-colors">🔬 深掘り</a>
                 <a href="/category/case-study" className="text-slate-400 hover:text-amber-400 transition-colors">📊 事例</a>
                 <a href="/news-value" className="text-slate-400 hover:text-rose-400 transition-colors">🎯 評価</a>
@@ -49,7 +49,7 @@ export default function RootLayout({
               {/* Mobile nav */}
               <div className="sm:hidden flex items-center gap-3 text-xs">
                 <a href="/category/morning-news" className="text-slate-400">🌅</a>
-                <a href="/category/featured-tools" className="text-slate-400">🛠️</a>
+                <a href="/category/products" className="text-slate-400">🏷️</a>
                 <a href="/category/deep-dive" className="text-slate-400">🔬</a>
                 <a href="/category/case-study" className="text-slate-400">📊</a>
                 <a href="/news-value" className="text-slate-400">🎯</a>
@@ -69,7 +69,7 @@ export default function RootLayout({
         <footer className="border-t border-white/5 mt-16 py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500">
             <p>AI Solo Builder — AIソロ開発者のための日本語ニュースキュレーション</p>
-            <p className="mt-1">毎日3回配信: 🌅 朝刊 8:00 ・ 🛠️ ツール 12:00 ・ 🔬 深掘り 19:00</p>
+            <p className="mt-1">毎日3回配信: 🌅 朝刊 8:00 ・ 🏷️ プロダクト 12:00 ・ 🔬 深掘り 19:00</p>
           </div>
         </footer>
       </body>
