@@ -29,6 +29,7 @@ export const CATEGORIES: Record<string, { label: string; color: string; emoji: s
   'evening-news': { label: '夕刊AIニュース', color: '#F97316', emoji: '🌆' },
   'product-news': { label: 'プロダクトニュース', color: '#6366F1', emoji: '📰' },
   'products': { label: 'プロダクトディレクトリ', color: '#8B5CF6', emoji: '🏷️' },
+  'dev': { label: '開発・実践', color: '#06b6d4', emoji: '🛠️' },
   'deep-dive': { label: '深掘り・ハウツー', color: '#10b981', emoji: '🔬' },
   'case-study': { label: '事例分析', color: '#f59e0b', emoji: '📊' },
 };

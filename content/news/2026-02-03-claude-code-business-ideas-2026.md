@@ -2,7 +2,7 @@
 title: "Claude Codeで稼ぐ15のビジネスアイデア｜海外記事が提案する月3〜50万円の収益モデルを日本向けに解説"
 slug: "claude-code-business-ideas-2026"
 date: "2026-02-03"
-category: "deep-dive"
+category: "dev"
 description: "海外メディアEntrepreneur Loopが公開した「15 Best Claude Code Business Ideas for Developers in 2026」を日本語で徹底解説。チャットボット開発、コンテンツ生成、文書分析など15のビジネスモデルを、日本のソロビルダー視点で実現可能性・収益性を分析する。"
 readTime: 15
 featured: true

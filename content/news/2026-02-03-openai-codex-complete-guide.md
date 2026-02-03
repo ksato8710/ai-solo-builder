@@ -2,7 +2,7 @@
 title: "【2026年最新】OpenAI Codex完全ガイド｜CLI・デスクトップアプリの使い方から料金・競合比較まで"
 slug: "openai-codex-complete-guide"
 date: "2026-02-03"
-category: "deep-dive"
+category: "dev"
 description: "OpenAI Codex CLIとデスクトップアプリの完全ガイド。インストール方法、マルチエージェント機能、料金プラン、Claude Code・Gemini CLIとの比較まで実践的に解説。月間100万人以上が利用するAIコーディングエージェントを徹底分析。"
 readTime: 12
 featured: true
