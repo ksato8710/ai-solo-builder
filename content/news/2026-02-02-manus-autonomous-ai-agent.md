@@ -3,7 +3,7 @@ title: "Meta、自律型AIエージェントManusを20〜30億ドルで買収"
 slug: manus-autonomous-ai-agent
 date: '2026-02-02'
 category: morning-news
-relatedTool: manus-autonomous-ai-agent
+relatedProduct: manus-autonomous-ai-agent
 description: "MetaがManusを20〜30億ドル規模で買収。完全自律型AIエージェントの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=420&fit=crop"
@@ -40,4 +40,4 @@ Manus（ラテン語で「手」の意）は、シンガポールのButterfly Ef
 
 ## 🛠️ プロダクト詳細
 
-→ [Manusの詳細はこちら](/tools/manus-autonomous-ai-agent)
+→ [Manusの詳細はこちら](/products/manus-autonomous-ai-agent)

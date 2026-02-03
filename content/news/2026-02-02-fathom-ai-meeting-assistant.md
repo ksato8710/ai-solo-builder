@@ -3,7 +3,7 @@ title: "Fathom、無料AIミーティングアシスタントでG2評価4.7/5"
 slug: fathom-ai-meeting-assistant
 date: '2026-02-02'
 category: morning-news
-relatedTool: fathom-ai-meeting-assistant
+relatedProduct: fathom-ai-meeting-assistant
 description: "Fathom、無料AIミーティングアシスタントでG2評価4.7/5。Fathomの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=420&fit=crop"
@@ -39,4 +39,4 @@ Fathomは2020年設立のスタートアップが開発するAIミーティン�
 
 ## 🛠️ プロダクト詳細
 
-→ [Fathomの詳細はこちら](/tools/fathom-ai-meeting-assistant)
+→ [Fathomの詳細はこちら](/products/fathom-ai-meeting-assistant)

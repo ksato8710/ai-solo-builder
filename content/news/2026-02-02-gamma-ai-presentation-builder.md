@@ -3,7 +3,7 @@ title: "Gamma、Series B $68Mで評価額$2.1B"
 slug: gamma-ai-presentation-builder
 date: '2026-02-02'
 category: morning-news
-relatedTool: gamma-ai-presentation-builder
+relatedProduct: gamma-ai-presentation-builder
 description: "Gamma、Series B $68Mで評価額$2.1B。Gammaの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=420&fit=crop"
@@ -39,4 +39,4 @@ GammaはAIネイティブのプレゼンテーション・コンテンツ作成�
 
 ## 🛠️ プロダクト詳細
 
-→ [Gammaの詳細はこちら](/tools/gamma-ai-presentation-builder)
+→ [Gammaの詳細はこちら](/products/gamma-ai-presentation-builder)

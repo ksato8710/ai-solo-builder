@@ -3,7 +3,7 @@ title: "n8n、Series C $180M調達で前年比10倍成長"
 slug: n8n-ai-workflow-automation
 date: '2026-02-02'
 category: morning-news
-relatedTool: n8n-ai-workflow-automation
+relatedProduct: n8n-ai-workflow-automation
 description: "n8n、Series C $180M調達で前年比10倍成長。n8nの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&h=420&fit=crop"
@@ -40,4 +40,4 @@ n8n（エヌエイトエヌ、「nodemation」の略）は、ビジュアルな�
 
 ## 🛠️ プロダクト詳細
 
-→ [n8nの詳細はこちら](/tools/n8n-ai-workflow-automation)
+→ [n8nの詳細はこちら](/products/n8n-ai-workflow-automation)

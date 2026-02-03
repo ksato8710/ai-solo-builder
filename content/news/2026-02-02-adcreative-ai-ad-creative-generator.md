@@ -3,7 +3,7 @@ title: "AdCreative.ai、Appierが$38.7Mで買収"
 slug: adcreative-ai-ad-creative-generator
 date: '2026-02-02'
 category: morning-news
-relatedTool: adcreative-ai-ad-creative-generator
+relatedProduct: adcreative-ai-ad-creative-generator
 description: "AdCreative.ai、Appierが$38.7Mで買収。AdCreative.aiの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=420&fit=crop"
@@ -39,4 +39,4 @@ AdCreative.aiは、広告クリエイティブの「制作」と「最適化」�
 
 ## 🛠️ プロダクト詳細
 
-→ [AdCreative.aiの詳細はこちら](/tools/adcreative-ai-ad-creative-generator)
+→ [AdCreative.aiの詳細はこちら](/products/adcreative-ai-ad-creative-generator)

@@ -6,7 +6,7 @@ import remarkGfm from 'remark-gfm';
 import html from 'remark-html';
 
 const newsDirectory = path.join(process.cwd(), 'content/news');
-const toolsDirectory = path.join(process.cwd(), 'content/tools');
+const productsDirectory = path.join(process.cwd(), 'content/products');
 
 export interface Post {
   slug: string;
@@ -19,20 +19,20 @@ export interface Post {
   image?: string;
   content?: string;
   htmlContent?: string;
-  type: 'news' | 'tool';
+  type: 'news' | 'product';
   url: string;
-  relatedTool?: string;
+  relatedProduct?: string;
 }
 
 export const CATEGORIES: Record<string, { label: string; color: string; emoji: string }> = {
   'morning-news': { label: '朝のAIニュース', color: '#3B82F6', emoji: '🌅' },
   'evening-news': { label: '夕刊AIニュース', color: '#F97316', emoji: '🌆' },
-  'tools': { label: 'ツールディレクトリ', color: '#8B5CF6', emoji: '🛠️' },
+  'products': { label: 'プロダクトディレクトリ', color: '#8B5CF6', emoji: '🏷️' },
   'deep-dive': { label: '深掘り・ハウツー', color: '#10b981', emoji: '🔬' },
   'case-study': { label: '事例分析', color: '#f59e0b', emoji: '📊' },
 };
 
-function readPostsFromDirectory(directory: string, type: 'news' | 'tool'): Post[] {
+function readPostsFromDirectory(directory: string, type: 'news' | 'product'): Post[] {
   if (!fs.existsSync(directory)) return [];
   
   const filenames = fs.readdirSync(directory).filter(f => f.endsWith('.mdx') || f.endsWith('.md'));
@@ -47,14 +47,14 @@ function readPostsFromDirectory(directory: string, type: 'news' | 'tool'): Post[
       slug,
       title: data.title || '',
       date: data.date || '',
-      category: data.category || (type === 'tool' ? 'tools' : 'morning-news'),
+      category: data.category || (type === 'product' ? 'products' : 'morning-news'),
       description: data.description || '',
       readTime: data.readTime || 5,
       featured: data.featured || false,
       image: data.image,
       type,
-      url: type === 'tool' ? `/tools/${slug}` : `/news/${slug}`,
-      relatedTool: data.relatedTool,
+      url: type === 'product' ? `/products/${slug}` : `/news/${slug}`,
+      relatedProduct: data.relatedProduct,
     };
   });
 }
@@ -65,24 +65,24 @@ export function getAllPosts(): Post[] {
   return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-/** Tool articles only */
-export function getAllTools(): Post[] {
-  const tools = readPostsFromDirectory(toolsDirectory, 'tool');
-  return tools.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+/** Product articles only */
+export function getAllProducts(): Post[] {
+  const products = readPostsFromDirectory(productsDirectory, 'product');
+  return products.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-/** All content (news + tools) */
+/** All content (news + products) */
 export function getAllContent(): Post[] {
   const all = [
     ...readPostsFromDirectory(newsDirectory, 'news'),
-    ...readPostsFromDirectory(toolsDirectory, 'tool'),
+    ...readPostsFromDirectory(productsDirectory, 'product'),
   ];
   return all.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export function getPostsByCategory(category: string): Post[] {
-  if (category === 'tools') {
-    return getAllTools();
+  if (category === 'products') {
+    return getAllProducts();
   }
   return getAllPosts().filter(p => p.category === category);
 }
@@ -91,7 +91,7 @@ export function getFeaturedPosts(): Post[] {
   return getAllContent().filter(p => p.featured);
 }
 
-async function findPostInDirectory(directory: string, slug: string, type: 'news' | 'tool'): Promise<Post | null> {
+async function findPostInDirectory(directory: string, slug: string, type: 'news' | 'product'): Promise<Post | null> {
   if (!fs.existsSync(directory)) return null;
   
   const filenames = fs.readdirSync(directory).filter(f => f.endsWith('.mdx') || f.endsWith('.md'));
@@ -109,7 +109,7 @@ async function findPostInDirectory(directory: string, slug: string, type: 'news'
         slug: postSlug,
         title: data.title || '',
         date: data.date || '',
-        category: data.category || (type === 'tool' ? 'tools' : 'morning-news'),
+        category: data.category || (type === 'product' ? 'products' : 'morning-news'),
         description: data.description || '',
         readTime: data.readTime || 5,
         featured: data.featured || false,
@@ -117,8 +117,8 @@ async function findPostInDirectory(directory: string, slug: string, type: 'news'
         content,
         htmlContent: processedContent.toString(),
         type,
-        url: type === 'tool' ? `/tools/${postSlug}` : `/news/${postSlug}`,
-        relatedTool: data.relatedTool,
+        url: type === 'product' ? `/products/${postSlug}` : `/news/${postSlug}`,
+        relatedProduct: data.relatedProduct,
       };
     }
   }
@@ -129,6 +129,6 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   return findPostInDirectory(newsDirectory, slug, 'news');
 }
 
-export async function getToolBySlug(slug: string): Promise<Post | null> {
-  return findPostInDirectory(toolsDirectory, slug, 'tool');
+export async function getProductBySlug(slug: string): Promise<Post | null> {
+  return findPostInDirectory(productsDirectory, slug, 'product');
 }

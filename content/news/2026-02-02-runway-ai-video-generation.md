@@ -3,7 +3,7 @@ title: "Runway、Series D $308Mで評価額$3B超"
 slug: runway-ai-video-generation
 date: '2026-02-02'
 category: morning-news
-relatedTool: runway-ai-video-generation
+relatedProduct: runway-ai-video-generation
 description: "Runway、Series D $308Mで評価額$3B超。Runwayの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=420&fit=crop"
@@ -40,4 +40,4 @@ Runway（ランウェイ）は2018年設立のAIスタートアップで、当�
 
 ## 🛠️ プロダクト詳細
 
-→ [Runwayの詳細はこちら](/tools/runway-ai-video-generation)
+→ [Runwayの詳細はこちら](/products/runway-ai-video-generation)

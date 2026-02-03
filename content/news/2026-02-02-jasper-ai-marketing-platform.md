@@ -3,7 +3,7 @@ title: "Jasper、ChatGPT台頭で収益急落"
 slug: jasper-ai-marketing-platform
 date: '2026-02-02'
 category: morning-news
-relatedTool: jasper-ai-marketing-platform
+relatedProduct: jasper-ai-marketing-platform
 description: "Jasper、ChatGPT台頭で収益急落。Jasperの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=420&fit=crop"
@@ -39,4 +39,4 @@ Jasper（旧Jarvis）は2021年にリリースされたAIライティングツ�
 
 ## 🛠️ プロダクト詳細
 
-→ [Jasperの詳細はこちら](/tools/jasper-ai-marketing-platform)
+→ [Jasperの詳細はこちら](/products/jasper-ai-marketing-platform)

@@ -3,7 +3,7 @@ title: "Midjourney V7リリース、動画生成に対応"
 slug: midjourney-ai-image-generation
 date: '2026-02-02'
 category: morning-news
-relatedTool: midjourney-ai-image-generation
+relatedProduct: midjourney-ai-image-generation
 description: "Midjourney V7リリース、動画生成に対応。Midjourneyの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800&h=420&fit=crop"
@@ -40,4 +40,4 @@ Midjourneyは、David Holzが率いる独立系AIラボが開発するAI画像�
 
 ## 🛠️ プロダクト詳細
 
-→ [Midjourneyの詳細はこちら](/tools/midjourney-ai-image-generation)
+→ [Midjourneyの詳細はこちら](/products/midjourney-ai-image-generation)

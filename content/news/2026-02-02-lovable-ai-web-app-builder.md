@@ -3,7 +3,7 @@ title: "Lovable、評価額$6.6BでARR $200M突破"
 slug: lovable-ai-web-app-builder
 date: '2026-02-02'
 category: morning-news
-relatedTool: lovable-ai-web-app-builder
+relatedProduct: lovable-ai-web-app-builder
 description: "Lovable、評価額$6.6BでARR $200M突破。Lovableの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=420&fit=crop"
@@ -40,4 +40,4 @@ Lovable（旧GPT Engineer）は、「プロンプト → 動くアプリ」を�
 
 ## 🛠️ プロダクト詳細
 
-→ [Lovableの詳細はこちら](/tools/lovable-ai-web-app-builder)
+→ [Lovableの詳細はこちら](/products/lovable-ai-web-app-builder)

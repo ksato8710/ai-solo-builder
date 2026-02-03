@@ -3,7 +3,7 @@ title: "Suno、Series C $250Mで評価額$2.45B"
 slug: suno-ai-music-generation
 date: '2026-02-02'
 category: morning-news
-relatedTool: suno-ai-music-generation
+relatedProduct: suno-ai-music-generation
 description: "Suno、Series C $250Mで評価額$2.45B。Sunoの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&h=420&fit=crop"
@@ -40,4 +40,4 @@ Sunoは2023年に設立されたAI音楽スタートアップで、「誰でも�
 
 ## 🛠️ プロダクト詳細
 
-→ [Sunoの詳細はこちら](/tools/suno-ai-music-generation)
+→ [Sunoの詳細はこちら](/products/suno-ai-music-generation)

@@ -3,7 +3,7 @@ title: "Claude Coworkにプラグイン機能追加"
 slug: claude-cowork-plugins-solo-team
 date: '2026-02-02'
 category: morning-news
-relatedTool: claude-cowork-plugins-solo-team
+relatedProduct: claude-cowork-plugins-solo-team
 description: "Claude Coworkにプラグイン機能追加。Claude Coworkの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=420&fit=crop"
@@ -40,4 +40,4 @@ image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=420
 
 ## 🛠️ プロダクト詳細
 
-→ [Claude Coworkの詳細はこちら](/tools/claude-cowork-plugins-solo-team)
+→ [Claude Coworkの詳細はこちら](/products/claude-cowork-plugins-solo-team)

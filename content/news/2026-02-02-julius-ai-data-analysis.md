@@ -3,7 +3,7 @@ title: "Julius AI、YC出身でSeed $10M調達"
 slug: julius-ai-data-analysis
 date: '2026-02-02'
 category: morning-news
-relatedTool: julius-ai-data-analysis
+relatedProduct: julius-ai-data-analysis
 description: "Julius AI、YC出身でSeed $10M調達。Julius AIの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=420&fit=crop"
@@ -39,4 +39,4 @@ Julius AIは「データとチャットする」をコンセプトにしたAIデ
 
 ## 🛠️ プロダクト詳細
 
-→ [Julius AIの詳細はこちら](/tools/julius-ai-data-analysis)
+→ [Julius AIの詳細はこちら](/products/julius-ai-data-analysis)

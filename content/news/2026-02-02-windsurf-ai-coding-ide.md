@@ -3,7 +3,7 @@ title: "Windsurf、Cognitionに買収される"
 slug: windsurf-ai-coding-ide
 date: '2026-02-02'
 category: morning-news
-relatedTool: windsurf-ai-coding-ide
+relatedProduct: windsurf-ai-coding-ide
 description: "Windsurf、Cognitionに買収される。Windsurfの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=420&fit=crop"
@@ -40,4 +40,4 @@ Windsurfは、Codeiumチームが2024年11月にリリースした「世界初�
 
 ## 🛠️ プロダクト詳細
 
-→ [Windsurfの詳細はこちら](/tools/windsurf-ai-coding-ide)
+→ [Windsurfの詳細はこちら](/products/windsurf-ai-coding-ide)

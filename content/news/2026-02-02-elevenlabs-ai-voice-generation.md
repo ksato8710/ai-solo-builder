@@ -3,7 +3,7 @@ title: "ElevenLabs、評価額$6.6Bに急騰"
 slug: elevenlabs-ai-voice-generation
 date: '2026-02-02'
 category: morning-news
-relatedTool: elevenlabs-ai-voice-generation
+relatedProduct: elevenlabs-ai-voice-generation
 description: "ElevenLabs、評価額$6.6Bに急騰。ElevenLabsの最新動向と業界への影響を解説。"
 readTime: 3
 image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&h=420&fit=crop"
@@ -39,4 +39,4 @@ image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&h=420
 
 ## 🛠️ プロダクト詳細
 
-→ [ElevenLabsの詳細はこちら](/tools/elevenlabs-ai-voice-generation)
+→ [ElevenLabsの詳細はこちら](/products/elevenlabs-ai-voice-generation)

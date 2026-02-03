@@ -1,11 +1,11 @@
-import { getAllPosts, getAllTools, getAllContent, getFeaturedPosts, getPostsByCategory, CATEGORIES } from '@/lib/posts';
+import { getAllPosts, getAllProducts, getAllContent, getFeaturedPosts, getPostsByCategory, CATEGORIES } from '@/lib/posts';
 import NewsCard from '@/components/NewsCard';
 import CategorySection from '@/components/CategorySection';
 
 export default function Home() {
   const allContent = getAllContent();
   const allPosts = getAllPosts();
-  const allTools = getAllTools();
+  const allProducts = getAllProducts();
   const featured = getFeaturedPosts();
   const mainFeatured = featured[0];
   const sideFeatured = featured.slice(1, 3);
@@ -40,11 +40,11 @@ export default function Home() {
         </div>
         <div className="flex items-center gap-6 text-xs text-slate-400">
           <span>🌅 朝刊 8:00</span>
-          <span>🛠️ ツール 12:00</span>
+          <span>🏷️ プロダクト 12:00</span>
           <span>🌆 夕刊 18:00</span>
         </div>
         <div className="text-xs text-slate-500">
-          ニュース: {allPosts.length}本 / ツール: {allTools.length}本
+          ニュース: {allPosts.length}本 / プロダクト: {allProducts.length}本
         </div>
       </div>
 
