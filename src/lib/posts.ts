@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
 import html from 'remark-html';
 
 const contentDirectory = path.join(process.cwd(), 'content/news');
@@ -71,7 +72,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     
     const postSlug = data.slug || filename.replace(/\.mdx?$/, '');
     if (postSlug === slug) {
-      const processedContent = await remark().use(html).process(content);
+      const processedContent = await remark().use(remarkGfm).use(html).process(content);
       
       return {
         slug: postSlug,
