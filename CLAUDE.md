@@ -3,7 +3,7 @@
 ## プロジェクト概要
 - **目標:** TLDR.tech のUIをベースにした、日本語のAIソロビルダー向けニュースキュレーションサイト
 - **技術スタック:** Next.js (App Router) + Tailwind CSS + TypeScript
-- **ホスティング:** Vercel（無料枠）
+- **ホスティング:** GitHub Pages（GitHub Actions でデプロイ）
 - **ドメイン:** ai.essential-navigator.com
 
 ## デザイン仕様（TLDR.tech準拠）
