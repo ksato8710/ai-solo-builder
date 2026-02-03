@@ -1,5 +1,5 @@
 ---
-title: Julius AI — チャットでデータ分析、グラフも一発生成
+title: "Julius AI、YC出身でSeed $10M調達 — チャットでデータ分析する新興プレイヤー"
 slug: julius-ai-data-analysis
 date: '2026-02-02'
 category: featured-tools

@@ -1,5 +1,5 @@
 ---
-title: Perplexity AI — Google検索を置き換えるAI検索エンジン＋Cometブラウザ
+title: "Perplexity、評価額$20Bに到達 — Cometブラウザ投入でGoogle検索に挑むAI検索エンジン"
 slug: perplexity-ai-search-engine
 date: '2026-02-02'
 category: featured-tools

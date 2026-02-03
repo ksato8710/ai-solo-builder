@@ -1,5 +1,5 @@
 ---
-title: Suno — テキストから楽曲を丸ごと生成するAI音楽プラットフォーム
+title: "Suno、Series C $250Mで評価額$2.45B — レーベル訴訟を経てAI音楽生成の頂点へ"
 slug: suno-ai-music-generation
 date: '2026-02-02'
 category: featured-tools

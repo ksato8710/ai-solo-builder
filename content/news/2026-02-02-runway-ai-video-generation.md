@@ -1,5 +1,5 @@
 ---
-title: Runway — 映像クリエイターのためのAI動画生成プラットフォーム
+title: "Runway、Series D $308Mで評価額$3B超 — AI動画生成で映画VFXに参入"
 slug: runway-ai-video-generation
 date: '2026-02-02'
 category: featured-tools

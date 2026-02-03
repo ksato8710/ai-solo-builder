@@ -1,5 +1,5 @@
 ---
-title: Claude Cowork Plugins — AIソロビルダーが「一人チーム」を構築できる時代
+title: "Claude Coworkにプラグイン機能追加 — Anthropic、AIタスク自動化の拡張性を大幅強化"
 slug: claude-cowork-plugins-solo-team
 date: '2026-02-02'
 category: featured-tools

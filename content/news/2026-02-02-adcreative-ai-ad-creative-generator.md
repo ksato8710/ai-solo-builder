@@ -1,5 +1,5 @@
 ---
-title: AdCreative.ai — AIが広告クリエイティブを自動生成、ROASを最大化
+title: "AdCreative.ai、Appierが$38.7Mで買収 — AI広告クリエイティブ生成の注目スタートアップ"
 slug: adcreative-ai-ad-creative-generator
 date: '2026-02-02'
 category: featured-tools

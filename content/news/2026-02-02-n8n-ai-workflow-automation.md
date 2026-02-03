@@ -1,5 +1,5 @@
 ---
-title: n8n — オープンソースのAIワークフロー自動化プラットフォーム
+title: "n8n、Series C $180M調達で前年比10倍成長 — OSSワークフロー自動化がAI時代に急伸"
 slug: n8n-ai-workflow-automation
 date: '2026-02-02'
 category: featured-tools

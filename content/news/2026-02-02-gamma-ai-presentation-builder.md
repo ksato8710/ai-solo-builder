@@ -1,5 +1,5 @@
 ---
-title: Gamma — AIでプレゼン・文書・Webページを瞬時に作成
+title: "Gamma、Series B $68Mで評価額$2.1B — AIプレゼン作成がARR $100M超に"
 slug: gamma-ai-presentation-builder
 date: '2026-02-02'
 category: featured-tools

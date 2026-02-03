@@ -1,5 +1,5 @@
 ---
-title: Midjourney — AI画像生成の最高峰、V7で動画生成にも対応
+title: "Midjourney V7リリース、動画生成に対応 — 外部調達ゼロで年間収益$500Mの怪物"
 slug: midjourney-ai-image-generation
 date: '2026-02-02'
 category: featured-tools

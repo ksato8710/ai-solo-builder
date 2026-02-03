@@ -1,5 +1,5 @@
 ---
-title: Windsurf — AIネイティブなコーディングIDE（旧Codeium）
+title: "Windsurf、Cognitionに買収される — Cursor対抗のAI IDE、評価額$1.3Bからの急展開"
 slug: windsurf-ai-coding-ide
 date: '2026-02-02'
 category: featured-tools

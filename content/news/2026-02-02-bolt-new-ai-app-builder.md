@@ -1,5 +1,5 @@
 ---
-title: Bolt.new — ブラウザだけでフルスタックアプリを開発するAIプラットフォーム
+title: "Bolt.new、Series B $105.5Mで評価額$700M — ブラウザ完結AI開発がARR $40Mに急成長"
 slug: bolt-new-ai-app-builder
 date: '2026-02-02'
 category: featured-tools

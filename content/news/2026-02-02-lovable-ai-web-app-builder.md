@@ -1,5 +1,5 @@
 ---
-title: Lovable — プロンプトだけでWebアプリを構築するAIビルダー
+title: "Lovable、評価額$6.6BでARR $200M突破 — プロンプトだけでWebアプリを作る時代"
 slug: lovable-ai-web-app-builder
 date: '2026-02-02'
 category: featured-tools

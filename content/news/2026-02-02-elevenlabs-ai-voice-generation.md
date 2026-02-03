@@ -1,5 +1,5 @@
 ---
-title: ElevenLabs — 人間と区別がつかないAI音声生成プラットフォーム
+title: "ElevenLabs、評価額$6.6Bに急騰 — AI音声生成の覇者がSeries Cで$180M調達"
 slug: elevenlabs-ai-voice-generation
 date: '2026-02-02'
 category: featured-tools

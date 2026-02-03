@@ -1,5 +1,5 @@
 ---
-title: Fathom — 無料で使えるAI議事録・ミーティングアシスタント
+title: "Fathom、無料AIミーティングアシスタントでG2評価4.7/5 — $27M調達で急成長中"
 slug: fathom-ai-meeting-assistant
 date: '2026-02-02'
 category: featured-tools

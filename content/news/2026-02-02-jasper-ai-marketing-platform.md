@@ -1,5 +1,5 @@
 ---
-title: Jasper — エンタープライズ向けAIマーケティング＆ライティングプラットフォーム
+title: "Jasper、ChatGPT台頭で収益急落 — 評価額$1.5Bのユニコーンが苦戦する教訓"
 slug: jasper-ai-marketing-platform
 date: '2026-02-02'
 category: featured-tools
