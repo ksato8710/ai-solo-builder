@@ -44,6 +44,7 @@ export default function RootLayout({
                 <a href="/category/featured-tools" className="text-slate-400 hover:text-violet-400 transition-colors">🛠️ ツール</a>
                 <a href="/category/deep-dive" className="text-slate-400 hover:text-emerald-400 transition-colors">🔬 深掘り</a>
                 <a href="/category/case-study" className="text-slate-400 hover:text-amber-400 transition-colors">📊 事例</a>
+                <a href="/news-value" className="text-slate-400 hover:text-rose-400 transition-colors">🎯 評価</a>
               </nav>
               {/* Mobile nav */}
               <div className="sm:hidden flex items-center gap-3 text-xs">
@@ -51,6 +52,7 @@ export default function RootLayout({
                 <a href="/category/featured-tools" className="text-slate-400">🛠️</a>
                 <a href="/category/deep-dive" className="text-slate-400">🔬</a>
                 <a href="/category/case-study" className="text-slate-400">📊</a>
+                <a href="/news-value" className="text-slate-400">🎯</a>
               </div>
               <div className="hidden sm:block text-xs text-slate-500">
                 ひとりで作る。AIと一緒に。
