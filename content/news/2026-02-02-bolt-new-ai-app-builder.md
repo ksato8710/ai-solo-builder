@@ -2,7 +2,7 @@
 title: "Bolt.new、Series B $105.5Mで評価額$700M"
 slug: bolt-new-ai-app-builder
 date: '2026-02-02'
-category: morning-news
+category: product-news
 relatedProduct: bolt-new-ai-app-builder
 description: "Bolt.new、Series B $105.5Mで評価額$700M。Bolt.newの最新動向と業界への影響を解説。"
 readTime: 3

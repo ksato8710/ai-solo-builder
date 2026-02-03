@@ -2,7 +2,7 @@
 title: "Runway、Series D $308Mで評価額$3B超"
 slug: runway-ai-video-generation
 date: '2026-02-02'
-category: morning-news
+category: product-news
 relatedProduct: runway-ai-video-generation
 description: "Runway、Series D $308Mで評価額$3B超。Runwayの最新動向と業界への影響を解説。"
 readTime: 3

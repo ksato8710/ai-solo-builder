@@ -2,7 +2,7 @@
 title: "Midjourney V7リリース、動画生成に対応"
 slug: midjourney-ai-image-generation
 date: '2026-02-02'
-category: morning-news
+category: product-news
 relatedProduct: midjourney-ai-image-generation
 description: "Midjourney V7リリース、動画生成に対応。Midjourneyの最新動向と業界への影響を解説。"
 readTime: 3

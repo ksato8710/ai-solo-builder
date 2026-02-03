@@ -2,7 +2,7 @@
 title: "Fathom、無料AIミーティングアシスタントでG2評価4.7/5"
 slug: fathom-ai-meeting-assistant
 date: '2026-02-02'
-category: morning-news
+category: product-news
 relatedProduct: fathom-ai-meeting-assistant
 description: "Fathom、無料AIミーティングアシスタントでG2評価4.7/5。Fathomの最新動向と業界への影響を解説。"
 readTime: 3

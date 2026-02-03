@@ -2,7 +2,7 @@
 title: "Windsurf、Cognitionに買収される"
 slug: windsurf-ai-coding-ide
 date: '2026-02-02'
-category: morning-news
+category: product-news
 relatedProduct: windsurf-ai-coding-ide
 description: "Windsurf、Cognitionに買収される。Windsurfの最新動向と業界への影響を解説。"
 readTime: 3

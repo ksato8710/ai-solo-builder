@@ -2,7 +2,7 @@
 title: "Lovable、評価額$6.6BでARR $200M突破"
 slug: lovable-ai-web-app-builder
 date: '2026-02-02'
-category: morning-news
+category: product-news
 relatedProduct: lovable-ai-web-app-builder
 description: "Lovable、評価額$6.6BでARR $200M突破。Lovableの最新動向と業界への影響を解説。"
 readTime: 3

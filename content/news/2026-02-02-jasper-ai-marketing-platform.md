@@ -2,7 +2,7 @@
 title: "Jasper、ChatGPT台頭で収益急落"
 slug: jasper-ai-marketing-platform
 date: '2026-02-02'
-category: morning-news
+category: product-news
 relatedProduct: jasper-ai-marketing-platform
 description: "Jasper、ChatGPT台頭で収益急落。Jasperの最新動向と業界への影響を解説。"
 readTime: 3

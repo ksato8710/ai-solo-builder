@@ -27,6 +27,7 @@ export interface Post {
 export const CATEGORIES: Record<string, { label: string; color: string; emoji: string }> = {
   'morning-news': { label: '朝のAIニュース', color: '#3B82F6', emoji: '🌅' },
   'evening-news': { label: '夕刊AIニュース', color: '#F97316', emoji: '🌆' },
+  'product-news': { label: 'プロダクトニュース', color: '#6366F1', emoji: '📰' },
   'products': { label: 'プロダクトディレクトリ', color: '#8B5CF6', emoji: '🏷️' },
   'deep-dive': { label: '深掘り・ハウツー', color: '#10b981', emoji: '🔬' },
   'case-study': { label: '事例分析', color: '#f59e0b', emoji: '📊' },

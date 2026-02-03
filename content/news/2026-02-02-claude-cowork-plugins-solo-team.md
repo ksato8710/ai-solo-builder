@@ -2,7 +2,7 @@
 title: "Claude Coworkにプラグイン機能追加"
 slug: claude-cowork-plugins-solo-team
 date: '2026-02-02'
-category: morning-news
+category: product-news
 relatedProduct: claude-cowork-plugins-solo-team
 description: "Claude Coworkにプラグイン機能追加。Claude Coworkの最新動向と業界への影響を解説。"
 readTime: 3

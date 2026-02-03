@@ -2,7 +2,7 @@
 title: "Perplexity、評価額$20Bに到達"
 slug: perplexity-ai-search-engine
 date: '2026-02-02'
-category: morning-news
+category: product-news
 relatedProduct: perplexity-ai-search-engine
 description: "Perplexity、評価額$20Bに到達。Perplexityの最新動向と業界への影響を解説。"
 readTime: 3
