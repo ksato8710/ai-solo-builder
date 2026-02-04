@@ -2,7 +2,7 @@
 title: "ソロビルダー3つ星ツール — プロフィール画像・SEO・バックエンド生成"
 slug: "noon-tools-spotlight-2026-02-04"
 date: "2026-02-04"
-category: "featured-tools"
+category: "product-news"
 description: "2026年2月最新：独立開発者が今使うべきAIツール3選。プロフィール画像生成、SEO記事構造化、バックエンド自動生成で開発効率を劇的向上。"
 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=420&fit=crop"
 readTime: 4
