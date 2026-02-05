@@ -1,6 +1,6 @@
 ---
 title: "過去24時間でAI Solo Builderに激震！グローバル重大ニュース独自ランキングTOP10"
-slug: "global-ai-solo-builder-news-ranking-2026-02-05"
+slug: "2026-02-05-global-ai-solo-builder-news-ranking"
 date: "2026-02-05"
 category: "deep-dive"
 description: "2026年2月4-5日の24時間で起きた、AI Solo Builderの世界を変える重大ニュースを独自の基準でランキング化。市場激震、新ツール登場、開発革新まで完全網羅。"
