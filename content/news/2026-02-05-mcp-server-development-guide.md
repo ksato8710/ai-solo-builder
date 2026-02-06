@@ -6,7 +6,7 @@ category: "dev"
 description: "Anthropic発のModel Context Protocol（MCP）でAI AgentとデータソースをシームレスにつなぐMCP Server開発の実践ガイド"
 image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=420&fit=crop"
 readTime: 8
-featured: false
+featured: true
 ---
 
 AI Agentがより強力になるためには、外部データソースとの連携が不可欠です。Anthropicが2024年11月に発表した**Model Context Protocol（MCP）**は、この課題を解決する画期的な標準プロトコルです。
