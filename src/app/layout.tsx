@@ -40,8 +40,7 @@ export default function RootLayout({
                 </span>
               </a>
               <nav className="hidden sm:flex items-center gap-6 text-sm">
-                <a href="/category/morning-summary" className="text-slate-400 hover:text-blue-400 transition-colors">🗞️ 朝刊</a>
-                <a href="/category/evening-summary" className="text-slate-400 hover:text-orange-400 transition-colors">🗞️ 夕刊</a>
+                <a href="/#digest-summary" className="text-slate-400 hover:text-blue-400 transition-colors">🗞️ 朝夕のまとめ</a>
                 <a href="/category/news" className="text-slate-400 hover:text-indigo-400 transition-colors">📰 ニュース</a>
                 <a href="/category/dev-knowledge" className="text-slate-400 hover:text-emerald-400 transition-colors">🧠 ナレッジ</a>
                 <a href="/category/case-study" className="text-slate-400 hover:text-amber-400 transition-colors">📊 事例</a>
@@ -50,8 +49,7 @@ export default function RootLayout({
               </nav>
               {/* Mobile nav */}
               <div className="sm:hidden flex items-center gap-3 text-xs">
-                <a href="/category/morning-summary" className="text-slate-400">🗞️</a>
-                <a href="/category/evening-summary" className="text-slate-400">🗞️</a>
+                <a href="/#digest-summary" className="text-slate-400">🗞️</a>
                 <a href="/category/news" className="text-slate-400">📰</a>
                 <a href="/category/dev-knowledge" className="text-slate-400">🧠</a>
                 <a href="/category/case-study" className="text-slate-400">📊</a>

@@ -89,6 +89,8 @@ If the product page does not exist at that time:
 3. Every Digest post (category `morning-summary` or `evening-summary`) includes the Digest Format requirements.
 4. Any `/products/[slug]` link in `content/news/*.md` resolves to an existing product page slug.
 5. App-side category definitions (UI) must include the canonical categories.
+6. Header navigation must expose Digest entry as a single menu item (`朝夕のまとめ`) instead of separate `朝刊` and `夕刊` items.
+7. Home page must render Digest content in one section (`朝夕のまとめ`) that contains both Morning and Evening Digest entries.
 
 ## Implementation Notes (traceability)
 This spec is implemented by:
@@ -97,3 +99,11 @@ This spec is implemented by:
 - Digest format: Digest posts in `content/news/*.md` (category `morning-summary` or `evening-summary`)
 - Ranking page (`/news-value`): `src/app/news-value/page.tsx`, `src/lib/digest.ts`
 - Product dictionary pages: `content/products/*.md`
+
+## Information Architecture Notes
+- Header menu IA:
+  - Digest is a unified entry labeled `朝夕のまとめ`.
+  - Morning and Evening remain separate categories in content taxonomy, but are grouped in navigation.
+- Home IA:
+  - A single section labeled `朝夕のまとめ` presents both `morning-summary` and `evening-summary` cards.
+  - Existing category sections should not render separate `朝のまとめ` / `夕のまとめ` blocks on Home.
