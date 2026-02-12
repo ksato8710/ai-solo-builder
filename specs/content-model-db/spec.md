@@ -39,6 +39,7 @@ Fields:
 - `published_at timestamptz null`
 - `date date not null` (editorial date)
 - `read_time int not null`
+- `featured boolean not null default false`
 - `hero_image_url text null`
 - `body_markdown text not null`
 - `body_html text null` (optional cache)
@@ -256,3 +257,29 @@ Constraints:
 4. Product references resolve via `content_product_links` to product content.
 5. Digest ranking supports Top 10 + Top 3 expansion links.
 6. Markdown-to-DB mapping is deterministic and documented.
+7. A sync command exists to upsert Markdown content into DB idempotently.
+8. Web read path is DB-first with automatic Markdown fallback when DB is unavailable.
+9. Legacy frontmatter (`category`, `relatedProduct`) remains accepted during migration.
+
+## Required Implementation (Phase 1)
+
+### A. Sync command
+- Command: `npm run sync:content:db`
+- Behavior:
+  - Parse `content/news/*.md` and `content/products/*.md`
+  - Normalize legacy fields into canonical model (`contentType`, `digestEdition`, `tags`, `relatedProducts`)
+  - Upsert `contents` and subtype tables (`digest_details`, `products`)
+  - Upsert tags and refresh `content_tags`
+  - Refresh `content_product_links`
+  - Be idempotent (same input produces stable DB state)
+
+### B. Validator compatibility
+- `scripts/validate-content.mjs` must accept both:
+  - Canonical fields (`contentType`, `digestEdition`, `tags`, `relatedProducts`)
+  - Legacy fields (`category`, `relatedProduct`)
+- Validator must enforce digest requirements based on canonical or derived digest type.
+
+### C. Runtime read strategy
+- `src/lib/posts.ts` must provide DB-first read for list/detail retrieval.
+- If DB env vars are missing or DB fetch fails, file-based Markdown read is used as fallback.
+- Existing UI taxonomy labels can remain category-style while canonical model is rolled out.

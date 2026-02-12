@@ -2,15 +2,21 @@ import { getAllPosts, getAllProducts, getAllContent, getFeaturedPosts, getPostsB
 import NewsCard from '@/components/NewsCard';
 import CategorySection from '@/components/CategorySection';
 
-export default function Home() {
-  const allContent = getAllContent();
-  const allPosts = getAllPosts();
-  const allProducts = getAllProducts();
-  const featured = getFeaturedPosts();
-  const morningSummaryPosts = getPostsByCategory('morning-summary');
-  const eveningSummaryPosts = getPostsByCategory('evening-summary');
+export default async function Home() {
+  const allContent = await getAllContent();
+  const allPosts = await getAllPosts();
+  const allProducts = await getAllProducts();
+  const featured = await getFeaturedPosts();
+  const morningSummaryPosts = await getPostsByCategory('morning-summary');
+  const eveningSummaryPosts = await getPostsByCategory('evening-summary');
   const nonDigestCategories = Object.keys(CATEGORIES).filter(
     (category) => category !== 'morning-summary' && category !== 'evening-summary'
+  );
+  const nonDigestSections = await Promise.all(
+    nonDigestCategories.map(async (category) => ({
+      category,
+      posts: await getPostsByCategory(category),
+    }))
   );
   const mainFeatured = featured[0];
   const sideFeatured = featured.slice(1, 3);
@@ -108,11 +114,11 @@ export default function Home() {
       </section>
 
       {/* Category Sections */}
-      {nonDigestCategories.map((category) => (
+      {nonDigestSections.map(({ category, posts }) => (
         <CategorySection
           key={category}
           category={category}
-          posts={getPostsByCategory(category)}
+          posts={posts}
         />
       ))}
 

@@ -20,6 +20,7 @@ CREATE TABLE contents (
   published_at timestamptz,
   date date NOT NULL,
   read_time integer NOT NULL,
+  featured boolean NOT NULL DEFAULT false,
   hero_image_url text,
   body_markdown text NOT NULL,
   body_html text,

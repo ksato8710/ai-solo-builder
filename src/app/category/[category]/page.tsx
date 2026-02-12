@@ -21,7 +21,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const cat = CATEGORIES[category];
   if (!cat) notFound();
 
-  const posts = getPostsByCategory(category);
+  const posts = await getPostsByCategory(category);
 
   return (
     <div>

@@ -14,6 +14,7 @@ Applied migrations:
 - `supabase/migrations/20260211045100_init_content_model.sql`
 - `supabase/migrations/20260211045200_seed_default_tags.sql`
 - `supabase/migrations/20260211045300_enable_content_rls.sql`
+- `supabase/migrations/20260211052753_add_featured_to_contents.sql`
 
 `supabase db push --linked --include-all` now reports: `Remote database is up to date.`
 
@@ -67,6 +68,12 @@ supabase db lint --linked --level error --fail-on error
 
 # Generate TypeScript DB types
 npm run db:types
+
+# Sync markdown content to DB (idempotent upsert)
+npm run sync:content:db
+
+# Dry-run sync summary (no DB writes)
+npm run sync:content:db:dry
 ```
 
 ## 5. Notes on Authentication
@@ -86,13 +93,13 @@ Then rerun lint/list commands.
 Current recommended operation (Phase 1):
 - Authoring SoT: Markdown (`content/news`, `content/products`)
 - Serving SoT: Supabase DB mirror
-- Ingestion job (next implementation step): parse markdown frontmatter/body and upsert to DB tables
+- Ingestion job: `scripts/sync-content-to-supabase.mjs` parses markdown frontmatter/body and upserts DB tables
 
 Legacy compatibility mapping is documented in:
 - `specs/content-policy/spec.md`
 
 ## 7. Next Implementation Steps
 
-1. Extend `scripts/validate-content.mjs` to validate canonical fields (`contentType`, `digestEdition`, `tags`, `relatedProducts`) while preserving legacy compatibility.
-2. Add `scripts/sync-content-to-supabase` (idempotent upsert pipeline).
-3. Switch web/mobile read paths from file parsing to DB-backed APIs.
+1. Add CI job for `db push` safety checks + `sync:content:db:dry` validation.
+2. Introduce API routes for mobile (`/api/contents`, `/api/digests/latest`, `/api/products/[slug]`).
+3. Backfill canonical frontmatter (`contentType`, `digestEdition`, `tags`, `relatedProducts`) across legacy markdown files.

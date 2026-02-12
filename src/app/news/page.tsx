@@ -2,14 +2,20 @@ import { getAllPosts, getPostsByCategory, CATEGORIES } from '@/lib/posts';
 import NewsCard from '@/components/NewsCard';
 import CategorySection from '@/components/CategorySection';
 
-export default function NewsPage() {
-  const allPosts = getAllPosts();
+export default async function NewsPage() {
+  const allPosts = await getAllPosts();
   const featuredPosts = allPosts.filter(p => p.featured);
   const mainFeatured = featuredPosts[0];
   const sideFeatured = featuredPosts.slice(1, 3);
 
   // News-specific categories (exclude products)
   const newsCategories = ['morning-summary', 'evening-summary', 'news', 'dev-knowledge', 'case-study'];
+  const newsCategorySections = await Promise.all(
+    newsCategories.map(async (category) => ({
+      category,
+      posts: await getPostsByCategory(category),
+    }))
+  );
 
   return (
     <div>
@@ -62,8 +68,7 @@ export default function NewsPage() {
       </div>
 
       {/* News Category Sections */}
-      {newsCategories.map((category) => {
-        const categoryPosts = getPostsByCategory(category);
+      {newsCategorySections.map(({ category, posts: categoryPosts }) => {
         if (categoryPosts.length === 0) return null;
         
         return (

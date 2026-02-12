@@ -12,10 +12,21 @@ const ALLOWED_NEWS_CATEGORIES = new Set([
   'news',
   'dev-knowledge',
   'case-study',
+  // Legacy categories kept for migration compatibility.
+  'morning-news',
+  'evening-news',
+  'knowledge',
+  'product-news',
+  'tools',
+  'featured-tools',
+  'dev',
+  'deep-dive',
 ]);
 
-// Digest format became strict from this date onward.
-// Older content may be legacy and can be migrated gradually.
+const ALLOWED_PRODUCT_CATEGORY = 'products';
+const ALLOWED_CONTENT_TYPES = new Set(['news', 'product', 'digest']);
+const ALLOWED_DIGEST_EDITIONS = new Set(['morning', 'evening']);
+
 const DIGEST_FORMAT_ENFORCE_FROM = '2026-02-10';
 
 function die(msg) {
@@ -47,18 +58,97 @@ function assertRequiredFrontmatter(filePath, data, requiredKeys) {
   }
 }
 
-function extractProductSlugs() {
-  const slugs = new Set();
-  for (const filePath of listMarkdownFiles(PRODUCTS_DIR)) {
-    const { data } = readFrontmatter(filePath);
-    const slug = (data.slug || path.basename(filePath).replace(/\.mdx?$/, '')).toString().trim();
-    if (!slug) die(`${filePath} has empty slug`);
-    slugs.add(slug);
+function normalizeArray(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) return value.map((v) => String(v).trim()).filter(Boolean);
+  if (typeof value === 'string') return value.split(',').map((v) => v.trim()).filter(Boolean);
+  die(`Expected array or comma-separated string, got: ${typeof value}`);
+}
 
-    const cat = (data.category || '').toString().trim();
-    if (cat !== 'products') die(`${filePath} category must be "products" (got "${cat}")`);
+function unique(arr) {
+  return [...new Set(arr.filter(Boolean))];
+}
+
+function inferFromLegacy(category, fileKind) {
+  if (fileKind === 'product') {
+    return { contentType: 'product', digestEdition: null, derivedTags: [] };
   }
-  return slugs;
+
+  switch (category) {
+    case 'morning-news':
+    case 'morning-summary':
+      return { contentType: 'digest', digestEdition: 'morning', derivedTags: [] };
+    case 'evening-news':
+    case 'evening-summary':
+      return { contentType: 'digest', digestEdition: 'evening', derivedTags: [] };
+    case 'knowledge':
+    case 'dev':
+    case 'deep-dive':
+    case 'featured-tools':
+    case 'dev-knowledge':
+      return { contentType: 'news', digestEdition: null, derivedTags: ['dev-knowledge'] };
+    case 'product-news':
+    case 'tools':
+      return { contentType: 'news', digestEdition: null, derivedTags: [] };
+    case 'case-study':
+      return { contentType: 'news', digestEdition: null, derivedTags: ['case-study'] };
+    case 'products':
+      return { contentType: 'product', digestEdition: null, derivedTags: [] };
+    case 'news':
+    default:
+      return { contentType: 'news', digestEdition: null, derivedTags: [] };
+  }
+}
+
+function resolveModel(filePath, data, fileKind) {
+  const category = data.category ? String(data.category).trim() : '';
+  const explicitContentType = data.contentType ? String(data.contentType).trim() : '';
+  const explicitDigestEdition = data.digestEdition ? String(data.digestEdition).trim() : '';
+
+  if (category) {
+    if (fileKind === 'news' && !ALLOWED_NEWS_CATEGORIES.has(category)) {
+      die(`${filePath} has invalid legacy category "${category}"`);
+    }
+    if (fileKind === 'product' && category !== ALLOWED_PRODUCT_CATEGORY) {
+      die(`${filePath} category must be "${ALLOWED_PRODUCT_CATEGORY}" (got "${category}")`);
+    }
+  }
+
+  const inferred = inferFromLegacy(category, fileKind);
+  const contentType = explicitContentType || inferred.contentType;
+
+  if (!ALLOWED_CONTENT_TYPES.has(contentType)) {
+    die(`${filePath} has invalid contentType "${contentType}"`);
+  }
+
+  const digestEdition = explicitDigestEdition || inferred.digestEdition;
+  if (contentType === 'digest') {
+    if (!digestEdition || !ALLOWED_DIGEST_EDITIONS.has(digestEdition)) {
+      die(`${filePath} requires digestEdition=morning|evening for digest content`);
+    }
+  } else if (digestEdition) {
+    die(`${filePath} has digestEdition but contentType is not digest`);
+  }
+
+  const tags = unique([...normalizeArray(data.tags), ...inferred.derivedTags]);
+  const relatedProducts = unique([
+    ...normalizeArray(data.relatedProducts),
+    data.relatedProduct ? String(data.relatedProduct).trim() : '',
+  ]);
+
+  if (tags.includes('product-update') && relatedProducts.length === 0) {
+    die(`${filePath} has tag "product-update" but no relatedProducts/relatedProduct`);
+  }
+
+  if (fileKind === 'product' && contentType !== 'product') {
+    die(`${filePath} in content/products must resolve to contentType=product`);
+  }
+
+  if (fileKind === 'news' && contentType === 'product') {
+    die(`${filePath} in content/news cannot resolve to contentType=product`);
+  }
+
+  return { contentType, digestEdition, tags, relatedProducts };
 }
 
 function extractProductLinks(markdown) {
@@ -80,43 +170,59 @@ function hasRankingTable(rawMarkdown) {
   const idx = rawMarkdown.indexOf(header);
   if (idx === -1) return false;
   const after = rawMarkdown.slice(idx + header.length);
-  // Find the first table row after the header.
   return /\n\|.+\|\n\|[-| :]+\|\n\|.+\|/m.test(after);
 }
 
+function collectProductSlugs() {
+  const slugs = new Set();
+
+  for (const filePath of listMarkdownFiles(PRODUCTS_DIR)) {
+    const { data } = readFrontmatter(filePath);
+    assertRequiredFrontmatter(filePath, data, ['title', 'slug', 'date', 'description']);
+    resolveModel(filePath, data, 'product');
+
+    if (data.readTime === undefined || data.readTime === null || String(data.readTime).trim() === '') {
+      console.warn(`⚠ ${filePath} has no readTime (legacy allowed for products during migration)`);
+    }
+
+    const slug = String(data.slug || '').trim();
+    if (!slug) die(`${filePath} has empty slug`);
+    slugs.add(slug);
+  }
+
+  return slugs;
+}
+
 function main() {
-  const productSlugs = extractProductSlugs();
+  const productSlugs = collectProductSlugs();
 
   const newsFiles = listMarkdownFiles(NEWS_DIR);
   if (newsFiles.length === 0) die('No content/news markdown files found');
 
   for (const filePath of newsFiles) {
     const { data, raw } = readFrontmatter(filePath);
+    assertRequiredFrontmatter(filePath, data, ['title', 'slug', 'date', 'description', 'readTime']);
 
-    assertRequiredFrontmatter(filePath, data, ['title', 'slug', 'date', 'category', 'description', 'readTime']);
+    const model = resolveModel(filePath, data, 'news');
 
-    const category = data.category.toString().trim();
-    if (!ALLOWED_NEWS_CATEGORIES.has(category)) {
-      die(`${filePath} has invalid category "${category}"`);
-    }
-
-    // Product link / relatedProduct must resolve.
     const links = extractProductLinks(raw);
     for (const slug of links) {
       if (!productSlugs.has(slug)) die(`${filePath} links to missing product slug "${slug}"`);
     }
 
-    if (data.relatedProduct) {
-      const rp = data.relatedProduct.toString().trim();
-      if (!productSlugs.has(rp)) die(`${filePath} has relatedProduct "${rp}" but product page not found`);
+    for (const rp of model.relatedProducts) {
+      if (!productSlugs.has(rp)) die(`${filePath} has unresolved related product "${rp}"`);
     }
 
-    // Digest format checks.
-    if (category === 'morning-summary' || category === 'evening-summary') {
-      const date = data.date?.toString().trim() || '';
-      if (date && date >= DIGEST_FORMAT_ENFORCE_FROM) {
+    if (model.contentType === 'digest') {
+      const date = String(data.date || '').trim();
+      const legacyCategory = data.category ? String(data.category).trim() : '';
+      const isLegacyDigestCategory = legacyCategory === 'morning-news' || legacyCategory === 'evening-news';
+      if (date && date >= DIGEST_FORMAT_ENFORCE_FROM && !isLegacyDigestCategory) {
         if (!hasDigestSections(raw)) die(`${filePath} (Digest) is missing required sections`);
-        if (!hasRankingTable(raw)) die(`${filePath} (Digest) is missing a valid ranking table under the NVA section`);
+        if (!hasRankingTable(raw)) {
+          die(`${filePath} (Digest) is missing a valid ranking table under the NVA section`);
+        }
       }
     }
   }

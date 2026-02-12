@@ -9,11 +9,14 @@
     "lint": "eslint",
     "validate:content": "node scripts/validate-content.mjs",
     "db:push": "supabase db push --linked",
-    "db:lint": "supabase db lint",
-    "db:migrations:list": "supabase migration list",
-    "db:types": "supabase gen types typescript --linked --schema public > src/types/database.ts"
+    "db:lint": "supabase db lint --linked",
+    "db:migrations:list": "supabase migration list --linked",
+    "db:types": "supabase gen types typescript --linked --schema public > src/types/database.ts",
+    "sync:content:db": "node scripts/sync-content-to-supabase.mjs",
+    "sync:content:db:dry": "node scripts/sync-content-to-supabase.mjs --dry-run"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.95.3",
     "gray-matter": "^4.0.3",
     "next": "16.1.6",
     "react": "19.2.3",

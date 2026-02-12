@@ -176,6 +176,7 @@ export type Database = {
           created_at: string
           date: string
           description: string
+          featured: boolean
           hero_image_url: string | null
           id: string
           legacy_category: string | null
@@ -196,6 +197,7 @@ export type Database = {
           created_at?: string
           date: string
           description: string
+          featured?: boolean
           hero_image_url?: string | null
           id?: string
           legacy_category?: string | null
@@ -216,6 +218,7 @@ export type Database = {
           created_at?: string
           date?: string
           description?: string
+          featured?: boolean
           hero_image_url?: string | null
           id?: string
           legacy_category?: string | null

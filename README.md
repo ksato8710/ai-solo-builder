@@ -45,6 +45,9 @@ npm run db:lint
 
 # Generate database TypeScript types
 npm run db:types
+
+# Sync markdown content into Supabase
+npm run sync:content:db
 ```
 
 ## Learn More

@@ -2,7 +2,7 @@ import { getAllProducts, getProductBySlug, CATEGORIES } from '@/lib/posts';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
-  const products = getAllProducts();
+  const products = await getAllProducts();
   return products.map((p) => ({ slug: p.slug }));
 }
 

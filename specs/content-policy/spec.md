@@ -50,6 +50,9 @@ Required for all content:
 - `description: string`
 - `readTime: number`
 
+Migration compatibility note:
+- Existing legacy product markdown may omit `readTime`; validator allows this temporarily and applies default handling at runtime/sync.
+
 Conditional:
 - `digestEdition: morning | evening` (required for `contentType: digest`)
 - `tags: string[]` (recommended for `contentType: news`)
