@@ -84,7 +84,7 @@ class ContentCard extends StatelessWidget {
                           ),
                         ),
                       const SizedBox(height: 8),
-                      // Bottom row: date + readTime + category
+                      // Bottom row: date + readTime + tags
                       Row(
                         children: [
                           Text(
@@ -103,10 +103,20 @@ class ContentCard extends StatelessWidget {
                             ),
                           ),
                           const Spacer(),
-                          CategoryBadge(
-                            category: item.category,
-                            size: CategoryBadgeSize.small,
-                          ),
+                          if (item.tags.isNotEmpty)
+                            Flexible(
+                              child: Wrap(
+                                spacing: 4,
+                                runSpacing: 4,
+                                alignment: WrapAlignment.end,
+                                children: item.tags.map((tag) => _TagChip(tag: tag)).toList(),
+                              ),
+                            )
+                          else
+                            CategoryBadge(
+                              category: item.category,
+                              size: CategoryBadgeSize.small,
+                            ),
                         ],
                       ),
                     ],
@@ -115,6 +125,31 @@ class ContentCard extends StatelessWidget {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _TagChip extends StatelessWidget {
+  const _TagChip({required this.tag});
+
+  final String tag;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+      decoration: BoxDecoration(
+        color: AppColors.brandBlue.withValues(alpha: 0.15),
+        borderRadius: BorderRadius.circular(6),
+      ),
+      child: Text(
+        tag,
+        style: const TextStyle(
+          color: AppColors.brandBlue,
+          fontSize: 11,
+          fontWeight: FontWeight.w500,
         ),
       ),
     );

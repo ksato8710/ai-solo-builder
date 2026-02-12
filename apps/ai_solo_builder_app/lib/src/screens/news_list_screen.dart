@@ -7,16 +7,8 @@ import '../widgets/content_card.dart';
 import '../widgets/empty_state.dart';
 import '../widgets/error_state.dart';
 import '../widgets/loading_state.dart';
-import '../widgets/section_header.dart';
 import 'content_detail_screen.dart';
 
-/// News list screen with infinite scroll pagination.
-///
-/// Features:
-/// - Digest section at top (morning/evening summaries)
-/// - Latest news below with infinite scroll
-/// - Pull-to-refresh
-/// - Loading states for initial load and pagination
 class NewsListScreen extends StatefulWidget {
   const NewsListScreen({super.key, required this.apiClient});
 
@@ -28,8 +20,10 @@ class NewsListScreen extends StatefulWidget {
 
 class _NewsListScreenState extends State<NewsListScreen>
     with AutomaticKeepAliveClientMixin {
-  final List<ContentSummary> _digestItems = [];
-  final List<ContentSummary> _newsItems = [];
+  // All loaded items (unfiltered) for tag extraction
+  final List<ContentSummary> _allItems = [];
+  // Currently displayed items (filtered)
+  final List<ContentSummary> _displayedItems = [];
   bool _isLoading = true;
   bool _isLoadingMore = false;
   bool _hasMore = true;
@@ -38,14 +32,20 @@ class _NewsListScreenState extends State<NewsListScreen>
   static const int _pageSize = 20;
   final ScrollController _scrollController = ScrollController();
 
+  /// Available tags extracted from loaded items, with counts.
+  Map<String, int> _tagCounts = {};
+
+  /// Currently selected tag filter. null = "すべて".
+  String? _selectedTag;
+
   @override
   bool get wantKeepAlive => true;
 
   @override
   void initState() {
     super.initState();
-    _loadInitial();
     _scrollController.addListener(_onScroll);
+    _loadInitial();
   }
 
   @override
@@ -57,10 +57,33 @@ class _NewsListScreenState extends State<NewsListScreen>
 
   void _onScroll() {
     if (_scrollController.position.pixels >=
-        _scrollController.position.maxScrollExtent - 200) {
-      if (!_isLoadingMore && _hasMore) {
-        _loadMore();
+            _scrollController.position.maxScrollExtent - 200 &&
+        !_isLoadingMore &&
+        _hasMore) {
+      _loadMore();
+    }
+  }
+
+  void _rebuildTagCounts() {
+    final counts = <String, int>{};
+    for (final item in _allItems) {
+      for (final tag in item.tags) {
+        counts[tag] = (counts[tag] ?? 0) + 1;
       }
+    }
+    _tagCounts = counts;
+  }
+
+  void _applyFilter() {
+    if (_selectedTag == null) {
+      _displayedItems
+        ..clear()
+        ..addAll(_allItems);
+    } else {
+      _displayedItems
+        ..clear()
+        ..addAll(
+            _allItems.where((item) => item.tags.contains(_selectedTag!)));
     }
   }
 
@@ -71,24 +94,20 @@ class _NewsListScreenState extends State<NewsListScreen>
     });
 
     try {
-      // Fetch digests and news in parallel
-      final results = await Future.wait([
-        widget.apiClient.fetchContents(contentType: 'digest', limit: 10),
-        widget.apiClient.fetchContents(contentType: 'news', limit: _pageSize),
-      ]);
-
-      final digestResponse = results[0];
-      final newsResponse = results[1];
+      final response = await widget.apiClient.fetchContents(
+        contentType: 'news',
+        limit: _pageSize,
+        offset: 0,
+      );
 
       setState(() {
-        _digestItems.clear();
-        _digestItems.addAll(digestResponse.items);
-
-        _newsItems.clear();
-        _newsItems.addAll(newsResponse.items);
-
-        _offset = newsResponse.items.length;
-        _hasMore = newsResponse.hasMore;
+        _allItems
+          ..clear()
+          ..addAll(response.items);
+        _offset = response.items.length;
+        _hasMore = response.hasMore;
+        _rebuildTagCounts();
+        _applyFilter();
         _isLoading = false;
       });
     } catch (e) {
@@ -102,9 +121,7 @@ class _NewsListScreenState extends State<NewsListScreen>
   Future<void> _loadMore() async {
     if (_isLoadingMore || !_hasMore) return;
 
-    setState(() {
-      _isLoadingMore = true;
-    });
+    setState(() => _isLoadingMore = true);
 
     try {
       final response = await widget.apiClient.fetchContents(
@@ -114,15 +131,15 @@ class _NewsListScreenState extends State<NewsListScreen>
       );
 
       setState(() {
-        _newsItems.addAll(response.items);
+        _allItems.addAll(response.items);
         _offset += response.items.length;
         _hasMore = response.hasMore;
+        _rebuildTagCounts();
+        _applyFilter();
         _isLoadingMore = false;
       });
     } catch (e) {
-      setState(() {
-        _isLoadingMore = false;
-      });
+      setState(() => _isLoadingMore = false);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -137,7 +154,23 @@ class _NewsListScreenState extends State<NewsListScreen>
   Future<void> _refresh() async {
     _offset = 0;
     _hasMore = true;
+    _selectedTag = null;
     await _loadInitial();
+  }
+
+  void _selectTag(String? tag) {
+    setState(() {
+      _selectedTag = tag;
+      _applyFilter();
+    });
+    // Scroll back to top on filter change
+    if (_scrollController.hasClients) {
+      _scrollController.animateTo(
+        0,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOut,
+      );
+    }
   }
 
   void _openDetail(ContentSummary item) {
@@ -154,7 +187,7 @@ class _NewsListScreenState extends State<NewsListScreen>
 
   @override
   Widget build(BuildContext context) {
-    super.build(context); // Required for AutomaticKeepAliveClientMixin
+    super.build(context);
 
     return Scaffold(
       appBar: AppBar(title: const Text('ニュース')),
@@ -174,7 +207,7 @@ class _NewsListScreenState extends State<NewsListScreen>
       );
     }
 
-    if (_digestItems.isEmpty && _newsItems.isEmpty) {
+    if (_allItems.isEmpty) {
       return const EmptyState(
         message: 'ニュースがありません。',
         subtitle: 'プルダウンして更新してください。',
@@ -185,103 +218,168 @@ class _NewsListScreenState extends State<NewsListScreen>
       onRefresh: _refresh,
       color: AppColors.brandBlue,
       backgroundColor: AppColors.cardBackground,
-      child: ListView.builder(
+      child: CustomScrollView(
         controller: _scrollController,
         physics: const AlwaysScrollableScrollPhysics(),
-        padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
-        itemCount: _calculateItemCount(),
-        itemBuilder: (context, index) {
-          // Digest section
-          if (_digestItems.isNotEmpty) {
-            if (index == 0) {
-              return Column(
-                children: [
-                  const SectionHeader(title: 'まとめ'),
-                  const SizedBox(height: 8),
-                ],
-              );
-            }
-            if (index <= _digestItems.length) {
-              return ContentCard(
-                item: _digestItems[index - 1],
-                onTap: () => _openDetail(_digestItems[index - 1]),
-              );
-            }
+        slivers: [
+          // Filter chips
+          SliverToBoxAdapter(child: _buildChips()),
 
-            // News section header
-            if (index == _digestItems.length + 1) {
-              return Column(
-                children: [
-                  const SizedBox(height: 16),
-                  const SectionHeader(title: '最新ニュース'),
-                  const SizedBox(height: 8),
-                ],
-              );
-            }
-          }
-
-          // News items
-          final newsIndex = _digestItems.isEmpty
-              ? index
-              : index - _digestItems.length - 2;
-
-          if (newsIndex >= 0 && newsIndex < _newsItems.length) {
-            return ContentCard(
-              item: _newsItems[newsIndex],
-              onTap: () => _openDetail(_newsItems[newsIndex]),
-            );
-          }
-
-          // Loading more indicator
-          if (_isLoadingMore) {
-            return Container(
-              padding: const EdgeInsets.symmetric(vertical: 24),
-              alignment: Alignment.center,
-              child: const CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(AppColors.brandBlue),
+          // Article list
+          SliverPadding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  if (index < _displayedItems.length) {
+                    final item = _displayedItems[index];
+                    return ContentCard(
+                      item: item,
+                      onTap: () => _openDetail(item),
+                    );
+                  }
+                  // Footer
+                  if (_isLoadingMore) {
+                    return const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 24),
+                      child: Center(
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                              AppColors.brandBlue),
+                        ),
+                      ),
+                    );
+                  }
+                  if (!_hasMore) {
+                    return const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 24),
+                      child: Center(
+                        child: Text(
+                          'すべてのニュースを読み込みました',
+                          style: TextStyle(
+                            color: AppColors.textSecondary,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                  return const SizedBox.shrink();
+                },
+                childCount: _displayedItems.length +
+                    (_isLoadingMore || !_hasMore ? 1 : 0),
               ),
-            );
-          }
-
-          // End of list message
-          if (!_hasMore && _newsItems.isNotEmpty) {
-            return Container(
-              padding: const EdgeInsets.symmetric(vertical: 24),
-              alignment: Alignment.center,
-              child: const Text(
-                'すべてのニュースを読み込みました',
-                style: TextStyle(
-                  color: AppColors.textSecondary,
-                  fontSize: 14,
-                ),
-              ),
-            );
-          }
-
-          return const SizedBox.shrink();
-        },
+            ),
+          ),
+        ],
       ),
     );
   }
 
-  int _calculateItemCount() {
-    int count = 0;
+  Widget _buildChips() {
+    // Sort tags by count descending
+    final sortedTags = _tagCounts.entries.toList()
+      ..sort((a, b) => b.value.compareTo(a.value));
 
-    // Digest section
-    if (_digestItems.isNotEmpty) {
-      count += 1; // Section header
-      count += _digestItems.length; // Digest items
-      count += 1; // News section header
-    }
+    return SizedBox(
+      height: 52,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+        children: [
+          // "すべて" chip
+          _FilterChip(
+            label: 'すべて',
+            count: _allItems.length,
+            isSelected: _selectedTag == null,
+            onTap: () => _selectTag(null),
+          ),
+          ...sortedTags.map(
+            (entry) => _FilterChip(
+              label: entry.key,
+              count: entry.value,
+              isSelected: _selectedTag == entry.key,
+              onTap: () => _selectTag(entry.key),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
-    // News items
-    count += _newsItems.length;
+class _FilterChip extends StatelessWidget {
+  const _FilterChip({
+    required this.label,
+    required this.count,
+    required this.isSelected,
+    required this.onTap,
+  });
 
-    // Loading indicator or end message
-    if (_isLoadingMore || (!_hasMore && _newsItems.isNotEmpty)) {
-      count += 1;
-    }
+  final String label;
+  final int count;
+  final bool isSelected;
+  final VoidCallback onTap;
 
-    return count;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 8),
+      child: Material(
+        color: isSelected ? AppColors.brandBlue : AppColors.cardBackground,
+        borderRadius: BorderRadius.circular(20),
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(20),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: isSelected
+                    ? AppColors.brandBlue
+                    : AppColors.cardHover,
+                width: 1,
+              ),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  label,
+                  style: TextStyle(
+                    color: isSelected ? Colors.white : AppColors.textPrimary,
+                    fontSize: 13,
+                    fontWeight:
+                        isSelected ? FontWeight.w600 : FontWeight.normal,
+                  ),
+                ),
+                const SizedBox(width: 6),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: isSelected
+                        ? Colors.white.withValues(alpha: 0.2)
+                        : AppColors.cardHover,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
+                    '$count',
+                    style: TextStyle(
+                      color: isSelected
+                          ? Colors.white
+                          : AppColors.textSecondary,
+                      fontSize: 11,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -120,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen>
                   maxItems: 3,
                   onTap: _openDetail,
                   onSeeMore: widget.onNavigateToTab != null
-                      ? () => widget.onNavigateToTab!(1)
+                      ? () => widget.onNavigateToTab!(2)
                       : null,
                 ),
 
@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen>
                   maxItems: 3,
                   onTap: _openDetail,
                   onSeeMore: widget.onNavigateToTab != null
-                      ? () => widget.onNavigateToTab!(2)
+                      ? () => widget.onNavigateToTab!(3)
                       : null,
                 ),
 

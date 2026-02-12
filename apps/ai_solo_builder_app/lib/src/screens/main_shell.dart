@@ -2,16 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../services/content_api_client.dart';
 import '../theme/app_colors.dart';
+import 'digest_list_screen.dart';
 import 'home_screen.dart';
 import 'news_list_screen.dart';
 import 'products_list_screen.dart';
 
-/// The main shell of the app with bottom navigation.
-///
-/// Features 3 tabs:
-/// - Home: Feed view with all content sections
-/// - News: Infinite scroll news list with digests
-/// - Products: Grid view of products
 class MainShell extends StatefulWidget {
   const MainShell({super.key, required this.apiClient});
 
@@ -37,6 +32,7 @@ class _MainShellState extends State<MainShell> {
     super.initState();
     _screens = [
       HomeScreen(apiClient: widget.apiClient, onNavigateToTab: _switchTab),
+      DigestListScreen(apiClient: widget.apiClient),
       NewsListScreen(apiClient: widget.apiClient),
       ProductsListScreen(apiClient: widget.apiClient),
     ];
@@ -68,6 +64,11 @@ class _MainShellState extends State<MainShell> {
             icon: Icon(Icons.home_outlined),
             activeIcon: Icon(Icons.home),
             label: 'ホーム',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.auto_stories_outlined),
+            activeIcon: Icon(Icons.auto_stories),
+            label: 'ダイジェスト',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.article_outlined),

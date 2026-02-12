@@ -2,6 +2,10 @@
 
 *朝刊・夕刊Digestとは別の、深掘り記事（dev-knowledge / case-study）向けフロー*
 
+> **スキル参照:** `~/.clawdbot/skills/individual-article/SKILL.md`
+> 
+> **包括ドキュメント:** `docs/WORKFLOW-ARCHITECTURE.md`
+
 ---
 
 ## 概要
