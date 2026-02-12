@@ -119,6 +119,39 @@ class FeedResponse {
   }
 }
 
+class PaginatedResponse {
+  PaginatedResponse({
+    required this.items,
+    required this.total,
+    required this.limit,
+    required this.offset,
+  });
+
+  final List<ContentSummary> items;
+  final int total;
+  final int limit;
+  final int offset;
+
+  bool get hasMore => offset + items.length < total;
+
+  factory PaginatedResponse.fromJson(Map<String, dynamic> json) {
+    final items = json['items'];
+    final itemList = items is List
+        ? items
+            .whereType<Map<String, dynamic>>()
+            .map(ContentSummary.fromJson)
+            .toList(growable: false)
+        : <ContentSummary>[];
+
+    return PaginatedResponse(
+      items: itemList,
+      total: (json['total'] as num?)?.toInt() ?? itemList.length,
+      limit: (json['limit'] as num?)?.toInt() ?? 20,
+      offset: (json['offset'] as num?)?.toInt() ?? 0,
+    );
+  }
+}
+
 List<ContentSummary> _toSummaryList(dynamic value) {
   if (value is! List) {
     return const [];

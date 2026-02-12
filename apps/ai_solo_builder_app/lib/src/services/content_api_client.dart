@@ -42,7 +42,7 @@ class ContentApiClient {
     return FeedResponse.fromJson(json);
   }
 
-  Future<List<ContentSummary>> fetchContents({
+  Future<PaginatedResponse> fetchContents({
     String? contentType,
     String? digestEdition,
     String? category,
@@ -69,15 +69,7 @@ class ContentApiClient {
     final uri = _buildUri('/api/v1/contents', queryParameters: queryParameters);
 
     final json = await _getJson(uri);
-    final items = json['items'];
-    if (items is! List) {
-      return const [];
-    }
-
-    return items
-        .whereType<Map<String, dynamic>>()
-        .map(ContentSummary.fromJson)
-        .toList(growable: false);
+    return PaginatedResponse.fromJson(json);
   }
 
   Future<ContentDetail> fetchContentDetail(String slug) async {

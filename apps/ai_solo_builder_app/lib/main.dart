@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'src/screens/home_screen.dart';
+import 'src/screens/main_shell.dart';
 import 'src/services/content_api_client.dart';
+import 'src/theme/app_theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,15 +21,8 @@ class AiSoloBuilderApp extends StatelessWidget {
     return MaterialApp(
       title: 'AI Solo Builder',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF2563EB)),
-        appBarTheme: const AppBarTheme(
-          centerTitle: false,
-          surfaceTintColor: Colors.transparent,
-        ),
-        scaffoldBackgroundColor: const Color(0xFFF7FAFC),
-      ),
-      home: HomeScreen(apiClient: apiClient),
+      theme: AppTheme.darkTheme,
+      home: MainShell(apiClient: apiClient),
     );
   }
 }
