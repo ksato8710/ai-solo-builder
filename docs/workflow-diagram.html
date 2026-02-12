@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Solo Builder ワークフロー全体図</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #e8e8e8;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(90deg, #00d4ff, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    
+    .subtitle {
+      color: #888;
+      font-size: 0.9rem;
+    }
+    
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+    }
+    
+    .legend-color {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+    }
+    
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    
+    @media (max-width: 1000px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .workflow-section {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .section-icon {
+      font-size: 2rem;
+    }
+    
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    
+    .section-meta {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 4px;
+    }
+    
+    /* Digest Workflow - Blue theme */
+    .digest-section {
+      border-color: rgba(0, 212, 255, 0.3);
+    }
+    
+    .digest-section .section-title {
+      color: #00d4ff;
+    }
+    
+    /* Individual Article - Purple theme */
+    .individual-section {
+      border-color: rgba(124, 58, 237, 0.3);
+    }
+    
+    .individual-section .section-title {
+      color: #a78bfa;
+    }
+    
+    .phase-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .phase-card {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      padding: 16px;
+      border-left: 4px solid;
+      position: relative;
+    }
+    
+    .phase-card::after {
+      content: '↓';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #555;
+      font-size: 1.2rem;
+    }
+    
+    .phase-card:last-child::after {
+      content: none;
+    }
+    
+    .digest-section .phase-card {
+      border-left-color: #00d4ff;
+    }
+    
+    .individual-section .phase-card {
+      border-left-color: #a78bfa;
+    }
+    
+    .phase-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    
+    .phase-name {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    
+    .phase-time {
+      font-size: 0.75rem;
+      color: #888;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    
+    .phase-skill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-top: 8px;
+    }
+    
+    .phase-skill code {
+      color: #fbbf24;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.75rem;
+    }
+    
+    .phase-output {
+      font-size: 0.8rem;
+      color: #6ee7b7;
+      margin-top: 6px;
+    }
+    
+    /* Cron Section */
+    .cron-section {
+      grid-column: 1 / -1;
+      background: rgba(251, 191, 36, 0.05);
+      border-color: rgba(251, 191, 36, 0.3);
+    }
+    
+    .cron-section .section-title {
+      color: #fbbf24;
+    }
+    
+    .cron-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    
+    .cron-card {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .cron-name {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    
+    .cron-schedule {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #fbbf24;
+      margin-bottom: 8px;
+    }
+    
+    .cron-workflow {
+      font-size: 0.8rem;
+      color: #888;
+    }
+    
+    .cron-workflow .workflow-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      margin-left: 4px;
+    }
+    
+    .tag-digest {
+      background: rgba(0, 212, 255, 0.2);
+      color: #00d4ff;
+    }
+    
+    .tag-individual {
+      background: rgba(124, 58, 237, 0.2);
+      color: #a78bfa;
+    }
+    
+    /* Skills Section */
+    .skills-section {
+      grid-column: 1 / -1;
+      background: rgba(16, 185, 129, 0.05);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+    
+    .skills-section .section-title {
+      color: #10b981;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    
+    .skill-card {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .skill-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #10b981;
+      margin-bottom: 4px;
+    }
+    
+    .skill-desc {
+      font-size: 0.75rem;
+      color: #888;
+    }
+    
+    .skill-usage {
+      display: flex;
+      gap: 4px;
+      margin-top: 8px;
+    }
+    
+    .usage-badge {
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    
+    /* Article Types */
+    .article-types {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .article-types h4 {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 12px;
+    }
+    
+    .type-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    
+    @media (max-width: 600px) {
+      .type-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .type-card {
+      background: rgba(124, 58, 237, 0.1);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+    
+    .type-icon {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+    
+    .type-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #a78bfa;
+    }
+    
+    .type-desc {
+      font-size: 0.7rem;
+      color: #888;
+      margin-top: 4px;
+    }
+    
+    /* Quality Standards */
+    .quality-section {
+      grid-column: 1 / -1;
+      background: rgba(239, 68, 68, 0.05);
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+    
+    .quality-section .section-title {
+      color: #ef4444;
+    }
+    
+    .quality-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    @media (max-width: 700px) {
+      .quality-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .quality-column h4 {
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .quality-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      font-size: 0.85rem;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    }
+    
+    .quality-label {
+      color: #888;
+    }
+    
+    .quality-value {
+      color: #e8e8e8;
+      font-weight: 500;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #555;
+      font-size: 0.8rem;
+    }
+    
+    footer a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    
+    /* Connector Lines */
+    .connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 1.5rem;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🗞️ AI Solo Builder ワークフロー全体図</h1>
+      <p class="subtitle">2種類のワークフロー × スキル × cron の関係性</p>
+    </header>
+    
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color" style="background: #00d4ff;"></div>
+        <span>Digestワークフロー（朝刊・夕刊）</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: #a78bfa;"></div>
+        <span>個別記事ワークフロー</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: #fbbf24;"></div>
+        <span>cronジョブ</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: #10b981;"></div>
+        <span>スキル</span>
+      </div>
+    </div>
+    
+    <div class="main-grid">
+      <!-- Digest Workflow -->
+      <section class="workflow-section digest-section">
+        <div class="section-header">
+          <span class="section-icon">📰</span>
+          <div>
+            <div class="section-title">Digestワークフロー</div>
+            <div class="section-meta">朝刊 08:00 / 夕刊 18:00 公開</div>
+          </div>
+        </div>
+        
+        <div class="phase-flow">
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-name">Phase 1: 調査</span>
+              <span class="phase-time">10分</span>
+            </div>
+            <div class="phase-skill">🛠️ <code>news-research</code></div>
+            <div class="phase-output">→ news_candidates (8-15件)</div>
+          </div>
+          
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-name">Phase 2: 評価・選定</span>
+              <span class="phase-time">10分</span>
+            </div>
+            <div class="phase-skill">🛠️ <code>news-evaluation</code></div>
+            <div class="phase-output">→ Top10 + Top3 (NVAスコア付き)</div>
+          </div>
+          
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-name">Phase 3: 記事作成</span>
+              <span class="phase-time">10分</span>
+            </div>
+            <div class="phase-skill">🛠️ <code>digest-writer</code></div>
+            <div class="phase-output">→ Digest + Top3個別記事 (4本)</div>
+          </div>
+          
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-name">Phase 4: 公開</span>
+              <span class="phase-time">5分</span>
+            </div>
+            <div class="phase-skill">🛠️ <code>publish-gate</code></div>
+            <div class="phase-output">→ 本番公開 (Vercel)</div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Individual Article Workflow -->
+      <section class="workflow-section individual-section">
+        <div class="section-header">
+          <span class="section-icon">📝</span>
+          <div>
+            <div class="section-title">個別記事ワークフロー</div>
+            <div class="section-meta">平日 12:30 編集枠 / 週2-3本</div>
+          </div>
+        </div>
+        
+        <div class="phase-flow">
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-name">Phase 1: テーマ選定</span>
+              <span class="phase-time">30分</span>
+            </div>
+            <div class="phase-skill">🛠️ <code>individual-article</code></div>
+            <div class="phase-output">→ テーマ + 記事型決定</div>
+          </div>
+          
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-name">Phase 2: リサーチ</span>
+              <span class="phase-time">1-2時間</span>
+            </div>
+            <div class="phase-output">→ 一次ソース (最低3つ)</div>
+          </div>
+          
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-name">Phase 3: 評価</span>
+              <span class="phase-time">1時間</span>
+            </div>
+            <div class="phase-output">→ リソース評価・推奨決定</div>
+          </div>
+          
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-name">Phase 4: 設計</span>
+              <span class="phase-time">30分</span>
+            </div>
+            <div class="phase-output">→ 独自価値・構成案</div>
+          </div>
+          
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-name">Phase 5: 執筆・公開</span>
+              <span class="phase-time">2-4時間</span>
+            </div>
+            <div class="phase-skill">🛠️ <code>publish-gate</code></div>
+            <div class="phase-output">→ 8,000字以上の深掘り記事</div>
+          </div>
+        </div>
+        
+        <div class="article-types">
+          <h4>3つの記事型</h4>
+          <div class="type-grid">
+            <div class="type-card">
+              <div class="type-icon">📚</div>
+              <div class="type-name">キュレーション型</div>
+              <div class="type-desc">リソース評価・学習パス案内</div>
+            </div>
+            <div class="type-card">
+              <div class="type-icon">📊</div>
+              <div class="type-name">事例分析型</div>
+              <div class="type-desc">成功/失敗事例の深掘り</div>
+            </div>
+            <div class="type-card">
+              <div class="type-icon">🔧</div>
+              <div class="type-name">実践ガイド型</div>
+              <div class="type-desc">具体的な手順・コード例</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Cron Section -->
+      <section class="workflow-section cron-section">
+        <div class="section-header">
+          <span class="section-icon">⏰</span>
+          <div>
+            <div class="section-title">cronジョブ（tifa担当）</div>
+            <div class="section-meta">自動実行スケジュール</div>
+          </div>
+        </div>
+        
+        <div class="cron-grid">
+          <div class="cron-card">
+            <div class="cron-name">🌅 asb-morning-digest</div>
+            <div class="cron-schedule">
+              <span>毎日 07:30 JST</span>
+            </div>
+            <div class="cron-workflow">
+              ワークフロー: <span class="workflow-tag tag-digest">Digest</span>
+            </div>
+          </div>
+          
+          <div class="cron-card">
+            <div class="cron-name">🧠 asb-midday-editorial</div>
+            <div class="cron-schedule">
+              <span>平日 12:30 JST</span>
+            </div>
+            <div class="cron-workflow">
+              ワークフロー: <span class="workflow-tag tag-individual">個別記事</span>
+            </div>
+          </div>
+          
+          <div class="cron-card">
+            <div class="cron-name">🌆 asb-evening-digest</div>
+            <div class="cron-schedule">
+              <span>毎日 17:30 JST</span>
+            </div>
+            <div class="cron-workflow">
+              ワークフロー: <span class="workflow-tag tag-digest">Digest</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Skills Section -->
+      <section class="workflow-section skills-section">
+        <div class="section-header">
+          <span class="section-icon">🛠️</span>
+          <div>
+            <div class="section-title">スキル一覧</div>
+            <div class="section-meta">~/.clawdbot/skills/</div>
+          </div>
+        </div>
+        
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-name">news-research</div>
+            <div class="skill-desc">ニュース収集・一次ソース確認</div>
+            <div class="skill-usage">
+              <span class="usage-badge tag-digest">Digest</span>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="skill-name">news-evaluation</div>
+            <div class="skill-desc">NVAスコアリング・Top10選定</div>
+            <div class="skill-usage">
+              <span class="usage-badge tag-digest">Digest</span>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="skill-name">digest-writer</div>
+            <div class="skill-desc">Digest + Top3記事作成</div>
+            <div class="skill-usage">
+              <span class="usage-badge tag-digest">Digest</span>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="skill-name">individual-article</div>
+            <div class="skill-desc">5 Phase深掘り記事作成</div>
+            <div class="skill-usage">
+              <span class="usage-badge tag-individual">個別記事</span>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="skill-name">publish-gate</div>
+            <div class="skill-desc">品質チェック・デプロイ</div>
+            <div class="skill-usage">
+              <span class="usage-badge tag-digest">Digest</span>
+              <span class="usage-badge tag-individual">個別記事</span>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="skill-name">article-quality-check</div>
+            <div class="skill-desc">投稿前の品質確認</div>
+            <div class="skill-usage">
+              <span class="usage-badge tag-digest">Digest</span>
+              <span class="usage-badge tag-individual">個別記事</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Quality Standards -->
+      <section class="workflow-section quality-section">
+        <div class="section-header">
+          <span class="section-icon">✅</span>
+          <div>
+            <div class="section-title">品質基準</div>
+            <div class="section-meta">docs/CHECKLIST.md</div>
+          </div>
+        </div>
+        
+        <div class="quality-grid">
+          <div class="quality-column">
+            <h4 style="color: #00d4ff;">📰 Digest記事</h4>
+            <div class="quality-item">
+              <span class="quality-label">文字数</span>
+              <span class="quality-value">3,000〜5,000字</span>
+            </div>
+            <div class="quality-item">
+              <span class="quality-label">読了時間</span>
+              <span class="quality-value">5〜8分</span>
+            </div>
+            <div class="quality-item">
+              <span class="quality-label">構成</span>
+              <span class="quality-value">Top10 + Top3ピックアップ</span>
+            </div>
+            <div class="quality-item">
+              <span class="quality-label">一次ソース</span>
+              <span class="quality-value">全ニュースに必須</span>
+            </div>
+          </div>
+          
+          <div class="quality-column">
+            <h4 style="color: #a78bfa;">📝 個別記事</h4>
+            <div class="quality-item">
+              <span class="quality-label">文字数</span>
+              <span class="quality-value">8,000〜20,000字</span>
+            </div>
+            <div class="quality-item">
+              <span class="quality-label">読了時間</span>
+              <span class="quality-value">10〜20分</span>
+            </div>
+            <div class="quality-item">
+              <span class="quality-label">独自価値</span>
+              <span class="quality-value">「ここでしか読めない」要素</span>
+            </div>
+            <div class="quality-item">
+              <span class="quality-label">実証データ</span>
+              <span class="quality-value">数字・事例・比較表</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <footer>
+      <p>AI Solo Builder ワークフロー図解 | 更新: 2026-02-12</p>
+      <p>詳細: <a href="./WORKFLOW-ARCHITECTURE.md">docs/WORKFLOW-ARCHITECTURE.md</a></p>
+    </footer>
+  </div>
+</body>
+</html>
