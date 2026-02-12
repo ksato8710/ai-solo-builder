@@ -44,6 +44,23 @@ export interface TagMeta {
 export const TAG_METADATA: Record<string, TagMeta> = {
   'dev-knowledge': { label: 'ナレッジ', color: '#10b981' },
   'case-study': { label: '事例', color: '#f59e0b' },
-  'product-update': { label: 'プロダクトアップデート', color: '#8B5CF6' },
+  'product-update': { label: 'ツール紹介', color: '#8B5CF6' },
+  'ツール紹介': { label: 'ツール紹介', color: '#8B5CF6' },
   'other': { label: 'その他', color: '#64748b' },
 };
+
+const DEFAULT_NEWS_BADGE: TagMeta = { label: 'その他', color: '#64748b' };
+
+export function getPostBadge(post: Post): { label: string; color: string } {
+  const cat = CATEGORIES[post.category];
+  // Digests and products use category badge as-is
+  if (post.category !== 'news') return cat || DEFAULT_NEWS_BADGE;
+  // News articles: derive badge from first recognized tag
+  if (post.tags) {
+    for (const tag of post.tags) {
+      const meta = TAG_METADATA[tag];
+      if (meta) return meta;
+    }
+  }
+  return DEFAULT_NEWS_BADGE;
+}

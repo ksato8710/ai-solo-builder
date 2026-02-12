@@ -43,14 +43,12 @@ export default function RootLayout({
                 <a href="/#digest-summary" className="text-slate-400 hover:text-blue-400 transition-colors">🗞️ 朝夕のまとめ</a>
                 <a href="/news" className="text-slate-400 hover:text-indigo-400 transition-colors">📰 ニュース</a>
                 <a href="/category/products" className="text-slate-400 hover:text-violet-400 transition-colors">🏷️ プロダクト</a>
-                <a href="/news-value" className="text-slate-400 hover:text-rose-400 transition-colors">🎯 評価</a>
               </nav>
               {/* Mobile nav */}
               <div className="sm:hidden flex items-center gap-3 text-xs">
                 <a href="/#digest-summary" className="text-slate-400">🗞️</a>
                 <a href="/news" className="text-slate-400">📰</a>
                 <a href="/category/products" className="text-slate-400">🏷️</a>
-                <a href="/news-value" className="text-slate-400">🎯</a>
               </div>
               <div className="hidden sm:block text-xs text-slate-500">
                 ひとりで作る。AIと一緒に。
