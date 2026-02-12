@@ -5,7 +5,7 @@ date: "2026-02-12"
 contentType: "news"
 description: "Anthropic Claude Opus 4.6が専用ツールなしで500以上の未知高深刻度脆弱性を発見。人間の研究者レベルの推論力で、ソロビルダーの防御力を大企業レベルまで引き上げ。"
 readTime: "7"
-image: "https://images.unsplash.com/photo-1563986768609-322da13575f5?w=800&h=420&fit=crop"
+image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&h=420&fit=crop"
 featured: "true"
 ---
 

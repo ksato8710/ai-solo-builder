@@ -9,7 +9,7 @@ tags:
   - "dev-knowledge"
 relatedProducts:
   - "claude-code"
-image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=420&fit=crop"
+image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=420&fit=crop"
 featured: "true"
 ---
 

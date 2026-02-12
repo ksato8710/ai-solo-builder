@@ -1,2 +1,4 @@
 #!/bin/sh
+# Full validation including URL verification before push
+npm run check:images:full
 npm run publish:gate

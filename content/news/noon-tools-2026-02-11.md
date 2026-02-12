@@ -7,7 +7,7 @@ description: "情報を忘れないAI助手。メール・会議から知識グ�
 readTime: "6"
 tags:
   - "featured-tools"
-image: "https://images.unsplash.com/photo-1558618047-3c8c90b4d3a4?w=800&h=420&fit=crop"
+image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=420&fit=crop"
 featured: "false"
 ---
 

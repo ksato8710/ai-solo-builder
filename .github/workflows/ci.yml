@@ -26,8 +26,8 @@ jobs:
       - name: Validate content
         run: npm run validate:content
 
-      - name: Check images
-        run: npm run check:images
+      - name: Check images (with URL verification)
+        run: npm run check:images:full
 
       - name: Build
         run: npm run build

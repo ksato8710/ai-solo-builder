@@ -3,6 +3,7 @@
  * Check images in content files:
  * 1. All news/digest have `image` field set
  * 2. No duplicate image URLs across articles
+ * 3. (optional) Verify image URLs return HTTP 200 (--verify-urls flag)
  */
 
 import fs from 'fs';
@@ -13,11 +14,24 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const contentDir = path.join(__dirname, '../content/news');
 
-function checkImages() {
+// Parse command line args
+const verifyUrls = process.argv.includes('--verify-urls');
+
+async function checkImageUrl(url) {
+  try {
+    const response = await fetch(url, { method: 'HEAD' });
+    return response.ok;
+  } catch (e) {
+    return false;
+  }
+}
+
+async function checkImages() {
   const files = fs.readdirSync(contentDir).filter(f => f.endsWith('.md'));
   const errors = [];
   const warnings = [];
   const imageUrls = new Map(); // url -> [files]
+  const urlsToVerify = []; // { url, file }
 
   for (const file of files) {
     const filePath = path.join(contentDir, file);
@@ -46,6 +60,11 @@ function checkImages() {
         imageUrls.set(image, []);
       }
       imageUrls.get(image).push(file);
+      
+      // Queue for URL verification
+      if (verifyUrls) {
+        urlsToVerify.push({ url: image, file });
+      }
     }
   }
 
@@ -53,6 +72,34 @@ function checkImages() {
   for (const [url, usedIn] of imageUrls) {
     if (usedIn.length > 1) {
       errors.push(`❌ 画像重複: ${url}\n   使用ファイル: ${usedIn.join(', ')}`);
+    }
+  }
+
+  // Check 3: Verify image URLs are accessible (if --verify-urls flag is set)
+  if (verifyUrls && urlsToVerify.length > 0) {
+    console.log(`\n🔍 Verifying ${urlsToVerify.length} image URLs...`);
+    
+    // Check unique URLs only
+    const uniqueUrls = [...new Set(urlsToVerify.map(u => u.url))];
+    const urlStatus = new Map();
+    
+    await Promise.all(uniqueUrls.map(async (url) => {
+      const isValid = await checkImageUrl(url);
+      urlStatus.set(url, isValid);
+    }));
+    
+    // Report failures
+    for (const { url, file } of urlsToVerify) {
+      if (!urlStatus.get(url)) {
+        errors.push(`❌ ${file}: 画像URLが無効です（404 or unreachable）\n   URL: ${url}`);
+      }
+    }
+    
+    const invalidCount = [...urlStatus.values()].filter(v => !v).length;
+    if (invalidCount > 0) {
+      console.log(`⚠ ${invalidCount}/${uniqueUrls.length} URLs are invalid`);
+    } else {
+      console.log(`✅ All ${uniqueUrls.length} URLs are valid`);
     }
   }
 
@@ -69,7 +116,7 @@ function checkImages() {
     process.exit(1);
   }
 
-  console.log(`✅ check:images passed (${files.length} files, ${imageUrls.size} unique images)`);
+  console.log(`\n✅ check:images passed (${files.length} files, ${imageUrls.size} unique images)`);
 }
 
 checkImages();
