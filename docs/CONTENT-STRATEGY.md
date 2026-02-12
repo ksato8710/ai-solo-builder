@@ -1,10 +1,11 @@
 # AI Solo Builder — コンテンツ戦略
 
 *作成日: 2026-02-03*
-*更新日: 2026-02-11（DB移行前提のデータモデル更新）*
+*更新日: 2026-02-12（運営再計画への参照追加）*
 
 > 最新の正本（canonical）は `specs/content-policy/spec.md` と `specs/content-model-db/spec.md` を参照。
 > 本ドキュメント内の旧 `category` ベース記述は、移行完了までの運用互換として扱う。
+> 運営体制・優先タスクは `docs/OPERATIONS-PLAN-2026-02-12.md` を参照。
 
 ---
 

@@ -1,6 +1,9 @@
 # Claude Code ルーティン運用手順（朝刊/夕刊 + Top3）
 
-このドキュメントは、Claude Code（Sonnet）に日次で記事を作らせるための運用手順です。
+このドキュメントは、ClaudeCode（openClaw）に日次で記事を作らせるための運用手順です。
+
+運営体制・優先度・ロードマップは次を正本とする:
+- `docs/OPERATIONS-PLAN-2026-02-12.md`
 
 ## 生成するもの（毎日）
 - 朝刊（Digest）: `category: morning-summary`
@@ -10,6 +13,11 @@
 補足:
 - プロダクト辞書（`content/products/*.md`）は、記事内に登場したプロダクトの“前提情報”として随時作成/更新する
 - ナレッジ（`dev-knowledge`）/ 事例（`case-study`）は不定期だが、運用ループは同じ
+
+## 役割定義（運用）
+- プロダクトオーナー兼編集長: ClaudeCode（openClaw）
+- 最終承認者: 人間オーナー
+- 実装・自動化: Codex 等の実装エージェント
 
 ## 重要ポリシー（必読）
 - taxonomy・リンク運用は `specs/content-policy/spec.md` を正とする
@@ -78,4 +86,3 @@ git push
 - ナレッジ（例）: `content/news/2026-02-10-spec-first-context-pack.md`
 - 事例（例）: `content/news/2026-02-10-sleek-design-10k-mrr-case-study.md`
 - プロダクト（例）: `content/products/continue-dev.md`
-
