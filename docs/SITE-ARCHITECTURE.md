@@ -21,6 +21,7 @@
 | デプロイ | git push → Vercel自動デプロイ |
 | リポジトリ | （このリポジトリ） |
 | ドメイン | ai.essential-navigator.com |
+| 外部配信API | Next.js Route Handler (`/api/v1/*`) |
 
 ---
 
@@ -75,6 +76,14 @@ ai-navigator/
 | `/products/[slug]` | プロダクト詳細 | プロダクトの恒久ページ（前提情報） |
 | `/category/[category]` | カテゴリ一覧 | カテゴリ別記事リスト |
 | `/news-value` | NVAランキング | 朝/夕Digestごとに更新されるTop 10ランキング |
+
+## API構成（Web / Flutter共通）
+
+| パス | 用途 |
+|------|------|
+| `/api/v1/feed` | モバイル向けホーム集約レスポンス |
+| `/api/v1/contents` | フィルタ付き一覧取得 |
+| `/api/v1/contents/[slug]` | 詳細取得 |
 
 ---
 

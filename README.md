@@ -50,6 +50,26 @@ npm run db:types
 npm run sync:content:db
 ```
 
+## Content Delivery API
+
+Web と Flutter 共通の配信用 API を `src/app/api/v1` で提供しています。
+
+- `GET /api/v1/feed`
+- `GET /api/v1/contents`
+- `GET /api/v1/contents/[slug]`
+
+詳細: `docs/CONTENT-API-ARCHITECTURE.md`
+
+## Flutter App
+
+シンプルなモバイルアプリは `apps/ai_solo_builder_app` にあります。
+
+```bash
+cd apps/ai_solo_builder_app
+flutter pub get
+flutter run --dart-define=CONTENT_API_BASE_URL=https://ai.essential-navigator.com
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
