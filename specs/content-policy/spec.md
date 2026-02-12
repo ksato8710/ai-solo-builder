@@ -36,6 +36,7 @@ Additional tags can be added later, but must remain additive and backward compat
   - News + Digest: `content/news/*.md`
   - Product dictionary: `content/products/*.md`
 - Serving/query layer (web + mobile): PostgreSQL (see DB spec)
+- Publish gate: `validate:content` + `sync:content:db` + `build` の通過を公開条件とする
 
 During migration, Markdown remains an authoring source while DB is introduced as query source.
 

@@ -128,9 +128,7 @@
 4. 関連プロダクトページの存在確認・不足分作成
 5. Digest 本文作成（ランキング + Top3 深掘り）
 6. 品質ゲート実行
-   - `npm run validate:content`
-   - `npm run sync:content:db`
-   - `npm run build`
+   - `npm run publish:gate`（`validate:content` + `sync:content:db` + `build`）
 7. 公開・確認
    - `/category/morning-summary` or `/category/evening-summary`
    - `/news-value`

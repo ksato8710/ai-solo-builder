@@ -17,10 +17,25 @@ AI Solo Builder の技術仕様・デプロイ手順・運用ルール。
 
 ### 記事ファイル
 - パス:
-  - `content/news/*.md`（Digest/ニュース/ナレッジ/事例）
+  - `content/news/*.md`（Digest/ニュース）
   - `content/products/*.md`（プロダクト辞書）
 - フォーマット: Markdown + YAML frontmatter
 - 読み取り: `src/lib/posts.ts`（gray-matter + remark）
+
+### 正式データモデル（運用）
+- ルート分類: `news | product | digest`
+- Digest軸: `morning | evening`
+- ニュースタグ: `dev-knowledge` / `case-study` / `product-update`
+
+### DB登録（必須）
+- 記事公開前に `npm run publish:gate` を必ず実行
+- `publish:gate` は `validate:content -> sync:content:db -> build` を強制実行
+- `sync:content:db` が失敗したら `git push` しない
+
+必要な環境変数（`.env.local` または `.env`）:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
+- `SUPABASE_SECRET_KEY`
 
 ### NVA評価データ
 - `/news-value`（ランキング）:
@@ -41,26 +56,16 @@ git add content/news/YYYY-MM-DD-slug.md
 git add content/products/your-product.md  # 必要なら（プロダクト辞書）
 git add research/YYYY-MM-DD-slug/  # NVA対象の場合
 
-# 2. コミット & プッシュ
+# 2. 公開前ゲート（失敗時は公開中止）
+npm run publish:gate
+
+# 3. コミット & プッシュ
 git commit -m "記事タイトル"
 git push
 
-# 3. デプロイ確認（1-2分待つ）
+# 4. デプロイ確認（1-2分待つ）
 # https://ai.essential-navigator.com/news/[slug] または /products/[slug] にアクセス
 ```
-
-## カテゴリ設定
-
-| slug | 名称 | カラー |
-|------|------|--------|
-| morning-summary | 🗞️ 朝のまとめ（Digest） | #3B82F6 |
-| evening-summary | 🗞️ 夕のまとめ（Digest） | #F97316 |
-| news | 📰 ニュース（個別） | #6366F1 |
-| dev-knowledge | 🧠 AI開発ナレッジ | #10b981 |
-| case-study | 📊 ソロビルダー事例紹介 | #f59e0b |
-| products | 🏷️ プロダクト（辞書） | #8B5CF6 |
-
-補足: 現行コンテンツには `product-news` / `dev` / `deep-dive` / `featured-tools` / `tools` などが混在する可能性がある。方針としては上記に統合する（詳細は specs/content-policy/spec.md）。
 
 ## 注意事項
 - URL共有前に必ずブラウザで表示確認（TOOLS.md参照）

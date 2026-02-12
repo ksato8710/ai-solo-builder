@@ -14,11 +14,13 @@ news-scout が選定したネタから、ブランドガイドラインに沿っ
 2. カテゴリに応じた記事テンプレートを選択
 3. 定量データを含む記事本文をMarkdownで作成
 4. NVA評価セクションを記事末尾に追加
-5. frontmatter を正しく設定
+5. frontmatter を正しく設定（canonical項目優先）
+6. 記事内プロダクトは `/products/[slug]` にリンクし、`relatedProducts` にも反映
 
 ## 入力
 - 記事テーマ + ソースURL + NVA評価データ
-- カテゴリ指定（morning-summary / evening-summary / news / dev-knowledge / case-study）
+- コンテンツ種別指定（digest / news / product）
+- ニュースタグ指定（dev-knowledge / case-study / product-update など）
 
 ## 出力
 - content/news/YYYY-MM-DD-slug.md（完成記事）
@@ -30,3 +32,4 @@ news-scout が選定したネタから、ブランドガイドラインに沿っ
 - サービス開始時期の明記
 - 出典リンク必須
 - 海外記事は要点紹介+独自分析形式
+- `contentType` / `digestEdition` / `tags` / `relatedProducts` を可能な限り埋める

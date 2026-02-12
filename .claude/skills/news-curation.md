@@ -36,6 +36,7 @@
 ### Step 5: プロダクト記事チェック
 - プロダクトに関するニュースの場合、/products/[slug] の有無を確認
 - 無ければ先にプロダクト記事を作成し、Digest/ニュースからリンクする
+- 関連プロダクトのslug候補を `relatedProducts` 用に明示して引き渡す
 
 ## ソースデータの保存
 - research/YYYY-MM-DD-slug/ に sources.md を作成

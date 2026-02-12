@@ -23,6 +23,17 @@
 - taxonomy・リンク運用は `specs/content-policy/spec.md` を正とする
 - Digestは「ランキングTop 10（最大）」+「Top 3深掘り」+「Top 3は個別ニュース記事」までが1セット
 - `/news-value` は最新のDigest記事内のランキング表から自動生成される（特別な更新作業は不要）
+- 記事公開は **DB登録完了が前提**。`sync:content:db` に失敗した変更は公開しない
+
+## 環境前提（最初に1回）
+
+`.env.local`（または`.env`）に以下を設定する。`sync:content:db` はこのファイルを自動読込する。
+
+```dotenv
+NEXT_PUBLIC_SUPABASE_URL=https://<project-ref>.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=<publishable-key>
+SUPABASE_SECRET_KEY=<secret-key>
+```
 
 ## ファイル命名（推奨）
 - 朝刊: `content/news/YYYY-MM-DD-morning-news-YYYY-MM-DD.md`
@@ -64,12 +75,18 @@
 
 ### 6) ローカル検証 → 公開
 ```bash
-npm run validate:content
-npm run build
+npm run publish:gate
 git add -A
 git commit -m "publish: YYYY-MM-DD morning/evening"
 git push
 ```
+
+`npm run publish:gate` は以下を順番に実行する:
+- `npm run validate:content`
+- `npm run sync:content:db`
+- `npm run build`
+
+どれか1つでも失敗した場合は公開を中止する（`git push` しない）。
 
 公開後の確認:
 - `/news/[digest-slug]`

@@ -26,12 +26,17 @@
 - [ ] 出典リンク
 - [ ] 「なぜ今」の文脈
 - [ ] frontmatter 正確性
+- [ ] canonical frontmatter（contentType / digestEdition / tags / relatedProducts）を必要分設定
 - [ ] slug のURL安全性（英数字+ハイフンのみ）
 
 ### 必須（Digest Top 3 / ニュース個別）
 - [ ] NVA評価セクション（スコア表+所見）
 - [ ] NVA中間資料の保存（research/）
 - [ ] 関連プロダクトがある場合は /products/[slug] にリンク（無ければ作成）
+
+### 必須（公開前）
+- [ ] `npm run publish:gate` 実行済み
+- [ ] `sync:content:db` 成功ログを確認（DB登録完了）
 
 ### 必須（海外記事紹介）
 - [ ] 全文翻訳ではなく要点紹介+独自分析

@@ -46,6 +46,11 @@ For Next.js / mobile API access:
 - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
 - `SUPABASE_SECRET_KEY` (server-side only)
 
+Recommended local file:
+- `.env.local` (gitignored)
+
+`npm run sync:content:db` loads `.env.local` and `.env` automatically.
+
 Backward compatibility (optional aliases):
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
@@ -72,6 +77,9 @@ npm run db:types
 # Sync markdown content to DB (idempotent upsert)
 npm run sync:content:db
 
+# Required pre-publish gate (validate -> sync -> build)
+npm run publish:gate
+
 # Dry-run sync summary (no DB writes)
 npm run sync:content:db:dry
 ```
@@ -94,6 +102,7 @@ Current recommended operation (Phase 1):
 - Authoring SoT: Markdown (`content/news`, `content/products`)
 - Serving SoT: Supabase DB mirror
 - Ingestion job: `scripts/sync-content-to-supabase.mjs` parses markdown frontmatter/body and upserts DB tables
+- Release gate: `npm run publish:gate` must pass before `git push` (DB registration is mandatory)
 
 Legacy compatibility mapping is documented in:
 - `specs/content-policy/spec.md`

@@ -10,14 +10,22 @@
 title: "記事タイトル"
 slug: "url-friendly-slug"
 date: "YYYY-MM-DD"
-category: "morning-summary" # morning-summary | evening-summary | news | dev-knowledge | case-study | products
-relatedProduct: "product-slug" # 任意: 関連プロダクト（/products/[slug]）
+category: "morning-summary" # 互換運用: morning-summary | evening-summary | news | dev-knowledge | case-study | products
+contentType: "digest" # news | product | digest
+digestEdition: "morning" # digest時のみ: morning | evening
+tags: ["dev-knowledge"] # news時に使用（例: dev-knowledge / case-study / product-update）
+relatedProducts: ["product-slug"] # 任意: 関連プロダクト（/products/[slug]）
+relatedProduct: "product-slug" # 互換運用（単数）
 description: "記事の要約（120文字以内）"
 readTime: 5
 featured: false
 image: "/images/xxx.jpg"
 ---
 ```
+
+補足:
+- canonical項目（`contentType` / `digestEdition` / `tags` / `relatedProducts`）を優先して埋める
+- 記事内で登場するプロダクトは必ず `/products/[slug]` にリンクする
 
 ## 種類別テンプレート
 
@@ -216,3 +224,11 @@ image: "/images/xxx.jpg"
 - `/Users/satokeita/Dev/ai-navigator/docs/BRAND-IDENTITY.md` — トーン・文体
 - `/Users/satokeita/Dev/ai-navigator/docs/CONTENT-STRATEGY.md` — 品質基準
 - `/Users/satokeita/Dev/ai-navigator/docs/CONCEPT.md` — 最重要ポリシー
+
+## 公開前ゲート（必須）
+
+```bash
+npm run publish:gate
+```
+
+`validate:content`、`sync:content:db`、`build` がすべて通過した変更のみ公開する。

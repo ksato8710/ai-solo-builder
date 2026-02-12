@@ -9,6 +9,7 @@ import { createClient } from '@supabase/supabase-js';
 const ROOT = process.cwd();
 const NEWS_DIR = path.join(ROOT, 'content', 'news');
 const PRODUCTS_DIR = path.join(ROOT, 'content', 'products');
+const ENV_FILES = ['.env.local', '.env'];
 
 const DEFAULT_TAG_LABELS = {
   'dev-knowledge': '開発ナレッジ',
@@ -35,6 +36,50 @@ const NEWS_TAG_FROM_LEGACY_CATEGORY = {
 function die(message) {
   console.error(`\n❌ ${message}\n`);
   process.exit(1);
+}
+
+function stripOuterQuotes(value) {
+  if (
+    (value.startsWith('"') && value.endsWith('"')) ||
+    (value.startsWith("'") && value.endsWith("'"))
+  ) {
+    return value.slice(1, -1);
+  }
+  return value;
+}
+
+function loadEnvFile(relativePath) {
+  const absolutePath = path.join(ROOT, relativePath);
+  if (!fs.existsSync(absolutePath)) return false;
+
+  const lines = fs.readFileSync(absolutePath, 'utf8').split(/\r?\n/);
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line || line.startsWith('#')) continue;
+
+    const normalized = line.startsWith('export ') ? line.slice('export '.length).trim() : line;
+    const separatorIndex = normalized.indexOf('=');
+    if (separatorIndex <= 0) continue;
+
+    const key = normalized.slice(0, separatorIndex).trim();
+    if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(key)) continue;
+
+    const rawValue = normalized.slice(separatorIndex + 1).trim();
+    const value = stripOuterQuotes(rawValue).replace(/\\n/g, '\n');
+    if (process.env[key] === undefined) {
+      process.env[key] = value;
+    }
+  }
+
+  return true;
+}
+
+function loadProjectEnvFiles() {
+  const loaded = [];
+  for (const envFile of ENV_FILES) {
+    if (loadEnvFile(envFile)) loaded.push(envFile);
+  }
+  return loaded;
 }
 
 function listMarkdownFiles(directory) {
@@ -251,11 +296,12 @@ async function upsertInChunks(table, rows, onConflict, client) {
 
 async function main() {
   const dryRun = process.argv.includes('--dry-run');
+  const loadedEnvFiles = loadProjectEnvFiles();
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
   const serviceKey = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!url || !serviceKey) {
-    die('Missing Supabase env vars. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SECRET_KEY (or SUPABASE_SERVICE_ROLE_KEY).');
+    die(`Missing Supabase env vars. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SECRET_KEY (or SUPABASE_SERVICE_ROLE_KEY). Loaded env files: ${loadedEnvFiles.join(', ') || 'none'}`);
   }
 
   const files = [

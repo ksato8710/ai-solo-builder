@@ -33,6 +33,8 @@ Set environment variables:
 - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
 - `SUPABASE_SECRET_KEY` (server-side only)
 
+`sync:content:db` は `.env.local` / `.env` を自動読込します（どちらかを配置）。
+
 ```bash
 # Apply migrations to linked Supabase project
 npm run db:push
@@ -48,6 +50,9 @@ npm run db:types
 
 # Sync markdown content into Supabase
 npm run sync:content:db
+
+# Publish gate (must pass before git push)
+npm run publish:gate
 ```
 
 ## Content Delivery API

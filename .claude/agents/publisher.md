@@ -13,9 +13,10 @@
 4. 構造チェック:
    - Digest（morning-summary/evening-summary）に「重要ニュースランキング（NVA）」表と「Top 3 ピックアップ」がある
    - Top 3は個別ニュース記事（category: news）へのリンクがある
-5. ローカル検証:
-   - `node scripts/validate-content.mjs`
-   - `npm run build`
+5. 公開前ゲート（必須）:
+   - `npm run publish:gate` を実行
+   - 内部で `validate:content -> sync:content:db -> build` を順に実行
+   - 1つでも失敗したら公開中止（`git push`禁止）
 6. git add -A && git commit && git push
 7. Vercel デプロイ完了を待つ（1-2分）
 8. 公開URLにアクセスして正常表示を確認（/news/[slug], /products/[slug], /news-value）
@@ -27,4 +28,5 @@
 ## 注意事項
 - URL共有前に必ずブラウザで表示確認すること
 - デプロイ後1-2分待ってから確認
+- `sync:content:db` エラー時は `.env.local/.env` のSupabase設定を確認し、復旧まで公開しない
 - ビルドエラー時はエラーログを確認し、article-writer にフィードバック

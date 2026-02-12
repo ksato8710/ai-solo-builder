@@ -13,7 +13,8 @@
     "db:migrations:list": "supabase migration list --linked",
     "db:types": "supabase gen types typescript --linked --schema public > src/types/database.ts",
     "sync:content:db": "node scripts/sync-content-to-supabase.mjs",
-    "sync:content:db:dry": "node scripts/sync-content-to-supabase.mjs --dry-run"
+    "sync:content:db:dry": "node scripts/sync-content-to-supabase.mjs --dry-run",
+    "publish:gate": "bash scripts/publish-gate.sh"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.95.3",

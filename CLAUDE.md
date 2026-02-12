@@ -46,9 +46,16 @@
 1. [news-scout] 情報収集 — X/Reddit/HN/PHを巡回、NVA一次スクリーニング
 2. [article-writer] 記事作成 — テンプレート選択、定量データ付きMarkdown作成
 3. [quality-checker] 品質チェック — EDITORIAL.md準拠、ブランドトーン確認
-4. [publisher] 公開 — git push → Vercel自動デプロイ → 表示確認
-5. [nemo→stevens] 報告 — 30分定期報告で進捗共有
+4. [publisher] 公開前ゲート — npm run publish:gate（validate + DB sync + build）
+5. [publisher] 公開 — git push → Vercel自動デプロイ → 表示確認
+6. [nemo→stevens] 報告 — 30分定期報告で進捗共有
 ```
+
+## DB登録必須ルール（運用）
+
+- 記事公開前に `npm run publish:gate` を必ず実行する
+- `publish:gate` 内の `sync:content:db` が失敗した場合は公開しない
+- `sync:content:db` は `.env.local` / `.env` を自動読込する
 
 ## デザイン仕様（TLDR.tech準拠）
 
