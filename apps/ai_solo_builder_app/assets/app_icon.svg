@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="75%" fx="50%" fy="35%">
+      <stop offset="0%" stop-color="#1a2540"/>
+      <stop offset="60%" stop-color="#121d33"/>
+      <stop offset="100%" stop-color="#0a1120"/>
+    </radialGradient>
+
+    <!-- Main accent gradient (blue to violet) -->
+    <linearGradient id="accentGrad" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="35%" stop-color="#3B82F6"/>
+      <stop offset="65%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+
+    <!-- Ambient glow -->
+    <radialGradient id="ambientGlow" cx="50%" cy="42%" r="45%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Signal wave gradients -->
+    <linearGradient id="waveGrad1" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.35"/>
+    </linearGradient>
+
+    <linearGradient id="waveGrad2" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.18"/>
+    </linearGradient>
+
+    <linearGradient id="waveGrad3" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.08"/>
+    </linearGradient>
+
+    <!-- Strong glow filter -->
+    <filter id="strongGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="blur1"/>
+      <feGaussianBlur stdDeviation="36" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft outer glow -->
+    <filter id="outerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+    </filter>
+
+    <!-- Emerald glow -->
+    <filter id="emeraldGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="url(#bgGrad)"/>
+
+  <!-- Ambient glow -->
+  <rect width="1024" height="1024" fill="url(#ambientGlow)"/>
+
+  <!-- Extra soft background glow -->
+  <ellipse cx="512" cy="460" rx="300" ry="280" fill="#3B82F6" opacity="0.04"/>
+
+  <!-- Signal waves (emanating from top-right area) -->
+  <path d="M 670 190 A 310 310 0 0 1 840 465"
+        fill="none" stroke="url(#waveGrad3)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 655 260 A 225 225 0 0 1 800 420"
+        fill="none" stroke="url(#waveGrad2)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 640 325 A 150 150 0 0 1 755 385"
+        fill="none" stroke="url(#waveGrad1)" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Outer glow of the A -->
+  <g filter="url(#outerGlow)" opacity="0.45">
+    <path fill-rule="evenodd" d="
+      M 512 220 L 295 770 L 390 770 L 438 640 L 586 640 L 634 770 L 729 770 Z
+      M 512 400 L 468 555 L 556 555 Z
+    " fill="url(#accentGrad)"/>
+  </g>
+
+  <!-- The "A" lettermark - bold geometric with proper cutout -->
+  <g filter="url(#strongGlow)">
+    <path fill-rule="evenodd" d="
+      M 512 240 L 305 765 L 395 765 L 440 640 L 584 640 L 629 765 L 719 765 Z
+      M 512 405 L 466 558 L 558 558 Z
+    " fill="url(#accentGrad)"/>
+  </g>
+
+  <!-- Emerald accent dot -->
+  <circle cx="718" cy="352" r="18" fill="#10b981" opacity="0.12"/>
+  <g filter="url(#emeraldGlow)">
+    <circle cx="718" cy="352" r="7" fill="#10b981" opacity="0.95"/>
+  </g>
+</svg>
