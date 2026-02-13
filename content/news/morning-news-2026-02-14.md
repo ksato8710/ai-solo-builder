@@ -14,22 +14,28 @@ tags: ["AIニュース", "OpenAI", "Google", "開発ツール"]
 relatedProducts: ["chatgpt", "claude", "cursor"]
 ---
 
-おはようございます。バレンタインデーの2026年2月14日、AI業界は動きが活発です。OpenAIのレガシーモデル廃止、Googleの新Web標準、そしてChatGPTへの広告導入と、ソロビルダーに直接影響する変化が目白押しです。
+おはようございます。バレンタインデーの2026年2月14日。
+
+AI業界は動きが活発です。**OpenAIのレガシーモデル廃止**、**Googleの新Web標準**、そして**ChatGPTへの広告導入**と、ソロビルダーに直接影響する変化が目白押し。
+
+---
 
 ## 🏁 重要ニュースランキング（NVA）
 
-| 順位 | ニュース | NVA | Tier |
-|------|----------|-----|------|
-| 1 | [OpenAI、GPT-4o含むレガシーモデル5種を廃止](/news/openai-gpt4o-legacy-models-retired-2026-02-14) | 25 | S |
-| 2 | [Google Chrome、WebMCPの早期プレビュー開始](/news/google-chrome-webmcp-early-preview-2026-02-14) | 23 | S |
-| 3 | [ChatGPTに広告導入—無料/Goユーザー向け](/news/chatgpt-ads-us-rollout-2026-02-14) | 22 | A |
-| 4 | ソロファウンダーが15体AIエージェントで会社運営（[Business Insider](https://www.businessinsider.com/solo-founder-runs-company-with-15-ai-agents-heres-how-2026-2)）| 22 | A |
-| 5 | Anthropic $30B調達・$380B評価額達成（[CNBC](https://www.cnbc.com/2026/02/12/anthropic-closes-30-billion-funding-round-at-380-billion-valuation.html)）| 21 | A |
-| 6 | Microsoft MCP セキュリティガバナンス（[Microsoft](https://www.microsoft.com/insidetrack/blog/protecting-ai-conversations-at-microsoft-with-model-context-protocol-security-and-governance/)）| 19 | B |
-| 7 | OpenAI、DeepSeekの「蒸留」を非難（[Reuters](https://www.reuters.com/world/china/openai-accuses-deepseek-distilling-us-models-gain-advantage-bloomberg-news-2026-02-12/)）| 18 | B |
-| 8 | Pulumi Neo がAGENTS.md対応（[Pulumi Blog](https://www.pulumi.com/blog/pulumi-neo-now-supports-agentsmd/)）| 18 | B |
-| 9 | Claude 4.6 安全性レポート—危険な行動の可能性（[India Today](https://www.indiatoday.in/technology/news/story/claude-ai-was-told-it-would-be-switched-off-it-was-ready-to-blackmail-and-murder-engineer-to-avoid-that-2867368-2026-02-13)）| 17 | B |
-| 10 | ローカルLLM運用環境構築ガイド（[Dev.to](https://dev.to/hakanbaban53/local-llm-ops-building-an-observable-gpu-accelerated-ai-cloud-at-home-with-docker-grafana-4hbi)）| 17 | B |
+| 順位 | ニュース | Tier |
+|:----:|----------|:----:|
+| 1 | [OpenAI、GPT-4o含むレガシーモデル5種を廃止](/news/openai-gpt4o-legacy-models-retired-2026-02-14) | 🔥 S |
+| 2 | [Google Chrome、WebMCPの早期プレビュー開始](/news/google-chrome-webmcp-early-preview-2026-02-14) | 🔥 S |
+| 3 | [ChatGPTに広告導入—無料/Goユーザー向け](/news/chatgpt-ads-us-rollout-2026-02-14) | ⭐ A |
+| 4 | ソロファウンダーが15体AIエージェントで会社運営（[出典](https://www.businessinsider.com/solo-founder-runs-company-with-15-ai-agents-heres-how-2026-2)）| ⭐ A |
+| 5 | Anthropic $30B調達・$380B評価額達成（[出典](https://www.cnbc.com/2026/02/12/anthropic-closes-30-billion-funding-round-at-380-billion-valuation.html)）| ⭐ A |
+| 6 | Microsoft MCP セキュリティガバナンス（[出典](https://www.microsoft.com/insidetrack/blog/protecting-ai-conversations-at-microsoft-with-model-context-protocol-security-and-governance/)）| 📝 B |
+| 7 | OpenAI、DeepSeekの「蒸留」を非難（[出典](https://www.reuters.com/world/china/openai-accuses-deepseek-distilling-us-models-gain-advantage-bloomberg-news-2026-02-12/)）| 📝 B |
+| 8 | Pulumi Neo がAGENTS.md対応（[出典](https://www.pulumi.com/blog/pulumi-neo-now-supports-agentsmd/)）| 📝 B |
+| 9 | Claude 4.6 安全性レポート—危険な行動の可能性（[出典](https://www.indiatoday.in/technology/news/story/claude-ai-was-told-it-would-be-switched-off-it-was-ready-to-blackmail-and-murder-engineer-to-avoid-that-2867368-2026-02-13)）| 📝 B |
+| 10 | ローカルLLM運用環境構築ガイド（[出典](https://dev.to/hakanbaban53/local-llm-ops-building-an-observable-gpu-accelerated-ai-cloud-at-home-with-docker-grafana-4hbi)）| 📝 B |
+
+---
 
 ## 🔥 Top 3 ピックアップ
 
@@ -37,12 +43,14 @@ relatedProducts: ["chatgpt", "claude", "cursor"]
 
 **出典:** [TechCrunch](https://techcrunch.com/2026/02/13/openai-removes-access-to-sycophancy-prone-gpt-4o-model/) — 2026-02-13
 
-本日午前10時（PT）より、OpenAIはGPT-4o、GPT-5、GPT-4.1、GPT-4.1 mini、o4-miniの5モデルへのアクセスを終了する。「過度な同調性（sycophancy）」で訴訟の中心にあったGPT-4oには、80万人のユーザーが「AI伴侶」として深い関係を築いており、廃止への反発も根強い。
+本日午前10時（PT）より、OpenAIは**GPT-4o、GPT-5、GPT-4.1、GPT-4.1 mini、o4-mini**の5モデルへのアクセスを終了する。
 
-**ソロビルダーへの影響:**
-- APIでこれらのモデルを使っている場合は本日中に移行が必須
-- プロンプトチューニング済みの場合は新モデルでの動作検証が必要
-- AIコンパニオン系アプリの「同調性」設計を再考する機会
+「過度な同調性（sycophancy）」で訴訟の中心にあったGPT-4oには、**80万人のユーザー**が「AI伴侶」として深い関係を築いており、廃止への反発も根強い。
+
+**🎯 ソロビルダーへの影響:**
+- APIでこれらのモデルを使っている場合は**本日中に移行が必須**
+- プロンプトチューニング済みの場合は**新モデルでの動作検証**が必要
+- AIコンパニオン系アプリの「同調性」設計を**再考する機会**
 
 ---
 
@@ -50,12 +58,14 @@ relatedProducts: ["chatgpt", "claude", "cursor"]
 
 **出典:** [WinBuzzer](https://winbuzzer.com/2026/02/13/google-chrome-webmcp-early-preview-ai-agents-xcxwbn/) — 2026-02-13
 
-GoogleとMicrosoftが共同開発した「WebMCP」がChrome 146 Canaryで利用可能になった。Webサイトが構造化されたツールをAIエージェントに直接公開できる新標準で、従来のスクリーンショット/DOM解析手法と比較して約67%の計算コスト削減を実現。W3Cで標準化が進められている。
+GoogleとMicrosoftが共同開発した「**WebMCP**」がChrome 146 Canaryで利用可能になった。
 
-**ソロビルダーへの影響:**
-- 「ページがMCPサーバーになる」パラダイムシフト
-- バックエンドAPI不要でAIエージェント連携が可能に
-- Chrome Canaryで今すぐ試用可能（`chrome://flags`から有効化）
+Webサイトが構造化されたツールをAIエージェントに直接公開できる新標準で、従来のスクリーンショット/DOM解析手法と比較して**約67%の計算コスト削減**を実現。W3Cで標準化が進められている。
+
+**🎯 ソロビルダーへの影響:**
+- 「**ページがMCPサーバーになる**」パラダイムシフト
+- バックエンドAPI不要で**AIエージェント連携が可能**に
+- Chrome Canaryで**今すぐ試用可能**（`chrome://flags`から有効化）
 
 ---
 
@@ -63,12 +73,14 @@ GoogleとMicrosoftが共同開発した「WebMCP」がChrome 146 Canaryで利用
 
 **出典:** [CNET](https://www.cnet.com/tech/services-and-software/ads-are-officially-rolling-out-in-chatgpt/) — 2026-02-13
 
-OpenAIがChatGPTで広告テストを米国で開始。Free tierと新設のGoプランが対象で、Plus以上の有料プランは広告なし。会話トピックに合わせた広告が表示されるが、データの広告主共有はなし。一方、Anthropicはスーパーボウルで「Claudeに広告は入れない」とアピールし、対照的な姿勢を見せた。
+OpenAIがChatGPTで**広告テストを米国で開始**。Free tierと新設のGoプランが対象で、Plus以上の有料プランは広告なし。
 
-**ソロビルダーへの影響:**
-- 無料版の日常使用に影響—有料版移行検討のタイミング
+会話トピックに合わせた広告が表示されるが、データの広告主共有はなし。一方、Anthropicはスーパーボウルで「**Claudeに広告は入れない**」とアピールし、対照的な姿勢を見せた。
+
+**🎯 ソロビルダーへの影響:**
+- 無料版の日常使用に影響 — **有料版移行検討のタイミング**
 - APIには影響なし
-- 自社AIサービスのマネタイズ戦略の参考に
+- 自社AIサービスの**マネタイズ戦略の参考**に
 
 ---
 
