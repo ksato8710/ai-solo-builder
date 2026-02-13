@@ -1,12 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SECRET_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceKey = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-const supabase = createClient(supabaseUrl, supabaseServiceKey, {
-  auth: { persistSession: false, autoRefreshToken: false },
-});
+// Supabase client creation with environment check
+function createSupabaseClient() {
+  if (!supabaseUrl || !supabaseServiceKey) {
+    console.warn('Supabase credentials not available');
+    return null;
+  }
+  
+  return createClient(supabaseUrl, supabaseServiceKey, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+}
+
+const supabase = createSupabaseClient();
 
 // 初期データ
 const INITIAL_SOURCES = [
@@ -95,6 +105,13 @@ const INITIAL_SOURCES = [
 // GET: 全ての情報源を取得
 export async function GET(request: NextRequest) {
   try {
+    if (!supabase) {
+      return NextResponse.json({ 
+        error: 'Database connection not available',
+        sources: [] 
+      }, { status: 503 });
+    }
+
     const { searchParams } = new URL(request.url);
     const category = searchParams.get('category');
     const active = searchParams.get('active');
@@ -132,6 +149,12 @@ export async function GET(request: NextRequest) {
 // POST: 新しい情報源を追加、または初期データを投入
 export async function POST(request: NextRequest) {
   try {
+    if (!supabase) {
+      return NextResponse.json({ 
+        error: 'Database connection not available' 
+      }, { status: 503 });
+    }
+
     const body = await request.json();
 
     // 初期データ投入の特別なケース
@@ -190,6 +213,12 @@ export async function POST(request: NextRequest) {
 // PUT: 情報源を更新
 export async function PUT(request: NextRequest) {
   try {
+    if (!supabase) {
+      return NextResponse.json({ 
+        error: 'Database connection not available' 
+      }, { status: 503 });
+    }
+
     const body = await request.json();
     const { id, ...updates } = body;
 
@@ -220,6 +249,12 @@ export async function PUT(request: NextRequest) {
 // DELETE: 情報源を削除
 export async function DELETE(request: NextRequest) {
   try {
+    if (!supabase) {
+      return NextResponse.json({ 
+        error: 'Database connection not available' 
+      }, { status: 503 });
+    }
+
     const { searchParams } = new URL(request.url);
     const id = searchParams.get('id');
 
