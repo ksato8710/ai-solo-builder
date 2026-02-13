@@ -219,6 +219,78 @@ export default function NewsValuePage() {
         </div>
       </div>
 
+      {/* Content Sources Management Section */}
+      <div className="mt-12 rounded-xl p-6 border border-white/5" style={{ backgroundColor: '#1e293b' }}>
+        <h2 className="text-lg font-bold text-white mb-3">📊 情報源管理</h2>
+        <p className="text-sm text-slate-400 mb-4">
+          ニュース収集に使用する情報源の品質評価・管理を行います。
+        </p>
+        
+        <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 rounded-lg bg-white/5">
+              <h3 className="font-semibold text-white mb-2">📈 品質レーティング</h3>
+              <div className="space-y-1 text-xs text-slate-400">
+                <div>⭐⭐⭐⭐⭐ 5: 専門性が高く、一次ソース</div>
+                <div>⭐⭐⭐⭐ 4: 信頼性が高く、業界標準</div>
+                <div>⭐⭐⭐ 3: 一般的に有用</div>
+              </div>
+            </div>
+            
+            <div className="p-4 rounded-lg bg-white/5">
+              <h3 className="font-semibold text-white mb-2">🔗 アクセス性評価</h3>
+              <div className="space-y-1 text-xs text-slate-400">
+                <div>⭐⭐⭐⭐⭐ 5: API提供、制限なし</div>
+                <div>⭐⭐⭐⭐ 4: RSS/フィードあり</div>
+                <div>⭐⭐⭐ 3: 定期スクレイピング可能</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+            <h4 className="font-semibold text-emerald-400 mb-2">✅ アクティブ情報源 (8ソース)</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+              <div className="flex justify-between">
+                <span className="text-slate-300">Hacker News</span>
+                <span className="text-emerald-400">4⭐ / 5⭐</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-300">GitHub Trending</span>
+                <span className="text-emerald-400">4⭐ / 4⭐</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-300">Y Combinator News</span>
+                <span className="text-emerald-400">5⭐ / 4⭐</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-300">Ars Technica</span>
+                <span className="text-emerald-400">5⭐ / 3⭐</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-300">Indie Hackers</span>
+                <span className="text-emerald-400">4⭐ / 4⭐</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-300">TechCrunch</span>
+                <span className="text-emerald-400">4⭐ / 3⭐</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-300">Stack Overflow Blog</span>
+                <span className="text-emerald-400">4⭐ / 4⭐</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-300">Product Hunt</span>
+                <span className="text-emerald-400">3⭐ / 4⭐</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-500/20 text-sm text-blue-400">
+            <strong>📋 管理機能:</strong> 情報源の追加・編集・レーティング変更・アクティブ制御は`/api/admin/sources`で利用可能
+          </div>
+        </div>
+      </div>
+
       {/* Back link */}
       <div className="mt-8">
         <a href="/" className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors">
