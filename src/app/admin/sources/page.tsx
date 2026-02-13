@@ -186,19 +186,19 @@ export default function SourcesAdminPage() {
     </div>
   );
 
-  if (loading) return <div className="p-8">Loading...</div>;
-  if (error) return <div className="p-8 text-red-600">Error: {error}</div>;
+  if (loading) return <div className="p-8 text-slate-300">Loading...</div>;
+  if (error) return <div className="p-8 text-red-400">Error: {error}</div>;
 
   return (
     <div className="p-8 max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">情報源管理</h1>
+      <h1 className="text-3xl font-bold mb-6 text-slate-100">情報源管理</h1>
 
       {/* コントロール */}
-      <div className="mb-6 flex flex-wrap gap-4 items-center">
+      <div className="mb-6 flex flex-wrap gap-4 items-center p-4 bg-slate-800/50 rounded-lg border border-slate-600">
         <select
           value={filter.category}
           onChange={(e) => setFilter(prev => ({ ...prev, category: e.target.value }))}
-          className="border rounded px-3 py-2"
+          className="border border-slate-600 bg-slate-700 text-slate-200 rounded px-3 py-2 focus:border-blue-400 focus:outline-none"
         >
           <option value="">All Categories</option>
           {CATEGORIES.map(cat => (
@@ -209,7 +209,7 @@ export default function SourcesAdminPage() {
         <select
           value={filter.active}
           onChange={(e) => setFilter(prev => ({ ...prev, active: e.target.value }))}
-          className="border rounded px-3 py-2"
+          className="border border-slate-600 bg-slate-700 text-slate-200 rounded px-3 py-2 focus:border-blue-400 focus:outline-none"
         >
           <option value="">All Status</option>
           <option value="true">Active Only</option>
@@ -218,48 +218,50 @@ export default function SourcesAdminPage() {
 
         <button
           onClick={() => setIsAdding(true)}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 transition-colors font-medium"
         >
-          新規追加
+          ➕ 新規追加
         </button>
 
         {sources.length === 0 && (
           <button
             onClick={initializeSources}
-            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            className="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500 transition-colors font-medium"
           >
-            初期データ投入
+            🚀 初期データ投入
           </button>
         )}
 
-        <div className="text-sm text-gray-600">
+        <div className="text-sm text-slate-400 bg-slate-700/50 px-3 py-1 rounded">
           Total: {sources.length} sources
         </div>
       </div>
 
       {/* 新規追加フォーム */}
       {isAdding && (
-        <div className="mb-6 p-4 border rounded-lg bg-gray-50">
-          <h3 className="text-lg font-semibold mb-4">新規情報源追加</h3>
+        <div className="mb-6 p-6 border border-slate-600 rounded-lg bg-slate-800/60 backdrop-blur-sm">
+          <h3 className="text-lg font-semibold mb-4 text-slate-200 flex items-center gap-2">
+            ➕ 新規情報源追加
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               type="text"
               placeholder="Name"
               value={newForm.name || ''}
               onChange={(e) => setNewForm(prev => ({ ...prev, name: e.target.value }))}
-              className="border rounded px-3 py-2"
+              className="border border-slate-600 bg-slate-700 text-slate-200 placeholder-slate-400 rounded px-3 py-2 focus:border-blue-400 focus:outline-none"
             />
             <input
               type="url"
               placeholder="URL"
               value={newForm.url || ''}
               onChange={(e) => setNewForm(prev => ({ ...prev, url: e.target.value }))}
-              className="border rounded px-3 py-2"
+              className="border border-slate-600 bg-slate-700 text-slate-200 placeholder-slate-400 rounded px-3 py-2 focus:border-blue-400 focus:outline-none"
             />
             <select
               value={newForm.category || ''}
               onChange={(e) => setNewForm(prev => ({ ...prev, category: e.target.value }))}
-              className="border rounded px-3 py-2"
+              className="border border-slate-600 bg-slate-700 text-slate-200 rounded px-3 py-2 focus:border-blue-400 focus:outline-none"
             >
               <option value="">Select Category</option>
               {CATEGORIES.map(cat => (
@@ -270,7 +272,7 @@ export default function SourcesAdminPage() {
               placeholder="Description"
               value={newForm.description || ''}
               onChange={(e) => setNewForm(prev => ({ ...prev, description: e.target.value }))}
-              className="border rounded px-3 py-2"
+              className="border border-slate-600 bg-slate-700 text-slate-200 placeholder-slate-400 rounded px-3 py-2 focus:border-blue-400 focus:outline-none"
             />
           </div>
           <div className="mt-4 flex gap-4 items-center">
@@ -325,7 +327,7 @@ export default function SourcesAdminPage() {
       {/* 情報源一覧 */}
       <div className="space-y-4">
         {sources.map(source => (
-          <div key={source.id} className="border rounded-lg p-4 bg-white">
+          <div key={source.id} className="border border-slate-600 rounded-lg p-4 bg-slate-800/40 backdrop-blur-sm hover:bg-slate-800/60 transition-all">
             {isEditing === source.id ? (
               // 編集モード
               <div className="space-y-4">
@@ -409,26 +411,26 @@ export default function SourcesAdminPage() {
               <div className="flex justify-between items-start">
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-2">
-                    <h3 className="text-lg font-semibold">{source.name}</h3>
-                    <span className="px-2 py-1 bg-blue-100 text-blue-800 text-sm rounded">
+                    <h3 className="text-lg font-semibold text-slate-200">{source.name}</h3>
+                    <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-sm rounded border border-blue-400/30">
                       {source.category}
                     </span>
-                    <span className={`px-2 py-1 text-sm rounded ${source.is_active ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-600'}`}>
-                      {source.is_active ? 'Active' : 'Inactive'}
+                    <span className={`px-2 py-1 text-sm rounded border ${source.is_active ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30' : 'bg-slate-500/20 text-slate-400 border-slate-500/30'}`}>
+                      {source.is_active ? '✅ Active' : '⭕ Inactive'}
                     </span>
                     {source.is_free && (
-                      <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-sm rounded">
-                        Free
+                      <span className="px-2 py-1 bg-amber-500/20 text-amber-300 text-sm rounded border border-amber-400/30">
+                        💰 Free
                       </span>
                     )}
                   </div>
-                  <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 hover:underline transition-colors">
                     {source.url}
                   </a>
                   {source.description && (
-                    <p className="text-gray-600 mt-2">{source.description}</p>
+                    <p className="text-slate-400 mt-2">{source.description}</p>
                   )}
-                  <div className="flex gap-4 mt-2 text-sm">
+                  <div className="flex gap-4 mt-2 text-sm text-slate-300">
                     <span>Quality: {source.quality_rating}/5 ⭐</span>
                     <span>Accessibility: {source.accessibility_rating}/5 ⭐</span>
                   </div>
@@ -453,8 +455,10 @@ export default function SourcesAdminPage() {
         ))}
 
         {sources.length === 0 && (
-          <div className="text-center py-8 text-gray-500">
-            No sources found. Click "初期データ投入" to add initial sources.
+          <div className="text-center py-12 bg-slate-800/30 rounded-lg border border-slate-600/50">
+            <div className="text-slate-400 mb-4 text-lg">📄</div>
+            <p className="text-slate-400 mb-2">No sources found.</p>
+            <p className="text-slate-500 text-sm">Click "🚀 初期データ投入" to add initial sources.</p>
           </div>
         )}
       </div>
