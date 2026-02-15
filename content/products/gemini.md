@@ -1,45 +1,208 @@
 ---
-title: "Google Gemini"
+title: "Gemini — GoogleのマルチモーダルAI"
 slug: "gemini"
-date: "2026-02-15"
-description: "Googleが開発するマルチモーダルAIモデル。Gemini Pro、Gemini Ultra、Gemini Nanoの3サイズ展開。Google AI StudioとVertex AIで利用可能。"
-summary: "Googleが開発するマルチモーダルAIモデル。Gemini Pro、Gemini Ultra、Gemini Nanoの3サイズ展開。Google AI StudioとVertex AIで利用可能。"
+date: "2026-02-16"
+contentType: "product"
+type: product
+description: "Google DeepMindが開発するマルチモーダルAI。100万トークンの超長文コンテキスト、テキスト・画像・音声・動画の統合処理、Google Workspace連携が強み。"
+readTime: 12
+tags: ["ai-chat"]
 image: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800&h=420&fit=crop"
-category: "products"
-tags: ["Google", "LLM", "マルチモーダル", "API"]
-officialUrl: "https://deepmind.google/technologies/gemini/"
-pricingModel: "freemium"
-targetAudience: ["開発者", "研究者", "企業"]
+relatedProducts:
+  - "chatgpt"
+  - "claude"
+  - "perplexity"
+  - "google-ai-studio"
+  - "openai"
 ---
 
-## 概要
+> 最終情報更新: 2026-02-16
 
-Google DeepMindが開発するマルチモーダルAI。テキスト、画像、音声、動画、コードを統合的に処理できる。
+| 項目 | 詳細 |
+|------|------|
+| 種別 | マルチモーダルAI / 大規模言語モデル |
+| 開発元 | Google DeepMind |
+| 料金 | 無料版 / Advanced $20/月 / API従量課金 |
+| 評価 | ⭐4.5/5（G2）、Google統合の強み |
+| コンテキスト | 最大200万トークン（業界最長） |
 
-## 主な特徴
+## Geminiとは？
 
-- **マルチモーダル対応** — テキスト・画像・音声・動画を統合処理
-- **3サイズ展開** — Ultra（最高性能）、Pro（汎用）、Nano（軽量）
-- **長文コンテキスト** — 最大100万トークン対応
-- **推論モード** — Deep Thinkで高度な科学・エンジニアリング推論
+Geminiは、Google DeepMindが開発する**マルチモーダルAI**。テキスト、画像、音声、動画、コードを**ネイティブに統合処理**できる点が最大の特徴。
 
-## 料金体系
+**200万トークン**という業界最長のコンテキストウィンドウで、書籍10冊分以上、1時間の動画、10万行のコードを一度に処理可能。Google Workspace（Gmail、Docs、Drive等）との深い統合により、**Googleエコシステムユーザーに最適化**されている。
 
-| プラン | 価格 | 特徴 |
-|--------|------|------|
-| Gemini API Free | 無料 | 1分60リクエスト制限 |
-| Gemini API Paid | 従量課金 | 制限緩和、高レート |
-| Google AI Ultra | 月額$19.99 | Deep Think含む最上位機能 |
+2024年にBard（旧称）からGeminiにリブランドし、Pro、Ultra、Flashの3モデル展開で幅広いユースケースに対応。
 
-## ソロビルダー向け活用法
+## こんな人におすすめ
 
-1. **コード生成・レビュー** — 複数言語対応
-2. **ドキュメント処理** — 長文PDF解析
-3. **マルチモーダル入力** — スクリーンショットからコード生成
-4. **技術推論** — Deep Thinkで設計検討
+| ターゲット | 適性 | 理由 |
+|------------|------|------|
+| Google Workspace利用者 | ⭐⭐⭐ | Gmail、Drive、Docsとシームレス連携 |
+| 長文処理が必要な人 | ⭐⭐⭐ | 200万トークンで書籍・動画を丸ごと分析 |
+| マルチモーダル活用者 | ⭐⭐⭐ | 画像・動画・音声を統合して質問 |
+| Android/Pixelユーザー | ⭐⭐⭐ | デバイス統合、Nano軽量モデル |
+| 開発者 | ⭐⭐ | AI StudioでAPI利用、無料枠あり |
 
-## 関連リンク
+## 主要機能
 
-- [Google AI Studio](https://aistudio.google.com/)
-- [Vertex AI](https://cloud.google.com/vertex-ai)
-- [Gemini API Docs](https://ai.google.dev/docs)
+### 超長文コンテキスト（200万トークン）
+
+書籍10冊分、1時間の動画、10万行のコードを一度に入力可能。長い契約書、技術仕様書、研究論文のまとめて分析ができる。ClaudeやChatGPTを大幅に上回る。
+
+### マルチモーダル入力（テキスト・画像・音声・動画）
+
+テキストだけでなく、画像、音声、動画を同時に入力して質問可能。スクリーンショットからコード生成、動画の内容要約、音声ファイルの文字起こしなど。
+
+### Google Workspace連携
+
+Gmail、Google Drive、Google Docs、Google Calendarと深く統合。「今週のメールをまとめて」「Driveのこのファイルを分析して」といった指示が自然に。
+
+### Deep Think（推論モード）
+
+複雑な数学、科学、エンジニアリング問題に対する高度な推論モード。段階的に考えを展開し、専門家レベルの回答を生成。
+
+### Gemini Nano（オンデバイス）
+
+軽量モデルでスマートフォン上でローカル実行。プライバシーを保ちながらAI機能を利用可能。Pixel 8以降で利用可。
+
+### AI Studio（開発者向け）
+
+ブラウザ上でGemini APIを試せる無料環境。プロンプトの実験、APIキー発行、チューニングが可能。
+
+## 使い方（Getting Started）
+
+1. **アクセス**: [gemini.google.com](https://gemini.google.com) にGoogleアカウントでログイン
+2. **モード選択**: 無料版（Gemini Pro）またはAdvanced（Ultra）を選択
+3. **Workspace連携**: Gmail、Driveへのアクセスを許可
+4. **マルチモーダル入力**: テキスト、画像、ファイルをドラッグ&ドロップ
+5. **拡張機能**: Google Maps、YouTube、Flightsなどの拡張を有効化
+
+## 料金プラン（2026年2月時点）
+
+| プラン | 月額 | モデル | 主な機能 |
+|--------|------|--------|----------|
+| **Free** | $0 | Gemini Pro | 基本機能、Workspace連携 |
+| **Advanced** | $20 | Gemini Ultra | 200万トークン、Deep Think、2TB Drive |
+| **API Free** | $0 | Pro/Flash | 1分60リクエスト、開発・学習用 |
+| **API Paid** | 従量課金 | 全モデル | レート緩和、本番利用向け |
+
+※Google One AI Premiumプラン（$20/月）で利用
+
+## Pros（メリット）
+
+- ✅ **超長文コンテキスト**: 200万トークン（業界最長）
+- ✅ **マルチモーダル**: テキスト・画像・音声・動画を統合
+- ✅ **Google統合**: Workspace、Maps、YouTube等と連携
+- ✅ **無料API枠**: AI Studioで無料開発可能
+- ✅ **Deep Think**: 複雑な推論タスクに強い
+- ✅ **Nano軽量版**: オンデバイスで高速・プライベート
+- ✅ **検索統合**: Google検索とシームレス連携
+- ✅ **多言語**: 100+言語対応
+- ✅ **動画分析**: YouTubeリンクから内容を抽出
+- ✅ **拡張機能**: Maps、Flights、Hotelsなど多彩
+
+## Cons（デメリット）
+
+- ⚠️ **ハルシネーション**: 他モデル同様、誤情報生成のリスク
+- ⚠️ **Claude比のコード品質**: 複雑なコード生成はClaudeの方が評価高い
+- ⚠️ **プライバシー懸念**: Googleにデータが収集される
+- ⚠️ **API安定性**: 無料枠はレート制限が厳しい
+- ⚠️ **機能変更**: 頻繁なアップデートでUIが変わる
+- ⚠️ **地域制限**: 一部機能は地域限定
+
+## ユーザーの声
+
+> **「200万トークンは本当にヤバい。論文10本を一度に読み込んでサーベイが書ける」**
+> — 研究者
+
+> **「Google Workspaceとの連携が神。メールとカレンダーをまとめて分析してくれる」**
+> — ビジネスユーザー
+
+> **「コード生成はClaudeの方が上だけど、長文処理と動画分析はGemini一択」**
+> — X（Twitter）開発者
+
+> **「無料でここまで使えるのはすごい。API開発の学習に最適」**
+> — プログラミング初学者
+
+> **「YouTubeのURL貼るだけで内容要約してくれるの便利すぎ」**
+> — コンテンツクリエイター
+
+## FAQ
+
+### Q: ChatGPT、Claudeとの違いは？
+
+A: Geminiは**超長文（200万トークン）**と**Google統合**が強み。ChatGPTは**マルチモーダル（画像生成・音声）**、Claudeは**コード品質と安全性**で優位。
+
+### Q: 無料版でどこまでできる？
+
+A: Gemini Proモデルで、テキスト・画像処理、Workspace連携、基本的なマルチモーダル入力が可能。200万トークンはAdvanced限定。
+
+### Q: APIは無料で使える？
+
+A: Google AI Studioで無料枠あり（1分60リクエスト）。開発・学習には十分、本番運用は有料プラン推奨。
+
+### Q: Deep Thinkとは？
+
+A: 複雑な数学・科学・エンジニアリング問題に対する推論モード。ステップバイステップで考えを展開し、専門家レベルの回答を生成。
+
+### Q: 日本語は得意？
+
+A: はい、100+言語に対応。日本語の生成・理解は高品質。
+
+### Q: プライバシーは大丈夫？
+
+A: Googleアカウントと連携するため、データはGoogleに送信される。機密情報の取り扱いは要注意。Workspaceデータも同様。
+
+### Q: Claude、ChatGPTから乗り換えるべき？
+
+A: Google Workspace利用者、長文処理が多い人は検討の価値あり。コード生成重視ならClaude、汎用性ならChatGPTも選択肢。
+
+## 競合比較
+
+| プラットフォーム | 価格 | コンテキスト | 特徴 | 最適なユーザー |
+|------------------|------|--------------|------|----------------|
+| **Gemini** | $0-20/月 | 200万 | Google統合、超長文 | Google Workspace利用者 |
+| **ChatGPT** | $0-20/月 | 128K | GPT Store、マルチモーダル | 汎用、クリエイター |
+| **Claude** | $0-20/月 | 200K | コード品質、安全性 | 開発者、リサーチャー |
+| **Perplexity** | $0-20/月 | - | 検索特化 | リサーチ |
+
+## ソロビルダー向けの使いどころ
+
+### 長文ドキュメント処理
+
+技術仕様書、契約書、研究論文をまとめて入力して分析・要約。200万トークンで他では不可能なスケールの処理が可能。
+
+### YouTube・動画分析
+
+YouTube URLを貼るだけで動画内容を要約。競合プロダクトの解説動画、カンファレンストークの内容把握に。
+
+### Google Workspace自動化
+
+Gmailの未読メールをまとめる、Driveのファイルから情報抽出、カレンダーの予定を分析など、日常業務を効率化。
+
+### マルチモーダルリサーチ
+
+スクリーンショット + テキストで質問、PDFとExcelを組み合わせて分析など、複合的な入力での調査。
+
+## 注意点・制限
+
+### 技術的な制限
+
+- **コード生成**: Claudeほどの精度はない場面も
+- **リアルタイム性**: 検索統合はあるが、即時性は完璧ではない
+- **API制限**: 無料枠はレート制限が厳しい
+
+### 運用上の注意
+
+- **データ収集**: Googleにデータが送信される（機密情報注意）
+- **Workspace依存**: Google以外のエコシステムとの連携は弱い
+- **機能変更**: 頻繁なアップデートでUIや機能が変わる
+
+## 公式リンク
+
+- 公式サイト: https://gemini.google.com/
+- AI Studio: https://aistudio.google.com/
+- APIドキュメント: https://ai.google.dev/docs
+- Vertex AI: https://cloud.google.com/vertex-ai
+- ブログ: https://blog.google/technology/ai/
