@@ -147,6 +147,12 @@ body {
 
 /* ===========================================
    Responsive Table - Desktop & Mobile
+   
+   汎用テーブルルール:
+   - table-layout: auto（コンテンツに応じた自動幅）
+   - 短いセル（数値/スコア）: 自動で狭く
+   - 長いセル（説明/理由）: 自動で広く
+   - 極端な幅を防ぐ min/max-width のみ指定
    =========================================== */
 
 /* Wrapper for horizontal scroll on smaller screens */
@@ -165,33 +171,18 @@ body {
 .article-content tr {
   display: table;
   width: 100%;
-  table-layout: auto;
+  table-layout: auto; /* コンテンツに応じた自動幅 */
 }
 
-/* Column width optimization for ranking tables */
-.article-content th:first-child,
-.article-content td:first-child {
-  width: 60px;
-  min-width: 60px;
-  text-align: center;
-}
-
-/* NVA and Tier columns (3rd and 4th) - compact */
-.article-content th:nth-child(3),
-.article-content td:nth-child(3),
-.article-content th:nth-child(4),
-.article-content td:nth-child(4) {
-  width: 80px;
-  min-width: 60px;
-  text-align: center;
-  white-space: nowrap;
-}
-
-/* News column (2nd) - expand to fill */
-.article-content th:nth-child(2),
-.article-content td:nth-child(2) {
-  width: auto;
-  min-width: 200px;
+/* 
+ * 汎用列幅ルール:
+ * - 固定nth-child指定を避ける（テーブル構造に依存しない）
+ * - min-width/max-widthで極端な幅のみ制御
+ */
+.article-content th,
+.article-content td {
+  min-width: 50px;  /* 最小幅: 短すぎる列を防ぐ */
+  max-width: 500px; /* 最大幅: 長すぎる列を防ぐ */
 }
 
 .article-content thead {
