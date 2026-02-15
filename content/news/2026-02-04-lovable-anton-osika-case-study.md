@@ -8,6 +8,7 @@ readTime: "8"
 tags:
   - "case-study"
 relatedProducts:
+  - "lovable"
   - "lovable-ai-web-app-builder"
 image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=420&fit=crop"
 ---
