@@ -5,6 +5,7 @@ date: "2026-02-09"
 contentType: "product"
 description: "AI生成コードが増える時代のOSSコミュニティ向けに、明示的な信頼管理を導入する仕組み。"
 readTime: 4
+tags: ["ai-marketing"]
 image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=420&fit=crop"
 featured: false
 ---

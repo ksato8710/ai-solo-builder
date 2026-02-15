@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Codeiumは、無料でも使えるAIコード補完/生成ツール。まず試して効果を体感しやすい。"
 readTime: 5
+tags: ["ai-coding"]
 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=420&fit=crop"
 ---
 

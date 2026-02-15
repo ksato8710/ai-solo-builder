@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Bifrostは、複数のLLMプロバイダーを1つのエンドポイントにまとめるゲートウェイ/ルーター。コスト最適化やフェイルオーバーを狙う。"
 readTime: 4
+tags: ["ai-design"]
 image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=420&fit=crop"
 ---
 

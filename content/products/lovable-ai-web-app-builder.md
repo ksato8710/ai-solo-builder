@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Lovableは、自然言語のプロンプトでWebアプリケーションを構築できるAI搭載の開発プラットフォーム。コーディング不要で、数分でモダンなUI・機能を備えたアプリを作成できる。"
 image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=420&fit=crop"
+tags: ["no-code"]
 ---
 
 > 最終情報更新: 2026年2月3日

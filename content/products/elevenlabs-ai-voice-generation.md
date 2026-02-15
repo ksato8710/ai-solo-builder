@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "ElevenLabsは、AI音声生成（TTS）とボイスクローン技術のリーディングプラットフォーム。5,000以上の音声を70以上の言語で提供し、自然で感情豊かな音声生成を実現する。"
 image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&h=420&fit=crop"
+tags: ["ai-audio"]
 ---
 
 > 最終情報更新: 2026年2月3日

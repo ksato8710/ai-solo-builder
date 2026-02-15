@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Midjourneyは、テキストプロンプトから高品質な画像を生成するAIツール。美的品質・テクスチャ・ライティングの一貫性で業界トップクラスの評価を持ち、V7では動画生成にも対応。"
 image: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800&h=420&fit=crop"
+tags: ["ai-image"]
 ---
 
 > 最終情報更新: 2026年2月3日

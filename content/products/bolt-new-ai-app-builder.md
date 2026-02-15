@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Bolt.newは、StackBlitz社が提供するブラウザ完結型のAIアプリ開発プラットフォーム。ローカル環境のセットアップ不要で、プロンプトからフルスタックWebアプリの開発・デプロイまでを実現する。"
 image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=420&fit=crop"
+tags: ["no-code","ai-coding"]
 ---
 
 > 最終情報更新: 2026年2月3日

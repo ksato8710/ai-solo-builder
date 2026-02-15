@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Anthropicのコーディング特化AIアシスタント。ターミナル操作、ファイル編集、コード実行を統合した包括的な開発支援環境を提供。"
 readTime: 6
+tags: ["ai-coding","ai-agent"]
 image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=420&fit=crop"
 ---
 

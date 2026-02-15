@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Clineは、VS Code上でファイル操作・ターミナル実行・ブラウザ検証まで行える自律型コーディングエージェント。反復作業をまとめて委譲する用途に向く。"
 readTime: 6
+tags: ["ai-coding","ai-agent"]
 image: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=800&h=420&fit=crop"
 ---
 

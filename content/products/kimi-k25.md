@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Kimi K2.5は、記事内で言及されている大規模オープンソースモデル（詳細は必要に応じて追記）。"
 readTime: 3
+tags: ["ai-chat"]
 image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=420&fit=crop"
 ---
 

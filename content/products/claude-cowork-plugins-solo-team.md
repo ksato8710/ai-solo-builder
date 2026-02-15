@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Claude Coworkは、Anthropicが提供するAIエージェント型タスク自動化ツール。プラグイン機能でMCP連携・サブエージェント・スラッシュコマンドに対応し、業務全般をAIで自動化できるワークスペース。"
 image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=420&fit=crop"
+tags: ["ai-productivity"]
 ---
 
 > 最終情報更新: 2026年2月3日

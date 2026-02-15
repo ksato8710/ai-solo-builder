@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Sleek.designは、チャット形式でモバイルアプリのUI/UX案を生成するAIデザイン支援ツール。プロトタイピングの初速を上げる用途で使う。"
 readTime: 5
+tags: ["ai-design"]
 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=420&fit=crop"
 ---
 

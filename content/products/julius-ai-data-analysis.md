@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Julius AIは、自然言語でデータ分析ができるAIプラットフォーム。CSVやExcelファイルをアップロードし、チャットで指示するだけで統計分析・可視化・インサイト抽出を自動実行する。"
 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=420&fit=crop"
+tags: ["ai-data"]
 ---
 
 > 最終情報更新: 2026年2月3日

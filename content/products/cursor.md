@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Cursorは、AIを開発フローに統合したコードエディタ。インライン編集やコードベース理解を前提に、実装速度を上げる用途で使われる。"
 readTime: 6
+tags: ["ai-coding","ai-ide"]
 image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=420&fit=crop"
 ---
 

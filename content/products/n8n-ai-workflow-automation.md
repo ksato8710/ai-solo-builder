@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "n8nは、AIエージェントとワークフロー自動化を組み合わせたオープンソースのローコードプラットフォーム。400以上のサービス連携とセルフホスト対応で、ZapierやMakeの代替として急成長中。"
 image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&h=420&fit=crop"
+tags: ["automation"]
 ---
 
 > 最終情報更新: 2026年2月3日

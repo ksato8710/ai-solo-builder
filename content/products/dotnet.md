@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "マイクロソフトの統合開発プラットフォーム。クロスプラットフォーム対応で、C#・F#・VB.NETでの高生産性アプリケーション開発を支援。"
 readTime: 5
+tags: ["developer-tools"]
 image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=420&fit=crop"
 ---
 

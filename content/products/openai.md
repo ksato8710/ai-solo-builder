@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "GPT-4、GPT-5.3 Codex Sparkなどの先進的AIモデルを提供するAI研究開発企業。ChatGPTとAPI経由でソロ開発者向けAI支援機能を展開。"
 readTime: 5
+tags: ["ai-chat","developer-tools"]
 image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=420&fit=crop"
 ---
 

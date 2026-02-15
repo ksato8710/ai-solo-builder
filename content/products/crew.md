@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Crewは、複数のAIエージェント（Writer/Reviewer/QAなど）を役割分担させて開発を進めるためのOSSツール。"
 readTime: 4
+tags: ["ai-agent"]
 image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=420&fit=crop"
 ---
 

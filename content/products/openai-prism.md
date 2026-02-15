@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "OpenAI Prismは、科学者向けのLaTeX編集体験を支援するツールとして言及されているプロダクト（詳細は必要に応じて追記）。"
 readTime: 3
+tags: ["ai-coding"]
 image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=420&fit=crop"
 ---
 

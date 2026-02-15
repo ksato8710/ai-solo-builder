@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "AdCreative.aiは、コンバージョンに最適化された広告クリエイティブをAIが自動生成するプラットフォーム。パフォーマンスデータに基づいてデザインを予測・提案し、広告制作を劇的に効率化する。"
 image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=420&fit=crop"
+tags: ["ai-marketing","ai-image"]
 ---
 
 > 最終情報更新: 2026年2月3日

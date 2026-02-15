@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Kleoは、LinkedIn向けのコンテンツ作成を支援するツール。投稿の作成・改善・運用を効率化する用途で使われる。"
 readTime: 5
+tags: ["ai-productivity"]
 image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=420&fit=crop"
 ---
 

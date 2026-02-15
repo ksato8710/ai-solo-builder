@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Gammaは、AIを活用してプレゼンテーション・文書・Webページを数分で作成できるプラットフォーム。プロンプト入力だけでデザインされたスライドが自動生成される次世代プレゼンツール。"
 image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=420&fit=crop"
+tags: ["ai-presentation"]
 ---
 
 > 最終情報更新: 2026年2月3日

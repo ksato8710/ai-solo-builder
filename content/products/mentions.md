@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Mentionsは、ケーススタディで言及されている運用支援系プロダクト（詳細は後日追記）。"
 readTime: 3
+tags: ["ai-marketing"]
 image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=420&fit=crop"
 ---
 

@@ -5,6 +5,7 @@ date: "2026-02-10"
 contentType: "product"
 description: "AIによる脆弱性発見を自動化するツール。個人でも“継続監査”の運用を始めやすくする。"
 readTime: 4
+tags: ["ai-productivity"]
 image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=420&fit=crop"
 featured: false
 ---

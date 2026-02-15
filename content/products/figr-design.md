@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Figr.designは、スクリーンショットやプロダクト資料を取り込み、文脈理解とUX改善提案まで行うAIデザインエージェント。"
 readTime: 6
+tags: ["ai-design"]
 image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=420&fit=crop"
 ---
 

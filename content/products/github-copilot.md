@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "GitHub Copilotは、エディタ上でコード補完や生成を支援する定番ツール。小さな実装の反復を高速化する。"
 readTime: 5
+tags: ["ai-coding"]
 image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=420&fit=crop"
 ---
 

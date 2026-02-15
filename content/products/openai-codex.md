@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "OpenAI Codexは、コード生成・修正・レビューなどを支援するコーディング向けモデル/エージェント。CLIやデスクトップアプリなどの形で利用される。"
 readTime: 6
+tags: ["ai-coding"]
 image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=420&fit=crop"
 ---
 

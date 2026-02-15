@@ -1,5 +1,6 @@
 import { getPostsByCategory, CATEGORIES } from '@/lib/posts';
 import NewsCard from '@/components/NewsCard';
+import ProductFilterChips from '@/components/ProductFilterChips';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
@@ -30,7 +31,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         <h1 className="text-2xl font-extrabold text-[var(--text-primary)]">{cat.emoji} {cat.label}</h1>
       </div>
 
-      {posts.length > 0 ? (
+      {/* Products category uses filter chips */}
+      {category === 'products' ? (
+        <ProductFilterChips products={posts} />
+      ) : posts.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {posts.map((post) => (
             <NewsCard key={post.slug} post={post} />

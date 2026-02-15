@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Appleの統合開発環境。iOS、macOS、watchOS、tvOSアプリの開発に必須。2026年にClaude Agent SDK統合により、AI支援開発が公式サポート。"
 readTime: 6
+tags: ["ai-ide","developer-tools"]
 image: "https://images.unsplash.com/photo-1512317049220-d3c6fcaf6681?w=800&h=420&fit=crop"
 ---
 

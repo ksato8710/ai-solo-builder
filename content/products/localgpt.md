@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "LocalGPTは、ローカル実行・永続メモリを掲げるRust製のAIアシスタントプロジェクト。プライバシー重視の開発環境で注目されている。"
 readTime: 4
+tags: ["ai-chat"]
 image: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=800&h=420&fit=crop"
 ---
 

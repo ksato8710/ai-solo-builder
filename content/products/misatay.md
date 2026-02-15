@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Misatayは、AIエージェントとの協働（計画→実行→レビュー）を重視するVS Code拡張。トークン消費を抑える設計が特徴。"
 readTime: 4
+tags: ["ai-productivity"]
 image: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=800&h=420&fit=crop"
 ---
 

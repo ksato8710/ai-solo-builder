@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Jasperは、マーケティングチーム向けに特化したAIコンテンツ生成プラットフォーム。ブランドボイスの統一、50以上のテンプレート、チーム協業機能でマーケティングワークフローを効率化する。"
 image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=420&fit=crop"
+tags: ["ai-marketing","ai-writing"]
 ---
 
 > 最終情報更新: 2026年2月3日

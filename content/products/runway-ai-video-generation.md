@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Runwayは、テキストや画像から高品質な動画を生成するAIクリエイティブプラットフォーム。Gen-3 Alpha / Gen-4モデルを搭載し、プロの映像制作ワークフローにも対応する。"
 image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=420&fit=crop"
+tags: ["ai-video"]
 ---
 
 > 最終情報更新: 2026年2月3日

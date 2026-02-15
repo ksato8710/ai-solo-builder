@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "チャット対話でフルスタックWebアプリを生成するvibe codingプラットフォーム。GitHub同期とワンクリックデプロイで、プロトタイプから本格運用まで一気通貫。"
 readTime: 5
+tags: ["no-code"]
 image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=420&fit=crop"
 ---
 

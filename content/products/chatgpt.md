@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "OpenAIの対話型AIアシスタント。自然言語での質問応答、コーディング支援、文書作成などを通じてソロ開発者の日常業務を効率化。"
 readTime: 5
+tags: ["ai-chat"]
 image: "https://images.unsplash.com/photo-1587440871875-191322ee5e3f?w=800&h=420&fit=crop"
 ---
 

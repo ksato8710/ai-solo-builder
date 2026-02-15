@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Continue.devは、VS Code / JetBrainsで使えるオープンソースのAIコーディングアシスタント。モデルを切り替えながら、補完・チャット・リファクタ支援を統合できる。"
 readTime: 6
+tags: ["ai-coding"]
 image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=420&fit=crop"
 ---
 

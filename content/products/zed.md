@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Zedは、Rust製の高速エディタ。協働編集やAI支援など、開発フローの統合を志向する。"
 readTime: 4
+tags: ["ai-ide","ai-coding"]
 image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=420&fit=crop"
 ---
 

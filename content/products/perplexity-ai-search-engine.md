@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "Perplexity AIは、複数のWeb情報源を統合し引用付きのレポートとして回答を生成するAI検索エンジン。AIブラウザ「Comet」も提供し、検索の枠を超えた知識プラットフォームへと進化している。"
 image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=420&fit=crop"
+tags: ["ai-search"]
 ---
 
 > 最終情報更新: 2026年2月3日

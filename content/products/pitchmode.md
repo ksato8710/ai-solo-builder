@@ -6,6 +6,7 @@ contentType: "product"
 type: product
 description: "PitchModeは、開発者が投資家向けのピッチを短時間で練習し、フィードバックを得るためのツール。"
 readTime: 4
+tags: ["ai-presentation"]
 image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=420&fit=crop"
 ---
 
