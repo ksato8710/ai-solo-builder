@@ -1,5 +1,6 @@
-import { getAllProducts, getProductBySlug, CATEGORIES } from '@/lib/posts';
+import { getAllProducts, getProductBySlug, getPostsByRelatedProduct, CATEGORIES } from '@/lib/posts';
 import { notFound } from 'next/navigation';
+import RelatedArticleCard from '@/components/RelatedArticleCard';
 
 export async function generateStaticParams() {
   const products = await getAllProducts();
@@ -22,6 +23,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   if (!product) notFound();
 
   const cat = CATEGORIES['products'];
+  const relatedArticles = await getPostsByRelatedProduct(slug);
+  
   const formatDate = (dateStr: string) => {
     const d = new Date(dateStr);
     return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
@@ -62,6 +65,21 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {/* Content */}
       <div className="article-content" dangerouslySetInnerHTML={{ __html: product.htmlContent || '' }} />
+
+      {/* Related Articles */}
+      {relatedArticles.length > 0 && (
+        <section className="mt-12 pt-8 border-t border-[var(--border-color)]">
+          <h2 className="text-lg font-bold text-[var(--text-primary)] mb-4 flex items-center gap-2">
+            <span className="text-[var(--accent-blue)]">📰</span>
+            関連記事
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {relatedArticles.map((article) => (
+              <RelatedArticleCard key={article.slug} post={article} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Back link */}
       <div className="mt-12 pt-8 border-t border-[var(--border-color)]">

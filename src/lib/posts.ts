@@ -412,3 +412,11 @@ export async function getProductBySlug(slug: string): Promise<Post | null> {
 
   return findPostInDirectory(productsDirectory, slug, 'product');
 }
+
+export async function getPostsByRelatedProduct(productSlug: string): Promise<Post[]> {
+  const posts = await getAllPosts();
+  return posts
+    .filter((p) => p.relatedProducts?.includes(productSlug))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 6); // 最大6件
+}
