@@ -176,13 +176,24 @@ body {
 
 /* 
  * 汎用列幅ルール:
- * - 固定nth-child指定を避ける（テーブル構造に依存しない）
- * - min-width/max-widthで極端な幅のみ制御
+ * - 最後の列（説明/理由）を広く取る
+ * - 他の列（数値/短いテキスト）は最小幅に縮める
+ * - テーブル構造に依存しない汎用ルール
  */
+
+/* 全ての列: コンテンツに応じた最小幅 */
 .article-content th,
 .article-content td {
-  min-width: 50px;  /* 最小幅: 短すぎる列を防ぐ */
-  max-width: 500px; /* 最大幅: 長すぎる列を防ぐ */
+  width: 1%;           /* 最小幅に縮める */
+  white-space: nowrap; /* 改行を防ぐ */
+}
+
+/* 最後の列: 残りのスペースを全て取る（説明/理由列用） */
+.article-content th:last-child,
+.article-content td:last-child {
+  width: 100%;         /* 残りの幅を全て取る */
+  white-space: normal; /* 改行を許可 */
+  word-wrap: break-word;
 }
 
 .article-content thead {
