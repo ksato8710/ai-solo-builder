@@ -175,12 +175,13 @@ article {
 
 /* テーブル基本スタイル */
 .article-content table {
-  width: 100%;
-  max-width: 640px; /* PC表示時の最大幅を制限 */
+  width: auto; /* コンテンツに応じた幅 */
+  min-width: 50%; /* 最小幅 */
+  max-width: 100%; /* 最大幅 */
   border-collapse: collapse;
   margin: 1.5rem 0;
   font-size: 0.95rem;
-  table-layout: auto; /* コンテンツに応じた自動幅 */
+  table-layout: auto;
 }
 
 /* 
