@@ -7,7 +7,7 @@ publishedAt: "2026-02-16T14:00:00+09:00"
 image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=1200&h=630&fit=crop"
 contentType: "news"
 readTime: 12
-tags: ["開発ナレッジ", "Vercel", "データベース", "SQLite", "インフラ"]
+tags: ["dev-knowledge", "Vercel", "データベース", "SQLite", "インフラ"]
 relatedProducts: []
 ---
 
