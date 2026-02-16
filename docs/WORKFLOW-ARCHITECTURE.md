@@ -79,7 +79,7 @@ news_candidates  selected候補      Markdown記事       最適化記事       
 | 2. 評価 | 期間フィルタ・**ソース信頼度考慮NVA**・事実確認 | collected候補 | selected候補 (Top10/Top3) | news-evaluation |
 | 3. 記事作成 | Digest + Top3個別記事執筆・**ソース情報自動登録** | selected候補 | Markdownファイル | digest-writer |
 | 4. UI最適化 | 表組み・構造・視覚的メリハリの改善 | Markdownファイル | 最適化記事 | content-optimizer |
-| 5. 公開 | チェックリスト照合・**ソース整合性チェック**・デプロイ | 最適化記事 | 本番サイト | publish-gate |
+| 5. 公開 | チェックリスト照合・**ソース整合性チェック**・デプロイ・**UI確認（PC+モバイル）** | 最適化記事 | 本番サイト | publish-gate |
 
 ### 日次スケジュール
 
@@ -312,7 +312,7 @@ asb-midday-editorial
 | news-evaluation | 期間適切性、事実確認、**ソース信頼度考慮**NVAスコア |
 | digest-writer | Frontmatter、Digest構造、画像、リンク、**ソース情報登録** |
 | article-quality-check | サムネイル、メタデータ、フォーマット |
-| publish-gate | ゲート通過、**ソース整合性チェック**、デプロイ確認、Slack報告 |
+| publish-gate | ゲート通過、**ソース整合性チェック**、デプロイ確認、**UI確認（PC+モバイル）**、Slack報告 |
 
 ---
 
@@ -493,6 +493,9 @@ URLパターン分析 ──▶ ソース分類 ──▶ 信頼度算出 ──
 
 | 日付 | 内容 |
 |------|------|
+| **2026-02-16** | **publish-gateにUI確認（PC+モバイル）責務を追加** |
+| | ✅ PC表示確認（記事680px以内、テーブル列幅適正） |
+| | ✅ モバイル表示確認（はみ出しなし、カードラベル表示） |
 | **2026-02-13** | **Phase 4運用最適化完了: ソース管理システム実装** |
 | | ✅ 自動ソース検出・分類・信頼度算出システム |
 | | ✅ 既存72記事への一括ソース紐づけ（77%成功率） |
