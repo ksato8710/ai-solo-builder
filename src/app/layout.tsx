@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import ShareIcon from "@/components/ShareIcon";
 
 export const metadata: Metadata = {
   title: "AI Solo Builder — AIソロ開発者のための日本語ニュース",
@@ -53,29 +54,33 @@ export default function RootLayout({
           <header className="sticky top-0 z-50 border-b border-[var(--border-color)] bg-[var(--header-bg)] backdrop-blur-xl">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between h-14">
-                <a href="/" className="flex items-center gap-2">
-                  <span className="text-xl font-extrabold bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 bg-clip-text text-transparent">
+                {/* Logo */}
+                <a href="/" className="flex items-center gap-2 flex-shrink-0">
+                  <span className="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 bg-clip-text text-transparent">
                     AI Solo Builder
                   </span>
                 </a>
-                <nav className="hidden sm:flex items-center gap-6 text-sm">
+
+                {/* Desktop Navigation */}
+                <nav className="hidden md:flex items-center gap-6 text-sm">
                   <a href="/#digest-summary" className="text-[var(--text-secondary)] hover:text-[var(--accent-blue)] transition-colors">🗞️ 朝夕のまとめ</a>
                   <a href="/news" className="text-[var(--text-secondary)] hover:text-[var(--accent-violet)] transition-colors">📰 ニュース</a>
                   <a href="/category/products" className="text-[var(--text-secondary)] hover:text-[var(--accent-emerald)] transition-colors">🏷️ プロダクト</a>
                 </nav>
-                <div className="flex items-center gap-3">
-                  {/* Mobile nav */}
-                  <div className="sm:hidden flex items-center gap-3 text-xs">
-                    <a href="/#digest-summary" className="text-[var(--text-secondary)]">🗞️</a>
-                    <a href="/news" className="text-[var(--text-secondary)]">📰</a>
-                    <a href="/category/products" className="text-[var(--text-secondary)]">🏷️</a>
-                  </div>
-                  <div className="hidden sm:block text-xs text-[var(--text-muted)] mr-2">
-                    ひとりで作る。AIと一緒に。
-                  </div>
+
+                {/* Actions */}
+                <div className="flex items-center gap-1">
+                  <ShareIcon />
                   <ThemeToggle />
                 </div>
               </div>
+
+              {/* Mobile Navigation - Bottom Row */}
+              <nav className="md:hidden flex items-center justify-center gap-6 pb-2 text-xs">
+                <a href="/#digest-summary" className="text-[var(--text-secondary)] hover:text-[var(--accent-blue)] transition-colors">🗞️ まとめ</a>
+                <a href="/news" className="text-[var(--text-secondary)] hover:text-[var(--accent-violet)] transition-colors">📰 ニュース</a>
+                <a href="/category/products" className="text-[var(--text-secondary)] hover:text-[var(--accent-emerald)] transition-colors">🏷️ プロダクト</a>
+              </nav>
             </div>
           </header>
 

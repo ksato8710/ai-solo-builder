@@ -255,7 +255,7 @@ article {
     margin-bottom: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 0.75rem;
+    padding: 1rem;
     background-color: var(--bg-card);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     width: 100%;
@@ -273,7 +273,7 @@ article {
   .article-content td {
     display: block;
     border: none;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0;
     text-align: left;
     position: relative;
     width: 100% !important; /* デスクトップのwidth:1%を上書き */
@@ -283,25 +283,54 @@ article {
     overflow-wrap: break-word;
   }
 
-  /* First cell styling - acts as card title */
-  .article-content td:first-child {
+  /* data-labelがある場合、ラベルを表示 */
+  .article-content td[data-label]::before {
+    content: attr(data-label) ": ";
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  /* 2番目のセル（タイトル/メインコンテンツ）を目立たせる */
+  .article-content td:nth-child(2) {
     font-weight: 600;
     color: var(--text-primary);
     font-size: 1rem;
-    padding-bottom: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 0.5rem;
   }
 
-  /* Visual separator between cells */
-  .article-content td:not(:first-child):not(:last-child) {
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
-    padding-bottom: 0.625rem;
-    margin-bottom: 0.25rem;
+  /* 最初のセル（順位）はコンパクトに */
+  .article-content td:first-child {
+    padding-bottom: 0.25rem;
   }
 
-  .light .article-content td:not(:first-child):not(:last-child) {
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+  /* 3番目以降のセルはインラインスタイル */
+  .article-content td:nth-child(n+3) {
+    display: inline-block;
+    width: auto !important;
+    padding: 0.375rem 0.75rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    background-color: rgba(59, 130, 246, 0.1);
+    border-radius: 6px;
+    font-size: 0.875rem;
+  }
+
+  .article-content td:nth-child(n+3)::before {
+    display: inline;
+    margin-bottom: 0;
+    margin-right: 0.25rem;
+  }
+
+  .light .article-content td:nth-child(n+3) {
+    background-color: rgba(59, 130, 246, 0.08);
   }
 
   /* Remove alternating row color on mobile (each row is a card) */

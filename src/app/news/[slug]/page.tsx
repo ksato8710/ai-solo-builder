@@ -1,6 +1,6 @@
 import { getAllPosts, getPostBySlug, CATEGORIES } from '@/lib/posts';
 import { notFound } from 'next/navigation';
-import ShareButton from '@/components/ShareButton';
+import ArticleContent from '@/components/ArticleContent';
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -42,16 +42,13 @@ export default async function NewsArticle({ params }: { params: Promise<{ slug: 
 
       {/* Header */}
       <header className="mb-8">
-        <div className="flex items-center justify-between gap-3 mb-4">
-          <div className="flex items-center gap-3 flex-wrap">
-            <span className="text-xs font-semibold px-3 py-1 rounded-full"
-                  style={{ backgroundColor: cat.color + '22', color: cat.color }}>
-              {cat.emoji} {cat.label}
-            </span>
-            <span className="text-xs text-[var(--text-muted)]">{formatDate(post.date)}</span>
-            <span className="text-xs text-[var(--text-muted)]">・{post.readTime}分で読める</span>
-          </div>
-          <ShareButton title={post.title} text={post.description} />
+        <div className="flex items-center gap-3 mb-4 flex-wrap">
+          <span className="text-xs font-semibold px-3 py-1 rounded-full"
+                style={{ backgroundColor: cat.color + '22', color: cat.color }}>
+            {cat.emoji} {cat.label}
+          </span>
+          <span className="text-xs text-[var(--text-muted)]">{formatDate(post.date)}</span>
+          <span className="text-xs text-[var(--text-muted)]">・{post.readTime}分で読める</span>
         </div>
         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--text-primary)] leading-tight">
           {post.title}
@@ -65,7 +62,7 @@ export default async function NewsArticle({ params }: { params: Promise<{ slug: 
       <div className="border-t border-[var(--border-color)] my-8" />
 
       {/* Content */}
-      <div className="article-content" dangerouslySetInnerHTML={{ __html: post.htmlContent || '' }} />
+      <ArticleContent htmlContent={post.htmlContent || ''} />
 
       {/* Back link */}
       <div className="mt-12 pt-8 border-t border-[var(--border-color)]">
