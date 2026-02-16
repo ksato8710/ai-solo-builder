@@ -164,38 +164,59 @@ article {
 }
 
 /* ===========================================
-   Responsive Table - Desktop & Mobile
+   Responsive Table - Desktop, Tablet & Mobile
    
-   汎用テーブルルール:
-   - table-layout: auto（コンテンツに応じた自動幅）
-   - 短いセル（数値/スコア）: 自動で狭く
-   - 長いセル（説明/理由）: 自動で広く
-   - 極端な幅を防ぐ min/max-width のみ指定
+   ベストプラクティス:
+   - Desktop/Tablet: 固定レイアウト、列幅を明示的に設定
+   - Mobile: カード形式に変換
    =========================================== */
 
-/* テーブル基本スタイル */
+/* テーブル基本スタイル - Desktop & Tablet */
 .article-content table {
-  width: auto; /* コンテンツに応じた幅 */
-  min-width: 50%; /* 最小幅 */
-  max-width: 100%; /* 最大幅 */
+  width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
-  font-size: 0.95rem;
-  table-layout: auto;
+  font-size: 0.9rem;
+  table-layout: fixed; /* 予測可能なレイアウト */
 }
 
-/* 
- * 汎用列幅ルール:
- * - 最後の列（説明/理由）を広く取る
- * - 他の列（数値/短いテキスト）は最小幅に縮める
- * - テーブル構造に依存しない汎用ルール
- */
+/* 列幅を明示的に設定 */
+.article-content th:nth-child(1),
+.article-content td:nth-child(1) {
+  width: 8%; /* 順位 */
+  text-align: center;
+}
 
-/* 全ての列: コンテンツに応じた最小幅 */
+.article-content th:nth-child(2),
+.article-content td:nth-child(2) {
+  width: auto; /* ニュース - 残りのスペースを使用 */
+}
+
+.article-content th:nth-child(3),
+.article-content td:nth-child(3) {
+  width: 12%; /* NVA */
+  text-align: center;
+}
+
+.article-content th:nth-child(4),
+.article-content td:nth-child(4) {
+  width: 10%; /* Tier */
+  text-align: center;
+}
+
+/* セル基本スタイル */
 .article-content th,
 .article-content td {
-  width: 1%;           /* 最小幅に縮める */
-  white-space: nowrap; /* 改行を防ぐ */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ニュース列は折り返しを許可 */
+.article-content th:nth-child(2),
+.article-content td:nth-child(2) {
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 /* 最後の列: 残りのスペースを全て取る（説明/理由列用） */
@@ -230,6 +251,36 @@ article {
 
 .article-content tr:hover {
   background-color: var(--bg-card-hover);
+}
+
+/* ===========================================
+   Tablet: Adjust table for medium screens
+   =========================================== */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .article-content table {
+    font-size: 0.85rem;
+  }
+  
+  .article-content th,
+  .article-content td {
+    padding: 0.625rem 0.75rem;
+  }
+  
+  /* タブレットでは列幅を調整 */
+  .article-content th:nth-child(1),
+  .article-content td:nth-child(1) {
+    width: 10%;
+  }
+  
+  .article-content th:nth-child(3),
+  .article-content td:nth-child(3) {
+    width: 14%;
+  }
+  
+  .article-content th:nth-child(4),
+  .article-content td:nth-child(4) {
+    width: 12%;
+  }
 }
 
 /* ===========================================
