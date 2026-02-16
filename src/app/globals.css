@@ -32,12 +32,30 @@
   --accent-amber: #d97706;
 }
 
+html {
+  overflow-x: hidden; /* 横スクロール完全防止 */
+}
+
 body {
   font-family: 'Inter', 'Noto Sans JP', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* 横スクロール防止 */
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* コンテンツ幅制限 */
+main {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+article {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Article content styles */
@@ -218,7 +236,9 @@ body {
 @media (max-width: 640px) {
   .article-content table {
     display: block;
-    overflow-x: visible;
+    overflow-x: hidden; /* 横スクロール防止 */
+    width: 100%;
+    max-width: 100%;
   }
 
   .article-content thead {
@@ -227,6 +247,7 @@ body {
 
   .article-content tbody {
     display: block;
+    width: 100%;
   }
 
   .article-content tr {
@@ -237,6 +258,9 @@ body {
     padding: 0.75rem;
     background-color: var(--bg-card);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .article-content tr:hover {
@@ -245,12 +269,18 @@ body {
     transition: all 0.2s ease;
   }
 
+  .article-content th,
   .article-content td {
     display: block;
     border: none;
     padding: 0.5rem 0.75rem;
     text-align: left;
     position: relative;
+    width: 100% !important; /* デスクトップのwidth:1%を上書き */
+    white-space: normal !important; /* nowrapを解除 */
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   /* First cell styling - acts as card title */
@@ -277,5 +307,11 @@ body {
   /* Remove alternating row color on mobile (each row is a card) */
   .article-content tr:nth-child(even) {
     background-color: var(--bg-card);
+  }
+
+  /* リンクの折り返し */
+  .article-content a {
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 }
