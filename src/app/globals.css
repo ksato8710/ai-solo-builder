@@ -111,9 +111,52 @@ article {
   font-weight: 600;
 }
 
+/* ===========================================
+   Link Styles (note/Zenn-inspired)
+   =========================================== */
+
 .article-content a {
+  color: var(--text-primary);
+  text-decoration: none;
+  background-image: linear-gradient(
+    transparent calc(100% - 2px),
+    rgba(59, 130, 246, 0.4) 2px
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transition: all 0.2s ease;
+  padding-bottom: 1px;
+}
+
+.article-content a:hover {
   color: var(--accent-blue);
-  text-decoration: underline;
+  background-image: linear-gradient(
+    transparent calc(100% - 2px),
+    var(--accent-blue) 2px
+  );
+}
+
+.light .article-content a {
+  background-image: linear-gradient(
+    transparent calc(100% - 2px),
+    rgba(37, 99, 235, 0.3) 2px
+  );
+}
+
+.light .article-content a:hover {
+  color: var(--accent-blue);
+  background-image: linear-gradient(
+    transparent calc(100% - 2px),
+    var(--accent-blue) 2px
+  );
+}
+
+/* 外部リンクに小さなアイコンを追加 */
+.article-content a[href^="http"]:not([href*="ai.essential-navigator.com"])::after {
+  content: " ↗";
+  font-size: 0.75em;
+  opacity: 0.6;
+  vertical-align: super;
 }
 
 .article-content blockquote {
