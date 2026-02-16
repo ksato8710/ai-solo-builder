@@ -236,106 +236,156 @@ article {
 @media (max-width: 640px) {
   .article-content table {
     display: block;
-    overflow-x: hidden; /* 横スクロール防止 */
+    overflow-x: hidden;
     width: 100%;
     max-width: 100%;
   }
 
   .article-content thead {
-    display: none; /* Hide header row on mobile */
+    display: none;
   }
 
   .article-content tbody {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     width: 100%;
   }
 
   .article-content tr {
-    display: block;
-    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem 0.75rem;
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 1rem;
+    padding: 0.875rem;
     background-color: var(--bg-card);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    transition: all 0.2s ease;
   }
 
   .article-content tr:hover {
     background-color: var(--bg-card-hover);
     transform: translateY(-1px);
-    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .article-content th,
   .article-content td {
     display: block;
     border: none;
-    padding: 0.5rem 0;
+    padding: 0;
     text-align: left;
-    position: relative;
-    width: 100% !important; /* デスクトップのwidth:1%を上書き */
-    white-space: normal !important; /* nowrapを解除 */
+    width: auto !important;
+    white-space: normal !important;
     word-wrap: break-word;
     word-break: break-word;
     overflow-wrap: break-word;
   }
 
-  /* data-labelがある場合、ラベルを表示 */
+  /* ラベルを非表示（視覚的に不要） */
   .article-content td[data-label]::before {
-    content: attr(data-label) ": ";
-    font-weight: 600;
-    color: var(--text-muted);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    display: block;
-    margin-bottom: 0.25rem;
+    display: none;
   }
 
-  /* 2番目のセル（タイトル/メインコンテンツ）を目立たせる */
+  /* 1番目: 順位バッジ（左上） */
+  .article-content td:first-child {
+    grid-row: 1 / 3;
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem !important;
+    height: 2.5rem;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-violet) 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  /* Top 3 の順位バッジを特別なスタイルに */
+  .article-content tr:nth-child(1) td:first-child {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #1a1a1a;
+  }
+  .article-content tr:nth-child(2) td:first-child {
+    background: linear-gradient(135deg, #C0C0C0 0%, #A0A0A0 100%);
+    color: #1a1a1a;
+  }
+  .article-content tr:nth-child(3) td:first-child {
+    background: linear-gradient(135deg, #CD7F32 0%, #B87333 100%);
+    color: white;
+  }
+
+  /* 2番目: タイトル（右上） */
   .article-content td:nth-child(2) {
+    grid-row: 1;
+    grid-column: 2;
     font-weight: 600;
     color: var(--text-primary);
-    font-size: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    align-self: center;
   }
 
-  /* 最初のセル（順位）はコンパクトに */
-  .article-content td:first-child {
-    padding-bottom: 0.25rem;
+  .article-content td:nth-child(2) a {
+    color: var(--text-primary);
+    text-decoration: none;
   }
 
-  /* 3番目以降のセルはインラインスタイル */
+  .article-content td:nth-child(2) a:hover {
+    color: var(--accent-blue);
+  }
+
+  /* 3番目以降: メタ情報（右下にバッジで横並び） */
   .article-content td:nth-child(n+3) {
-    display: inline-block;
+    grid-row: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
     width: auto !important;
-    padding: 0.375rem 0.75rem;
-    margin-right: 0.5rem;
-    margin-top: 0.5rem;
-    background-color: rgba(59, 130, 246, 0.1);
+    padding: 0.25rem 0.5rem;
+    background-color: rgba(139, 92, 246, 0.12);
     border-radius: 6px;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
   }
 
+  .article-content td:nth-child(3) {
+    grid-column: 2;
+  }
+
+  /* メタ情報のラベルをインライン表示 */
   .article-content td:nth-child(n+3)::before {
+    content: attr(data-label);
     display: inline;
-    margin-bottom: 0;
-    margin-right: 0.25rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
 
   .light .article-content td:nth-child(n+3) {
-    background-color: rgba(59, 130, 246, 0.08);
+    background-color: rgba(139, 92, 246, 0.08);
   }
 
-  /* Remove alternating row color on mobile (each row is a card) */
-  .article-content tr:nth-child(even) {
-    background-color: var(--bg-card);
+  /* Tierバッジの色分け */
+  .article-content td:nth-child(4) {
+    margin-left: 0.375rem;
+  }
+
+  /* メタ情報コンテナ */
+  .article-content tr td:nth-child(3),
+  .article-content tr td:nth-child(4) {
+    grid-row: 2;
   }
 
   /* リンクの折り返し */
