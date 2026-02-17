@@ -277,7 +277,7 @@ function WorkflowTab() {
         <div className="space-y-4">
           {[
             { phase: 'Phase 1', title: '調査', desc: '一次ソース特定・日付確認・自動ソース検出', skill: 'news-research', color: 'bg-red-500' },
-            { phase: 'Phase 2', title: '評価・選定', desc: '期間フィルタ・ソース信頼度考慮NVA・事実確認', skill: 'news-evaluation', color: 'bg-amber-500' },
+            { phase: 'Phase 2', title: '評価・選定', desc: '期間フィルタ・ソース信頼度スコア・事実確認', skill: 'news-evaluation', color: 'bg-amber-500' },
             { phase: 'Phase 3', title: '記事作成', desc: 'Digest + Top3個別記事執筆・ソース情報自動登録', skill: 'digest-writer', color: 'bg-green-500' },
             { phase: 'Phase 4', title: 'UI最適化', desc: '表組み・構造・視覚的メリハリの改善', skill: 'content-optimizer', color: 'bg-blue-500' },
             { phase: 'Phase 5', title: '公開', desc: 'チェックリスト照合・ソース整合性チェック・デプロイ', skill: 'publish-gate', color: 'bg-violet-500' },
@@ -304,7 +304,7 @@ function WorkflowTab() {
             <h3 className="font-semibold text-amber-400 mb-3">🌅 朝刊 (07:30〜08:00)</h3>
             <div className="space-y-2 text-sm text-slate-300">
               <div className="flex justify-between"><span>07:30</span><span>ニュース調査開始</span></div>
-              <div className="flex justify-between"><span>07:40</span><span>NVA評価・Top10選定</span></div>
+              <div className="flex justify-between"><span>07:40</span><span>スコア評価・Top10選定</span></div>
               <div className="flex justify-between"><span>07:48</span><span>Digest + Top3記事作成</span></div>
               <div className="flex justify-between"><span>07:55</span><span>UI最適化・公開チェック</span></div>
               <div className="flex justify-between"><span>08:00</span><span className="text-emerald-400">🎯 公開目標</span></div>
@@ -340,10 +340,10 @@ function SkillsTab({ onSkillSelect }: { onSkillSelect: (skillName: string) => vo
     {
       name: 'news-evaluation',
       category: 'Core Pipeline',
-      description: '期間フィルタ・NVA・Top10選定',
+      description: '期間フィルタ・スコア評価・Top10選定',
       phase: 'Phase 2',
       automation: '高い',
-      features: ['期間フィルタ', 'ソース信頼度考慮NVA', '事実確認', 'Top10/Top3選定'],
+      features: ['期間フィルタ', 'ソース信頼度スコア', '事実確認', 'Top10/Top3選定'],
       color: 'bg-amber-500'
     },
     {
@@ -540,7 +540,7 @@ function ContentTab() {
             <ul className="text-sm text-slate-300 space-y-1">
               <li>• Top10ランキング形式でニュース一覧</li>
               <li>• Top3は個別記事として詳細化</li>
-              <li>• NVAスコアによる客観的評価</li>
+              <li>• スコアによる客観的評価</li>
               <li>• 朝刊・夕刊で重複回避</li>
             </ul>
           </div>

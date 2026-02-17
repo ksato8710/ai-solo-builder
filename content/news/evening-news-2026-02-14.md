@@ -20,7 +20,7 @@ relatedProducts: ["github-copilot", "claude", "cursor"]
 
 ---
 
-## 🏁 重要ニュースランキング（NVA）
+## 🏁 重要ニュースランキング
 
 | 順位 | ニュース | Tier |
 |:----:|----------|:----:|

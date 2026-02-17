@@ -18,9 +18,9 @@ relatedProducts: ["chatgpt", "claude", "openai"]
 
 今日はOpenClawの創設者がOpenAIに入社するというビッグニュースが飛び込んできた。インドではAI Impact Summitが開幕し、Sam Altman、Sundar Pichai、Dario Amodeiといった大物CEOが勢揃い。一方、イギリスではGrokスキャンダルを受けてAI chatbotへの規制拡大が発表された。AIの発展と規制、両面で動きが加速してる。
 
-## 🏁 重要ニュースランキング（NVA）
+## 🏁 重要ニュースランキング
 
-| 順位 | ニュース | NVA | Tier |
+| 順位 | ニュース | スコア | Tier |
 |------|----------|-----|------|
 | 1 | [OpenClaw創設者がOpenAI入社、プロジェクトは財団化](/news/openclaw-founder-joins-openai-2026-02-16) | 24 | S |
 | 2 | [India AI Impact Summit 2026開幕 — Altman/Pichai/Amodei集結](/news/india-ai-impact-summit-2026-02-16) | 22 | A |

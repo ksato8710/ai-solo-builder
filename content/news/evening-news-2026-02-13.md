@@ -16,11 +16,11 @@ relatedProducts: ["github-copilot", "claude", "cursor"]
 
 今日夕方のAIソロビルダー向けニュースをお届けします。開発者ツールの進化が加速しています。
 
-## 🏁 重要ニュースランキング（NVA）
+## 🏁 重要ニュースランキング
 
 今日収集したニュースを価値評価し、ランキング化しました。
 
-| 順位 | ニュース | NVA | Tier |
+| 順位 | ニュース | スコア | Tier |
 |------|----------|-----|------|
 | 1 | [OpenAI GPT-5.3 Codex Spark リアルタイムコーディング支援](/news/openai-gpt-5-3-codex-spark-2026-02-13) | 24 | S |
 | 2 | [GitHub Copilot .NET テスト機能が Visual Studio 2026で一般提供](/news/github-copilot-dotnet-testing-2026-02-13) | 23 | S |

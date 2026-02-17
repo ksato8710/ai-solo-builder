@@ -94,7 +94,7 @@ Accenture Songのデザインディレクター @Nervo氏の「Claude Code for D
 ## 関連プロダクト
 → [/products/claude-code](/products/claude-code)
 
-## ニュースバリュー評価（NVA）
+## スコア内訳
 | 評価軸 | スコア |
 |--------|--------|
 | SNS反応量 | 20/20 |

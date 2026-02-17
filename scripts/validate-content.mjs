@@ -162,14 +162,24 @@ function extractProductLinks(markdown) {
 }
 
 function hasDigestSections(rawMarkdown) {
-  return rawMarkdown.includes('## 🏁 重要ニュースランキング（NVA）') && rawMarkdown.includes('## 🔥 Top 3 ピックアップ');
+  // 新形式「## 🏁 重要ニュースランキング」または旧形式「## 🏁 重要ニュースランキング（NVA）」の両方に対応
+  const hasRanking = rawMarkdown.includes('## 🏁 重要ニュースランキング');
+  const hasTop3 = rawMarkdown.includes('## 🔥 Top 3 ピックアップ');
+  return hasRanking && hasTop3;
 }
 
 function hasRankingTable(rawMarkdown) {
-  const header = '## 🏁 重要ニュースランキング（NVA）';
-  const idx = rawMarkdown.indexOf(header);
+  // 新形式・旧形式両方に対応
+  const newHeader = '## 🏁 重要ニュースランキング\n';
+  const oldHeader = '## 🏁 重要ニュースランキング（NVA）';
+  let idx = rawMarkdown.indexOf(newHeader);
+  let headerLen = newHeader.length;
+  if (idx === -1) {
+    idx = rawMarkdown.indexOf(oldHeader);
+    headerLen = oldHeader.length;
+  }
   if (idx === -1) return false;
-  const after = rawMarkdown.slice(idx + header.length);
+  const after = rawMarkdown.slice(idx + headerLen);
   return /\n\|.+\|\n\|[-| :]+\|\n\|.+\|/m.test(after);
 }
 
@@ -221,7 +231,7 @@ function main() {
       if (date && date >= DIGEST_FORMAT_ENFORCE_FROM && !isLegacyDigestCategory) {
         if (!hasDigestSections(raw)) die(`${filePath} (Digest) is missing required sections`);
         if (!hasRankingTable(raw)) {
-          die(`${filePath} (Digest) is missing a valid ranking table under the NVA section`);
+          die(`${filePath} (Digest) is missing a valid ranking table under the ranking section`);
         }
       }
     }

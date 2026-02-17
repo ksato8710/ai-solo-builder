@@ -18,9 +18,9 @@ relatedProducts: ["github-copilot", "chatgpt", "claude"]
 
 今週は開発ツール系で大きな動きがあった。OpenAIが旧モデルを完全に廃止してGPT-5.2時代に突入、GitHubはCopilot CLIを怒涛の勢いでアップデートしてる。一方で、Anthropicと米国防総省の間でClaude軍事利用をめぐる緊張が表面化。AIと倫理の問題が改めて浮き彫りになってきてる。
 
-## 🏁 重要ニュースランキング（NVA）
+## 🏁 重要ニュースランキング
 
-| 順位 | ニュース | NVA | Tier |
+| 順位 | ニュース | スコア | Tier |
 |------|----------|-----|------|
 | 1 | [OpenAI旧モデル完全廃止、GPT-5.2時代へ](/news/openai-gpt4o-model-retirement-2026-02-16) | 24 | S |
 | 2 | [GitHub Copilot CLI、10日で7リリースの怒涛更新](/news/github-copilot-cli-7-releases-2026-02-16) | 23 | S |
