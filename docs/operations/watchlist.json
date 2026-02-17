@@ -1,0 +1,71 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-18",
+  "accounts": {
+    "tier1_official": [
+      { "handle": "AnthropicAI", "category": "ai-company", "priority": "highest" },
+      { "handle": "OpenAI", "category": "ai-company", "priority": "highest" },
+      { "handle": "cursor_ai", "category": "dev-tool", "priority": "highest" },
+      { "handle": "figma", "category": "design-tool", "priority": "highest" },
+      { "handle": "vercel", "category": "infra", "priority": "highest" },
+      { "handle": "supabase", "category": "infra", "priority": "highest" },
+      { "handle": "linear", "category": "dev-tool", "priority": "high" },
+      { "handle": "NotionHQ", "category": "productivity", "priority": "high" }
+    ],
+    "tier2_keyperson": [
+      { "handle": "sama", "category": "ceo", "company": "OpenAI", "priority": "high" },
+      { "handle": "daboross", "category": "ceo", "company": "Anthropic", "priority": "high" },
+      { "handle": "dylanf", "category": "ceo", "company": "Figma", "priority": "high" },
+      { "handle": "karpathy", "category": "researcher", "priority": "high" },
+      { "handle": "swyx", "category": "influencer", "priority": "medium" },
+      { "handle": "levelsio", "category": "indie-hacker", "priority": "medium" }
+    ],
+    "tier3_japanese": [
+      { "handle": "kgsi", "category": "japanese-influencer", "priority": "medium" },
+      { "handle": "y_matsuwitter", "category": "japanese-influencer", "priority": "medium" },
+      { "handle": "kajikent", "category": "japanese-influencer", "priority": "medium" }
+    ]
+  },
+  "keywords": {
+    "products": [
+      "Claude", "Claude Code", "Anthropic", "MCP",
+      "OpenAI", "GPT-5", "ChatGPT", "Codex",
+      "Cursor", "Windsurf", "Cline", "Aider",
+      "Figma", "Figma MCP", "Dev Mode",
+      "Vercel", "Next.js", "v0",
+      "Supabase", "Edge Functions",
+      "Linear", "Notion AI",
+      "Agent Teams", "AI Agents", "Agentic"
+    ],
+    "action_triggers": {
+      "english": [
+        "just launched", "now available", "introducing", "announcing",
+        "released", "shipped", "live now", "breaking", "just announced"
+      ],
+      "japanese": [
+        "新機能", "リリース", "発表", "公開", "ローンチ", "速報"
+      ]
+    }
+  },
+  "thresholds": {
+    "auto_publish": {
+      "tier1_with_action_keyword": true,
+      "likes_min": 2000,
+      "retweets_min": 500
+    },
+    "slack_notify": {
+      "tier1_any": true,
+      "tier2_likes_min": 1000,
+      "tier3_likes_min": 500
+    },
+    "digest_consider": {
+      "likes_min": 300,
+      "retweets_min": 50
+    }
+  },
+  "schedule": {
+    "check_interval_minutes": 30,
+    "active_hours": { "start": 7, "end": 23 },
+    "timezone": "Asia/Tokyo"
+  }
+}
