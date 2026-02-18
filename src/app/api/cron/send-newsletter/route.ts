@@ -10,7 +10,18 @@ import {
 import { MorningDigestEmail } from '@/emails/morning-digest';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ai.essential-navigator.com';
-const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Lazy initialization to avoid build-time errors when RESEND_API_KEY is not set
+let resend: Resend | null = null;
+function getResend(): Resend {
+  if (!resend) {
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error('RESEND_API_KEY environment variable is not set');
+    }
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 const BATCH_SIZE = 50;
 
@@ -66,7 +77,7 @@ export async function POST(request: NextRequest) {
         batch.map(async (subscriber) => {
           const unsubscribeUrl = `${SITE_URL}/api/newsletter/unsubscribe?token=${subscriber.unsubscribe_token}`;
 
-          await resend.emails.send({
+          await getResend().emails.send({
             from: 'AI Solo Builder <newsletter@ai.essential-navigator.com>',
             to: subscriber.email,
             subject,
