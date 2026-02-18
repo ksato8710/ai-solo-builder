@@ -1,6 +1,7 @@
 import { getAllPosts, getAllProducts, getAllContent, getFeaturedPosts, getPostsByCategory } from '@/lib/posts';
 import NewsCard from '@/components/NewsCard';
 import CategorySection from '@/components/CategorySection';
+import NewsletterInlineSignup from '@/components/NewsletterInlineSignup';
 
 export default async function Home() {
   const allContent = await getAllContent();
@@ -74,6 +75,9 @@ export default async function Home() {
           </div>
         </section>
       )}
+
+      {/* Newsletter Inline Signup */}
+      <NewsletterInlineSignup />
 
       {/* プロダクトセクション */}
       {productPosts.length > 0 && (

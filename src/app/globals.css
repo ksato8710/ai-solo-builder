@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+/* Newsletter modal animations */
+@keyframes newsletter-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes newsletter-content-in {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.newsletter-modal-overlay {
+  animation: newsletter-overlay-in 0.15s ease-out;
+}
+
+.newsletter-modal-content {
+  animation: newsletter-content-in 0.2s ease-out;
+}
+
 /* Article max-width for readability (note-like) */
 .article-container {
   max-width: 680px;

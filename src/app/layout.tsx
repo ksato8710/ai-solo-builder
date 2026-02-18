@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import ShareIcon from "@/components/ShareIcon";
+import NewsletterButton from "@/components/NewsletterButton";
 
 export const metadata: Metadata = {
   title: "AI Solo Builder — AIソロ開発者のための日本語ニュース",
@@ -70,6 +71,7 @@ export default function RootLayout({
 
                 {/* Actions */}
                 <div className="flex items-center gap-1">
+                  <NewsletterButton />
                   <ShareIcon />
                   <ThemeToggle />
                 </div>
