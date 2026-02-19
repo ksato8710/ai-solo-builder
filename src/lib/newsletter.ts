@@ -276,6 +276,27 @@ export async function updateSendLog(
     .eq('id', logId);
 }
 
+// ── Slack notification ──
+
+export async function notifySlack(text: string) {
+  const token = process.env.SLACK_BOT_TOKEN;
+  const channel = process.env.SLACK_NOTIFICATION_CHANNEL;
+  if (!token || !channel) return;
+
+  try {
+    await fetch('https://slack.com/api/chat.postMessage', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ channel, text }),
+    });
+  } catch (e) {
+    console.error('[newsletter] Slack notification failed:', e);
+  }
+}
+
 // ── Check if already sent today ──
 
 export async function hasAlreadySentToday(date: string): Promise<boolean> {

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { isValidEmail, isRateLimited, subscribe, getSubscriberByEmail } from '@/lib/newsletter';
+import { isValidEmail, isRateLimited, subscribe, getSubscriberByEmail, notifySlack } from '@/lib/newsletter';
 import { VerificationEmail } from '@/emails/verification';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ai.essential-navigator.com';
@@ -75,6 +75,11 @@ export async function POST(request: NextRequest) {
           console.log('[newsletter] Verification URL (fallback):', confirmUrl);
         }
       }
+    }
+
+    // Slack notification (fire-and-forget)
+    if (!result.alreadyActive) {
+      notifySlack(`📬 ニュースレター新規登録: ${email}`).catch(() => {});
     }
 
     return NextResponse.json({ ok: true, message: result.message });
