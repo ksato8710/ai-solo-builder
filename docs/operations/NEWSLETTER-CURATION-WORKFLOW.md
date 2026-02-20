@@ -11,13 +11,15 @@
 
 ## 1. 全体フロー
 
-1. 配信時刻監視: 参照ニュースレターの到着時刻を `source_delivery_schedules` で管理。
-2. 検知: ニュースレター本文から候補トピックを抽出（detector）。
-3. 一次検証: 公式発表・原典URLで事実を確定（verifier）。
-4. JP補足: 日本語情報を収集し、国内向け文脈を補う（localizer）。
-5. 記事種別振り分け: `content_workflows` 定義に従って digest/news/product に振り分け。
-6. 編集: 「何が起きたか」ではなく「今日何を作るか」まで落とし込む。
-7. 配信: 送信ログ、解除導線、再送防止を確認して配信。
+1. 受信: 競合ニュースレターを `ktlabworks@gmail.com` で受信する。
+2. 配信時刻監視: 参照ニュースレターの到着時刻を `source_delivery_schedules` で管理。
+3. 観測ログ化: 実受信を `source_delivery_observations` に記録する。
+4. 検知: ニュースレター本文から候補トピックを抽出（detector）。
+5. 一次検証: 公式発表・原典URLで事実を確定（verifier）。
+6. 日本語補足: 日本語情報を収集し、国内向け文脈を補う（localizer）。
+7. 記事種別振り分け: `content_workflows` 定義に従って digest/news/product に振り分け。
+8. 編集: 「何が起きたか」ではなく「今日何を作るか」まで落とし込む。
+9. 配信: 送信ログ、解除導線、再送防止を確認して配信。
 
 ## 2. データモデル
 
@@ -36,7 +38,15 @@
   - `timezone`, `delivery_hour`, `delivery_minute`
   - `delivery_days`, `fetch_delay_minutes`
 
-### 2-3. 記事作成ワークフロー
+### 2-3. 受信観測ログ
+- テーブル: `source_delivery_observations`
+- 主な属性:
+  - `source_id`, `collector_inbox`（初期値: `ktlabworks@gmail.com`）
+  - `observed_at`, `subject`, `from_email`
+  - `message_id_header`, `gmail_labels`
+  - `read_online_url`, `archive_url`
+
+### 2-4. 記事作成ワークフロー
 - テーブル: `content_workflows`
   - `content_type`, `digest_edition`, `article_tag`
   - `objective`, `output_contract`
@@ -44,7 +54,7 @@
   - `role`: `detect | verify | localize | benchmark`
   - `priority`, `is_required`
 
-## 2.4 朝刊統合の契約仕様
+## 2.5 朝刊統合の契約仕様
 
 - 朝刊の統合条件・情報量基準は以下に準拠する:
   - `docs/operations/MORNING-DIGEST-INTEGRATION-SPEC.md`
@@ -86,9 +96,12 @@
   - 記事種別ごとのソース役割マトリクス管理
 - `/admin/schedules`
   - ニュースレター配信時刻とfetch delay管理
+- `/admin/collection`
+  - `ktlabworks@gmail.com` の受信実績ログと未受信監視
 
 ## 6. 参照ドキュメント
 
+- `docs/operations/COMPETITOR-NEWSLETTER-COLLECTION.md`
 - `docs/operations/NEWSLETTER-GUARDRAILS.md`
 - `docs/operations/WORKFLOW-OVERVIEW.md`
 - `docs/technical/NEWSLETTER.md`

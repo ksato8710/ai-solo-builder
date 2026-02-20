@@ -42,6 +42,14 @@
 - `GET /api/newsletter/unsubscribe?token=xxx` — 配信停止 → `/newsletter/unsubscribed` にリダイレクト
 - `POST /api/cron/send-newsletter` — 日次配信（`Authorization: Bearer {CRON_SECRET}` 認証）
 
+## 管理API（ニュースソース運用）
+
+- `GET /api/admin/source-intelligence` — ニュースソース一覧（newsletter / primary / japanese）
+- `GET /api/admin/source-schedules` — ニュースレター配信時刻一覧
+- `GET /api/admin/workflows` — 記事種別ワークフローとソース役割
+- `GET /api/admin/source-observations` — 競合ニュースレター実受信ログ
+- `POST /api/admin/source-observations` — 実受信ログ追加（手動入力）
+
 ## 将来拡張
 
 - 認証付き API（管理画面向け）を `/api/v1/admin/*` に分離

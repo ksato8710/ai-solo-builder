@@ -15,11 +15,13 @@ AI Solo Builder向けのニュースレターを作成するための運用ス�
 3. 日本向け配信では **日本語の解説記事リンク** を併記する。
 4. 1トピックにつき最低2リンク（公式発表（原文） + 日本語の解説記事）。
 5. 日本向け配信では、他媒体の固有見出し語を残さない。
+6. 受信口は当面 `ktlabworks@gmail.com` の単一構成で運用する。
 
 ## 実行手順
 
 ### Step 1: 検知
-- 参照ニュースレター（The Rundown / Superhuman / Ben's Bites / TLDR AI など）を巡回。
+- `ktlabworks@gmail.com` で受信した競合ニュースレターを確認。
+- `/admin/collection` に受信ログを記録（source / observed_at / subject / from）。
 - 同じ話題が複数レターで言及されているかを確認。
 
 ### Step 2: 一次情報検証
@@ -49,6 +51,7 @@ AI Solo Builder向けのニュースレターを作成するための運用ス�
 - One-click unsubscribe ヘッダー、送信ログ、同日重複送信防止を確認。
 
 ## 連携先
+- 受信運用: `docs/operations/COMPETITOR-NEWSLETTER-COLLECTION.md`
 - ワークフロー定義: `docs/operations/NEWSLETTER-CURATION-WORKFLOW.md`
 - 朝刊統合仕様: `docs/operations/MORNING-DIGEST-INTEGRATION-SPEC.md`
 - 法務/配信: `docs/operations/NEWSLETTER-GUARDRAILS.md`

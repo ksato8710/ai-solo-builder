@@ -127,6 +127,17 @@ function OverviewTab() {
               - 参照ニュースレターの配信時刻と統合遅延（fetch delay）を管理
             </span>
           </li>
+          <li className="flex items-start gap-3">
+            <a
+              href="/admin/collection"
+              className="text-sky-400 hover:text-sky-300 transition-colors font-medium hover:underline"
+            >
+              📬 競合ニュースレター受信管理
+            </a>
+            <span className="text-slate-400 text-sm">
+              - `ktlabworks@gmail.com` への受信実績を記録し、未受信を監視
+            </span>
+          </li>
         </ul>
       </div>
       
@@ -150,7 +161,7 @@ function OverviewTab() {
             </div>
             <div className="flex justify-between">
               <span>管理対象エンティティ:</span>
-              <span className="text-violet-400">source/workflow/schedule</span>
+              <span className="text-violet-400">source/workflow/schedule/collection</span>
             </div>
           </div>
         </div>

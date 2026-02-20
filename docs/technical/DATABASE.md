@@ -18,6 +18,8 @@ Applied migrations:
 - `supabase/migrations/20260213040000_add_source_credibility_system.sql`
 - `supabase/migrations/20260213040100_seed_source_credibility_data.sql`
 - `supabase/migrations/20260219000000_add_newsletter.sql`
+- `supabase/migrations/20260219143000_add_source_workflow_schedule_model.sql`
+- `supabase/migrations/20260221012853_add_source_delivery_observations.sql`
 
 ## 2. Data Model Summary
 
@@ -37,6 +39,8 @@ Core tables:
 - `content_revisions`
 - `newsletter_subscribers` — ニュースレター購読者
 - `newsletter_send_logs` — 配信ログ
+- `source_delivery_schedules` — 競合ニュースレター到着想定時刻
+- `source_delivery_observations` — 実受信ログ（初期受信口: `ktlabworks@gmail.com`）
 
 Newsletter tables details: `docs/technical/NEWSLETTER.md`
 

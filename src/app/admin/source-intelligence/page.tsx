@@ -299,12 +299,32 @@ export default function SourceIntelligenceAdminPage() {
             ニュースレター / 一次情報 / 日本メディアを統合管理し、ワークフロー連携の基盤を維持します。
           </p>
         </div>
-        <a
-          href="/admin"
-          className="inline-flex items-center rounded-lg border border-slate-600 px-3 py-2 text-sm text-slate-300 hover:bg-slate-700/40"
-        >
-          ← 管理トップ
-        </a>
+        <div className="flex gap-2">
+          <a
+            href="/admin/workflows"
+            className="inline-flex items-center rounded-lg border border-slate-600 px-3 py-2 text-sm text-slate-300 hover:bg-slate-700/40"
+          >
+            ワークフロー
+          </a>
+          <a
+            href="/admin/schedules"
+            className="inline-flex items-center rounded-lg border border-slate-600 px-3 py-2 text-sm text-slate-300 hover:bg-slate-700/40"
+          >
+            配信スケジュール
+          </a>
+          <a
+            href="/admin/collection"
+            className="inline-flex items-center rounded-lg border border-slate-600 px-3 py-2 text-sm text-slate-300 hover:bg-slate-700/40"
+          >
+            受信ログ
+          </a>
+          <a
+            href="/admin"
+            className="inline-flex items-center rounded-lg border border-slate-600 px-3 py-2 text-sm text-slate-300 hover:bg-slate-700/40"
+          >
+            ← 管理トップ
+          </a>
+        </div>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

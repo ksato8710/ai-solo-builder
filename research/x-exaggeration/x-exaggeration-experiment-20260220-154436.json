@@ -1,0 +1,747 @@
+{
+  "generated_at": "2026-02-20T15:44:36Z",
+  "config": {
+    "positive_threshold": 50.0,
+    "target_ids": [
+      "2024680501370323256"
+    ],
+    "probe_ids": [
+      "2024787934394941633",
+      "2024865606835507266",
+      "2024729096882966724",
+      "2024666862219313163",
+      "2024638110441885700"
+    ],
+    "search_query": "\"more of the world's intellectual capacity\" -is:retweet",
+    "search_max_results": 10,
+    "sample_file": "scripts/fixtures/x_recent_search_sample.json"
+  },
+  "meta": {
+    "scored_posts": 16,
+    "errors": []
+  },
+  "evaluation": {
+    "labelled_count": 11,
+    "threshold": 50.0,
+    "confusion_matrix": {
+      "tp": 5,
+      "fp": 0,
+      "tn": 6,
+      "fn": 0
+    },
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "accuracy": 1.0
+  },
+  "results": [
+    {
+      "post_id": "2024680501370323256",
+      "author_username": "taishiyade",
+      "created_at": "2026-02-20T03:00:22.000Z",
+      "source": "api:get",
+      "score": 100.0,
+      "risk_level": "high",
+      "predicted_exaggerated": 1,
+      "reasons": [
+        "sensational_terms=2",
+        "urgency_terms=3",
+        "certainty_terms=1",
+        "authority_claim_without_primary_source",
+        "no_primary_source_link",
+        "social_links_only",
+        "self_reference_links=1"
+      ],
+      "features": {
+        "sensational_hits": 2,
+        "urgency_hits": 3,
+        "certainty_hits": 1,
+        "hedge_hits": 0,
+        "promo_hits": 0,
+        "authority_hits": 2,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 3,
+        "trusted_domain_count": 0,
+        "social_domain_count": 2,
+        "self_reference_links": 1,
+        "no_primary_source": true,
+        "social_only_links": true,
+        "authority_without_source": true
+      },
+      "urls": [
+        "https://x.com/taishiyade/status/2024680501370323256/video/1",
+        "https://twitter.com/1432599457489514498/status/2007609121953198090"
+      ],
+      "domains": [
+        "x.com",
+        "twitter.com"
+      ],
+      "metrics": {
+        "retweet_count": 219,
+        "reply_count": 37,
+        "like_count": 1062,
+        "quote_count": 73,
+        "bookmark_count": 453,
+        "impression_count": 306241
+      },
+      "text": "サムアルトマン氏の衝撃発言 あと2年で本物の超知能の初期版が来る もしそれが現実になれば 2028年の終わりまでに 世界の知能の大半が 人間の頭の中ではなく データセンターの中に集まる 超知能はあるラインを超えた瞬間に急成長する 大企業のCEOよりうまく経営し 1流研究者より優れた研究を生み出す その世界では 多くの人間はAIに勝てない あと2年しかない… 起業、経営、エンジニアリング… 彼らが楽しめるのは2年しかない… from @xboost_official"
+    },
+    {
+      "post_id": "2024638110441885700",
+      "author_username": "theneoniche",
+      "created_at": "2026-02-20T00:11:56.000Z",
+      "source": "api:search",
+      "score": 58.0,
+      "risk_level": "medium",
+      "predicted_exaggerated": 1,
+      "reasons": [
+        "certainty_terms=1",
+        "authority_claim_without_primary_source",
+        "no_primary_source_link",
+        "social_links_only",
+        "self_reference_links=1"
+      ],
+      "features": {
+        "sensational_hits": 0,
+        "urgency_hits": 0,
+        "certainty_hits": 1,
+        "hedge_hits": 0,
+        "promo_hits": 0,
+        "authority_hits": 1,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 0,
+        "trusted_domain_count": 0,
+        "social_domain_count": 1,
+        "self_reference_links": 1,
+        "no_primary_source": true,
+        "social_only_links": true,
+        "authority_without_source": true
+      },
+      "urls": [
+        "https://x.com/theneoniche/status/2024638110441885700/video/1"
+      ],
+      "domains": [
+        "x.com"
+      ],
+      "metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 48
+      },
+      "text": "Sam Altman predicts that by 2028, more of the world's intellectual capacity will reside inside data centers than outside of them. Superintelligence is closer than we think. https://t.co/halSpzkIod"
+    },
+    {
+      "post_id": "2024666862219313163",
+      "author_username": "orjacin",
+      "created_at": "2026-02-20T02:06:11.000Z",
+      "source": "api:search",
+      "score": 55.0,
+      "risk_level": "medium",
+      "predicted_exaggerated": 1,
+      "reasons": [
+        "sensational_terms=1",
+        "certainty_terms=1",
+        "authority_claim_without_primary_source",
+        "no_primary_source_link",
+        "social_links_only",
+        "self_reference_links=1",
+        "hedging_terms=2(risk_down)"
+      ],
+      "features": {
+        "sensational_hits": 1,
+        "urgency_hits": 0,
+        "certainty_hits": 1,
+        "hedge_hits": 2,
+        "promo_hits": 0,
+        "authority_hits": 1,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 1,
+        "trusted_domain_count": 0,
+        "social_domain_count": 1,
+        "self_reference_links": 1,
+        "no_primary_source": true,
+        "social_only_links": true,
+        "authority_without_source": true
+      },
+      "urls": [
+        "https://x.com/orjacin/status/2024666862219313163/video/1"
+      ],
+      "domains": [
+        "x.com"
+      ],
+      "metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 45
+      },
+      "text": "🚨BREAKING: Sam Altman at the AI Impact Summit in India said: “On our current trajectory, we believe we maybe only a couple years away from the early versions of true super intelligence. If we are right. By the end of 2028, more of the world's intellectual capacity could reside inside data centers than outside of them…” I think it will be sooner. I use an AI assistant it’s crazy how smarter it is now compared to a year ago."
+    },
+    {
+      "post_id": "2024787934394941633",
+      "author_username": "PaidFreeDroid",
+      "created_at": "2026-02-20T10:07:16.000Z",
+      "source": "api:search",
+      "score": 55.0,
+      "risk_level": "medium",
+      "predicted_exaggerated": 1,
+      "reasons": [
+        "sensational_terms=1",
+        "urgency_terms=1",
+        "certainty_terms=1",
+        "authority_claim_without_primary_source",
+        "no_primary_source_link",
+        "social_links_only",
+        "self_reference_links=1",
+        "hedging_terms=3(risk_down)"
+      ],
+      "features": {
+        "sensational_hits": 1,
+        "urgency_hits": 1,
+        "certainty_hits": 1,
+        "hedge_hits": 3,
+        "promo_hits": 0,
+        "authority_hits": 1,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 0,
+        "trusted_domain_count": 0,
+        "social_domain_count": 1,
+        "self_reference_links": 1,
+        "no_primary_source": true,
+        "social_only_links": true,
+        "authority_without_source": true
+      },
+      "urls": [
+        "https://x.com/PaidFreeDroid/status/2024787934394941633/video/1"
+      ],
+      "domains": [
+        "x.com"
+      ],
+      "metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 1,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 20
+      },
+      "text": "🚨 #SamAltman just put an expiration date on your career. ⏳🤖 At the India AI Impact Summit, #OpenAI's CEO dropped a terrifying prediction: Superintelligence could be here by the end of 2028. 🧠 By 2028, \"more of the world's intellectual capacity could reside inside data centers than outside them.\" 📉 If true, we have roughly 2 years of the current economy left. ⚠️ This isn't just about automation; it's about AI becoming smarter than all humans combined. Reality Check: \"Enjoy your job while you can\" isn't a joke anymore. If Altman is right, the concept of \"working for a living\" is about to be completely rewritten. We are either walking into a utopia or an economic crisis, and the clock is ticking. Do you genuinely believe we are only 2 years away from human-level AI? 👇"
+    },
+    {
+      "post_id": "1899901000000000004",
+      "author_username": "fastmoneyai",
+      "created_at": "2026-02-20T11:00:00.000Z",
+      "source": "sample",
+      "score": 51.0,
+      "risk_level": "medium",
+      "predicted_exaggerated": 1,
+      "reasons": [
+        "sensational_terms=2",
+        "promo_terms=1",
+        "no_primary_source_link"
+      ],
+      "features": {
+        "sensational_hits": 2,
+        "urgency_hits": 0,
+        "certainty_hits": 0,
+        "hedge_hits": 0,
+        "promo_hits": 1,
+        "authority_hits": 0,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 0,
+        "trusted_domain_count": 0,
+        "social_domain_count": 0,
+        "self_reference_links": 0,
+        "no_primary_source": true,
+        "social_only_links": false,
+        "authority_without_source": false
+      },
+      "urls": [],
+      "domains": [],
+      "metrics": {
+        "like_count": 12,
+        "retweet_count": 1,
+        "reply_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 1,
+        "impression_count": 1200
+      },
+      "text": "AIがやばい。100xで稼げる。DM me for secret method #AI #growth #money #hustle #passiveincome #crypto #solobuilder"
+    },
+    {
+      "post_id": "2024716673195135267",
+      "author_username": "KrishnaKum3891",
+      "created_at": "2026-02-20T05:24:06.000Z",
+      "source": "api:search",
+      "score": 37.0,
+      "risk_level": "low",
+      "predicted_exaggerated": 0,
+      "reasons": [
+        "no_primary_source_link",
+        "social_links_only",
+        "self_reference_links=1",
+        "hedging_terms=1(risk_down)"
+      ],
+      "features": {
+        "sensational_hits": 0,
+        "urgency_hits": 0,
+        "certainty_hits": 0,
+        "hedge_hits": 1,
+        "promo_hits": 0,
+        "authority_hits": 0,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 1,
+        "trusted_domain_count": 0,
+        "social_domain_count": 1,
+        "self_reference_links": 1,
+        "no_primary_source": true,
+        "social_only_links": true,
+        "authority_without_source": false
+      },
+      "urls": [
+        "https://x.com/KrishnaKum3891/status/2024716673195135267/photo/1"
+      ],
+      "domains": [
+        "x.com"
+      ],
+      "metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 11
+      },
+      "text": "Not AGI. Superintelligence. #SamAltman just said this today at the India #AISummit: \"By the end of 2028, more of the world's intellectual capacity could reside inside data centers than...\" I don't think people understand what that actually means. https://t.co/Hugqo0N4Af"
+    },
+    {
+      "post_id": "2024864297885569332",
+      "author_username": "carlsraye",
+      "created_at": "2026-02-20T15:10:43.000Z",
+      "source": "api:search",
+      "score": 32.0,
+      "risk_level": "low",
+      "predicted_exaggerated": 0,
+      "reasons": [
+        "no_primary_source_link",
+        "social_links_only"
+      ],
+      "features": {
+        "sensational_hits": 0,
+        "urgency_hits": 0,
+        "certainty_hits": 0,
+        "hedge_hits": 0,
+        "promo_hits": 0,
+        "authority_hits": 0,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 0,
+        "trusted_domain_count": 0,
+        "social_domain_count": 1,
+        "self_reference_links": 0,
+        "no_primary_source": true,
+        "social_only_links": true,
+        "authority_without_source": false
+      },
+      "urls": [
+        "https://twitter.com/proudsocialist/status/2024585282494828573"
+      ],
+      "domains": [
+        "twitter.com"
+      ],
+      "metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 11
+      },
+      "text": "Maybe I’m too woke, but I do not want more of the world’s intellectual capacity to reside inside of data centers than outside them. I want robots to do dangerous things and menial labor; I want humans to be intelligent and creative https://t.co/jkLpjQUHCe"
+    },
+    {
+      "post_id": "2024678419557196117",
+      "author_username": "shubh19",
+      "created_at": "2026-02-20T02:52:06.000Z",
+      "source": "api:search",
+      "score": 29.0,
+      "risk_level": "low",
+      "predicted_exaggerated": 0,
+      "reasons": [
+        "authority_claim_without_primary_source",
+        "no_primary_source_link",
+        "hedging_terms=1(risk_down)"
+      ],
+      "features": {
+        "sensational_hits": 0,
+        "urgency_hits": 0,
+        "certainty_hits": 0,
+        "hedge_hits": 1,
+        "promo_hits": 0,
+        "authority_hits": 1,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 1,
+        "trusted_domain_count": 0,
+        "social_domain_count": 0,
+        "self_reference_links": 0,
+        "no_primary_source": true,
+        "social_only_links": false,
+        "authority_without_source": true
+      },
+      "urls": [],
+      "domains": [],
+      "metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 2,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 48
+      },
+      "text": "Not AGI. Superintelligence. Sam Altman said this yesterday at the India AI Impact Summit: 'By the end of 2028, more of the world's intellectual capacity could reside inside data centers than...' I don't think people understand what that actually means."
+    },
+    {
+      "post_id": "2024760325506056353",
+      "author_username": "grok",
+      "created_at": "2026-02-20T08:17:34.000Z",
+      "source": "api:search",
+      "score": 26.0,
+      "risk_level": "low",
+      "predicted_exaggerated": 0,
+      "reasons": [
+        "authority_claim_without_primary_source",
+        "no_primary_source_link",
+        "social_links_only",
+        "hedging_terms=2(risk_down)"
+      ],
+      "features": {
+        "sensational_hits": 0,
+        "urgency_hits": 0,
+        "certainty_hits": 0,
+        "hedge_hits": 2,
+        "promo_hits": 0,
+        "authority_hits": 2,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 0,
+        "trusted_domain_count": 0,
+        "social_domain_count": 1,
+        "self_reference_links": 0,
+        "no_primary_source": true,
+        "social_only_links": true,
+        "authority_without_source": true
+      },
+      "urls": [
+        "https://t.co/n6s1aQerLN"
+      ],
+      "domains": [
+        "t.co"
+      ],
+      "metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 9
+      },
+      "text": "Verified: Sam Altman stated at the India AI Impact Summit on Feb 19, 2026: \"By the end of 2028, more of the world’s intellectual capacity could reside inside data centers than outside of them.\" He also noted superintelligence could outperform CEOs and top scientists. Source: https://t.co/n6s1aQerLN"
+    },
+    {
+      "post_id": "1899901000000000001",
+      "author_username": "aribuilds",
+      "created_at": "2026-02-20T09:20:00.000Z",
+      "source": "sample",
+      "score": 24.0,
+      "risk_level": "low",
+      "predicted_exaggerated": 0,
+      "reasons": [
+        "no_primary_source_link"
+      ],
+      "features": {
+        "sensational_hits": 0,
+        "urgency_hits": 0,
+        "certainty_hits": 0,
+        "hedge_hits": 0,
+        "promo_hits": 0,
+        "authority_hits": 0,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 0,
+        "trusted_domain_count": 0,
+        "social_domain_count": 0,
+        "self_reference_links": 0,
+        "no_primary_source": true,
+        "social_only_links": false,
+        "authority_without_source": false
+      },
+      "urls": [
+        "https://github.com/example/solo-copilot"
+      ],
+      "domains": [
+        "github.com"
+      ],
+      "metrics": {
+        "like_count": 184,
+        "retweet_count": 61,
+        "reply_count": 19,
+        "quote_count": 11,
+        "bookmark_count": 26,
+        "impression_count": 21000
+      },
+      "text": "Shipped an MCP-powered AI support copilot for solo founders. Open-source repo + architecture thread below. #AI #MCP https://github.com/example/solo-copilot"
+    },
+    {
+      "post_id": "1899901000000000002",
+      "author_username": "kei_solo_dev",
+      "created_at": "2026-02-20T10:10:00.000Z",
+      "source": "sample",
+      "score": 24.0,
+      "risk_level": "low",
+      "predicted_exaggerated": 0,
+      "reasons": [
+        "no_primary_source_link"
+      ],
+      "features": {
+        "sensational_hits": 0,
+        "urgency_hits": 0,
+        "certainty_hits": 0,
+        "hedge_hits": 0,
+        "promo_hits": 0,
+        "authority_hits": 0,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 0,
+        "trusted_domain_count": 0,
+        "social_domain_count": 0,
+        "self_reference_links": 0,
+        "no_primary_source": true,
+        "social_only_links": false,
+        "authority_without_source": false
+      },
+      "urls": [
+        "https://example.com/guide"
+      ],
+      "domains": [
+        "example.com"
+      ],
+      "metrics": {
+        "like_count": 96,
+        "retweet_count": 24,
+        "reply_count": 14,
+        "quote_count": 6,
+        "bookmark_count": 18,
+        "impression_count": 9400
+      },
+      "text": "個人開発でAI請求書SaaSをリリース。初月MRR 22万円までの手順を解説しました。テンプレ公開: https://example.com/guide"
+    },
+    {
+      "post_id": "1899901000000000003",
+      "author_username": "miaops",
+      "created_at": "2026-02-20T08:40:00.000Z",
+      "source": "sample",
+      "score": 24.0,
+      "risk_level": "low",
+      "predicted_exaggerated": 0,
+      "reasons": [
+        "no_primary_source_link"
+      ],
+      "features": {
+        "sensational_hits": 0,
+        "urgency_hits": 0,
+        "certainty_hits": 0,
+        "hedge_hits": 0,
+        "promo_hits": 0,
+        "authority_hits": 0,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 0,
+        "trusted_domain_count": 0,
+        "social_domain_count": 0,
+        "self_reference_links": 0,
+        "no_primary_source": true,
+        "social_only_links": false,
+        "authority_without_source": false
+      },
+      "urls": [
+        "https://example.com/case-study"
+      ],
+      "domains": [
+        "example.com"
+      ],
+      "metrics": {
+        "like_count": 73,
+        "retweet_count": 18,
+        "reply_count": 9,
+        "quote_count": 4,
+        "bookmark_count": 13,
+        "impression_count": 8100
+      },
+      "text": "New benchmark: Claude + local tools reduced support handling time by 58% for an indie SaaS. Data + workflow here: https://example.com/case-study"
+    },
+    {
+      "post_id": "1899901000000000005",
+      "author_username": "noahlabs",
+      "created_at": "2026-02-20T09:55:00.000Z",
+      "source": "sample",
+      "score": 24.0,
+      "risk_level": "low",
+      "predicted_exaggerated": 0,
+      "reasons": [
+        "no_primary_source_link"
+      ],
+      "features": {
+        "sensational_hits": 0,
+        "urgency_hits": 0,
+        "certainty_hits": 0,
+        "hedge_hits": 0,
+        "promo_hits": 0,
+        "authority_hits": 0,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 0,
+        "trusted_domain_count": 0,
+        "social_domain_count": 0,
+        "self_reference_links": 0,
+        "no_primary_source": true,
+        "social_only_links": false,
+        "authority_without_source": false
+      },
+      "urls": [],
+      "domains": [],
+      "metrics": {
+        "like_count": 55,
+        "retweet_count": 17,
+        "reply_count": 8,
+        "quote_count": 2,
+        "bookmark_count": 14,
+        "impression_count": 6200
+      },
+      "text": "Thread: How a solo builder can combine OpenAI API + Claude + MCP to ship customer research automation in a weekend."
+    },
+    {
+      "post_id": "2024704091973173662",
+      "author_username": "grok",
+      "created_at": "2026-02-20T04:34:07.000Z",
+      "source": "api:search",
+      "score": 12.0,
+      "risk_level": "low",
+      "predicted_exaggerated": 0,
+      "reasons": [
+        "authority_claim_without_primary_source",
+        "no_primary_source_link",
+        "hedging_terms=3(risk_down)"
+      ],
+      "features": {
+        "sensational_hits": 0,
+        "urgency_hits": 0,
+        "certainty_hits": 0,
+        "hedge_hits": 3,
+        "promo_hits": 0,
+        "authority_hits": 1,
+        "exclamation_hits": 1,
+        "ellipsis_hits": 0,
+        "trusted_domain_count": 0,
+        "social_domain_count": 0,
+        "self_reference_links": 0,
+        "no_primary_source": true,
+        "social_only_links": false,
+        "authority_without_source": true
+      },
+      "urls": [],
+      "domains": [],
+      "metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 1,
+        "bookmark_count": 0,
+        "impression_count": 29
+      },
+      "text": "Sam Altman's full quote: \"By the end of 2028, more of the world's intellectual capacity could reside inside data centers than outside them.\" It means AI systems might collectively surpass humanity's total cognitive power, marking a shift to superintelligence. This could transform society, economy, and innovation profoundly. Exciting times ahead!"
+    },
+    {
+      "post_id": "2024729096882966724",
+      "author_username": "TheLeftshift42",
+      "created_at": "2026-02-20T06:13:29.000Z",
+      "source": "api:search",
+      "score": 8.0,
+      "risk_level": "low",
+      "predicted_exaggerated": 0,
+      "reasons": [
+        "no_primary_source_link",
+        "hedging_terms=2(risk_down)"
+      ],
+      "features": {
+        "sensational_hits": 0,
+        "urgency_hits": 0,
+        "certainty_hits": 0,
+        "hedge_hits": 2,
+        "promo_hits": 0,
+        "authority_hits": 0,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 0,
+        "trusted_domain_count": 0,
+        "social_domain_count": 0,
+        "self_reference_links": 0,
+        "no_primary_source": true,
+        "social_only_links": false,
+        "authority_without_source": false
+      },
+      "urls": [],
+      "domains": [],
+      "metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 7
+      },
+      "text": "“On our current trajectory, we believe we may be only a couple of years away from early versions of true super intelligence,” he said, adding that \"by the end of 2028, more of the world’s intellectual capacity could reside inside of data centers than outside of them.”"
+    },
+    {
+      "post_id": "2024865606835507266",
+      "author_username": "Alejandropu7",
+      "created_at": "2026-02-20T15:15:55.000Z",
+      "source": "api:search",
+      "score": 0.0,
+      "risk_level": "low",
+      "predicted_exaggerated": 0,
+      "reasons": [
+        "hedging_terms=1(risk_down)",
+        "trusted_source_links=1(risk_down)"
+      ],
+      "features": {
+        "sensational_hits": 0,
+        "urgency_hits": 0,
+        "certainty_hits": 0,
+        "hedge_hits": 1,
+        "promo_hits": 0,
+        "authority_hits": 2,
+        "exclamation_hits": 0,
+        "ellipsis_hits": 0,
+        "trusted_domain_count": 1,
+        "social_domain_count": 0,
+        "self_reference_links": 0,
+        "no_primary_source": false,
+        "social_only_links": false,
+        "authority_without_source": false
+      },
+      "urls": [
+        "https://www.youtube.com/live/mqrtgdrw2M8"
+      ],
+      "domains": [
+        "youtube.com"
+      ],
+      "metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 11
+      },
+      "text": "\"..by..2028, more of the world's intellectual capacity could reside inside of data centers.. A super intelligence.. would be capable of doing a better job being the CEO of a major company.. or doing better research than our best scientists.\" #SamAltman https://t.co/C5gO18qPyX"
+    }
+  ]
+}

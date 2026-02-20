@@ -248,6 +248,12 @@ export default function SourceSchedulesAdminPage() {
             Source管理
           </a>
           <a
+            href="/admin/collection"
+            className="inline-flex items-center rounded-lg border border-slate-600 px-3 py-2 text-sm text-slate-300 hover:bg-slate-700/40"
+          >
+            受信ログ
+          </a>
+          <a
             href="/admin"
             className="inline-flex items-center rounded-lg border border-slate-600 px-3 py-2 text-sm text-slate-300 hover:bg-slate-700/40"
           >

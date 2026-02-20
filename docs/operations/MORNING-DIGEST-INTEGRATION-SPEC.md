@@ -94,6 +94,7 @@
 - `sources`: 役割候補（`entity_kind`, `locale`, `is_newsletter`）
 - `workflow_source_mappings`: 実運用での役割確定（detect/verify/localize/benchmark）
 - `source_delivery_schedules`: detectorの到着時刻管理
+- `source_delivery_observations`: `ktlabworks@gmail.com` への実受信ログ
 - `content_workflows`: 朝刊の出力契約（Top3/Quick Hits/Action）
 
 ## 5. 運用チェックリスト（配信前）

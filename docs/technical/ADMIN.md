@@ -1,5 +1,12 @@
 # 管理画面利用ガイド
 
+## 現行の主要画面（推奨）
+
+- `/admin/source-intelligence` — ニュースソース統合管理
+- `/admin/workflows` — 記事種別 × ソース役割マトリクス
+- `/admin/schedules` — ニュースレター配信時刻管理
+- `/admin/collection` — 競合ニュースレター受信ログ（`ktlabworks@gmail.com`）
+
 ## 情報源管理画面
 
 ### アクセス方法
