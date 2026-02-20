@@ -10,6 +10,10 @@ interface ArticleContentProps {
  * Detect if a table is a ranking table (first column is numeric rank)
  */
 function isRankingTable(table: HTMLTableElement): boolean {
+  const headers = table.querySelectorAll('thead th');
+  // Ranking tables typically have 3+ columns
+  if (headers.length < 3) return false;
+
   const rows = table.querySelectorAll('tbody tr');
   if (rows.length === 0) return false;
 
@@ -18,15 +22,32 @@ function isRankingTable(table: HTMLTableElement): boolean {
     const firstCell = row.querySelector('td:first-child');
     if (firstCell) {
       const text = firstCell.textContent?.trim() || '';
-      // Check if first cell is a number (possibly with suffix like "位")
-      if (/^\d+/.test(text)) {
+      // Strict: only pure numbers or numbers with rank suffix
+      // Exclude years (2024年), durations (3週間), dates
+      if (/^\d{1,3}(位|\.)?$/.test(text)) {
         numericCount++;
       }
     }
   });
 
-  // If more than half of rows have numeric first cell, it's a ranking table
   return numericCount > rows.length / 2;
+}
+
+/**
+ * Detect if a table is a simple key-value table (exactly 2 columns)
+ */
+function isKeyValueTable(table: HTMLTableElement): boolean {
+  const headers = table.querySelectorAll('thead th');
+  if (headers.length !== 2) return false;
+
+  const rows = table.querySelectorAll('tbody tr');
+  let twoColCount = 0;
+  rows.forEach((row) => {
+    const cells = row.querySelectorAll('td');
+    if (cells.length === 2) twoColCount++;
+  });
+
+  return twoColCount > rows.length * 0.8;
 }
 
 export default function ArticleContent({ htmlContent }: ArticleContentProps) {
@@ -35,9 +56,8 @@ export default function ArticleContent({ htmlContent }: ArticleContentProps) {
   useEffect(() => {
     if (!contentRef.current) return;
 
-    // Find all tables and add data-label attributes for mobile card layout
     const tables = contentRef.current.querySelectorAll('table');
-    
+
     tables.forEach((table) => {
       // Get header labels
       const headers = table.querySelectorAll('thead th');
@@ -49,6 +69,8 @@ export default function ArticleContent({ htmlContent }: ArticleContentProps) {
       // Detect table type and add appropriate class
       if (isRankingTable(table)) {
         table.classList.add('table-ranking');
+      } else if (isKeyValueTable(table)) {
+        table.classList.add('table-kv');
       } else {
         table.classList.add('table-generic');
       }

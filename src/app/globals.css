@@ -88,9 +88,11 @@ article {
 .article-content h2 {
   font-size: 1.5rem;
   font-weight: 700;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
   color: var(--text-primary);
+  padding-left: 0.875rem;
+  border-left: 3px solid var(--accent-blue);
 }
 
 .article-content h3 {
@@ -180,10 +182,36 @@ article {
 
 .article-content blockquote {
   border-left: 3px solid var(--accent-violet);
-  padding-left: 1rem;
+  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
   margin: 1.5rem 0;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-style: italic;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(59, 130, 246, 0.03) 100%);
+  border-radius: 0 8px 8px 0;
+  position: relative;
+}
+
+.article-content blockquote::before {
+  content: "\201C";
+  position: absolute;
+  top: -0.25rem;
+  left: 0.5rem;
+  font-size: 2.5rem;
+  font-family: Georgia, serif;
+  color: var(--accent-violet);
+  opacity: 0.25;
+  line-height: 1;
+}
+
+.light .article-content blockquote {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.04) 0%, rgba(59, 130, 246, 0.02) 100%);
+}
+
+/* Article header hero styling */
+.article-header {
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, var(--accent-blue), var(--accent-violet), transparent) 1;
 }
 
 /* ===========================================
@@ -257,6 +285,12 @@ article {
     margin-right: -1rem;
     border-radius: 0;
     padding: 1rem;
+  }
+
+  .article-content pre code {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.8rem;
   }
 }
 
@@ -640,5 +674,79 @@ article {
   .article-content table.table-ranking tr td:nth-child(3),
   .article-content table.table-ranking tr td:nth-child(4) {
     grid-row: 2;
+  }
+
+  /* h2 mobile enhancement */
+  .article-content h2 {
+    font-size: 1.3rem;
+    margin-top: 2.5rem;
+    padding: 0.75rem 0 0.75rem 0.875rem;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.06) 0%, transparent 100%);
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Article header mobile */
+  .article-header {
+    padding-bottom: 1.25rem;
+  }
+
+  /* ===========================================
+     Key-Value Table (2-column compact list)
+     For tables like product overview, tech stack, ICP
+     =========================================== */
+  .article-content table.table-kv tbody {
+    gap: 0;
+  }
+
+  .article-content table.table-kv tr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    border: none;
+    border-radius: 0;
+    padding: 0.625rem 0;
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .article-content table.table-kv tr:hover {
+    background-color: transparent;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .article-content table.table-kv tr:last-child {
+    border-bottom: none;
+  }
+
+  /* KV Label (first column) */
+  .article-content table.table-kv td:first-child {
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+    padding: 0;
+    padding-right: 0.75rem;
+    margin-bottom: 0;
+    border-bottom: none;
+    min-width: 5.5rem;
+    max-width: 8rem;
+    flex-shrink: 0;
+  }
+
+  /* KV Value (second column) */
+  .article-content table.table-kv td:nth-child(2) {
+    flex: 1;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    padding: 0;
+    border-bottom: none;
+    line-height: 1.5;
+    min-width: 0;
+  }
+
+  /* Hide data-label badges for KV tables */
+  .article-content table.table-kv td[data-label]::before {
+    display: none;
   }
 }

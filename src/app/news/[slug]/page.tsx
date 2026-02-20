@@ -41,7 +41,7 @@ export default async function NewsArticle({ params }: { params: Promise<{ slug: 
       </div>
 
       {/* Header */}
-      <header className="mb-8">
+      <header className="article-header mb-8">
         <div className="flex items-center gap-3 mb-4 flex-wrap">
           <span className="text-xs font-semibold px-3 py-1 rounded-full"
                 style={{ backgroundColor: cat.color + '22', color: cat.color }}>
