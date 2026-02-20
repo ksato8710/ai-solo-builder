@@ -24,6 +24,39 @@ You can start editing the page by modifying `src/app/page.tsx`. The page auto-up
 npm run validate:content
 ```
 
+## X Discovery Experiment
+
+X API を使った「生成AI × ソロビルダー向け投稿の発見」実験CLIを追加しています。
+
+```bash
+# Offline sample
+python3 scripts/discover-x-ai-signals.py \
+  --sample-file scripts/fixtures/x_recent_search_sample.json \
+  --output-dir research/x-discovery
+
+# Live run (requires X_API_BEARER_TOKEN)
+python3 scripts/discover-x-ai-signals.py \
+  --sort-order mixed \
+  --lookback-hours 24 \
+  --top-k 20 \
+  --with-usage
+
+# Focus topic run (e.g. OpenClaw)
+python3 scripts/discover-x-ai-signals.py \
+  --focus OpenClaw \
+  --sort-order mixed \
+  --lookback-hours 24 \
+  --top-k 15
+```
+
+```bash
+# npm shortcuts
+npm run x:discover:sample
+npm run x:discover
+```
+
+詳細: `docs/operations/X-DISCOVERY-SYSTEM.md`
+
 ## Supabase (Database)
 
 Detailed setup: `docs/technical/DATABASE.md`

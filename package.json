@@ -19,6 +19,8 @@
     "admin:setup": "node scripts/setup-admin-database.mjs",
     "admin:check": "node scripts/check-content-sources-table.mjs",
     "publish:gate": "bash scripts/publish-gate.sh",
+    "x:discover": "python3 scripts/discover-x-ai-signals.py --sort-order mixed --lookback-hours 24 --top-k 20 --with-usage --output-dir research/x-discovery",
+    "x:discover:sample": "python3 scripts/discover-x-ai-signals.py --sample-file scripts/fixtures/x_recent_search_sample.json --output-dir research/x-discovery --no-state",
     "prepare": "husky"
   },
   "dependencies": {

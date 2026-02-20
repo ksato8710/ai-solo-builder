@@ -1,0 +1,157 @@
+{
+  "data": [
+    {
+      "id": "1899901000000000001",
+      "author_id": "1001",
+      "created_at": "2026-02-20T09:20:00.000Z",
+      "text": "Shipped an MCP-powered AI support copilot for solo founders. Open-source repo + architecture thread below. #AI #MCP https://github.com/example/solo-copilot",
+      "lang": "en",
+      "public_metrics": {
+        "like_count": 184,
+        "retweet_count": 61,
+        "reply_count": 19,
+        "quote_count": 11,
+        "bookmark_count": 26,
+        "impression_count": 21000
+      }
+    },
+    {
+      "id": "1899901000000000002",
+      "author_id": "1002",
+      "created_at": "2026-02-20T10:10:00.000Z",
+      "text": "個人開発でAI請求書SaaSをリリース。初月MRR 22万円までの手順を解説しました。テンプレ公開: https://example.com/guide",
+      "lang": "ja",
+      "public_metrics": {
+        "like_count": 96,
+        "retweet_count": 24,
+        "reply_count": 14,
+        "quote_count": 6,
+        "bookmark_count": 18,
+        "impression_count": 9400
+      }
+    },
+    {
+      "id": "1899901000000000003",
+      "author_id": "1003",
+      "created_at": "2026-02-20T08:40:00.000Z",
+      "text": "New benchmark: Claude + local tools reduced support handling time by 58% for an indie SaaS. Data + workflow here: https://example.com/case-study",
+      "lang": "en",
+      "public_metrics": {
+        "like_count": 73,
+        "retweet_count": 18,
+        "reply_count": 9,
+        "quote_count": 4,
+        "bookmark_count": 13,
+        "impression_count": 8100
+      }
+    },
+    {
+      "id": "1899901000000000004",
+      "author_id": "1004",
+      "created_at": "2026-02-20T11:00:00.000Z",
+      "text": "AIがやばい。100xで稼げる。DM me for secret method #AI #growth #money #hustle #passiveincome #crypto #solobuilder",
+      "lang": "ja",
+      "public_metrics": {
+        "like_count": 12,
+        "retweet_count": 1,
+        "reply_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 1,
+        "impression_count": 1200
+      }
+    },
+    {
+      "id": "1899901000000000005",
+      "author_id": "1005",
+      "created_at": "2026-02-20T09:55:00.000Z",
+      "text": "Thread: How a solo builder can combine OpenAI API + Claude + MCP to ship customer research automation in a weekend.",
+      "lang": "en",
+      "public_metrics": {
+        "like_count": 55,
+        "retweet_count": 17,
+        "reply_count": 8,
+        "quote_count": 2,
+        "bookmark_count": 14,
+        "impression_count": 6200
+      }
+    }
+  ],
+  "includes": {
+    "users": [
+      {
+        "id": "1001",
+        "name": "Ari Builders",
+        "username": "aribuilds",
+        "description": "Indie founder. Shipping AI workflows and OSS tools.",
+        "created_at": "2018-07-04T00:00:00.000Z",
+        "verified": true,
+        "verified_type": "blue",
+        "public_metrics": {
+          "followers_count": 28500,
+          "following_count": 910,
+          "tweet_count": 18400,
+          "listed_count": 420
+        }
+      },
+      {
+        "id": "1002",
+        "name": "Kei Solo Dev",
+        "username": "kei_solo_dev",
+        "description": "個人開発。生成AI SaaS 立ち上げ中。",
+        "created_at": "2020-04-10T00:00:00.000Z",
+        "verified": false,
+        "public_metrics": {
+          "followers_count": 5300,
+          "following_count": 390,
+          "tweet_count": 3900,
+          "listed_count": 18
+        }
+      },
+      {
+        "id": "1003",
+        "name": "Mia Product Ops",
+        "username": "miaops",
+        "description": "Product + support automation.",
+        "created_at": "2017-03-22T00:00:00.000Z",
+        "verified": false,
+        "public_metrics": {
+          "followers_count": 16800,
+          "following_count": 740,
+          "tweet_count": 13300,
+          "listed_count": 110
+        }
+      },
+      {
+        "id": "1004",
+        "name": "Fast Money AI",
+        "username": "fastmoneyai",
+        "description": "Make money with AI quickly.",
+        "created_at": "2025-09-01T00:00:00.000Z",
+        "verified": false,
+        "public_metrics": {
+          "followers_count": 120,
+          "following_count": 1500,
+          "tweet_count": 980,
+          "listed_count": 1
+        }
+      },
+      {
+        "id": "1005",
+        "name": "Noah Labs",
+        "username": "noahlabs",
+        "description": "Building AI automation for small teams.",
+        "created_at": "2019-11-21T00:00:00.000Z",
+        "verified": false,
+        "public_metrics": {
+          "followers_count": 9800,
+          "following_count": 640,
+          "tweet_count": 7400,
+          "listed_count": 72
+        }
+      }
+    ]
+  },
+  "meta": {
+    "result_count": 5
+  }
+}
