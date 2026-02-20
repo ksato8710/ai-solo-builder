@@ -69,6 +69,7 @@
 | nva-process | ニュースバリュー評価手順 | WORKFLOW-DIGEST, WORKFLOW-INDIVIDUAL |
 | site-config | 技術仕様・デプロイ手順 | ARCHITECTURE, CHECKLIST |
 | research-sources | 巡回先クイックリファレンス | RESEARCH-SOURCES |
+| ui-design-system | UIデザインパターン・CSS設計ルール | globals.css, BRAND-IDENTITY |
 
 ## 記事作成ワークフロー
 
