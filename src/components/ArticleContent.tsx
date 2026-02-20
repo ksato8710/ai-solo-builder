@@ -67,20 +67,26 @@ export default function ArticleContent({ htmlContent }: ArticleContentProps) {
       });
 
       // Detect table type and add appropriate class
+      let tableType: 'ranking' | 'kv' | 'generic';
       if (isRankingTable(table)) {
         table.classList.add('table-ranking');
+        tableType = 'ranking';
       } else if (isKeyValueTable(table)) {
         table.classList.add('table-kv');
+        tableType = 'kv';
       } else {
         table.classList.add('table-generic');
+        tableType = 'generic';
       }
 
       // Add data-label to each td
+      // For generic cards, skip first cell (used as card title)
       const rows = table.querySelectorAll('tbody tr');
       rows.forEach((row) => {
         const cells = row.querySelectorAll('td');
         cells.forEach((td, index) => {
           if (labels[index]) {
+            if (tableType === 'generic' && index === 0) return;
             td.setAttribute('data-label', labels[index]);
           }
         });
