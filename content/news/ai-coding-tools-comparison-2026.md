@@ -1,6 +1,7 @@
 ---
 title: AIコーディングツール完全比較 2026 — Claude Code/Cursor/Copilot/Windsurfの選び方
 slug: ai-coding-tools-comparison-2026
+date: '2026-02-23'
 publishedAt: '2026-02-23'
 status: published
 contentType: news

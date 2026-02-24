@@ -1,6 +1,7 @@
 ---
 title: 'ソロ創業者のAI活用事例 — $20/月のツールから15体のAIエージェント評議会まで'
 slug: solo-founder-ai-case-studies-2026
+date: '2026-02-24'
 publishedAt: '2026-02-24'
 status: published
 contentType: news
