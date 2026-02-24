@@ -261,6 +261,14 @@ const initialWorkflows: Workflow[] = [
         isOptional: false,
         estimatedMinutes: 5,
       },
+      {
+        id: 'phase-7',
+        name: 'Phase 7: ニュースレター配信',
+        skill: 'send-newsletter',
+        description: 'Resend経由で購読者にメール送信（/api/cron/send-newsletter）',
+        isOptional: false,
+        estimatedMinutes: 3,
+      },
     ],
   },
 ];
