@@ -17,7 +17,14 @@
  */
 
 import { createClient } from '@supabase/supabase-js';
-import 'dotenv/config';
+
+// dotenvはローカル実行時のみ（CI環境ではsecretsから環境変数が設定される）
+try {
+  const dotenv = await import('dotenv');
+  dotenv.config();
+} catch {
+  // dotenvが無くても環境変数から読める場合はOK
+}
 
 const BASE_URL = 'https://ai.essential-navigator.com';
 const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL || '';
