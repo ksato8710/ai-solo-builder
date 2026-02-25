@@ -1,15 +1,23 @@
 ---
-title: "Figma Developer Docs 完全ガイド — プラグイン・ウィジェット・REST API の全体像"
-slug: "figma-developer-docs-guide"
-date: "2026-02-24"
-publishedAt: "2026-02-24T10:00:00+09:00"
-contentType: "news"
-tags: ["dev-knowledge", "figma", "api", "plugin"]
-excerpt: "Figma公式開発者ドキュメントの全体像を日本語で解説。Plugin API、Widget API、REST APIの違いと使い分け、ソロビルダーが今日から始められる開発ステップまで。"
-description: "Figma Developer Docs（developers.figma.com）の完全ガイド。Plugin API、Widget API、REST API、SCIM APIの違いと用途を解説し、ソロビルダーがFigma拡張開発を始めるための実践的なロードマップを提供。"
+title: Figma Developer Docs 完全ガイド — プラグイン・ウィジェット・REST API の全体像
+slug: figma-developer-docs-guide
+date: '2026-02-24'
+publishedAt: '2026-02-24T10:00:00+09:00'
+contentType: news
+tags:
+  - dev-knowledge
+  - figma
+  - api
+  - plugin
+excerpt: >-
+  Figma公式開発者ドキュメントの全体像を日本語で解説。Plugin API、Widget API、REST
+  APIの違いと使い分け、ソロビルダーが今日から始められる開発ステップまで。
+description: >-
+  Figma Developer Docs（developers.figma.com）の完全ガイド。Plugin API、Widget API、REST
+  API、SCIM APIの違いと用途を解説し、ソロビルダーがFigma拡張開発を始めるための実践的なロードマップを提供。
 readTime: 12
-image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=420&fit=crop"
-author: "AI Solo Craft 編集部"
+image: /thumbnails/figma-developer-docs-guide.png
+author: AI Solo Craft 編集部
 ---
 
 ## Figma開発者エコシステムの全体像

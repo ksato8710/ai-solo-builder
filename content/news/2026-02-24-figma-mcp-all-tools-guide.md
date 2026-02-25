@@ -1,15 +1,25 @@
 ---
-title: "Figma MCP 全13ツール完全解説 — 読み取り・書き込み・Code Connect・ユーティリティを徹底分析"
-slug: "figma-mcp-all-tools-guide"
-date: "2026-02-24"
-publishedAt: "2026-02-24T11:00:00+09:00"
-contentType: "news"
-tags: ["dev-knowledge", "figma", "mcp", "claude-code", "cursor"]
-excerpt: "Figma MCP Serverが提供する全13ツールを4カテゴリに分類して徹底解説。get_design_contextからgenerate_figma_design、Code Connect連携まで、各ツールの実践的な使い方とプロンプト例を網羅。"
-description: "Figma MCP Serverの全機能を詳細分析。読み取り系5ツール、書き込み系2ツール、Code Connect連携4ツール、ユーティリティ2ツールの計13ツールについて、用途・プロンプト例・ベストプラクティスを解説。"
+title: Figma MCP 全13ツール完全解説 — 読み取り・書き込み・Code Connect・ユーティリティを徹底分析
+slug: figma-mcp-all-tools-guide
+date: '2026-02-24'
+publishedAt: '2026-02-24T11:00:00+09:00'
+contentType: news
+tags:
+  - dev-knowledge
+  - figma
+  - mcp
+  - claude-code
+  - cursor
+excerpt: >-
+  Figma MCP
+  Serverが提供する全13ツールを4カテゴリに分類して徹底解説。get_design_contextからgenerate_figma_design、Code
+  Connect連携まで、各ツールの実践的な使い方とプロンプト例を網羅。
+description: >-
+  Figma MCP Serverの全機能を詳細分析。読み取り系5ツール、書き込み系2ツール、Code
+  Connect連携4ツール、ユーティリティ2ツールの計13ツールについて、用途・プロンプト例・ベストプラクティスを解説。
 readTime: 15
-image: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=800&h=420&fit=crop"
-author: "AI Solo Craft 編集部"
+image: /thumbnails/figma-mcp-all-tools-guide.png
+author: AI Solo Craft 編集部
 ---
 
 ## Figma MCP Server とは

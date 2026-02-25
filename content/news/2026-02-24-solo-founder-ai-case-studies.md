@@ -1,5 +1,5 @@
 ---
-title: 'ソロ創業者のAI活用事例 — $20/月のツールから15体のAIエージェント評議会まで'
+title: ソロ創業者のAI活用事例 — $20/月のツールから15体のAIエージェント評議会まで
 slug: solo-founder-ai-case-studies-2026
 date: '2026-02-24'
 publishedAt: '2026-02-24'
@@ -11,10 +11,13 @@ tags:
   - AIエージェント
   - Lovable
   - ChatGPT
-description: Business Insiderが取材した2人のソロ創業者の事例を分析。$20/月のAIツールでウェブサイト構築、15体のAIエージェント「評議会」で週20時間を節約。あなたのビジネスにも適用できる具体的な教訓を解説。
+description: >-
+  Business
+  Insiderが取材した2人のソロ創業者の事例を分析。$20/月のAIツールでウェブサイト構築、15体のAIエージェント「評議会」で週20時間を節約。あなたのビジネスにも適用できる具体的な教訓を解説。
 source: Business Insider
-sourceUrl: 'https://www.businessinsider.com/solo-business-owner-ai-subscription-no-employees-2026-2'
-image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=630&fit=crop'
+sourceUrl: >-
+  https://www.businessinsider.com/solo-business-owner-ai-subscription-no-employees-2026-2
+image: /thumbnails/solo-founder-ai-case-studies-2026.png
 ---
 
 # ソロ創業者のAI活用事例 — $20/月のツールから15体のAIエージェント評議会まで
