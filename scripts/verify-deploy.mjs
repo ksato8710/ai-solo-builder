@@ -73,7 +73,13 @@ async function getLatestUrls() {
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!supabaseUrl || !supabaseKey) {
-    throw new Error('Supabase credentials not configured');
+    console.log('⚠️  Supabase credentials not set, using fallback URLs');
+    // フォールバック: ホームページと主要ページのみ検証
+    return [
+      BASE_URL,
+      `${BASE_URL}/news`,
+      `${BASE_URL}/category/morning-summary`,
+    ];
   }
 
   const supabase = createClient(supabaseUrl, supabaseKey);
