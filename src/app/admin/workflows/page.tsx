@@ -245,7 +245,7 @@ export default function WorkflowsAdminPage() {
           return (
             <article
               key={workflow.id}
-              className="rounded-[--radius-card] border border-border bg-bg-card p-5 space-y-4"
+              className="rounded-[var(--radius-card)] border border-border bg-bg-card p-5 space-y-4"
             >
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>

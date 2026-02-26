@@ -301,7 +301,7 @@ export default function SourceSchedulesAdminPage() {
           const sourceDomain = schedule.source?.domain || '—';
 
           return (
-            <div key={schedule.id} className="rounded-[--radius-card] border border-border bg-bg-card p-4">
+            <div key={schedule.id} className="rounded-[var(--radius-card)] border border-border bg-bg-card p-4">
               {!isEditing ? (
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-4">

@@ -392,7 +392,7 @@ function WorkflowCard({
   }, [workflow, onUpdate]);
 
   return (
-    <article className="rounded-[--radius-card] border border-border bg-bg-card overflow-hidden">
+    <article className="rounded-[var(--radius-card)] border border-border bg-bg-card overflow-hidden">
       {/* ヘッダー */}
       <div
         className="flex items-center justify-between p-5 cursor-pointer hover:bg-bg-warm/50"

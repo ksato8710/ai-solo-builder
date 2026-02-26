@@ -45,7 +45,7 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
         aria-modal="true"
         aria-label="ニュースレター登録"
         tabIndex={-1}
-        className="relative w-full max-w-md bg-bg-card rounded-[--radius-card] border border-border shadow-2xl newsletter-modal-content focus:outline-none"
+        className="relative w-full max-w-md bg-bg-card rounded-[var(--radius-card)] border border-border shadow-2xl newsletter-modal-content focus:outline-none"
       >
         {/* Close button */}
         <button

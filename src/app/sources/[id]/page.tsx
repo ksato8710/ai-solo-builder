@@ -111,7 +111,7 @@ export default async function SourceDetailPage({ params }: SourceDetailPageProps
             </a>
           </div>
 
-          <div className="bg-bg-card rounded-[--radius-card] p-8 border border-border">
+          <div className="bg-bg-card rounded-[var(--radius-card)] p-8 border border-border">
             <div className="flex items-start gap-6">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">

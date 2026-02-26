@@ -4,7 +4,7 @@ import NewsletterForm from './NewsletterForm';
 
 export default function NewsletterInlineSignup() {
   return (
-    <section className="mb-12 rounded-[--radius-card] overflow-hidden bg-gradient-to-br from-accent-leaf/10 via-accent-bark/8 to-accent-moss/5 border border-border">
+    <section className="mb-12 rounded-[var(--radius-card)] overflow-hidden bg-gradient-to-br from-accent-leaf/10 via-accent-bark/8 to-accent-moss/5 border border-border">
       <div className="px-6 py-8 sm:px-8 sm:py-10">
         <div className="max-w-lg mx-auto text-center">
           {/* Icon */}

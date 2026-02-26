@@ -334,7 +334,7 @@ export default function SourceIntelligenceAdminPage() {
         <StatCard label="一次情報" value={summary.primary} accent="text-accent-leaf" />
       </div>
 
-      <div className="rounded-[--radius-card] border border-border bg-bg-card p-4 space-y-4">
+      <div className="rounded-[var(--radius-card)] border border-border bg-bg-card p-4 space-y-4">
         <div className="flex flex-wrap gap-3 items-center">
           <select
             value={filterKind}
@@ -409,7 +409,7 @@ export default function SourceIntelligenceAdminPage() {
           const isEditing = source.id === editingId;
 
           return (
-            <div key={source.id} className="rounded-[--radius-card] border border-border bg-bg-card p-4">
+            <div key={source.id} className="rounded-[var(--radius-card)] border border-border bg-bg-card p-4">
               {!isEditing ? (
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-4">
@@ -526,7 +526,7 @@ function FormPanel({
   onCancel?: () => void;
 }) {
   return (
-    <div className="rounded-[--radius-card] border border-border bg-bg-card p-4 space-y-4">
+    <div className="rounded-[var(--radius-card)] border border-border bg-bg-card p-4 space-y-4">
       <h2 className="text-sm font-semibold font-heading text-text-deep">{title}</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">

@@ -27,7 +27,7 @@ export default function NewsCard({ post, size = 'medium' }: NewsCardProps) {
   if (size === 'large') {
     return (
       <a href={postUrl} className="group block">
-        <div className="rounded-[--radius-card] overflow-hidden transition-all duration-300 hover:ring-1 hover:ring-border bg-bg-card">
+        <div className="rounded-[var(--radius-card)] overflow-hidden transition-all duration-300 hover:ring-1 hover:ring-border bg-bg-card">
           <div className="aspect-video bg-gradient-to-br from-bg-warm to-bg-card relative overflow-hidden">
             {post.image ? (
               <img src={post.image} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />

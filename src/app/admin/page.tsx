@@ -78,7 +78,7 @@ export default function AdminPage() {
 function OverviewTab() {
   return (
     <div className="space-y-6">
-      <div className="p-6 border border-border rounded-[--radius-card] bg-bg-card">
+      <div className="p-6 border border-border rounded-[var(--radius-card)] bg-bg-card">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep flex items-center gap-2">
           ⚡ 利用可能な管理機能
         </h2>
@@ -142,7 +142,7 @@ function OverviewTab() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+        <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
           <h3 className="font-semibold font-heading mb-4 text-text-deep flex items-center gap-2">
             📊 システム統計
           </h3>
@@ -166,7 +166,7 @@ function OverviewTab() {
           </div>
         </div>
 
-        <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+        <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
           <h3 className="font-semibold font-heading mb-4 text-text-deep flex items-center gap-2">
             🎯 現在のフェーズ
           </h3>
@@ -207,7 +207,7 @@ function OverviewTab() {
 function WorkflowTab() {
   return (
     <div className="space-y-6">
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">🔄 ワークフロー概要</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
@@ -234,7 +234,7 @@ function WorkflowTab() {
       </div>
 
       {/* 個別記事ワークフロー詳細 */}
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">📝 個別記事ワークフロー詳細</h2>
 
         <div className="mb-6">
@@ -316,7 +316,7 @@ function WorkflowTab() {
         </div>
       </div>
 
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">📊 5 Phase Pipeline</h2>
         <div className="space-y-4">
           {[
@@ -341,7 +341,7 @@ function WorkflowTab() {
         </div>
       </div>
 
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">⏰ 日次スケジュール</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
@@ -439,7 +439,7 @@ function SkillsTab({ onSkillSelect }: { onSkillSelect: (skillName: string) => vo
 
   return (
     <div className="space-y-6">
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">🛠️ スキル一覧</h2>
         <p className="text-sm text-text-light mb-4">スキル名をクリックすると詳細（SKILL.md）を確認できます。</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -481,7 +481,7 @@ function SkillsTab({ onSkillSelect }: { onSkillSelect: (skillName: string) => vo
         </div>
       </div>
 
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">📈 スキル依存関係</h2>
         <div className="bg-bg-cream p-4 rounded-lg font-mono text-sm">
           <div className="text-text-muted">
@@ -530,7 +530,7 @@ function ContentTab() {
 
   return (
     <div className="space-y-6">
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">📄 コンテンツ分類体系</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {contentTypes.map((content, index) => (
@@ -575,7 +575,7 @@ function ContentTab() {
         </div>
       </div>
 
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">🔗 コンテンツ関連性</h2>
         <div className="space-y-4">
           <div className="p-4 bg-bg-cream rounded-lg">
@@ -626,7 +626,7 @@ function SkillDetailTab({ skillName, content, onBack }: { skillName: string, con
         <h1 className="text-2xl font-bold font-heading text-text-deep">📄 {skillName}</h1>
       </div>
 
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep flex items-center gap-2">
           📋 SKILL.md 内容
         </h2>
@@ -654,7 +654,7 @@ function SkillDetailTab({ skillName, content, onBack }: { skillName: string, con
 function ArchitectureTab() {
   return (
     <div className="space-y-6">
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">🏗️ システムアーキテクチャ</h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
@@ -701,7 +701,7 @@ function ArchitectureTab() {
         </div>
       </div>
 
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">🔄 データフロー</h2>
         <div className="bg-bg-cream p-4 rounded-lg font-mono text-sm">
           <div className="space-y-2 text-text-muted">
@@ -720,7 +720,7 @@ function ArchitectureTab() {
         </div>
       </div>
 
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">📂 プロジェクト構成</h2>
         <div className="bg-bg-cream p-4 rounded-lg">
           <pre className="text-sm text-text-muted overflow-x-auto">
@@ -746,7 +746,7 @@ function ArchitectureTab() {
         </div>
       </div>
 
-      <div className="p-6 bg-bg-card border border-border rounded-[--radius-card]">
+      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
         <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">⚙️ 運用フロー</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>

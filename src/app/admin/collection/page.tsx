@@ -303,7 +303,7 @@ export default function NewsletterCollectionAdminPage() {
         </div>
       )}
 
-      <section className="rounded-[--radius-card] border border-border bg-bg-card p-5 space-y-4">
+      <section className="rounded-[var(--radius-card)] border border-border bg-bg-card p-5 space-y-4">
         <h2 className="text-lg font-semibold font-heading text-text-deep">受信ログ追加（手動）</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -434,7 +434,7 @@ export default function NewsletterCollectionAdminPage() {
         </button>
       </section>
 
-      <section className="rounded-[--radius-card] border border-border bg-bg-card p-5 space-y-3">
+      <section className="rounded-[var(--radius-card)] border border-border bg-bg-card p-5 space-y-3">
         <h2 className="text-lg font-semibold font-heading text-text-deep">未受信アラート（過去24時間）</h2>
         {stats.missingSources.length === 0 ? (
           <p className="text-sm text-accent-moss">アクティブなニュースレターは24時間以内にすべて受信できています。</p>
@@ -455,7 +455,7 @@ export default function NewsletterCollectionAdminPage() {
         )}
       </section>
 
-      <section className="rounded-[--radius-card] border border-border bg-bg-card p-5 space-y-4">
+      <section className="rounded-[var(--radius-card)] border border-border bg-bg-card p-5 space-y-4">
         <h2 className="text-lg font-semibold font-heading text-text-deep">最新の受信ログ</h2>
 
         <div className="space-y-3">
