@@ -36,6 +36,14 @@ export const metadata: Metadata = {
     description: "AIソロ開発者が毎日最初に見るサイト。グローバルのAI最新情報を日本語で。",
     type: "website",
     locale: "ja_JP",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AI Solo Craft",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
