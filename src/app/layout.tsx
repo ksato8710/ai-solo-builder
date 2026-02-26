@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { DM_Sans, Nunito } from "next/font/google";
 import "./globals.css";
 import ShareIcon from "@/components/ShareIcon";
@@ -139,6 +140,9 @@ export default function RootLayout({
             <p className="mt-1">毎日配信: 🗞️ 朝刊 8:00 ・ 🗞️ 夕刊 18:00（プロダクトは随時更新）</p>
           </div>
         </footer>
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
       </body>
     </html>
   );
