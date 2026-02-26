@@ -83,7 +83,7 @@ export default function RootLayout({
                   aria-hidden="true"
                   draggable={false}
                 />
-                <span className="font-heading text-lg sm:text-xl font-extrabold text-accent-leaf">
+                <span className="font-heading text-lg sm:text-xl font-extrabold text-text-deep">
                   AI Solo Craft
                 </span>
               </a>
