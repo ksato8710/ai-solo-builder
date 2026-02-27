@@ -356,7 +356,8 @@ export function computeNvaScores(
     technical * weights.technical +
     soloRelevance * weights.solo_relevance;
 
-  const nvaTotal = Math.round(weightedSum / totalWeight);
+  // Scale from 0-20 axis range to 0-100 total range
+  const nvaTotal = Math.round((weightedSum / totalWeight) * 5);
 
   // Build reasoning
   const reasoningParts: string[] = [

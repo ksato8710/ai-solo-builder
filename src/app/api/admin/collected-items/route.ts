@@ -184,7 +184,7 @@ export async function PUT(request: NextRequest) {
             technical * w.technical +
             soloRelevance * w.solo_relevance;
 
-          updates.nva_total = Math.round(weightedSum / totalWeight);
+          updates.nva_total = Math.round((weightedSum / totalWeight) * 5);
         }
       }
     }
