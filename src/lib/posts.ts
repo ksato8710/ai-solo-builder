@@ -1,6 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import { createClient } from '@supabase/supabase-js';
 import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
@@ -12,19 +9,8 @@ import type { ContentType, DigestEdition, Post } from './types';
 export { CATEGORIES, NEWS_SUBCATEGORIES } from './types';
 export type { Post } from './types';
 
-const newsDirectory = path.join(process.cwd(), 'content/news');
-const productsDirectory = path.join(process.cwd(), 'content/products');
-
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
 const SUPABASE_SECRET_KEY = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
-const CONTENT_READ_SOURCE = process.env.CONTENT_READ_SOURCE || 'db-first';
-
-interface CanonicalModel {
-  contentType: ContentType;
-  digestEdition: DigestEdition;
-  tags: string[];
-  relatedProducts: string[];
-}
 
 interface PreparedData {
   allContent: Post[];
@@ -38,7 +24,6 @@ const NEWS_CATEGORY_KEYS = Object.keys(NEWS_SUBCATEGORIES);
 let dbPreparedDataPromise: Promise<PreparedData | null> | null = null;
 
 function canUseDatabase() {
-  if (CONTENT_READ_SOURCE === 'file') return false;
   return Boolean(SUPABASE_URL && SUPABASE_SECRET_KEY);
 }
 
@@ -71,130 +56,8 @@ function mapCategoryFromCanonical(contentType: ContentType, digestEdition: Diges
   return 'news';
 }
 
-function inferCanonicalModel(data: Record<string, unknown>, fileType: 'news' | 'product'): CanonicalModel {
-  const explicitContentType = data.contentType ? String(data.contentType).trim() : '';
-  const legacyCategory = data.category ? String(data.category).trim() : '';
-
-  let contentType: ContentType;
-  if (explicitContentType === 'news' || explicitContentType === 'product' || explicitContentType === 'digest') {
-    contentType = explicitContentType;
-  } else if (fileType === 'product') {
-    contentType = 'product';
-  } else if (legacyCategory === 'morning-summary' || legacyCategory === 'evening-summary') {
-    contentType = 'digest';
-  } else if (legacyCategory === 'products') {
-    contentType = 'product';
-  } else {
-    contentType = 'news';
-  }
-
-  let digestEdition: DigestEdition = null;
-  if (contentType === 'digest') {
-    const explicitEdition = data.digestEdition ? String(data.digestEdition).trim() : '';
-    if (explicitEdition === 'morning' || explicitEdition === 'evening') {
-      digestEdition = explicitEdition;
-    } else if (legacyCategory === 'evening-summary') {
-      digestEdition = 'evening';
-    } else {
-      digestEdition = 'morning';
-    }
-  }
-
-  const tags = unique([
-    ...parseArray(data.tags),
-    ...(legacyCategory === 'dev-knowledge' ? ['dev-knowledge'] : []),
-    ...(legacyCategory === 'case-study' ? ['case-study'] : []),
-  ]);
-
-  const relatedProducts = unique([
-    ...parseArray(data.relatedProducts),
-    data.relatedProduct ? String(data.relatedProduct).trim() : '',
-  ]);
-
-  return { contentType, digestEdition, tags, relatedProducts };
-}
-
-function normalizePostFromFrontmatter(
-  data: Record<string, unknown>,
-  filename: string,
-  fileType: 'news' | 'product',
-  content?: string
-): Post {
-  const slug = String(data.slug || filename.replace(/\.mdx?$/, '')).trim();
-  const model = inferCanonicalModel(data, fileType);
-  const category = mapCategoryFromCanonical(model.contentType, model.digestEdition, model.tags);
-
-  return {
-    slug,
-    title: String(data.title || ''),
-    date: String(data.date || ''),
-    category,
-    description: String(data.description || ''),
-    readTime: Number(data.readTime || 5),
-    featured: Boolean(data.featured),
-    image: data.image ? String(data.image) : undefined,
-    content,
-    type: model.contentType === 'product' ? 'product' : 'news',
-    url: model.contentType === 'product' ? `/products/${slug}` : `/news/${slug}`,
-    relatedProduct: model.relatedProducts[0],
-    relatedProducts: model.relatedProducts,
-    tags: model.tags,
-    contentType: model.contentType,
-    digestEdition: model.digestEdition,
-  };
-}
-
 function sortByDateDesc(posts: Post[]): Post[] {
   return [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-}
-
-function readPostsFromDirectory(directory: string, fileType: 'news' | 'product', includeContent = false): Post[] {
-  if (!fs.existsSync(directory)) return [];
-
-  const filenames = fs.readdirSync(directory).filter((f) => f.endsWith('.mdx') || f.endsWith('.md'));
-
-  return filenames.map((filename) => {
-    const filePath = path.join(directory, filename);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContents);
-    return normalizePostFromFrontmatter(data, filename, fileType, includeContent ? content : undefined);
-  });
-}
-
-function getAllPostsFromFiles(): Post[] {
-  return sortByDateDesc(readPostsFromDirectory(newsDirectory, 'news'));
-}
-
-function getAllProductsFromFiles(): Post[] {
-  return sortByDateDesc(readPostsFromDirectory(productsDirectory, 'product'));
-}
-
-function getAllContentFromFiles(): Post[] {
-  return sortByDateDesc([
-    ...readPostsFromDirectory(newsDirectory, 'news'),
-    ...readPostsFromDirectory(productsDirectory, 'product'),
-  ]);
-}
-
-async function findPostInDirectory(directory: string, slug: string, fileType: 'news' | 'product'): Promise<Post | null> {
-  if (!fs.existsSync(directory)) return null;
-
-  const filenames = fs.readdirSync(directory).filter((f) => f.endsWith('.mdx') || f.endsWith('.md'));
-
-  for (const filename of filenames) {
-    const filePath = path.join(directory, filename);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContents);
-
-    const postSlug = String(data.slug || filename.replace(/\.mdx?$/, '')).trim();
-    if (postSlug === slug) {
-      const post = normalizePostFromFrontmatter(data, filename, fileType, content);
-      const processedContent = await remark().use(remarkGfm).use(html).process(content);
-      return { ...post, htmlContent: processedContent.toString() };
-    }
-  }
-
-  return null;
 }
 
 async function withHtmlContent(post: Post): Promise<Post> {
@@ -338,36 +201,43 @@ async function fetchDbPreparedData(): Promise<PreparedData> {
   return { allContent: sortedContent, allPosts, allProducts, bySlug };
 }
 
-async function getDbPreparedData(): Promise<PreparedData | null> {
-  if (!canUseDatabase()) return null;
+const EMPTY_PREPARED_DATA: PreparedData = {
+  allContent: [],
+  allPosts: [],
+  allProducts: [],
+  bySlug: new Map(),
+};
+
+async function getDbPreparedData(): Promise<PreparedData> {
+  if (!canUseDatabase()) {
+    console.error('[posts] DB credentials not configured. Returning empty data.');
+    return EMPTY_PREPARED_DATA;
+  }
 
   if (!dbPreparedDataPromise) {
     dbPreparedDataPromise = fetchDbPreparedData().catch((error) => {
-      console.warn('[posts] DB read failed, fallback to markdown.', error);
+      console.error('[posts] DB read failed. Returning empty data.', error);
       dbPreparedDataPromise = null;
-      return null;
+      return EMPTY_PREPARED_DATA;
     });
   }
 
-  return dbPreparedDataPromise;
+  return dbPreparedDataPromise.then((result) => result ?? EMPTY_PREPARED_DATA);
 }
 
 export async function getAllPosts(): Promise<Post[]> {
   const db = await getDbPreparedData();
-  if (db) return db.allPosts;
-  return getAllPostsFromFiles();
+  return db.allPosts;
 }
 
 export async function getAllProducts(): Promise<Post[]> {
   const db = await getDbPreparedData();
-  if (db) return db.allProducts;
-  return getAllProductsFromFiles();
+  return db.allProducts;
 }
 
 export async function getAllContent(): Promise<Post[]> {
   const db = await getDbPreparedData();
-  if (db) return db.allContent;
-  return getAllContentFromFiles();
+  return db.allContent;
 }
 
 export async function getPostsByCategory(category: string): Promise<Post[]> {
@@ -390,27 +260,31 @@ export async function getAllNewsPosts(): Promise<Post[]> {
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
-  const db = await getDbPreparedData();
-  if (db) {
+  try {
+    const db = await getDbPreparedData();
     const post = db.bySlug.get(slug);
     if (post && post.type === 'news') {
       return withHtmlContent(post);
     }
+    return null;
+  } catch (error) {
+    console.error(`[posts] Failed to get post by slug: ${slug}`, error);
+    return null;
   }
-
-  return findPostInDirectory(newsDirectory, slug, 'news');
 }
 
 export async function getProductBySlug(slug: string): Promise<Post | null> {
-  const db = await getDbPreparedData();
-  if (db) {
+  try {
+    const db = await getDbPreparedData();
     const post = db.bySlug.get(slug);
     if (post && post.type === 'product') {
       return withHtmlContent(post);
     }
+    return null;
+  } catch (error) {
+    console.error(`[posts] Failed to get product by slug: ${slug}`, error);
+    return null;
   }
-
-  return findPostInDirectory(productsDirectory, slug, 'product');
 }
 
 export async function getPostsByRelatedProduct(productSlug: string): Promise<Post[]> {
@@ -418,5 +292,5 @@ export async function getPostsByRelatedProduct(productSlug: string): Promise<Pos
   return posts
     .filter((p) => p.relatedProducts?.includes(productSlug))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 6); // 最大6件
+    .slice(0, 6); // max 6 items
 }

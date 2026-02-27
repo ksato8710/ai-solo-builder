@@ -151,6 +151,19 @@ function kindColor(kind: string | null) {
   }
 }
 
+function tierBadge(sourceType: SourceType): { label: string; className: string } | null {
+  switch (sourceType) {
+    case 'primary':
+      return { label: '一次情報', className: 'text-accent-leaf bg-accent-leaf/20 border-accent-leaf/40' };
+    case 'secondary':
+      return { label: '二次情報', className: 'text-accent-bark bg-accent-bark/20 border-accent-bark/40' };
+    case 'tertiary':
+      return { label: '三次情報', className: 'text-cat-tool bg-cat-tool/20 border-cat-tool/40' };
+    default:
+      return null;
+  }
+}
+
 export default function SourceIntelligenceAdminPage() {
   const [sources, setSources] = useState<SourceEntity[]>([]);
   const [loading, setLoading] = useState(true);
@@ -172,7 +185,10 @@ export default function SourceIntelligenceAdminPage() {
     const newsletter = sources.filter((source) => source.entity_kind === 'newsletter').length;
     const japanese = sources.filter((source) => source.entity_kind === 'japanese_media').length;
     const primary = sources.filter((source) => source.entity_kind === 'primary_source').length;
-    return { total, newsletter, japanese, primary };
+    const tierPrimary = sources.filter((source) => source.source_type === 'primary').length;
+    const tierSecondary = sources.filter((source) => source.source_type === 'secondary').length;
+    const tierTertiary = sources.filter((source) => source.source_type === 'tertiary').length;
+    return { total, newsletter, japanese, primary, tierPrimary, tierSecondary, tierTertiary };
   }, [sources]);
 
   const fetchSources = useCallback(async () => {
@@ -299,7 +315,7 @@ export default function SourceIntelligenceAdminPage() {
             ニュースレター / 一次情報 / 日本メディアを統合管理し、ワークフロー連携の基盤を維持します。
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <a
             href="/admin/workflows"
             className="inline-flex items-center rounded-lg border border-border px-3 py-2 text-sm text-text-muted hover:bg-bg-warm"
@@ -319,6 +335,18 @@ export default function SourceIntelligenceAdminPage() {
             受信ログ
           </a>
           <a
+            href="/admin/collected-items"
+            className="inline-flex items-center rounded-lg border border-border px-3 py-2 text-sm text-text-muted hover:bg-bg-warm"
+          >
+            収集データ
+          </a>
+          <a
+            href="/admin/scoring"
+            className="inline-flex items-center rounded-lg border border-border px-3 py-2 text-sm text-text-muted hover:bg-bg-warm"
+          >
+            スコアリング
+          </a>
+          <a
             href="/admin"
             className="inline-flex items-center rounded-lg border border-border px-3 py-2 text-sm text-text-muted hover:bg-bg-warm"
           >
@@ -331,7 +359,13 @@ export default function SourceIntelligenceAdminPage() {
         <StatCard label="総ソース数" value={summary.total} accent="text-text-deep" />
         <StatCard label="ニュースレター" value={summary.newsletter} accent="text-accent-bark" />
         <StatCard label="日本メディア" value={summary.japanese} accent="text-cat-tool" />
-        <StatCard label="一次情報" value={summary.primary} accent="text-accent-leaf" />
+        <StatCard label="一次情報源" value={summary.primary} accent="text-accent-leaf" />
+      </div>
+
+      <div className="grid grid-cols-3 gap-4">
+        <StatCard label="Tier: 一次情報" value={summary.tierPrimary} accent="text-accent-leaf" />
+        <StatCard label="Tier: 二次情報" value={summary.tierSecondary} accent="text-accent-bark" />
+        <StatCard label="Tier: 三次情報" value={summary.tierTertiary} accent="text-cat-tool" />
       </div>
 
       <div className="rounded-[var(--radius-card)] border border-border bg-bg-card p-4 space-y-4">
@@ -419,6 +453,14 @@ export default function SourceIntelligenceAdminPage() {
                         <span className={`px-2 py-1 text-xs rounded border ${kindColor(source.entity_kind)}`}>
                           {entityKindLabel(source.entity_kind)}
                         </span>
+                        {(() => {
+                          const tier = tierBadge(source.source_type);
+                          return tier ? (
+                            <span className={`px-2 py-1 text-xs font-semibold rounded border ${tier.className}`}>
+                              {tier.label}
+                            </span>
+                          ) : null;
+                        })()}
                         {source.is_newsletter && (
                           <span className="px-2 py-1 text-xs rounded border border-accent-bark/40 bg-accent-bark/20 text-accent-bark">
                             Newsletter
