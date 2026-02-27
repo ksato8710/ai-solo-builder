@@ -4,810 +4,411 @@ import { useState } from 'react';
 
 export const dynamic = 'force-dynamic';
 
+// ---------------------------------------------------------------------------
+// Main Page
+// ---------------------------------------------------------------------------
+
 export default function AdminPage() {
-  const [activeTab, setActiveTab] = useState('overview');
+  return (
+    <div className="p-6 md:p-8 max-w-7xl mx-auto space-y-8">
+      {/* Header + Status */}
+      <div>
+        <h1 className="text-3xl font-bold font-heading text-text-deep mb-3">
+          管理画面
+        </h1>
+        <StatusBar />
+      </div>
+
+      {/* Management Tools — Primary Content */}
+      <section>
+        <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
+          管理ツール
+        </h2>
+        <ToolCards />
+      </section>
+
+      {/* System Reference — Secondary */}
+      <section>
+        <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
+          システムリファレンス
+        </h2>
+        <ReferenceSection />
+      </section>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Status Bar — compact horizontal indicators
+// ---------------------------------------------------------------------------
+
+function StatusBar() {
+  const indicators = [
+    { label: '収集パイプライン', value: '稼働中', color: 'bg-accent-moss' },
+    { label: '朝刊配信', value: 'アクティブ', color: 'bg-accent-leaf' },
+    { label: 'NVAスコアリング', value: '自動', color: 'bg-accent-leaf' },
+    { label: 'データソース', value: 'DB-first', color: 'bg-accent-bloom' },
+  ];
+
+  return (
+    <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-text-muted">
+      {indicators.map((ind) => (
+        <div key={ind.label} className="flex items-center gap-1.5">
+          <span className={`w-1.5 h-1.5 rounded-full ${ind.color}`} />
+          <span className="text-text-light">{ind.label}:</span>
+          <span className="font-medium text-text-deep">{ind.value}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Tool Cards — clickable grid to each admin sub-page
+// ---------------------------------------------------------------------------
+
+function ToolCards() {
+  const tools = [
+    {
+      href: '/admin/collected-items',
+      title: '収集データ管理',
+      desc: 'RSS / API / スクレイプで自動収集したニュースの一覧・フィルタ・手動編集',
+      accent: 'border-accent-moss/40 hover:border-accent-moss',
+      badge: 'collected_items',
+      badgeColor: 'bg-accent-moss/15 text-accent-moss',
+    },
+    {
+      href: '/admin/scoring',
+      title: 'スコアリング',
+      desc: 'NVA 5軸スコアの統計・分布確認、重み設定の調整',
+      accent: 'border-accent-bloom/40 hover:border-accent-bloom',
+      badge: 'scoring_config',
+      badgeColor: 'bg-accent-bloom/15 text-accent-bloom',
+    },
+    {
+      href: '/admin/source-intelligence',
+      title: 'Source Intelligence',
+      desc: '一次 / 二次 / 三次の 3 階層ソースの統合管理・Tier 分析',
+      accent: 'border-accent-bark/40 hover:border-accent-bark',
+      badge: 'sources',
+      badgeColor: 'bg-accent-bark/15 text-accent-bark',
+    },
+    {
+      href: '/admin/workflows',
+      title: 'ワークフロー管理',
+      desc: '記事種別 × ソースの役割（detect / verify / localize）を可視化',
+      accent: 'border-accent-leaf/40 hover:border-accent-leaf',
+      badge: 'workflows',
+      badgeColor: 'bg-accent-leaf/15 text-accent-leaf',
+    },
+    {
+      href: '/admin/sources',
+      title: 'Legacy 情報源',
+      desc: '旧 content_sources テーブル（互換運用）',
+      accent: 'border-border hover:border-text-light',
+      badge: 'legacy',
+      badgeColor: 'bg-bg-warm text-text-muted',
+    },
+  ];
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {tools.map((tool) => (
+        <a
+          key={tool.href}
+          href={tool.href}
+          className={`group block p-5 bg-bg-card border-2 ${tool.accent} rounded-[var(--radius-card)] transition-all hover:shadow-sm`}
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <h3 className="font-semibold font-heading text-text-deep group-hover:text-accent-leaf transition-colors">
+              {tool.title}
+            </h3>
+            <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${tool.badgeColor}`}>
+              {tool.badge}
+            </span>
+          </div>
+          <p className="text-sm text-text-light leading-relaxed">{tool.desc}</p>
+        </a>
+      ))}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Reference Section — collapsible panels
+// ---------------------------------------------------------------------------
+
+function ReferenceSection() {
+  return (
+    <div className="space-y-3">
+      <CollapsiblePanel title="データパイプライン" defaultOpen>
+        <PipelineReference />
+      </CollapsiblePanel>
+      <CollapsiblePanel title="スキル一覧">
+        <SkillsReference />
+      </CollapsiblePanel>
+      <CollapsiblePanel title="技術アーキテクチャ">
+        <ArchitectureReference />
+      </CollapsiblePanel>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Collapsible Panel
+// ---------------------------------------------------------------------------
+
+function CollapsiblePanel({
+  title,
+  defaultOpen = false,
+  children,
+}: {
+  title: string;
+  defaultOpen?: boolean;
+  children: React.ReactNode;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+
+  return (
+    <div className="border border-border rounded-[var(--radius-card)] bg-bg-card overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-5 py-3 text-left hover:bg-bg-warm transition-colors"
+      >
+        <span className="font-semibold font-heading text-sm text-text-deep">
+          {title}
+        </span>
+        <span className="text-text-light text-xs transition-transform" style={{ transform: open ? 'rotate(180deg)' : 'rotate(0)' }}>
+          ▼
+        </span>
+      </button>
+      {open && <div className="px-5 pb-5 border-t border-border">{children}</div>}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Pipeline Reference
+// ---------------------------------------------------------------------------
+
+function PipelineReference() {
+  return (
+    <div className="pt-4 space-y-5">
+      {/* Data flow */}
+      <div>
+        <h4 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">データフロー</h4>
+        <div className="flex flex-wrap items-center gap-2 text-sm">
+          {[
+            { label: '自動収集', sub: 'RSS/API/Scrape', color: 'bg-accent-leaf' },
+            { label: 'NVAスコアリング', sub: '5軸 0-100', color: 'bg-accent-moss' },
+            { label: '記事選定・作成', sub: 'スコア上位', color: 'bg-accent-bloom' },
+            { label: 'DB保存', sub: 'Supabase', color: 'bg-accent-bark' },
+            { label: 'Web配信', sub: 'Next.js SSG', color: 'bg-cat-content' },
+          ].map((step, i) => (
+            <div key={i} className="flex items-center gap-2">
+              {i > 0 && <span className="text-text-light">→</span>}
+              <div className="flex items-center gap-1.5 bg-bg-warm px-3 py-1.5 rounded-lg">
+                <span className={`w-1.5 h-1.5 rounded-full ${step.color}`} />
+                <span className="text-text-deep font-medium">{step.label}</span>
+                <span className="text-text-light text-xs">({step.sub})</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Schedule + Stats side by side */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <h4 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">Cron スケジュール</h4>
+          <div className="text-sm space-y-1.5 text-text-muted">
+            <div className="flex justify-between"><span className="font-mono">06:00</span><span>collect-sources（自動収集 + スコアリング）</span></div>
+            <div className="flex justify-between"><span className="font-mono">23:15</span><span>send-newsletter</span></div>
+          </div>
+        </div>
+        <div>
+          <h4 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">システム概要</h4>
+          <div className="text-sm space-y-1.5 text-text-muted">
+            <div className="flex justify-between"><span>ソース階層:</span><span>一次 / 二次 / 三次（124ソース）</span></div>
+            <div className="flex justify-between"><span>配信タイプ:</span><span>news / product / digest</span></div>
+            <div className="flex justify-between"><span>Digest:</span><span>朝刊（毎日）</span></div>
+          </div>
+        </div>
+      </div>
+
+      {/* NVA axes */}
+      <div>
+        <h4 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">NVA 5軸スコアリング</h4>
+        <div className="flex flex-wrap gap-2 text-xs">
+          {[
+            { axis: 'social', weight: '1.0', desc: 'SNS反応' },
+            { axis: 'media', weight: '1.0', desc: 'メディア報道量' },
+            { axis: 'community', weight: '1.0', desc: 'コミュニティ話題度' },
+            { axis: 'technical', weight: '1.0', desc: '技術的インパクト' },
+            { axis: 'solo_relevance', weight: '1.5', desc: 'ソロ開発者への関連度' },
+          ].map((a) => (
+            <div key={a.axis} className="bg-bg-warm px-3 py-2 rounded-lg border border-border">
+              <div className="font-mono font-semibold text-text-deep">{a.axis}</div>
+              <div className="text-text-light">{a.desc} (×{a.weight})</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Skills Reference
+// ---------------------------------------------------------------------------
+
+function SkillsReference() {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
   const [skillContent, setSkillContent] = useState<string>('');
 
-  const tabs = [
-    { id: 'overview', label: '🏠 概要', icon: '🏠' },
-    { id: 'workflow', label: '🔄 ワークフロー', icon: '🔄' },
-    { id: 'skills', label: '🛠️ スキル', icon: '🛠️' },
-    { id: 'content', label: '📄 コンテンツ分類', icon: '📄' },
-    { id: 'architecture', label: '🏗️ アーキテクチャ', icon: '🏗️' },
+  const skills = [
+    { name: 'news-research', phase: 'Phase 1', desc: 'ニュース収集・一次ソース確認・DB保存' },
+    { name: 'news-evaluation', phase: 'Phase 2', desc: '期間フィルタ・スコア評価・Top10選定' },
+    { name: 'digest-writer', phase: 'Phase 3', desc: 'Digest + Top3記事作成' },
+    { name: 'content-optimizer', phase: 'Phase 4', desc: '記事の見せ方を最適化' },
+    { name: 'publish-gate', phase: 'Phase 5', desc: 'チェックリスト照合・デプロイ' },
+    { name: 'article-writer', phase: '個別記事', desc: 'SEO最適化された記事を作成・投稿' },
+    { name: 'newsletter-curation-workflow', phase: '横断', desc: 'ニュースレター検知→一次情報検証→ローカライズ' },
   ];
 
   const loadSkillContent = async (skillName: string) => {
     try {
       const response = await fetch(`/api/admin/skills/${skillName}`);
-      if (response.ok) {
-        const content = await response.text();
-        setSkillContent(content);
-        setSelectedSkill(skillName);
-      } else {
-        setSkillContent('スキルファイルの読み込みに失敗しました。');
-        setSelectedSkill(skillName);
-      }
+      const content = response.ok
+        ? await response.text()
+        : 'スキルファイルの読み込みに失敗しました。';
+      setSkillContent(content);
+      setSelectedSkill(skillName);
     } catch {
       setSkillContent('スキルファイルの読み込み中にエラーが発生しました。');
       setSelectedSkill(skillName);
     }
   };
 
-  return (
-    <div className="p-8 max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold font-heading mb-6 text-text-deep">AI Solo Craft 管理画面</h1>
-
-      {/* Tab Navigation */}
-      <div className="flex flex-wrap gap-2 mb-8 border-b border-border pb-4">
-        {tabs.map((tab) => (
+  if (selectedSkill) {
+    return (
+      <div className="pt-4 space-y-4">
+        <div className="flex items-center gap-3">
           <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              activeTab === tab.id
-                ? 'bg-accent-leaf text-white'
-                : 'bg-bg-card text-text-muted hover:bg-bg-warm'
-            }`}
+            onClick={() => setSelectedSkill(null)}
+            className="text-sm text-accent-leaf hover:underline"
           >
-            {tab.label}
+            ← 一覧に戻る
+          </button>
+          <span className="font-mono font-semibold text-text-deep">{selectedSkill}</span>
+        </div>
+        <div className="bg-bg-cream rounded-lg p-4 max-h-80 overflow-y-auto">
+          <pre className="text-xs text-text-muted whitespace-pre-wrap font-mono leading-relaxed">
+            {skillContent || 'ローディング中...'}
+          </pre>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="pt-4">
+      {/* Pipeline flow */}
+      <div className="mb-4 bg-bg-cream rounded-lg p-3 font-mono text-xs text-text-muted">
+        <span className="text-accent-moss">Digest:</span>{' '}
+        news-research → news-evaluation → digest-writer → content-optimizer → publish-gate
+        <br />
+        <span className="text-accent-leaf">個別記事:</span>{' '}
+        article-writer → content-optimizer → publish-gate
+      </div>
+
+      {/* Skill list */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+        {skills.map((skill) => (
+          <button
+            key={skill.name}
+            onClick={() => loadSkillContent(skill.name)}
+            className="text-left p-3 bg-bg-warm rounded-lg border border-border hover:border-accent-leaf/50 transition-colors"
+          >
+            <div className="flex items-center gap-2 mb-1">
+              <span className="font-mono text-xs font-semibold text-text-deep">{skill.name}</span>
+              <span className="text-[10px] bg-bg-card px-1.5 py-0.5 rounded text-text-muted">{skill.phase}</span>
+            </div>
+            <p className="text-xs text-text-light">{skill.desc}</p>
           </button>
         ))}
       </div>
-
-      {/* Tab Content */}
-      {activeTab === 'overview' && <OverviewTab />}
-      {activeTab === 'workflow' && <WorkflowTab />}
-      {activeTab === 'skills' && (
-        selectedSkill ? (
-          <SkillDetailTab
-            skillName={selectedSkill}
-            content={skillContent}
-            onBack={() => setSelectedSkill(null)}
-          />
-        ) : (
-          <SkillsTab onSkillSelect={loadSkillContent} />
-        )
-      )}
-      {activeTab === 'content' && <ContentTab />}
-      {activeTab === 'architecture' && <ArchitectureTab />}
     </div>
   );
 }
 
-function OverviewTab() {
+// ---------------------------------------------------------------------------
+// Architecture Reference
+// ---------------------------------------------------------------------------
+
+function ArchitectureReference() {
   return (
-    <div className="space-y-6">
-      <div className="p-6 border border-border rounded-[var(--radius-card)] bg-bg-card">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep flex items-center gap-2">
-          ⚡ 利用可能な管理機能
-        </h2>
-        <ul className="space-y-3">
-          <li className="flex items-start gap-3">
-            <a
-              href="/admin/collected-items"
-              className="text-accent-moss hover:text-accent-leaf transition-colors font-medium hover:underline"
-            >
-              📦 収集データ管理
-            </a>
-            <span className="text-text-light text-sm">
-              - RSS/API/スクレイプで自動収集したニュースの一覧・フィルタ・手動編集
-            </span>
-          </li>
-          <li className="flex items-start gap-3">
-            <a
-              href="/admin/scoring"
-              className="text-accent-bloom hover:text-accent-bloom/80 transition-colors font-medium hover:underline"
-            >
-              📊 スコアリングダッシュボード
-            </a>
-            <span className="text-text-light text-sm">
-              - NVA 5軸スコアの統計・分布・重み設定
-            </span>
-          </li>
-          <li className="flex items-start gap-3">
-            <a
-              href="/admin/source-intelligence"
-              className="text-accent-bark hover:text-accent-bark/80 transition-colors font-medium hover:underline"
-            >
-              🧭 Source Intelligence
-            </a>
-            <span className="text-text-light text-sm">
-              - 3階層ソース（一次/二次/三次）の統合管理・Tier分析
-            </span>
-          </li>
-          <li className="flex items-start gap-3">
-            <a
-              href="/admin/workflows"
-              className="text-accent-leaf hover:text-accent-moss transition-colors font-medium hover:underline"
-            >
-              🔗 記事作成ワークフロー管理
-            </a>
-            <span className="text-text-light text-sm">
-              - 記事種別 × ソースの役割（detect / verify / localize）を可視化
-            </span>
-          </li>
-          <li className="flex items-start gap-3">
-            <a
-              href="/admin/sources"
-              className="text-text-muted hover:text-text-light transition-colors font-medium hover:underline"
-            >
-              📋 Legacy情報源管理
-            </a>
-            <span className="text-text-light text-sm">
-              - 旧 content_sources テーブル（互換運用）
-            </span>
-          </li>
-        </ul>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-          <h3 className="font-semibold font-heading mb-4 text-text-deep flex items-center gap-2">
-            📊 システム統計
-          </h3>
-          <div className="text-sm space-y-2 text-text-muted">
-            <div className="flex justify-between">
-              <span>配信タイプ:</span>
-              <span className="text-accent-moss">3種類 (news/product/digest)</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Digestスケジュール:</span>
-              <span className="text-accent-bloom">朝刊（毎日）</span>
-            </div>
-            <div className="flex justify-between">
-              <span>収集パイプライン:</span>
-              <span className="text-accent-leaf">自動収集 + NVAスコアリング</span>
-            </div>
-            <div className="flex justify-between">
-              <span>ソース階層:</span>
-              <span className="text-accent-bark">一次 / 二次 / 三次（124ソース）</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Cron Jobs:</span>
-              <span className="text-text-muted">collect-sources 06:00 / newsletter 23:15</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-          <h3 className="font-semibold font-heading mb-4 text-text-deep flex items-center gap-2">
-            🎯 現在のフェーズ
-          </h3>
-          <div className="text-sm space-y-2 text-text-muted">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-accent-moss rounded-full"></span>
-              <span>収集パイプライン: <span className="text-accent-moss">稼働中</span></span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-accent-leaf rounded-full"></span>
-              <span>朝刊配信: <span className="text-accent-leaf">アクティブ</span></span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-accent-leaf rounded-full"></span>
-              <span>NVAスコアリング: <span className="text-accent-leaf">自動（ルールベース）</span></span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-accent-bloom rounded-full"></span>
-              <span>データソース: <span className="text-accent-bloom">DB-first（Supabase）</span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="p-4 bg-accent-leaf/10 border border-accent-leaf/20 rounded-lg">
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-accent-leaf">💡</span>
-          <h4 className="text-sm font-medium text-accent-leaf">管理画面について</h4>
-        </div>
-        <p className="text-sm text-text-muted">
-          AI Solo Craftの運用を可視化・管理するためのダッシュボードです。ワークフロー、スキル、コンテンツ分類、システムアーキテクチャを一元的に確認できます。
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function WorkflowTab() {
-  return (
-    <div className="space-y-6">
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">🔄 ワークフロー概要</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="font-semibold font-heading text-accent-moss mb-3">Digestワークフロー（朝刊）</h3>
-            <ul className="text-sm text-text-muted space-y-2">
-              <li>• 目的: 速報性・全体像把握</li>
-              <li>• 頻度: 毎日1回（朝刊）</li>
-              <li>• 自動化度: 高い（自動収集 + NVAスコアリング + 5 Phase）</li>
-              <li>• 記事長: 3,000〜5,000字</li>
-              <li>• 読了時間: 5〜8分</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold font-heading text-accent-leaf mb-3">個別記事ワークフロー</h3>
-            <ul className="text-sm text-text-muted space-y-2">
-              <li>• 目的: 深さ・独自価値</li>
-              <li>• 頻度: 週2〜3本</li>
-              <li>• 自動化度: 中程度（リサーチは手動要素多い）</li>
-              <li>• 記事長: 8,000〜20,000字</li>
-              <li>• 読了時間: 10〜20分</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* 個別記事ワークフロー詳細 */}
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">📝 個別記事ワークフロー詳細</h2>
-
-        <div className="mb-6">
-          <h3 className="font-semibold font-heading text-accent-leaf mb-3">3つの記事タイプ</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 bg-bg-warm rounded-lg border border-accent-moss/30">
-              <h4 className="font-semibold font-heading text-accent-moss mb-2">1. キュレーション型（★推奨）</h4>
-              <p className="text-xs text-text-muted mb-2">既存リソースを評価・比較し、最適な学習パスを案内</p>
-              <ul className="text-xs text-text-light space-y-1">
-                <li>• 一次ソースへの敬意</li>
-                <li>• 独自の評価軸で整理</li>
-                <li>• 「どれを読むべきか」を提示</li>
-              </ul>
-            </div>
-
-            <div className="p-4 bg-bg-warm rounded-lg border border-accent-bloom/30">
-              <h4 className="font-semibold font-heading text-accent-bloom mb-2">2. 事例分析型</h4>
-              <p className="text-xs text-text-muted mb-2">成功/失敗事例を深掘り分析し、再現可能な教訓を抽出</p>
-              <ul className="text-xs text-text-light space-y-1">
-                <li>• 具体的な数字（売上、ユーザー数）</li>
-                <li>• 時系列での軌跡</li>
-                <li>• 成功/失敗要因の分析</li>
-              </ul>
-            </div>
-
-            <div className="p-4 bg-bg-warm rounded-lg border border-accent-bark/30">
-              <h4 className="font-semibold font-heading text-accent-bark mb-2">3. 実践ガイド型</h4>
-              <p className="text-xs text-text-muted mb-2">手を動かして学べる実践的なチュートリアル</p>
-              <ul className="text-xs text-text-light space-y-1">
-                <li>• ステップバイステップ手順</li>
-                <li>• 実際のコード例</li>
-                <li>• トラブルシューティング</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="mb-6">
-          <h3 className="font-semibold font-heading text-accent-moss mb-3">作成プロセス</h3>
-          <div className="space-y-3">
-            {[
-              { step: 'Step 1', title: 'テーマ選定', desc: 'トレンド分析・読者ニーズ・専門性のバランス', color: 'bg-danger' },
-              { step: 'Step 2', title: 'リサーチ', desc: '一次ソース収集・既存記事調査・専門家意見', color: 'bg-accent-bloom' },
-              { step: 'Step 3', title: '構造設計', desc: '記事構成・読者の学習パス・独自価値の設定', color: 'bg-accent-moss' },
-              { step: 'Step 4', title: '執筆', desc: '8,000-20,000字での詳細記述・実例・図表', color: 'bg-accent-leaf' },
-              { step: 'Step 5', title: 'レビュー', desc: '事実確認・リンク検証・読みやすさ調整', color: 'bg-accent-bark' },
-            ].map((item, index) => (
-              <div key={index} className="flex items-center gap-4 p-3 bg-bg-warm rounded-lg">
-                <div className={`w-3 h-3 rounded-full ${item.color}`}></div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="font-semibold text-text-deep text-sm">{item.step}: {item.title}</span>
-                  </div>
-                  <p className="text-xs text-text-light">{item.desc}</p>
-                </div>
-                {index < 4 && <span className="text-text-light text-sm">→</span>}
-              </div>
-            ))}
-          </div>
-        </div>
-
+    <div className="pt-4 space-y-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Tech Stack */}
         <div>
-          <h3 className="font-semibold font-heading text-accent-leaf mb-3">スケジュール（平日12:30編集枠）</h3>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-3 text-sm">
+          <h4 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">技術スタック</h4>
+          <div className="text-sm space-y-1.5">
             {[
-              { day: '月', focus: 'dev-knowledge', desc: '開発技術・ツール解説' },
-              { day: '火', focus: 'case-study', desc: '成功事例・失敗分析' },
-              { day: '水', focus: 'product辞書更新', desc: 'プロダクト情報整備' },
-              { day: '木', focus: 'dev-knowledge', desc: 'フレームワーク・手法' },
-              { day: '金', focus: 'case-study', desc: 'ビジネス事例・戦略' },
-            ].map((item, index) => (
-              <div key={index} className="p-3 bg-bg-warm rounded border border-border">
-                <div className="font-semibold text-text-deep mb-1">{item.day}曜日</div>
-                <div className="text-xs text-accent-leaf mb-1">{item.focus}</div>
-                <div className="text-xs text-text-light">{item.desc}</div>
+              ['フロントエンド', 'Next.js (App Router)'],
+              ['データベース', 'Supabase (PostgreSQL)'],
+              ['ホスティング', 'Vercel'],
+              ['自動化', 'Vercel Cron + スキルシステム'],
+            ].map(([k, v]) => (
+              <div key={k} className="flex justify-between text-text-muted">
+                <span className="text-text-light">{k}:</span>
+                <span>{v}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Key API Endpoints */}
+        <div>
+          <h4 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">主要エンドポイント</h4>
+          <div className="space-y-1.5 text-xs font-mono">
+            {[
+              ['GET', '/api/v1/contents', 'accent-moss'],
+              ['GET', '/api/v1/contents/[slug]', 'accent-moss'],
+              ['POST', '/api/cron/collect-sources', 'accent-bloom'],
+              ['GET', '/api/admin/collected-items', 'accent-leaf'],
+              ['GET', '/api/admin/scoring-config', 'accent-leaf'],
+            ].map(([method, path, color]) => (
+              <div key={path} className="flex gap-2 text-text-muted">
+                <span className={`text-${color} font-semibold w-10`}>{method}</span>
+                <span>{path}</span>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">📊 5 Phase Pipeline</h2>
-        <div className="space-y-4">
-          {[
-            { phase: 'Phase 1', title: '調査', desc: '一次ソース特定・日付確認・自動ソース検出', skill: 'news-research', color: 'bg-danger' },
-            { phase: 'Phase 2', title: '評価・選定', desc: '期間フィルタ・ソース信頼度スコア・事実確認', skill: 'news-evaluation', color: 'bg-accent-bloom' },
-            { phase: 'Phase 3', title: '記事作成', desc: 'Digest + Top3個別記事執筆・ソース情報自動登録', skill: 'digest-writer', color: 'bg-accent-moss' },
-            { phase: 'Phase 4', title: 'UI最適化', desc: '表組み・構造・視覚的メリハリの改善', skill: 'content-optimizer', color: 'bg-accent-leaf' },
-            { phase: 'Phase 5', title: '公開', desc: 'チェックリスト照合・ソース整合性チェック・デプロイ', skill: 'publish-gate', color: 'bg-accent-bark' },
-          ].map((item, index) => (
-            <div key={index} className="flex items-center gap-4 p-4 bg-bg-warm rounded-lg">
-              <div className={`w-3 h-3 rounded-full ${item.color}`}></div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="font-semibold text-text-deep">{item.phase}: {item.title}</span>
-                  <span className="text-xs bg-bg-card px-2 py-1 rounded text-text-muted">{item.skill}</span>
-                </div>
-                <p className="text-sm text-text-light">{item.desc}</p>
-              </div>
-              {index < 4 && <span className="text-text-light">→</span>}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">⏰ 日次スケジュール</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="font-semibold font-heading text-accent-bloom mb-3">🌅 朝刊 (07:30〜08:00)</h3>
-            <div className="space-y-2 text-sm text-text-muted">
-              <div className="flex justify-between"><span>07:30</span><span>ニュース調査開始</span></div>
-              <div className="flex justify-between"><span>07:40</span><span>スコア評価・Top10選定</span></div>
-              <div className="flex justify-between"><span>07:48</span><span>Digest + Top3記事作成</span></div>
-              <div className="flex justify-between"><span>07:55</span><span>UI最適化・公開チェック</span></div>
-              <div className="flex justify-between"><span>08:00</span><span className="text-accent-moss">🎯 公開目標</span></div>
-            </div>
-          </div>
-          <div>
-            <h3 className="font-semibold font-heading text-accent-leaf mb-3">🤖 収集パイプライン (自動)</h3>
-            <div className="space-y-2 text-sm text-text-muted">
-              <div className="flex justify-between"><span>06:00</span><span>Vercel Cron: collect-sources 起動</span></div>
-              <div className="flex justify-between"><span>06:00</span><span>一次/二次/三次ソースから自動収集</span></div>
-              <div className="flex justify-between"><span>06:01</span><span>NVA 5軸スコアリング（ルールベース）</span></div>
-              <div className="flex justify-between"><span>23:15</span><span>Vercel Cron: send-newsletter</span></div>
-              <div className="flex justify-between"><span>随時</span><span className="text-accent-moss">管理画面で手動トリガー可</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function SkillsTab({ onSkillSelect }: { onSkillSelect: (skillName: string) => void }) {
-  const skills = [
-    {
-      name: 'news-research',
-      category: 'Core Pipeline',
-      description: 'ニュース収集・一次ソース確認・DB保存',
-      phase: 'Phase 1',
-      automation: '高い',
-      features: ['ソース巡回', '一次ソース特定', '日付確認', '自動ソース検出', 'DB保存'],
-      color: 'bg-danger'
-    },
-    {
-      name: 'news-evaluation',
-      category: 'Core Pipeline',
-      description: '期間フィルタ・スコア評価・Top10選定',
-      phase: 'Phase 2',
-      automation: '高い',
-      features: ['期間フィルタ', 'ソース信頼度スコア', '事実確認', 'Top10/Top3選定'],
-      color: 'bg-accent-bloom'
-    },
-    {
-      name: 'digest-writer',
-      category: 'Core Pipeline',
-      description: 'Digest + Top3記事作成',
-      phase: 'Phase 3',
-      automation: '高い',
-      features: ['Digest記事執筆', 'Top3個別記事作成', 'ソース情報自動登録'],
-      color: 'bg-accent-moss'
-    },
-    {
-      name: 'publish-gate',
-      category: 'Core Pipeline',
-      description: 'チェックリスト照合・デプロイ・報告',
-      phase: 'Phase 5',
-      automation: '高い',
-      features: ['チェックリスト照合', 'ソース整合性チェック', 'デプロイ', 'Slack報告'],
-      color: 'bg-accent-bark'
-    },
-    {
-      name: 'content-optimizer',
-      category: 'Support',
-      description: '記事の見せ方を最適化',
-      phase: 'Phase 4',
-      automation: '中程度',
-      features: ['表形式への変換', '構造の改善', '視覚的リズムの調整'],
-      color: 'bg-accent-leaf'
-    },
-    {
-      name: 'article-writer',
-      category: 'Individual Articles',
-      description: 'SEO最適化された記事をWordPressに投稿',
-      phase: 'Individual',
-      automation: '中程度',
-      features: ['商品比較記事', '口コミ原文掲載', 'マルチソースリサーチ', 'WordPress投稿'],
-      color: 'bg-accent-moss'
-    },
-    {
-      name: 'newsletter-curation-workflow',
-      category: 'Newsletter Operations',
-      description: '複数ニュースレター検知→一次情報検証→日本語ローカライズの運用スキル',
-      phase: 'Cross Workflow',
-      automation: '高い',
-      features: ['検知レイヤー運用', 'EN/JPリンク併記', '法務・配信ガードレール', '配信前チェック'],
-      color: 'bg-cat-content'
-    }
-  ];
-
-  return (
-    <div className="space-y-6">
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">🛠️ スキル一覧</h2>
-        <p className="text-sm text-text-light mb-4">スキル名をクリックすると詳細（SKILL.md）を確認できます。</p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="p-4 bg-bg-warm rounded-lg border border-border cursor-pointer hover:bg-bg-card transition-colors"
-              onClick={() => onSkillSelect(skill.name)}
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <div className={`w-3 h-3 rounded-full ${skill.color}`}></div>
-                <h3 className="font-mono font-semibold text-text-deep hover:text-accent-leaf">{skill.name}</h3>
-                <span className="text-xs bg-bg-card px-2 py-1 rounded text-text-muted">{skill.phase}</span>
-                <span className="text-xs text-accent-leaf ml-auto">詳細 →</span>
-              </div>
-              <p className="text-sm text-text-light mb-3">{skill.description}</p>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm">
-                  <span className="text-text-light">カテゴリ:</span>
-                  <span className="text-accent-leaf">{skill.category}</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <span className="text-text-light">自動化度:</span>
-                  <span className={skill.automation === '高い' ? 'text-accent-moss' : 'text-accent-bloom'}>
-                    {skill.automation}
-                  </span>
-                </div>
-                <div className="text-sm">
-                  <span className="text-text-light">機能:</span>
-                  <ul className="ml-4 mt-1 space-y-1">
-                    {skill.features.map((feature, fIndex) => (
-                      <li key={fIndex} className="text-text-muted text-xs">• {feature}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">📈 スキル依存関係</h2>
-        <div className="bg-bg-cream p-4 rounded-lg font-mono text-sm">
-          <div className="text-text-muted">
-            <div className="mb-2 text-accent-moss">Digestワークフロー:</div>
-            <div className="ml-4 space-y-1">
-              <div>news-research → news-evaluation → digest-writer → content-optimizer → publish-gate</div>
-            </div>
-            <div className="mt-4 mb-2 text-accent-leaf">個別記事ワークフロー:</div>
-            <div className="ml-4 space-y-1">
-              <div>article-writer → content-optimizer → publish-gate</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ContentTab() {
-  const contentTypes = [
-    {
-      type: 'news',
-      description: '個別ニュース記事',
-      tags: ['dev-knowledge', 'case-study', 'product-update'],
-      frequency: '週2-3本',
-      length: '8,000-20,000字',
-      automation: '中程度'
-    },
-    {
-      type: 'digest',
-      description: 'まとめ記事（朝刊）',
-      tags: ['morning-summary'],
-      frequency: '毎日1回',
-      length: '3,000-5,000字',
-      automation: '高い'
-    },
-    {
-      type: 'product',
-      description: 'プロダクト辞書エントリ',
-      tags: ['ai-tool', 'dev-tool', 'platform', 'framework'],
-      frequency: '随時更新',
-      length: '2,000-5,000字',
-      automation: '低い（手動中心）'
-    }
-  ];
-
-  return (
-    <div className="space-y-6">
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">📄 コンテンツ分類体系</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {contentTypes.map((content, index) => (
-            <div key={index} className="p-4 bg-bg-warm rounded-lg border border-border">
-              <h3 className="font-mono font-semibold font-heading text-lg mb-3 text-text-deep">{content.type}</h3>
-              <p className="text-sm text-text-light mb-4">{content.description}</p>
-
-              <div className="space-y-3 text-sm">
-                <div>
-                  <span className="text-text-light">タグ:</span>
-                  <div className="flex flex-wrap gap-1 mt-1">
-                    {content.tags.map((tag, tIndex) => (
-                      <span key={tIndex} className="bg-accent-leaf/20 text-accent-leaf px-2 py-1 rounded text-xs">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex justify-between">
-                  <span className="text-text-light">頻度:</span>
-                  <span className="text-text-muted">{content.frequency}</span>
-                </div>
-
-                <div className="flex justify-between">
-                  <span className="text-text-light">文字数:</span>
-                  <span className="text-text-muted">{content.length}</span>
-                </div>
-
-                <div className="flex justify-between">
-                  <span className="text-text-light">自動化:</span>
-                  <span className={
-                    content.automation.includes('高い') ? 'text-accent-moss' :
-                    content.automation.includes('中程度') ? 'text-accent-bloom' : 'text-danger'
-                  }>
-                    {content.automation}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">🔗 コンテンツ関連性</h2>
-        <div className="space-y-4">
-          <div className="p-4 bg-bg-cream rounded-lg">
-            <h3 className="font-semibold font-heading text-accent-moss mb-2">プロダクト連動原則</h3>
-            <p className="text-sm text-text-muted mb-2">
-              任意のコンテンツで製品に言及する場合、必ず安定したプロダクト辞書ページ（<code className="bg-bg-warm px-2 py-1 rounded">/products/[slug]</code>）にリンクする
-            </p>
-            <div className="text-xs text-text-light">
-              例: AI開発ツールを紹介する記事 → <code>/products/cursor</code> にリンク
-            </div>
-          </div>
-
-          <div className="p-4 bg-bg-cream rounded-lg">
-            <h3 className="font-semibold font-heading text-accent-leaf mb-2">Digest構成ルール</h3>
-            <ul className="text-sm text-text-muted space-y-1">
-              <li>• Top10ランキング形式でニュース一覧</li>
-              <li>• Top3は個別記事として詳細化</li>
-              <li>• NVA 5軸スコアによる客観的評価（0-100）</li>
-              <li>• 自動収集データからスコア順に選定</li>
-            </ul>
-          </div>
-
-          <div className="p-4 bg-bg-cream rounded-lg">
-            <h3 className="font-semibold font-heading text-accent-bark mb-2">品質基準</h3>
-            <ul className="text-sm text-text-muted space-y-1">
-              <li>• 一次ソースの確認必須</li>
-              <li>• 正確性・実用性・リンク整合性の担保</li>
-              <li>• 404やリンク欠落禁止</li>
-              <li>• 未検証情報の断定的記述禁止</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function SkillDetailTab({ skillName, content, onBack }: { skillName: string, content: string, onBack: () => void }) {
-  return (
-    <div className="space-y-6">
-      <div className="flex items-center gap-4 mb-6">
-        <button
-          onClick={onBack}
-          className="px-4 py-2 bg-bg-warm hover:bg-bg-card text-text-deep rounded-lg transition-colors flex items-center gap-2"
-        >
-          ← スキル一覧に戻る
-        </button>
-        <h1 className="text-2xl font-bold font-heading text-text-deep">📄 {skillName}</h1>
-      </div>
-
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep flex items-center gap-2">
-          📋 SKILL.md 内容
-        </h2>
-        <div className="bg-bg-cream rounded-lg p-4 max-h-96 overflow-y-auto">
-          <pre className="text-sm text-text-muted whitespace-pre-wrap font-mono leading-relaxed">
-            {content || 'ローディング中...'}
+      {/* Project Structure */}
+      <div>
+        <h4 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">プロジェクト構成</h4>
+        <div className="bg-bg-cream rounded-lg p-3">
+          <pre className="text-xs text-text-muted overflow-x-auto leading-relaxed">
+{`src/
+├── app/
+│   ├── admin/                  # 管理画面
+│   │   ├── collected-items/    # 収集データ管理
+│   │   ├── scoring/            # スコアリング
+│   │   └── source-intelligence/  # ソース分析
+│   └── api/
+│       ├── cron/collect-sources/   # 自動収集 Cron
+│       ├── admin/collected-items/  # 収集データ API
+│       ├── admin/scoring-config/   # スコアリング設定 API
+│       └── v1/                     # 公開 API
+├── lib/
+│   ├── crawler.ts              # RSS/API/Scrapeクローラー
+│   └── scorer.ts               # NVA ルールベーススコアラー
+└── supabase/migrations/        # DBマイグレーション`}
           </pre>
-        </div>
-      </div>
-
-      <div className="p-4 bg-accent-leaf/10 border border-accent-leaf/20 rounded-lg">
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-accent-leaf">💡</span>
-          <h4 className="text-sm font-medium text-accent-leaf">スキルファイルについて</h4>
-        </div>
-        <p className="text-sm text-text-muted">
-          このスキルファイルは <code className="bg-bg-warm px-2 py-1 rounded">.claude/skills</code> / <code className="bg-bg-warm px-2 py-1 rounded">~/.claude/skills</code> / <code className="bg-bg-warm px-2 py-1 rounded">~/.clawdbot/skills</code> / <code className="bg-bg-warm px-2 py-1 rounded">~/.codex/skills</code> を順に探索して読み込まれます。
-          実際の実行手順、使用方法、設定例、運用ガードレールなどが記載されています。
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function ArchitectureTab() {
-  return (
-    <div className="space-y-6">
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">🏗️ システムアーキテクチャ</h2>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-          <div className="space-y-4">
-            <h3 className="font-semibold font-heading text-accent-leaf">技術スタック</h3>
-            <div className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span className="text-text-light">フロントエンド:</span>
-                <span className="text-text-muted">Next.js</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-text-light">データベース:</span>
-                <span className="text-text-muted">Supabase (PostgreSQL)</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-text-light">配信API:</span>
-                <span className="text-text-muted">Next.js Route Handlers</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-text-light">ホスティング:</span>
-                <span className="text-text-muted">Vercel</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-text-light">自動化:</span>
-                <span className="text-text-muted">Vercel Cron + スキルシステム</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="font-semibold font-heading text-accent-moss">主要エンドポイント</h3>
-            <div className="space-y-2 text-sm font-mono">
-              <div className="bg-bg-cream p-2 rounded">
-                <span className="text-accent-moss">GET</span> /api/v1/contents
-              </div>
-              <div className="bg-bg-cream p-2 rounded">
-                <span className="text-accent-moss">GET</span> /api/v1/contents/[slug]
-              </div>
-              <div className="bg-bg-cream p-2 rounded">
-                <span className="text-accent-bloom">POST</span> /api/cron/collect-sources
-              </div>
-              <div className="bg-bg-cream p-2 rounded">
-                <span className="text-accent-leaf">GET</span> /api/admin/collected-items
-              </div>
-              <div className="bg-bg-cream p-2 rounded">
-                <span className="text-accent-leaf">GET</span> /api/admin/scoring-config
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">🔄 データフロー</h2>
-        <div className="bg-bg-cream p-4 rounded-lg font-mono text-sm">
-          <div className="space-y-2 text-text-muted">
-            <div className="text-accent-leaf">1. ニュース自動収集</div>
-            <div className="ml-4">Vercel Cron → collect-sources API → RSS/API/Scrape → collected_items テーブル</div>
-
-            <div className="text-accent-moss mt-4">2. NVAスコアリング</div>
-            <div className="ml-4">ルールベーススコアラー → 5軸評価（0-20各軸） → 加重平均で0-100</div>
-
-            <div className="text-accent-bloom mt-4">3. 記事作成・DB保存</div>
-            <div className="ml-4">スコア上位を選定 → 記事作成 → Supabase contents テーブル</div>
-
-            <div className="text-accent-bark mt-4">4. フロントエンド配信</div>
-            <div className="ml-4">Next.js SSG → Supabase API → Web配信</div>
-
-            <div className="text-cat-content mt-4">5. デプロイメント</div>
-            <div className="ml-4">git push → Vercel → 本番公開</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">📂 プロジェクト構成</h2>
-        <div className="bg-bg-cream p-4 rounded-lg">
-          <pre className="text-sm text-text-muted overflow-x-auto">
-{`/Users/satokeita/Dev/ai-solo-craft/
-├── src/
-│   ├── app/
-│   │   ├── admin/              # 管理画面
-│   │   │   ├── collected-items/  # 収集データ管理
-│   │   │   ├── scoring/          # スコアリングダッシュボード
-│   │   │   ├── source-intelligence/  # ソース分析
-│   │   │   └── ...
-│   │   └── api/
-│   │       ├── cron/collect-sources/  # 自動収集 Cron
-│   │       ├── admin/collected-items/ # 収集データ API
-│   │       ├── admin/scoring-config/  # スコアリング設定 API
-│   │       └── v1/                    # 公開 API
-│   ├── components/             # Reactコンポーネント
-│   └── lib/
-│       ├── crawler.ts          # RSS/API/Scrapeクローラー
-│       └── scorer.ts           # NVA ルールベーススコアラー
-├── content/                    # Markdownコンテンツ
-├── supabase/
-│   └── migrations/             # DBマイグレーション
-└── vercel.json                 # Cron定義`}
-          </pre>
-        </div>
-      </div>
-
-      <div className="p-6 bg-bg-card border border-border rounded-[var(--radius-card)]">
-        <h2 className="text-xl font-semibold font-heading mb-4 text-text-deep">⚙️ 運用フロー</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="font-semibold font-heading text-accent-moss mb-3">自動化フロー</h3>
-            <div className="space-y-2 text-sm text-text-muted">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-accent-moss rounded-full"></span>
-                <span>収集: Vercel Cron → RSS/API/Scrape</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-accent-leaf rounded-full"></span>
-                <span>評価: NVA 5軸ルールベーススコアリング</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-accent-bloom rounded-full"></span>
-                <span>記事作成: 5 Phase Pipeline</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-accent-bark rounded-full"></span>
-                <span>配信: Vercel デプロイ + ニュースレター</span>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-semibold font-heading text-danger mb-3">監視・保守</h3>
-            <div className="space-y-2 text-sm text-text-muted">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-danger rounded-full"></span>
-                <span>エラー監視: Slack通知</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-accent-bloom rounded-full"></span>
-                <span>品質チェック: pre-commit hooks</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-accent-bloom rounded-full"></span>
-                <span>データ管理: Supabase DB-first</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-cat-content rounded-full"></span>
-                <span>パフォーマンス: セッションクリーンアップ</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
