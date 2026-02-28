@@ -1,0 +1,1099 @@
+{
+  "timestamp": "2026-02-28T18:01:10.698Z",
+  "credibility_updates": 3,
+  "new_sources_added": 63,
+  "inactive_sources_found": 188,
+  "details": {
+    "credibility_updates": [
+      {
+        "id": "709ef6a5-adf1-4b5a-a619-2bb1df88ca71",
+        "oldScore": 9,
+        "newScore": 9.5,
+        "usage": 19
+      },
+      {
+        "id": "39e1fbf9-a458-45ca-a2f6-d903a8ceb4ac",
+        "oldScore": 6,
+        "newScore": 6.2,
+        "usage": 6
+      },
+      {
+        "id": "2a36fcde-5ab5-486e-bd1a-01ba31c8f469",
+        "oldScore": 8,
+        "newScore": 8.2,
+        "usage": 6
+      }
+    ],
+    "new_sources": [
+      {
+        "name": "Linkedin.com",
+        "domain": "linkedin.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Learn.thedesignsystem.guide",
+        "domain": "learn.thedesignsystem.guide",
+        "type": "tertiary"
+      },
+      {
+        "name": "Plugma.dev",
+        "domain": "plugma.dev",
+        "type": "tertiary"
+      },
+      {
+        "name": "Docs.openclaw.ai",
+        "domain": "docs.openclaw.ai",
+        "type": "tertiary"
+      },
+      {
+        "name": "Claude.ai",
+        "domain": "claude.ai",
+        "type": "tertiary"
+      },
+      {
+        "name": "Figma.com",
+        "domain": "figma.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Playwright.dev",
+        "domain": "playwright.dev",
+        "type": "tertiary"
+      },
+      {
+        "name": "Context7.com",
+        "domain": "context7.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Variant.com",
+        "domain": "variant.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Banani.co",
+        "domain": "banani.co",
+        "type": "tertiary"
+      },
+      {
+        "name": "Fastcompany.com",
+        "domain": "fastcompany.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Ghacks.net",
+        "domain": "ghacks.net",
+        "type": "tertiary"
+      },
+      {
+        "name": "Adweek.com",
+        "domain": "adweek.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Businessinsider.com",
+        "domain": "businessinsider.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Prtimes.jp",
+        "domain": "prtimes.jp",
+        "type": "tertiary"
+      },
+      {
+        "name": "Thehackernews.com",
+        "domain": "thehackernews.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Variety.com",
+        "domain": "variety.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Codezine.jp",
+        "domain": "codezine.jp",
+        "type": "tertiary"
+      },
+      {
+        "name": "Cnbc.com",
+        "domain": "cnbc.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "The Verge",
+        "domain": "theverge.com",
+        "type": "secondary"
+      },
+      {
+        "name": "Developers.figma.com",
+        "domain": "developers.figma.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Discord.gg",
+        "domain": "discord.gg",
+        "type": "tertiary"
+      },
+      {
+        "name": "Api.figma.com`",
+        "domain": "api.figma.com`",
+        "type": "tertiary"
+      },
+      {
+        "name": "Api.figma-gov.com`",
+        "domain": "api.figma-gov.com`",
+        "type": "tertiary"
+      },
+      {
+        "name": "Help.figma.com",
+        "domain": "help.figma.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Mcp.figma.com",
+        "domain": "mcp.figma.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "127.0.0.1",
+        "domain": "127.0.0.1",
+        "type": "tertiary"
+      },
+      {
+        "name": "Claude.com",
+        "domain": "claude.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Kiro.dev",
+        "domain": "kiro.dev",
+        "type": "tertiary"
+      },
+      {
+        "name": "Anysphere.cursor-deeplink",
+        "domain": "anysphere.cursor-deeplink",
+        "type": "tertiary"
+      },
+      {
+        "name": "Forum.figma.com",
+        "domain": "forum.figma.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Opal.google",
+        "domain": "opal.google",
+        "type": "tertiary"
+      },
+      {
+        "name": "Blog.brightcoding.dev",
+        "domain": "blog.brightcoding.dev",
+        "type": "tertiary"
+      },
+      {
+        "name": "Claude-plugins.dev",
+        "domain": "claude-plugins.dev",
+        "type": "tertiary"
+      },
+      {
+        "name": "Livemint.com",
+        "domain": "livemint.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Stitch.withgoogle.com",
+        "domain": "stitch.withgoogle.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Kanerika.com",
+        "domain": "kanerika.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Morphllm.com",
+        "domain": "morphllm.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Chat.openai.com",
+        "domain": "chat.openai.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Helpnetsecurity.com",
+        "domain": "helpnetsecurity.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Theagencyjournal.com",
+        "domain": "theagencyjournal.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Releasebot.io",
+        "domain": "releasebot.io",
+        "type": "tertiary"
+      },
+      {
+        "name": "Langchain-ai.github.io",
+        "domain": "langchain-ai.github.io",
+        "type": "tertiary"
+      },
+      {
+        "name": "Crewai.com",
+        "domain": "crewai.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Microsoft.github.io",
+        "domain": "microsoft.github.io",
+        "type": "tertiary"
+      },
+      {
+        "name": "Atoms.dev",
+        "domain": "atoms.dev",
+        "type": "tertiary"
+      },
+      {
+        "name": "Academy.langchain.com",
+        "domain": "academy.langchain.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Intuz.com",
+        "domain": "intuz.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Apple.com",
+        "domain": "apple.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Docs.aws.amazon.com",
+        "domain": "docs.aws.amazon.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Prod.d13rzhkk8cj2z0.amplifyapp.com",
+        "domain": "prod.d13rzhkk8cj2z0.amplifyapp.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Republicworld.com",
+        "domain": "republicworld.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Finance.yahoo.com",
+        "domain": "finance.yahoo.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Hartdraws.com",
+        "domain": "hartdraws.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Cdn.sanity.io",
+        "domain": "cdn.sanity.io",
+        "type": "tertiary"
+      },
+      {
+        "name": "Infoq.com",
+        "domain": "infoq.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Theguardian.com",
+        "domain": "theguardian.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Introl.com",
+        "domain": "introl.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "arXiv",
+        "domain": "arxiv.org",
+        "type": "tertiary"
+      },
+      {
+        "name": "Indiatoday.in",
+        "domain": "indiatoday.in",
+        "type": "tertiary"
+      },
+      {
+        "name": "Theregister.com",
+        "domain": "theregister.com",
+        "type": "tertiary"
+      },
+      {
+        "name": "Opentools.ai",
+        "domain": "opentools.ai",
+        "type": "tertiary"
+      },
+      {
+        "name": "Techtimes.com",
+        "domain": "techtimes.com",
+        "type": "tertiary"
+      }
+    ],
+    "inactive_sources": [
+      {
+        "name": "The Neuron",
+        "domain": "www.theneurondaily.com"
+      },
+      {
+        "name": "The Batch (DeepLearning.AI)",
+        "domain": "www.deeplearning.ai"
+      },
+      {
+        "name": "Figr.design",
+        "domain": "figr.design"
+      },
+      {
+        "name": "Antler.co",
+        "domain": "antler.co"
+      },
+      {
+        "name": "Cursor.com",
+        "domain": "cursor.com"
+      },
+      {
+        "name": "Continue.dev",
+        "domain": "continue.dev"
+      },
+      {
+        "name": "Platform.claude.com",
+        "domain": "platform.claude.com"
+      },
+      {
+        "name": "Promptbuilder.cc",
+        "domain": "promptbuilder.cc"
+      },
+      {
+        "name": "Platform.openai.com",
+        "domain": "platform.openai.com"
+      },
+      {
+        "name": "Amalytix.com",
+        "domain": "amalytix.com"
+      },
+      {
+        "name": "Fortune.com",
+        "domain": "fortune.com"
+      },
+      {
+        "name": "Technologyreview.com",
+        "domain": "technologyreview.com"
+      },
+      {
+        "name": "Byteiota.com",
+        "domain": "byteiota.com"
+      },
+      {
+        "name": "Nabla.com",
+        "domain": "nabla.com"
+      },
+      {
+        "name": "Gamma.app",
+        "domain": "gamma.app"
+      },
+      {
+        "name": "Bolt.new",
+        "domain": "bolt.new"
+      },
+      {
+        "name": "Elevenlabs.io",
+        "domain": "elevenlabs.io"
+      },
+      {
+        "name": "N8n.io",
+        "domain": "n8n.io"
+      },
+      {
+        "name": "Technobezz.com",
+        "domain": "technobezz.com"
+      },
+      {
+        "name": "Intuitionlabs.ai",
+        "domain": "intuitionlabs.ai"
+      },
+      {
+        "name": "Codeconductor.ai",
+        "domain": "codeconductor.ai"
+      },
+      {
+        "name": "Techplanet.today",
+        "domain": "techplanet.today"
+      },
+      {
+        "name": "Adcreative.ai",
+        "domain": "adcreative.ai"
+      },
+      {
+        "name": "Runwayml.com",
+        "domain": "runwayml.com"
+      },
+      {
+        "name": "Jasper.ai",
+        "domain": "jasper.ai"
+      },
+      {
+        "name": "Guptadeepak.com",
+        "domain": "guptadeepak.com"
+      },
+      {
+        "name": "Registry.modelcontextprotocol.io",
+        "domain": "registry.modelcontextprotocol.io"
+      },
+      {
+        "name": "En.wikipedia.org",
+        "domain": "en.wikipedia.org"
+      },
+      {
+        "name": "Entrepreneurloop.com",
+        "domain": "entrepreneurloop.com"
+      },
+      {
+        "name": "Kleo.so",
+        "domain": "kleo.so"
+      },
+      {
+        "name": "Mentions.so",
+        "domain": "mentions.so"
+      },
+      {
+        "name": "Fathom.ai",
+        "domain": "fathom.ai"
+      },
+      {
+        "name": "Manus.im",
+        "domain": "manus.im"
+      },
+      {
+        "name": "Perplexity.ai",
+        "domain": "perplexity.ai"
+      },
+      {
+        "name": "Apps.apple.com",
+        "domain": "apps.apple.com"
+      },
+      {
+        "name": "Windsurf.com",
+        "domain": "windsurf.com"
+      },
+      {
+        "name": "Suno.com",
+        "domain": "suno.com"
+      },
+      {
+        "name": "X @AnthropicAI",
+        "domain": "x.com/anthropicai"
+      },
+      {
+        "name": "X @OpenAI",
+        "domain": "x.com/openai"
+      },
+      {
+        "name": "X @cursor_ai",
+        "domain": "x.com/cursor_ai"
+      },
+      {
+        "name": "Meta AI Blog",
+        "domain": "ai.meta.com"
+      },
+      {
+        "name": "Microsoft AI Blog",
+        "domain": "blogs.microsoft.com"
+      },
+      {
+        "name": "X @figma",
+        "domain": "x.com/figma"
+      },
+      {
+        "name": "X @sama",
+        "domain": "x.com/sama"
+      },
+      {
+        "name": "Reddit r/ClaudeAI",
+        "domain": "reddit.com/r/claudeai"
+      },
+      {
+        "name": "X @daboross",
+        "domain": "x.com/daboross"
+      },
+      {
+        "name": "Reddit r/MachineLearning",
+        "domain": "reddit.com/r/ml"
+      },
+      {
+        "name": "Reddit r/LocalLLaMA",
+        "domain": "reddit.com/r/localllama"
+      },
+      {
+        "name": "GitHub Trending",
+        "domain": "github.com/trending"
+      },
+      {
+        "name": "Reddit",
+        "domain": "reddit.com"
+      },
+      {
+        "name": "X @dylanf",
+        "domain": "x.com/dylanf"
+      },
+      {
+        "name": "X @karpathy",
+        "domain": "x.com/karpathy"
+      },
+      {
+        "name": "X @swyx",
+        "domain": "x.com/swyx"
+      },
+      {
+        "name": "X @levelsio",
+        "domain": "x.com/levelsio"
+      },
+      {
+        "name": "X @kgsi",
+        "domain": "x.com/kgsi"
+      },
+      {
+        "name": "X @y_matsuwitter",
+        "domain": "x.com/y_matsuwitter"
+      },
+      {
+        "name": "X @kajikent",
+        "domain": "x.com/kajikent"
+      },
+      {
+        "name": "Linkedin.com",
+        "domain": "linkedin.com"
+      },
+      {
+        "name": "Learn.thedesignsystem.guide",
+        "domain": "learn.thedesignsystem.guide"
+      },
+      {
+        "name": "Medium",
+        "domain": "medium.com"
+      },
+      {
+        "name": "Twitter/X Tech",
+        "domain": "twitter.com"
+      },
+      {
+        "name": "Plugma.dev",
+        "domain": "plugma.dev"
+      },
+      {
+        "name": "Docs.openclaw.ai",
+        "domain": "docs.openclaw.ai"
+      },
+      {
+        "name": "Claude.ai",
+        "domain": "claude.ai"
+      },
+      {
+        "name": "Techstartups.com",
+        "domain": "techstartups.com"
+      },
+      {
+        "name": "Figma.com",
+        "domain": "figma.com"
+      },
+      {
+        "name": "Github.blog",
+        "domain": "github.blog"
+      },
+      {
+        "name": "Sleek.design",
+        "domain": "sleek.design"
+      },
+      {
+        "name": "Bleepingcomputer.com",
+        "domain": "bleepingcomputer.com"
+      },
+      {
+        "name": "Blog.qualys.com",
+        "domain": "blog.qualys.com"
+      },
+      {
+        "name": "Kimi.com",
+        "domain": "kimi.com"
+      },
+      {
+        "name": "Google AI Blog",
+        "domain": "blog.google"
+      },
+      {
+        "name": "Meta Research",
+        "domain": "research.facebook.com"
+      },
+      {
+        "name": "Microsoft Research",
+        "domain": "www.microsoft.com"
+      },
+      {
+        "name": "AWS News",
+        "domain": "aws.amazon.com"
+      },
+      {
+        "name": "Huggingface.co",
+        "domain": "huggingface.co"
+      },
+      {
+        "name": "The Verge",
+        "domain": "www.theverge.com"
+      },
+      {
+        "name": "Ars Technica",
+        "domain": "arstechnica.com"
+      },
+      {
+        "name": "InfoQ",
+        "domain": "www.infoq.com"
+      },
+      {
+        "name": "IEEE Spectrum",
+        "domain": "spectrum.ieee.org"
+      },
+      {
+        "name": "MIT Technology Review",
+        "domain": "www.technologyreview.com"
+      },
+      {
+        "name": "Wired",
+        "domain": "www.wired.com"
+      },
+      {
+        "name": "VentureBeat",
+        "domain": "venturebeat.com"
+      },
+      {
+        "name": "Playwright.dev",
+        "domain": "playwright.dev"
+      },
+      {
+        "name": "Context7.com",
+        "domain": "context7.com"
+      },
+      {
+        "name": "Variant.com",
+        "domain": "variant.com"
+      },
+      {
+        "name": "Banani.co",
+        "domain": "banani.co"
+      },
+      {
+        "name": "ProductHunt",
+        "domain": "www.producthunt.com"
+      },
+      {
+        "name": "Qiita",
+        "domain": "qiita.com"
+      },
+      {
+        "name": "Zenn",
+        "domain": "zenn.dev"
+      },
+      {
+        "name": "X.com",
+        "domain": "x.com"
+      },
+      {
+        "name": "Fastcompany.com",
+        "domain": "fastcompany.com"
+      },
+      {
+        "name": "Anthropic.com",
+        "domain": "anthropic.com"
+      },
+      {
+        "name": "Ghacks.net",
+        "domain": "ghacks.net"
+      },
+      {
+        "name": "Adweek.com",
+        "domain": "adweek.com"
+      },
+      {
+        "name": "Businessinsider.com",
+        "domain": "businessinsider.com"
+      },
+      {
+        "name": "Prtimes.jp",
+        "domain": "prtimes.jp"
+      },
+      {
+        "name": "Thehackernews.com",
+        "domain": "thehackernews.com"
+      },
+      {
+        "name": "Variety.com",
+        "domain": "variety.com"
+      },
+      {
+        "name": "Codezine.jp",
+        "domain": "codezine.jp"
+      },
+      {
+        "name": "Cnbc.com",
+        "domain": "cnbc.com"
+      },
+      {
+        "name": "The Verge",
+        "domain": "theverge.com"
+      },
+      {
+        "name": "Developers.figma.com",
+        "domain": "developers.figma.com"
+      },
+      {
+        "name": "Discord.gg",
+        "domain": "discord.gg"
+      },
+      {
+        "name": "Api.figma.com`",
+        "domain": "api.figma.com`"
+      },
+      {
+        "name": "Api.figma-gov.com`",
+        "domain": "api.figma-gov.com`"
+      },
+      {
+        "name": "Help.figma.com",
+        "domain": "help.figma.com"
+      },
+      {
+        "name": "Mcp.figma.com",
+        "domain": "mcp.figma.com"
+      },
+      {
+        "name": "127.0.0.1",
+        "domain": "127.0.0.1"
+      },
+      {
+        "name": "Claude.com",
+        "domain": "claude.com"
+      },
+      {
+        "name": "Kiro.dev",
+        "domain": "kiro.dev"
+      },
+      {
+        "name": "Anysphere.cursor-deeplink",
+        "domain": "anysphere.cursor-deeplink"
+      },
+      {
+        "name": "Forum.figma.com",
+        "domain": "forum.figma.com"
+      },
+      {
+        "name": "Opal.google",
+        "domain": "opal.google"
+      },
+      {
+        "name": "Blog.brightcoding.dev",
+        "domain": "blog.brightcoding.dev"
+      },
+      {
+        "name": "Claude-plugins.dev",
+        "domain": "claude-plugins.dev"
+      },
+      {
+        "name": "Livemint.com",
+        "domain": "livemint.com"
+      },
+      {
+        "name": "Devblogs.microsoft.com",
+        "domain": "devblogs.microsoft.com"
+      },
+      {
+        "name": "Stitch.withgoogle.com",
+        "domain": "stitch.withgoogle.com"
+      },
+      {
+        "name": "Kanerika.com",
+        "domain": "kanerika.com"
+      },
+      {
+        "name": "Morphllm.com",
+        "domain": "morphllm.com"
+      },
+      {
+        "name": "Chat.openai.com",
+        "domain": "chat.openai.com"
+      },
+      {
+        "name": "Helpnetsecurity.com",
+        "domain": "helpnetsecurity.com"
+      },
+      {
+        "name": "Theagencyjournal.com",
+        "domain": "theagencyjournal.com"
+      },
+      {
+        "name": "Releasebot.io",
+        "domain": "releasebot.io"
+      },
+      {
+        "name": "Langchain-ai.github.io",
+        "domain": "langchain-ai.github.io"
+      },
+      {
+        "name": "Crewai.com",
+        "domain": "crewai.com"
+      },
+      {
+        "name": "Microsoft.github.io",
+        "domain": "microsoft.github.io"
+      },
+      {
+        "name": "Atoms.dev",
+        "domain": "atoms.dev"
+      },
+      {
+        "name": "Academy.langchain.com",
+        "domain": "academy.langchain.com"
+      },
+      {
+        "name": "Bloomberg.com",
+        "domain": "bloomberg.com"
+      },
+      {
+        "name": "Marketplace.visualstudio.com",
+        "domain": "marketplace.visualstudio.com"
+      },
+      {
+        "name": "Macrumors.com",
+        "domain": "macrumors.com"
+      },
+      {
+        "name": "Intuz.com",
+        "domain": "intuz.com"
+      },
+      {
+        "name": "Apple.com",
+        "domain": "apple.com"
+      },
+      {
+        "name": "Docs.aws.amazon.com",
+        "domain": "docs.aws.amazon.com"
+      },
+      {
+        "name": "Prod.d13rzhkk8cj2z0.amplifyapp.com",
+        "domain": "prod.d13rzhkk8cj2z0.amplifyapp.com"
+      },
+      {
+        "name": "Republicworld.com",
+        "domain": "republicworld.com"
+      },
+      {
+        "name": "Finance.yahoo.com",
+        "domain": "finance.yahoo.com"
+      },
+      {
+        "name": "Docs.anthropic.com",
+        "domain": "docs.anthropic.com"
+      },
+      {
+        "name": "Hartdraws.com",
+        "domain": "hartdraws.com"
+      },
+      {
+        "name": "Cdn.sanity.io",
+        "domain": "cdn.sanity.io"
+      },
+      {
+        "name": "Infoq.com",
+        "domain": "infoq.com"
+      },
+      {
+        "name": "Theguardian.com",
+        "domain": "theguardian.com"
+      },
+      {
+        "name": "Introl.com",
+        "domain": "introl.com"
+      },
+      {
+        "name": "arXiv",
+        "domain": "arxiv.org"
+      },
+      {
+        "name": "Indiatoday.in",
+        "domain": "indiatoday.in"
+      },
+      {
+        "name": "Theregister.com",
+        "domain": "theregister.com"
+      },
+      {
+        "name": "Opentools.ai",
+        "domain": "opentools.ai"
+      },
+      {
+        "name": "Techtimes.com",
+        "domain": "techtimes.com"
+      },
+      {
+        "name": "ITmedia NEWS",
+        "domain": "www.itmedia.co.jp"
+      },
+      {
+        "name": "Impress Watch",
+        "domain": "www.watch.impress.co.jp"
+      },
+      {
+        "name": "Publickey",
+        "domain": "www.publickey1.jp"
+      },
+      {
+        "name": "Superhuman",
+        "domain": "www.superhuman.ai"
+      },
+      {
+        "name": "Ben's Bites",
+        "domain": "bensbites.co"
+      },
+      {
+        "name": "The Rundown AI",
+        "domain": "www.therundown.ai"
+      },
+      {
+        "name": "日経クロステック",
+        "domain": "xtech.nikkei.com"
+      },
+      {
+        "name": "TLDR AI",
+        "domain": "tldr.tech"
+      },
+      {
+        "name": "CNET Japan",
+        "domain": "japan.cnet.com"
+      },
+      {
+        "name": "Figma Blog",
+        "domain": "www.figma.com"
+      },
+      {
+        "name": "Prism.openai.com",
+        "domain": "prism.openai.com"
+      },
+      {
+        "name": "Zdnet.com",
+        "domain": "zdnet.com"
+      },
+      {
+        "name": "Your-domain.com",
+        "domain": "your-domain.com"
+      },
+      {
+        "name": "Mktclarity.com",
+        "domain": "mktclarity.com"
+      },
+      {
+        "name": "Crazyburst.com",
+        "domain": "crazyburst.com"
+      },
+      {
+        "name": "Semrush.com",
+        "domain": "semrush.com"
+      },
+      {
+        "name": "Entire.io",
+        "domain": "entire.io"
+      },
+      {
+        "name": "Qwen-image.net",
+        "domain": "qwen-image.net"
+      },
+      {
+        "name": "Analyticsvidhya.com",
+        "domain": "analyticsvidhya.com"
+      },
+      {
+        "name": "Rowboatlabs.com",
+        "domain": "rowboatlabs.com"
+      },
+      {
+        "name": "Codeium.com",
+        "domain": "codeium.com"
+      },
+      {
+        "name": "Indiehackers.com",
+        "domain": "indiehackers.com"
+      },
+      {
+        "name": "Pitchmode.org",
+        "domain": "pitchmode.org"
+      },
+      {
+        "name": "Engadget.com",
+        "domain": "engadget.com"
+      },
+      {
+        "name": "Modelcontextprotocol.io",
+        "domain": "modelcontextprotocol.io"
+      },
+      {
+        "name": "Zed.dev",
+        "domain": "zed.dev"
+      },
+      {
+        "name": "Raw.githubusercontent.com",
+        "domain": "raw.githubusercontent.com"
+      },
+      {
+        "name": "V0.dev",
+        "domain": "v0.dev"
+      },
+      {
+        "name": "Midjourney.com",
+        "domain": "midjourney.com"
+      },
+      {
+        "name": "Lovable.dev",
+        "domain": "lovable.dev"
+      },
+      {
+        "name": "Docs.lovable.dev",
+        "domain": "docs.lovable.dev"
+      },
+      {
+        "name": "Blog.jetbrains.com",
+        "domain": "blog.jetbrains.com"
+      },
+      {
+        "name": "Julius.ai",
+        "domain": "julius.ai"
+      },
+      {
+        "name": "Nature.com",
+        "domain": "nature.com"
+      },
+      {
+        "name": "Sciencedaily.com",
+        "domain": "sciencedaily.com"
+      },
+      {
+        "name": "Medicalxpress.com",
+        "domain": "medicalxpress.com"
+      },
+      {
+        "name": "Tavily.com",
+        "domain": "tavily.com"
+      },
+      {
+        "name": "Youtube.com",
+        "domain": "youtube.com"
+      }
+    ]
+  }
+}
