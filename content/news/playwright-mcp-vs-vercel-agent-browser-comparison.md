@@ -1,16 +1,20 @@
 ---
 title: "Playwright MCP vs Vercel Agent Browser：AIエージェント向けブラウザ自動化ツール徹底比較"
 slug: "playwright-mcp-vs-vercel-agent-browser-comparison"
+date: '2026-03-01'
+status: published
+contentType: news
 description: "AIコーディングエージェントのブラウザ自動化に最適なツールはどれか？Playwright MCP、Playwright CLI、Vercel Agent Browserの3つを比較し、トークン効率と機能面から最適な選択を解説。"
-publishedAt: "2026-03-01"
-updatedAt: "2026-03-01"
-contentType: "news"
-tags: ["dev-knowledge", "playwright", "vercel", "ai-agent", "browser-automation", "testing"]
 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop"
+tags:
+  - dev-knowledge
+  - playwright
+  - vercel
+  - ai-agent
+  - browser-automation
+  - testing
 source: "Pulumi Blog, TestCollab"
 sourceUrl: "https://www.pulumi.com/blog/self-verifying-ai-agents-vercels-agent-browser-in-the-ralph-wiggum-loop/"
-author: "AI Solo Craft編集部"
-featured: true
 ---
 
 ## TL;DR
