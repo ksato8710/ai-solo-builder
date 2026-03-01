@@ -84,7 +84,7 @@ ai-solo-craft/
 | `/news/[slug]` | 記事詳細 | 記事本文 + NVA評価 |
 | `/products/[slug]` | プロダクト詳細 | プロダクトの恒久ページ（前提情報） |
 | `/category/[category]` | カテゴリ一覧 | カテゴリ別記事リスト |
-| `/news-value` | NVAランキング | 朝/夕Digestごとに更新されるTop 10ランキング |
+| `/news-value` | NVAランキング | 朝刊Digestごとに更新されるTop 10ランキング |
 | `/newsletter/confirmed` | 登録確認 | ニュースレター登録確認ページ |
 | `/newsletter/unsubscribed` | 配信停止 | 配信停止ページ（フィードバック付き） |
 
@@ -121,7 +121,7 @@ title: "記事タイトル"
 slug: "url-friendly-slug"
 date: "YYYY-MM-DD"
 contentType: "digest"            # news | product | digest
-digestEdition: "morning"         # morning | evening（digest時のみ）
+digestEdition: "morning"         # morning（digest時のみ）
 tags: ["dev-knowledge"]          # news時の分類タグ
 relatedProducts: ["product-slug"] # 関連プロダクト（/products/[slug]）
 description: "記事の要約（120文字以内）"
@@ -136,7 +136,6 @@ image: "/images/xxx.jpg"
 | contentType | 条件 | 名称 | カラー |
 |-------------|------|------|--------|
 | digest | digestEdition: morning | 🗞️ 朝刊Digest | #3B82F6 |
-| digest | digestEdition: evening | 🗞️ 夕刊Digest | #F97316 |
 | news | — | 📰 ニュース（個別） | #6366F1 |
 | news | tags: [dev-knowledge] | 🧠 AI開発ナレッジ | #10b981 |
 | news | tags: [case-study] | 📊 ソロビルダー事例紹介 | #f59e0b |

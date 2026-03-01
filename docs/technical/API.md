@@ -14,7 +14,7 @@
 
 - `GET /api/v1/feed`
   - ホーム画面向けの集約レスポンス
-  - セクション: `morningSummary`, `eveningSummary`, `latestNews`, `products`, `devKnowledge`, `caseStudies`
+  - セクション: `morningSummary`, `latestNews`, `products`, `devKnowledge`, `caseStudies`
 - `GET /api/v1/contents`
   - 汎用一覧 API
   - クエリ: `contentType`, `digestEdition`, `category`, `tags`, `featured`, `q`, `limit`, `offset`

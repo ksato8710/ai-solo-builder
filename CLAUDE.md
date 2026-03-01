@@ -160,7 +160,7 @@ title: "バイブコーディングが「誰でもできる」時代に突入"
 slug: "morning-news-2026-02-02-vibe-coding-mainstream"
 date: "2026-02-02"
 contentType: "digest"           # news | product | digest
-digestEdition: "morning"        # morning | evening（digestの場合のみ）
+digestEdition: "morning"        # morning（digestの場合のみ）
 tags: ["vibe-coding", "cursor"] # ニュース分類タグ
 relatedProducts: ["cursor"]     # 関連プロダクト（配列）
 description: "Scientific AmericanのClaude Code特集..."

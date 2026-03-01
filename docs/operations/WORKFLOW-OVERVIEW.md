@@ -3,7 +3,7 @@
 記事作成ワークフロー、スキル体系、自動化設定の全体像を定義する。
 
 > 各ワークフローの詳細手順:
-> - Digest（朝刊/夕刊）: `docs/operations/WORKFLOW-DIGEST.md`
+> - Digest（朝刊）: `docs/operations/WORKFLOW-DIGEST.md`
 > - 個別記事: `docs/operations/WORKFLOW-INDIVIDUAL.md`
 
 ---
@@ -21,7 +21,7 @@
 ┌───────────────┐ ┌───────────────┐ ┌───────────────┐
 │ WORKFLOW-     │ │ WORKFLOW-     │ │ CHECKLIST.md  │
 │ DIGEST.md    │ │ INDIVIDUAL.md│ │ (品質ゲート)   │
-│ (朝刊/夕刊)  │ │ (深掘り記事)  │ │               │
+│ (朝刊)       │ │ (深掘り記事)  │ │               │
 └───────────────┘ └───────────────┘ └───────────────┘
 ```
 
@@ -32,12 +32,12 @@
 | 観点 | Digestワークフロー | 個別記事ワークフロー |
 |------|-------------------|---------------------|
 | **目的** | 速報性・全体像把握 | 深さ・独自価値 |
-| **記事種別** | digest (morning / evening) | news (dev-knowledge / case-study) |
+| **記事種別** | digest (morning) | news (dev-knowledge / case-study) |
 | **時間軸** | 当日〜前日のニュース | タイムレス or 旬のテーマ |
 | **記事長** | 3,000〜5,000字 | 8,000〜20,000字 |
 | **読了時間** | 5〜8分 | 10〜20分 |
-| **更新頻度** | 毎日2回（朝刊・夕刊） | 週2〜3本 |
-| **cron** | asb-morning-digest / asb-evening-digest | asb-midday-editorial |
+| **更新頻度** | 毎日1回（朝刊） | 週2〜3本 |
+| **cron** | asb-morning-digest | asb-midday-editorial |
 | **自動化度** | 高い（5 Phase パイプライン） | 中程度（リサーチは手動要素多い） |
 | **詳細** | `WORKFLOW-DIGEST.md` | `WORKFLOW-INDIVIDUAL.md` |
 
@@ -82,15 +82,15 @@ news-research → news-evaluation → digest-writer → content-optimizer → pu
 | ジョブ名 | スケジュール | ワークフロー | 説明 |
 |----------|--------------|--------------|------|
 | `asb-morning-digest` | 毎日 07:30 JST | Digest 5 Phase | 朝刊作成 |
-| `asb-evening-digest` | 毎日 17:30 JST | Digest 5 Phase | 夕刊作成 |
 | `asb-midday-editorial` | 平日 12:30 JST | 個別記事 | 曜日別テーマで深掘り記事 |
+| `collect-sources` | 毎日 15:00 JST | Vercel Cron | RSS/API/Scrape 自動収集 + スコアリング（`vercel.json`） |
 | `send-newsletter` | 毎日 08:15 JST | Vercel Cron | 朝刊 Digest をメール配信（`vercel.json`） |
 | 月次ソースメンテナンス | 毎月1日 03:00 JST | — | ソース品質管理・信頼度更新 |
 
 ### cron → ワークフロー → スキル の対応
 
 ```
-asb-morning-digest / asb-evening-digest
+asb-morning-digest
      │
      └─▶ Digestワークフロー（5 Phase）
               ├─ Phase 1: news-research
@@ -129,7 +129,7 @@ asb-midday-editorial
 ```sql
 CREATE TABLE news_candidates (
   id UUID PRIMARY KEY,
-  edition TEXT NOT NULL,           -- 'morning' | 'evening'
+  edition TEXT NOT NULL,           -- 'morning'
   target_date DATE NOT NULL,
   title TEXT NOT NULL,
   summary TEXT,
@@ -248,7 +248,7 @@ CREATE TABLE sources (
 
 | ドキュメント | 場所 | 内容 |
 |-------------|------|------|
-| Digestワークフロー詳細 | `docs/operations/WORKFLOW-DIGEST.md` | 朝刊/夕刊の5Phase手順 |
+| Digestワークフロー詳細 | `docs/operations/WORKFLOW-DIGEST.md` | 朝刊の5Phase手順 |
 | 個別記事ワークフロー詳細 | `docs/operations/WORKFLOW-INDIVIDUAL.md` | 3記事タイプ別の手順 |
 | 品質チェックリスト | `docs/operations/CHECKLIST.md` | 品質基準・自動化状況 |
 | コンテンツポリシー | `specs/content-policy/spec.md` | taxonomy・リンク規則 |

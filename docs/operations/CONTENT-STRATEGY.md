@@ -52,7 +52,6 @@
 | 旧 category | 新 contentType / tags |
 |-------------|----------------------|
 | `morning-news` | `contentType: digest`, `digestEdition: morning` |
-| `evening-news` | `contentType: digest`, `digestEdition: evening` |
 | `product-news` | `contentType: news` |
 | `knowledge` / `dev` / `deep-dive` / `featured-tools` | `contentType: news`, `tags: [dev-knowledge]` |
 | `tools`（辞書的内容） | `contentType: product` |

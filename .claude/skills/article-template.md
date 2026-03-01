@@ -13,7 +13,7 @@ title: "記事タイトル"
 slug: "url-friendly-slug"
 date: "YYYY-MM-DD"
 contentType: "digest"            # news | product | digest（必須）
-digestEdition: "morning"         # morning | evening（digest時のみ必須）
+digestEdition: "morning"         # morning（digest時のみ必須）
 tags: ["dev-knowledge"]          # news時に分類タグを先頭に（dev-knowledge / case-study / product-update）
 relatedProducts: ["product-slug"] # 関連プロダクト（/products/[slug]）
 description: "記事の要約（120文字以内）"
@@ -30,10 +30,10 @@ image: "/images/xxx.jpg"
 
 ## 種類別テンプレート
 
-### 🗞️ 朝夕のまとめ（contentType: digest, digestEdition: morning / evening）
+### 🗞️ 朝刊まとめ（contentType: digest, digestEdition: morning）
 
 ```markdown
-# AIソロビルダー[朝刊/夕刊] — YYYY年M月D日（曜）[メインテーマ]
+# AIソロビルダー朝刊 — YYYY年M月D日（曜）[メインテーマ]
 
 導入（今日の結論を1〜3行）
 

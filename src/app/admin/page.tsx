@@ -109,14 +109,6 @@ function ToolCards() {
       badge: 'workflows',
       badgeColor: 'bg-accent-leaf/15 text-accent-leaf',
     },
-    {
-      href: '/admin/sources',
-      title: 'Legacy 情報源',
-      desc: '旧 content_sources テーブル（互換運用）',
-      accent: 'border-border hover:border-text-light',
-      badge: 'legacy',
-      badgeColor: 'bg-bg-warm text-text-muted',
-    },
   ];
 
   return (

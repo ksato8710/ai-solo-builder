@@ -24,7 +24,7 @@ AI Solo Craft の技術仕様・デプロイ手順・運用ルール。
 
 ### 正式データモデル（canonical V2）
 - `contentType`: `news | product | digest`
-- `digestEdition`: `morning | evening`（digest時のみ）
+- `digestEdition`: `morning`（digest時のみ）
 - `tags`: `dev-knowledge` / `case-study` / `product-update`（news時に分類タグとして使用）
 - 正規定義: `specs/content-policy/spec.md`
 

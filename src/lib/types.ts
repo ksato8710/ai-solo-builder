@@ -33,7 +33,6 @@ export interface Post {
 
 export const CATEGORIES: Record<string, { label: string; color: string; emoji: string }> = {
   'morning-summary': { label: '朝のまとめ', color: '#7E9AAB', emoji: '🗞️' },
-  'evening-summary': { label: '夕のまとめ', color: '#C4926B', emoji: '🗞️' },
   news: { label: 'ニュース', color: '#7E9AAB', emoji: '📰' },
   'dev-knowledge': { label: 'AI開発ナレッジ', color: '#6B8F71', emoji: '🧠' },
   'case-study': { label: 'ソロビルダー事例', color: '#B8956A', emoji: '📊' },

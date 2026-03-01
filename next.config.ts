@@ -13,7 +13,6 @@ const nextConfig: NextConfig = {
     return [
       // Category slug migrations (legacy -> canonical)
       { source: "/category/morning-news", destination: "/category/morning-summary", permanent: true },
-      { source: "/category/evening-news", destination: "/category/evening-summary", permanent: true },
       { source: "/category/knowledge", destination: "/category/dev-knowledge", permanent: true },
       { source: "/category/product-news", destination: "/category/news", permanent: true },
       { source: "/category/tools", destination: "/category/news", permanent: true },

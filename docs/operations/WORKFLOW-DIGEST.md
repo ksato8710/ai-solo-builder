@@ -1,6 +1,6 @@
-# Digest ワークフロー（朝刊・夕刊）
+# Digest ワークフロー（朝刊）
 
-朝刊/夕刊 Digest の 5 Phase パイプライン詳細手順。
+朝刊 Digest の 5 Phase パイプライン詳細手順。
 
 > **全体像:** `docs/operations/WORKFLOW-OVERVIEW.md`
 > **品質チェック:** `docs/operations/CHECKLIST.md`
@@ -15,7 +15,7 @@
 **特徴:**
 - 5 Phase の自動化されたパイプライン
 - NVAスコアリングによる客観的評価
-- cron による定時実行（朝 07:30 / 夕 17:30）
+- cron による定時実行（朝 07:30）
 
 ---
 
@@ -58,7 +58,7 @@ news_candidates  selected候補      Markdown記事       最適化記事       
 | 出力 | selected 候補（Top10/Top3確定） |
 
 **手順:**
-1. 期間適切性フィルタ（朝刊: 前夕刊〜今朝刊、夕刊: 前朝刊〜今夕刊）
+1. 期間適切性フィルタ（前日朝刊〜今朝刊）
 2. 事実確認（誇張・歪曲チェック）
 3. NVAスコアリング → Top10/Top3選定
 
@@ -105,7 +105,7 @@ news_candidates  selected候補      Markdown記事       最適化記事       
 ```bash
 npm run publish:gate
 git add -A
-git commit -m "publish: YYYY-MM-DD morning/evening"
+git commit -m "publish: YYYY-MM-DD morning"
 git push
 ```
 
@@ -145,33 +145,11 @@ git push
 08:00  公開完了
 ```
 
-### 夕刊（17:30開始 → 18:00公開目標）
-
-```
-17:30  Phase 1: news-research (evening)
-       └─ ソース巡回（今朝刊〜今夕刊の期間）
-
-17:40  Phase 2: news-evaluation
-       └─ 朝刊との重複排除 + NVA
-
-17:48  Phase 3: digest-writer
-       └─ Digest + Top3
-
-17:53  Phase 4: content-optimizer
-       └─ UI最適化・読みやすさ向上
-
-17:57  Phase 5: publish-gate
-       └─ チェック・デプロイ・報告
-
-18:00  公開完了
-```
-
 ---
 
 ## 生成するもの（毎日）
 
 - 朝刊 Digest: `contentType: digest`, `digestEdition: morning`
-- 夕刊 Digest: `contentType: digest`, `digestEdition: evening`
 - 個別ニュース（Top 3）: `contentType: news`（DigestのTop 3ぶん）
 
 > **Note:** taxonomy の正規定義は `specs/content-policy/spec.md` を参照。
@@ -183,9 +161,6 @@ git push
 - 朝刊: `content/news/YYYY-MM-DD-morning-news-YYYY-MM-DD.md`
   - `slug: "morning-news-YYYY-MM-DD"`
   - `contentType: "digest"`, `digestEdition: "morning"`
-- 夕刊: `content/news/YYYY-MM-DD-evening-news-YYYY-MM-DD.md`
-  - `slug: "evening-news-YYYY-MM-DD"`
-  - `contentType: "digest"`, `digestEdition: "evening"`
 - 個別ニュース: `content/news/YYYY-MM-DD-some-slug.md`
   - `slug: "some-slug"`
   - `contentType: "news"`
@@ -228,7 +203,6 @@ SUPABASE_SECRET_KEY=<secret-key>
 ## モデルケース
 
 - 朝刊: `content/news/2026-02-10-morning-news-2026-02-10.md`
-- 夕刊: `content/news/2026-02-10-evening-news-2026-02-10.md`
 - 個別ニュース（Top 3）:
   - `content/news/2026-02-10-claude-code-project-memory.md`
   - `content/news/2026-02-10-cursor-shared-rules.md`
