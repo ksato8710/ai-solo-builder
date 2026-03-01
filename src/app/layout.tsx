@@ -100,7 +100,7 @@ export default function RootLayout({
 
               {/* Desktop Navigation */}
               <nav className="hidden md:flex items-center gap-6 text-sm">
-                <a href="/#digest-summary" className="text-text-muted hover:text-accent-leaf transition-colors">🗞️ 朝夕のまとめ</a>
+                <a href="/#digest-summary" className="text-text-muted hover:text-accent-leaf transition-colors">🗞️ ダイジェスト</a>
                 <a href="/news" className="text-text-muted hover:text-accent-leaf transition-colors">📰 ニュース</a>
                 <a href="/category/products" className="text-text-muted hover:text-accent-leaf transition-colors">🏷️ プロダクト</a>
               </nav>
@@ -114,7 +114,7 @@ export default function RootLayout({
 
             {/* Mobile Navigation - Bottom Row */}
             <nav className="md:hidden flex items-center justify-center gap-6 pb-2 text-xs">
-              <a href="/#digest-summary" className="text-text-muted hover:text-accent-leaf transition-colors">🗞️ まとめ</a>
+              <a href="/#digest-summary" className="text-text-muted hover:text-accent-leaf transition-colors">🗞️ ダイジェスト</a>
               <a href="/news" className="text-text-muted hover:text-accent-leaf transition-colors">📰 ニュース</a>
               <a href="/category/products" className="text-text-muted hover:text-accent-leaf transition-colors">🏷️ プロダクト</a>
             </nav>
@@ -138,7 +138,7 @@ export default function RootLayout({
         <footer className="border-t border-border bg-bg-warm mt-16 py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-text-muted">
             <p>AI Solo Craft — AIソロ開発者のための日本語ニュースキュレーション</p>
-            <p className="mt-1">毎日配信: 🗞️ 朝刊 8:00 ・ 🗞️ 夕刊 18:00（プロダクトは随時更新）</p>
+            <p className="mt-1">毎日配信: 🗞️ ダイジェスト 8:00（プロダクトは随時更新）</p>
           </div>
         </footer>
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (

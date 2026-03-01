@@ -10,6 +10,8 @@
 // Types
 // ---------------------------------------------------------------------------
 
+export type RoutingTarget = 'experiment' | 'content_idea' | 'process_knowledge' | 'skill_knowledge';
+
 export interface NvaScores {
   nva_total: number;
   nva_social: number;
@@ -20,6 +22,7 @@ export interface NvaScores {
   classification: string;
   classification_confidence: number;
   relevance_tags: string[];
+  routing_targets: RoutingTarget[];
   score_reasoning: string;
 }
 
@@ -332,6 +335,52 @@ function extractRelevanceTags(text: string): string[] {
 }
 
 // ---------------------------------------------------------------------------
+// Routing logic
+// ---------------------------------------------------------------------------
+
+const EXPERIMENT_CLASSIFICATIONS = new Set(['product-release', 'product-update']);
+const PROCESS_CLASSIFICATIONS = new Set(['tutorial-guide', 'case-study', 'opinion-analysis']);
+const SKILL_TAGS = new Set(['mcp', 'ai-agent']);
+
+/** Determine routing targets based on scores, classification, and tags */
+function computeRoutingTargets(
+  nvaTotal: number,
+  nvaSoloRelevance: number,
+  classification: string,
+  relevanceTags: string[]
+): RoutingTarget[] {
+  // Items below threshold get no routing
+  if (nvaTotal < 40) return [];
+
+  const targets: RoutingTarget[] = [];
+
+  // experiment: product-release/update with high solo relevance
+  if (EXPERIMENT_CLASSIFICATIONS.has(classification) && nvaSoloRelevance >= 14) {
+    targets.push('experiment');
+  }
+
+  // process_knowledge: best-practice/workflow/methodology type content
+  if (PROCESS_CLASSIFICATIONS.has(classification)) {
+    targets.push('process_knowledge');
+  }
+
+  // skill_knowledge: tool-update/open-source with mcp/agent tags
+  if (
+    (classification === 'product-update' || classification === 'product-release') &&
+    relevanceTags.some((tag) => SKILL_TAGS.has(tag))
+  ) {
+    targets.push('skill_knowledge');
+  }
+
+  // content_idea: high total score
+  if (nvaTotal >= 60) {
+    targets.push('content_idea');
+  }
+
+  return targets;
+}
+
+// ---------------------------------------------------------------------------
 // Main scoring function
 // ---------------------------------------------------------------------------
 
@@ -388,8 +437,15 @@ export function computeNvaScores(
     reasoningParts.push(`tags=[${relevanceTags.join(',')}]`);
   }
 
+  const clampedTotal = Math.min(100, Math.max(0, nvaTotal));
+  const routingTargets = computeRoutingTargets(clampedTotal, soloRelevance, classification, relevanceTags);
+
+  if (routingTargets.length > 0) {
+    reasoningParts.push(`routing=[${routingTargets.join(',')}]`);
+  }
+
   return {
-    nva_total: Math.min(100, Math.max(0, nvaTotal)),
+    nva_total: clampedTotal,
     nva_social: social,
     nva_media: media,
     nva_community: community,
@@ -398,6 +454,7 @@ export function computeNvaScores(
     classification,
     classification_confidence: Math.round(confidence * 100) / 100,
     relevance_tags: relevanceTags,
+    routing_targets: routingTargets,
     score_reasoning: reasoningParts.join(' | '),
   };
 }

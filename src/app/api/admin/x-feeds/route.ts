@@ -117,6 +117,12 @@ async function getPosts(supabase: SupabaseClient, params: URLSearchParams) {
   const sort = params.get('sort') || 'collected_at';
   const accountFilter = params.get('account');
 
+  // Engagement filters (numeric values)
+  const minLikes = parseIntOrNull(params.get('min_likes'));
+  const minRetweets = parseIntOrNull(params.get('min_retweets'));
+  const minViews = parseIntOrNull(params.get('min_views'));
+  const minBookmarks = parseIntOrNull(params.get('min_bookmarks'));
+
   // First get X source IDs
   const { data: configs } = await supabase
     .from('source_crawl_configs')
@@ -152,10 +158,17 @@ async function getPosts(supabase: SupabaseClient, params: URLSearchParams) {
     query = query.in('source_id', xSourceIds);
   }
 
+  // Engagement filters
+  if (minLikes !== null) query = query.gte('engagement_likes', minLikes);
+  if (minRetweets !== null) query = query.gte('engagement_retweets', minRetweets);
+  if (minViews !== null) query = query.gte('engagement_views', minViews);
+  if (minBookmarks !== null) query = query.gte('engagement_bookmarks', minBookmarks);
+
   // Sorting
   const validSorts: Record<string, string> = {
     collected_at: 'collected_at',
     engagement_likes: 'engagement_likes',
+    engagement_views: 'engagement_views',
     nva_total: 'nva_total',
   };
   const sortColumn = validSorts[sort] || 'collected_at';
@@ -188,6 +201,12 @@ function extractHandle(crawlUrl: string | null): string | null {
   // Match /twitter/user/:handle or /twitter/:handle patterns
   const match = crawlUrl.match(/\/twitter\/(?:user\/)?([^/?&]+)/);
   return match ? `@${match[1]}` : null;
+}
+
+function parseIntOrNull(value: string | null): number | null {
+  if (!value) return null;
+  const n = parseInt(value, 10);
+  return Number.isNaN(n) ? null : n;
 }
 
 function inferTier(sourceType: string): string {

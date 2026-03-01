@@ -244,3 +244,48 @@ export async function PUT(request: NextRequest) {
     return NextResponse.json({ error: 'Unexpected server error' }, { status: 500 });
   }
 }
+
+export async function DELETE(request: NextRequest) {
+  const supabase = getAdminSupabaseClient();
+  if (!supabase) {
+    return NextResponse.json(
+      { error: 'Database credentials are not configured.' },
+      { status: 503 }
+    );
+  }
+
+  try {
+    const { workflow_id } = (await request.json()) as { workflow_id?: string };
+
+    if (!workflow_id) {
+      return NextResponse.json({ error: 'workflow_id is required.' }, { status: 400 });
+    }
+
+    // Delete mappings first (foreign key)
+    const { error: mappingError } = await supabase
+      .from('workflow_source_mappings')
+      .delete()
+      .eq('workflow_id', workflow_id);
+
+    if (mappingError) {
+      console.error('[admin/workflows] Delete mappings failed:', mappingError);
+      return NextResponse.json({ error: mappingError.message }, { status: 500 });
+    }
+
+    // Delete the workflow
+    const { error: workflowError } = await supabase
+      .from('content_workflows')
+      .delete()
+      .eq('id', workflow_id);
+
+    if (workflowError) {
+      console.error('[admin/workflows] Delete workflow failed:', workflowError);
+      return NextResponse.json({ error: workflowError.message }, { status: 500 });
+    }
+
+    return NextResponse.json({ ok: true });
+  } catch (error) {
+    console.error('[admin/workflows] DELETE exception:', error);
+    return NextResponse.json({ error: 'Unexpected server error' }, { status: 500 });
+  }
+}

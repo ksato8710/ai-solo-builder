@@ -35,6 +35,7 @@ interface SourceResult {
   collected: number;
   duplicates: number;
   error?: string;
+  errorKind?: string;
 }
 
 function fallbackTitleFromUrl(url: string): string {
@@ -202,19 +203,34 @@ async function handleCollectSources(request: NextRequest): Promise<NextResponse>
 
         if (crawlResult.error) {
           result.error = crawlResult.error;
+          if (crawlResult.errorKind) {
+            result.errorKind = crawlResult.errorKind;
+          }
         }
 
         if (crawlResult.items.length === 0) {
+          const crawlStatus = crawlResult.error ? 'error' : 'success';
+          const errorDetail = crawlResult.errorKind
+            ? `[${crawlResult.errorKind}] ${crawlResult.error || ''}`
+            : (crawlResult.error || null);
+
           // Update config status
           await supabase
             .from('source_crawl_configs')
             .update({
               last_crawled_at: now.toISOString(),
-              last_crawl_status: crawlResult.error ? 'error' : 'success',
-              last_crawl_error: crawlResult.error || null,
+              last_crawl_status: crawlStatus,
+              last_crawl_error: errorDetail,
               last_crawl_item_count: 0,
             })
             .eq('id', cfg.id);
+
+          if (crawlResult.errorKind === 'permanent') {
+            console.warn(
+              `[collect-sources] Permanent error for ${source.name} (${cfg.id}): ${crawlResult.error}. ` +
+              'Consider disabling this source.'
+            );
+          }
 
           results.push(result);
           continue;

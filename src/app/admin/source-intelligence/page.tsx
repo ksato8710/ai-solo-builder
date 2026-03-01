@@ -377,6 +377,12 @@ export default function SourceIntelligenceAdminPage() {
             スコアリング
           </a>
           <a
+            href="/admin/x-feeds"
+            className="inline-flex items-center rounded-lg border border-accent-bloom/40 bg-accent-bloom/10 px-3 py-2 text-sm text-accent-bloom hover:bg-accent-bloom/20"
+          >
+            X Feeds
+          </a>
+          <a
             href="/admin"
             className="inline-flex items-center rounded-lg border border-border px-3 py-2 text-sm text-text-muted hover:bg-bg-warm"
           >
@@ -396,6 +402,16 @@ export default function SourceIntelligenceAdminPage() {
         <StatCard label="Tier: 一次情報" value={summary.tierPrimary} accent="text-accent-leaf" />
         <StatCard label="Tier: 二次情報" value={summary.tierSecondary} accent="text-accent-bark" />
         <StatCard label="Tier: 三次情報" value={summary.tierTertiary} accent="text-cat-tool" />
+      </div>
+
+      <div className="rounded-xl border border-accent-bloom/30 bg-accent-bloom/5 px-4 py-3 flex items-center gap-3">
+        <span className="text-sm text-text-deep">
+          X（Twitter）の追跡アカウントは
+          <a href="/admin/x-feeds" className="font-semibold text-accent-bloom underline underline-offset-2 hover:text-accent-bloom/80">
+            X Feeds
+          </a>
+          {' '}で管理しています。
+        </span>
       </div>
 
       <div className="rounded-[var(--radius-card)] border border-border bg-bg-card p-4 space-y-4">

@@ -148,6 +148,7 @@ async function handleScoreItems(request: NextRequest): Promise<NextResponse> {
             classification: scores.classification,
             classification_confidence: scores.classification_confidence,
             relevance_tags: scores.relevance_tags,
+            routing_targets: scores.routing_targets,
             score_reasoning: scores.score_reasoning,
             scored_at: now,
             status: 'scored',

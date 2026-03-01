@@ -75,36 +75,42 @@ news-research → news-evaluation → digest-writer → content-optimizer → pu
 
 ---
 
-## cron設定
+## cron設定（2026-03-02 更新）
 
 ### cronジョブ一覧
 
-| ジョブ名 | スケジュール | ワークフロー | 説明 |
-|----------|--------------|--------------|------|
-| `asb-morning-digest` | 毎日 07:30 JST | Digest 5 Phase | 朝刊作成 |
-| `asb-midday-editorial` | 平日 12:30 JST | 個別記事 | 曜日別テーマで深掘り記事 |
-| `collect-sources` | 毎日 15:00 JST | Vercel Cron | RSS/API/Scrape 自動収集 + スコアリング（`vercel.json`） |
-| `send-newsletter` | 毎日 08:15 JST | Vercel Cron | 朝刊 Digest をメール配信（`vercel.json`） |
-| 月次ソースメンテナンス | 毎月1日 03:00 JST | — | ソース品質管理・信頼度更新 |
+| ジョブ名 | 実行基盤 | スケジュール | 状態 | 説明 |
+|----------|----------|--------------|------|------|
+| `collect-sources` | Vercel Cron | 毎日 15:00 JST (`0 6 * * *` UTC) | **稼働中** | RSS/API/Scrape 自動収集 + タイトル翻訳 |
+| `send-newsletter` | Vercel Cron | 毎日 08:15 JST (`15 23 * * *` UTC) | **稼働中** | 朝刊 Digest をメール配信 |
+| `score-items` | 手動API | — | API実装済 | NVA 5軸スコアリング（`/api/cron/score-items`） |
+| 朝刊Digest作成 | Claude Code | 07:30 JST 目標 | 手動実行 | 5 Phase パイプライン |
+| 個別記事作成 | Claude Code | 不定期 | 手動実行 | dev-knowledge / case-study |
+
+> **Note:** Vercel Hobby プランは cron 最大2件。`score-items` はスケジュール枠がないため手動トリガー。
 
 ### cron → ワークフロー → スキル の対応
 
 ```
-asb-morning-digest
+15:00 JST  collect-sources (Vercel Cron)
+     │  source_crawl_configs → RSS/API/Scrape → 重複排除 → タイトル翻訳
+     ▼
+collected_items (status=new)
      │
-     └─▶ Digestワークフロー（5 Phase）
-              ├─ Phase 1: news-research
-              ├─ Phase 2: news-evaluation
-              ├─ Phase 3: digest-writer
-              ├─ Phase 4: content-optimizer
-              └─ Phase 5: publish-gate
-
-asb-midday-editorial
+     │  score-items (手動トリガー)
+     │  scoring_config → NVA 5軸 → スコア・分類・タグ付け
+     ▼
+collected_items (status=scored)
      │
-     └─▶ 個別記事ワークフロー（6 Phase）
-              ├─ Phase 1-4: 手動（リサーチ・評価・設計・執筆）
-              ├─ Phase 5: content-optimizer
-              └─ Phase 6: publish-gate
+     │  朝刊Digest作成 (Claude Code / 手動 07:30 JST)
+     │  Phase 1-5: 調査 → 評価 → 執筆 → UI最適化 → 公開
+     ▼
+contents テーブル + 本番サイト公開
+     │
+     │  08:15 JST  send-newsletter (Vercel Cron)
+     │  最新digest → 購読者リスト → Resend API → バッチ送信
+     ▼
+newsletter 配信完了
 ```
 
 ---

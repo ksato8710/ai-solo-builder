@@ -30,9 +30,14 @@ export interface RawCollectedItem {
   engagement?: EngagementData;
 }
 
+/** Error classification for crawl failures */
+export type CrawlErrorKind = 'transient' | 'permanent' | 'unknown';
+
 export interface CrawlResult {
   items: RawCollectedItem[];
   error?: string;
+  /** Classify the error so callers can decide whether to retry / disable */
+  errorKind?: CrawlErrorKind;
 }
 
 // ---------------------------------------------------------------------------
@@ -65,6 +70,50 @@ async function safeFetch(url: string, init?: RequestInit): Promise<Response> {
   } finally {
     clearTimeout(timer);
   }
+}
+
+const RETRY_MAX = 2;
+const RETRY_BASE_MS = 1_000;
+
+/** Classify HTTP status into error kind */
+function classifyHttpError(status: number): CrawlErrorKind {
+  if (status >= 500) return 'transient';
+  if (status === 429) return 'transient';
+  if (status === 403 || status === 404 || status === 410) return 'permanent';
+  return 'unknown';
+}
+
+/**
+ * Fetch with automatic retry for transient errors (5xx, 429, timeout).
+ * Returns the last Response even if non-ok so callers can inspect status.
+ */
+async function safeFetchWithRetry(url: string, init?: RequestInit): Promise<Response> {
+  let lastError: Error | null = null;
+  for (let attempt = 0; attempt <= RETRY_MAX; attempt++) {
+    try {
+      const res = await safeFetch(url, init);
+      // Only retry on server errors or rate-limit
+      if (res.status >= 500 || res.status === 429) {
+        if (attempt < RETRY_MAX) {
+          await sleep(RETRY_BASE_MS * (attempt + 1));
+          continue;
+        }
+      }
+      return res;
+    } catch (err) {
+      lastError = err instanceof Error ? err : new Error(String(err));
+      // Retry on network/timeout errors
+      if (attempt < RETRY_MAX) {
+        await sleep(RETRY_BASE_MS * (attempt + 1));
+        continue;
+      }
+    }
+  }
+  throw lastError ?? new Error('safeFetchWithRetry exhausted');
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 /** Strip HTML tags from a string */
@@ -442,11 +491,24 @@ interface JsonFeed {
 
 export async function crawlJsonFeed(feedUrl: string): Promise<CrawlResult> {
   try {
-    const res = await safeFetch(feedUrl, {
+    const res = await safeFetchWithRetry(feedUrl, {
       headers: { Accept: 'application/json' },
     });
     if (!res.ok) {
-      return { items: [], error: `JSON Feed fetch failed: HTTP ${res.status}` };
+      const errorKind = classifyHttpError(res.status);
+      // Try to extract upstream error message (RSSHub returns JSON with error.message)
+      let detail = '';
+      try {
+        const body = (await res.json()) as { error?: { message?: string } };
+        if (body?.error?.message) detail = `: ${body.error.message}`;
+      } catch {
+        // ignore parse failures
+      }
+      return {
+        items: [],
+        error: `JSON Feed fetch failed: HTTP ${res.status}${detail}`,
+        errorKind,
+      };
     }
 
     const feed = (await res.json()) as JsonFeed;
@@ -485,7 +547,12 @@ export async function crawlJsonFeed(feedUrl: string): Promise<CrawlResult> {
     return { items };
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
-    return { items: [], error: `JSON Feed crawl error: ${message}` };
+    const isTimeout = message.includes('abort') || message.includes('timeout');
+    return {
+      items: [],
+      error: `JSON Feed crawl error: ${message}`,
+      errorKind: isTimeout ? 'transient' : 'unknown',
+    };
   }
 }
 

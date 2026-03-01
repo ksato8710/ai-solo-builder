@@ -46,11 +46,10 @@ export default async function Home() {
       <div className="rounded-xl px-6 py-4 mb-12 flex items-center justify-between flex-wrap gap-4 bg-bg-card">
         <div className="flex items-center gap-2">
           <span className="text-accent-moss text-sm font-semibold">📡 LIVE</span>
-          <span className="text-text-muted text-sm">朝夕のまとめ 毎日配信中</span>
+          <span className="text-text-muted text-sm">ダイジェスト 毎日配信中</span>
         </div>
         <div className="flex items-center gap-6 text-xs text-text-muted">
-          <span>🌅 朝刊 8:00</span>
-          <span>🌆 夕刊 18:00</span>
+          <span>🗞️ ダイジェスト 毎朝 8:00</span>
         </div>
         <div className="text-xs text-text-light">
           ニュース: {allPosts.length}本 / プロダクト: {allProducts.length}本

@@ -89,6 +89,27 @@ function formatNumber(n: number | null): string {
   return String(n);
 }
 
+/** Parse human-readable numbers like "1K", "1.5M", "500" → numeric value */
+function parseHumanNumber(input: string): number | null {
+  const trimmed = input.trim().toUpperCase();
+  if (!trimmed) return null;
+  const match = trimmed.match(/^(\d+(?:\.\d+)?)\s*(K|M)?$/);
+  if (!match) return null;
+  const base = parseFloat(match[1]);
+  const suffix = match[2];
+  if (suffix === 'M') return Math.round(base * 1_000_000);
+  if (suffix === 'K') return Math.round(base * 1_000);
+  return Math.round(base);
+}
+
+const ENGAGEMENT_PRESETS = [
+  { label: 'すべて', likes: '', views: '' },
+  { label: '100+いいね', likes: '100', views: '' },
+  { label: '1K+いいね', likes: '1K', views: '' },
+  { label: '10K+表示', likes: '', views: '10K' },
+  { label: '100K+表示', likes: '', views: '100K' },
+] as const;
+
 // ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
@@ -105,6 +126,12 @@ export default function XFeedsPage() {
   const [offset, setOffset] = useState(0);
   const [sort, setSort] = useState('collected_at');
   const [accountFilter, setAccountFilter] = useState('all');
+
+  // Engagement filters (human-readable strings like "1K", "100")
+  const [minLikes, setMinLikes] = useState('');
+  const [minViews, setMinViews] = useState('');
+  const [minRetweets, setMinRetweets] = useState('');
+  const [minBookmarks, setMinBookmarks] = useState('');
 
   const fetchAccounts = useCallback(async () => {
     const res = await fetch('/api/admin/x-feeds?section=accounts');
@@ -124,6 +151,16 @@ export default function XFeedsPage() {
       params.set('sort', sort);
       if (accountFilter !== 'all') params.set('account', accountFilter);
 
+      // Engagement filters — parse human-readable values to numeric
+      const likesNum = parseHumanNumber(minLikes);
+      const viewsNum = parseHumanNumber(minViews);
+      const retweetsNum = parseHumanNumber(minRetweets);
+      const bookmarksNum = parseHumanNumber(minBookmarks);
+      if (likesNum !== null) params.set('min_likes', String(likesNum));
+      if (viewsNum !== null) params.set('min_views', String(viewsNum));
+      if (retweetsNum !== null) params.set('min_retweets', String(retweetsNum));
+      if (bookmarksNum !== null) params.set('min_bookmarks', String(bookmarksNum));
+
       const res = await fetch(`/api/admin/x-feeds?${params.toString()}`);
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to fetch posts');
@@ -134,7 +171,7 @@ export default function XFeedsPage() {
     } finally {
       setLoading(false);
     }
-  }, [offset, sort, accountFilter]);
+  }, [offset, sort, accountFilter, minLikes, minViews, minRetweets, minBookmarks]);
 
   useEffect(() => {
     void fetchAccounts();
@@ -224,9 +261,51 @@ export default function XFeedsPage() {
               >
                 <option value="collected_at">収集日時</option>
                 <option value="engagement_likes">いいね数</option>
+                <option value="engagement_views">表示回数</option>
                 <option value="nva_total">NVAスコア</option>
               </select>
             </label>
+          </div>
+
+          {/* Engagement Filters */}
+          <div className="space-y-2">
+            <p className="text-xs font-medium uppercase tracking-wide text-text-light">
+              エンゲージメント フィルタ
+            </p>
+
+            {/* Presets */}
+            <div className="flex flex-wrap gap-1.5">
+              {ENGAGEMENT_PRESETS.map((preset) => {
+                const isActive = minLikes === preset.likes && minViews === preset.views;
+                return (
+                  <button
+                    key={preset.label}
+                    onClick={() => {
+                      setMinLikes(preset.likes);
+                      setMinViews(preset.views);
+                      setMinRetweets('');
+                      setMinBookmarks('');
+                      setOffset(0);
+                    }}
+                    className={`rounded-full border px-3 py-1 text-xs transition-colors ${
+                      isActive
+                        ? 'border-accent-leaf bg-accent-leaf/20 text-accent-leaf font-semibold'
+                        : 'border-border text-text-muted hover:bg-bg-warm'
+                    }`}
+                  >
+                    {preset.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Custom inputs */}
+            <div className="flex flex-wrap gap-3 items-end">
+              <EngagementInput label="最小いいね" value={minLikes} onChange={(v) => { setMinLikes(v); setOffset(0); }} placeholder="例: 100, 1K" />
+              <EngagementInput label="最小表示回数" value={minViews} onChange={(v) => { setMinViews(v); setOffset(0); }} placeholder="例: 10K, 1M" />
+              <EngagementInput label="最小リポスト" value={minRetweets} onChange={(v) => { setMinRetweets(v); setOffset(0); }} placeholder="例: 50" />
+              <EngagementInput label="最小ブックマーク" value={minBookmarks} onChange={(v) => { setMinBookmarks(v); setOffset(0); }} placeholder="例: 10" />
+            </div>
           </div>
 
           {/* Pagination */}
@@ -549,5 +628,46 @@ function MetaChip({ label, value }: { label: string; value: string }) {
       <p className="text-[10px] uppercase tracking-wide text-text-light">{label}</p>
       <p className="text-text-deep mt-1 break-all">{value}</p>
     </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Engagement Input (with K/M hint)
+// ---------------------------------------------------------------------------
+
+function EngagementInput({
+  label,
+  value,
+  onChange,
+  placeholder,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  placeholder: string;
+}) {
+  const parsed = parseHumanNumber(value);
+  const isInvalid = value.trim() !== '' && parsed === null;
+
+  return (
+    <label className="min-w-[120px]">
+      <span className="mb-1 block text-[10px] font-medium uppercase tracking-wide text-text-light">
+        {label}
+      </span>
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        className={`w-full rounded border px-2 py-1.5 text-sm text-text-deep bg-bg-warm ${
+          isInvalid ? 'border-danger' : 'border-border'
+        }`}
+      />
+      {isInvalid && (
+        <span className="text-[10px] text-danger mt-0.5 block">
+          数値を入力 (例: 100, 1K, 1.5M)
+        </span>
+      )}
+    </label>
   );
 }
