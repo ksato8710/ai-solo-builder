@@ -1,15 +1,23 @@
 ---
-title: "Cloudflare vs Vercel：vinext登場でNext.js競争が激化、ソロ開発者が今選ぶべきは？"
-slug: "cloudflare-vinext-vs-vercel-nextjs-war"
-description: "CloudflareがAIで1週間・$1,100でNext.jsを再実装した「vinext」を発表。ビルド4倍高速、バンドル57%削減。Vercel CEOが脆弱性を指摘し論争に。ソロ開発者にとっての選択肢を整理。"
-publishedAt: "2026-03-02"
-updatedAt: "2026-03-02"
-contentType: "news"
-tags: ["dev-knowledge", "cloudflare", "vercel", "nextjs", "vite", "infrastructure"]
-image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop"
-source: "Cloudflare Blog, X"
-sourceUrl: "https://blog.cloudflare.com/vinext/"
-author: "AI Solo Craft編集部"
+title: Cloudflare vs Vercel：vinext登場でNext.js競争が激化、ソロ開発者が今選ぶべきは？
+slug: cloudflare-vinext-vs-vercel-nextjs-war
+description: >-
+  CloudflareがAIで1週間・$1,100でNext.jsを再実装した「vinext」を発表。ビルド4倍高速、バンドル57%削減。Vercel
+  CEOが脆弱性を指摘し論争に。ソロ開発者にとっての選択肢を整理。
+publishedAt: '2026-03-02'
+updatedAt: '2026-03-02'
+contentType: news
+tags:
+  - dev-knowledge
+  - cloudflare
+  - vercel
+  - nextjs
+  - vite
+  - infrastructure
+image: /thumbnails/cloudflare-vinext-vs-vercel-nextjs-war.png
+source: 'Cloudflare Blog, X'
+sourceUrl: 'https://blog.cloudflare.com/vinext/'
+author: AI Solo Craft編集部
 featured: true
 ---
 
