@@ -3,6 +3,10 @@
 ## 概要
 AI Solo Craft の技術仕様・デプロイ手順・運用ルール。
 
+## 🚨 絶対ルール
+**mdファイル（content/news/, content/products/）への書き込みは禁止。**
+**すべてのコンテンツはDB直接投入のみ。**
+
 ## 基本情報
 
 | 項目 | 値 |
@@ -15,12 +19,29 @@ AI Solo Craft の技術仕様・デプロイ手順・運用ルール。
 
 ## コンテンツ管理
 
-### 記事ファイル
-- パス:
-  - `content/news/*.md`（Digest/ニュース）
-  - `content/products/*.md`（プロダクト辞書）
-- フォーマット: Markdown + YAML frontmatter
-- 読み取り: `src/lib/posts.ts`（gray-matter + remark）
+### DB直接投入（唯一の方法）
+
+```bash
+cat > /tmp/article.json << 'EOF'
+{
+  "slug": "example-article",
+  "title": "記事タイトル",
+  "description": "説明文",
+  "contentType": "news",
+  "date": "2026-03-02",
+  "image": "https://...",
+  "tags": ["dev-knowledge"],
+  "relatedProducts": ["claude-code"],
+  "body_markdown": "本文..."
+}
+EOF
+node scripts/create-content-db.mjs --stdin < /tmp/article.json
+```
+
+### 禁止事項
+- ❌ `content/news/*.md` への書き込み
+- ❌ `content/products/*.md` への書き込み
+- ❌ mdファイルを作成してから `sync:content:db`
 
 ### 正式データモデル（canonical V2）
 - `contentType`: `news | product | digest`
@@ -28,34 +49,20 @@ AI Solo Craft の技術仕様・デプロイ手順・運用ルール。
 - `tags`: `dev-knowledge` / `case-study` / `product-update`（news時に分類タグとして使用）
 - 正規定義: `specs/content-policy/spec.md`
 
-### DB登録（必須）
-- 記事公開前に `npm run publish:gate` を必ず実行
-- `publish:gate` は `validate:content -> sync:content:db -> build` を強制実行
-- `sync:content:db` が失敗したら `git push` しない
+### 公開前チェック
+- `npm run publish:gate` を実行（validate + build）
+- 失敗したら公開中止
 
 必要な環境変数（`.env.local` または `.env`）:
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
 - `SUPABASE_SECRET_KEY`
 
-### NVA評価データ
-- `/news-value`（ランキング）:
-  - 参照元: 最新のDigest記事（`contentType: digest`）にある「重要ニュースランキング（NVA）」の表
-  - 読み取り: `src/lib/digest.ts`
-- `research/`（中間資料）:
-  - パス: `research/YYYY-MM-DD-slug/`（assessment.md + sources.md）
-  - 目的: NVAの根拠保存（任意だが推奨）
-
-### ツールディレクトリ
-- データ: `src/data/tools.ts`（ハードコード、67件）
-
 ## デプロイ手順
 
 ```bash
-# 1. 記事追加
-git add content/news/YYYY-MM-DD-slug.md
-git add content/products/your-product.md  # 必要なら（プロダクト辞書）
-git add research/YYYY-MM-DD-slug/  # NVA対象の場合
+# 1. DB直接投入
+node scripts/create-content-db.mjs --stdin < /tmp/article.json
 
 # 2. 公開前ゲート（失敗時は公開中止）
 npm run publish:gate
@@ -65,17 +72,14 @@ git commit -m "記事タイトル"
 git push
 
 # 4. デプロイ確認（1-2分待つ）
-# https://ai.essential-navigator.com/news/[slug] または /products/[slug] にアクセス
+# web_fetchで https://ai.essential-navigator.com/news/[slug] を確認
 ```
 
 ## 注意事項
-- URL共有前に必ずブラウザで表示確認
+- **mdファイルを絶対に作成しない**
+- URL共有前に必ずweb_fetchで200確認
 - ビルドエラー時は `npm run build` でローカル確認
-- 画像がない記事はカテゴリ別デフォルト画像を使用
 
 ## 参照ドキュメント
 - CLAUDE.md — プロジェクト全体の技術仕様
 - `specs/content-policy/spec.md` — コンテンツ分類の正規定義
-- `docs/technical/ARCHITECTURE.md` — サイト構成詳細
-- `docs/operations/WORKFLOW-OVERVIEW.md` — ワークフロー全体像
-- `docs/operations/CHECKLIST.md` — 品質チェックリスト

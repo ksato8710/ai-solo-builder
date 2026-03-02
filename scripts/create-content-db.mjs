@@ -35,7 +35,6 @@ async function main() {
     title: data.title,
     description: data.description || '',
     content_type: data.contentType || 'news',
-    digest_edition: data.digestEdition || null,
     date: data.date || new Date().toISOString().split('T')[0],
     hero_image_url: data.image || null,
     featured: data.featured || false,
