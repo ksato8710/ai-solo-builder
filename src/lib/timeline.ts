@@ -23,6 +23,7 @@ export interface TimelineItem {
   companySlug: string | null;
   isJapaneseSource: boolean;
   sourceTier: 'primary' | 'secondary' | 'tertiary';
+  engagementScore: number | null;
 }
 
 export interface TimelineGroup {
@@ -86,6 +87,8 @@ const SELECT_COLUMNS = `
   nva_total,
   content_summary,
   content_id,
+  engagement_likes,
+  engagement_replies,
   source_id,
   sources!inner (
     id,
@@ -111,6 +114,12 @@ function mapRowToTimelineItem(row: any): TimelineItem {
   const company = source?.companies ?? null;
   const content = row.contents;
   const sourceType: string = source?.source_type ?? 'primary';
+
+  const likes = row.engagement_likes as number | null;
+  const replies = row.engagement_replies as number | null;
+  const engagementScore =
+    likes != null ? (likes ?? 0) + (replies ?? 0) : null;
+
   return {
     id: row.id,
     title: row.title,
@@ -130,6 +139,7 @@ function mapRowToTimelineItem(row: any): TimelineItem {
     companySlug: company?.slug ?? null,
     isJapaneseSource: JAPANESE_RE.test(row.title || ''),
     sourceTier: sourceType as 'primary' | 'secondary' | 'tertiary',
+    engagementScore,
   };
 }
 

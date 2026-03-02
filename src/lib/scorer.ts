@@ -97,32 +97,62 @@ const SOLO_RELEVANCE_KEYWORDS: [RegExp, number][] = [
   [/\b(エンタープライズ|大企業|法人|コンプライアンス)\b/, 8],
 ];
 
+/**
+ * Non-product content patterns.
+ * When a product-release/product-update classification co-occurs with these,
+ * the item is downgraded to corporate-news because it describes business
+ * activities (initiatives, regional expansion, workforce programs) rather
+ * than actual product features.
+ */
+const NON_PRODUCT_OVERRIDE =
+  /\b(initiative|program|workforce|grantees?|fund\b|training\s+(?:program|initiative)|for\s+(?:india|africa|japan|europe|asia|brazil|latam|government)|catalyst|accelerat(?:e|or|ing)\s+\w*\s*(?:science|permitting|work)|AI\s+hub|older\s+adults|SMBs?\b|enterprise\s+AI\b|national\s+laborator|federal\s+permitting|\w+[Bb]ench\b|new\s+benchmark)\b/i;
+
 /** Classification keyword map */
 const CLASSIFICATION_RULES: [RegExp, string][] = [
-  // Product releases
-  [/\b(launch|release|GA|general\s*availability|ship|debut|unveil|introduce|リリース|公開|提供開始)\b/i, 'product-release'],
-  // Product updates
-  [/\b(update|upgrade|v\d+\.\d|patch|hotfix|improvement|アップデート|改善|修正)\b/i, 'product-update'],
-  // Research
-  [/\b(paper|research|study|arxiv|findings|experiment|論文|研究|調査)\b/i, 'research-paper'],
-  // Funding
-  [/\b(funding|rais|series\s*[A-Z]|invest|valuation|IPO|acquisition|acquir|資金調達|買収)\b/i, 'funding-acquisition'],
+  // Product releases (new products, major launches, GA)
+  [/\b(launch(es|ed|ing)?|release[ds]?|GA\b|general\s*availability|shipp?(ed|ing)?|debut(ed|s)?|unveil(ed|s)?|introduc(e[ds]?|ing)|リリース|公開|提供開始|正式版)\b/i, 'product-release'],
+  [/\bnow\s+(?:\w+\s+)?available\b/i, 'product-release'],
+  [/\bnow\s+in\s+(?:public\s+)?(?:beta|alpha|preview)\b/i, 'product-release'],
+  [/\bnew\s+(?:alpha|beta|preview)\b/i, 'product-release'],
+  [/\brolling\s+out\b/i, 'product-release'],
+  // Product updates (features, improvements, integrations)
+  [/\b(upgrades?|v\d+\.\d|patch(?:es)?|hotfix(?:es)?|new\s*features?|new\s*capabilit(?:y|ies)|アップデート|新機能|機能追加|対応開始)\b/i, 'product-update'],
+  [/\b(connect(?:s|ed|ing|or)?|integration)\s+(?:to|for|with)\b/i, 'product-update'],
+  [/\b(?:faster|enhanced|expanded|extended)\s+\w/i, 'product-update'],
+  [/\bnew\s+(?:in|for|way|option|tool|model|connector|mode)[s]?\b/i, 'product-update'],
+  [/\b(?:adds?|support(?:s|ed|ing)?)\s+(?:for|in)\b/i, 'product-update'],
+  [/\bpush\s+\w+\s+to\b/i, 'product-update'],
+  // "update(s)" alone — only when clearly about a product, not policy/approach
+  [/\b(?:updates?\s+(?:to|in|for)\s+(?:figma|claude|codex|gpt|gemini|chatgpt|make|figjam|slides|buzz))\b/i, 'product-update'],
+  [/\bupdates?\s+(?:to|in)\b/i, 'product-update'],
+  // improvements — only technical, not policy
+  [/\b(?:improv(?:e[ds]?|ement[s]?|ing))\s+(?:performance|speed|quality|accuracy|latency)\b/i, 'product-update'],
+  [/\b改善|修正\b/, 'product-update'],
+  // Research / academic (checked before weaker patterns)
+  [/\b(paper|research|study|arxiv|findings|experiments?|論文|研究|調査)\b/i, 'research-paper'],
+  [/\b(adversarial|reinforcement\s+learning|deep\s+learning|neural\s+network|machine\s+learning|SOTA|state.of.the.art)\b/i, 'research-paper'],
+  // Corporate / business news
+  [/\b(hir(?:e[ds]?|ing)|CEO|CTO|board\s+of|executive|headcount|layoff|restructur|採用|人事|経営)\b/i, 'corporate-news'],
+  // Funding / M&A
+  [/\b(funding|rais[ei]|series\s*[A-Z]|invest(?:ment|or)?|valuation|IPO|acqui(?:re[ds]?|sition)|資金調達|買収)\b/i, 'funding-acquisition'],
   // Partnership
-  [/\b(partner|collaborat|alliance|joint\s*venture|提携|パートナー|連携)\b/i, 'partnership'],
-  // Tutorial
+  [/\b(partner(?:ship)?|collaborat(?:e|ion)|alliance|joint\s*venture|提携|パートナー|連携)\b/i, 'partnership'],
+  // Tutorial / guide
   [/\b(tutorial|guide|how.to|walkthrough|step.by.step|チュートリアル|ガイド|手順)\b/i, 'tutorial-guide'],
-  // Opinion/analysis
+  // Opinion / analysis
   [/\b(opinion|editorial|analysis|perspective|commentary|outlook|意見|分析|見解|展望)\b/i, 'opinion-analysis'],
-  // Community trend
-  [/\b(trend|community|viral|hype|buzz|popular|trending|トレンド|話題)\b/i, 'community-trend'],
   // Security
-  [/\b(vulnerability|CVE|security|exploit|breach|attack|脆弱性|セキュリティ)\b/i, 'security-vulnerability'],
-  // Regulatory
-  [/\b(regulat|policy|law|legislation|compliance|ban|restrict|規制|法律|政策)\b/i, 'regulatory-policy'],
+  [/\b(vulnerability|CVE|security\s+(?:flaw|issue|patch)|exploit|breach|attack(?:s|ing)?|脆弱性|セキュリティ)\b/i, 'security-vulnerability'],
+  // Regulatory / policy / safety
+  [/\b(regulat(?:ion|ory)?|policy|law|legislation|compliance|ban|restrict|規制|法律|政策)\b/i, 'regulatory-policy'],
+  [/\b(safety|responsible\s+(?:ai|development)|frontier\s+risk|model\s+spec|安全性|倫理)\b/i, 'regulatory-policy'],
+  [/\b(disrupting\s+deceptive|verifiability|content\s+moderation|trust\s+and\s+safety)\b/i, 'regulatory-policy'],
   // Case study
-  [/\b(case.study|success.story|how\s+I|built|grew|revenue|MRR|事例|成功)\b/i, 'case-study'],
-  // Benchmark
+  [/\b(case.study|success.story|how\s+I|how\s+we|事例|成功)\b/i, 'case-study'],
+  // Benchmark / comparison
   [/\b(benchmark|comparison|vs\.?|versus|compared|比較|ベンチマーク)\b/i, 'benchmark-comparison'],
+  // Community trend (weakest signal — checked last)
+  [/\b(trend(?:ing)?|viral|hype|buzz|popular|トレンド|話題)\b/i, 'community-trend'],
 ];
 
 /** Relevance tag extraction rules */
@@ -159,7 +189,7 @@ function scoreSocial(
   contentSummary: string | null,
   engagement?: { likes?: number | null; retweets?: number | null; replies?: number | null; views?: number | null }
 ): number {
-  // X engagement data takes priority when available
+  // Engagement data (X, Reddit, HN, Zenn, Qiita, etc.)
   if (engagement?.likes != null) {
     const composite = (engagement.likes ?? 0) + (engagement.retweets ?? 0) * 2 + (engagement.replies ?? 0);
     if (composite >= 5000) return 20;
@@ -169,21 +199,6 @@ function scoreSocial(
     if (composite >= 100) return 12;
     if (composite >= 50) return 10;
     return 8;
-  }
-
-  // For HN/Reddit items, try to extract points/upvotes from summary
-  if (sourceTier === 'tertiary' && contentSummary) {
-    const pointsMatch = contentSummary.match(/(\d+)\s*(points|upvotes)/i);
-    if (pointsMatch) {
-      const points = parseInt(pointsMatch[1], 10);
-      if (points >= 500) return 20;
-      if (points >= 200) return 17;
-      if (points >= 100) return 14;
-      if (points >= 50) return 11;
-      return 8;
-    }
-    // Tertiary without explicit social signal
-    return 12;
   }
 
   // Default per tier
@@ -285,7 +300,7 @@ function scoreSoloRelevance(text: string): { score: number; matchedKeywords: str
 }
 
 /** Classify the item by keyword matching */
-function classify(text: string): { classification: string; confidence: number } {
+function classify(text: string, sourceTier?: 'primary' | 'secondary' | 'tertiary'): { classification: string; confidence: number } {
   const matches: { category: string; count: number }[] = [];
 
   for (const [pattern, category] of CLASSIFICATION_RULES) {
@@ -301,6 +316,11 @@ function classify(text: string): { classification: string; confidence: number } 
   }
 
   if (matches.length === 0) {
+    // Primary sources (official blogs) rarely post community trends —
+    // unmatched items are typically feature posts or general blog content.
+    if (sourceTier === 'primary') {
+      return { classification: 'blog-content', confidence: 0.4 };
+    }
     return { classification: 'community-trend', confidence: 0.5 };
   }
 
@@ -356,7 +376,9 @@ const CLASSIFICATION_SCORES: Record<string, number> = {
   'benchmark-comparison': 55,
   'research-paper': 50,
   'community-trend': 45,
+  'blog-content': 40,
   'opinion-analysis': 40,
+  'corporate-news': 35,
   'funding-acquisition': 30,
   'partnership': 25,
   'regulatory-policy': 20,
@@ -401,46 +423,166 @@ function computeClassificationModifier(classification: string): number {
 }
 
 // ---------------------------------------------------------------------------
-// Routing logic
+// Routing logic — Actionability-based (not NVA-based)
+//
+// Design principle: Each routing target answers a different question.
+// NVA measures "news value" (reporting worthiness), NOT actionability.
+// Routing qualification uses classification + tool tier + content patterns.
+// NVA is only used for post-routing prioritization (in the router script).
 // ---------------------------------------------------------------------------
 
-const EXPERIMENT_CLASSIFICATIONS = new Set(['product-release', 'product-update']);
+/** Business/corporate news patterns (strong signal — 1 match counts as 1.0) */
+const BUSINESS_PATTERNS: RegExp[] = [
+  /\b(funding|funds?\b|rais[ei]|series\s*[A-Z]|invest|valuation|IPO|資金調達|出資)/i,
+  /\b(acqui(?:re|sition)|merg(?:e|er)|買収|合併)\b/i,
+  /\b(partners?(?:hip)?|alliance|joint\s*venture|提携|パートナーシップ)\b/i,
+  /\b(revenue|profit|market\s*(?:cap|share)|stock|上場|株価|時価総額)\b/i,
+  /\b(hir(?:e|ing)|recruit|headcount|layoff|採用|解雇|リストラ)\b/i,
+];
+
+/**
+ * Non-technical/institutional content that sounds technical but isn't actionable.
+ * Patterns are split granularly so each `.test()` counts independently.
+ */
+const NON_ACTIONABLE_PATTERNS: RegExp[] = [
+  /\b(advisory\s*(?:council|board)|board\s*of\s*directors|appointed)\b/i,
+  /\b(initiative|coalition|consortium)\b/i,
+  /\bnat(?:ional)?\s*security\b/i,
+  /\b(gov(?:ernment)?|public\s*sector)\b/i,
+  /\b(military|defense|airstrikes?|warfare|geopolitic)\b/i,
+  /\benterprises?\b/i,
+  /\b(educators?|training\s*(?:program|initiative)|academic)\b/i,
+  /\b(clinical|healthcare|medical|patient|診療|医療)\b/i,
+  /\bhealth\b/i,
+];
+
+/**
+ * Detect if content is non-actionable for a solo developer.
+ * Uses a combined scoring approach:
+ *   - 2+ business patterns → non-actionable
+ *   - 1 business + 1 non-actionable → non-actionable
+ *   - 2+ non-actionable → non-actionable
+ */
+function isBusinessNews(text: string): boolean {
+  let bizHits = 0;
+  for (const p of BUSINESS_PATTERNS) {
+    if (p.test(text)) bizHits++;
+  }
+  if (bizHits >= 2) return true;
+
+  let nonTechHits = 0;
+  for (const p of NON_ACTIONABLE_PATTERNS) {
+    if (p.test(text)) nonTechHits++;
+  }
+
+  return (bizHits + nonTechHits) >= 2;
+}
+
+// Classifications where the news describes a concrete tool change
+const ACTIONABLE_CLASSIFICATIONS = new Set([
+  'product-release',
+  'product-update',
+  'security-vulnerability',
+]);
+
+// Classifications where content can be turned into a blog post from experience
+const WRITABLE_CLASSIFICATIONS = new Set([
+  'product-release',
+  'product-update',
+  'tutorial-guide',
+  'case-study',
+  'benchmark-comparison',
+  'security-vulnerability',
+]);
+
 const PROCESS_CLASSIFICATIONS = new Set(['tutorial-guide', 'case-study', 'opinion-analysis']);
 const SKILL_TAGS = new Set(['mcp', 'ai-agent']);
 
-/** Determine routing targets based on scores, classification, and tags */
+/**
+ * Determine routing targets using actionability-based criteria.
+ *
+ * Each target answers a fundamentally different question:
+ *   experiment       → "Can I try this today?"
+ *   content_idea     → "Can I write about this from my own experience?"
+ *   process_knowledge → "Does this teach me a better way to work?"
+ *   skill_knowledge   → "Does this extend my tool capabilities?"
+ *
+ * NVA total is NOT used for qualification (only as a minimal noise filter).
+ */
 function computeRoutingTargets(
   nvaTotal: number,
   nvaSoloRelevance: number,
   classification: string,
-  relevanceTags: string[]
+  classificationConfidence: number,
+  relevanceTags: string[],
+  combinedText: string,
+  myTools?: MyToolsConfig | null,
 ): RoutingTarget[] {
-  // Items below threshold get no routing
-  if (nvaTotal < 40) return [];
-
   const targets: RoutingTarget[] = [];
+  const businessContent = isBusinessNews(combinedText);
 
-  // experiment: product-release/update with high solo relevance
-  if (EXPERIMENT_CLASSIFICATIONS.has(classification) && nvaSoloRelevance >= 14) {
-    targets.push('experiment');
+  // ---------- experiment ----------
+  // "Can I try/install/configure this today?"
+  // Requires: actionable classification + S-tier tool + not business news
+  // Confidence >= 0.60 (not 0.70) to avoid losing items with ambiguous titles
+  // but clear tool relevance. The business-news filter compensates for lower threshold.
+  if (
+    ACTIONABLE_CLASSIFICATIONS.has(classification) &&
+    classificationConfidence >= 0.60 &&
+    !businessContent
+  ) {
+    if (myTools) {
+      // V2: must match an S-tier tool (daily-use)
+      if (relevanceTags.some(tag => myTools.S.includes(tag))) {
+        targets.push('experiment');
+      }
+    } else {
+      // V1 fallback: high solo-relevance keywords as proxy for tool match
+      if (nvaSoloRelevance >= 15) {
+        targets.push('experiment');
+      }
+    }
   }
 
-  // process_knowledge: best-practice/workflow/methodology type content
-  if (PROCESS_CLASSIFICATIONS.has(classification)) {
+  // ---------- content_idea ----------
+  // "Can I write about this from personal experience?"
+  // Requires: writable content type + S/A-tier tool + not business news
+  // Lower confidence (0.55) is OK — user manually reviews ideas anyway.
+  // Minimal NVA floor (40) as noise filter only.
+  if (
+    WRITABLE_CLASSIFICATIONS.has(classification) &&
+    classificationConfidence >= 0.55 &&
+    !businessContent &&
+    nvaTotal >= 40
+  ) {
+    if (myTools) {
+      // V2: must match S or A tier tool (have hands-on experience)
+      if (relevanceTags.some(tag => myTools.S.includes(tag) || myTools.A.includes(tag))) {
+        targets.push('content_idea');
+      }
+    } else {
+      // V1 fallback
+      if (nvaSoloRelevance >= 14) {
+        targets.push('content_idea');
+      }
+    }
+  }
+
+  // ---------- process_knowledge ----------
+  // "Does this teach me a better way to work?"
+  // Classification-driven, no tool tier required.
+  if (PROCESS_CLASSIFICATIONS.has(classification) && classificationConfidence >= 0.60) {
     targets.push('process_knowledge');
   }
 
-  // skill_knowledge: tool-update/open-source with mcp/agent tags
+  // ---------- skill_knowledge ----------
+  // "Does this extend my tool capabilities (MCP servers, agents, skills)?"
   if (
     (classification === 'product-update' || classification === 'product-release') &&
-    relevanceTags.some((tag) => SKILL_TAGS.has(tag))
+    relevanceTags.some(tag => SKILL_TAGS.has(tag)) &&
+    classificationConfidence >= 0.60
   ) {
     targets.push('skill_knowledge');
-  }
-
-  // content_idea: high total score
-  if (nvaTotal >= 60) {
-    targets.push('content_idea');
   }
 
   return targets;
@@ -469,8 +611,24 @@ export function computeNvaScores(
   const { score: technical, matchedKeywords: techKeywords } = scoreTechnical(combinedText);
   const { score: soloRelevance, matchedKeywords: soloKeywords } = scoreSoloRelevance(combinedText);
 
-  // Classification
-  const { classification, confidence } = classify(combinedText);
+  // Classification (tier-aware: primary sources default to 'blog-content' instead of 'community-trend')
+  let { classification, confidence } = classify(combinedText, sourceTier);
+
+  // Primary sources don't produce community trends — override to blog-content
+  if (sourceTier === 'primary' && classification === 'community-trend') {
+    classification = 'blog-content';
+    confidence = Math.max(0.3, confidence - 0.1);
+  }
+
+  // Downgrade false-positive product classifications:
+  // Corporate initiatives, regional expansions, training programs, etc. are NOT product features
+  if (
+    (classification === 'product-release' || classification === 'product-update') &&
+    NON_PRODUCT_OVERRIDE.test(combinedText)
+  ) {
+    classification = 'corporate-news';
+    confidence = Math.max(0.3, confidence - 0.15);
+  }
 
   // Relevance tags
   const relevanceTags = extractRelevanceTags(combinedText);
@@ -513,10 +671,16 @@ export function computeNvaScores(
     const v2SoloRelevance = Math.round(classificationMod / 5);
 
     const clampedTotal = Math.min(100, Math.max(0, nvaTotal));
-    const routingTargets = computeRoutingTargets(clampedTotal, v2SoloRelevance, classification, relevanceTags);
+    const routingTargets = computeRoutingTargets(
+      clampedTotal, v2SoloRelevance, classification, confidence,
+      relevanceTags, combinedText, myTools,
+    );
 
     if (routingTargets.length > 0) {
       reasoningParts.push(`routing=[${routingTargets.join(',')}]`);
+    }
+    if (isBusinessNews(combinedText)) {
+      reasoningParts.push('biz_news=true');
     }
 
     return {
@@ -564,10 +728,16 @@ export function computeNvaScores(
   }
 
   const clampedTotal = Math.min(100, Math.max(0, nvaTotal));
-  const routingTargets = computeRoutingTargets(clampedTotal, soloRelevance, classification, relevanceTags);
+  const routingTargets = computeRoutingTargets(
+    clampedTotal, soloRelevance, classification, confidence,
+    relevanceTags, combinedText, null,
+  );
 
   if (routingTargets.length > 0) {
     reasoningParts.push(`routing=[${routingTargets.join(',')}]`);
+  }
+  if (isBusinessNews(combinedText)) {
+    reasoningParts.push('biz_news=true');
   }
 
   return {

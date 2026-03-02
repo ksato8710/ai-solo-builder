@@ -34,6 +34,7 @@ interface SourceResult {
   method: string;
   collected: number;
   duplicates: number;
+  engagementFiltered?: number;
   error?: string;
   errorKind?: string;
 }
@@ -251,7 +252,8 @@ async function handleCollectSources(request: NextRequest): Promise<NextResponse>
         // Determine source tier from source_type
         const sourceTier = mapSourceType(source.source_type);
 
-        // 5. Insert new items
+        // 5. Insert new items (with engagement gate for tertiary sources)
+        let engagementFiltered = 0;
         const newItems = crawlResult.items.filter((item) => {
           if (existingHashes.has(urlHash(item.url))) {
             return false;
@@ -264,10 +266,24 @@ async function handleCollectSources(request: NextRequest): Promise<NextResponse>
             }
           }
 
+          // Tertiary sources: only save items with minimum engagement signal
+          // This prevents storing thousands of zero-engagement community posts
+          if (sourceTier === 'tertiary') {
+            const likes = item.engagement?.likes ?? 0;
+            const replies = item.engagement?.replies ?? 0;
+            if (likes + replies < 5) {
+              engagementFiltered++;
+              return false;
+            }
+          }
+
           return true;
         });
 
-        result.duplicates = crawlResult.items.length - newItems.length;
+        result.duplicates = crawlResult.items.length - newItems.length - engagementFiltered;
+        if (engagementFiltered > 0) {
+          result.engagementFiltered = engagementFiltered;
+        }
 
         if (newItems.length > 0) {
           const normalizedTitles = newItems.map((item) =>

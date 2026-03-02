@@ -244,6 +244,7 @@ interface HnHit {
   objectID: string;
   author: string;
   points: number;
+  num_comments: number;
   created_at: string;
   story_text?: string | null;
 }
@@ -279,8 +280,9 @@ export async function crawlHackerNews(config: Record<string, unknown>): Promise<
         author: hit.author,
         content_summary: hit.story_text
           ? truncate(stripHtml(hit.story_text), 500)
-          : `HN: ${hit.points} points`,
+          : undefined,
         published_at: hit.created_at,
+        engagement: { likes: hit.points, replies: hit.num_comments },
       });
     }
 
@@ -302,6 +304,7 @@ interface RedditChild {
     permalink: string;
     author: string;
     score: number;
+    num_comments: number;
     created_utc: number;
     selftext?: string;
     is_self: boolean;
@@ -342,8 +345,9 @@ export async function crawlReddit(
         author: post.author,
         content_summary: post.selftext
           ? truncate(post.selftext, 500)
-          : `Reddit: ${post.score} upvotes`,
+          : undefined,
         published_at: new Date(post.created_utc * 1000).toISOString(),
+        engagement: { likes: post.score, replies: post.num_comments },
       });
     }
 
@@ -557,6 +561,167 @@ export async function crawlJsonFeed(feedUrl: string): Promise<CrawlResult> {
 }
 
 // ---------------------------------------------------------------------------
+// Zenn (API)
+// ---------------------------------------------------------------------------
+
+interface ZennArticle {
+  id: number;
+  title: string;
+  slug: string;
+  published_at: string;
+  liked_count: number;
+  user: { username: string; name: string };
+  body_letters_count?: number;
+}
+
+export async function crawlZenn(config: Record<string, unknown>): Promise<CrawlResult> {
+  try {
+    const topic = (config.topic as string) || 'ai';
+    const count = (config.count as number) || 30;
+
+    const apiUrl = `https://zenn.dev/api/articles?topicname=${encodeURIComponent(topic)}&order=latest&count=${count}`;
+
+    const res = await safeFetch(apiUrl, {
+      headers: { Accept: 'application/json' },
+    });
+
+    if (!res.ok) {
+      return { items: [], error: `Zenn API error: HTTP ${res.status}` };
+    }
+
+    const data = (await res.json()) as { articles: ZennArticle[] };
+    const items: RawCollectedItem[] = [];
+
+    for (const article of data.articles ?? []) {
+      items.push({
+        title: article.title,
+        url: `https://zenn.dev/${article.user.username}/articles/${article.slug}`,
+        author: article.user.name || article.user.username,
+        published_at: article.published_at,
+        engagement: { likes: article.liked_count },
+      });
+    }
+
+    return { items };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    return { items: [], error: `Zenn crawl error: ${message}` };
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Qiita (API v2)
+// ---------------------------------------------------------------------------
+
+interface QiitaItem {
+  id: string;
+  title: string;
+  url: string;
+  created_at: string;
+  likes_count: number;
+  stocks_count: number;
+  comments_count: number;
+  user: { id: string; name?: string };
+}
+
+export async function crawlQiita(config: Record<string, unknown>): Promise<CrawlResult> {
+  try {
+    const tag = (config.tag as string) || 'AI';
+    const perPage = (config.per_page as number) || 20;
+
+    const apiUrl = `https://qiita.com/api/v2/items?query=tag:${encodeURIComponent(tag)}&per_page=${perPage}`;
+
+    const res = await safeFetch(apiUrl, {
+      headers: { Accept: 'application/json' },
+    });
+
+    if (!res.ok) {
+      return { items: [], error: `Qiita API error: HTTP ${res.status}` };
+    }
+
+    const data = (await res.json()) as QiitaItem[];
+    const items: RawCollectedItem[] = [];
+
+    for (const item of data) {
+      items.push({
+        title: item.title,
+        url: item.url,
+        author: item.user.name || item.user.id,
+        published_at: item.created_at,
+        engagement: {
+          likes: item.likes_count + item.stocks_count,
+          replies: item.comments_count,
+        },
+      });
+    }
+
+    return { items };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    return { items: [], error: `Qiita crawl error: ${message}` };
+  }
+}
+
+// ---------------------------------------------------------------------------
+// note (Search API)
+// ---------------------------------------------------------------------------
+
+interface NoteSearchNote {
+  id: number;
+  name: string;
+  key: string;
+  publish_at: string;
+  like_count: number;
+  comment_count: number;
+  user: { urlname: string; name: string; nickname: string };
+}
+
+export async function crawlNote(config: Record<string, unknown>): Promise<CrawlResult> {
+  try {
+    const query = (config.tag as string) || 'AI';
+    const size = (config.size as number) || 20;
+
+    const apiUrl =
+      `https://note.com/api/v3/searches?q=${encodeURIComponent(query)}` +
+      `&size=${size}&start=0&sort=new&context=note`;
+
+    const res = await safeFetch(apiUrl, {
+      headers: {
+        Accept: 'application/json',
+        Referer: 'https://note.com/',
+      },
+    });
+
+    if (!res.ok) {
+      return { items: [], error: `note API error: HTTP ${res.status}` };
+    }
+
+    const data = (await res.json()) as {
+      data: { notes: { contents: NoteSearchNote[] } };
+    };
+    const items: RawCollectedItem[] = [];
+
+    for (const note of data.data?.notes?.contents ?? []) {
+      items.push({
+        title: note.name,
+        url: `https://note.com/${note.user.urlname}/n/${note.key}`,
+        author: note.user.nickname || note.user.name || note.user.urlname,
+        published_at: note.publish_at,
+        engagement: {
+          likes: note.like_count,
+          replies: note.comment_count,
+        },
+      });
+    }
+
+    return { items };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    return { items: [], error: `note crawl error: ${message}` };
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Main dispatcher
 // ---------------------------------------------------------------------------
 
@@ -586,6 +751,18 @@ export async function collectFromSource(
 
       if (apiType === 'producthunt') {
         return crawlProductHunt(crawlConfig);
+      }
+
+      if (apiType === 'zenn') {
+        return crawlZenn(crawlConfig);
+      }
+
+      if (apiType === 'qiita') {
+        return crawlQiita(crawlConfig);
+      }
+
+      if (apiType === 'note') {
+        return crawlNote(crawlConfig);
       }
 
       return { items: [], error: `Unknown api_type: ${apiType}` };

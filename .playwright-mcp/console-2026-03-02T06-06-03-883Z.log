@@ -1,0 +1,74 @@
+[    1380ms] [WARNING] %c%s%c ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   @ http://localhost:3000/_next/static/chunks/b2b3e_next_dist_77a734fe._.js:2297
+[  332071ms] ReferenceError: minEngagement is not defined
+    at TimelineView (http://localhost:3000/_next/static/chunks/src_components_TimelineView_tsx_eb77498f._.js?id=%255Bproject%255D%252Fsrc%252Fcomponents%252FTimelineView.tsx+%255Bapp-client%255D+%2528ecmascript%2529:259:9)
+    at Object.react_stack_bottom_frame (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:14826:24)
+    at renderWithHooks (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:4651:24)
+    at updateFunctionComponent (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:6112:21)
+    at beginWork (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:6708:24)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9562:97)
+    at workLoopSync (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9456:40)
+    at renderRootSync (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9440:13)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9105:47)
+    at performSyncWorkOnRoot (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:10238:9)
+    at flushSyncWorkAcrossRoots_impl (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:10154:316)
+    at flushSyncWork$1 (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9237:86)
+    at Object.scheduleRefresh (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:299:13)
+    at http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_a8f11176._.js:391:33
+    at Set.forEach (<anonymous>)
+    at Object.performReactRefresh (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_a8f11176._.js:384:38)
+    at applyUpdate (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_a8f11176._.js:878:31)
+    at http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_a8f11176._.js:886:13
+[  345516ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/b2b3e_next_dist_77a734fe._.js:2297
+[  345620ms] ReferenceError: minEngagement is not defined
+    at TimelineView (http://localhost:3000/_next/static/chunks/src_components_TimelineView_tsx_eb77498f._.js?id=%255Bproject%255D%252Fsrc%252Fcomponents%252FTimelineView.tsx+%255Bapp-client%255D+%2528ecmascript%2529:235:9)
+    at Object.react_stack_bottom_frame (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:14826:24)
+    at renderWithHooks (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:4651:24)
+    at updateFunctionComponent (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:6112:21)
+    at beginWork (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:6687:639)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9562:97)
+    at workLoopSync (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9456:40)
+    at renderRootSync (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9440:13)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9105:47)
+    at performSyncWorkOnRoot (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:10238:9)
+    at flushSyncWorkAcrossRoots_impl (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:10154:316)
+    at flushSyncWork$1 (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9237:86)
+    at Object.scheduleRefresh (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:299:13)
+    at http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_a8f11176._.js:391:33
+    at Set.forEach (<anonymous>)
+    at Object.performReactRefresh (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_a8f11176._.js:384:38)
+    at applyUpdate (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_a8f11176._.js:878:31)
+    at http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_a8f11176._.js:886:13
+[  347135ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/timeline:0
+[  347393ms] ReferenceError: minEngagement is not defined
+    at TimelineView (http://localhost:3000/_next/static/chunks/src_components_TimelineView_tsx_eb77498f._.js:236:9)
+    at Object.react_stack_bottom_frame (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:14826:24)
+    at renderWithHooks (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:4651:24)
+    at updateFunctionComponent (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:6112:21)
+    at beginWork (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:6687:639)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9562:97)
+    at workLoopSync (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9456:40)
+    at renderRootSync (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9440:13)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9105:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:10230:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_a8f11176._.js:2647:64)
+[  350409ms] [WARNING] The resource http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__9d8a41f6._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/timeline:0
+[  351290ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/b2b3e_next_dist_77a734fe._.js:2297
+[  351948ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/timeline:0
+[  352103ms] ReferenceError: minEngagement is not defined
+    at TimelineView (http://localhost:3000/_next/static/chunks/src_components_TimelineView_tsx_eb77498f._.js:237:9)
+    at Object.react_stack_bottom_frame (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:14826:24)
+    at renderWithHooks (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:4651:24)
+    at updateFunctionComponent (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:6112:21)
+    at beginWork (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:6687:639)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9562:97)
+    at workLoopSync (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9456:40)
+    at renderRootSync (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9440:13)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:9105:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_react-dom_d19f9ff6._.js:10230:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/_next/static/chunks/b2b3e_next_dist_compiled_a8f11176._.js:2647:64)
+[  355114ms] [WARNING] The resource http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__9d8a41f6._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/timeline:0
+[  361225ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/b2b3e_next_dist_77a734fe._.js:2297

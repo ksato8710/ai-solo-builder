@@ -109,6 +109,14 @@ function ToolCards() {
       badge: 'workflows',
       badgeColor: 'bg-accent-leaf/15 text-accent-leaf',
     },
+    {
+      href: '/admin/timeline',
+      title: 'ソースタイムライン',
+      desc: '全ソースの収集データをリアルタイムで時系列表示・エンゲージメントフィルタ',
+      accent: 'border-cat-content/40 hover:border-cat-content',
+      badge: 'timeline',
+      badgeColor: 'bg-cat-content/15 text-cat-content',
+    },
   ];
 
   return (

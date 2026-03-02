@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import type { TimelineGroup, TimelineItem, TimelineSource, TimelineCompany } from '@/lib/timeline';
 
 interface TimelineViewProps {
@@ -20,10 +20,45 @@ const TIER_LABELS: { key: TierFilter; label: string }[] = [
   { key: 'tertiary', label: 'コミュニティ' },
 ];
 
+// ---------------------------------------------------------------------------
+// Platform grouping for engagement filters
+// ---------------------------------------------------------------------------
+
+type Platform = 'reddit' | 'x' | 'zenn' | 'qiita' | 'note';
+
+const PLATFORM_DEFS: { key: Platform; label: string; color: string }[] = [
+  { key: 'reddit', label: 'Reddit', color: 'text-orange-500' },
+  { key: 'x',      label: 'X (Twitter)', color: 'text-sky-500' },
+  { key: 'zenn',   label: 'Zenn', color: 'text-blue-500' },
+  { key: 'qiita',  label: 'Qiita', color: 'text-emerald-500' },
+  { key: 'note',   label: 'note', color: 'text-green-600' },
+];
+
+function sourceToPlatform(sourceName: string): Platform | null {
+  const lower = sourceName.toLowerCase();
+  if (lower.startsWith('reddit')) return 'reddit';
+  if (lower.startsWith('x ') || lower.startsWith('x@')) return 'x';
+  if (lower === 'zenn') return 'zenn';
+  if (lower === 'qiita') return 'qiita';
+  if (lower === 'note') return 'note';
+  return null;
+}
+
+type PlatformThresholds = Record<Platform, number>;
+
+const INITIAL_THRESHOLDS: PlatformThresholds = {
+  reddit: 0, x: 0, zenn: 0, qiita: 0, note: 0,
+};
+
 export default function TimelineView({ groups, sources, companies }: TimelineViewProps) {
   const [activeSource, setActiveSource] = useState(ALL_KEY);
   const [activeCompany, setActiveCompany] = useState(ALL_KEY);
   const [activeTier, setActiveTier] = useState<TierFilter>(ALL_KEY);
+  const [thresholds, setThresholds] = useState<PlatformThresholds>(INITIAL_THRESHOLDS);
+
+  const setThresholdFor = useCallback((platform: Platform, value: number) => {
+    setThresholds((prev) => ({ ...prev, [platform]: value }));
+  }, []);
 
   // Count items per source
   const sourceCounts = useMemo(() => {
@@ -68,9 +103,48 @@ export default function TimelineView({ groups, sources, companies }: TimelineVie
     [groups]
   );
 
-  // 3-axis AND filter (source × company × tier)
+  // Per-platform engagement stats (max, median, count, log-stops)
+  const platformStats = useMemo(() => {
+    const byPlatform = new Map<Platform, number[]>();
+    for (const group of groups) {
+      for (const item of group.items) {
+        if (item.sourceTier !== 'tertiary') continue;
+        const p = sourceToPlatform(item.sourceName);
+        if (!p) continue;
+        const score = item.engagementScore ?? 0;
+        const arr = byPlatform.get(p) || [];
+        arr.push(score);
+        byPlatform.set(p, arr);
+      }
+    }
+
+    const result = new Map<Platform, { max: number; median: number; count: number; stops: number[] }>();
+    for (const [platform, scores] of byPlatform) {
+      scores.sort((a, b) => a - b);
+      const median = scores[Math.floor(scores.length / 2)] ?? 0;
+      const max = scores[scores.length - 1] ?? 0;
+      const stops = [0];
+      const candidates = [1, 5, 10, 25, 50, 100, 200, 500, 1000, 2000, 5000];
+      for (const c of candidates) {
+        if (c <= max) stops.push(c);
+      }
+      result.set(platform, { max, median, count: scores.length, stops });
+    }
+    return result;
+  }, [groups]);
+
+  const isCommunityFilter = activeTier === 'tertiary';
+  const hasAnyThreshold = Object.values(thresholds).some((v) => v > 0);
+
+  // Reset engagement sliders when switching away from community
+  const handleTierChange = (tier: TierFilter) => {
+    setActiveTier(activeTier === tier ? ALL_KEY : tier);
+    if (tier !== 'tertiary') setThresholds(INITIAL_THRESHOLDS);
+  };
+
+  // 4-axis AND filter (source × company × tier × per-platform engagement)
   const filteredGroups = useMemo(() => {
-    const noFilter = activeSource === ALL_KEY && activeCompany === ALL_KEY && activeTier === ALL_KEY;
+    const noFilter = activeSource === ALL_KEY && activeCompany === ALL_KEY && activeTier === ALL_KEY && !hasAnyThreshold;
     if (noFilter) return groups;
 
     return groups
@@ -80,11 +154,21 @@ export default function TimelineView({ groups, sources, companies }: TimelineVie
           if (activeSource !== ALL_KEY && item.sourceName !== activeSource) return false;
           if (activeCompany !== ALL_KEY && item.companyId !== activeCompany) return false;
           if (activeTier !== ALL_KEY && item.sourceTier !== activeTier) return false;
+          if (isCommunityFilter && hasAnyThreshold) {
+            const p = sourceToPlatform(item.sourceName);
+            if (p) {
+              const minForPlatform = thresholds[p];
+              if (minForPlatform > 0) {
+                const score = item.engagementScore ?? 0;
+                if (score < minForPlatform) return false;
+              }
+            }
+          }
           return true;
         }),
       }))
       .filter((g) => g.items.length > 0);
-  }, [groups, activeSource, activeCompany, activeTier]);
+  }, [groups, activeSource, activeCompany, activeTier, thresholds, hasAnyThreshold, isCommunityFilter]);
 
   // Sources that actually have items, sorted by count desc
   const activeSources = useMemo(() => {
@@ -155,7 +239,7 @@ export default function TimelineView({ groups, sources, companies }: TimelineVie
       )}
 
       {/* Tier Filter Chips */}
-      <div className="mb-8">
+      <div className={isCommunityFilter ? 'mb-4' : 'mb-8'}>
         <div className="text-[10px] font-semibold text-text-light uppercase tracking-wider mb-2">
           タイプ
         </div>
@@ -166,11 +250,39 @@ export default function TimelineView({ groups, sources, companies }: TimelineVie
               label={label}
               count={tierCounts.get(key) || 0}
               isActive={activeTier === key}
-              onClick={() => setActiveTier(activeTier === key ? ALL_KEY : key)}
+              onClick={() => handleTierChange(key)}
             />
           ))}
         </div>
       </div>
+
+      {/* Per-platform Engagement Sliders (community tier only) */}
+      {isCommunityFilter && platformStats.size > 0 && (
+        <div className="mb-8 rounded-xl bg-bg-card border border-border p-4">
+          <div className="flex items-center justify-between mb-3">
+            <div className="text-[10px] font-semibold text-text-light uppercase tracking-wider">
+              エンゲージメント フィルタ
+            </div>
+            <span className="text-xs text-text-muted">
+              {filteredGroups.reduce((sum, g) => sum + g.items.length, 0)}件 表示中
+            </span>
+          </div>
+          <div className="space-y-3">
+            {PLATFORM_DEFS.filter((d) => platformStats.has(d.key)).map((def) => {
+              const st = platformStats.get(def.key)!;
+              return (
+                <PlatformSlider
+                  key={def.key}
+                  platform={def}
+                  stats={st}
+                  value={thresholds[def.key]}
+                  onChange={(v) => setThresholdFor(def.key, v)}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Timeline */}
       {filteredGroups.length > 0 ? (
@@ -254,6 +366,67 @@ function DateGroupSummary({ items, companies }: { items: TimelineItem[]; compani
 }
 
 // ---------------------------------------------------------------------------
+// Per-platform Engagement Slider
+// ---------------------------------------------------------------------------
+
+function PlatformSlider({
+  platform,
+  stats,
+  value,
+  onChange,
+}: {
+  platform: { key: Platform; label: string; color: string };
+  stats: { max: number; median: number; count: number; stops: number[] };
+  value: number;
+  onChange: (v: number) => void;
+}) {
+  const { stops, max, median, count } = stats;
+  const currentStopIdx = stops.findIndex((s) => s >= value);
+  const effectiveIdx = currentStopIdx === -1 ? stops.length - 1 : currentStopIdx;
+
+  return (
+    <div className="flex items-center gap-3">
+      {/* Platform label */}
+      <div className="w-20 flex-shrink-0">
+        <span className={`text-[11px] font-semibold ${platform.color}`}>{platform.label}</span>
+        <div className="text-[9px] text-text-light">
+          {count}件 / 中央値 {formatEngagement(median)}
+        </div>
+      </div>
+
+      {/* Slider */}
+      <div className="flex-1 flex items-center gap-2">
+        <input
+          type="range"
+          min={0}
+          max={stops.length - 1}
+          value={effectiveIdx}
+          onChange={(e) => onChange(stops[parseInt(e.target.value, 10)] ?? 0)}
+          className="flex-1 h-1.5 appearance-none bg-border rounded-full cursor-pointer
+            [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:h-3.5
+            [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-accent-leaf
+            [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white
+            [&::-webkit-slider-thumb]:shadow-sm [&::-webkit-slider-thumb]:cursor-pointer"
+        />
+      </div>
+
+      {/* Threshold display */}
+      <div className="w-16 flex-shrink-0 text-right">
+        <span className={`text-[11px] tabular-nums font-semibold ${value > 0 ? 'text-accent-leaf' : 'text-text-light'}`}>
+          {value === 0 ? 'すべて' : `${formatEngagement(value)}+`}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function formatEngagement(n: number): string {
+  if (n >= 10000) return `${(n / 1000).toFixed(0)}k`;
+  if (n >= 1000) return `${(n / 1000).toFixed(1)}k`;
+  return String(n);
+}
+
+// ---------------------------------------------------------------------------
 // Filter Chip
 // ---------------------------------------------------------------------------
 
@@ -314,25 +487,141 @@ function TimelineCard({ item }: { item: TimelineItem }) {
     hour12: false,
   });
 
-  // [Feature 1] NVA-based visual hierarchy (V2: lowered to ≥70)
-  const isHighNva = item.nvaTotal != null && item.nvaTotal >= 70;
-  const cardBorderClass = isHighNva
-    ? 'border-l-[3px] border-l-accent-moss border border-border'
-    : 'border border-border';
+  const nva = item.nvaTotal ?? 0;
+  // 3-tier card hierarchy: compact (<70), normal (70-79), featured (≥80)
+  const tier: 'compact' | 'normal' | 'featured' =
+    nva >= 80 ? 'featured' : nva >= 70 ? 'normal' : 'compact';
 
-  // [Feature 4] Language badge — show EN for non-Japanese sources
   const showLangBadge = !item.isJapaneseSource;
+  const hasSummary = item.contentSummary && !isSimilarToTitle(item.contentSummary, item.title, item.titleJa);
+  const hasOriginalTitle = !item.isJapaneseSource && item.titleJa && item.originalTitle && item.titleJa !== item.originalTitle;
 
+  // ── Compact: single-line row ──
+  if (tier === 'compact') {
+    return (
+      <a
+        href={item.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 rounded-lg bg-bg-card/60 px-3 py-2 border border-border/50 transition-all hover:border-border-hover hover:bg-bg-card group"
+      >
+        <span className="text-[10px] text-text-light tabular-nums flex-shrink-0 w-10">{time}</span>
+        <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-semibold bg-accent-leaf/10 text-accent-leaf flex-shrink-0">
+          {item.sourceName}
+        </span>
+        {item.sourceTier === 'tertiary' && (
+          <span className="inline-flex items-center px-1 py-0.5 rounded text-[8px] font-medium bg-amber-50 text-amber-500 border border-amber-100 flex-shrink-0">
+            コミュニティ
+          </span>
+        )}
+        <span className="text-[13px] text-text-muted truncate group-hover:text-text-deep transition-colors">
+          {displayTitle}
+        </span>
+        {item.engagementScore != null && item.engagementScore > 0 && (
+          <span className="text-[10px] text-amber-500 tabular-nums flex-shrink-0 ml-auto" title="エンゲージメント">
+            {formatEngagement(item.engagementScore)}
+          </span>
+        )}
+        {item.nvaTotal != null && (
+          <span className="text-[10px] text-text-light tabular-nums flex-shrink-0">{item.nvaTotal}</span>
+        )}
+      </a>
+    );
+  }
+
+  // ── Featured: large card with emphasis ──
+  if (tier === 'featured') {
+    return (
+      <a
+        href={item.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block rounded-xl border-l-4 border-l-accent-moss border border-accent-moss/20 bg-bg-card p-5 transition-all hover:ring-2 hover:ring-accent-leaf/30 hover:border-border-hover group"
+      >
+        <div className="flex items-start justify-between gap-4">
+          <div className="min-w-0 flex-1">
+            {/* Badges */}
+            <div className="flex items-center flex-wrap gap-1.5 mb-2">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-accent-leaf/15 text-accent-leaf">
+                {item.sourceName}
+              </span>
+              {item.companyName && (
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent-sage/10 text-accent-sage">
+                  {item.companyName}
+                </span>
+              )}
+              {showLangBadge && (
+                <span className="inline-flex items-center px-1 py-0.5 rounded text-[9px] font-medium bg-blue-50 text-blue-400 border border-blue-100">
+                  EN
+                </span>
+              )}
+              {item.sourceTier === 'tertiary' && (
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-medium bg-amber-50 text-amber-500 border border-amber-100">
+                  コミュニティ
+                </span>
+              )}
+              <span className="text-[10px] text-text-light">{time}</span>
+              <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-accent-moss/15 text-accent-moss">
+                注目
+              </span>
+              {item.classification && (
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] bg-bg-warm text-text-muted">
+                  {item.classification}
+                </span>
+              )}
+              {item.contentSlug && (
+                <span
+                  className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-nadeshiko/10 text-nadeshiko cursor-pointer"
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.location.href = `/news/${item.contentSlug}`; }}
+                >
+                  記事あり
+                </span>
+              )}
+            </div>
+
+            {/* Title — large */}
+            <h3 className="text-base font-bold text-text-deep leading-snug group-hover:text-accent-moss transition-colors">
+              {displayTitle}
+              <span className="inline-block ml-1 text-text-light text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+            </h3>
+
+            {/* Original title */}
+            {hasOriginalTitle && (
+              <p className="text-[11px] text-text-light leading-snug mt-0.5">{item.originalTitle}</p>
+            )}
+
+            {/* Summary — show up to 3 lines for featured */}
+            {hasSummary && (
+              <p className="text-sm text-text-muted leading-relaxed mt-2 line-clamp-3">{item.contentSummary}</p>
+            )}
+
+            {item.sourceDomain && (
+              <span className="text-[10px] text-text-light opacity-60 mt-2 inline-block">{item.sourceDomain}</span>
+            )}
+          </div>
+
+          {/* NVA Score — larger */}
+          {item.nvaTotal != null && (
+            <div className="flex-shrink-0 text-right">
+              <div className="text-sm font-bold tabular-nums text-accent-moss">{item.nvaTotal}</div>
+              <div className="text-[9px] text-text-light">NVA</div>
+            </div>
+          )}
+        </div>
+      </a>
+    );
+  }
+
+  // ── Normal: fixed-height card (NVA 70-79), title wraps ──
   return (
     <a
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`block rounded-xl ${cardBorderClass} bg-bg-card p-4 transition-all hover:ring-2 hover:ring-accent-leaf/30 hover:border-border-hover group`}
+      className="block rounded-xl border-l-[3px] border-l-accent-moss border border-border bg-bg-card p-4 h-[88px] overflow-hidden transition-all hover:ring-2 hover:ring-accent-leaf/30 hover:border-border-hover group"
     >
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex items-start justify-between gap-3 h-full">
         <div className="min-w-0 flex-1">
-          {/* Source badge + company + lang + time + classification + article link */}
           <div className="flex items-center flex-wrap gap-1.5 mb-1.5">
             <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-accent-leaf/15 text-accent-leaf">
               {item.sourceName}
@@ -342,89 +631,44 @@ function TimelineCard({ item }: { item: TimelineItem }) {
                 {item.companyName}
               </span>
             )}
-            {/* [Feature 4] Language badge */}
             {showLangBadge && (
               <span className="inline-flex items-center px-1 py-0.5 rounded text-[9px] font-medium bg-blue-50 text-blue-400 border border-blue-100">
                 EN
               </span>
             )}
-            {/* Tier badge for community sources */}
             {item.sourceTier === 'tertiary' && (
               <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-medium bg-amber-50 text-amber-500 border border-amber-100">
                 コミュニティ
               </span>
             )}
             <span className="text-[10px] text-text-light">{time}</span>
-            {/* [Feature 1] NVA highlight badge */}
-            {isHighNva && (
-              <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-accent-moss/15 text-accent-moss">
-                注目
-              </span>
-            )}
+            <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-accent-moss/15 text-accent-moss">
+              注目
+            </span>
             {item.classification && (
               <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] bg-bg-warm text-text-muted">
                 {item.classification}
               </span>
             )}
-            {/* [Feature 5] Internal article link badge */}
             {item.contentSlug && (
               <span
                 className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-nadeshiko/10 text-nadeshiko cursor-pointer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  window.location.href = `/news/${item.contentSlug}`;
-                }}
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.location.href = `/news/${item.contentSlug}`; }}
               >
                 記事あり
               </span>
             )}
           </div>
 
-          {/* Title */}
-          <h3 className={`font-semibold text-text-deep leading-snug group-hover:text-accent-moss transition-colors ${isHighNva ? 'text-[15px]' : 'text-sm'}`}>
+          <h3 className="text-[15px] font-semibold text-text-deep leading-snug group-hover:text-accent-moss transition-colors line-clamp-2">
             {displayTitle}
-            <span className="inline-block ml-1 text-text-light text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">
-              ↗
-            </span>
+            <span className="inline-block ml-1 text-text-light text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
           </h3>
-
-          {/* Original title (shown only for non-Japanese sources when translated) */}
-          {!item.isJapaneseSource && item.titleJa && item.originalTitle && item.titleJa !== item.originalTitle && (
-            <p className="text-[11px] text-text-light leading-snug mt-0.5">
-              {item.originalTitle}
-            </p>
-          )}
-
-          {/* [Feature 2] Content summary — hide if too similar to title */}
-          {item.contentSummary && !isSimilarToTitle(item.contentSummary, item.title, item.titleJa) && (
-            <p className="text-xs text-text-muted leading-relaxed mt-1 line-clamp-2">
-              {item.contentSummary}
-            </p>
-          )}
-
-          {/* [Feature 4] Source domain */}
-          {item.sourceDomain && (
-            <span className="text-[10px] text-text-light opacity-60 mt-1 inline-block">
-              {item.sourceDomain}
-            </span>
-          )}
         </div>
 
-        {/* NVA Score */}
         {item.nvaTotal != null && (
           <div className="flex-shrink-0 text-right">
-            <div
-              className={`text-xs font-bold tabular-nums ${
-                item.nvaTotal >= 70
-                  ? 'text-accent-moss'
-                  : item.nvaTotal >= 50
-                  ? 'text-accent-bark'
-                  : 'text-text-light'
-              }`}
-            >
-              {item.nvaTotal}
-            </div>
+            <div className="text-xs font-bold tabular-nums text-accent-moss">{item.nvaTotal}</div>
             <div className="text-[9px] text-text-light">NVA</div>
           </div>
         )}

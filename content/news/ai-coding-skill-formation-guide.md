@@ -1,9 +1,9 @@
 ---
 title: "AIコーディング支援の二面性 — スキルを守りながら生産性を上げる6つの使い方"
 description: "Anthropicの最新研究が示す「AI使用でスキル17%低下」の衝撃と、学習効果を維持しながらAIを活用する6つのパターン。認知関与型アプローチで、生産性とスキル獲得を両立させる方法を解説します。"
-pubDate: "2026-03-02T12:30:00+09:00"
-category: "dev-knowledge"
-tags: ["AI", "コーディング", "スキル開発", "生産性", "Claude", "学習", "Anthropic"]
+date: "2026-03-02"
+contentType: "news"
+tags: ["dev-knowledge", "AI", "コーディング", "スキル開発", "生産性", "Claude", "学習", "Anthropic"]
 author: "tifa"
 image: "https://cdn.sanity.io/images/4zrzovbb/website/b009bf674206d736940ade254b112d1cf9fd380e-4584x2580.png"
 relatedProducts: ["claude-code", "cursor", "github-copilot"]

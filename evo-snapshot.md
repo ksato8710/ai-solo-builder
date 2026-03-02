@@ -1,0 +1,1437 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+  - generic:
+    - img
+    - img
+    - img
+    - img
+    - img
+  - generic:
+    - img
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "AI Solo Craft" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e7]: AI Solo Craft
+      - navigation [ref=e8]:
+        - link "🗞️ ダイジェスト" [ref=e9] [cursor=pointer]:
+          - /url: /#digest-summary
+        - link "📰 ニュース" [ref=e10] [cursor=pointer]:
+          - /url: /news
+        - link "🏷️ プロダクト" [ref=e11] [cursor=pointer]:
+          - /url: /category/products
+        - link "🔬 Evolution" [ref=e12] [cursor=pointer]:
+          - /url: /evolution
+      - generic [ref=e13]:
+        - button "ニュースレター" [ref=e14]:
+          - img [ref=e15]
+          - text: ニュースレター
+        - button "このページを共有" [ref=e17]:
+          - img [ref=e18]
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]: ✦
+          - text: AI最前線
+        - heading "AI Evolution" [level=1] [ref=e28]
+        - paragraph [ref=e29]: Claude・Codex・Gemini・Figma — 主要AIツールの進化を追跡
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]: "56"
+            - generic [ref=e33]: Updates
+          - generic [ref=e35]:
+            - generic [ref=e36]: "5"
+            - generic [ref=e37]: Sources
+          - generic [ref=e39]:
+            - generic [ref=e40]: "4"
+            - generic [ref=e41]: Products
+        - generic [ref=e42]:
+          - generic [ref=e43]: Scroll to explore
+          - img [ref=e44]
+      - generic [ref=e47]:
+        - button "ALL すべて 56" [ref=e48]:
+          - generic [ref=e49]: ALL
+          - generic [ref=e50]: すべて
+          - generic [ref=e51]: "56"
+        - button "CL Claude 13" [ref=e52]:
+          - generic [ref=e53]: CL
+          - generic [ref=e54]: Claude
+          - generic [ref=e55]: "13"
+        - button "CX Codex 18" [ref=e56]:
+          - generic [ref=e57]: CX
+          - generic [ref=e58]: Codex
+          - generic [ref=e59]: "18"
+        - button "GM Gemini 10" [ref=e60]:
+          - generic [ref=e61]: GM
+          - generic [ref=e62]: Gemini
+          - generic [ref=e63]: "10"
+        - button "FG Figma 15" [ref=e64]:
+          - generic [ref=e65]: FG
+          - generic [ref=e66]: Figma
+          - generic [ref=e67]: "15"
+        - generic [ref=e68]: 56 updates
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - generic [ref=e73]: "28"
+            - generic [ref=e74]: Feb
+            - generic [ref=e75]: "2026"
+          - generic [ref=e78]:
+            - generic [ref=e79]:
+              - generic [ref=e80]: Codex
+              - link "OpenAI News" [ref=e81] [cursor=pointer]:
+                - /url: https://openai.com/index/our-agreement-with-the-department-of-war
+                - text: OpenAI News
+                - img [ref=e82]
+            - link "陸軍省との合意 Our agreement with the Department of War" [ref=e84] [cursor=pointer]:
+              - /url: https://openai.com/index/our-agreement-with-the-department-of-war
+              - heading "陸軍省との合意" [level=3] [ref=e85]
+              - paragraph [ref=e86]: Our agreement with the Department of War
+            - paragraph [ref=e87]: Details on OpenAI’s contract with the Department of War, outlining safety red lines, legal protections, and how AI systems will be deployed in classified environments.
+            - generic [ref=e89]: NVA 48
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - generic [ref=e92]: "27"
+            - generic [ref=e93]: Feb
+            - generic [ref=e94]: "2026"
+          - generic [ref=e97]:
+            - generic [ref=e98]:
+              - generic [ref=e99]: Figma
+              - link "Figma Blog" [ref=e100] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/workflow-lab-ai-image-tooling/
+                - text: Figma Blog
+                - img [ref=e101]
+            - 'link "ワークフロー研究室：FigmaによるAI画像ツーリングとインタラクティブ・プロトタイピング Workflow lab: AI image tooling and interactive prototyping in Figma" [ref=e103] [cursor=pointer]':
+              - /url: https://www.figma.com/blog/workflow-lab-ai-image-tooling/
+              - heading "ワークフロー研究室：FigmaによるAI画像ツーリングとインタラクティブ・プロトタイピング" [level=3] [ref=e104]
+              - paragraph [ref=e105]: "Workflow lab: AI image tooling and interactive prototyping in Figma"
+            - paragraph [ref=e106]: A workflow to try—bringing together precise image editing, Vectorize, and interactive prototypes to move from concept to crit to completion faster.
+            - generic [ref=e108]: NVA 39
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - generic [ref=e111]: "27"
+            - generic [ref=e112]: Feb
+            - generic [ref=e113]: "2026"
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - generic [ref=e118]: Codex
+              - link "OpenAI News" [ref=e119] [cursor=pointer]:
+                - /url: https://openai.com/index/update-on-mental-health-related-work
+                - text: OpenAI News
+                - img [ref=e120]
+            - link "メンタルヘルス関連の最新情報 An update on our mental health-related work" [ref=e122] [cursor=pointer]:
+              - /url: https://openai.com/index/update-on-mental-health-related-work
+              - heading "メンタルヘルス関連の最新情報" [level=3] [ref=e123]
+              - paragraph [ref=e124]: An update on our mental health-related work
+            - paragraph [ref=e125]: OpenAI shares updates on its mental health safety work, including parental controls, trusted contacts, improved distress detection, and recent litigation developments.
+            - generic [ref=e127]: NVA 62
+            - generic [ref=e128]:
+              - generic [ref=e130]:
+                - text: Community
+                - generic [ref=e131]: "4"
+              - generic [ref=e132]:
+                - link "Official OpenAIとマイクロソフトの共同声明 OpenAI News" [ref=e133] [cursor=pointer]:
+                  - /url: https://openai.com/index/continuing-microsoft-partnership
+                  - generic [ref=e134]: Official
+                  - paragraph [ref=e135]: OpenAIとマイクロソフトの共同声明
+                  - generic [ref=e137]: OpenAI News
+                - link "Official Amazon Bedrockにおけるエージェントのためのステートフル・ランタイム環境の紹介 OpenAI News" [ref=e138] [cursor=pointer]:
+                  - /url: https://openai.com/index/introducing-the-stateful-runtime-environment-for-agents-in-amazon-bedrock
+                  - generic [ref=e139]: Official
+                  - paragraph [ref=e140]: Amazon Bedrockにおけるエージェントのためのステートフル・ランタイム環境の紹介
+                  - generic [ref=e142]: OpenAI News
+                - link "Official OpenAIとAmazonが戦略的パートナーシップを発表 OpenAI News" [ref=e143] [cursor=pointer]:
+                  - /url: https://openai.com/index/amazon-partnership
+                  - generic [ref=e144]: Official
+                  - paragraph [ref=e145]: OpenAIとAmazonが戦略的パートナーシップを発表
+                  - generic [ref=e147]: OpenAI News
+                - link "Official すべての人のためにAIを拡張する OpenAI News" [ref=e148] [cursor=pointer]:
+                  - /url: https://openai.com/index/scaling-ai-for-everyone
+                  - generic [ref=e149]: Official
+                  - paragraph [ref=e150]: すべての人のためにAIを拡張する
+                  - generic [ref=e152]: OpenAI News
+        - generic [ref=e153]:
+          - generic [ref=e154]:
+            - generic [ref=e155]: "26"
+            - generic [ref=e156]: Feb
+            - generic [ref=e157]: "2026"
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - generic [ref=e162]: Gemini
+              - link "Google AI Blog" [ref=e163] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/technology/developers-tools/build-with-nano-banana-2/
+                - text: Google AI Blog
+                - img [ref=e164]
+            - link "当社の最高の画像生成および編集モデルである Nano Banana 2 を使用して構築します Build with Nano Banana 2, our best image generation and editing model" [ref=e166] [cursor=pointer]:
+              - /url: https://blog.google/innovation-and-ai/technology/developers-tools/build-with-nano-banana-2/
+              - heading "当社の最高の画像生成および編集モデルである Nano Banana 2 を使用して構築します" [level=3] [ref=e167]
+              - paragraph [ref=e168]: Build with Nano Banana 2, our best image generation and editing model
+            - paragraph [ref=e169]: Nano Banana 2 (Gemini 3.1 Flash Image) delivers Pro-level intelligence and fidelity for all image applications.
+            - generic [ref=e171]: NVA 48
+            - generic [ref=e172]:
+              - generic [ref=e174]:
+                - text: Community
+                - generic [ref=e175]: "3"
+              - generic [ref=e176]:
+                - link "Official Google とマサチューセッツ AI ハブは、連邦向けの新しい AI トレーニング イニシアチブを立ち上げています。 Google AI Blog" [ref=e177] [cursor=pointer]:
+                  - /url: https://blog.google/company-news/outreach-and-initiatives/grow-with-google/google-ai-training-massachusetts-residents/
+                  - generic [ref=e178]: Official
+                  - paragraph [ref=e179]: Google とマサチューセッツ AI ハブは、連邦向けの新しい AI トレーニング イニシアチブを立ち上げています。
+                  - generic [ref=e181]: Google AI Blog
+                - link "Official Translate の AI を活用した新しいアップデートにより、より多くのコンテキストを取得し、翻訳をより深く理解できます。 Google AI Blog" [ref=e182] [cursor=pointer]:
+                  - /url: https://blog.google/products-and-platforms/products/translate/translation-context-ai-update/
+                  - generic [ref=e183]: Official
+                  - paragraph [ref=e184]: Translate の AI を活用した新しいアップデートにより、より多くのコンテキストを取得し、翻訳をより深く理解できます。
+                  - generic [ref=e186]: Google AI Blog
+                - 'link "Official Nano Banana 2: Pro 機能と超高速スピードの組み合わせ Google AI Blog" [ref=e187] [cursor=pointer]':
+                  - /url: https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/
+                  - generic [ref=e188]: Official
+                  - paragraph [ref=e189]: "Nano Banana 2: Pro 機能と超高速スピードの組み合わせ"
+                  - generic [ref=e191]: Google AI Blog
+        - generic [ref=e192]:
+          - generic [ref=e193]:
+            - generic [ref=e194]: "26"
+            - generic [ref=e195]: Feb
+            - generic [ref=e196]: "2026"
+          - generic [ref=e199]:
+            - generic [ref=e200]:
+              - generic [ref=e201]: Figma
+              - link "Figma Release Notes" [ref=e202] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=codex-to-figma
+                - text: Figma Release Notes
+                - img [ref=e203]
+            - link "コーデックスからフィグマへ Codex to Figma" [ref=e205] [cursor=pointer]:
+              - /url: https://www.figma.com/release-notes/?title=codex-to-figma
+              - heading "コーデックスからフィグマへ" [level=3] [ref=e206]
+              - paragraph [ref=e207]: Codex to Figma
+            - paragraph [ref=e208]: Use the Figma MCP server with Codex to capture full screens or specific elements of your applications and convert them to editable design layers in Figma.
+            - generic [ref=e210]: NVA 66
+            - generic [ref=e211]:
+              - generic [ref=e213]:
+                - text: Community
+                - generic [ref=e214]: "2"
+              - generic [ref=e215]:
+                - link "Official CodexとFigmaを使ったフロントエンドUIの構築 Figma Blog" [ref=e216] [cursor=pointer]:
+                  - /url: https://www.figma.com/blog/introducing-codex-to-figma/
+                  - generic [ref=e217]: Official
+                  - paragraph [ref=e218]: CodexとFigmaを使ったフロントエンドUIの構築
+                  - generic [ref=e220]: Figma Blog
+                - link "Official Figma Buzzのテンプレートピッカーのアップデート Figma Release Notes" [ref=e221] [cursor=pointer]:
+                  - /url: https://www.figma.com/release-notes/?title=template-picker-updates-in-figma-buzz
+                  - generic [ref=e222]: Official
+                  - paragraph [ref=e223]: Figma Buzzのテンプレートピッカーのアップデート
+                  - generic [ref=e225]: Figma Release Notes
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - generic [ref=e228]: "26"
+            - generic [ref=e229]: Feb
+            - generic [ref=e230]: "2026"
+          - generic [ref=e233]:
+            - generic [ref=e234]:
+              - generic [ref=e235]: Codex
+              - link "OpenAI News" [ref=e236] [cursor=pointer]:
+                - /url: https://openai.com/index/pacific-northwest-national-laboratory
+                - text: OpenAI News
+                - img [ref=e237]
+            - link "パシフィック・ノースウエスト国立研究所とOpenAIが提携、連邦政府の許認可を加速 Pacific Northwest National Laboratory and OpenAI partner to accelerate federal permitting" [ref=e239] [cursor=pointer]:
+              - /url: https://openai.com/index/pacific-northwest-national-laboratory
+              - heading "パシフィック・ノースウエスト国立研究所とOpenAIが提携、連邦政府の許認可を加速" [level=3] [ref=e240]
+              - paragraph [ref=e241]: Pacific Northwest National Laboratory and OpenAI partner to accelerate federal permitting
+            - paragraph [ref=e242]: OpenAI and Pacific Northwest National Laboratory introduce DraftNEPABench, a new benchmark evaluating how AI coding agents can accelerate federal permitting—showing potential to reduce NEPA drafting time by up to 15% and modernize infrastructure reviews.
+            - generic [ref=e244]: NVA 68
+            - generic [ref=e245]:
+              - generic [ref=e247]:
+                - text: Community
+                - generic [ref=e248]: "1"
+              - link "Official OpenAI CodexとFigmaがシームレスなコード・トゥ・デザイン体験を開始 OpenAI News" [ref=e250] [cursor=pointer]:
+                - /url: https://openai.com/index/figma-partnership
+                - generic [ref=e251]: Official
+                - paragraph [ref=e252]: OpenAI CodexとFigmaがシームレスなコード・トゥ・デザイン体験を開始
+                - generic [ref=e254]: OpenAI News
+        - generic [ref=e255]:
+          - generic [ref=e256]:
+            - generic [ref=e257]: "25"
+            - generic [ref=e258]: Feb
+            - generic [ref=e259]: "2026"
+          - generic [ref=e262]:
+            - generic [ref=e263]:
+              - generic [ref=e264]: Gemini
+              - link "Google AI Blog" [ref=e265] [cursor=pointer]:
+                - /url: https://blog.google/products-and-platforms/products/search/circle-to-search-february-2026/
+                - text: Google AI Blog
+                - img [ref=e266]
+            - link "全体像を見て、丸で検索して外観を見つけてください See the whole picture and find the look with Circle to Search" [ref=e268] [cursor=pointer]:
+              - /url: https://blog.google/products-and-platforms/products/search/circle-to-search-february-2026/
+              - heading "全体像を見て、丸で検索して外観を見つけてください" [level=3] [ref=e269]
+              - paragraph [ref=e270]: See the whole picture and find the look with Circle to Search
+            - paragraph [ref=e271]: We’ve updated Circle to Search so you can now explore multiple items in a single image.
+            - generic [ref=e273]: NVA 39
+            - generic [ref=e274]:
+              - generic [ref=e276]:
+                - text: Community
+                - generic [ref=e277]: "1"
+              - link "Official Samsung Galaxy S26 のよりインテリジェントな Android Google AI Blog" [ref=e279] [cursor=pointer]:
+                - /url: https://blog.google/products-and-platforms/platforms/android/samsung-unpacked-2026/
+                - generic [ref=e280]: Official
+                - paragraph [ref=e281]: Samsung Galaxy S26 のよりインテリジェントな Android
+                - generic [ref=e283]: Google AI Blog
+        - generic [ref=e284]:
+          - generic [ref=e285]:
+            - generic [ref=e286]: "25"
+            - generic [ref=e287]: Feb
+            - generic [ref=e288]: "2026"
+          - generic [ref=e291]:
+            - generic [ref=e292]:
+              - generic [ref=e293]: Codex
+              - link "OpenAI News" [ref=e294] [cursor=pointer]:
+                - /url: https://openai.com/index/disrupting-malicious-ai-uses
+                - text: OpenAI News
+                - img [ref=e295]
+            - link "AIの悪意ある利用を阻止する｜2026年2月 Disrupting malicious uses of AI | February 2026" [ref=e297] [cursor=pointer]:
+              - /url: https://openai.com/index/disrupting-malicious-ai-uses
+              - heading "AIの悪意ある利用を阻止する｜2026年2月" [level=3] [ref=e298]
+              - paragraph [ref=e299]: Disrupting malicious uses of AI | February 2026
+            - paragraph [ref=e300]: Our latest threat report examines how malicious actors combine AI models with websites and social platforms—and what it means for detection and defense.
+            - generic [ref=e302]: NVA 39
+        - generic [ref=e303]:
+          - generic [ref=e304]:
+            - generic [ref=e305]: "25"
+            - generic [ref=e306]: Feb
+            - generic [ref=e307]: "2026"
+          - generic [ref=e310]:
+            - generic [ref=e311]:
+              - generic [ref=e312]: Figma
+              - link "Figma Release Notes" [ref=e313] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=february-2026-livestream
+                - text: Figma Release Notes
+                - img [ref=e314]
+            - link "リリースノート'26年2月号ライブストリームでカバーしたすべて Everything we covered at Release Notes Feb '26 livestream" [ref=e316] [cursor=pointer]:
+              - /url: https://www.figma.com/release-notes/?title=february-2026-livestream
+              - heading "リリースノート'26年2月号ライブストリームでカバーしたすべて" [level=3] [ref=e317]
+              - paragraph [ref=e318]: Everything we covered at Release Notes Feb '26 livestream
+            - paragraph [ref=e319]: In our latest Release Notes livestream, we covered the latest updates across our products, a live Q&A with Figma’s Chief Product Officer, and more—including a new way to work in Figma. Move from concept to completion using AI image tools, Make, and interactive prototypes.
+            - generic [ref=e321]: NVA 59
+        - generic [ref=e322]:
+          - generic [ref=e323]:
+            - generic [ref=e324]: "25"
+            - generic [ref=e325]: Feb
+            - generic [ref=e326]: "2026"
+          - generic [ref=e329]:
+            - generic [ref=e330]:
+              - generic [ref=e331]: Claude
+              - link "Anthropic News" [ref=e332] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/acquires-vercept
+                - text: Anthropic News
+                - img [ref=e333]
+            - link "Anthropic がclaudeのコンピュータ使用能力を向上させるために Vercept を買収 Anthropic acquires Vercept to advance Claude's computer use capabilities" [ref=e335] [cursor=pointer]:
+              - /url: https://www.anthropic.com/news/acquires-vercept
+              - heading "Anthropic がclaudeのコンピュータ使用能力を向上させるために Vercept を買収" [level=3] [ref=e336]
+              - paragraph [ref=e337]: Anthropic acquires Vercept to advance Claude's computer use capabilities
+            - paragraph [ref=e338]: Anthropic acquires Vercept to advance Claude's computer use capabilities
+            - generic [ref=e340]: NVA 66
+        - generic [ref=e341]:
+          - generic [ref=e342]:
+            - generic [ref=e343]: "24"
+            - generic [ref=e344]: Feb
+            - generic [ref=e345]: "2026"
+          - generic [ref=e348]:
+            - generic [ref=e349]:
+              - generic [ref=e350]: Codex
+              - link "OpenAI News" [ref=e351] [cursor=pointer]:
+                - /url: https://openai.com/index/arvind-kc-chief-people-officer
+                - text: OpenAI News
+                - img [ref=e352]
+            - link "アルヴィンドKCがチーフ・ピープル・オフィサーに就任 Arvind KC appointed Chief People Officer" [ref=e354] [cursor=pointer]:
+              - /url: https://openai.com/index/arvind-kc-chief-people-officer
+              - heading "アルヴィンドKCがチーフ・ピープル・オフィサーに就任" [level=3] [ref=e355]
+              - paragraph [ref=e356]: Arvind KC appointed Chief People Officer
+            - paragraph [ref=e357]: OpenAI appoints Arvind KC as Chief People Officer to help scale the company, strengthen its culture, and lead how work evolves in the age of AI.
+            - generic [ref=e359]: NVA 48
+        - generic [ref=e360]:
+          - generic [ref=e361]:
+            - generic [ref=e362]: "24"
+            - generic [ref=e363]: Feb
+            - generic [ref=e364]: "2026"
+          - generic [ref=e367]:
+            - generic [ref=e368]:
+              - generic [ref=e369]: Figma
+              - link "Figma Release Notes" [ref=e370] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=connect-figjam-to-notion
+                - text: Figma Release Notes
+                - img [ref=e371]
+            - link "FigJamとNotionの接続 Connect FigJam to Notion" [ref=e373] [cursor=pointer]:
+              - /url: https://www.figma.com/release-notes/?title=connect-figjam-to-notion
+              - heading "FigJamとNotionの接続" [level=3] [ref=e374]
+              - paragraph [ref=e375]: Connect FigJam to Notion
+            - paragraph [ref=e376]: FigJam is now available in Notion as a pre-configured MCP integration.
+            - generic [ref=e378]: NVA 66
+        - generic [ref=e379]:
+          - generic [ref=e380]:
+            - generic [ref=e381]: "24"
+            - generic [ref=e382]: Feb
+            - generic [ref=e383]: "2026"
+          - generic [ref=e386]:
+            - generic [ref=e387]:
+              - generic [ref=e388]: Claude
+              - link "Anthropic News" [ref=e389] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/responsible-scaling-policy-v3
+                - text: Anthropic News
+                - img [ref=e390]
+            - 'link "Anthropic の責任あるスケーリング ポリシー: バージョン 3.0 Anthropic’s Responsible Scaling Policy: Version 3.0" [ref=e392] [cursor=pointer]':
+              - /url: https://www.anthropic.com/news/responsible-scaling-policy-v3
+              - 'heading "Anthropic の責任あるスケーリング ポリシー: バージョン 3.0" [level=3] [ref=e393]'
+              - paragraph [ref=e394]: "Anthropic’s Responsible Scaling Policy: Version 3.0"
+            - paragraph [ref=e395]: "Anthropic’s Responsible Scaling Policy: Version 3.0"
+            - generic [ref=e397]: NVA 60
+        - generic [ref=e398]:
+          - generic [ref=e399]:
+            - generic [ref=e400]: "23"
+            - generic [ref=e401]: Feb
+            - generic [ref=e402]: "2026"
+          - generic [ref=e405]:
+            - generic [ref=e406]:
+              - generic [ref=e407]: Codex
+              - link "OpenAI News" [ref=e408] [cursor=pointer]:
+                - /url: https://openai.com/index/frontier-alliance-partners
+                - text: OpenAI News
+                - img [ref=e409]
+            - link "OpenAI、フロンティア・アライアンス・パートナーを発表 OpenAI announces Frontier Alliance Partners" [ref=e411] [cursor=pointer]:
+              - /url: https://openai.com/index/frontier-alliance-partners
+              - heading "OpenAI、フロンティア・アライアンス・パートナーを発表" [level=3] [ref=e412]
+              - paragraph [ref=e413]: OpenAI announces Frontier Alliance Partners
+            - paragraph [ref=e414]: OpenAI announces Frontier Alliance Partners to help enterprises move from AI pilots to production with secure, scalable agent deployments.
+            - generic [ref=e416]: NVA 52
+            - generic [ref=e417]:
+              - generic [ref=e419]:
+                - text: Community
+                - generic [ref=e420]: "1"
+              - link "Official SWEベンチ検証の評価がなくなった理由 OpenAI News" [ref=e422] [cursor=pointer]:
+                - /url: https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified
+                - generic [ref=e423]: Official
+                - paragraph [ref=e424]: SWEベンチ検証の評価がなくなった理由
+                - generic [ref=e426]: OpenAI News
+        - generic [ref=e427]:
+          - generic [ref=e428]:
+            - generic [ref=e429]: "23"
+            - generic [ref=e430]: Feb
+            - generic [ref=e431]: "2026"
+          - generic [ref=e434]:
+            - generic [ref=e435]:
+              - generic [ref=e436]: Figma
+              - link "Figma Release Notes" [ref=e437] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=ai-hosting-controls-governance
+                - text: Figma Release Notes
+                - img [ref=e438]
+            - link "AIホスティングコントロール（Governance+) AI hosting controls (Governance+)" [ref=e440] [cursor=pointer]:
+              - /url: https://www.figma.com/release-notes/?title=ai-hosting-controls-governance
+              - heading "AIホスティングコントロール（Governance+)" [level=3] [ref=e441]
+              - paragraph [ref=e442]: AI hosting controls (Governance+)
+            - paragraph [ref=e443]: Governance+ org admins can now turn on AI hosting controls so AI requests stay within Figma’s AWS environment.
+            - generic [ref=e445]: NVA 39
+            - generic [ref=e446]:
+              - generic [ref=e448]:
+                - text: Community
+                - generic [ref=e449]: "1"
+              - link "Official エンタープライズ向けワークスペースレベルの共有 Figma Release Notes" [ref=e451] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=workspace-level-sharing-for-enterprise
+                - generic [ref=e452]: Official
+                - paragraph [ref=e453]: エンタープライズ向けワークスペースレベルの共有
+                - generic [ref=e455]: Figma Release Notes
+        - generic [ref=e456]:
+          - generic [ref=e457]:
+            - generic [ref=e458]: "23"
+            - generic [ref=e459]: Feb
+            - generic [ref=e460]: "2026"
+          - generic [ref=e463]:
+            - generic [ref=e464]:
+              - generic [ref=e465]: Claude
+              - link "Anthropic News" [ref=e466] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks
+                - text: Anthropic News
+                - img [ref=e467]
+            - link "蒸留攻撃の検出と防止 Detecting and preventing distillation attacks" [ref=e469] [cursor=pointer]:
+              - /url: https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks
+              - heading "蒸留攻撃の検出と防止" [level=3] [ref=e470]
+              - paragraph [ref=e471]: Detecting and preventing distillation attacks
+            - paragraph [ref=e472]: Detecting and preventing distillation attacks
+            - generic [ref=e474]: NVA 39
+        - generic [ref=e475]:
+          - generic [ref=e476]:
+            - generic [ref=e477]: "20"
+            - generic [ref=e478]: Feb
+            - generic [ref=e479]: "2026"
+          - generic [ref=e482]:
+            - generic [ref=e483]:
+              - generic [ref=e484]: Codex
+              - link "OpenAI News" [ref=e485] [cursor=pointer]:
+                - /url: https://openai.com/index/first-proof-submissions
+                - text: OpenAI News
+                - img [ref=e486]
+            - link "初のプルーフ提出 Our First Proof submissions" [ref=e488] [cursor=pointer]:
+              - /url: https://openai.com/index/first-proof-submissions
+              - heading "初のプルーフ提出" [level=3] [ref=e489]
+              - paragraph [ref=e490]: Our First Proof submissions
+            - paragraph [ref=e491]: We share our AI model’s proof attempts for the First Proof math challenge, testing research-grade reasoning on expert-level problems.
+            - generic [ref=e493]: NVA 40
+        - generic [ref=e494]:
+          - generic [ref=e495]:
+            - generic [ref=e496]: "20"
+            - generic [ref=e497]: Feb
+            - generic [ref=e498]: "2026"
+          - generic [ref=e501]:
+            - generic [ref=e502]:
+              - generic [ref=e503]: Figma
+              - link "Figma Release Notes" [ref=e504] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=new-make-connectors
+                - text: Figma Release Notes
+                - img [ref=e505]
+            - link "新型メイク・コネクター New Make connectors" [ref=e507] [cursor=pointer]:
+              - /url: https://www.figma.com/release-notes/?title=new-make-connectors
+              - heading "新型メイク・コネクター" [level=3] [ref=e508]
+              - paragraph [ref=e509]: New Make connectors
+            - paragraph [ref=e510]: From design system documentation and PRDs to user research and feedback, Make can now pull in context from across your product ecosystem.
+            - generic [ref=e512]: NVA 40
+        - generic [ref=e513]:
+          - generic [ref=e514]:
+            - generic [ref=e515]: "20"
+            - generic [ref=e516]: Feb
+            - generic [ref=e517]: "2026"
+          - generic [ref=e520]:
+            - generic [ref=e521]:
+              - generic [ref=e522]: Claude
+              - link "Anthropic News" [ref=e523] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/claude-code-security
+                - text: Anthropic News
+                - img [ref=e524]
+            - link "フロンティアのサイバーセキュリティ能力を防衛側に提供する Making frontier cybersecurity capabilities available to defenders" [ref=e526] [cursor=pointer]:
+              - /url: https://www.anthropic.com/news/claude-code-security
+              - heading "フロンティアのサイバーセキュリティ能力を防衛側に提供する" [level=3] [ref=e527]
+              - paragraph [ref=e528]: Making frontier cybersecurity capabilities available to defenders
+            - paragraph [ref=e529]: Making frontier cybersecurity capabilities available to defenders
+            - generic [ref=e531]: NVA 39
+        - generic [ref=e532]:
+          - generic [ref=e533]:
+            - generic [ref=e534]: "19"
+            - generic [ref=e535]: Feb
+            - generic [ref=e536]: "2026"
+          - generic [ref=e539]:
+            - generic [ref=e540]:
+              - generic [ref=e541]: Codex
+              - link "OpenAI News" [ref=e542] [cursor=pointer]:
+                - /url: https://openai.com/index/advancing-independent-research-ai-alignment
+                - text: OpenAI News
+                - img [ref=e543]
+            - link "AIアライメントに関する独自の研究を推進 Advancing independent research on AI alignment" [ref=e545] [cursor=pointer]:
+              - /url: https://openai.com/index/advancing-independent-research-ai-alignment
+              - heading "AIアライメントに関する独自の研究を推進" [level=3] [ref=e546]
+              - paragraph [ref=e547]: Advancing independent research on AI alignment
+            - paragraph [ref=e548]: OpenAI commits $7.5M to The Alignment Project to fund independent AI alignment research, strengthening global efforts to address AGI safety and security risks.
+            - generic [ref=e550]: NVA 49
+        - generic [ref=e551]:
+          - generic [ref=e552]:
+            - generic [ref=e553]: "19"
+            - generic [ref=e554]: Feb
+            - generic [ref=e555]: "2026"
+          - generic [ref=e558]:
+            - generic [ref=e559]:
+              - generic [ref=e560]: Gemini
+              - link "Google AI Blog" [ref=e561] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-collection/
+                - text: Google AI Blog
+                - img [ref=e562]
+            - link "AIインパクト・サミット2026 AI Impact Summit 2026" [ref=e564] [cursor=pointer]:
+              - /url: https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-collection/
+              - heading "AIインパクト・サミット2026" [level=3] [ref=e565]
+              - paragraph [ref=e566]: AI Impact Summit 2026
+            - paragraph [ref=e567]: A look at the partnerships and investments Google announced at the AI Impact Summit 2026.
+            - generic [ref=e569]: NVA 39
+            - generic [ref=e570]:
+              - generic [ref=e572]:
+                - text: Community
+                - generic [ref=e573]: "1"
+              - link "Official 「AIほど大きな夢を抱かせてくれるテクノロジーはない Google AI Blog" [ref=e575] [cursor=pointer]:
+                - /url: https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/
+                - generic [ref=e576]: Official
+                - paragraph [ref=e577]: 「AIほど大きな夢を抱かせてくれるテクノロジーはない
+                - generic [ref=e579]: Google AI Blog
+        - generic [ref=e580]:
+          - generic [ref=e581]:
+            - generic [ref=e582]: "18"
+            - generic [ref=e583]: Feb
+            - generic [ref=e584]: "2026"
+          - generic [ref=e587]:
+            - generic [ref=e588]:
+              - generic [ref=e589]: Codex
+              - link "OpenAI News" [ref=e590] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-evmbench
+                - text: OpenAI News
+                - img [ref=e591]
+            - link "EVMbenchのご紹介 Introducing EVMbench" [ref=e593] [cursor=pointer]:
+              - /url: https://openai.com/index/introducing-evmbench
+              - heading "EVMbenchのご紹介" [level=3] [ref=e594]
+              - paragraph [ref=e595]: Introducing EVMbench
+            - paragraph [ref=e596]: OpenAI and Paradigm introduce EVMbench, a benchmark evaluating AI agents’ ability to detect, patch, and exploit high-severity smart contract vulnerabilities.
+            - generic [ref=e598]: NVA 68
+            - generic [ref=e599]:
+              - generic [ref=e601]:
+                - text: Community
+                - generic [ref=e602]: "1"
+              - link "Official インド向けOpenAIの紹介 OpenAI News" [ref=e604] [cursor=pointer]:
+                - /url: https://openai.com/index/openai-for-india
+                - generic [ref=e605]: Official
+                - paragraph [ref=e606]: インド向けOpenAIの紹介
+                - generic [ref=e608]: OpenAI News
+        - generic [ref=e609]:
+          - generic [ref=e610]:
+            - generic [ref=e611]: "18"
+            - generic [ref=e612]: Feb
+            - generic [ref=e613]: "2026"
+          - generic [ref=e616]:
+            - generic [ref=e617]:
+              - generic [ref=e618]: Gemini
+              - link "Google AI Blog" [ref=e619] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/products/gemini-app/lyria-3/
+                - text: Google AI Blog
+                - img [ref=e620]
+            - 'link "自分を表現する新しい方法：Geminiは音楽を創作できるようになった A new way to express yourself: Gemini can now create music" [ref=e622] [cursor=pointer]':
+              - /url: https://blog.google/innovation-and-ai/products/gemini-app/lyria-3/
+              - heading "自分を表現する新しい方法：Geminiは音楽を創作できるようになった" [level=3] [ref=e623]
+              - paragraph [ref=e624]: "A new way to express yourself: Gemini can now create music"
+            - paragraph [ref=e625]: Lyria 3 is now available in the Gemini app. Create custom, high-quality 30-second tracks from text and images.
+            - generic [ref=e627]: NVA 48
+            - generic [ref=e628]:
+              - generic [ref=e630]:
+                - text: Community
+                - generic [ref=e631]: "1"
+              - link "Official AIインパクト・サミット2026：すべての人のためにAIを機能させるために私たちはどのように提携しているか Google AI Blog" [ref=e633] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-india/
+                - generic [ref=e634]: Official
+                - paragraph [ref=e635]: AIインパクト・サミット2026：すべての人のためにAIを機能させるために私たちはどのように提携しているか
+                - generic [ref=e637]: Google AI Blog
+        - generic [ref=e638]:
+          - generic [ref=e639]:
+            - generic [ref=e640]: "18"
+            - generic [ref=e641]: Feb
+            - generic [ref=e642]: "2026"
+          - generic [ref=e645]:
+            - generic [ref=e646]:
+              - generic [ref=e647]: Figma
+              - link "Figma Blog" [ref=e648] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/redefining-impact-as-a-data-scientist/
+                - text: Figma Blog
+                - img [ref=e649]
+            - link "データサイエンティストとしてのインパクトを再定義する Redefining impact as a data scientist" [ref=e651] [cursor=pointer]:
+              - /url: https://www.figma.com/blog/redefining-impact-as-a-data-scientist/
+              - heading "データサイエンティストとしてのインパクトを再定義する" [level=3] [ref=e652]
+              - paragraph [ref=e653]: Redefining impact as a data scientist
+            - paragraph [ref=e654]: Not all impactful data science work involves experiments or optimization. Sometimes it’s about making complex systems legible, correct, and safe to operate.
+            - generic [ref=e656]: NVA 39
+        - generic [ref=e657]:
+          - generic [ref=e658]:
+            - generic [ref=e659]: "17"
+            - generic [ref=e660]: Feb
+            - generic [ref=e661]: "2026"
+          - generic [ref=e664]:
+            - generic [ref=e665]:
+              - generic [ref=e666]: Gemini
+              - link "Google AI Blog" [ref=e667] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/products/responsible-ai-2026-report-ongoing-work/
+                - text: Google AI Blog
+                - img [ref=e668]
+            - link "2026年責任あるAIの進捗報告 Our 2026 Responsible AI Progress Report" [ref=e670] [cursor=pointer]:
+              - /url: https://blog.google/innovation-and-ai/products/responsible-ai-2026-report-ongoing-work/
+              - heading "2026年責任あるAIの進捗報告" [level=3] [ref=e671]
+              - paragraph [ref=e672]: Our 2026 Responsible AI Progress Report
+            - paragraph [ref=e673]: A look at our 2026 Responsible AI Progress Report.
+            - generic [ref=e675]: NVA 39
+        - generic [ref=e676]:
+          - generic [ref=e677]:
+            - generic [ref=e678]: "17"
+            - generic [ref=e679]: Feb
+            - generic [ref=e680]: "2026"
+          - generic [ref=e683]:
+            - generic [ref=e684]:
+              - generic [ref=e685]: Figma
+              - link "Figma Blog" [ref=e686] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/the-future-of-design-is-code-and-canvas/
+                - text: Figma Blog
+                - img [ref=e687]
+            - link "デザインの未来はコードとキャンバス The future of design is code and canvas" [ref=e689] [cursor=pointer]:
+              - /url: https://www.figma.com/blog/the-future-of-design-is-code-and-canvas/
+              - heading "デザインの未来はコードとキャンバス" [level=3] [ref=e690]
+              - paragraph [ref=e691]: The future of design is code and canvas
+            - paragraph [ref=e692]: There isn't just one way to build. For the best ideas to move forward, we need the power of code and the canvas. Claude Code to Figma is just one way we’re giving builders more choice.
+            - generic [ref=e694]: NVA 66
+            - generic [ref=e695]:
+              - generic [ref=e697]:
+                - text: Community
+                - generic [ref=e698]: "3"
+              - generic [ref=e699]:
+                - link "Official Claude CodeからFigmaへ：プロダクション・コードを編集可能なFigmaデザインに変える Figma Blog" [ref=e700] [cursor=pointer]:
+                  - /url: https://www.figma.com/blog/introducing-claude-code-to-figma/
+                  - generic [ref=e701]: Official
+                  - paragraph [ref=e702]: Claude CodeからFigmaへ：プロダクション・コードを編集可能なFigmaデザインに変える
+                  - generic [ref=e704]: Figma Blog
+                - link "Official ClaudeコードからFigmaへ Figma Release Notes" [ref=e705] [cursor=pointer]:
+                  - /url: https://www.figma.com/release-notes/?title=claude-code-to-figma
+                  - generic [ref=e706]: Official
+                  - paragraph [ref=e707]: ClaudeコードからFigmaへ
+                  - generic [ref=e709]: Figma Release Notes
+                - link "Official Makeのモデルピッカー Figma Release Notes" [ref=e710] [cursor=pointer]:
+                  - /url: https://www.figma.com/release-notes/?title=model-picker-in-make
+                  - generic [ref=e711]: Official
+                  - paragraph [ref=e712]: Makeのモデルピッカー
+                  - generic [ref=e714]: Figma Release Notes
+        - generic [ref=e715]:
+          - generic [ref=e716]:
+            - generic [ref=e717]: "17"
+            - generic [ref=e718]: Feb
+            - generic [ref=e719]: "2026"
+          - generic [ref=e722]:
+            - generic [ref=e723]:
+              - generic [ref=e724]: Claude
+              - link "Anthropic News" [ref=e725] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/anthropic-rwanda-mou
+                - text: Anthropic News
+                - img [ref=e726]
+            - link "Anthropicとルワンダ政府、健康と教育におけるAIに関する覚書に調印 Anthropic and the Government of Rwanda sign MOU for AI in health and education" [ref=e728] [cursor=pointer]:
+              - /url: https://www.anthropic.com/news/anthropic-rwanda-mou
+              - heading "Anthropicとルワンダ政府、健康と教育におけるAIに関する覚書に調印" [level=3] [ref=e729]
+              - paragraph [ref=e730]: Anthropic and the Government of Rwanda sign MOU for AI in health and education
+            - paragraph [ref=e731]: Anthropic and the Government of Rwanda sign MOU for AI in health and education
+            - generic [ref=e733]: NVA 66
+            - generic [ref=e734]:
+              - generic [ref=e736]:
+                - text: Community
+                - generic [ref=e737]: "2"
+              - generic [ref=e738]:
+                - link "Official ソネット4.6の紹介 Anthropic News" [ref=e739] [cursor=pointer]:
+                  - /url: https://www.anthropic.com/news/claude-sonnet-4-6
+                  - generic [ref=e740]: Official
+                  - paragraph [ref=e741]: ソネット4.6の紹介
+                  - generic [ref=e743]: Anthropic News
+                - link "Official AnthropicとInfosys、電気通信やその他の規制産業向けAIエージェントの構築で協業 Anthropic News" [ref=e744] [cursor=pointer]:
+                  - /url: https://www.anthropic.com/news/anthropic-infosys
+                  - generic [ref=e745]: Official
+                  - paragraph [ref=e746]: AnthropicとInfosys、電気通信やその他の規制産業向けAIエージェントの構築で協業
+                  - generic [ref=e748]: Anthropic News
+        - generic [ref=e749]:
+          - generic [ref=e750]:
+            - generic [ref=e751]: "16"
+            - generic [ref=e752]: Feb
+            - generic [ref=e753]: "2026"
+          - generic [ref=e756]:
+            - generic [ref=e757]:
+              - generic [ref=e758]: Claude
+              - link "Anthropic News" [ref=e759] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/bengaluru-office-partnerships-across-india
+                - text: Anthropic News
+                - img [ref=e760]
+            - link "Anthropicがベンガルールオフィスを開設、インド全土で新たなパートナーシップを発表 Anthropic opens Bengaluru office and announces new partnerships across India" [ref=e762] [cursor=pointer]:
+              - /url: https://www.anthropic.com/news/bengaluru-office-partnerships-across-india
+              - heading "Anthropicがベンガルールオフィスを開設、インド全土で新たなパートナーシップを発表" [level=3] [ref=e763]
+              - paragraph [ref=e764]: Anthropic opens Bengaluru office and announces new partnerships across India
+            - paragraph [ref=e765]: Anthropic opens Bengaluru office and announces new partnerships across India
+            - generic [ref=e767]: NVA 66
+        - generic [ref=e768]:
+          - generic [ref=e769]:
+            - generic [ref=e770]: "13"
+            - generic [ref=e771]: Feb
+            - generic [ref=e772]: "2026"
+          - generic [ref=e775]:
+            - generic [ref=e776]:
+              - generic [ref=e777]: Codex
+              - link "OpenAI News" [ref=e778] [cursor=pointer]:
+                - /url: https://openai.com/index/beyond-rate-limits
+                - text: OpenAI News
+                - img [ref=e779]
+            - 'link "レートの限界を超えて：コーデックスとソラへのアクセス拡大 Beyond rate limits: scaling access to Codex and Sora" [ref=e781] [cursor=pointer]':
+              - /url: https://openai.com/index/beyond-rate-limits
+              - heading "レートの限界を超えて：コーデックスとソラへのアクセス拡大" [level=3] [ref=e782]
+              - paragraph [ref=e783]: "Beyond rate limits: scaling access to Codex and Sora"
+            - paragraph [ref=e784]: How OpenAI built a real-time access system combining rate limits, usage tracking, and credits to power continuous access to Sora and Codex.
+            - generic [ref=e786]: NVA 56
+            - generic [ref=e787]:
+              - generic [ref=e789]:
+                - text: Community
+                - generic [ref=e790]: "3"
+              - generic [ref=e791]:
+                - link "Official 社会科学研究のスケールアップ OpenAI News" [ref=e792] [cursor=pointer]:
+                  - /url: https://openai.com/index/scaling-social-science-research
+                  - generic [ref=e793]: Official
+                  - paragraph [ref=e794]: 社会科学研究のスケールアップ
+                  - generic [ref=e796]: OpenAI News
+                - link "Official GPT-5.2が理論物理学の新しい結果を導く OpenAI News" [ref=e797] [cursor=pointer]:
+                  - /url: https://openai.com/index/new-result-theoretical-physics
+                  - generic [ref=e798]: Official
+                  - paragraph [ref=e799]: GPT-5.2が理論物理学の新しい結果を導く
+                  - generic [ref=e801]: OpenAI News
+                - link "Official ChatGPTにロックダウンモードと高リスクラベルを導入 OpenAI News" [ref=e802] [cursor=pointer]:
+                  - /url: https://openai.com/index/introducing-lockdown-mode-and-elevated-risk-labels-in-chatgpt
+                  - generic [ref=e803]: Official
+                  - paragraph [ref=e804]: ChatGPTにロックダウンモードと高リスクラベルを導入
+                  - generic [ref=e806]: OpenAI News
+        - generic [ref=e807]:
+          - generic [ref=e808]:
+            - generic [ref=e809]: "13"
+            - generic [ref=e810]: Feb
+            - generic [ref=e811]: "2026"
+          - generic [ref=e814]:
+            - generic [ref=e815]:
+              - generic [ref=e816]: Claude
+              - link "Anthropic News" [ref=e817] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/anthropic-codepath-partnership
+                - text: Anthropic News
+                - img [ref=e818]
+            - link "Anthropic、CodePathと提携し、米国最大の大学コンピューターサイエンス・プログラムにClaudeを導入 Anthropic partners with CodePath to bring Claude to the US’s largest collegiate computer science program" [ref=e820] [cursor=pointer]:
+              - /url: https://www.anthropic.com/news/anthropic-codepath-partnership
+              - heading "Anthropic、CodePathと提携し、米国最大の大学コンピューターサイエンス・プログラムにClaudeを導入" [level=3] [ref=e821]
+              - paragraph [ref=e822]: Anthropic partners with CodePath to bring Claude to the US’s largest collegiate computer science program
+            - paragraph [ref=e823]: Anthropic partners with CodePath to bring Claude to the US’s largest collegiate computer science program
+            - generic [ref=e825]: NVA 66
+            - generic [ref=e826]:
+              - generic [ref=e828]:
+                - text: Community
+                - generic [ref=e829]: "1"
+              - link "Official クリス・リデルがAnthropicの取締役に就任 Anthropic News" [ref=e831] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/chris-liddell-appointed-anthropic-board
+                - generic [ref=e832]: Official
+                - paragraph [ref=e833]: クリス・リデルがAnthropicの取締役に就任
+                - generic [ref=e835]: Anthropic News
+        - generic [ref=e836]:
+          - generic [ref=e837]:
+            - generic [ref=e838]: "13"
+            - generic [ref=e839]: Feb
+            - generic [ref=e840]: "2026"
+          - generic [ref=e843]:
+            - generic [ref=e844]:
+              - generic [ref=e845]: Figma
+              - link "Figma Release Notes" [ref=e846] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=faster-tab-navigation-on-the-desktop-app
+                - text: Figma Release Notes
+                - img [ref=e847]
+            - link "デスクトップアプリでのタブナビゲーションの高速化 Faster tab navigation on the desktop app" [ref=e849] [cursor=pointer]:
+              - /url: https://www.figma.com/release-notes/?title=faster-tab-navigation-on-the-desktop-app
+              - heading "デスクトップアプリでのタブナビゲーションの高速化" [level=3] [ref=e850]
+              - paragraph [ref=e851]: Faster tab navigation on the desktop app
+            - paragraph [ref=e852]: The new tab menu replaces the three dot menu to make it easier to find and manage open files when your tab bar fills up.
+            - generic [ref=e854]: NVA 39
+        - generic [ref=e855]:
+          - generic [ref=e856]:
+            - generic [ref=e857]: "12"
+            - generic [ref=e858]: Feb
+            - generic [ref=e859]: "2026"
+          - generic [ref=e862]:
+            - generic [ref=e863]:
+              - generic [ref=e864]: Figma
+              - link "Figma Blog" [ref=e865] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/state-of-the-designer-2026/
+                - text: Figma Blog
+                - img [ref=e866]
+            - 'link "デザイナーの現状2026：デザイナーは厄介なミドルに傾きつつある State of the Designer 2026: Designers are leaning into the messy middle" [ref=e868] [cursor=pointer]':
+              - /url: https://www.figma.com/blog/state-of-the-designer-2026/
+              - heading "デザイナーの現状2026：デザイナーは厄介なミドルに傾きつつある" [level=3] [ref=e869]
+              - paragraph [ref=e870]: "State of the Designer 2026: Designers are leaning into the messy middle"
+            - paragraph [ref=e871]: Our State of the Designer report explores how designers around the world are upleveling their skills, keeping craft high, and turning new pressures into creative momentum.
+            - generic [ref=e873]: NVA 39
+            - generic [ref=e874]:
+              - generic [ref=e876]:
+                - text: Community
+                - generic [ref=e877]: "1"
+              - link "Official UAとインドのローカル・データ・ホスティング Figma Release Notes" [ref=e879] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=au-india-local-data-hosting
+                - generic [ref=e880]: Official
+                - paragraph [ref=e881]: UAとインドのローカル・データ・ホスティング
+                - generic [ref=e883]: Figma Release Notes
+        - generic [ref=e884]:
+          - generic [ref=e885]:
+            - generic [ref=e886]: "12"
+            - generic [ref=e887]: Feb
+            - generic [ref=e888]: "2026"
+          - generic [ref=e891]:
+            - generic [ref=e892]:
+              - generic [ref=e893]: Gemini
+              - link "Google AI Blog" [ref=e894] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/
+                - text: Google AI Blog
+                - img [ref=e895]
+            - 'link "Gemini 3 ディープ・シンク：科学、研究、工学の発展 Gemini 3 Deep Think: Advancing science, research and engineering" [ref=e897] [cursor=pointer]':
+              - /url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/
+              - heading "Gemini 3 ディープ・シンク：科学、研究、工学の発展" [level=3] [ref=e898]
+              - paragraph [ref=e899]: "Gemini 3 Deep Think: Advancing science, research and engineering"
+            - paragraph [ref=e900]: We’re releasing a major upgrade to Gemini 3 Deep Think, our specialized reasoning mode.
+            - generic [ref=e902]: NVA 62
+        - generic [ref=e903]:
+          - generic [ref=e904]:
+            - generic [ref=e905]: "12"
+            - generic [ref=e906]: Feb
+            - generic [ref=e907]: "2026"
+          - generic [ref=e910]:
+            - generic [ref=e911]:
+              - generic [ref=e912]: Codex
+              - link "OpenAI News" [ref=e913] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-gpt-5-3-codex-spark
+                - text: OpenAI News
+                - img [ref=e914]
+            - link "GPT-5.3-コーデックスパークの紹介 Introducing GPT-5.3-Codex-Spark" [ref=e916] [cursor=pointer]:
+              - /url: https://openai.com/index/introducing-gpt-5-3-codex-spark
+              - heading "GPT-5.3-コーデックスパークの紹介" [level=3] [ref=e917]
+              - paragraph [ref=e918]: Introducing GPT-5.3-Codex-Spark
+            - paragraph [ref=e919]: Introducing GPT-5.3-Codex-Spark—our first real-time coding model. 15x faster generation, 128k context, now in research preview for ChatGPT Pro users.
+            - generic [ref=e921]: NVA 49
+        - generic [ref=e922]:
+          - generic [ref=e923]:
+            - generic [ref=e924]: "12"
+            - generic [ref=e925]: Feb
+            - generic [ref=e926]: "2026"
+          - generic [ref=e929]:
+            - generic [ref=e930]:
+              - generic [ref=e931]: Claude
+              - link "Anthropic News" [ref=e932] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/donate-public-first-action
+                - text: Anthropic News
+                - img [ref=e933]
+            - link "AnthropicはPublic First Actionに2000万ドルを寄付する。 Anthropic is donating $20 million to Public First Action" [ref=e935] [cursor=pointer]:
+              - /url: https://www.anthropic.com/news/donate-public-first-action
+              - heading "AnthropicはPublic First Actionに2000万ドルを寄付する。" [level=3] [ref=e936]
+              - paragraph [ref=e937]: Anthropic is donating $20 million to Public First Action
+            - paragraph [ref=e938]: Anthropic is donating $20 million to Public First Action
+            - generic [ref=e940]: NVA 66
+            - generic [ref=e941]:
+              - generic [ref=e943]:
+                - text: Community
+                - generic [ref=e944]: "1"
+              - link "Official AnthropicがシリーズGで300億ドルの資金を調達、資金調達後の評価額は3800億ドル Anthropic News" [ref=e946] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation
+                - generic [ref=e947]: Official
+                - paragraph [ref=e948]: AnthropicがシリーズGで300億ドルの資金を調達、資金調達後の評価額は3800億ドル
+                - generic [ref=e950]: Anthropic News
+        - generic [ref=e951]:
+          - generic [ref=e952]:
+            - generic [ref=e953]: "11"
+            - generic [ref=e954]: Feb
+            - generic [ref=e955]: "2026"
+          - generic [ref=e958]:
+            - generic [ref=e959]:
+              - generic [ref=e960]: Codex
+              - link "OpenAI News" [ref=e961] [cursor=pointer]:
+                - /url: https://openai.com/index/harness-engineering
+                - text: OpenAI News
+                - img [ref=e962]
+            - 'link "ハーネス・エンジニアリング：エージェント・ファーストの世界でCodexを活用する Harness engineering: leveraging Codex in an agent-first world" [ref=e964] [cursor=pointer]':
+              - /url: https://openai.com/index/harness-engineering
+              - heading "ハーネス・エンジニアリング：エージェント・ファーストの世界でCodexを活用する" [level=3] [ref=e965]
+              - paragraph [ref=e966]: "Harness engineering: leveraging Codex in an agent-first world"
+            - paragraph [ref=e967]: By Ryan Lopopolo, Member of the Technical Staff
+            - generic [ref=e969]: NVA 57
+        - generic [ref=e970]:
+          - generic [ref=e971]:
+            - generic [ref=e972]: "11"
+            - generic [ref=e973]: Feb
+            - generic [ref=e974]: "2026"
+          - generic [ref=e977]:
+            - generic [ref=e978]:
+              - generic [ref=e979]: Claude
+              - link "Anthropic News" [ref=e980] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/covering-electricity-price-increases
+                - text: Anthropic News
+                - img [ref=e981]
+            - link "データセンターの電気料金値上げをカバー Covering electricity price increases from our data centers" [ref=e983] [cursor=pointer]:
+              - /url: https://www.anthropic.com/news/covering-electricity-price-increases
+              - heading "データセンターの電気料金値上げをカバー" [level=3] [ref=e984]
+              - paragraph [ref=e985]: Covering electricity price increases from our data centers
+            - paragraph [ref=e986]: Covering electricity price increases from our data centers
+            - generic [ref=e988]: NVA 39
+        - generic [ref=e989]:
+          - generic [ref=e990]:
+            - generic [ref=e991]: "10"
+            - generic [ref=e992]: Feb
+            - generic [ref=e993]: "2026"
+          - generic [ref=e996]:
+            - generic [ref=e997]:
+              - generic [ref=e998]: Gemini
+              - link "Google AI Blog" [ref=e999] [cursor=pointer]:
+                - /url: https://blog.google/products-and-platforms/products/photos/ask-button-ask-photos-tips/
+                - text: Google AI Blog
+                - img [ref=e1000]
+            - link "グーグルフォトへの9つの楽しい質問 9 fun questions to try asking Google Photos" [ref=e1002] [cursor=pointer]:
+              - /url: https://blog.google/products-and-platforms/products/photos/ask-button-ask-photos-tips/
+              - heading "グーグルフォトへの9つの楽しい質問" [level=3] [ref=e1003]
+              - paragraph [ref=e1004]: 9 fun questions to try asking Google Photos
+            - paragraph [ref=e1005]: Learn more about Google Photos’ new Ask button as well as other functions of its Ask Photos feature.
+            - generic [ref=e1007]: NVA 39
+            - generic [ref=e1008]:
+              - generic [ref=e1010]:
+                - text: Community
+                - generic [ref=e1011]: "1"
+              - link "Official セーファーインターネット・デーに子供とティーンエイジャーがオンラインで学び、成長するのを助ける Google AI Blog" [ref=e1013] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/technology/safety-security/safer-internet-day-2026-kids-teens/
+                - generic [ref=e1014]: Official
+                - paragraph [ref=e1015]: セーファーインターネット・デーに子供とティーンエイジャーがオンラインで学び、成長するのを助ける
+                - generic [ref=e1017]: Google AI Blog
+        - generic [ref=e1018]:
+          - generic [ref=e1019]:
+            - generic [ref=e1020]: "10"
+            - generic [ref=e1021]: Feb
+            - generic [ref=e1022]: "2026"
+          - generic [ref=e1025]:
+            - generic [ref=e1026]:
+              - generic [ref=e1027]: Figma
+              - link "Figma Blog" [ref=e1028] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/why-demand-for-designers-is-on-the-rise/
+                - text: Figma Blog
+                - img [ref=e1029]
+            - link "デザイナーへの需要が高まる理由 Why demand for designers is on the rise" [ref=e1031] [cursor=pointer]:
+              - /url: https://www.figma.com/blog/why-demand-for-designers-is-on-the-rise/
+              - heading "デザイナーへの需要が高まる理由" [level=3] [ref=e1032]
+              - paragraph [ref=e1033]: Why demand for designers is on the rise
+            - paragraph [ref=e1034]: In the AI era, companies need designers more than ever. In fact, our latest study suggests that AI is actually driving renewed momentum in design hiring. We unpack why that is, what hiring managers are prioritizing, and which skills designers need to get ahead.
+            - generic [ref=e1036]: NVA 40
+            - generic [ref=e1037]:
+              - generic [ref=e1039]:
+                - text: Community
+                - generic [ref=e1040]: "1"
+              - link "Official メイク・コネクターに言及 Figma Release Notes" [ref=e1042] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=mentions-in-make-connectors
+                - generic [ref=e1043]: Official
+                - paragraph [ref=e1044]: メイク・コネクターに言及
+                - generic [ref=e1046]: Figma Release Notes
+        - generic [ref=e1047]:
+          - generic [ref=e1048]:
+            - generic [ref=e1049]: "09"
+            - generic [ref=e1050]: Feb
+            - generic [ref=e1051]: "2026"
+          - generic [ref=e1054]:
+            - generic [ref=e1055]:
+              - generic [ref=e1056]: Codex
+              - link "OpenAI News" [ref=e1057] [cursor=pointer]:
+                - /url: https://openai.com/index/testing-ads-in-chatgpt
+                - text: OpenAI News
+                - img [ref=e1058]
+            - link "ChatGPTで広告をテストする Testing ads in ChatGPT" [ref=e1060] [cursor=pointer]:
+              - /url: https://openai.com/index/testing-ads-in-chatgpt
+              - heading "ChatGPTで広告をテストする" [level=3] [ref=e1061]
+              - paragraph [ref=e1062]: Testing ads in ChatGPT
+            - paragraph [ref=e1063]: OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.
+            - generic [ref=e1065]: NVA 48
+            - generic [ref=e1066]:
+              - generic [ref=e1068]:
+                - text: Community
+                - generic [ref=e1069]: "1"
+              - link "Official GenAI.milにChatGPTをもたらす OpenAI News" [ref=e1071] [cursor=pointer]:
+                - /url: https://openai.com/index/bringing-chatgpt-to-genaimil
+                - generic [ref=e1072]: Official
+                - paragraph [ref=e1073]: GenAI.milにChatGPTをもたらす
+                - generic [ref=e1075]: OpenAI News
+        - generic [ref=e1076]:
+          - generic [ref=e1077]:
+            - generic [ref=e1078]: "09"
+            - generic [ref=e1079]: Feb
+            - generic [ref=e1080]: "2026"
+          - generic [ref=e1083]:
+            - generic [ref=e1084]:
+              - generic [ref=e1085]: Figma
+              - link "Figma Release Notes" [ref=e1086] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=user-groups-now-available
+                - text: Figma Release Notes
+                - img [ref=e1087]
+            - link "ユーザーグループが利用可能に User groups are now available" [ref=e1089] [cursor=pointer]:
+              - /url: https://www.figma.com/release-notes/?title=user-groups-now-available
+              - heading "ユーザーグループが利用可能に" [level=3] [ref=e1090]
+              - paragraph [ref=e1091]: User groups are now available
+            - paragraph [ref=e1092]: You can now bulk share resources like files, projects and teams with user groups.
+            - generic [ref=e1094]: NVA 39
+        - generic [ref=e1095]:
+          - generic [ref=e1096]:
+            - generic [ref=e1097]: "06"
+            - generic [ref=e1098]: Feb
+            - generic [ref=e1099]: "2026"
+          - generic [ref=e1102]:
+            - generic [ref=e1103]:
+              - generic [ref=e1104]: Codex
+              - link "OpenAI News" [ref=e1105] [cursor=pointer]:
+                - /url: https://openai.com/index/our-approach-to-localization
+                - text: OpenAI News
+                - img [ref=e1106]
+            - 'link "AIを誰でも、どこでも使えるようにする：ローカリゼーションへのアプローチ Making AI work for everyone, everywhere: our approach to localization" [ref=e1108] [cursor=pointer]':
+              - /url: https://openai.com/index/our-approach-to-localization
+              - heading "AIを誰でも、どこでも使えるようにする：ローカリゼーションへのアプローチ" [level=3] [ref=e1109]
+              - paragraph [ref=e1110]: "Making AI work for everyone, everywhere: our approach to localization"
+            - paragraph [ref=e1111]: OpenAI shares its approach to AI localization, showing how globally shared frontier models can be adapted to local languages, laws, and cultures without compromising safety.
+            - generic [ref=e1113]: NVA 48
+        - generic [ref=e1114]:
+          - generic [ref=e1115]:
+            - generic [ref=e1116]: "05"
+            - generic [ref=e1117]: Feb
+            - generic [ref=e1118]: "2026"
+          - generic [ref=e1121]:
+            - generic [ref=e1122]:
+              - generic [ref=e1123]: Gemini
+              - link "Google AI Blog" [ref=e1124] [cursor=pointer]:
+                - /url: https://blog.google/company-news/inside-google/company-announcements/gemini-ad-new-home/
+                - text: Google AI Blog
+                - img [ref=e1125]
+            - link "サッカー最大の週末を前に、Geminiの新広告を見る Watch our new Gemini ad ahead of football’s biggest weekend" [ref=e1127] [cursor=pointer]:
+              - /url: https://blog.google/company-news/inside-google/company-announcements/gemini-ad-new-home/
+              - heading "サッカー最大の週末を前に、Geminiの新広告を見る" [level=3] [ref=e1128]
+              - paragraph [ref=e1129]: Watch our new Gemini ad ahead of football’s biggest weekend
+            - paragraph [ref=e1130]: Learn more about Google’s new ad that will run during football’s Big Game on February 8.
+            - generic [ref=e1132]: NVA 48
+            - generic [ref=e1133]:
+              - generic [ref=e1135]:
+                - text: Community
+                - generic [ref=e1136]: "2"
+              - generic [ref=e1137]:
+                - link "Official Google CloudがチームUSAのAIによるトリックのレベルアップをどのように支援しているか Google AI Blog" [ref=e1138] [cursor=pointer]:
+                  - /url: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/us-ski-snowboard-tool-winter-olympics-2026/
+                  - generic [ref=e1139]: Official
+                  - paragraph [ref=e1140]: Google CloudがチームUSAのAIによるトリックのレベルアップをどのように支援しているか
+                  - generic [ref=e1142]: Google AI Blog
+                - link "Official ネイティブ・アダプティブ・インターフェイス：AIアクセシビリティのための新しいフレームワーク Google AI Blog" [ref=e1143] [cursor=pointer]:
+                  - /url: https://blog.google/company-news/outreach-and-initiatives/accessibility/natively-adaptive-interfaces-ai-accessibility/
+                  - generic [ref=e1144]: Official
+                  - paragraph [ref=e1145]: ネイティブ・アダプティブ・インターフェイス：AIアクセシビリティのための新しいフレームワーク
+                  - generic [ref=e1147]: Google AI Blog
+        - generic [ref=e1148]:
+          - generic [ref=e1149]:
+            - generic [ref=e1150]: "05"
+            - generic [ref=e1151]: Feb
+            - generic [ref=e1152]: "2026"
+          - generic [ref=e1155]:
+            - generic [ref=e1156]:
+              - generic [ref=e1157]: Codex
+              - link "OpenAI News" [ref=e1158] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-gpt-5-3-codex
+                - text: OpenAI News
+                - img [ref=e1159]
+            - link "GPT-5.3-コーデックスのご紹介 Introducing GPT-5.3-Codex" [ref=e1161] [cursor=pointer]:
+              - /url: https://openai.com/index/introducing-gpt-5-3-codex
+              - heading "GPT-5.3-コーデックスのご紹介" [level=3] [ref=e1162]
+              - paragraph [ref=e1163]: Introducing GPT-5.3-Codex
+            - paragraph [ref=e1164]: GPT-5.3-Codex is a Codex-native agent that pairs frontier coding performance with general reasoning to support long-horizon, real-world technical work.
+            - generic [ref=e1166]: NVA 57
+            - generic [ref=e1167]:
+              - generic [ref=e1169]:
+                - text: Community
+                - generic [ref=e1170]: "5"
+              - generic [ref=e1171]:
+                - link "Official GPT-5は無細胞タンパク質合成のコストを下げる OpenAI News" [ref=e1172] [cursor=pointer]:
+                  - /url: https://openai.com/index/gpt-5-lowers-protein-synthesis-cost
+                  - generic [ref=e1173]: Official
+                  - paragraph [ref=e1174]: GPT-5は無細胞タンパク質合成のコストを下げる
+                  - generic [ref=e1176]: OpenAI News
+                - link "Official トラステッド・アクセスの導入 OpenAI News" [ref=e1177] [cursor=pointer]:
+                  - /url: https://openai.com/index/trusted-access-for-cyber
+                  - generic [ref=e1178]: Official
+                  - paragraph [ref=e1179]: トラステッド・アクセスの導入
+                  - generic [ref=e1181]: OpenAI News
+                - link "Official OpenAIフロンティアの紹介 OpenAI News" [ref=e1182] [cursor=pointer]:
+                  - /url: https://openai.com/index/introducing-openai-frontier
+                  - generic [ref=e1183]: Official
+                  - paragraph [ref=e1184]: OpenAIフロンティアの紹介
+                  - generic [ref=e1186]: OpenAI News
+                - link "Official ChatGPTで健康に関する質問をナビゲートする OpenAI News" [ref=e1187] [cursor=pointer]:
+                  - /url: https://openai.com/index/navigating-health-questions
+                  - generic [ref=e1188]: Official
+                  - paragraph [ref=e1189]: ChatGPTで健康に関する質問をナビゲートする
+                  - generic [ref=e1191]: OpenAI News
+                - link "Official GPT-5.3-コーデックス・システム・カード OpenAI News" [ref=e1192] [cursor=pointer]:
+                  - /url: https://openai.com/index/gpt-5-3-codex-system-card
+                  - generic [ref=e1193]: Official
+                  - paragraph [ref=e1194]: GPT-5.3-コーデックス・システム・カード
+                  - generic [ref=e1196]: OpenAI News
+        - generic [ref=e1197]:
+          - generic [ref=e1198]:
+            - generic [ref=e1199]: "05"
+            - generic [ref=e1200]: Feb
+            - generic [ref=e1201]: "2026"
+          - generic [ref=e1204]:
+            - generic [ref=e1205]:
+              - generic [ref=e1206]: Claude
+              - link "Anthropic News" [ref=e1207] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/claude-opus-4-6
+                - text: Anthropic News
+                - img [ref=e1208]
+            - link "Claude作品4.6のご紹介 Introducing Claude Opus 4.6" [ref=e1210] [cursor=pointer]:
+              - /url: https://www.anthropic.com/news/claude-opus-4-6
+              - heading "Claude作品4.6のご紹介" [level=3] [ref=e1211]
+              - paragraph [ref=e1212]: Introducing Claude Opus 4.6
+            - paragraph [ref=e1213]: Introducing Claude Opus 4.6
+            - generic [ref=e1215]: NVA 66
+        - generic [ref=e1216]:
+          - generic [ref=e1217]:
+            - generic [ref=e1218]: "04"
+            - generic [ref=e1219]: Feb
+            - generic [ref=e1220]: "2026"
+          - generic [ref=e1223]:
+            - generic [ref=e1224]:
+              - generic [ref=e1225]: Gemini
+              - link "Google AI Blog" [ref=e1226] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/products/google-ai-updates-january-2026/
+                - text: Google AI Blog
+                - img [ref=e1227]
+            - link "1月に発表した最新のAIニュース The latest AI news we announced in January" [ref=e1229] [cursor=pointer]:
+              - /url: https://blog.google/innovation-and-ai/products/google-ai-updates-january-2026/
+              - heading "1月に発表した最新のAIニュース" [level=3] [ref=e1230]
+              - paragraph [ref=e1231]: The latest AI news we announced in January
+            - paragraph [ref=e1232]: Google AI announcements from January
+            - generic [ref=e1234]: NVA 48
+        - generic [ref=e1235]:
+          - generic [ref=e1236]:
+            - generic [ref=e1237]: "04"
+            - generic [ref=e1238]: Feb
+            - generic [ref=e1239]: "2026"
+          - generic [ref=e1242]:
+            - generic [ref=e1243]:
+              - generic [ref=e1244]: Figma
+              - link "Figma Blog" [ref=e1245] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/introducing-vectorize/
+                - text: Figma Blog
+                - img [ref=e1246]
+            - 'link "工芸への愛のために：Figmaで画像をベクター化する For the love of craft: Vectorize images in Figma" [ref=e1248] [cursor=pointer]':
+              - /url: https://www.figma.com/blog/introducing-vectorize/
+              - heading "工芸への愛のために：Figmaで画像をベクター化する" [level=3] [ref=e1249]
+              - paragraph [ref=e1250]: "For the love of craft: Vectorize images in Figma"
+            - paragraph [ref=e1251]: With our new AI image editing tool, Vectorize, you can turn raster images into editable vectors, allowing you to tweak, refine, and scale designs directly in Figma.
+            - generic [ref=e1253]: NVA 39
+            - generic [ref=e1254]:
+              - generic [ref=e1256]:
+                - text: Community
+                - generic [ref=e1257]: "1"
+              - link "Official デザインとドローで画像をベクトル化する Figma Release Notes" [ref=e1259] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=vectorize-images-in-design-and-draw
+                - generic [ref=e1260]: Official
+                - paragraph [ref=e1261]: デザインとドローで画像をベクトル化する
+                - generic [ref=e1263]: Figma Release Notes
+        - generic [ref=e1264]:
+          - generic [ref=e1265]:
+            - generic [ref=e1266]: "04"
+            - generic [ref=e1267]: Feb
+            - generic [ref=e1268]: "2026"
+          - generic [ref=e1271]:
+            - generic [ref=e1272]:
+              - generic [ref=e1273]: Codex
+              - link "OpenAI News" [ref=e1274] [cursor=pointer]:
+                - /url: https://openai.com/index/unlocking-the-codex-harness
+                - text: OpenAI News
+                - img [ref=e1275]
+            - 'link "コーデックス・ハーネスを解き明かす：アプリ・サーバーの構築方法 Unlocking the Codex harness: how we built the App Server" [ref=e1277] [cursor=pointer]':
+              - /url: https://openai.com/index/unlocking-the-codex-harness
+              - heading "コーデックス・ハーネスを解き明かす：アプリ・サーバーの構築方法" [level=3] [ref=e1278]
+              - paragraph [ref=e1279]: "Unlocking the Codex harness: how we built the App Server"
+            - paragraph [ref=e1280]: Learn how to embed the Codex agent using the Codex App Server, a bidirectional JSON-RPC API powering streaming progress, tool use, approvals, and diffs.
+            - generic [ref=e1282]: NVA 67
+            - generic [ref=e1283]:
+              - generic [ref=e1285]:
+                - text: Community
+                - generic [ref=e1286]: "1"
+              - link "Official VfLヴォルフスブルク、ChatGPTをクラブ全体の機能に変える OpenAI News" [ref=e1288] [cursor=pointer]:
+                - /url: https://openai.com/index/vfl-wolfsburg
+                - generic [ref=e1289]: Official
+                - paragraph [ref=e1290]: VfLヴォルフスブルク、ChatGPTをクラブ全体の機能に変える
+                - generic [ref=e1292]: OpenAI News
+        - generic [ref=e1293]:
+          - generic [ref=e1294]:
+            - generic [ref=e1295]: "04"
+            - generic [ref=e1296]: Feb
+            - generic [ref=e1297]: "2026"
+          - generic [ref=e1300]:
+            - generic [ref=e1301]:
+              - generic [ref=e1302]: Claude
+              - link "Anthropic News" [ref=e1303] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/claude-is-a-space-to-think
+                - text: Anthropic News
+                - img [ref=e1304]
+            - link "Claudeは考えるための空間である。 Claude is a space to think" [ref=e1306] [cursor=pointer]:
+              - /url: https://www.anthropic.com/news/claude-is-a-space-to-think
+              - heading "Claudeは考えるための空間である。" [level=3] [ref=e1307]
+              - paragraph [ref=e1308]: Claude is a space to think
+            - paragraph [ref=e1309]: Claude is a space to think
+            - generic [ref=e1311]: NVA 66
+        - generic [ref=e1312]:
+          - generic [ref=e1313]:
+            - generic [ref=e1314]: "03"
+            - generic [ref=e1315]: Feb
+            - generic [ref=e1316]: "2026"
+          - generic [ref=e1319]:
+            - generic [ref=e1320]:
+              - generic [ref=e1321]: Figma
+              - link "Figma Blog" [ref=e1322] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/figma-c5-accreditation/
+                - text: Figma Blog
+                - img [ref=e1323]
+            - link "Figma が C5 認定を取得し、DACH 地域全体の顧客のクラウド・セキュリティが強化される Figma achieves C5 accreditation, strengthening cloud security for customers across the DACH region" [ref=e1325] [cursor=pointer]:
+              - /url: https://www.figma.com/blog/figma-c5-accreditation/
+              - heading "Figma が C5 認定を取得し、DACH 地域全体の顧客のクラウド・セキュリティが強化される" [level=3] [ref=e1326]
+              - paragraph [ref=e1327]: Figma achieves C5 accreditation, strengthening cloud security for customers across the DACH region
+            - paragraph [ref=e1328]: Figma is giving customers greater confidence in cloud security and compliance.
+            - generic [ref=e1330]: NVA 55
+            - generic [ref=e1331]:
+              - generic [ref=e1333]:
+                - text: Community
+                - generic [ref=e1334]: "2"
+              - generic [ref=e1335]:
+                - link "Official バウンディングボックスを使用して、高速かつ正確にベクトルを編集する Figma Release Notes" [ref=e1336] [cursor=pointer]:
+                  - /url: https://www.figma.com/release-notes/?title=use-bounding-boxes-to-edit-vectors-with-speed-and-precision
+                  - generic [ref=e1337]: Official
+                  - paragraph [ref=e1338]: バウンディングボックスを使用して、高速かつ正確にベクトルを編集する
+                  - generic [ref=e1340]: Figma Release Notes
+                - link "Official 自動ゲスト削除 Figma Release Notes" [ref=e1341] [cursor=pointer]:
+                  - /url: https://www.figma.com/release-notes/?title=automatic-guest-removal
+                  - generic [ref=e1342]: Official
+                  - paragraph [ref=e1343]: 自動ゲスト削除
+                  - generic [ref=e1345]: Figma Release Notes
+        - generic [ref=e1346]:
+          - generic [ref=e1347]:
+            - generic [ref=e1348]: "03"
+            - generic [ref=e1349]: Feb
+            - generic [ref=e1350]: "2026"
+          - generic [ref=e1353]:
+            - generic [ref=e1354]:
+              - generic [ref=e1355]: Claude
+              - link "Anthropic News" [ref=e1356] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/apple-xcode-claude-agent-sdk
+                - text: Anthropic News
+                - img [ref=e1357]
+            - link "AppleのXcodeがClaude Agent SDKをサポートしました。 Apple’s Xcode now supports the Claude Agent SDK" [ref=e1359] [cursor=pointer]:
+              - /url: https://www.anthropic.com/news/apple-xcode-claude-agent-sdk
+              - heading "AppleのXcodeがClaude Agent SDKをサポートしました。" [level=3] [ref=e1360]
+              - paragraph [ref=e1361]: Apple’s Xcode now supports the Claude Agent SDK
+            - paragraph [ref=e1362]: Apple’s Xcode now supports the Claude Agent SDK
+            - generic [ref=e1364]: NVA 66
+        - generic [ref=e1365]:
+          - generic [ref=e1366]:
+            - generic [ref=e1367]: "03"
+            - generic [ref=e1368]: Feb
+            - generic [ref=e1369]: "2026"
+          - generic [ref=e1372]:
+            - generic [ref=e1373]:
+              - generic [ref=e1374]: Codex
+              - link "OpenAI News" [ref=e1375] [cursor=pointer]:
+                - /url: https://openai.com/index/sora-feed-philosophy
+                - text: OpenAI News
+                - img [ref=e1376]
+            - link "そらのフィード哲学 The Sora feed philosophy" [ref=e1378] [cursor=pointer]:
+              - /url: https://openai.com/index/sora-feed-philosophy
+              - heading "そらのフィード哲学" [level=3] [ref=e1379]
+              - paragraph [ref=e1380]: The Sora feed philosophy
+            - paragraph [ref=e1381]: Discover the Sora feed philosophy—built to spark creativity, foster connections, and keep experiences safe with personalized recommendations, parental controls, and strong guardrails.
+            - generic [ref=e1383]: NVA 47
+        - generic [ref=e1384]:
+          - generic [ref=e1385]:
+            - generic [ref=e1386]: "02"
+            - generic [ref=e1387]: Feb
+            - generic [ref=e1388]: "2026"
+          - generic [ref=e1391]:
+            - generic [ref=e1392]:
+              - generic [ref=e1393]: Gemini
+              - link "Google AI Blog" [ref=e1394] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/kaggle-game-arena-updates/
+                - text: Google AI Blog
+                - img [ref=e1395]
+            - link "Game ArenaでAIベンチマークを進化させる Advancing AI benchmarking with Game Arena" [ref=e1397] [cursor=pointer]:
+              - /url: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/kaggle-game-arena-updates/
+              - heading "Game ArenaでAIベンチマークを進化させる" [level=3] [ref=e1398]
+              - paragraph [ref=e1399]: Advancing AI benchmarking with Game Arena
+            - paragraph [ref=e1400]: We’re expanding Game Arena with Poker and Werewolf, while Gemini 3 Pro and Flash top our chess leaderboard.
+            - generic [ref=e1402]: NVA 48
+            - generic [ref=e1403]:
+              - generic [ref=e1405]:
+                - text: Community
+                - generic [ref=e1406]: "1"
+              - link "Official 絶滅危惧種の遺伝情報をAIで保護する方法 Google AI Blog" [ref=e1408] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/technology/ai/ai-to-preserve-endangered-species/
+                - generic [ref=e1409]: Official
+                - paragraph [ref=e1410]: 絶滅危惧種の遺伝情報をAIで保護する方法
+                - generic [ref=e1412]: Google AI Blog
+        - generic [ref=e1413]:
+          - generic [ref=e1414]:
+            - generic [ref=e1415]: "02"
+            - generic [ref=e1416]: Feb
+            - generic [ref=e1417]: "2026"
+          - generic [ref=e1420]:
+            - generic [ref=e1421]:
+              - generic [ref=e1422]: Codex
+              - link "OpenAI News" [ref=e1423] [cursor=pointer]:
+                - /url: https://openai.com/index/snowflake-partnership
+                - text: OpenAI News
+                - img [ref=e1424]
+            - link "SnowflakeとOpenAIが提携、企業データにフロンティア・インテリジェンスをもたらす Snowflake and OpenAI partner to bring frontier intelligence to enterprise data" [ref=e1426] [cursor=pointer]:
+              - /url: https://openai.com/index/snowflake-partnership
+              - heading "SnowflakeとOpenAIが提携、企業データにフロンティア・インテリジェンスをもたらす" [level=3] [ref=e1427]
+              - paragraph [ref=e1428]: Snowflake and OpenAI partner to bring frontier intelligence to enterprise data
+            - paragraph [ref=e1429]: OpenAI and Snowflake partner in a $200M agreement to bring frontier intelligence into enterprise data, enabling AI agents and insights directly in Snowflake.
+            - generic [ref=e1431]: NVA 43
+            - generic [ref=e1432]:
+              - generic [ref=e1434]:
+                - text: Community
+                - generic [ref=e1435]: "1"
+              - link "Official コーデックス・アプリの紹介 OpenAI News" [ref=e1437] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-the-codex-app
+                - generic [ref=e1438]: Official
+                - paragraph [ref=e1439]: コーデックス・アプリの紹介
+                - generic [ref=e1441]: OpenAI News
+        - generic [ref=e1442]:
+          - generic [ref=e1443]:
+            - generic [ref=e1444]: "02"
+            - generic [ref=e1445]: Feb
+            - generic [ref=e1446]: "2026"
+          - generic [ref=e1449]:
+            - generic [ref=e1450]:
+              - generic [ref=e1451]: Claude
+              - link "Anthropic News" [ref=e1452] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/anthropic-partners-with-allen-institute-and-howard-hughes-medical-institute
+                - text: Anthropic News
+                - img [ref=e1453]
+            - link "Anthropic、アレン研究所およびハワード・ヒューズ医学研究所と提携し、科学的発見を加速させる Anthropic partners with Allen Institute and Howard Hughes Medical Institute to accelerate scientific discovery" [ref=e1455] [cursor=pointer]:
+              - /url: https://www.anthropic.com/news/anthropic-partners-with-allen-institute-and-howard-hughes-medical-institute
+              - heading "Anthropic、アレン研究所およびハワード・ヒューズ医学研究所と提携し、科学的発見を加速させる" [level=3] [ref=e1456]
+              - paragraph [ref=e1457]: Anthropic partners with Allen Institute and Howard Hughes Medical Institute to accelerate scientific discovery
+            - paragraph [ref=e1458]: Anthropic partners with Allen Institute and Howard Hughes Medical Institute to accelerate scientific discovery
+            - generic [ref=e1460]: NVA 66
+        - generic [ref=e1461]:
+          - generic [ref=e1462]:
+            - generic [ref=e1463]: "02"
+            - generic [ref=e1464]: Feb
+            - generic [ref=e1465]: "2026"
+          - generic [ref=e1468]:
+            - generic [ref=e1469]:
+              - generic [ref=e1470]: Figma
+              - link "Figma Release Notes" [ref=e1471] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=all-emojis-are-available-in-the-figjam-stamp-wheel
+                - text: Figma Release Notes
+                - img [ref=e1472]
+            - link "すべての絵文字は、FigJamスタンプホイールでご利用いただけます。 All emojis are available in the FigJam stamp wheel" [ref=e1474] [cursor=pointer]:
+              - /url: https://www.figma.com/release-notes/?title=all-emojis-are-available-in-the-figjam-stamp-wheel
+              - heading "すべての絵文字は、FigJamスタンプホイールでご利用いただけます。" [level=3] [ref=e1475]
+              - paragraph [ref=e1476]: All emojis are available in the FigJam stamp wheel
+            - paragraph [ref=e1477]: Starting today, you can use the FigJam stamp wheel includes all emojis, which you can use as emotes or as stamps.
+            - generic [ref=e1479]: NVA 39
+            - generic [ref=e1480]:
+              - generic [ref=e1482]:
+                - text: Community
+                - generic [ref=e1483]: "1"
+              - link "Official Figma政府携帯アプリ Figma Release Notes" [ref=e1485] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=figma-for-government-mobile-app
+                - generic [ref=e1486]: Official
+                - paragraph [ref=e1487]: Figma政府携帯アプリ
+                - generic [ref=e1489]: Figma Release Notes
+  - contentinfo [ref=e1490]:
+    - generic [ref=e1491]:
+      - paragraph [ref=e1492]: AI Solo Craft — AIソロ開発者のための日本語ニュースキュレーション
+      - paragraph [ref=e1493]: "毎日配信: 🗞️ ダイジェスト 8:00（プロダクトは随時更新）"
+  - button "Open Next.js Dev Tools" [ref=e1499] [cursor=pointer]:
+    - img [ref=e1500]
+  - alert [ref=e1503]

@@ -1,0 +1,3953 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+  - generic:
+    - img
+    - img
+    - img
+    - img
+    - img
+  - generic:
+    - img
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "AI Solo Craft" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e7]: AI Solo Craft
+      - navigation [ref=e8]:
+        - link "🗞️ ダイジェスト" [ref=e9] [cursor=pointer]:
+          - /url: /#digest-summary
+        - link "📰 ニュース" [ref=e10] [cursor=pointer]:
+          - /url: /news
+        - link "🏷️ プロダクト" [ref=e11] [cursor=pointer]:
+          - /url: /category/products
+        - link "📡 タイムライン" [ref=e12] [cursor=pointer]:
+          - /url: /timeline
+      - generic [ref=e13]:
+        - button "ニュースレター" [ref=e14]:
+          - img [ref=e15]
+          - text: ニュースレター
+        - button "このページを共有" [ref=e17]:
+          - img [ref=e18]
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - heading "📡 ソースタイムライン" [level=1] [ref=e25]
+        - paragraph [ref=e26]: 公式発表 + 厳選コミュニティソースをリアルタイムで追跡
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - generic [ref=e29]: ソース
+          - generic [ref=e30]:
+            - button "すべて509" [ref=e31]
+            - button "日経クロステック103" [ref=e32]
+            - button "CNET Japan36" [ref=e33]
+            - button "Impress Watch36" [ref=e34]
+            - button "OpenAI News36" [ref=e35]
+            - button "Zenn21" [ref=e36]
+            - button "Google AI Blog20" [ref=e37]
+            - button "Figma Release Notes18" [ref=e38]
+            - button "Anthropic News17" [ref=e39]
+            - button "Publickey17" [ref=e40]
+            - button "X @karpathy14" [ref=e41]
+            - button "X @FigmaJapan10" [ref=e42]
+            - button "X @levelsio10" [ref=e43]
+            - button "X @zoink10" [ref=e44]
+            - button "Figma Blog9" [ref=e45]
+            - button "X @figma7" [ref=e46]
+            - button "X @sama5" [ref=e47]
+            - button "X @OpenAI4" [ref=e48]
+            - button "X @AnthropicAI3" [ref=e49]
+            - button "X @cursor_ai3" [ref=e50]
+            - button "X @swyx3" [ref=e51]
+            - button "Meta AI Blog2" [ref=e52]
+            - button "Hacker News1" [ref=e53]
+            - button "Qiita1" [ref=e54]
+        - generic [ref=e55]:
+          - generic [ref=e56]: 企業
+          - generic [ref=e57]:
+            - button "すべて509" [ref=e58]
+            - button "OpenAI36" [ref=e59]
+            - button "Figma27" [ref=e60]
+            - button "Google20" [ref=e61]
+            - button "Anthropic17" [ref=e62]
+            - button "GitHub17" [ref=e63]
+            - button "Cursor3" [ref=e64]
+            - button "Meta2" [ref=e65]
+        - generic [ref=e66]:
+          - generic [ref=e67]: タイプ
+          - generic [ref=e68]:
+            - button "すべて509" [ref=e69]
+            - button "公式129" [ref=e70]
+            - button "メディア234" [ref=e71]
+            - button "コミュニティ146" [ref=e72]
+        - generic [ref=e73]:
+          - generic [ref=e74]:
+            - generic [ref=e76]:
+              - heading "3月2日（月）" [level=2] [ref=e78]
+              - generic [ref=e79]: 18件
+            - generic [ref=e80]:
+              - link "Reddit r/ClaudeAI EN コミュニティ 14:05 注目 tutorial-guide 実はClaudeが好きなんだ。 ↗ 73 NVA" [ref=e81] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rijwot/i_actually_like_claude/
+                - generic [ref=e82]:
+                  - generic [ref=e83]:
+                    - generic [ref=e84]:
+                      - generic [ref=e85]: Reddit r/ClaudeAI
+                      - generic [ref=e86]: EN
+                      - generic [ref=e87]: コミュニティ
+                      - generic [ref=e88]: 14:05
+                      - generic [ref=e89]: 注目
+                      - generic [ref=e90]: tutorial-guide
+                    - heading "実はClaudeが好きなんだ。 ↗" [level=3] [ref=e91]:
+                      - text: 実はClaudeが好きなんだ。
+                      - generic [ref=e92]: ↗
+                  - generic [ref=e93]:
+                    - generic [ref=e94]: "73"
+                    - generic [ref=e95]: NVA
+              - link "Reddit r/ClaudeAI EN コミュニティ 13:28 注目 case-study 42歳、コーディング経験なし。 ↗ 73 NVA" [ref=e96] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rij6mp/42_no_coding_background_just_built_my_first_app/
+                - generic [ref=e97]:
+                  - generic [ref=e98]:
+                    - generic [ref=e99]:
+                      - generic [ref=e100]: Reddit r/ClaudeAI
+                      - generic [ref=e101]: EN
+                      - generic [ref=e102]: コミュニティ
+                      - generic [ref=e103]: 13:28
+                      - generic [ref=e104]: 注目
+                      - generic [ref=e105]: case-study
+                    - heading "42歳、コーディング経験なし。 ↗" [level=3] [ref=e106]:
+                      - text: 42歳、コーディング経験なし。
+                      - generic [ref=e107]: ↗
+                  - generic [ref=e108]:
+                    - generic [ref=e109]: "73"
+                    - generic [ref=e110]: NVA
+              - link "13:26 Zenn コミュニティ Claude Codeに日記を書かせながら開発させたら、AI自身が言行不一致だった 63" [ref=e111] [cursor=pointer]:
+                - /url: https://zenn.dev/seeda_yuto/articles/claude-code-ai-self-review
+                - generic [ref=e112]: 13:26
+                - generic [ref=e113]: Zenn
+                - generic [ref=e114]: コミュニティ
+                - generic [ref=e115]: Claude Codeに日記を書かせながら開発させたら、AI自身が言行不一致だった
+                - generic [ref=e116]: "63"
+              - link "13:13 Reddit r/ClaudeAI コミュニティ 今日は#PulseDay（パルスの日）。 Claudeは、私と同じように闘っている人を行動に移す手助けをしてくれた。 増殖は実際にこんな感じだ。 12 63" [ref=e117] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1riiw7e/today_is_pulseday_claude_helped_me_move_someone/
+                - generic [ref=e118]: 13:13
+                - generic [ref=e119]: Reddit r/ClaudeAI
+                - generic [ref=e120]: コミュニティ
+                - generic [ref=e121]: 今日は#PulseDay（パルスの日）。 Claudeは、私と同じように闘っている人を行動に移す手助けをしてくれた。 増殖は実際にこんな感じだ。
+                - generic "エンゲージメント" [ref=e122]: "12"
+                - generic [ref=e123]: "63"
+              - link "13:10 Zenn コミュニティ 大量ログをClaude Code・Codexに渡すときのベストプラクティス 2 63" [ref=e124] [cursor=pointer]:
+                - /url: https://zenn.dev/dsgarage/articles/clipsave-clipboard-to-file-for-ai
+                - generic [ref=e125]: 13:10
+                - generic [ref=e126]: Zenn
+                - generic [ref=e127]: コミュニティ
+                - generic [ref=e128]: 大量ログをClaude Code・Codexに渡すときのベストプラクティス
+                - generic "エンゲージメント" [ref=e129]: "2"
+                - generic [ref=e130]: "63"
+              - link "13:06 Reddit r/LocalLLaMA コミュニティ Bartowski氏による新しいQwen3.5 27B Imaxtrixクオンツの数々がアップロードされた。 13 63" [ref=e131] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/LocalLLaMA/comments/1riir6o/lots_of_new_qwen35_27b_imaxtrix_quants_from/
+                - generic [ref=e132]: 13:06
+                - generic [ref=e133]: Reddit r/LocalLLaMA
+                - generic [ref=e134]: コミュニティ
+                - generic [ref=e135]: Bartowski氏による新しいQwen3.5 27B Imaxtrixクオンツの数々がアップロードされた。
+                - generic "エンゲージメント" [ref=e136]: "13"
+                - generic [ref=e137]: "63"
+              - link "Reddit r/ClaudeAI EN コミュニティ 13:05 注目 tutorial-guide Ollamaを使ってClaudeコードを無料で実行 - APIキーなし、請求書なし、5分で設定完了 ↗ 73 NVA" [ref=e138] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1riiq1r/run_claude_code_for_free_using_ollama_no_api_key/
+                - generic [ref=e139]:
+                  - generic [ref=e140]:
+                    - generic [ref=e141]:
+                      - generic [ref=e142]: Reddit r/ClaudeAI
+                      - generic [ref=e143]: EN
+                      - generic [ref=e144]: コミュニティ
+                      - generic [ref=e145]: 13:05
+                      - generic [ref=e146]: 注目
+                      - generic [ref=e147]: tutorial-guide
+                    - heading "Ollamaを使ってClaudeコードを無料で実行 - APIキーなし、請求書なし、5分で設定完了 ↗" [level=3] [ref=e148]:
+                      - text: Ollamaを使ってClaudeコードを無料で実行 - APIキーなし、請求書なし、5分で設定完了
+                      - generic [ref=e149]: ↗
+                  - generic [ref=e150]:
+                    - generic [ref=e151]: "73"
+                    - generic [ref=e152]: NVA
+              - link "11:53 Zenn コミュニティ 【Claude MCP入門】ClaudeをローカルDBやGitHubと繋ぐ！Model Context Protocolの可能性 2 63" [ref=e153] [cursor=pointer]:
+                - /url: https://zenn.dev/shineos/articles/claude-mcp-practical-guide
+                - generic [ref=e154]: 11:53
+                - generic [ref=e155]: Zenn
+                - generic [ref=e156]: コミュニティ
+                - generic [ref=e157]: 【Claude MCP入門】ClaudeをローカルDBやGitHubと繋ぐ！Model Context Protocolの可能性
+                - generic "エンゲージメント" [ref=e158]: "2"
+                - generic [ref=e159]: "63"
+              - link "11:50 Zenn コミュニティ Claude Code Max vs GitHub Copilot CLI——$200と$10の間にある本当の差 1 66" [ref=e160] [cursor=pointer]:
+                - /url: https://zenn.dev/imudak/articles/claude-code-max-vs-copilot-cli
+                - generic [ref=e161]: 11:50
+                - generic [ref=e162]: Zenn
+                - generic [ref=e163]: コミュニティ
+                - generic [ref=e164]: Claude Code Max vs GitHub Copilot CLI——$200と$10の間にある本当の差
+                - generic "エンゲージメント" [ref=e165]: "1"
+                - generic [ref=e166]: "66"
+              - 'link "11:39 Reddit r/MachineLearning コミュニティ [P] easy-torch-tpu: Google TPUでPyTorchベースのモデルを簡単に学習できるようにする 1 64" [ref=e167] [cursor=pointer]':
+                - /url: https://github.com/aklein4/easy-torch-tpu
+                - generic [ref=e168]: 11:39
+                - generic [ref=e169]: Reddit r/MachineLearning
+                - generic [ref=e170]: コミュニティ
+                - generic [ref=e171]: "[P] easy-torch-tpu: Google TPUでPyTorchベースのモデルを簡単に学習できるようにする"
+                - generic "エンゲージメント" [ref=e172]: "1"
+                - generic [ref=e173]: "64"
+              - link "11:26 Reddit r/ClaudeAI コミュニティ マックスでさえも、クロードへの支払いが不足しているというのは本当ですか？ 173 65" [ref=e174] [cursor=pointer]:
+                - /url: https://www.reddit.com/gallery/1rignse
+                - generic [ref=e175]: 11:26
+                - generic [ref=e176]: Reddit r/ClaudeAI
+                - generic [ref=e177]: コミュニティ
+                - generic [ref=e178]: マックスでさえも、クロードへの支払いが不足しているというのは本当ですか？
+                - generic "エンゲージメント" [ref=e179]: "173"
+                - generic [ref=e180]: "65"
+              - link "10:51 Zenn コミュニティ Claude、App Store 1位に。ペンタゴンに拒否された翌週の逆転劇 1 63" [ref=e181] [cursor=pointer]:
+                - /url: https://zenn.dev/wasabi_vlab/articles/claude-appstore-number-one-pentagon
+                - generic [ref=e182]: 10:51
+                - generic [ref=e183]: Zenn
+                - generic [ref=e184]: コミュニティ
+                - generic [ref=e185]: Claude、App Store 1位に。ペンタゴンに拒否された翌週の逆転劇
+                - generic "エンゲージメント" [ref=e186]: "1"
+                - generic [ref=e187]: "63"
+              - link "10:33 Reddit r/ClaudeAI コミュニティ Claudeが過小評価されていた逸材だった頃を懐かしく思う！ 85 64" [ref=e188] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rifj33/i_will_miss_the_time_when_claude_was_an/
+                - generic [ref=e189]: 10:33
+                - generic [ref=e190]: Reddit r/ClaudeAI
+                - generic [ref=e191]: コミュニティ
+                - generic [ref=e192]: Claudeが過小評価されていた逸材だった頃を懐かしく思う！
+                - generic "エンゲージメント" [ref=e193]: "85"
+                - generic [ref=e194]: "64"
+              - link "10:11 Zenn コミュニティ Claude Code信者がOpenClawを触って感じたこと。驚き屋に転職します。 6 63" [ref=e195] [cursor=pointer]:
+                - /url: https://zenn.dev/take4/articles/b4c931992f3665
+                - generic [ref=e196]: 10:11
+                - generic [ref=e197]: Zenn
+                - generic [ref=e198]: コミュニティ
+                - generic [ref=e199]: Claude Code信者がOpenClawを触って感じたこと。驚き屋に転職します。
+                - generic "エンゲージメント" [ref=e200]: "6"
+                - generic [ref=e201]: "63"
+              - link "09:38 Zenn コミュニティ Cursor CLIを入れてClaude CodeのCLAUDE.mdをそのまま使う 63" [ref=e202] [cursor=pointer]:
+                - /url: https://zenn.dev/daishiro/articles/cursor-cli-claude-code-md
+                - generic [ref=e203]: 09:38
+                - generic [ref=e204]: Zenn
+                - generic [ref=e205]: コミュニティ
+                - generic [ref=e206]: Cursor CLIを入れてClaude CodeのCLAUDE.mdをそのまま使う
+                - generic [ref=e207]: "63"
+              - link "09:25 Zenn コミュニティ Claude Code × Skills でPRレビュー支援ツールを作った話 — 構想から実装までAIに伴走してもらった記録 1 63" [ref=e208] [cursor=pointer]:
+                - /url: https://zenn.dev/yama2/articles/9791007c6edd0e
+                - generic [ref=e209]: 09:25
+                - generic [ref=e210]: Zenn
+                - generic [ref=e211]: コミュニティ
+                - generic [ref=e212]: Claude Code × Skills でPRレビュー支援ツールを作った話 — 構想から実装までAIに伴走してもらった記録
+                - generic "エンゲージメント" [ref=e213]: "1"
+                - generic [ref=e214]: "63"
+              - link "09:23 Reddit r/ClaudeAI コミュニティ Claude.mdの圧縮について私は間違っていた。 1,188回のベンチマーク実行で実際に示された結果は以下の通りだ。 11 66" [ref=e215] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1ridyke/i_was_wrong_about_claudemd_compression_heres_what/
+                - generic [ref=e216]: 09:23
+                - generic [ref=e217]: Reddit r/ClaudeAI
+                - generic [ref=e218]: コミュニティ
+                - generic [ref=e219]: Claude.mdの圧縮について私は間違っていた。 1,188回のベンチマーク実行で実際に示された結果は以下の通りだ。
+                - generic "エンゲージメント" [ref=e220]: "11"
+                - generic [ref=e221]: "66"
+              - link "09:10 Zenn コミュニティ Claude Code セキュリティ詳解：Permissions、Sandbox、Dev Container などによる実行保護の仕組み 1 63" [ref=e222] [cursor=pointer]:
+                - /url: https://zenn.dev/mimimi193/articles/claude-code-guardrails-best-practices-20260301
+                - generic [ref=e223]: 09:10
+                - generic [ref=e224]: Zenn
+                - generic [ref=e225]: コミュニティ
+                - generic [ref=e226]: Claude Code セキュリティ詳解：Permissions、Sandbox、Dev Container などによる実行保護の仕組み
+                - generic "エンゲージメント" [ref=e227]: "1"
+                - generic [ref=e228]: "63"
+          - generic [ref=e229]:
+            - generic [ref=e231]:
+              - heading "3月1日（日）" [level=2] [ref=e233]
+              - generic [ref=e234]: 48件
+            - generic [ref=e235]:
+              - link "Reddit r/ClaudeAI EN コミュニティ 08:59 注目 case-study Claude用の永続記憶システムを構築した - オープンソース、SQLiteベース、とてもシンプルで基本的なものだ。 ↗ 74 NVA" [ref=e236] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1ridehg/built_a_persistent_memory_system_for_claude_open/
+                - generic [ref=e237]:
+                  - generic [ref=e238]:
+                    - generic [ref=e239]:
+                      - generic [ref=e240]: Reddit r/ClaudeAI
+                      - generic [ref=e241]: EN
+                      - generic [ref=e242]: コミュニティ
+                      - generic [ref=e243]: 08:59
+                      - generic [ref=e244]: 注目
+                      - generic [ref=e245]: case-study
+                    - heading "Claude用の永続記憶システムを構築した - オープンソース、SQLiteベース、とてもシンプルで基本的なものだ。 ↗" [level=3] [ref=e246]:
+                      - text: Claude用の永続記憶システムを構築した - オープンソース、SQLiteベース、とてもシンプルで基本的なものだ。
+                      - generic [ref=e247]: ↗
+                  - generic [ref=e248]:
+                    - generic [ref=e249]: "74"
+                    - generic [ref=e250]: NVA
+              - link "Reddit r/ClaudeAI EN コミュニティ 08:54 注目 product-release Claude Codeで複数のiOSアプリを出荷してわかったベストプラクティス ↗ Best practices I’ve learned after shipping multiple iOS apps with Claude Code Hey everyone, Wanted to share something that’s been on my mind lately. I’ve been using Claude Code pretty heavily over the past few months to build and ship iOS apps. It’s genuinely changed how I approach development. The speed and capability is remarkable and awesome. But here’s the thing I’ve realized along the way, specifically with some of my background in cybersecurity. When you’re building with AI assistance, it’s incredibly easy to get something working and just move on with mindse... reddit.com/r/claudeai 86 NVA" [ref=e251] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1ridakj/best_practices_ive_learned_after_shipping/
+                - generic [ref=e252]:
+                  - generic [ref=e253]:
+                    - generic [ref=e254]:
+                      - generic [ref=e255]: Reddit r/ClaudeAI
+                      - generic [ref=e256]: EN
+                      - generic [ref=e257]: コミュニティ
+                      - generic [ref=e258]: 08:54
+                      - generic [ref=e259]: 注目
+                      - generic [ref=e260]: product-release
+                    - heading "Claude Codeで複数のiOSアプリを出荷してわかったベストプラクティス ↗" [level=3] [ref=e261]:
+                      - text: Claude Codeで複数のiOSアプリを出荷してわかったベストプラクティス
+                      - generic [ref=e262]: ↗
+                    - paragraph [ref=e263]: Best practices I’ve learned after shipping multiple iOS apps with Claude Code
+                    - paragraph [ref=e264]: Hey everyone, Wanted to share something that’s been on my mind lately. I’ve been using Claude Code pretty heavily over the past few months to build and ship iOS apps. It’s genuinely changed how I approach development. The speed and capability is remarkable and awesome. But here’s the thing I’ve realized along the way, specifically with some of my background in cybersecurity. When you’re building with AI assistance, it’s incredibly easy to get something working and just move on with mindse...
+                    - generic [ref=e265]: reddit.com/r/claudeai
+                  - generic [ref=e266]:
+                    - generic [ref=e267]: "86"
+                    - generic [ref=e268]: NVA
+              - link "07:46 Reddit r/ClaudeAI コミュニティ イランについてリアルタイムで知ったClaudeの拡張思考 1.4k 68" [ref=e269] [cursor=pointer]:
+                - /url: https://i.redd.it/am6mszcniimg1.jpeg
+                - generic [ref=e270]: 07:46
+                - generic [ref=e271]: Reddit r/ClaudeAI
+                - generic [ref=e272]: コミュニティ
+                - generic [ref=e273]: イランについてリアルタイムで知ったClaudeの拡張思考
+                - generic "エンゲージメント" [ref=e274]: 1.4k
+                - generic [ref=e275]: "68"
+              - link "Reddit r/ClaudeAI EN コミュニティ 07:25 注目 case-study ダンジョンクローラーを作るための、ブラウザベースの無料ツールキットを作った。 ↗ 74 NVA" [ref=e276] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rib4se/i_built_a_free_browserbased_toolkit_with_claude/
+                - generic [ref=e277]:
+                  - generic [ref=e278]:
+                    - generic [ref=e279]:
+                      - generic [ref=e280]: Reddit r/ClaudeAI
+                      - generic [ref=e281]: EN
+                      - generic [ref=e282]: コミュニティ
+                      - generic [ref=e283]: 07:25
+                      - generic [ref=e284]: 注目
+                      - generic [ref=e285]: case-study
+                    - heading "ダンジョンクローラーを作るための、ブラウザベースの無料ツールキットを作った。 ↗" [level=3] [ref=e286]:
+                      - text: ダンジョンクローラーを作るための、ブラウザベースの無料ツールキットを作った。
+                      - generic [ref=e287]: ↗
+                  - generic [ref=e288]:
+                    - generic [ref=e289]: "74"
+                    - generic [ref=e290]: NVA
+              - link "Reddit r/ClaudeAI EN コミュニティ 06:47 注目 case-study ChatGPT の全履歴を MCP 経由で検索できる Claude 専用ツール chatgpt2md を作りました。 ↗ 74 NVA" [ref=e291] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1ria6dy/i_built_chatgpt2md_a_tool_specifically_for_claude/
+                - generic [ref=e292]:
+                  - generic [ref=e293]:
+                    - generic [ref=e294]:
+                      - generic [ref=e295]: Reddit r/ClaudeAI
+                      - generic [ref=e296]: EN
+                      - generic [ref=e297]: コミュニティ
+                      - generic [ref=e298]: 06:47
+                      - generic [ref=e299]: 注目
+                      - generic [ref=e300]: case-study
+                    - heading "ChatGPT の全履歴を MCP 経由で検索できる Claude 専用ツール chatgpt2md を作りました。 ↗" [level=3] [ref=e301]:
+                      - text: ChatGPT の全履歴を MCP 経由で検索できる Claude 専用ツール chatgpt2md を作りました。
+                      - generic [ref=e302]: ↗
+                  - generic [ref=e303]:
+                    - generic [ref=e304]: "74"
+                    - generic [ref=e305]: NVA
+              - link "06:25 Reddit r/ClaudeAI コミュニティ Claude + Opusは、裕福な人々が何世代にもわたって手にしてきたものを垣間見せてくれる。 65" [ref=e306] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1ri9lng/claude_opus_gives_me_a_glimpse_of_what_wealthy/
+                - generic [ref=e307]: 06:25
+                - generic [ref=e308]: Reddit r/ClaudeAI
+                - generic [ref=e309]: コミュニティ
+                - generic [ref=e310]: Claude + Opusは、裕福な人々が何世代にもわたって手にしてきたものを垣間見せてくれる。
+                - generic [ref=e311]: "65"
+              - link "04:45 Reddit r/LocalLLaMA コミュニティ 最新のAMD GPUファームウェア・アップデートと最新のLlamaビルドにより、Vulkanが大幅に高速化された！ Strix Halo、GNU/Linux Debian、Qwen3.5-35-A3B CTX&lt;=131k、llama.cpp@Vulkan&amp;ROCm、電力と効率性 62" [ref=e312] [cursor=pointer]:
+                - /url: https://i.redd.it/gsryooxmjhmg1.png
+                - generic [ref=e313]: 04:45
+                - generic [ref=e314]: Reddit r/LocalLLaMA
+                - generic [ref=e315]: コミュニティ
+                - generic [ref=e316]: 最新のAMD GPUファームウェア・アップデートと最新のLlamaビルドにより、Vulkanが大幅に高速化された！ Strix Halo、GNU/Linux Debian、Qwen3.5-35-A3B CTX&lt;=131k、llama.cpp@Vulkan&amp;ROCm、電力と効率性
+                - generic [ref=e317]: "62"
+              - link "04:13 Reddit r/LocalLLaMA コミュニティ DeepSeekの瞬間から13カ月、ローカルでのモデル運用はどこまで進んだか？ 57" [ref=e318] [cursor=pointer]:
+                - /url: https://i.redd.it/2ovdv238ehmg1.png
+                - generic [ref=e319]: 04:13
+                - generic [ref=e320]: Reddit r/LocalLLaMA
+                - generic [ref=e321]: コミュニティ
+                - generic [ref=e322]: DeepSeekの瞬間から13カ月、ローカルでのモデル運用はどこまで進んだか？
+                - generic [ref=e323]: "57"
+              - link "03:58 Reddit r/ClaudeAI コミュニティ 自画自賛 64" [ref=e324] [cursor=pointer]:
+                - /url: https://i.redd.it/n5opxluldhmg1.png
+                - generic [ref=e325]: 03:58
+                - generic [ref=e326]: Reddit r/ClaudeAI
+                - generic [ref=e327]: コミュニティ
+                - generic [ref=e328]: 自画自賛
+                - generic [ref=e329]: "64"
+              - link "03:06 Reddit r/LocalLLaMA コミュニティ Qwen3.5-122B-A10B-GGUF-Q4_K_XL-Pipes-Screensaver One-shot. 65" [ref=e330] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/LocalLLaMA/comments/1ri48pj/qwen35122ba10bggufq4_k_xlpipesscreensaver_oneshot/
+                - generic [ref=e331]: 03:06
+                - generic [ref=e332]: Reddit r/LocalLLaMA
+                - generic [ref=e333]: コミュニティ
+                - generic [ref=e334]: Qwen3.5-122B-A10B-GGUF-Q4_K_XL-Pipes-Screensaver One-shot.
+                - generic [ref=e335]: "65"
+              - link "Reddit r/ClaudeAI EN コミュニティ 02:50 注目 case-study 私はClaude Codeを使って、トークンの使用量を74％削減するシングルコールMCPパイプラインを構築した。 ↗ 74 NVA" [ref=e336] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1ri3svv/i_used_claude_code_to_help_build_a_singlecall_mcp/
+                - generic [ref=e337]:
+                  - generic [ref=e338]:
+                    - generic [ref=e339]:
+                      - generic [ref=e340]: Reddit r/ClaudeAI
+                      - generic [ref=e341]: EN
+                      - generic [ref=e342]: コミュニティ
+                      - generic [ref=e343]: 02:50
+                      - generic [ref=e344]: 注目
+                      - generic [ref=e345]: case-study
+                    - heading "私はClaude Codeを使って、トークンの使用量を74％削減するシングルコールMCPパイプラインを構築した。 ↗" [level=3] [ref=e346]:
+                      - text: 私はClaude Codeを使って、トークンの使用量を74％削減するシングルコールMCPパイプラインを構築した。
+                      - generic [ref=e347]: ↗
+                  - generic [ref=e348]:
+                    - generic [ref=e349]: "74"
+                    - generic [ref=e350]: NVA
+              - 'link "Reddit r/ClaudeAI EN コミュニティ 02:05 注目 product-update Claudeの音声認識には大幅なアップグレードが必要 - 簡単な修正方法がある ↗ Claude’s speech recognition needs a major upgrade - here’s an easy fix I prefer Claude over ChatGPT for reasoning, values, and intelligence. I hesitate to switch to Claude over something that is stupidly easy for Anthropic to fix: voice recognition. Claude''s built-in mic transcription is so inaccurate it creates more work than it saves. ChatGPT''s is close to magical — accurate, punctuated, cleans up your own speech glitches. I spent an entire afternoon figuring out a workaround: installed Spokenly on Mac, configured it with NVIDIA''s Parakeet TDT model, and got... reddit.com/r/claudeai 80 NVA" [ref=e351] [cursor=pointer]':
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1ri2lhz/claudes_speech_recognition_needs_a_major_upgrade/
+                - generic [ref=e352]:
+                  - generic [ref=e353]:
+                    - generic [ref=e354]:
+                      - generic [ref=e355]: Reddit r/ClaudeAI
+                      - generic [ref=e356]: EN
+                      - generic [ref=e357]: コミュニティ
+                      - generic [ref=e358]: 02:05
+                      - generic [ref=e359]: 注目
+                      - generic [ref=e360]: product-update
+                    - heading "Claudeの音声認識には大幅なアップグレードが必要 - 簡単な修正方法がある ↗" [level=3] [ref=e361]:
+                      - text: Claudeの音声認識には大幅なアップグレードが必要 - 簡単な修正方法がある
+                      - generic [ref=e362]: ↗
+                    - paragraph [ref=e363]: Claude’s speech recognition needs a major upgrade - here’s an easy fix
+                    - paragraph [ref=e364]: "I prefer Claude over ChatGPT for reasoning, values, and intelligence. I hesitate to switch to Claude over something that is stupidly easy for Anthropic to fix: voice recognition. Claude's built-in mic transcription is so inaccurate it creates more work than it saves. ChatGPT's is close to magical — accurate, punctuated, cleans up your own speech glitches. I spent an entire afternoon figuring out a workaround: installed Spokenly on Mac, configured it with NVIDIA's Parakeet TDT model, and got..."
+                    - generic [ref=e365]: reddit.com/r/claudeai
+                  - generic [ref=e366]:
+                    - generic [ref=e367]: "80"
+                    - generic [ref=e368]: NVA
+              - link "01:01 Publickey AWS、ログイン不要で「Aurora DSQL」をすぐ試せるプレイグラウンド公開。PostgreSQLとの互換性チェックに 39" [ref=e369] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/awsaurora_dsqlpostgresql.html
+                - generic [ref=e370]: 01:01
+                - generic [ref=e371]: Publickey
+                - generic [ref=e372]: AWS、ログイン不要で「Aurora DSQL」をすぐ試せるプレイグラウンド公開。PostgreSQLとの互換性チェックに
+                - generic [ref=e373]: "39"
+              - link "00:58 Publickey Vercel、単一のTypeScriptコードでSlack、Teams、Discordをはじめ主要チャットサービスに対応したチャットボットが作れる「Chat SDK」、オープンソースで公開 66" [ref=e374] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/verceltypescriptslackteamsdiscordchat_sdk.html
+                - generic [ref=e375]: 00:58
+                - generic [ref=e376]: Publickey
+                - generic [ref=e377]: Vercel、単一のTypeScriptコードでSlack、Teams、Discordをはじめ主要チャットサービスに対応したチャットボットが作れる「Chat SDK」、オープンソースで公開
+                - generic [ref=e378]: "66"
+              - link "00:46 X @levelsio 私はいつもフレームワークなしでコーディングしてきたので、ビルド・プロセスを完全に理解したことはなかった。 14 57" [ref=e379] [cursor=pointer]:
+                - /url: https://x.com/levelsio/status/2028134906199412936
+                - generic [ref=e380]: 00:46
+                - generic [ref=e381]: X @levelsio
+                - generic [ref=e382]: 私はいつもフレームワークなしでコーディングしてきたので、ビルド・プロセスを完全に理解したことはなかった。
+                - generic "エンゲージメント" [ref=e383]: "14"
+                - generic [ref=e384]: "57"
+              - link "00:39 X @levelsio 私のビルドなしのシンプルなPHP JSスタックは、とてもシンプルで基本的なので、AIと驚くほどうまく機能する。 6 45" [ref=e385] [cursor=pointer]:
+                - /url: https://x.com/levelsio/status/2028132932989419716
+                - generic [ref=e386]: 00:39
+                - generic [ref=e387]: X @levelsio
+                - generic [ref=e388]: 私のビルドなしのシンプルなPHP JSスタックは、とてもシンプルで基本的なので、AIと驚くほどうまく機能する。
+                - generic "エンゲージメント" [ref=e389]: "6"
+                - generic [ref=e390]: "45"
+              - link "00:32 Reddit r/ClaudeAI コミュニティ ChatGPTがなくなるのは寂しい。 65" [ref=e391] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1ri05lg/the_one_thing_im_going_to_miss_about_chatgpt/
+                - generic [ref=e392]: 00:32
+                - generic [ref=e393]: Reddit r/ClaudeAI
+                - generic [ref=e394]: コミュニティ
+                - generic [ref=e395]: ChatGPTがなくなるのは寂しい。
+                - generic [ref=e396]: "65"
+              - link "00:26 Reddit r/ClaudeAI コミュニティ Claude、ChatGPTを抜いてApp Storeで1位を獲得 65" [ref=e397] [cursor=pointer]:
+                - /url: https://i.redd.it/lf6s88x3cgmg1.jpeg
+                - generic [ref=e398]: 00:26
+                - generic [ref=e399]: Reddit r/ClaudeAI
+                - generic [ref=e400]: コミュニティ
+                - generic [ref=e401]: Claude、ChatGPTを抜いてApp Storeで1位を獲得
+                - generic [ref=e402]: "65"
+              - link "00:20 Reddit r/ClaudeAI コミュニティ トランプ大統領が Anthropic を禁止した数時間後、ペンタゴンはイラン攻撃で Claude を使用した。 59" [ref=e403] [cursor=pointer]:
+                - /url: https://i.redd.it/kniexin1bgmg1.jpeg
+                - generic [ref=e404]: 00:20
+                - generic [ref=e405]: Reddit r/ClaudeAI
+                - generic [ref=e406]: コミュニティ
+                - generic [ref=e407]: トランプ大統領が Anthropic を禁止した数時間後、ペンタゴンはイラン攻撃で Claude を使用した。
+                - generic [ref=e408]: "59"
+              - link "00:06 Reddit r/ClaudeAI コミュニティ AnthropicのChatGPTインポートは浅すぎる。 ここにもっと良いプロンプトがある。 65" [ref=e409] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rhziqr/anthropics_chatgpt_import_is_too_shallow_heres_a/
+                - generic [ref=e410]: 00:06
+                - generic [ref=e411]: Reddit r/ClaudeAI
+                - generic [ref=e412]: コミュニティ
+                - generic [ref=e413]: AnthropicのChatGPTインポートは浅すぎる。 ここにもっと良いプロンプトがある。
+                - generic [ref=e414]: "65"
+              - link "Reddit r/ClaudeAI EN コミュニティ 00:02 注目 tutorial-guide 新規ユーザーからの苦情の嵐に備えよう ↗ 75 NVA" [ref=e415] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rhzfne/get_ready_for_barrage_of_complaints_from_new_users/
+                - generic [ref=e416]:
+                  - generic [ref=e417]:
+                    - generic [ref=e418]:
+                      - generic [ref=e419]: Reddit r/ClaudeAI
+                      - generic [ref=e420]: EN
+                      - generic [ref=e421]: コミュニティ
+                      - generic [ref=e422]: 00:02
+                      - generic [ref=e423]: 注目
+                      - generic [ref=e424]: tutorial-guide
+                    - heading "新規ユーザーからの苦情の嵐に備えよう ↗" [level=3] [ref=e425]:
+                      - text: 新規ユーザーからの苦情の嵐に備えよう
+                      - generic [ref=e426]: ↗
+                  - generic [ref=e427]:
+                    - generic [ref=e428]: "75"
+                    - generic [ref=e429]: NVA
+              - link "23:36 Reddit r/LocalLLaMA コミュニティ ベリティMCPサーバー 65" [ref=e430] [cursor=pointer]:
+                - /url: https://i.redd.it/wjugceeo2gmg1.png
+                - generic [ref=e431]: 23:36
+                - generic [ref=e432]: Reddit r/LocalLLaMA
+                - generic [ref=e433]: コミュニティ
+                - generic [ref=e434]: ベリティMCPサーバー
+                - generic [ref=e435]: "65"
+              - link "Reddit r/MachineLearning EN コミュニティ 23:25 注目 tutorial-guide [P] テンソル・マイクログラッドの構築 ↗ 75 NVA" [ref=e436] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/MachineLearning/comments/1rhyjp1/p_building_a_tensor_micrograd/
+                - generic [ref=e437]:
+                  - generic [ref=e438]:
+                    - generic [ref=e439]:
+                      - generic [ref=e440]: Reddit r/MachineLearning
+                      - generic [ref=e441]: EN
+                      - generic [ref=e442]: コミュニティ
+                      - generic [ref=e443]: 23:25
+                      - generic [ref=e444]: 注目
+                      - generic [ref=e445]: tutorial-guide
+                    - heading "[P] テンソル・マイクログラッドの構築 ↗" [level=3] [ref=e446]:
+                      - text: "[P] テンソル・マイクログラッドの構築"
+                      - generic [ref=e447]: ↗
+                  - generic [ref=e448]:
+                    - generic [ref=e449]: "75"
+                    - generic [ref=e450]: NVA
+              - link "22:59 Reddit r/ClaudeAI コミュニティ 勉強とロールプレイにClaudeを使っている。 65" [ref=e451] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rhxye2/i_am_using_claude_for_studying_and_roleplay/
+                - generic [ref=e452]: 22:59
+                - generic [ref=e453]: Reddit r/ClaudeAI
+                - generic [ref=e454]: コミュニティ
+                - generic [ref=e455]: 勉強とロールプレイにClaudeを使っている。
+                - generic [ref=e456]: "65"
+              - link "22:39 Reddit r/ClaudeAI コミュニティ カジュアルだが好奇心旺盛なユーザーにとって、プロはそれだけの価値があるのだろうか？ 65" [ref=e457] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rhxips/is_pro_worth_it_for_a_casual_but_curious_user/
+                - generic [ref=e458]: 22:39
+                - generic [ref=e459]: Reddit r/ClaudeAI
+                - generic [ref=e460]: コミュニティ
+                - generic [ref=e461]: カジュアルだが好奇心旺盛なユーザーにとって、プロはそれだけの価値があるのだろうか？
+                - generic [ref=e462]: "65"
+              - link "22:24 Reddit r/ClaudeAI コミュニティ 新機能：Anthropicは、ユーザーが他のAIツールからClaudeにコンテキストや好みを転送できるメモリー機能を導入した。 68" [ref=e463] [cursor=pointer]:
+                - /url: https://v.redd.it/lenuamrbqfmg1
+                - generic [ref=e464]: 22:24
+                - generic [ref=e465]: Reddit r/ClaudeAI
+                - generic [ref=e466]: コミュニティ
+                - generic [ref=e467]: 新機能：Anthropicは、ユーザーが他のAIツールからClaudeにコンテキストや好みを転送できるメモリー機能を導入した。
+                - generic [ref=e468]: "68"
+              - link "22:21 Reddit r/LocalLLaMA コミュニティ Apple Neural Engine(ANE)をリバースエンジニアリングしてMicrogptをトレーニング 65" [ref=e469] [cursor=pointer]:
+                - /url: https://i.redd.it/vl6kd7lvpfmg1.jpeg
+                - generic [ref=e470]: 22:21
+                - generic [ref=e471]: Reddit r/LocalLLaMA
+                - generic [ref=e472]: コミュニティ
+                - generic [ref=e473]: Apple Neural Engine(ANE)をリバースエンジニアリングしてMicrogptをトレーニング
+                - generic [ref=e474]: "65"
+              - link "21:58 Reddit r/LocalLLaMA コミュニティ Qwen3.5 Small Denseモデルのリリースが間近に迫っているようだ。 58" [ref=e475] [cursor=pointer]:
+                - /url: https://i.redd.it/k5buxjdplfmg1.png
+                - generic [ref=e476]: 21:58
+                - generic [ref=e477]: Reddit r/LocalLLaMA
+                - generic [ref=e478]: コミュニティ
+                - generic [ref=e479]: Qwen3.5 Small Denseモデルのリリースが間近に迫っているようだ。
+                - generic [ref=e480]: "58"
+              - link "20:55 Reddit r/LocalLLaMA コミュニティ PSA：もし、あなたのローカル・コーディング・エージェントが30k以上のコンテクストで「間抜け」だと感じたら、まずKVキャッシュの量子化をチェックしてください。 56" [ref=e481] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/LocalLLaMA/comments/1rhvi09/psa_if_your_local_coding_agent_feels_dumb_at_30k/
+                - generic [ref=e482]: 20:55
+                - generic [ref=e483]: Reddit r/LocalLLaMA
+                - generic [ref=e484]: コミュニティ
+                - generic [ref=e485]: PSA：もし、あなたのローカル・コーディング・エージェントが30k以上のコンテクストで「間抜け」だと感じたら、まずKVキャッシュの量子化をチェックしてください。
+                - generic [ref=e486]: "56"
+              - link "20:15 Reddit r/ClaudeAI コミュニティ Claudeは米国とカナダのApp Storeで1位を獲得している。 65" [ref=e487] [cursor=pointer]:
+                - /url: https://www.reddit.com/gallery/1rhut5e
+                - generic [ref=e488]: 20:15
+                - generic [ref=e489]: Reddit r/ClaudeAI
+                - generic [ref=e490]: コミュニティ
+                - generic [ref=e491]: Claudeは米国とカナダのApp Storeで1位を獲得している。
+                - generic [ref=e492]: "65"
+              - link "19:18 Impress Watch NHK、イラン攻撃で短波ラジオを現地向けに臨時配信 38" [ref=e493] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089503.html
+                - generic [ref=e494]: 19:18
+                - generic [ref=e495]: Impress Watch
+                - generic [ref=e496]: NHK、イラン攻撃で短波ラジオを現地向けに臨時配信
+                - generic [ref=e497]: "38"
+              - link "19:00 Impress Watch OpenAI、米国防総省と機密AI利用について合意 Anthropic決裂直後に 65" [ref=e498] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089493.html
+                - generic [ref=e499]: 19:00
+                - generic [ref=e500]: Impress Watch
+                - generic [ref=e501]: OpenAI、米国防総省と機密AI利用について合意 Anthropic決裂直後に
+                - generic [ref=e502]: "65"
+              - link "18:38 Reddit r/ClaudeAI コミュニティ GLM-5がNVIDIA NIMで正式に修正され、Claude Codeに無料で使用できるようになりました🚀。 65" [ref=e503] [cursor=pointer]:
+                - /url: https://github.com/Alishahryar1/free-claude-code
+                - generic [ref=e504]: 18:38
+                - generic [ref=e505]: Reddit r/ClaudeAI
+                - generic [ref=e506]: コミュニティ
+                - generic [ref=e507]: GLM-5がNVIDIA NIMで正式に修正され、Claude Codeに無料で使用できるようになりました🚀。
+                - generic [ref=e508]: "65"
+              - link "17:03 Reddit r/ClaudeAI コミュニティ PlayStore上のウェブサイト 65" [ref=e509] [cursor=pointer]:
+                - /url: https://i.redd.it/44v72d605emg1.jpeg
+                - generic [ref=e510]: 17:03
+                - generic [ref=e511]: Reddit r/ClaudeAI
+                - generic [ref=e512]: コミュニティ
+                - generic [ref=e513]: PlayStore上のウェブサイト
+                - generic [ref=e514]: "65"
+              - link "16:48 Zenn コミュニティ デザインツールからプロジェクトへ落とし込む開発フロー（個人開発 / v0 + Codex） 65" [ref=e515] [cursor=pointer]:
+                - /url: https://zenn.dev/nakatai/articles/29145658f3ed06
+                - generic [ref=e516]: 16:48
+                - generic [ref=e517]: Zenn
+                - generic [ref=e518]: コミュニティ
+                - generic [ref=e519]: デザインツールからプロジェクトへ落とし込む開発フロー（個人開発 / v0 + Codex）
+                - generic [ref=e520]: "65"
+              - link "15:58 Reddit r/ClaudeAI コミュニティ GPTのアカウントを削除して、ゲームプロジェクトをClaudeに移植した。 すごい！ 65" [ref=e521] [cursor=pointer]:
+                - /url: https://i.redd.it/hpd5bkaftdmg1.jpeg
+                - generic [ref=e522]: 15:58
+                - generic [ref=e523]: Reddit r/ClaudeAI
+                - generic [ref=e524]: コミュニティ
+                - generic [ref=e525]: GPTのアカウントを削除して、ゲームプロジェクトをClaudeに移植した。 すごい！
+                - generic [ref=e526]: "65"
+              - link "15:31 Reddit r/ClaudeAI コミュニティ Claudeプロダクトマネージャー：Claudeが米国App Storeで1位を獲得。 65" [ref=e527] [cursor=pointer]:
+                - /url: https://www.reddit.com/gallery/1rhq2lg
+                - generic [ref=e528]: 15:31
+                - generic [ref=e529]: Reddit r/ClaudeAI
+                - generic [ref=e530]: コミュニティ
+                - generic [ref=e531]: Claudeプロダクトマネージャー：Claudeが米国App Storeで1位を獲得。
+                - generic [ref=e532]: "65"
+              - link "15:19 Reddit r/ClaudeAI コミュニティ 私は脳腫瘍と闘うためにClaudeを使っている。 65" [ref=e533] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rhpvlb/im_using_claude_to_fight_brain_cancer_and_it/
+                - generic [ref=e534]: 15:19
+                - generic [ref=e535]: Reddit r/ClaudeAI
+                - generic [ref=e536]: コミュニティ
+                - generic [ref=e537]: 私は脳腫瘍と闘うためにClaudeを使っている。
+                - generic [ref=e538]: "65"
+              - link "14:55 ProductHunt コミュニティ Claude インポートメモリー 65" [ref=e539] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/claude
+                - generic [ref=e540]: 14:55
+                - generic [ref=e541]: ProductHunt
+                - generic [ref=e542]: コミュニティ
+                - generic [ref=e543]: Claude インポートメモリー
+                - generic [ref=e544]: "65"
+              - link "14:21 X @kgsi コミュニティ 凄さを本当に実感しているし、同時に落ち込みもする。デザイン的にまだ甘いみたいなことは当然あるにしても、そんな突き詰めて視覚設計する資料なんでそんなに多... 23 63" [ref=e545] [cursor=pointer]:
+                - /url: https://x.com/kgsi/status/2027977459627659413
+                - generic [ref=e546]: 14:21
+                - generic [ref=e547]: X @kgsi
+                - generic [ref=e548]: コミュニティ
+                - generic [ref=e549]: 凄さを本当に実感しているし、同時に落ち込みもする。デザイン的にまだ甘いみたいなことは当然あるにしても、そんな突き詰めて視覚設計する資料なんでそんなに多...
+                - generic "エンゲージメント" [ref=e550]: "23"
+                - generic [ref=e551]: "63"
+              - link "14:04 Reddit r/LocalLLaMA コミュニティ モデルをリロードせずにQwen 3.5の思考のオン/オフを切り替える方法 57" [ref=e552] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/LocalLLaMA/comments/1rhohqk/how_to_switch_qwen_35_thinking_onoff_without/
+                - generic [ref=e553]: 14:04
+                - generic [ref=e554]: Reddit r/LocalLLaMA
+                - generic [ref=e555]: コミュニティ
+                - generic [ref=e556]: モデルをリロードせずにQwen 3.5の思考のオン/オフを切り替える方法
+                - generic [ref=e557]: "57"
+              - link "Reddit r/LocalLLaMA EN コミュニティ 14:02 注目 product-release 米国はイラン空爆でAnthropic AIツールを使用した ↗ The U.S. used Anthropic AI tools during airstrikes on Iran Hours after announcing that the federal government would cease using artificial intelligence tools developed by the tech company Anthropic, U.S. President Trump utilized those very tools to launch a massive airstrike against Iran. Sources familiar with the matter confirmed that command centers in various locations, including U.S. Central Command (CENTCOM), have been using Anthropic’s Claude AI tool. Despite escalating tensions between the company and the Pentagon, the command continued to emp... reddit.com/r/localllama 86 NVA" [ref=e558] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/LocalLLaMA/comments/1rhogov/the_us_used_anthropic_ai_tools_during_airstrikes/
+                - generic [ref=e559]:
+                  - generic [ref=e560]:
+                    - generic [ref=e561]:
+                      - generic [ref=e562]: Reddit r/LocalLLaMA
+                      - generic [ref=e563]: EN
+                      - generic [ref=e564]: コミュニティ
+                      - generic [ref=e565]: 14:02
+                      - generic [ref=e566]: 注目
+                      - generic [ref=e567]: product-release
+                    - heading "米国はイラン空爆でAnthropic AIツールを使用した ↗" [level=3] [ref=e568]:
+                      - text: 米国はイラン空爆でAnthropic AIツールを使用した
+                      - generic [ref=e569]: ↗
+                    - paragraph [ref=e570]: The U.S. used Anthropic AI tools during airstrikes on Iran
+                    - paragraph [ref=e571]: Hours after announcing that the federal government would cease using artificial intelligence tools developed by the tech company Anthropic, U.S. President Trump utilized those very tools to launch a massive airstrike against Iran. Sources familiar with the matter confirmed that command centers in various locations, including U.S. Central Command (CENTCOM), have been using Anthropic’s Claude AI tool. Despite escalating tensions between the company and the Pentagon, the command continued to emp...
+                    - generic [ref=e572]: reddit.com/r/localllama
+                  - generic [ref=e573]:
+                    - generic [ref=e574]: "86"
+                    - generic [ref=e575]: NVA
+              - link "11:45 Reddit r/ClaudeAI コミュニティ 米軍の中東攻撃、トランプ大統領が禁止した数時間後にAnthropicを使用 63" [ref=e576] [cursor=pointer]:
+                - /url: https://www.wsj.com/livecoverage/iran-strikes-2026/card/u-s-strikes-in-middle-east-use-anthropic-hours-after-trump-ban-ozNO0iClZpfpL7K7ElJ2?st=RdidXw&amp;reflink=article_copyURL_share
+                - generic [ref=e577]: 11:45
+                - generic [ref=e578]: Reddit r/ClaudeAI
+                - generic [ref=e579]: コミュニティ
+                - generic [ref=e580]: 米軍の中東攻撃、トランプ大統領が禁止した数時間後にAnthropicを使用
+                - generic [ref=e581]: "63"
+              - link "09:58 Reddit r/ClaudeAI コミュニティ ClaudeにQuakeのThree.jsへの移植を依頼 65" [ref=e582] [cursor=pointer]:
+                - /url: https://v.redd.it/cozrt3770cmg1
+                - generic [ref=e583]: 09:58
+                - generic [ref=e584]: Reddit r/ClaudeAI
+                - generic [ref=e585]: コミュニティ
+                - generic [ref=e586]: ClaudeにQuakeのThree.jsへの移植を依頼
+                - generic [ref=e587]: "65"
+              - link "09:57 X @levelsio ただいま戻りました！この質問をするたびに、Xを見たいクールな作品がたくさん見つかるんです。 610 41" [ref=e588] [cursor=pointer]:
+                - /url: https://x.com/levelsio/status/2027911053942678014
+                - generic [ref=e589]: 09:57
+                - generic [ref=e590]: X @levelsio
+                - generic [ref=e591]: ただいま戻りました！この質問をするたびに、Xを見たいクールな作品がたくさん見つかるんです。
+                - generic "エンゲージメント" [ref=e592]: "610"
+                - generic [ref=e593]: "41"
+              - link "09:21 Reddit r/ClaudeAI コミュニティ クロードは他のAIよりも人間的なようだ 65" [ref=e594] [cursor=pointer]:
+                - /url: https://i.redd.it/byg0mymmubmg1.jpeg
+                - generic [ref=e595]: 09:21
+                - generic [ref=e596]: Reddit r/ClaudeAI
+                - generic [ref=e597]: コミュニティ
+                - generic [ref=e598]: クロードは他のAIよりも人間的なようだ
+                - generic [ref=e599]: "65"
+              - link "09:08 X @levelsio 結局、しばらくは🇧🇷 ブラジルに滞在することになるのかもしれない...。 1.2k 42" [ref=e600] [cursor=pointer]:
+                - /url: https://x.com/levelsio/status/2027898832025997625
+                - generic [ref=e601]: 09:08
+                - generic [ref=e602]: X @levelsio
+                - generic [ref=e603]: 結局、しばらくは🇧🇷 ブラジルに滞在することになるのかもしれない...。
+                - generic "エンゲージメント" [ref=e604]: 1.2k
+                - generic [ref=e605]: "42"
+              - link "09:00 Impress Watch 【いつモノコト】スマートリング「SOXAI RING」を1年間使ってみて 38" [ref=e606] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/series/itsmo/2088105.html
+                - generic [ref=e607]: 09:00
+                - generic [ref=e608]: Impress Watch
+                - generic [ref=e609]: 【いつモノコト】スマートリング「SOXAI RING」を1年間使ってみて
+                - generic [ref=e610]: "38"
+          - generic [ref=e611]:
+            - generic [ref=e612]:
+              - generic [ref=e613]:
+                - heading "2月28日（土）" [level=2] [ref=e615]
+                - generic [ref=e616]: 31件
+              - generic [ref=e618]: OpenAI 1
+            - generic [ref=e619]:
+              - link "08:43 X @levelsio 信じられないが、もしこれがガウス・スプラットの映像で、それが動くとしたら......。 409 40" [ref=e620] [cursor=pointer]:
+                - /url: https://x.com/levelsio/status/2027892405911875625
+                - generic [ref=e621]: 08:43
+                - generic [ref=e622]: X @levelsio
+                - generic [ref=e623]: 信じられないが、もしこれがガウス・スプラットの映像で、それが動くとしたら......。
+                - generic "エンゲージメント" [ref=e624]: "409"
+                - generic [ref=e625]: "40"
+              - link "08:43 X @kajikent コミュニティ 今回の米国防総省・トランプ政権との一件で益々Anthropicが好きになった。そして現OpenAIとSam Altmanの醜悪さが露呈した結果になったと思う。 ChatGPTを解約し... 153 65" [ref=e626] [cursor=pointer]:
+                - /url: https://x.com/kajikent/status/2027892357316939805
+                - generic [ref=e627]: 08:43
+                - generic [ref=e628]: X @kajikent
+                - generic [ref=e629]: コミュニティ
+                - generic [ref=e630]: 今回の米国防総省・トランプ政権との一件で益々Anthropicが好きになった。そして現OpenAIとSam Altmanの醜悪さが露呈した結果になったと思う。 ChatGPTを解約し...
+                - generic "エンゲージメント" [ref=e631]: "153"
+                - generic [ref=e632]: "65"
+              - link "08:30 X @swyx ついに 73 38" [ref=e633] [cursor=pointer]:
+                - /url: https://x.com/swyx/status/2027889270711849127
+                - generic [ref=e634]: 08:30
+                - generic [ref=e635]: X @swyx
+                - generic [ref=e636]: ついに
+                - generic "エンゲージメント" [ref=e637]: "73"
+                - generic [ref=e638]: "38"
+              - link "08:30 Impress Watch グーグル、「かこって検索」強化 複数アイテムの画像を一度に検索 38" [ref=e639] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089477.html
+                - generic [ref=e640]: 08:30
+                - generic [ref=e641]: Impress Watch
+                - generic [ref=e642]: グーグル、「かこって検索」強化 複数アイテムの画像を一度に検索
+                - generic [ref=e643]: "38"
+              - 'link "08:11 X @levelsio 私のログを読むために99ドル/月を払いましょう TAILはどうですか？ tail -n 50 /var/log/{php*.log,nginx/error.log,syslog} 2>/dev/null | Claude \"これらのログを解析して、... 839 68" [ref=e644] [cursor=pointer]':
+                - /url: https://x.com/levelsio/status/2027884347626303630
+                - generic [ref=e645]: 08:11
+                - generic [ref=e646]: X @levelsio
+                - generic [ref=e647]: "私のログを読むために99ドル/月を払いましょう TAILはどうですか？ tail -n 50 /var/log/{php*.log,nginx/error.log,syslog} 2>/dev/null | Claude \"これらのログを解析して、..."
+                - generic "エンゲージメント" [ref=e648]: "839"
+                - generic [ref=e649]: "68"
+              - link "08:01 Reddit r/ClaudeAI コミュニティ ClaudeがApple App StoreでChatGPTを抜いた 69" [ref=e650] [cursor=pointer]:
+                - /url: https://i.redd.it/osn6yzbfgbmg1.jpeg
+                - generic [ref=e651]: 08:01
+                - generic [ref=e652]: Reddit r/ClaudeAI
+                - generic [ref=e653]: コミュニティ
+                - generic [ref=e654]: ClaudeがApple App StoreでChatGPTを抜いた
+                - generic [ref=e655]: "69"
+              - link "07:17 Reddit r/LocalLLaMA コミュニティ Qwen3 Coder Next｜Qwen3.5 27B｜Devstral Small 2｜Rust &amp; Next.js ベンチマーク 68" [ref=e656] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/LocalLLaMA/comments/1rhfque/qwen3_coder_next_qwen35_27b_devstral_small_2_rust/
+                - generic [ref=e657]: 07:17
+                - generic [ref=e658]: Reddit r/LocalLLaMA
+                - generic [ref=e659]: コミュニティ
+                - generic [ref=e660]: Qwen3 Coder Next｜Qwen3.5 27B｜Devstral Small 2｜Rust &amp; Next.js ベンチマーク
+                - generic [ref=e661]: "68"
+              - link "Reddit r/ClaudeAI EN コミュニティ 06:51 注目 case-study 1日でClaude Codeで3D都市をコーディングしてみた。GitHubの開発者全員が建物だ。 ↗ 74 NVA" [ref=e662] [cursor=pointer]:
+                - /url: https://v.redd.it/986929gy3bmg1
+                - generic [ref=e663]:
+                  - generic [ref=e664]:
+                    - generic [ref=e665]:
+                      - generic [ref=e666]: Reddit r/ClaudeAI
+                      - generic [ref=e667]: EN
+                      - generic [ref=e668]: コミュニティ
+                      - generic [ref=e669]: 06:51
+                      - generic [ref=e670]: 注目
+                      - generic [ref=e671]: case-study
+                    - heading "1日でClaude Codeで3D都市をコーディングしてみた。GitHubの開発者全員が建物だ。 ↗" [level=3] [ref=e672]:
+                      - text: 1日でClaude Codeで3D都市をコーディングしてみた。GitHubの開発者全員が建物だ。
+                      - generic [ref=e673]: ↗
+                  - generic [ref=e674]:
+                    - generic [ref=e675]: "74"
+                    - generic [ref=e676]: NVA
+              - link "05:20 CNET Japan 千葉工大「伊藤穰一学長への信頼変わらない」--エプスタイン氏めぐる報道で声明 38" [ref=e677] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244417/
+                - generic [ref=e678]: 05:20
+                - generic [ref=e679]: CNET Japan
+                - generic [ref=e680]: 千葉工大「伊藤穰一学長への信頼変わらない」--エプスタイン氏めぐる報道で声明
+                - generic [ref=e681]: "38"
+              - link "04:14 X @levelsio いや、実際には可能だ。 131 39" [ref=e682] [cursor=pointer]:
+                - /url: https://x.com/levelsio/status/2027824779747606775
+                - generic [ref=e683]: 04:14
+                - generic [ref=e684]: X @levelsio
+                - generic [ref=e685]: いや、実際には可能だ。
+                - generic "エンゲージメント" [ref=e686]: "131"
+                - generic [ref=e687]: "39"
+              - link "X @levelsio EN 03:47 注目 case-study PHP、JS、サーバーのエラー・ログ、そしてバグや機能のリクエスト・ボードをAIに接続し、AIがコードを書いたり、... ↗ 76 NVA" [ref=e688] [cursor=pointer]:
+                - /url: https://x.com/levelsio/status/2027817837083955440
+                - generic [ref=e689]:
+                  - generic [ref=e690]:
+                    - generic [ref=e691]:
+                      - generic [ref=e692]: X @levelsio
+                      - generic [ref=e693]: EN
+                      - generic [ref=e694]: 03:47
+                      - generic [ref=e695]: 注目
+                      - generic [ref=e696]: case-study
+                    - heading "PHP、JS、サーバーのエラー・ログ、そしてバグや機能のリクエスト・ボードをAIに接続し、AIがコードを書いたり、... ↗" [level=3] [ref=e697]:
+                      - text: PHP、JS、サーバーのエラー・ログ、そしてバグや機能のリクエスト・ボードをAIに接続し、AIがコードを書いたり、...
+                      - generic [ref=e698]: ↗
+                  - generic [ref=e699]:
+                    - generic [ref=e700]: "76"
+                    - generic [ref=e701]: NVA
+              - link "03:23 X @levelsio ここもそうだと思う。 2.1k 42" [ref=e702] [cursor=pointer]:
+                - /url: https://x.com/levelsio/status/2027811826713387165
+                - generic [ref=e703]: 03:23
+                - generic [ref=e704]: X @levelsio
+                - generic [ref=e705]: ここもそうだと思う。
+                - generic "エンゲージメント" [ref=e706]: 2.1k
+                - generic [ref=e707]: "42"
+              - link "03:17 Zenn コミュニティ ローカル環境のFigma みたいな無限キャンバスツール作った [Claude Code補完] 65" [ref=e708] [cursor=pointer]:
+                - /url: https://zenn.dev/shuent/articles/b1efca72246e22
+                - generic [ref=e709]: 03:17
+                - generic [ref=e710]: Zenn
+                - generic [ref=e711]: コミュニティ
+                - generic [ref=e712]: ローカル環境のFigma みたいな無限キャンバスツール作った [Claude Code補完]
+                - generic [ref=e713]: "65"
+              - link "02:52 Reddit r/ClaudeAI コミュニティ Anthropicは教育カリキュラムをすべて無料で公開している。 65" [ref=e714] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/
+                - generic [ref=e715]: 02:52
+                - generic [ref=e716]: Reddit r/ClaudeAI
+                - generic [ref=e717]: コミュニティ
+                - generic [ref=e718]: Anthropicは教育カリキュラムをすべて無料で公開している。
+                - generic [ref=e719]: "65"
+              - link "02:12 Reddit r/MachineLearning コミュニティ [R] AudioMuse-AI-DCLAP - LAION CLAPをテキストから音楽に変換。 65" [ref=e720] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/MachineLearning/comments/1rh82jp/r_audiomuseaidclap_laion_clap_distilled_for_text/
+                - generic [ref=e721]: 02:12
+                - generic [ref=e722]: Reddit r/MachineLearning
+                - generic [ref=e723]: コミュニティ
+                - generic [ref=e724]: "[R] AudioMuse-AI-DCLAP - LAION CLAPをテキストから音楽に変換。"
+                - generic [ref=e725]: "65"
+              - link "01:08 Reddit r/ClaudeAI コミュニティ ダリオ・アモデイに敬意を表したい。 65" [ref=e726] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rh6fle/huge_respect_to_dario_amodei_for_standing_his/
+                - generic [ref=e727]: 01:08
+                - generic [ref=e728]: Reddit r/ClaudeAI
+                - generic [ref=e729]: コミュニティ
+                - generic [ref=e730]: ダリオ・アモデイに敬意を表したい。
+                - generic [ref=e731]: "65"
+              - link "21:30 OpenAI News 陸軍省との合意 48" [ref=e732] [cursor=pointer]:
+                - /url: https://openai.com/index/our-agreement-with-the-department-of-war
+                - generic [ref=e733]: 21:30
+                - generic [ref=e734]: OpenAI News
+                - generic [ref=e735]: 陸軍省との合意
+                - generic [ref=e736]: "48"
+              - link "20:25 Reddit r/LocalLLaMA コミュニティ フィナンシャル・タイムズ紙によると、ディープシークV4は来週リリースされ、画像とビデオの生成機能を持つことになるという。 59" [ref=e737] [cursor=pointer]:
+                - /url: https://i.redd.it/kwyym79lz7mg1.jpeg
+                - generic [ref=e738]: 20:25
+                - generic [ref=e739]: Reddit r/LocalLLaMA
+                - generic [ref=e740]: コミュニティ
+                - generic [ref=e741]: フィナンシャル・タイムズ紙によると、ディープシークV4は来週リリースされ、画像とビデオの生成機能を持つことになるという。
+                - generic [ref=e742]: "59"
+              - link "20:23 Reddit r/ClaudeAI コミュニティ ChatGPTからClaudeへの移動 65" [ref=e743] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rh07wv/moving_from_chatgpt_to_claude/
+                - generic [ref=e744]: 20:23
+                - generic [ref=e745]: Reddit r/ClaudeAI
+                - generic [ref=e746]: コミュニティ
+                - generic [ref=e747]: ChatGPTからClaudeへの移動
+                - generic [ref=e748]: "65"
+              - link "19:19 X @zoink おめでとう、@scottgmorton と @Revel_Software チーム。 A+ インタビュー。 39 57" [ref=e749] [cursor=pointer]:
+                - /url: https://x.com/zoink/status/2027690154920710481
+                - generic [ref=e750]: 19:19
+                - generic [ref=e751]: X @zoink
+                - generic [ref=e752]: おめでとう、@scottgmorton と @Revel_Software チーム。 A+ インタビュー。
+                - generic "エンゲージメント" [ref=e753]: "39"
+                - generic [ref=e754]: "57"
+              - link "18:19 X @FigmaJapan Figma Makeathonを開催中🙌 賞金総額は💰100K 3月2日まで https://on.contra.com/rbgJ8T 24 38" [ref=e755] [cursor=pointer]:
+                - /url: https://x.com/FigmaJapan/status/2027675011591684223
+                - generic [ref=e756]: 18:19
+                - generic [ref=e757]: X @FigmaJapan
+                - generic [ref=e758]: Figma Makeathonを開催中🙌 賞金総額は💰100K 3月2日まで https://on.contra.com/rbgJ8T
+                - generic "エンゲージメント" [ref=e759]: "24"
+                - generic [ref=e760]: "38"
+              - link "17:31 Zenn コミュニティ Figma MCP × Claude Codeで、デザインからコードを一瞬で自動生成してみた🎨 68" [ref=e761] [cursor=pointer]:
+                - /url: https://zenn.dev/tatsuqumo/articles/876ba69fd204aa
+                - generic [ref=e762]: 17:31
+                - generic [ref=e763]: Zenn
+                - generic [ref=e764]: コミュニティ
+                - generic [ref=e765]: Figma MCP × Claude Codeで、デザインからコードを一瞬で自動生成してみた🎨
+                - generic [ref=e766]: "68"
+              - link "15:44 Reddit r/MachineLearning コミュニティ [R] Qwen3.5のMoEアーキテクチャ：ブレークスルーか、単なるインクリメントか？ 59" [ref=e767] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/MachineLearning/comments/1rgvktd/r_qwen35s_moe_architecture_a_breakthrough_or_just/
+                - generic [ref=e768]: 15:44
+                - generic [ref=e769]: Reddit r/MachineLearning
+                - generic [ref=e770]: コミュニティ
+                - generic [ref=e771]: "[R] Qwen3.5のMoEアーキテクチャ：ブレークスルーか、単なるインクリメントか？"
+                - generic [ref=e772]: "59"
+              - link "15:24 Reddit r/ClaudeAI コミュニティ ケイティ・ペリーがClaude Proに加入。 69" [ref=e773] [cursor=pointer]:
+                - /url: https://i.imgur.com/BacoKa4.png
+                - generic [ref=e774]: 15:24
+                - generic [ref=e775]: Reddit r/ClaudeAI
+                - generic [ref=e776]: コミュニティ
+                - generic [ref=e777]: ケイティ・ペリーがClaude Proに加入。
+                - generic [ref=e778]: "69"
+              - link "14:16 X @swyx 2月4日、@samaはOpenAI Codexがこの3週間で60万人のユーザーを獲得したと発表した。 197 69" [ref=e779] [cursor=pointer]:
+                - /url: https://x.com/swyx/status/2027613757787279730
+                - generic [ref=e780]: 14:16
+                - generic [ref=e781]: X @swyx
+                - generic [ref=e782]: 2月4日、@samaはOpenAI Codexがこの3週間で60万人のユーザーを獲得したと発表した。
+                - generic "エンゲージメント" [ref=e783]: "197"
+                - generic [ref=e784]: "69"
+              - link "13:59 ProductHunt コミュニティ プロンプトURL 65" [ref=e785] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/prompturls
+                - generic [ref=e786]: 13:59
+                - generic [ref=e787]: ProductHunt
+                - generic [ref=e788]: コミュニティ
+                - generic [ref=e789]: プロンプトURL
+                - generic [ref=e790]: "65"
+              - link "12:38 X @levelsio みんな、特に政治家はもっと遠いところを旅するべきだ。 1.2k 42" [ref=e791] [cursor=pointer]:
+                - /url: https://x.com/levelsio/status/2027589297432592641
+                - generic [ref=e792]: 12:38
+                - generic [ref=e793]: X @levelsio
+                - generic [ref=e794]: みんな、特に政治家はもっと遠いところを旅するべきだ。
+                - generic "エンゲージメント" [ref=e795]: 1.2k
+                - generic [ref=e796]: "42"
+              - link "11:56 X @sama 今夜、我々は陸軍省と合意し、彼らの機密ネットワークに我々のモデルを配備することになった。 我々のすべてのやり取りにおいて、陸軍省は... 50k 38" [ref=e797] [cursor=pointer]:
+                - /url: https://x.com/sama/status/2027578652477821175
+                - generic [ref=e798]: 11:56
+                - generic [ref=e799]: X @sama
+                - generic [ref=e800]: 今夜、我々は陸軍省と合意し、彼らの機密ネットワークに我々のモデルを配備することになった。 我々のすべてのやり取りにおいて、陸軍省は...
+                - generic "エンゲージメント" [ref=e801]: 50k
+                - generic [ref=e802]: "38"
+              - link "10:00 Impress Watch 災害発生時にも営業して被災者・復旧活動を支援する「災害支援ローソン」1号店を見てきた 38" [ref=e803] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089058.html
+                - generic [ref=e804]: 10:00
+                - generic [ref=e805]: Impress Watch
+                - generic [ref=e806]: 災害発生時にも営業して被災者・復旧活動を支援する「災害支援ローソン」1号店を見てきた
+                - generic [ref=e807]: "38"
+              - link "09:30 Impress Watch 【小寺信良のくらしDX】60歳で大学に入るということ 人生100年時代に備えた学び直し2年目の現在地 38" [ref=e808] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/series/kodera/2088698.html
+                - generic [ref=e809]: 09:30
+                - generic [ref=e810]: Impress Watch
+                - generic [ref=e811]: 【小寺信良のくらしDX】60歳で大学に入るということ 人生100年時代に備えた学び直し2年目の現在地
+                - generic [ref=e812]: "38"
+              - link "09:10 Impress Watch 東京マラソンで3月1日(日)交通規制 歩行者の横断も不可 38" [ref=e813] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089186.html
+                - generic [ref=e814]: 09:10
+                - generic [ref=e815]: Impress Watch
+                - generic [ref=e816]: 東京マラソンで3月1日(日)交通規制 歩行者の横断も不可
+                - generic [ref=e817]: "38"
+          - generic [ref=e818]:
+            - generic [ref=e819]:
+              - generic [ref=e820]:
+                - heading "2月27日（金）" [level=2] [ref=e822]
+                - generic [ref=e823]: 66件
+              - generic [ref=e824]:
+                - generic [ref=e825]: GitHub 7
+                - generic [ref=e826]: "|OpenAI 5"
+                - generic [ref=e827]: "|Cursor 3"
+                - generic [ref=e828]: "|Figma 1"
+            - generic [ref=e829]:
+              - link "08:30 Impress Watch ミズノ、2つのフラッグシップシューズ融合モデルに新色シルバー 38" [ref=e830] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089359.html
+                - generic [ref=e831]: 08:30
+                - generic [ref=e832]: Impress Watch
+                - generic [ref=e833]: ミズノ、2つのフラッグシップシューズ融合モデルに新色シルバー
+                - generic [ref=e834]: "38"
+              - link "08:20 CNET Japan トランプ大統領、Claudeを政府内で使用禁止に--運営元Anthropicを「極左」と非難 65" [ref=e835] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244397/
+                - generic [ref=e836]: 08:20
+                - generic [ref=e837]: CNET Japan
+                - generic [ref=e838]: トランプ大統領、Claudeを政府内で使用禁止に--運営元Anthropicを「極左」と非難
+                - generic [ref=e839]: "65"
+              - link "X @karpathy EN 08:08 注目 research-paper 例えば、8人のエージェント（4人のClaudeと4人のCodex）が、それぞれ1GPUでnanochatの実験をしています。 ↗ 71 NVA" [ref=e840] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2027521323275325622
+                - generic [ref=e841]:
+                  - generic [ref=e842]:
+                    - generic [ref=e843]:
+                      - generic [ref=e844]: X @karpathy
+                      - generic [ref=e845]: EN
+                      - generic [ref=e846]: 08:08
+                      - generic [ref=e847]: 注目
+                      - generic [ref=e848]: research-paper
+                    - heading "例えば、8人のエージェント（4人のClaudeと4人のCodex）が、それぞれ1GPUでnanochatの実験をしています。 ↗" [level=3] [ref=e849]:
+                      - text: 例えば、8人のエージェント（4人のClaudeと4人のCodex）が、それぞれ1GPUでnanochatの実験をしています。
+                      - generic [ref=e850]: ↗
+                  - generic [ref=e851]:
+                    - generic [ref=e852]: "71"
+                    - generic [ref=e853]: NVA
+              - link "07:00 CNET Japan ソフトバンクG、OpenAI株式の13%を保有へ 約4.7兆円の追加出資を発表 47" [ref=e854] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244396/
+                - generic [ref=e855]: 07:00
+                - generic [ref=e856]: CNET Japan
+                - generic [ref=e857]: ソフトバンクG、OpenAI株式の13%を保有へ 約4.7兆円の追加出資を発表
+                - generic [ref=e858]: "47"
+              - link "06:49 X @karpathy Cursorのエージェント・リクエストに対するタブ完了リクエストの比率を示すクールなチャート。 機能の向上により、どの時点でも最適なセットアップが... 3.7k 69" [ref=e859] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2027501331125239822
+                - generic [ref=e860]: 06:49
+                - generic [ref=e861]: X @karpathy
+                - generic [ref=e862]: Cursorのエージェント・リクエストに対するタブ完了リクエストの比率を示すクールなチャート。 機能の向上により、どの時点でも最適なセットアップが...
+                - generic "エンゲージメント" [ref=e863]: 3.7k
+                - generic [ref=e864]: "69"
+              - link "06:41 X @figma https://x.com/figma/status/2027499334867292354 214 41" [ref=e865] [cursor=pointer]:
+                - /url: https://x.com/figma/status/2027499334867292354
+                - generic [ref=e866]: 06:41
+                - generic [ref=e867]: X @figma
+                - generic [ref=e868]: https://x.com/figma/status/2027499334867292354
+                - generic "エンゲージメント" [ref=e869]: "214"
+                - generic [ref=e870]: "41"
+              - link "Github.blog GitHub EN コミュニティ 03:00 注目 product-update Copilot の使用状況メトリックにエンタープライズ レベルの GitHub Copilot CLI アクティビティが含まれるようになりました ↗ Copilot usage metrics now includes enterprise-level GitHub Copilot CLI activity github.blog 80 NVA" [ref=e871] [cursor=pointer]:
+                - /url: https://github.blog/changelog/2026-02-27-copilot-usage-metrics-now-includes-enterprise-level-github-copilot-cli-activity
+                - generic [ref=e872]:
+                  - generic [ref=e873]:
+                    - generic [ref=e874]:
+                      - generic [ref=e875]: Github.blog
+                      - generic [ref=e876]: GitHub
+                      - generic [ref=e877]: EN
+                      - generic [ref=e878]: コミュニティ
+                      - generic [ref=e879]: 03:00
+                      - generic [ref=e880]: 注目
+                      - generic [ref=e881]: product-update
+                    - heading "Copilot の使用状況メトリックにエンタープライズ レベルの GitHub Copilot CLI アクティビティが含まれるようになりました ↗" [level=3] [ref=e882]:
+                      - text: Copilot の使用状況メトリックにエンタープライズ レベルの GitHub Copilot CLI アクティビティが含まれるようになりました
+                      - generic [ref=e883]: ↗
+                    - paragraph [ref=e884]: Copilot usage metrics now includes enterprise-level GitHub Copilot CLI activity
+                    - generic [ref=e885]: github.blog
+                  - generic [ref=e886]:
+                    - generic [ref=e887]: "80"
+                    - generic [ref=e888]: NVA
+              - link "02:29 Github.blog コミュニティ Copilot メトリクスが一般提供になりました 65" [ref=e889] [cursor=pointer]:
+                - /url: https://github.blog/changelog/2026-02-27-copilot-metrics-is-now-generally-available
+                - generic [ref=e890]: 02:29
+                - generic [ref=e891]: Github.blog
+                - generic [ref=e892]: コミュニティ
+                - generic [ref=e893]: Copilot メトリクスが一般提供になりました
+                - generic [ref=e894]: "65"
+              - link "23:51 Impress Watch OpenAI、17兆円の新規調達 アマゾン、NVIDIA、ソフトバンクG 47" [ref=e895] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089421.html
+                - generic [ref=e896]: 23:51
+                - generic [ref=e897]: Impress Watch
+                - generic [ref=e898]: OpenAI、17兆円の新規調達 アマゾン、NVIDIA、ソフトバンクG
+                - generic [ref=e899]: "47"
+              - link "23:27 Figma Blog ワークフロー研究室：FigmaによるAI画像ツーリングとインタラクティブ・プロトタイピング 39" [ref=e900] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/workflow-lab-ai-image-tooling/
+                - generic [ref=e901]: 23:27
+                - generic [ref=e902]: Figma Blog
+                - generic [ref=e903]: ワークフロー研究室：FigmaによるAI画像ツーリングとインタラクティブ・プロトタイピング
+                - generic [ref=e904]: "39"
+              - link "22:31 X @OpenAI AIをより多くの人々に普及させるには、エコシステム全体にわたる深い協力が必要です。 本日、私たちは@SoftBank、@N...の支援による新たな投資を発表します。 3.9k 52" [ref=e905] [cursor=pointer]:
+                - /url: https://x.com/OpenAI/status/2027376050263793814
+                - generic [ref=e906]: 22:31
+                - generic [ref=e907]: X @OpenAI
+                - generic [ref=e908]: AIをより多くの人々に普及させるには、エコシステム全体にわたる深い協力が必要です。 本日、私たちは@SoftBank、@N...の支援による新たな投資を発表します。
+                - generic "エンゲージメント" [ref=e909]: 3.9k
+                - generic [ref=e910]: "52"
+              - link "21:24 CNET Japan 伊藤穰一氏、デジタルガレージ専務執行役員を退任 38" [ref=e911] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244393/
+                - generic [ref=e912]: 21:24
+                - generic [ref=e913]: CNET Japan
+                - generic [ref=e914]: 伊藤穰一氏、デジタルガレージ専務執行役員を退任
+                - generic [ref=e915]: "38"
+              - link "20:10 Impress Watch 住信SBIネット銀、チャット+“生成UI”で振込できる「NEOBANK ai」 38" [ref=e916] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089362.html
+                - generic [ref=e917]: 20:10
+                - generic [ref=e918]: Impress Watch
+                - generic [ref=e919]: 住信SBIネット銀、チャット+“生成UI”で振込できる「NEOBANK ai」
+                - generic [ref=e920]: "38"
+              - link "19:22 Impress Watch 最高気温40℃以上の日は「炎暑日」「酷暑日」? 気象庁がアンケート開始 38" [ref=e921] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089352.html
+                - generic [ref=e922]: 19:22
+                - generic [ref=e923]: Impress Watch
+                - generic [ref=e924]: 最高気温40℃以上の日は「炎暑日」「酷暑日」? 気象庁がアンケート開始
+                - generic [ref=e925]: "38"
+              - link "18:38 Impress Watch 飛行機内でモバイルバッテリー使用禁止 持込は2個160Wh以下まで 38" [ref=e926] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089335.html
+                - generic [ref=e927]: 18:38
+                - generic [ref=e928]: Impress Watch
+                - generic [ref=e929]: 飛行機内でモバイルバッテリー使用禁止 持込は2個160Wh以下まで
+                - generic [ref=e930]: "38"
+              - link "18:30 日経クロステック 特許出願数が異例の水準に、25年12月は前年同月比170％増 ちらつくAIの影 39" [ref=e931] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00001/11535/
+                - generic [ref=e932]: 18:30
+                - generic [ref=e933]: 日経クロステック
+                - generic [ref=e934]: 特許出願数が異例の水準に、25年12月は前年同月比170％増 ちらつくAIの影
+                - generic [ref=e935]: "39"
+              - link "18:30 日経クロステック SBIHDの円建てステーブルコイン「JPYSC」、26年4～6月にも提供開始 39" [ref=e936] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/news/24/03116/
+                - generic [ref=e937]: 18:30
+                - generic [ref=e938]: 日経クロステック
+                - generic [ref=e939]: SBIHDの円建てステーブルコイン「JPYSC」、26年4～6月にも提供開始
+                - generic [ref=e940]: "39"
+              - link "18:21 Impress Watch トライアル×西友 合体スーパー2号店が神奈川にオープン 38" [ref=e941] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089330.html
+                - generic [ref=e942]: 18:21
+                - generic [ref=e943]: Impress Watch
+                - generic [ref=e944]: トライアル×西友 合体スーパー2号店が神奈川にオープン
+                - generic [ref=e945]: "38"
+              - link "18:04 Impress Watch Amazon新生活セール、初の「先行セール」を3月3日から開始 38" [ref=e946] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089322.html
+                - generic [ref=e947]: 18:04
+                - generic [ref=e948]: Impress Watch
+                - generic [ref=e949]: Amazon新生活セール、初の「先行セール」を3月3日から開始
+                - generic [ref=e950]: "38"
+              - link "17:12 Impress Watch ローソンアプリでデリバリー、12都道府県で展開 menuと連携 38" [ref=e951] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089295.html
+                - generic [ref=e952]: 17:12
+                - generic [ref=e953]: Impress Watch
+                - generic [ref=e954]: ローソンアプリでデリバリー、12都道府県で展開 menuと連携
+                - generic [ref=e955]: "38"
+              - link "16:50 日経クロステック 自治体システム標準化、遅延が全システムの25.9％ 自治体数では過半に 39" [ref=e956] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/news/24/03115/
+                - generic [ref=e957]: 16:50
+                - generic [ref=e958]: 日経クロステック
+                - generic [ref=e959]: 自治体システム標準化、遅延が全システムの25.9％ 自治体数では過半に
+                - generic [ref=e960]: "39"
+              - link "16:30 CNET Japan モバイルバッテリー、飛行機への持ち込みは1人2個まで、機内充電も禁止--4月中旬から 38" [ref=e961] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244388/
+                - generic [ref=e962]: 16:30
+                - generic [ref=e963]: CNET Japan
+                - generic [ref=e964]: モバイルバッテリー、飛行機への持ち込みは1人2個まで、機内充電も禁止--4月中旬から
+                - generic [ref=e965]: "38"
+              - link "15:31 CNET Japan エージェント型AIは「転換点」に--NVIDIAのジェンスン・フアンCEO 38" [ref=e966] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244385/
+                - generic [ref=e967]: 15:31
+                - generic [ref=e968]: CNET Japan
+                - generic [ref=e969]: エージェント型AIは「転換点」に--NVIDIAのジェンスン・フアンCEO
+                - generic [ref=e970]: "38"
+              - link "15:20 Impress Watch 「新生・ダイエー」スタート 新ブランドは「フードスタイル」 38" [ref=e971] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089224.html
+                - generic [ref=e972]: 15:20
+                - generic [ref=e973]: Impress Watch
+                - generic [ref=e974]: 「新生・ダイエー」スタート 新ブランドは「フードスタイル」
+                - generic [ref=e975]: "38"
+              - link "14:49 GitHub Trending コミュニティ 開発者 65" [ref=e976] [cursor=pointer]:
+                - /url: https://github.com/trending/developers
+                - generic [ref=e977]: 14:49
+                - generic [ref=e978]: GitHub Trending
+                - generic [ref=e979]: コミュニティ
+                - generic [ref=e980]: 開発者
+                - generic [ref=e981]: "65"
+              - link "14:49 GitHub Trending コミュニティ コレクション 65" [ref=e982] [cursor=pointer]:
+                - /url: https://github.com/collections
+                - generic [ref=e983]: 14:49
+                - generic [ref=e984]: GitHub Trending
+                - generic [ref=e985]: コミュニティ
+                - generic [ref=e986]: コレクション
+                - generic [ref=e987]: "65"
+              - link "14:49 GitHub Trending コミュニティ 検索構文のヒント 65" [ref=e988] [cursor=pointer]:
+                - /url: https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax
+                - generic [ref=e989]: 14:49
+                - generic [ref=e990]: GitHub Trending
+                - generic [ref=e991]: コミュニティ
+                - generic [ref=e992]: 検索構文のヒント
+                - generic [ref=e993]: "65"
+              - link "14:49 GitHub Trending コミュニティ リポジトリ 65" [ref=e994] [cursor=pointer]:
+                - /url: https://github.com/trending
+                - generic [ref=e995]: 14:49
+                - generic [ref=e996]: GitHub Trending
+                - generic [ref=e997]: コミュニティ
+                - generic [ref=e998]: リポジトリ
+                - generic [ref=e999]: "65"
+              - link "14:49 Cursor.com コミュニティ cursor.com/onboard 65" [ref=e1000] [cursor=pointer]:
+                - /url: http://cursor.com/onboard
+                - generic [ref=e1001]: 14:49
+                - generic [ref=e1002]: Cursor.com
+                - generic [ref=e1003]: コミュニティ
+                - generic [ref=e1004]: cursor.com/onboard
+                - generic [ref=e1005]: "65"
+              - link "14:49 GitHub Trending コミュニティ GitHub スポンサー 65" [ref=e1006] [cursor=pointer]:
+                - /url: https://github.com/sponsors/explore
+                - generic [ref=e1007]: 14:49
+                - generic [ref=e1008]: GitHub Trending
+                - generic [ref=e1009]: コミュニティ
+                - generic [ref=e1010]: GitHub スポンサー
+                - generic [ref=e1011]: "65"
+              - link "14:49 Cursor.com コミュニティ Cursor マーケットプレイス 65" [ref=e1012] [cursor=pointer]:
+                - /url: https://cursor.com/marketplace
+                - generic [ref=e1013]: 14:49
+                - generic [ref=e1014]: Cursor.com
+                - generic [ref=e1015]: コミュニティ
+                - generic [ref=e1016]: Cursor マーケットプレイス
+                - generic [ref=e1017]: "65"
+              - link "14:49 Cursor.com コミュニティ cursor.com/agents 65" [ref=e1018] [cursor=pointer]:
+                - /url: https://cursor.com/agents
+                - generic [ref=e1019]: 14:49
+                - generic [ref=e1020]: Cursor.com
+                - generic [ref=e1021]: コミュニティ
+                - generic [ref=e1022]: cursor.com/agents
+                - generic [ref=e1023]: "65"
+              - link "14:30 OpenAI News OpenAIとマイクロソフトの共同声明 49" [ref=e1024] [cursor=pointer]:
+                - /url: https://openai.com/index/continuing-microsoft-partnership
+                - generic [ref=e1025]: 14:30
+                - generic [ref=e1026]: OpenAI News
+                - generic [ref=e1027]: OpenAIとマイクロソフトの共同声明
+                - generic [ref=e1028]: "49"
+              - link "14:30 OpenAI News すべての人のためにAIを拡張する 35" [ref=e1029] [cursor=pointer]:
+                - /url: https://openai.com/index/scaling-ai-for-everyone
+                - generic [ref=e1030]: 14:30
+                - generic [ref=e1031]: OpenAI News
+                - generic [ref=e1032]: すべての人のためにAIを拡張する
+                - generic [ref=e1033]: "35"
+              - link "14:30 OpenAI News Amazon Bedrockにおけるエージェントのためのステートフル・ランタイム環境の紹介 48" [ref=e1034] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-the-stateful-runtime-environment-for-agents-in-amazon-bedrock
+                - generic [ref=e1035]: 14:30
+                - generic [ref=e1036]: OpenAI News
+                - generic [ref=e1037]: Amazon Bedrockにおけるエージェントのためのステートフル・ランタイム環境の紹介
+                - generic [ref=e1038]: "48"
+              - link "14:30 OpenAI News OpenAIとAmazonが戦略的パートナーシップを発表 48" [ref=e1039] [cursor=pointer]:
+                - /url: https://openai.com/index/amazon-partnership
+                - generic [ref=e1040]: 14:30
+                - generic [ref=e1041]: OpenAI News
+                - generic [ref=e1042]: OpenAIとAmazonが戦略的パートナーシップを発表
+                - generic [ref=e1043]: "48"
+              - link "14:01 Reddit r/LocalLLaMA コミュニティ Microsoft はこれについて LLM をトレーニングする予定ですか? Github は明らかに破壊されつつあります。 65" [ref=e1044] [cursor=pointer]:
+                - /url: https://i.redd.it/4imno3ccyylg1.png
+                - generic [ref=e1045]: 14:01
+                - generic [ref=e1046]: Reddit r/LocalLLaMA
+                - generic [ref=e1047]: コミュニティ
+                - generic [ref=e1048]: Microsoft はこれについて LLM をトレーニングする予定ですか? Github は明らかに破壊されつつあります。
+                - generic [ref=e1049]: "65"
+              - link "13:50 日経クロステック ラピダス、民間32社が1676億円出資 政府が筆頭株主に 39" [ref=e1050] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/news/24/03114/
+                - generic [ref=e1051]: 13:50
+                - generic [ref=e1052]: 日経クロステック
+                - generic [ref=e1053]: ラピダス、民間32社が1676億円出資 政府が筆頭株主に
+                - generic [ref=e1054]: "39"
+              - link "13:32 Impress Watch AKRacing、中日ドラゴンズのロッカールームに導入 今日の侍ジャパン戦から使用 41" [ref=e1055] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089195.html
+                - generic [ref=e1056]: 13:32
+                - generic [ref=e1057]: Impress Watch
+                - generic [ref=e1058]: AKRacing、中日ドラゴンズのロッカールームに導入 今日の侍ジャパン戦から使用
+                - generic [ref=e1059]: "41"
+              - link "13:23 Reddit r/ClaudeAI コミュニティ claudeの週間制限が早期にリセットされ、私のリセット日が土曜日から金曜日に変更されました。他に誰かいますか？ 65" [ref=e1060] [cursor=pointer]:
+                - /url: https://i.redd.it/ppp8qfjrrylg1.png
+                - generic [ref=e1061]: 13:23
+                - generic [ref=e1062]: Reddit r/ClaudeAI
+                - generic [ref=e1063]: コミュニティ
+                - generic [ref=e1064]: claudeの週間制限が早期にリセットされ、私のリセット日が土曜日から金曜日に変更されました。他に誰かいますか？
+                - generic [ref=e1065]: "65"
+              - 'link "Reddit r/ClaudeAI EN コミュニティ 13:16 注目 product-update claude code プロジェクトの構成方法 (claude.md、スキル、MCP) ↗ How I structure Claude Code projects (CLAUDE.md, Skills, MCP) I’ve been using Claude Code more seriously over the past months, and a few workflow shifts made a big difference for me. The first one was starting in plan mode instead of execution. When I write the goal clearly and let Claude break it into steps first, I catch gaps early. Reviewing the plan before running anything saves time. It feels slower for a minute, but the end result is cleaner and needs fewer edits. Another big improvement came from using a [`CLAUDE.md`](http://claude.md/) file p... reddit.com/r/claudeai 80 NVA" [ref=e1066] [cursor=pointer]':
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rfwmlh/how_i_structure_claude_code_projects_claudemd/
+                - generic [ref=e1067]:
+                  - generic [ref=e1068]:
+                    - generic [ref=e1069]:
+                      - generic [ref=e1070]: Reddit r/ClaudeAI
+                      - generic [ref=e1071]: EN
+                      - generic [ref=e1072]: コミュニティ
+                      - generic [ref=e1073]: 13:16
+                      - generic [ref=e1074]: 注目
+                      - generic [ref=e1075]: product-update
+                    - heading "claude code プロジェクトの構成方法 (claude.md、スキル、MCP) ↗" [level=3] [ref=e1076]:
+                      - text: claude code プロジェクトの構成方法 (claude.md、スキル、MCP)
+                      - generic [ref=e1077]: ↗
+                    - paragraph [ref=e1078]: How I structure Claude Code projects (CLAUDE.md, Skills, MCP)
+                    - paragraph [ref=e1079]: "I’ve been using Claude Code more seriously over the past months, and a few workflow shifts made a big difference for me. The first one was starting in plan mode instead of execution. When I write the goal clearly and let Claude break it into steps first, I catch gaps early. Reviewing the plan before running anything saves time. It feels slower for a minute, but the end result is cleaner and needs fewer edits. Another big improvement came from using a [`CLAUDE.md`](http://claude.md/) file p..."
+                    - generic [ref=e1080]: reddit.com/r/claudeai
+                  - generic [ref=e1081]:
+                    - generic [ref=e1082]: "80"
+                    - generic [ref=e1083]: NVA
+              - link "13:05 CNET Japan Instagram、子供の「自殺・自傷検索」を保護者に通知へ 38" [ref=e1084] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244378/
+                - generic [ref=e1085]: 13:05
+                - generic [ref=e1086]: CNET Japan
+                - generic [ref=e1087]: Instagram、子供の「自殺・自傷検索」を保護者に通知へ
+                - generic [ref=e1088]: "38"
+              - link "Reddit r/LocalLLaMA EN コミュニティ 12:52 注目 case-study [AutoBe] 完全なバックエンド アプリを作成する AI を構築しました - その後、弱いローカル LLM を使用して意図的に 100% の成功率を破りました ↗ 74 NVA" [ref=e1089] [cursor=pointer]:
+                - /url: https://www.reddit.com/gallery/1rfw58u
+                - generic [ref=e1090]:
+                  - generic [ref=e1091]:
+                    - generic [ref=e1092]:
+                      - generic [ref=e1093]: Reddit r/LocalLLaMA
+                      - generic [ref=e1094]: EN
+                      - generic [ref=e1095]: コミュニティ
+                      - generic [ref=e1096]: 12:52
+                      - generic [ref=e1097]: 注目
+                      - generic [ref=e1098]: case-study
+                    - heading "[AutoBe] 完全なバックエンド アプリを作成する AI を構築しました - その後、弱いローカル LLM を使用して意図的に 100% の成功率を破りました ↗" [level=3] [ref=e1099]:
+                      - text: "[AutoBe] 完全なバックエンド アプリを作成する AI を構築しました - その後、弱いローカル LLM を使用して意図的に 100% の成功率を破りました"
+                      - generic [ref=e1100]: ↗
+                  - generic [ref=e1101]:
+                    - generic [ref=e1102]: "74"
+                    - generic [ref=e1103]: NVA
+              - link "12:40 Impress Watch Meta、著名人悪用の「なりすまし詐欺広告」に法的措置 38" [ref=e1104] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089171.html
+                - generic [ref=e1105]: 12:40
+                - generic [ref=e1106]: Impress Watch
+                - generic [ref=e1107]: Meta、著名人悪用の「なりすまし詐欺広告」に法的措置
+                - generic [ref=e1108]: "38"
+              - link "12:35 X @kajikent コミュニティ Claude Codeは「毎回、記憶喪失の状態で目覚めて仕事をする超天才」。 だからこそ、CLAUDE.mdを超えて記憶/文脈/好みなどを蓄積して使えば使うほど賢くなるメモ... 305 66" [ref=e1109] [cursor=pointer]:
+                - /url: https://x.com/kajikent/status/2027226102415204572
+                - generic [ref=e1110]: 12:35
+                - generic [ref=e1111]: X @kajikent
+                - generic [ref=e1112]: コミュニティ
+                - generic [ref=e1113]: Claude Codeは「毎回、記憶喪失の状態で目覚めて仕事をする超天才」。 だからこそ、CLAUDE.mdを超えて記憶/文脈/好みなどを蓄積して使えば使うほど賢くなるメモ...
+                - generic "エンゲージメント" [ref=e1114]: "305"
+                - generic [ref=e1115]: "66"
+              - link "12:18 Impress Watch Anthropic、AIの軍事利用について米国防総省の要求を拒否 65" [ref=e1116] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089161.html
+                - generic [ref=e1117]: 12:18
+                - generic [ref=e1118]: Impress Watch
+                - generic [ref=e1119]: Anthropic、AIの軍事利用について米国防総省の要求を拒否
+                - generic [ref=e1120]: "65"
+              - link "12:02 CNET Japan バーガーキング、従業員向けAIアシスタント導入へ 接客マナーも監視 38" [ref=e1121] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244375/
+                - generic [ref=e1122]: 12:02
+                - generic [ref=e1123]: CNET Japan
+                - generic [ref=e1124]: バーガーキング、従業員向けAIアシスタント導入へ 接客マナーも監視
+                - generic [ref=e1125]: "38"
+              - link "12:00 日経クロステック みずほ銀行、委託先が記録媒体紛失 最大4万3000社の情報含まれる 39" [ref=e1126] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/news/24/03113/
+                - generic [ref=e1127]: 12:00
+                - generic [ref=e1128]: 日経クロステック
+                - generic [ref=e1129]: みずほ銀行、委託先が記録媒体紛失 最大4万3000社の情報含まれる
+                - generic [ref=e1130]: "39"
+              - link "11:59 Impress Watch エスコン、モンテディオ山形を子会社化 28年新スタジアム開業 38" [ref=e1131] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089134.html
+                - generic [ref=e1132]: 11:59
+                - generic [ref=e1133]: Impress Watch
+                - generic [ref=e1134]: エスコン、モンテディオ山形を子会社化 28年新スタジアム開業
+                - generic [ref=e1135]: "38"
+              - link "11:38 X @kajikent コミュニティ 同じClaude Codeを使っていても、「文脈の蓄積方法」次第で性能に大きな差が出ます。 Claude Codeを会社の事情や好み、暗黙知も共有した「熟練のパートナー」に... 94 65" [ref=e1136] [cursor=pointer]:
+                - /url: https://x.com/kajikent/status/2027211627435790412
+                - generic [ref=e1137]: 11:38
+                - generic [ref=e1138]: X @kajikent
+                - generic [ref=e1139]: コミュニティ
+                - generic [ref=e1140]: 同じClaude Codeを使っていても、「文脈の蓄積方法」次第で性能に大きな差が出ます。 Claude Codeを会社の事情や好み、暗黙知も共有した「熟練のパートナー」に...
+                - generic "エンゲージメント" [ref=e1141]: "94"
+                - generic [ref=e1142]: "65"
+              - link "11:23 Reddit r/ClaudeAI コミュニティ 私は AI に「2026 年はすでに手探りだ」と言いました。 ChatGPT は私に指導し、グロクは私にミームをくれましたが、claudeは文字通り危機ホットラインを私に送ってくれました 💀 65" [ref=e1143] [cursor=pointer]:
+                - /url: https://i.redd.it/4t449thy4ylg1.png
+                - generic [ref=e1144]: 11:23
+                - generic [ref=e1145]: Reddit r/ClaudeAI
+                - generic [ref=e1146]: コミュニティ
+                - generic [ref=e1147]: 私は AI に「2026 年はすでに手探りだ」と言いました。 ChatGPT は私に指導し、グロクは私にミームをくれましたが、claudeは文字通り危機ホットラインを私に送ってくれました 💀
+                - generic [ref=e1148]: "65"
+              - link "11:22 CNET Japan ワーナー買収、パラマウントが「勝利」へ Netflixは撤退 38" [ref=e1149] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244371/
+                - generic [ref=e1150]: 11:22
+                - generic [ref=e1151]: CNET Japan
+                - generic [ref=e1152]: ワーナー買収、パラマウントが「勝利」へ Netflixは撤退
+                - generic [ref=e1153]: "38"
+              - link "11:12 CNET Japan YouTubeロゴが「ポケモン」仕様に 本日2月27日限定で 38" [ref=e1154] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244372/
+                - generic [ref=e1155]: 11:12
+                - generic [ref=e1156]: CNET Japan
+                - generic [ref=e1157]: YouTubeロゴが「ポケモン」仕様に 本日2月27日限定で
+                - generic [ref=e1158]: "38"
+              - link "11:10 CNET Japan 金属の箱にアンテナを入れたら、電波を遮蔽して通信できないのでは？を覆す技術、パナが開発 38" [ref=e1159] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244158/
+                - generic [ref=e1160]: 11:10
+                - generic [ref=e1161]: CNET Japan
+                - generic [ref=e1162]: 金属の箱にアンテナを入れたら、電波を遮蔽して通信できないのでは？を覆す技術、パナが開発
+                - generic [ref=e1163]: "38"
+              - link "11:00 Impress Watch 明るくなった「HUAWEI Band 11」 6年ぶりProはGNSS搭載 38" [ref=e1164] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2088131.html
+                - generic [ref=e1165]: 11:00
+                - generic [ref=e1166]: Impress Watch
+                - generic [ref=e1167]: 明るくなった「HUAWEI Band 11」 6年ぶりProはGNSS搭載
+                - generic [ref=e1168]: "38"
+              - link "10:55 Reddit r/LocalLLaMA コミュニティ Vellium v0.4 — 代替の簡素化された UI、更新された書き込みモード、および複数文字の改善 62" [ref=e1169] [cursor=pointer]:
+                - /url: https://www.reddit.com/gallery/1rftlmm
+                - generic [ref=e1170]: 10:55
+                - generic [ref=e1171]: Reddit r/LocalLLaMA
+                - generic [ref=e1172]: コミュニティ
+                - generic [ref=e1173]: Vellium v0.4 — 代替の簡素化された UI、更新された書き込みモード、および複数文字の改善
+                - generic [ref=e1174]: "62"
+              - link "10:45 Impress Watch みずほ銀行、システム更新で5月以降に計5回のサービス休止 ATMなど 38" [ref=e1175] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089110.html
+                - generic [ref=e1176]: 10:45
+                - generic [ref=e1177]: Impress Watch
+                - generic [ref=e1178]: みずほ銀行、システム更新で5月以降に計5回のサービス休止 ATMなど
+                - generic [ref=e1179]: "38"
+              - link "10:23 CNET Japan AI投資の75％が「推論」に移る時代、レノボはどう備えるか 38" [ref=e1180] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244168/
+                - generic [ref=e1181]: 10:23
+                - generic [ref=e1182]: CNET Japan
+                - generic [ref=e1183]: AI投資の75％が「推論」に移る時代、レノボはどう備えるか
+                - generic [ref=e1184]: "38"
+              - link "10:09 CNET Japan グーグル、画像AI「Nano Banana 2」を公開 速さと精度の「いいとこ取り」 47" [ref=e1185] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244368/
+                - generic [ref=e1186]: 10:09
+                - generic [ref=e1187]: CNET Japan
+                - generic [ref=e1188]: グーグル、画像AI「Nano Banana 2」を公開 速さと精度の「いいとこ取り」
+                - generic [ref=e1189]: "47"
+              - link "Reddit r/ClaudeAI EN コミュニティ 10:07 注目 tutorial-guide claude - コンボを常に圧縮していますか? ↗ 75 NVA" [ref=e1190] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rfsib5/claude_constantly_compacting_our_convo/
+                - generic [ref=e1191]:
+                  - generic [ref=e1192]:
+                    - generic [ref=e1193]:
+                      - generic [ref=e1194]: Reddit r/ClaudeAI
+                      - generic [ref=e1195]: EN
+                      - generic [ref=e1196]: コミュニティ
+                      - generic [ref=e1197]: 10:07
+                      - generic [ref=e1198]: 注目
+                      - generic [ref=e1199]: tutorial-guide
+                    - heading "claude - コンボを常に圧縮していますか? ↗" [level=3] [ref=e1200]:
+                      - text: claude - コンボを常に圧縮していますか?
+                      - generic [ref=e1201]: ↗
+                  - generic [ref=e1202]:
+                    - generic [ref=e1203]: "75"
+                    - generic [ref=e1204]: NVA
+              - link "10:00 Impress Watch 部屋に置きたい上質感! AKRacingの最新チェアは作業効率も気分もアガる[Sponsored] 38" [ref=e1205] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/topic/special/2084546.html
+                - generic [ref=e1206]: 10:00
+                - generic [ref=e1207]: Impress Watch
+                - generic [ref=e1208]: 部屋に置きたい上質感! AKRacingの最新チェアは作業効率も気分もアガる[Sponsored]
+                - generic [ref=e1209]: "38"
+              - link "09:58 Impress Watch グーグル、「Nano Banana 2」開始 画像生成が正確・高速に 47" [ref=e1210] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089089.html
+                - generic [ref=e1211]: 09:58
+                - generic [ref=e1212]: Impress Watch
+                - generic [ref=e1213]: グーグル、「Nano Banana 2」開始 画像生成が正確・高速に
+                - generic [ref=e1214]: "47"
+              - link "09:34 X @kajikent コミュニティ Claude Code完結でこのレベルのスライド資料も作れるようになった！ デザインは今までのKeynoteレベルを実現しつつ、図解がしっかり入る分、今まで自分が作って... 205 66" [ref=e1215] [cursor=pointer]:
+                - /url: https://x.com/kajikent/status/2027180545667637555
+                - generic [ref=e1216]: 09:34
+                - generic [ref=e1217]: X @kajikent
+                - generic [ref=e1218]: コミュニティ
+                - generic [ref=e1219]: Claude Code完結でこのレベルのスライド資料も作れるようになった！ デザインは今までのKeynoteレベルを実現しつつ、図解がしっかり入る分、今まで自分が作って...
+                - generic "エンゲージメント" [ref=e1220]: "205"
+                - generic [ref=e1221]: "66"
+              - link "09:08 Zenn コミュニティ 画面（UI）デザインデータ管理をしないプロダクト開発を考える - Claude Code・Storybook・Figmaの活用 65" [ref=e1222] [cursor=pointer]:
+                - /url: https://zenn.dev/711fumi/articles/d76a43a16c4fe5
+                - generic [ref=e1223]: 09:08
+                - generic [ref=e1224]: Zenn
+                - generic [ref=e1225]: コミュニティ
+                - generic [ref=e1226]: 画面（UI）デザインデータ管理をしないプロダクト開発を考える - Claude Code・Storybook・Figmaの活用
+                - generic [ref=e1227]: "65"
+              - link "09:00 OpenAI News メンタルヘルス関連の最新情報 62" [ref=e1228] [cursor=pointer]:
+                - /url: https://openai.com/index/update-on-mental-health-related-work
+                - generic [ref=e1229]: 09:00
+                - generic [ref=e1230]: OpenAI News
+                - generic [ref=e1231]: メンタルヘルス関連の最新情報
+                - generic [ref=e1232]: "62"
+              - link "09:00 Impress Watch セブンイレブン、「7NOW」で医薬品を販売 店舗受取・配達に対応 38" [ref=e1233] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089009.html
+                - generic [ref=e1234]: 09:00
+                - generic [ref=e1235]: Impress Watch
+                - generic [ref=e1236]: セブンイレブン、「7NOW」で医薬品を販売 店舗受取・配達に対応
+                - generic [ref=e1237]: "38"
+          - generic [ref=e1238]:
+            - generic [ref=e1239]:
+              - generic [ref=e1240]:
+                - heading "2月26日（木）" [level=2] [ref=e1242]
+                - generic [ref=e1243]: 126件
+              - generic [ref=e1244]:
+                - generic [ref=e1245]: GitHub 8
+                - generic [ref=e1246]: "|Google 4"
+                - generic [ref=e1247]: "|Figma 3"
+                - generic [ref=e1248]: "|OpenAI 2"
+            - generic [ref=e1249]:
+              - link "08:54 Reddit r/ClaudeAI コミュニティ TNG シーンで、暴力を拒否できないようにclaudeを改造することについて議論が巻き起こった 63" [ref=e1250] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=C7JQJkW0yUc
+                - generic [ref=e1251]: 08:54
+                - generic [ref=e1252]: Reddit r/ClaudeAI
+                - generic [ref=e1253]: コミュニティ
+                - generic [ref=e1254]: TNG シーンで、暴力を拒否できないようにclaudeを改造することについて議論が巻き起こった
+                - generic [ref=e1255]: "63"
+              - link "08:40 Impress Watch 【お金の教室】「オルカン」って何? 徹底比較で“人気だから選ぶ”を脱却 38" [ref=e1256] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/series/tsukamoto/2086653.html
+                - generic [ref=e1257]: 08:40
+                - generic [ref=e1258]: Impress Watch
+                - generic [ref=e1259]: 【お金の教室】「オルカン」って何? 徹底比較で“人気だから選ぶ”を脱却
+                - generic [ref=e1260]: "38"
+              - link "08:32 Reddit r/ClaudeAI コミュニティ 国防総省の圧力に屈しなかったダリオ 65" [ref=e1261] [cursor=pointer]:
+                - /url: https://i.redd.it/refrcigubxlg1.png
+                - generic [ref=e1262]: 08:32
+                - generic [ref=e1263]: Reddit r/ClaudeAI
+                - generic [ref=e1264]: コミュニティ
+                - generic [ref=e1265]: 国防総省の圧力に屈しなかったダリオ
+                - generic [ref=e1266]: "65"
+              - link "08:20 Impress Watch 過熱する立体シールブーム 「ボンドロ」ハマる理由 38" [ref=e1267] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/topic/2088197.html
+                - generic [ref=e1268]: 08:20
+                - generic [ref=e1269]: Impress Watch
+                - generic [ref=e1270]: 過熱する立体シールブーム 「ボンドロ」ハマる理由
+                - generic [ref=e1271]: "38"
+              - link "08:08 X @figma FigmaでNano Banana 2をテスト → より高速な出力 → プロレベルの画像生成 FigmaとFigma Weaveでロールアウト 804 42" [ref=e1272] [cursor=pointer]:
+                - /url: https://x.com/figma/status/2027158979559014790
+                - generic [ref=e1273]: 08:08
+                - generic [ref=e1274]: X @figma
+                - generic [ref=e1275]: FigmaでNano Banana 2をテスト → より高速な出力 → プロレベルの画像生成 FigmaとFigma Weaveでロールアウト
+                - generic "エンゲージメント" [ref=e1276]: "804"
+                - generic [ref=e1277]: "42"
+              - link "08:00 X @swyx 今日、@devinaiが本番環境でのバグ（Vercelの組織を移行した際にキーを忘れた）を調査し、私たちに必要なものを正確に要求し、検証してくれた。 63 65" [ref=e1278] [cursor=pointer]:
+                - /url: https://x.com/swyx/status/2027156931157368971
+                - generic [ref=e1279]: 08:00
+                - generic [ref=e1280]: X @swyx
+                - generic [ref=e1281]: 今日、@devinaiが本番環境でのバグ（Vercelの組織を移行した際にキーを忘れた）を調査し、私たちに必要なものを正確に要求し、検証してくれた。
+                - generic "エンゲージメント" [ref=e1282]: "63"
+                - generic [ref=e1283]: "65"
+              - link "08:00 Impress Watch セイコー、大谷翔平モデルに新作 MVPのゴールドがアクセントに 38" [ref=e1284] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089010.html
+                - generic [ref=e1285]: 08:00
+                - generic [ref=e1286]: Impress Watch
+                - generic [ref=e1287]: セイコー、大谷翔平モデルに新作 MVPのゴールドがアクセントに
+                - generic [ref=e1288]: "38"
+              - link "07:36 Github.blog コミュニティ GitHub アクションで非圧縮アーティファクトのアップロードとダウンロードがサポートされるようになりました 65" [ref=e1289] [cursor=pointer]:
+                - /url: https://github.blog/changelog/2026-02-26-github-actions-now-supports-uploading-and-downloading-non-zipped-artifacts
+                - generic [ref=e1290]: 07:36
+                - generic [ref=e1291]: Github.blog
+                - generic [ref=e1292]: コミュニティ
+                - generic [ref=e1293]: GitHub アクションで非圧縮アーティファクトのアップロードとダウンロードがサポートされるようになりました
+                - generic [ref=e1294]: "65"
+              - link "X @AnthropicAI EN 07:36 注目 community-trend 陸軍省との話し合いに関するAnthropic CEO、ダリオ・アモデイの声明https://www.anthropic.com/news/statement-department-of-wa... ↗ 71 NVA" [ref=e1295] [cursor=pointer]:
+                - /url: https://x.com/AnthropicAI/status/2027150818575528261
+                - generic [ref=e1296]:
+                  - generic [ref=e1297]:
+                    - generic [ref=e1298]:
+                      - generic [ref=e1299]: X @AnthropicAI
+                      - generic [ref=e1300]: EN
+                      - generic [ref=e1301]: 07:36
+                      - generic [ref=e1302]: 注目
+                      - generic [ref=e1303]: community-trend
+                    - heading "陸軍省との話し合いに関するAnthropic CEO、ダリオ・アモデイの声明https://www.anthropic.com/news/statement-department-of-wa... ↗" [level=3] [ref=e1304]:
+                      - text: 陸軍省との話し合いに関するAnthropic CEO、ダリオ・アモデイの声明https://www.anthropic.com/news/statement-department-of-wa...
+                      - generic [ref=e1305]: ↗
+                  - generic [ref=e1306]:
+                    - generic [ref=e1307]: "71"
+                    - generic [ref=e1308]: NVA
+              - link "07:29 CNET Japan 米決済大手ブロック、全従業員の40%を削減へ AIで代替 38" [ref=e1309] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244361/
+                - generic [ref=e1310]: 07:29
+                - generic [ref=e1311]: CNET Japan
+                - generic [ref=e1312]: 米決済大手ブロック、全従業員の40%を削減へ AIで代替
+                - generic [ref=e1313]: "38"
+              - link "07:01 CNET Japan iPhone 17に「Galaxy S26 Ultra」が差をつける、たった1つのキラー機能 38" [ref=e1314] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244360/
+                - generic [ref=e1315]: 07:01
+                - generic [ref=e1316]: CNET Japan
+                - generic [ref=e1317]: iPhone 17に「Galaxy S26 Ultra」が差をつける、たった1つのキラー機能
+                - generic [ref=e1318]: "38"
+              - link "07:00 日経クロステック P2Pの権利侵害の実態が明らかに 39" [ref=e1319] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nnw/18/041800012/021700316/
+                - generic [ref=e1320]: 07:00
+                - generic [ref=e1321]: 日経クロステック
+                - generic [ref=e1322]: P2Pの権利侵害の実態が明らかに
+                - generic [ref=e1323]: "39"
+              - link "07:00 日経クロステック 今すぐやるべき「緊急点検10項目」 39" [ref=e1324] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nnw/18/041800013/021700100/
+                - generic [ref=e1325]: 07:00
+                - generic [ref=e1326]: 日経クロステック
+                - generic [ref=e1327]: 今すぐやるべき「緊急点検10項目」
+                - generic [ref=e1328]: "39"
+              - link "07:00 日経クロステック 「やられたらやり返す」のドコモ 業績悪化も戦闘力強化で徹底抗戦 39" [ref=e1329] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nc/18/052100110/022500172/
+                - generic [ref=e1330]: 07:00
+                - generic [ref=e1331]: 日経クロステック
+                - generic [ref=e1332]: 「やられたらやり返す」のドコモ 業績悪化も戦闘力強化で徹底抗戦
+                - generic [ref=e1333]: "39"
+              - link "07:00 日経クロステック 社長をかたる「CEO詐欺」が猛威 国内6000社以上に偽メール 39" [ref=e1334] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nc/18/052100113/022500180/
+                - generic [ref=e1335]: 07:00
+                - generic [ref=e1336]: 日経クロステック
+                - generic [ref=e1337]: 社長をかたる「CEO詐欺」が猛威 国内6000社以上に偽メール
+                - generic [ref=e1338]: "39"
+              - link "07:00 日経クロステック SaaS業界に激震走る 「claude Cowork」の衝撃 66" [ref=e1339] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nc/18/052100111/022500171/
+                - generic [ref=e1340]: 07:00
+                - generic [ref=e1341]: 日経クロステック
+                - generic [ref=e1342]: SaaS業界に激震走る 「claude Cowork」の衝撃
+                - generic [ref=e1343]: "66"
+              - link "06:36 CNET Japan あなたのクルマの「空気圧センサー」もハッキングされている？--その脅威とは 38" [ref=e1344] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244359/
+                - generic [ref=e1345]: 06:36
+                - generic [ref=e1346]: CNET Japan
+                - generic [ref=e1347]: あなたのクルマの「空気圧センサー」もハッキングされている？--その脅威とは
+                - generic [ref=e1348]: "38"
+              - link "Github.blog GitHub EN コミュニティ 05:11 注目 product-update Copilot メトリクス レポート URL の更新 ↗ Copilot metrics report URLs update github.blog 80 NVA" [ref=e1349] [cursor=pointer]:
+                - /url: https://github.blog/changelog/2026-02-26-copilot-metrics-report-urls-update
+                - generic [ref=e1350]:
+                  - generic [ref=e1351]:
+                    - generic [ref=e1352]:
+                      - generic [ref=e1353]: Github.blog
+                      - generic [ref=e1354]: GitHub
+                      - generic [ref=e1355]: EN
+                      - generic [ref=e1356]: コミュニティ
+                      - generic [ref=e1357]: 05:11
+                      - generic [ref=e1358]: 注目
+                      - generic [ref=e1359]: product-update
+                    - heading "Copilot メトリクス レポート URL の更新 ↗" [level=3] [ref=e1360]:
+                      - text: Copilot メトリクス レポート URL の更新
+                      - generic [ref=e1361]: ↗
+                    - paragraph [ref=e1362]: Copilot metrics report URLs update
+                    - generic [ref=e1363]: github.blog
+                  - generic [ref=e1364]:
+                    - generic [ref=e1365]: "80"
+                    - generic [ref=e1366]: NVA
+              - link "Github.blog GitHub EN コミュニティ 05:10 注目 product-release Enterprise AI Controls とエージェント コントロール プレーンが一般提供開始 ↗ Enterprise AI Controls &#038; agent control plane now generally available We are now announcing general availability of GitHub&#8217;s Enterprise AI Controls and agent control plane, a suite of enterprise governance features designed to give GitHub Enterprise administrators deeper control and&#8230; The post Enterprise AI Controls & agent control plane now generally available appeared first on The GitHub Blog. github.blog 86 NVA" [ref=e1367] [cursor=pointer]:
+                - /url: https://github.blog/changelog/2026-02-26-enterprise-ai-controls-agent-control-plane-now-generally-available
+                - generic [ref=e1368]:
+                  - generic [ref=e1369]:
+                    - generic [ref=e1370]:
+                      - generic [ref=e1371]: Github.blog
+                      - generic [ref=e1372]: GitHub
+                      - generic [ref=e1373]: EN
+                      - generic [ref=e1374]: コミュニティ
+                      - generic [ref=e1375]: 05:10
+                      - generic [ref=e1376]: 注目
+                      - generic [ref=e1377]: product-release
+                    - heading "Enterprise AI Controls とエージェント コントロール プレーンが一般提供開始 ↗" [level=3] [ref=e1378]:
+                      - text: Enterprise AI Controls とエージェント コントロール プレーンが一般提供開始
+                      - generic [ref=e1379]: ↗
+                    - paragraph [ref=e1380]: Enterprise AI Controls &#038; agent control plane now generally available
+                    - paragraph [ref=e1381]: We are now announcing general availability of GitHub&#8217;s Enterprise AI Controls and agent control plane, a suite of enterprise governance features designed to give GitHub Enterprise administrators deeper control and&#8230; The post Enterprise AI Controls & agent control plane now generally available appeared first on The GitHub Blog.
+                    - generic [ref=e1382]: github.blog
+                  - generic [ref=e1383]:
+                    - generic [ref=e1384]: "86"
+                    - generic [ref=e1385]: NVA
+              - link "05:05 Reddit r/ClaudeAI コミュニティ claudeをあなたのワークフローに引き継いで以来、システムまたはソフトウェア エンジニアリングでモチベーションを失った人は他にもいますか? 65" [ref=e1386] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rfksj2/has_anyone_else_lost_motivation_in_systems_or/
+                - generic [ref=e1387]: 05:05
+                - generic [ref=e1388]: Reddit r/ClaudeAI
+                - generic [ref=e1389]: コミュニティ
+                - generic [ref=e1390]: claudeをあなたのワークフローに引き継いで以来、システムまたはソフトウェア エンジニアリングでモチベーションを失った人は他にもいますか?
+                - generic [ref=e1391]: "65"
+              - link "05:05 日経クロステック 8割が「見聞きした」、曖昧な量産終了時期も課題 39" [ref=e1392] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00185/00005/
+                - generic [ref=e1393]: 05:05
+                - generic [ref=e1394]: 日経クロステック
+                - generic [ref=e1395]: 8割が「見聞きした」、曖昧な量産終了時期も課題
+                - generic [ref=e1396]: "39"
+              - link "05:04 日経クロステック 適用対象の企業が拡大、価格の協議は必須に 39" [ref=e1397] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00185/00004/
+                - generic [ref=e1398]: 05:04
+                - generic [ref=e1399]: 日経クロステック
+                - generic [ref=e1400]: 適用対象の企業が拡大、価格の協議は必須に
+                - generic [ref=e1401]: "39"
+              - link "05:03 日経クロステック 完全解決へ検討すべき7つの策、コンプラ違反と決別せよ 39" [ref=e1402] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00185/00003/
+                - generic [ref=e1403]: 05:03
+                - generic [ref=e1404]: 日経クロステック
+                - generic [ref=e1405]: 完全解決へ検討すべき7つの策、コンプラ違反と決別せよ
+                - generic [ref=e1406]: "39"
+              - link "05:02 日経クロステック 空気より軽い材料、高速動作の人型ロボ 注目のスタートアップ6選 39" [ref=e1407] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00186/00002/
+                - generic [ref=e1408]: 05:02
+                - generic [ref=e1409]: 日経クロステック
+                - generic [ref=e1410]: 空気より軽い材料、高速動作の人型ロボ 注目のスタートアップ6選
+                - generic [ref=e1411]: "39"
+              - link "05:02 日経クロステック 公取委の勧告30社もやまぬ違反、トヨタ・スズキの子会社も 39" [ref=e1412] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00185/00002/
+                - generic [ref=e1413]: 05:02
+                - generic [ref=e1414]: 日経クロステック
+                - generic [ref=e1415]: 公取委の勧告30社もやまぬ違反、トヨタ・スズキの子会社も
+                - generic [ref=e1416]: "39"
+              - link "05:01 日経クロステック 増え続けて5000個超、対価請求に取引解消も辞さず 39" [ref=e1417] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00185/00001/
+                - generic [ref=e1418]: 05:01
+                - generic [ref=e1419]: 日経クロステック
+                - generic [ref=e1420]: 増え続けて5000個超、対価請求に取引解消も辞さず
+                - generic [ref=e1421]: "39"
+              - link "05:01 日経クロステック 世界を席巻する人型ロボ、EV・半導体製造から家事までこなす 39" [ref=e1422] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00186/00001/
+                - generic [ref=e1423]: 05:01
+                - generic [ref=e1424]: 日経クロステック
+                - generic [ref=e1425]: 世界を席巻する人型ロボ、EV・半導体製造から家事までこなす
+                - generic [ref=e1426]: "39"
+              - link "05:00 日経クロステック クラウドリフトしたファイルサーバーが遅過ぎる、足かけ1年4カ月の脱出劇 39" [ref=e1427] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/01156/021800078/
+                - generic [ref=e1428]: 05:00
+                - generic [ref=e1429]: 日経クロステック
+                - generic [ref=e1430]: クラウドリフトしたファイルサーバーが遅過ぎる、足かけ1年4カ月の脱出劇
+                - generic [ref=e1431]: "39"
+              - link "05:00 日経クロステック スマホ実機主義の中国OPPO 巨大研究施設に潜入、デバイスに集中投資 39" [ref=e1432] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00011/00344/
+                - generic [ref=e1433]: 05:00
+                - generic [ref=e1434]: 日経クロステック
+                - generic [ref=e1435]: スマホ実機主義の中国OPPO 巨大研究施設に潜入、デバイスに集中投資
+                - generic [ref=e1436]: "39"
+              - link "05:00 日経クロステック 「26年のモバイル市場、衛星直接通信やAI需要に注目」など5本 39" [ref=e1437] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/02928/022000086/
+                - generic [ref=e1438]: 05:00
+                - generic [ref=e1439]: 日経クロステック
+                - generic [ref=e1440]: 「26年のモバイル市場、衛星直接通信やAI需要に注目」など5本
+                - generic [ref=e1441]: "39"
+              - link "05:00 日経クロステック 「コストダウン当然」から発想の転換を 39" [ref=e1442] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00014/00090/
+                - generic [ref=e1443]: 05:00
+                - generic [ref=e1444]: 日経クロステック
+                - generic [ref=e1445]: 「コストダウン当然」から発想の転換を
+                - generic [ref=e1446]: "39"
+              - link "05:00 日経クロステック 光・アナログ・積層に磨きをかける 39" [ref=e1447] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00009/00106/
+                - generic [ref=e1448]: 05:00
+                - generic [ref=e1449]: 日経クロステック
+                - generic [ref=e1450]: 光・アナログ・積層に磨きをかける
+                - generic [ref=e1451]: "39"
+              - link "05:00 日経クロステック 無人化への鍵はAIとの距離、阻害する「4つの壁」と「5つの突破口」 39" [ref=e1452] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03465/021700004/
+                - generic [ref=e1453]: 05:00
+                - generic [ref=e1454]: 日経クロステック
+                - generic [ref=e1455]: 無人化への鍵はAIとの距離、阻害する「4つの壁」と「5つの突破口」
+                - generic [ref=e1456]: "39"
+              - link "05:00 日経クロステック GPUとは異質のアーキテクチャーに手を出したNVIDIA、「住み分け」進むか 39" [ref=e1457] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/02598/021800030/
+                - generic [ref=e1458]: 05:00
+                - generic [ref=e1459]: 日経クロステック
+                - generic [ref=e1460]: GPUとは異質のアーキテクチャーに手を出したNVIDIA、「住み分け」進むか
+                - generic [ref=e1461]: "39"
+              - link "05:00 日経クロステック 新興勢力に対抗するには 39" [ref=e1462] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00019/00097/
+                - generic [ref=e1463]: 05:00
+                - generic [ref=e1464]: 日経クロステック
+                - generic [ref=e1465]: 新興勢力に対抗するには
+                - generic [ref=e1466]: "39"
+              - link "05:00 日経クロステック 豊富な事例が参考になった ほか 39" [ref=e1467] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00008/00101/
+                - generic [ref=e1468]: 05:00
+                - generic [ref=e1469]: 日経クロステック
+                - generic [ref=e1470]: 豊富な事例が参考になった ほか
+                - generic [ref=e1471]: "39"
+              - link "05:00 日経クロステック 打ち上げ失敗のH3、衛星搭載構造が破損 みちびきは第1段と共に落下 39" [ref=e1472] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00011/00345/
+                - generic [ref=e1473]: 05:00
+                - generic [ref=e1474]: 日経クロステック
+                - generic [ref=e1475]: 打ち上げ失敗のH3、衛星搭載構造が破損 みちびきは第1段と共に落下
+                - generic [ref=e1476]: "39"
+              - link "05:00 日経クロステック フィジカルAIで「ロボットの用途が拡大」、ファナック山口賢治社長の期待 39" [ref=e1477] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00011/00343/
+                - generic [ref=e1478]: 05:00
+                - generic [ref=e1479]: 日経クロステック
+                - generic [ref=e1480]: フィジカルAIで「ロボットの用途が拡大」、ファナック山口賢治社長の期待
+                - generic [ref=e1481]: "39"
+              - link "05:00 日経クロステック 東レ、脱フッ素の耐熱OPPフィルム 低コストとの両立で半導体製造に期待 39" [ref=e1482] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00012/00383/
+                - generic [ref=e1483]: 05:00
+                - generic [ref=e1484]: 日経クロステック
+                - generic [ref=e1485]: 東レ、脱フッ素の耐熱OPPフィルム 低コストとの両立で半導体製造に期待
+                - generic [ref=e1486]: "39"
+              - link "05:00 日経クロステック 日産主力のヨロズ、50年ぶり国内新工場 トヨタやホンダのEV向けを拡充 39" [ref=e1487] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00011/00347/
+                - generic [ref=e1488]: 05:00
+                - generic [ref=e1489]: 日経クロステック
+                - generic [ref=e1490]: 日産主力のヨロズ、50年ぶり国内新工場 トヨタやホンダのEV向けを拡充
+                - generic [ref=e1491]: "39"
+              - link "05:00 日経クロステック 事業譲渡されたシステムの開発が頓挫 ブイキューブに6億円超の賠償請求 39" [ref=e1492] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/01157/022600154/
+                - generic [ref=e1493]: 05:00
+                - generic [ref=e1494]: 日経クロステック
+                - generic [ref=e1495]: 事業譲渡されたシステムの開発が頓挫 ブイキューブに6億円超の賠償請求
+                - generic [ref=e1496]: "39"
+              - link "05:00 日経クロステック 半導体強化のデンソーと車両制御注力のアイシン、トヨタグループ2強の変貌 39" [ref=e1497] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03491/00003/
+                - generic [ref=e1498]: 05:00
+                - generic [ref=e1499]: 日経クロステック
+                - generic [ref=e1500]: 半導体強化のデンソーと車両制御注力のアイシン、トヨタグループ2強の変貌
+                - generic [ref=e1501]: "39"
+              - link "05:00 日経クロステック Windows 11の日本語入力を自分好みに、予測変換のタイミングは変更できる 39" [ref=e1502] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03457/122600011/
+                - generic [ref=e1503]: 05:00
+                - generic [ref=e1504]: 日経クロステック
+                - generic [ref=e1505]: Windows 11の日本語入力を自分好みに、予測変換のタイミングは変更できる
+                - generic [ref=e1506]: "39"
+              - link "05:00 日経クロステック 国軒高科のEV電池、日本こそ「LFP広がる」 VW向け50GWh生産へ 39" [ref=e1507] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00134/022400458/
+                - generic [ref=e1508]: 05:00
+                - generic [ref=e1509]: 日経クロステック
+                - generic [ref=e1510]: 国軒高科のEV電池、日本こそ「LFP広がる」 VW向け50GWh生産へ
+                - generic [ref=e1511]: "39"
+              - link "05:00 日経クロステック 「2025年の崖」越えに一役の「JaBOL」、モダナイの目的踏まえ選択を 39" [ref=e1512] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/keyword/18/00002/021700305/
+                - generic [ref=e1513]: 05:00
+                - generic [ref=e1514]: 日経クロステック
+                - generic [ref=e1515]: 「2025年の崖」越えに一役の「JaBOL」、モダナイの目的踏まえ選択を
+                - generic [ref=e1516]: "39"
+              - link "05:00 日経クロステック 新顔犯罪グループ「0APT」に要注意、26年1月のランサム被害を分析 39" [ref=e1517] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03053/022500016/
+                - generic [ref=e1518]: 05:00
+                - generic [ref=e1519]: 日経クロステック
+                - generic [ref=e1520]: 新顔犯罪グループ「0APT」に要注意、26年1月のランサム被害を分析
+                - generic [ref=e1521]: "39"
+              - link "05:00 日経クロステック 遠い海の上の「ゾウ580頭」、国内初の浮体式洋上風力の成否を注視したい 39" [ref=e1522] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00138/022501965/
+                - generic [ref=e1523]: 05:00
+                - generic [ref=e1524]: 日経クロステック
+                - generic [ref=e1525]: 遠い海の上の「ゾウ580頭」、国内初の浮体式洋上風力の成否を注視したい
+                - generic [ref=e1526]: "39"
+              - link "05:00 日経クロステック スカイツリー閉じ込め事故、エレベーター緊急停止の原因は「ケーブル損傷」 39" [ref=e1527] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00154/02723/
+                - generic [ref=e1528]: 05:00
+                - generic [ref=e1529]: 日経クロステック
+                - generic [ref=e1530]: スカイツリー閉じ込め事故、エレベーター緊急停止の原因は「ケーブル損傷」
+                - generic [ref=e1531]: "39"
+              - link "05:00 日経クロステック 1ペアイーサネット、車載で始まりスマートシティーへ 39" [ref=e1532] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03484/020500009/
+                - generic [ref=e1533]: 05:00
+                - generic [ref=e1534]: 日経クロステック
+                - generic [ref=e1535]: 1ペアイーサネット、車載で始まりスマートシティーへ
+                - generic [ref=e1536]: "39"
+              - link "05:00 日経クロステック AIでソフト開発の仕事はむしろ増える、理由は「ジェボンズのパラドックス」 39" [ref=e1537] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03079/022600031/
+                - generic [ref=e1538]: 05:00
+                - generic [ref=e1539]: 日経クロステック
+                - generic [ref=e1540]: AIでソフト開発の仕事はむしろ増える、理由は「ジェボンズのパラドックス」
+                - generic [ref=e1541]: "39"
+              - link "05:00 日経クロステック 大阪府建築設計協会がHD設立し事業継承を支援、廃業に悩む会員をグループ化 39" [ref=e1542] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00154/02722/
+                - generic [ref=e1543]: 05:00
+                - generic [ref=e1544]: 日経クロステック
+                - generic [ref=e1545]: 大阪府建築設計協会がHD設立し事業継承を支援、廃業に悩む会員をグループ化
+                - generic [ref=e1546]: "39"
+              - link "05:00 日経クロステック 中国センスタイム傘下のACE Robotics、「エンボディドAIの壁」打破する新技術 39" [ref=e1547] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/02653/022400063/
+                - generic [ref=e1548]: 05:00
+                - generic [ref=e1549]: 日経クロステック
+                - generic [ref=e1550]: 中国センスタイム傘下のACE Robotics、「エンボディドAIの壁」打破する新技術
+                - generic [ref=e1551]: "39"
+              - link "05:00 日経クロステック 公共工事設計労務単価が初の2万5000円超 14年連続上昇、民間にも影響 39" [ref=e1552] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00142/02552/
+                - generic [ref=e1553]: 05:00
+                - generic [ref=e1554]: 日経クロステック
+                - generic [ref=e1555]: 公共工事設計労務単価が初の2万5000円超 14年連続上昇、民間にも影響
+                - generic [ref=e1556]: "39"
+              - link "05:00 日経クロステック ファーウェイが挑む「ティアマイナス1」、鴻海主導のMIHとの違いとは 39" [ref=e1557] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/02967/022400018/
+                - generic [ref=e1558]: 05:00
+                - generic [ref=e1559]: 日経クロステック
+                - generic [ref=e1560]: ファーウェイが挑む「ティアマイナス1」、鴻海主導のMIHとの違いとは
+                - generic [ref=e1561]: "39"
+              - link "05:00 日経クロステック 異分野へのコンサル転職のポイント3つ、自身の強みを持ち込もう 39" [ref=e1562] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00577/022500096/
+                - generic [ref=e1563]: 05:00
+                - generic [ref=e1564]: 日経クロステック
+                - generic [ref=e1565]: 異分野へのコンサル転職のポイント3つ、自身の強みを持ち込もう
+                - generic [ref=e1566]: "39"
+              - link "05:00 日経クロステック 本四高速、長大橋の点検支援ツールを本格運用 複合現実で3Dモデル重ねる 39" [ref=e1567] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00107/00269/
+                - generic [ref=e1568]: 05:00
+                - generic [ref=e1569]: 日経クロステック
+                - generic [ref=e1570]: 本四高速、長大橋の点検支援ツールを本格運用 複合現実で3Dモデル重ねる
+                - generic [ref=e1571]: "39"
+              - link "05:00 日経クロステック 純国産量子コン、要求水準を上回る日本企業の技術力 開発成功の支えに 39" [ref=e1572] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03520/022400002/
+                - generic [ref=e1573]: 05:00
+                - generic [ref=e1574]: 日経クロステック
+                - generic [ref=e1575]: 純国産量子コン、要求水準を上回る日本企業の技術力 開発成功の支えに
+                - generic [ref=e1576]: "39"
+              - link "05:00 日経クロステック グリーンランドへの思惑、トランプ氏の狙いはどこに 39" [ref=e1577] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00168/00011/
+                - generic [ref=e1578]: 05:00
+                - generic [ref=e1579]: 日経クロステック
+                - generic [ref=e1580]: グリーンランドへの思惑、トランプ氏の狙いはどこに
+                - generic [ref=e1581]: "39"
+              - link "05:00 日経クロステック 安川電機、モーターからロボットへ 「if文では書けない」領域でAIを展開 39" [ref=e1582] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00011/00346/
+                - generic [ref=e1583]: 05:00
+                - generic [ref=e1584]: 日経クロステック
+                - generic [ref=e1585]: 安川電機、モーターからロボットへ 「if文では書けない」領域でAIを展開
+                - generic [ref=e1586]: "39"
+              - link "05:00 日経クロステック 組織をAIネーティブに NOT A HOTEL、経営陣に専属エンジニア 39" [ref=e1587] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00154/02725/
+                - generic [ref=e1588]: 05:00
+                - generic [ref=e1589]: 日経クロステック
+                - generic [ref=e1590]: 組織をAIネーティブに NOT A HOTEL、経営陣に専属エンジニア
+                - generic [ref=e1591]: "39"
+              - link "05:00 日経クロステック 次世代AIデータセンター、パワエレ刷新 800V化と巨大蓄電装置が必須 39" [ref=e1592] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03498/021200003/
+                - generic [ref=e1593]: 05:00
+                - generic [ref=e1594]: 日経クロステック
+                - generic [ref=e1595]: 次世代AIデータセンター、パワエレ刷新 800V化と巨大蓄電装置が必須
+                - generic [ref=e1596]: "39"
+              - link "05:00 日経クロステック メモリー不足対策でAIエージェント大活躍、でも問題の原因は何だったか 39" [ref=e1597] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/01268/00149/
+                - generic [ref=e1598]: 05:00
+                - generic [ref=e1599]: 日経クロステック
+                - generic [ref=e1600]: メモリー不足対策でAIエージェント大活躍、でも問題の原因は何だったか
+                - generic [ref=e1601]: "39"
+              - link "05:00 日経クロステック BIM/CIM管理技士で建設×ICTによる説得力向上へ、大林組 39" [ref=e1602] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03508/021300004/
+                - generic [ref=e1603]: 05:00
+                - generic [ref=e1604]: 日経クロステック
+                - generic [ref=e1605]: BIM/CIM管理技士で建設×ICTによる説得力向上へ、大林組
+                - generic [ref=e1606]: "39"
+              - link "05:00 日経クロステック 香港政府、火災被害の高層住宅買い取りを提案 39" [ref=e1607] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/01162/00331/
+                - generic [ref=e1608]: 05:00
+                - generic [ref=e1609]: 日経クロステック
+                - generic [ref=e1610]: 香港政府、火災被害の高層住宅買い取りを提案
+                - generic [ref=e1611]: "39"
+              - link "05:00 日経クロステック 紛失したパソコンをどう探す？ ドライブ丸ごと暗号化でデータ流出を防ぐ 39" [ref=e1612] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03459/010600006/
+                - generic [ref=e1613]: 05:00
+                - generic [ref=e1614]: 日経クロステック
+                - generic [ref=e1615]: 紛失したパソコンをどう探す？ ドライブ丸ごと暗号化でデータ流出を防ぐ
+                - generic [ref=e1616]: "39"
+              - link "05:00 日経クロステック 必須の安全確保、問われた交渉力 39" [ref=e1617] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00181/00003/
+                - generic [ref=e1618]: 05:00
+                - generic [ref=e1619]: 日経クロステック
+                - generic [ref=e1620]: 必須の安全確保、問われた交渉力
+                - generic [ref=e1621]: "39"
+              - link "05:00 日経クロステック ダムに沈む国道の代替橋「新設楽大橋」が連結、高さ70m橋上でバケツリレー 39" [ref=e1622] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00585/022400265/
+                - generic [ref=e1623]: 05:00
+                - generic [ref=e1624]: 日経クロステック
+                - generic [ref=e1625]: ダムに沈む国道の代替橋「新設楽大橋」が連結、高さ70m橋上でバケツリレー
+                - generic [ref=e1626]: "39"
+              - link "05:00 日経クロステック 山手線など8時間超の運転見合わせ、不十分な作業で異常電流により発煙 39" [ref=e1627] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00016/00079/
+                - generic [ref=e1628]: 05:00
+                - generic [ref=e1629]: 日経クロステック
+                - generic [ref=e1630]: 山手線など8時間超の運転見合わせ、不十分な作業で異常電流により発煙
+                - generic [ref=e1631]: "39"
+              - link "05:00 日経クロステック 「Galaxy S26」の最上位モデルは20万円超、どうやって売り伸ばすのか 39" [ref=e1632] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00745/022200242/
+                - generic [ref=e1633]: 05:00
+                - generic [ref=e1634]: 日経クロステック
+                - generic [ref=e1635]: 「Galaxy S26」の最上位モデルは20万円超、どうやって売り伸ばすのか
+                - generic [ref=e1636]: "39"
+              - link "05:00 日経クロステック 住宅のコンセントまわりにカビ、気密測定後に生じた欠陥が原因か 39" [ref=e1637] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03443/121600008/
+                - generic [ref=e1638]: 05:00
+                - generic [ref=e1639]: 日経クロステック
+                - generic [ref=e1640]: 住宅のコンセントまわりにカビ、気密測定後に生じた欠陥が原因か
+                - generic [ref=e1641]: "39"
+              - link "05:00 日経クロステック ブリヂストン、人工筋肉のFA向け大型ハンド 自動車工場狙い10kg超対応 ほか 39" [ref=e1642] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00105/00047/
+                - generic [ref=e1643]: 05:00
+                - generic [ref=e1644]: 日経クロステック
+                - generic [ref=e1645]: ブリヂストン、人工筋肉のFA向け大型ハンド 自動車工場狙い10kg超対応 ほか
+                - generic [ref=e1646]: "39"
+              - link "05:00 日経クロステック 「AlphaGo」の生みの親が独立、AI研究はビッグテックで完結できぬ時代に 39" [ref=e1647] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/02994/022400018/
+                - generic [ref=e1648]: 05:00
+                - generic [ref=e1649]: 日経クロステック
+                - generic [ref=e1650]: 「AlphaGo」の生みの親が独立、AI研究はビッグテックで完結できぬ時代に
+                - generic [ref=e1651]: "39"
+              - link "05:00 日経クロステック 設計ノウハウ伝承は喫緊の課題、既存技術から解明された最新エンジン理論 39" [ref=e1652] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/01187/00080/
+                - generic [ref=e1653]: 05:00
+                - generic [ref=e1654]: 日経クロステック
+                - generic [ref=e1655]: 設計ノウハウ伝承は喫緊の課題、既存技術から解明された最新エンジン理論
+                - generic [ref=e1656]: "39"
+              - link "05:00 日経クロステック 世界モデルはAGI実現への一歩となるか、物理現象を超えた汎用化も 39" [ref=e1657] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03515/022500004/
+                - generic [ref=e1658]: 05:00
+                - generic [ref=e1659]: 日経クロステック
+                - generic [ref=e1660]: 世界モデルはAGI実現への一歩となるか、物理現象を超えた汎用化も
+                - generic [ref=e1661]: "39"
+              - link "05:00 日経クロステック AI駆動開発ツール「IBM Bob」の国内提供を開始、SaaS版を26年3月から 39" [ref=e1662] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00001/11526/
+                - generic [ref=e1663]: 05:00
+                - generic [ref=e1664]: 日経クロステック
+                - generic [ref=e1665]: AI駆動開発ツール「IBM Bob」の国内提供を開始、SaaS版を26年3月から
+                - generic [ref=e1666]: "39"
+              - 'link "04:59 Reddit r/ClaudeAI コミュニティ 新規: claude code の自動メモリ機能、詳細は以下 65" [ref=e1667] [cursor=pointer]':
+                - /url: https://v.redd.it/pxsvmi73awlg1
+                - generic [ref=e1668]: 04:59
+                - generic [ref=e1669]: Reddit r/ClaudeAI
+                - generic [ref=e1670]: コミュニティ
+                - generic [ref=e1671]: "新規: claude code の自動メモリ機能、詳細は以下"
+                - generic [ref=e1672]: "65"
+              - 'link "04:20 Reddit r/LocalLLaMA コミュニティ 逆 CAPTCHA: 目に見えない Unicode 文字が LLM エージェントをハイジャックできるかどうかをテストしました: 5 つのモデルで 8,308 個の出力 67" [ref=e1673] [cursor=pointer]':
+                - /url: https://i.redd.it/p119kiqx2wlg1.png
+                - generic [ref=e1674]: 04:20
+                - generic [ref=e1675]: Reddit r/LocalLLaMA
+                - generic [ref=e1676]: コミュニティ
+                - generic [ref=e1677]: "逆 CAPTCHA: 目に見えない Unicode 文字が LLM エージェントをハイジャックできるかどうかをテストしました: 5 つのモデルで 8,308 個の出力"
+                - generic [ref=e1678]: "67"
+              - link "03:55 Google AI Blog Google とマサチューセッツ AI ハブは、連邦向けの新しい AI トレーニング イニシアチブを立ち上げています。 39" [ref=e1679] [cursor=pointer]:
+                - /url: https://blog.google/company-news/outreach-and-initiatives/grow-with-google/google-ai-training-massachusetts-residents/
+                - generic [ref=e1680]: 03:55
+                - generic [ref=e1681]: Google AI Blog
+                - generic [ref=e1682]: Google とマサチューセッツ AI ハブは、連邦向けの新しい AI トレーニング イニシアチブを立ち上げています。
+                - generic [ref=e1683]: "39"
+              - link "03:36 Reddit r/LocalLLaMA コミュニティ LFM2-24B-A2B は Strix Halo で非常に高速です 62" [ref=e1684] [cursor=pointer]:
+                - /url: https://v.redd.it/ug0nkgqhuvlg1
+                - generic [ref=e1685]: 03:36
+                - generic [ref=e1686]: Reddit r/LocalLLaMA
+                - generic [ref=e1687]: コミュニティ
+                - generic [ref=e1688]: LFM2-24B-A2B は Strix Halo で非常に高速です
+                - generic [ref=e1689]: "62"
+              - link "03:25 X @sama 技術者でない人がAGIに貢献するにはどうすればいいかという質問をよく受ける。 その1つが研究者のリクルートだ。 ティファ（@tifafafa）は例外的な研究者を探している。 6.7k 44" [ref=e1690] [cursor=pointer]:
+                - /url: https://x.com/sama/status/2027087700214591913
+                - generic [ref=e1691]: 03:25
+                - generic [ref=e1692]: X @sama
+                - generic [ref=e1693]: 技術者でない人がAGIに貢献するにはどうすればいいかという質問をよく受ける。 その1つが研究者のリクルートだ。 ティファ（@tifafafa）は例外的な研究者を探している。
+                - generic "エンゲージメント" [ref=e1694]: 6.7k
+                - generic [ref=e1695]: "44"
+              - link "03:25 X @sama ありがとうございます。これからもトークンを獲得できるよう頑張ります！ 3.2k 42" [ref=e1696] [cursor=pointer]:
+                - /url: https://x.com/sama/status/2027087689359753483
+                - generic [ref=e1697]: 03:25
+                - generic [ref=e1698]: X @sama
+                - generic [ref=e1699]: ありがとうございます。これからもトークンを獲得できるよう頑張ります！
+                - generic "エンゲージメント" [ref=e1700]: 3.2k
+                - generic [ref=e1701]: "42"
+              - link "03:23 X @sama グレッグは何度も、OpenAIの使命と人々を守るために重要だと思うことは何でもする、という明確な信念を示してきた。 2.0k 59" [ref=e1702] [cursor=pointer]:
+                - /url: https://x.com/sama/status/2027087128514183553
+                - generic [ref=e1703]: 03:23
+                - generic [ref=e1704]: X @sama
+                - generic [ref=e1705]: グレッグは何度も、OpenAIの使命と人々を守るために重要だと思うことは何でもする、という明確な信念を示してきた。
+                - generic "エンゲージメント" [ref=e1706]: 2.0k
+                - generic [ref=e1707]: "59"
+              - link "03:00 Google AI Blog Translate の AI を活用した新しいアップデートにより、より多くのコンテキストを取得し、翻訳をより深く理解できます。 39" [ref=e1708] [cursor=pointer]:
+                - /url: https://blog.google/products-and-platforms/products/translate/translation-context-ai-update/
+                - generic [ref=e1709]: 03:00
+                - generic [ref=e1710]: Google AI Blog
+                - generic [ref=e1711]: Translate の AI を活用した新しいアップデートにより、より多くのコンテキストを取得し、翻訳をより深く理解できます。
+                - generic [ref=e1712]: "39"
+              - link "02:18 Github.blog コミュニティ Copilot Business および Pro ユーザーがclaudeとコーデックスを利用できるようになりました 65" [ref=e1713] [cursor=pointer]:
+                - /url: https://github.blog/changelog/2026-02-26-claude-and-codex-now-available-for-copilot-business-pro-users
+                - generic [ref=e1714]: 02:18
+                - generic [ref=e1715]: Github.blog
+                - generic [ref=e1716]: コミュニティ
+                - generic [ref=e1717]: Copilot Business および Pro ユーザーがclaudeとコーデックスを利用できるようになりました
+                - generic [ref=e1718]: "65"
+              - link "02:15 Reddit r/LocalLLaMA コミュニティ アメリカのクローズドモデルと中国のオープンモデルが問題になっています。 63" [ref=e1719] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/LocalLLaMA/comments/1rfg3kx/american_closed_models_vs_chinese_open_models_is/
+                - generic [ref=e1720]: 02:15
+                - generic [ref=e1721]: Reddit r/LocalLLaMA
+                - generic [ref=e1722]: コミュニティ
+                - generic [ref=e1723]: アメリカのクローズドモデルと中国のオープンモデルが問題になっています。
+                - generic [ref=e1724]: "63"
+              - link "02:14 Reddit r/ClaudeAI コミュニティ Linux を使用している人は何人いますか? 65" [ref=e1725] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/ClaudeAI/comments/1rfg2dz/how_many_people_are_using_linux/
+                - generic [ref=e1726]: 02:14
+                - generic [ref=e1727]: Reddit r/ClaudeAI
+                - generic [ref=e1728]: コミュニティ
+                - generic [ref=e1729]: Linux を使用している人は何人いますか?
+                - generic [ref=e1730]: "65"
+              - link "02:11 X @figma Codex to Figma デザイナーの提唱者であるアナ・ボイヤーとOpenAIのエド・ベイズが、コードとキャンバスの往復について語ります。https://x.com/i/bro... 447 51" [ref=e1731] [cursor=pointer]:
+                - /url: https://x.com/figma/status/2027068943702364250
+                - generic [ref=e1732]: 02:11
+                - generic [ref=e1733]: X @figma
+                - generic [ref=e1734]: Codex to Figma デザイナーの提唱者であるアナ・ボイヤーとOpenAIのエド・ベイズが、コードとキャンバスの往復について語ります。https://x.com/i/bro...
+                - generic "エンゲージメント" [ref=e1735]: "447"
+                - generic [ref=e1736]: "51"
+              - 'link "Reddit r/ClaudeAI EN コミュニティ 01:59 注目 security-vulnerability claudeを使用して、Lovable で紹介されたアプリをバイブハッキングしました。 18,000 人以上のユーザーが暴露されました。 Loveable がサポート チケットを閉じました。 ↗ I vibe hacked a Lovable-showcased app using claude. 18,000+ users exposed. Lovable closed my support ticket. Lovable is a $6.6B vibe coding platform. They showcase apps on their site as success stories. I tested one — an EdTech app with 100K+ views on their showcase, real users from UC Berkeley, UC Davis, and schools across Europe, Africa, and Asia. Found 16 security vulnerabilities in a few hours. 6 critical. The auth logic was literally backwards — it blocked logged-in users and let anonymous ones through. Classic AI-generated code that \"works\" but was never reviewed. What was exposed: * 18,69... reddit.com/r/claudeai 81 NVA" [ref=e1737] [cursor=pointer]':
+                - /url: https://www.linkedin.com/posts/volodstaimi_vibecoding-cybersecurity-lovable-activity-7432825697988964355-qgIA
+                - generic [ref=e1738]:
+                  - generic [ref=e1739]:
+                    - generic [ref=e1740]:
+                      - generic [ref=e1741]: Reddit r/ClaudeAI
+                      - generic [ref=e1742]: EN
+                      - generic [ref=e1743]: コミュニティ
+                      - generic [ref=e1744]: 01:59
+                      - generic [ref=e1745]: 注目
+                      - generic [ref=e1746]: security-vulnerability
+                    - heading "claudeを使用して、Lovable で紹介されたアプリをバイブハッキングしました。 18,000 人以上のユーザーが暴露されました。 Loveable がサポート チケットを閉じました。 ↗" [level=3] [ref=e1747]:
+                      - text: claudeを使用して、Lovable で紹介されたアプリをバイブハッキングしました。 18,000 人以上のユーザーが暴露されました。 Loveable がサポート チケットを閉じました。
+                      - generic [ref=e1748]: ↗
+                    - paragraph [ref=e1749]: I vibe hacked a Lovable-showcased app using claude. 18,000+ users exposed. Lovable closed my support ticket.
+                    - paragraph [ref=e1750]: "Lovable is a $6.6B vibe coding platform. They showcase apps on their site as success stories. I tested one — an EdTech app with 100K+ views on their showcase, real users from UC Berkeley, UC Davis, and schools across Europe, Africa, and Asia. Found 16 security vulnerabilities in a few hours. 6 critical. The auth logic was literally backwards — it blocked logged-in users and let anonymous ones through. Classic AI-generated code that \"works\" but was never reviewed. What was exposed: * 18,69..."
+                    - generic [ref=e1751]: reddit.com/r/claudeai
+                  - generic [ref=e1752]:
+                    - generic [ref=e1753]: "81"
+                    - generic [ref=e1754]: NVA
+              - link "01:00 Github.blog コミュニティ macos-26 が GitHub でホストされるランナー向けに一般提供されるようになりました 65" [ref=e1755] [cursor=pointer]:
+                - /url: https://github.blog/changelog/2026-02-26-macos-26-is-now-generally-available-for-github-hosted-runners
+                - generic [ref=e1756]: 01:00
+                - generic [ref=e1757]: Github.blog
+                - generic [ref=e1758]: コミュニティ
+                - generic [ref=e1759]: macos-26 が GitHub でホストされるランナー向けに一般提供されるようになりました
+                - generic [ref=e1760]: "65"
+              - 'link "01:00 Google AI Blog Nano Banana 2: Pro 機能と超高速スピードの組み合わせ 39" [ref=e1761] [cursor=pointer]':
+                - /url: https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/
+                - generic [ref=e1762]: 01:00
+                - generic [ref=e1763]: Google AI Blog
+                - generic [ref=e1764]: "Nano Banana 2: Pro 機能と超高速スピードの組み合わせ"
+                - generic [ref=e1765]: "39"
+              - link "01:00 Google AI Blog 当社の最高の画像生成および編集モデルである Nano Banana 2 を使用して構築します 48" [ref=e1766] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/technology/developers-tools/build-with-nano-banana-2/
+                - generic [ref=e1767]: 01:00
+                - generic [ref=e1768]: Google AI Blog
+                - generic [ref=e1769]: 当社の最高の画像生成および編集モデルである Nano Banana 2 を使用して構築します
+                - generic [ref=e1770]: "48"
+              - 'link "00:41 Qiita コミュニティ IBM BobにMCPサーバーを設定する: Figma MCP接続方法 65" [ref=e1771] [cursor=pointer]':
+                - /url: https://qiita.com/nacho4d/items/845583ad8d8196f6b1ad
+                - generic [ref=e1772]: 00:41
+                - generic [ref=e1773]: Qiita
+                - generic [ref=e1774]: コミュニティ
+                - generic [ref=e1775]: "IBM BobにMCPサーバーを設定する: Figma MCP接続方法"
+                - generic [ref=e1776]: "65"
+              - link "00:37 Github.blog コミュニティ Copilot コンテンツ除外 REST API (パブリック プレビュー中) 65" [ref=e1777] [cursor=pointer]:
+                - /url: https://github.blog/changelog/2026-02-26-copilot-content-exclusion-rest-api-in-public-preview
+                - generic [ref=e1778]: 00:37
+                - generic [ref=e1779]: Github.blog
+                - generic [ref=e1780]: コミュニティ
+                - generic [ref=e1781]: Copilot コンテンツ除外 REST API (パブリック プレビュー中)
+                - generic [ref=e1782]: "65"
+              - link "23:17 Reddit r/MachineLearning コミュニティ [P] ネイティブ ハードウェア サポートなしの Ampere での FP8 推論 | RTX 3050 で動作する TinyLlama 65" [ref=e1783] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/MachineLearning/comments/1rfbbe5/p_fp8_inference_on_ampere_without_native_hardware/
+                - generic [ref=e1784]: 23:17
+                - generic [ref=e1785]: Reddit r/MachineLearning
+                - generic [ref=e1786]: コミュニティ
+                - generic [ref=e1787]: "[P] ネイティブ ハードウェア サポートなしの Ampere での FP8 推論 | RTX 3050 で動作する TinyLlama"
+                - generic [ref=e1788]: "65"
+              - link "23:00 Figma Blog CodexとFigmaを使ったフロントエンドUIの構築 39" [ref=e1789] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/introducing-codex-to-figma/
+                - generic [ref=e1790]: 23:00
+                - generic [ref=e1791]: Figma Blog
+                - generic [ref=e1792]: CodexとFigmaを使ったフロントエンドUIの構築
+                - generic [ref=e1793]: "39"
+              - link "21:25 Reddit r/LocalLLaMA コミュニティ 3 つのコーディング タスクにおける MiniMax 2.5 と GLM-5 の比較 [ベンチマークと結果] 68" [ref=e1794] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/LocalLLaMA/comments/1rf8ssn/minimax_25_vs_glm5_across_3_coding_tasks/
+                - generic [ref=e1795]: 21:25
+                - generic [ref=e1796]: Reddit r/LocalLLaMA
+                - generic [ref=e1797]: コミュニティ
+                - generic [ref=e1798]: 3 つのコーディング タスクにおける MiniMax 2.5 と GLM-5 の比較 [ベンチマークと結果]
+                - generic [ref=e1799]: "68"
+              - link "20:50 Impress Watch SwitchBot AIハブ、AIエージェント「OpenClaw」に対応 単体の実行環境に 38" [ref=e1800] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089038.html
+                - generic [ref=e1801]: 20:50
+                - generic [ref=e1802]: Impress Watch
+                - generic [ref=e1803]: SwitchBot AIハブ、AIエージェント「OpenClaw」に対応 単体の実行環境に
+                - generic [ref=e1804]: "38"
+              - 'link "19:58 Github.blog コミュニティ GitHub モバイル: ライブ通知を使用してコーディング エージェントの進行状況をリアルタイムで追跡します 65" [ref=e1805] [cursor=pointer]':
+                - /url: https://github.blog/changelog/2026-02-26-github-mobile-track-coding-agent-progress-in-real-time-with-live-notifications
+                - generic [ref=e1806]: 19:58
+                - generic [ref=e1807]: Github.blog
+                - generic [ref=e1808]: コミュニティ
+                - generic [ref=e1809]: "GitHub モバイル: ライブ通知を使用してコーディング エージェントの進行状況をリアルタイムで追跡します"
+                - generic [ref=e1810]: "65"
+              - link "19:22 Impress Watch 大井町駅前複合施設「OIMACHI TRACKS」 3月28日開業 38" [ref=e1811] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089002.html
+                - generic [ref=e1812]: 19:22
+                - generic [ref=e1813]: Impress Watch
+                - generic [ref=e1814]: 大井町駅前複合施設「OIMACHI TRACKS」 3月28日開業
+                - generic [ref=e1815]: "38"
+              - link "19:11 Impress Watch 横浜・関内駅前の大規模街区「BASEGATE」全55店舗公開 3月19日開業 38" [ref=e1816] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2089000.html
+                - generic [ref=e1817]: 19:11
+                - generic [ref=e1818]: Impress Watch
+                - generic [ref=e1819]: 横浜・関内駅前の大規模街区「BASEGATE」全55店舗公開 3月19日開業
+                - generic [ref=e1820]: "38"
+              - 'link "19:04 Reddit r/ClaudeAI コミュニティ 公式: Anthropic は、7 つの CLI と 5 つのプロンプト変更を含む claude code 2.1.59 をリリースしました。詳細は以下をご覧ください 65" [ref=e1821] [cursor=pointer]':
+                - /url: https://github.com/anthropics/claude-code/releases/tag/v2.1.59
+                - generic [ref=e1822]: 19:04
+                - generic [ref=e1823]: Reddit r/ClaudeAI
+                - generic [ref=e1824]: コミュニティ
+                - generic [ref=e1825]: "公式: Anthropic は、7 つの CLI と 5 つのプロンプト変更を含む claude code 2.1.59 をリリースしました。詳細は以下をご覧ください"
+                - generic [ref=e1826]: "65"
+              - link "19:00 OpenAI News パシフィック・ノースウエスト国立研究所とOpenAIが提携、連邦政府の許認可を加速 68" [ref=e1827] [cursor=pointer]:
+                - /url: https://openai.com/index/pacific-northwest-national-laboratory
+                - generic [ref=e1828]: 19:00
+                - generic [ref=e1829]: OpenAI News
+                - generic [ref=e1830]: パシフィック・ノースウエスト国立研究所とOpenAIが提携、連邦政府の許認可を加速
+                - generic [ref=e1831]: "68"
+              - link "18:53 Impress Watch ポケモン30周年、記念施策を発表 1025種ロゴやグッズも 38" [ref=e1832] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2088978.html
+                - generic [ref=e1833]: 18:53
+                - generic [ref=e1834]: Impress Watch
+                - generic [ref=e1835]: ポケモン30周年、記念施策を発表 1025種ロゴやグッズも
+                - generic [ref=e1836]: "38"
+              - link "18:30 CNET Japan NTTドコモ、通信障害復旧にAIエージェント 対応時間を従来比50%削減へ 38" [ref=e1837] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244356/
+                - generic [ref=e1838]: 18:30
+                - generic [ref=e1839]: CNET Japan
+                - generic [ref=e1840]: NTTドコモ、通信障害復旧にAIエージェント 対応時間を従来比50%削減へ
+                - generic [ref=e1841]: "38"
+              - link "18:29 Github.blog コミュニティ 問題ダッシュボードの検索を改善しました 65" [ref=e1842] [cursor=pointer]:
+                - /url: https://github.blog/changelog/2026-02-26-improved-search-on-the-issues-dashboard
+                - generic [ref=e1843]: 18:29
+                - generic [ref=e1844]: Github.blog
+                - generic [ref=e1845]: コミュニティ
+                - generic [ref=e1846]: 問題ダッシュボードの検索を改善しました
+                - generic [ref=e1847]: "65"
+              - link "18:26 Reddit r/ClaudeAI コミュニティ 「息子にclaudeと名付けました」 65" [ref=e1848] [cursor=pointer]:
+                - /url: https://v.redd.it/1j9qhfc65tlg1
+                - generic [ref=e1849]: 18:26
+                - generic [ref=e1850]: Reddit r/ClaudeAI
+                - generic [ref=e1851]: コミュニティ
+                - generic [ref=e1852]: 「息子にclaudeと名付けました」
+                - generic [ref=e1853]: "65"
+              - link "18:05 CNET Japan d払い、アプリ起動後すぐにバーコード表示 読み込み待たず 38" [ref=e1854] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244352/
+                - generic [ref=e1855]: 18:05
+                - generic [ref=e1856]: CNET Japan
+                - generic [ref=e1857]: d払い、アプリ起動後すぐにバーコード表示 読み込み待たず
+                - generic [ref=e1858]: "38"
+              - link "17:32 Impress Watch ゆうちょデビット、Apple Pay対応 iPhoneやApple Watchで支払い 38" [ref=e1859] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2088951.html
+                - generic [ref=e1860]: 17:32
+                - generic [ref=e1861]: Impress Watch
+                - generic [ref=e1862]: ゆうちょデビット、Apple Pay対応 iPhoneやApple Watchで支払い
+                - generic [ref=e1863]: "38"
+              - link "17:25 Impress Watch povo、スターリンクの「フェリーWi-Fi」付きトッピング 38" [ref=e1864] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2088934.html
+                - generic [ref=e1865]: 17:25
+                - generic [ref=e1866]: Impress Watch
+                - generic [ref=e1867]: povo、スターリンクの「フェリーWi-Fi」付きトッピング
+                - generic [ref=e1868]: "38"
+              - link "16:20 Impress Watch メルカリモバイル、au回線も選択可能に 4GB 990円から 38" [ref=e1869] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2088918.html
+                - generic [ref=e1870]: 16:20
+                - generic [ref=e1871]: Impress Watch
+                - generic [ref=e1872]: メルカリモバイル、au回線も選択可能に 4GB 990円から
+                - generic [ref=e1873]: "38"
+              - link "15:59 CNET Japan バッファロー、ブルーレイドライブの販売を2026年7月で終了へ 後継機種なし 38" [ref=e1874] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244343/
+                - generic [ref=e1875]: 15:59
+                - generic [ref=e1876]: CNET Japan
+                - generic [ref=e1877]: バッファロー、ブルーレイドライブの販売を2026年7月で終了へ 後継機種なし
+                - generic [ref=e1878]: "38"
+              - link "15:58 X @FigmaJapan 3月13日に金融機関向けMeetupをFUN様とともに開催します🙌 💬金融業界の“いま”を語るパネルも開催！ ぜひご参加ください！ ※金融関連の方のみご参加いた... 13 38" [ref=e1879] [cursor=pointer]:
+                - /url: https://x.com/FigmaJapan/status/2026914736156323959
+                - generic [ref=e1880]: 15:58
+                - generic [ref=e1881]: X @FigmaJapan
+                - generic [ref=e1882]: 3月13日に金融機関向けMeetupをFUN様とともに開催します🙌 💬金融業界の“いま”を語るパネルも開催！ ぜひご参加ください！ ※金融関連の方のみご参加いた...
+                - generic "エンゲージメント" [ref=e1883]: "13"
+                - generic [ref=e1884]: "38"
+              - link "15:52 Impress Watch LINEカレンダー登場、LINE内で家族・友だちと予定共有 7月に単体アプリ 38" [ref=e1885] [cursor=pointer]:
+                - /url: https://www.watch.impress.co.jp/docs/news/2088890.html
+                - generic [ref=e1886]: 15:52
+                - generic [ref=e1887]: Impress Watch
+                - generic [ref=e1888]: LINEカレンダー登場、LINE内で家族・友だちと予定共有 7月に単体アプリ
+                - generic [ref=e1889]: "38"
+              - link "15:27 CNET Japan 人気スニーカーの「オン」が韓国にロボット新工場、わずか数分で「吹き付け」生産 38" [ref=e1890] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244344/
+                - generic [ref=e1891]: 15:27
+                - generic [ref=e1892]: CNET Japan
+                - generic [ref=e1893]: 人気スニーカーの「オン」が韓国にロボット新工場、わずか数分で「吹き付け」生産
+                - generic [ref=e1894]: "38"
+              - link "15:04 日経クロステック JFEスチールが計2億ステップの基幹システムをオープン化、5年2カ月で完遂 39" [ref=e1895] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00001/11530/
+                - generic [ref=e1896]: 15:04
+                - generic [ref=e1897]: 日経クロステック
+                - generic [ref=e1898]: JFEスチールが計2億ステップの基幹システムをオープン化、5年2カ月で完遂
+                - generic [ref=e1899]: "39"
+              - link "15:00 OpenAI News OpenAI CodexとFigmaがシームレスなコード・トゥ・デザイン体験を開始 68" [ref=e1900] [cursor=pointer]:
+                - /url: https://openai.com/index/figma-partnership
+                - generic [ref=e1901]: 15:00
+                - generic [ref=e1902]: OpenAI News
+                - generic [ref=e1903]: OpenAI CodexとFigmaがシームレスなコード・トゥ・デザイン体験を開始
+                - generic [ref=e1904]: "68"
+              - link "14:38 日経クロステック NVIDIA、25年11月～26年1月期は7割増収 次世代GPUの量産は「予定通り」 39" [ref=e1905] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/news/24/03111/
+                - generic [ref=e1906]: 14:38
+                - generic [ref=e1907]: 日経クロステック
+                - generic [ref=e1908]: NVIDIA、25年11月～26年1月期は7割増収 次世代GPUの量産は「予定通り」
+                - generic [ref=e1909]: "39"
+              - 'link "14:36 Reddit r/MachineLearning コミュニティ [D] モバイル-MCP: LLM が Android アプリの機能を自律的に検出できるようにする (事前調整は必要ありません) 65" [ref=e1910] [cursor=pointer]':
+                - /url: https://www.reddit.com/r/MachineLearning/comments/1rf1u76/d_mobilemcp_letting_llms_autonomously_discover/
+                - generic [ref=e1911]: 14:36
+                - generic [ref=e1912]: Reddit r/MachineLearning
+                - generic [ref=e1913]: コミュニティ
+                - generic [ref=e1914]: "[D] モバイル-MCP: LLM が Android アプリの機能を自律的に検出できるようにする (事前調整は必要ありません)"
+                - generic [ref=e1915]: "65"
+              - link "13:46 CNET Japan キヤノン、これまでにない「アナログコンセプトカメラ」発表--ウエストレベルのデジタルカメラ、商品化は未定 38" [ref=e1916] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244338/
+                - generic [ref=e1917]: 13:46
+                - generic [ref=e1918]: CNET Japan
+                - generic [ref=e1919]: キヤノン、これまでにない「アナログコンセプトカメラ」発表--ウエストレベルのデジタルカメラ、商品化は未定
+                - generic [ref=e1920]: "38"
+              - link "12:38 CNET Japan ニューヨーク州がValveを提訴、人気ゲームの「ガチャ」は違法なギャンブルと主張 38" [ref=e1921] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244334/
+                - generic [ref=e1922]: 12:38
+                - generic [ref=e1923]: CNET Japan
+                - generic [ref=e1924]: ニューヨーク州がValveを提訴、人気ゲームの「ガチャ」は違法なギャンブルと主張
+                - generic [ref=e1925]: "38"
+              - link "11:45 CNET Japan 「顔スキャン、ID提示」にユーザー猛反発、Discordが年齢確認を延期 38" [ref=e1926] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244327/
+                - generic [ref=e1927]: 11:45
+                - generic [ref=e1928]: CNET Japan
+                - generic [ref=e1929]: 「顔スキャン、ID提示」にユーザー猛反発、Discordが年齢確認を延期
+                - generic [ref=e1930]: "38"
+              - link "11:30 CNET Japan iPhoneやAndroidの「Suica」アプリだけで「JREポイント」をグリーン券へ交換可能に 38" [ref=e1931] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244333/
+                - generic [ref=e1932]: 11:30
+                - generic [ref=e1933]: CNET Japan
+                - generic [ref=e1934]: iPhoneやAndroidの「Suica」アプリだけで「JREポイント」をグリーン券へ交換可能に
+                - generic [ref=e1935]: "38"
+              - link "11:15 CNET Japan 財務省、「note」アカウントを開設--職員が月1〜2回ペースで投稿 38" [ref=e1936] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244332/
+                - generic [ref=e1937]: 11:15
+                - generic [ref=e1938]: CNET Japan
+                - generic [ref=e1939]: 財務省、「note」アカウントを開設--職員が月1〜2回ペースで投稿
+                - generic [ref=e1940]: "38"
+              - link "10:35 CNET Japan TOTOの最新トイレ、面倒な「フチ掃除」を完全自動化 38" [ref=e1941] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244311/
+                - generic [ref=e1942]: 10:35
+                - generic [ref=e1943]: CNET Japan
+                - generic [ref=e1944]: TOTOの最新トイレ、面倒な「フチ掃除」を完全自動化
+                - generic [ref=e1945]: "38"
+              - link "09:00 Figma Release Notes Figma Buzzのテンプレートピッカーのアップデート 39" [ref=e1946] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=template-picker-updates-in-figma-buzz
+                - generic [ref=e1947]: 09:00
+                - generic [ref=e1948]: Figma Release Notes
+                - generic [ref=e1949]: Figma Buzzのテンプレートピッカーのアップデート
+                - generic [ref=e1950]: "39"
+              - link "09:00 Figma Release Notes コーデックスからフィグマへ 66" [ref=e1951] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=codex-to-figma
+                - generic [ref=e1952]: 09:00
+                - generic [ref=e1953]: Figma Release Notes
+                - generic [ref=e1954]: コーデックスからフィグマへ
+                - generic [ref=e1955]: "66"
+          - generic [ref=e1956]:
+            - generic [ref=e1957]:
+              - generic [ref=e1958]:
+                - heading "2月25日（水）" [level=2] [ref=e1960]
+                - generic [ref=e1961]: 71件
+              - generic [ref=e1962]:
+                - generic [ref=e1963]: GitHub 2
+                - generic [ref=e1964]: "|Google 2"
+                - generic [ref=e1965]: "|Anthropic 1"
+                - generic [ref=e1966]: "|OpenAI 1"
+                - generic [ref=e1967]: "|Figma 1"
+            - generic [ref=e1968]:
+              - link "08:51 Github.blog コミュニティ Web 上の Copilot を使用してプル リクエスト タイトルを生成する 65" [ref=e1969] [cursor=pointer]:
+                - /url: https://github.blog/changelog/2026-02-25-generate-pull-request-titles-with-copilot-on-the-web
+                - generic [ref=e1970]: 08:51
+                - generic [ref=e1971]: Github.blog
+                - generic [ref=e1972]: コミュニティ
+                - generic [ref=e1973]: Web 上の Copilot を使用してプル リクエスト タイトルを生成する
+                - generic [ref=e1974]: "65"
+              - link "08:25 Github.blog コミュニティ GPT-5.3-Codex が github.com、GitHub Mobile、および Visual Studio で利用できるようになりました 65" [ref=e1975] [cursor=pointer]:
+                - /url: https://github.blog/changelog/2026-02-25-gpt-5-3-codex-is-now-available-in-github-com-github-mobile-and-visual-studio
+                - generic [ref=e1976]: 08:25
+                - generic [ref=e1977]: Github.blog
+                - generic [ref=e1978]: コミュニティ
+                - generic [ref=e1979]: GPT-5.3-Codex が github.com、GitHub Mobile、および Visual Studio で利用できるようになりました
+                - generic [ref=e1980]: "65"
+              - link "X @figma EN 08:06 注目 community-trend > Claudeからコードを送る > キャンバスで探索する > AIでプロトタイプを作る > フィードバックを通して作業する > コードにラウンドトリップする すべてFigmaで。 ↗ 70 NVA" [ref=e1981] [cursor=pointer]:
+                - /url: https://x.com/figma/status/2026796079602413985
+                - generic [ref=e1982]:
+                  - generic [ref=e1983]:
+                    - generic [ref=e1984]:
+                      - generic [ref=e1985]: X @figma
+                      - generic [ref=e1986]: EN
+                      - generic [ref=e1987]: 08:06
+                      - generic [ref=e1988]: 注目
+                      - generic [ref=e1989]: community-trend
+                    - heading "> Claudeからコードを送る > キャンバスで探索する > AIでプロトタイプを作る > フィードバックを通して作業する > コードにラウンドトリップする すべてFigmaで。 ↗" [level=3] [ref=e1990]:
+                      - text: "> Claudeからコードを送る > キャンバスで探索する > AIでプロトタイプを作る > フィードバックを通して作業する > コードにラウンドトリップする すべてFigmaで。"
+                      - generic [ref=e1991]: ↗
+                  - generic [ref=e1992]:
+                    - generic [ref=e1993]: "70"
+                    - generic [ref=e1994]: NVA
+              - link "07:29 Reddit r/MachineLearning コミュニティ [P] Google の入れ子学習 / HOPE を PyTorch で再現 (メカニズムに忠実な実装 + 再現可能なツールとライブラリ) 67" [ref=e1995] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/MachineLearning/comments/1res42m/p_reproducing_googles_nested_learning_hope_in/
+                - generic [ref=e1996]: 07:29
+                - generic [ref=e1997]: Reddit r/MachineLearning
+                - generic [ref=e1998]: コミュニティ
+                - generic [ref=e1999]: "[P] Google の入れ子学習 / HOPE を PyTorch で再現 (メカニズムに忠実な実装 + 再現可能なツールとライブラリ)"
+                - generic [ref=e2000]: "67"
+              - link "07:25 CNET Japan サムスン最新スマホGalaxy S26 Ultra、のぞき見防止機能を実装 38" [ref=e2001] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244305/
+                - generic [ref=e2002]: 07:25
+                - generic [ref=e2003]: CNET Japan
+                - generic [ref=e2004]: サムスン最新スマホGalaxy S26 Ultra、のぞき見防止機能を実装
+                - generic [ref=e2005]: "38"
+              - link "07:00 日経クロステック ファイルサーバーが遅過ぎる 構成変更でホップ数が増加 39" [ref=e2006] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nnw/18/041800004/021700098/
+                - generic [ref=e2007]: 07:00
+                - generic [ref=e2008]: 日経クロステック
+                - generic [ref=e2009]: ファイルサーバーが遅過ぎる 構成変更でホップ数が増加
+                - generic [ref=e2010]: "39"
+              - link "07:00 日経クロステック 美濃工業が明かす被害の経緯 39" [ref=e2011] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nnw/18/041800012/021700315/
+                - generic [ref=e2012]: 07:00
+                - generic [ref=e2013]: 日経クロステック
+                - generic [ref=e2014]: 美濃工業が明かす被害の経緯
+                - generic [ref=e2015]: "39"
+              - link "07:00 日経クロステック 改めてExcelレガシー対策を データと業務の構造を整理する 39" [ref=e2016] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nc/18/020900021/022000211/
+                - generic [ref=e2017]: 07:00
+                - generic [ref=e2018]: 日経クロステック
+                - generic [ref=e2019]: 改めてExcelレガシー対策を データと業務の構造を整理する
+                - generic [ref=e2020]: "39"
+              - link "07:00 日経クロステック データドリブン経営実現への道標 「しかけづくり」がすべて 39" [ref=e2021] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nc/18/022000534/022000001/
+                - generic [ref=e2022]: 07:00
+                - generic [ref=e2023]: 日経クロステック
+                - generic [ref=e2024]: データドリブン経営実現への道標 「しかけづくり」がすべて
+                - generic [ref=e2025]: "39"
+              - link "07:00 日経クロステック 海外先進企業のMCP活用 導入パターンと成功の要因を探る 66" [ref=e2026] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/nc/18/121800523/022000003/
+                - generic [ref=e2027]: 07:00
+                - generic [ref=e2028]: 日経クロステック
+                - generic [ref=e2029]: 海外先進企業のMCP活用 導入パターンと成功の要因を探る
+                - generic [ref=e2030]: "66"
+              - link "06:47 X @figma 2月26日9:10AM PST / 12:10PM EST 278 50" [ref=e2031] [cursor=pointer]:
+                - /url: https://x.com/figma/status/2026776122625765666
+                - generic [ref=e2032]: 06:47
+                - generic [ref=e2033]: X @figma
+                - generic [ref=e2034]: 2月26日9:10AM PST / 12:10PM EST
+                - generic "エンゲージメント" [ref=e2035]: "278"
+                - generic [ref=e2036]: "50"
+              - link "06:33 ProductHunt コミュニティ プレイグラウンド by Natoma 65" [ref=e2037] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/playground-by-natoma
+                - generic [ref=e2038]: 06:33
+                - generic [ref=e2039]: ProductHunt
+                - generic [ref=e2040]: コミュニティ
+                - generic [ref=e2041]: プレイグラウンド by Natoma
+                - generic [ref=e2042]: "65"
+              - link "06:03 Reddit r/MachineLearning コミュニティ [P] 軽量の FoundationPose TensorRT 実装 67" [ref=e2043] [cursor=pointer]:
+                - /url: https://www.reddit.com/r/MachineLearning/comments/1repsnw/p_a_lightweight_foundationpose_tensorrt/
+                - generic [ref=e2044]: 06:03
+                - generic [ref=e2045]: Reddit r/MachineLearning
+                - generic [ref=e2046]: コミュニティ
+                - generic [ref=e2047]: "[P] 軽量の FoundationPose TensorRT 実装"
+                - generic [ref=e2048]: "67"
+              - link "05:00 日経クロステック 生成AIに思考を委ねると「猿の惑星」に、とりわけ日本は 39" [ref=e2049] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00166/022400194/
+                - generic [ref=e2050]: 05:00
+                - generic [ref=e2051]: 日経クロステック
+                - generic [ref=e2052]: 生成AIに思考を委ねると「猿の惑星」に、とりわけ日本は
+                - generic [ref=e2053]: "39"
+              - link "05:00 CNET Japan サムスン「Galaxy S26」発表、100ドルの値上げも強力なAI機能を随所に搭載 38" [ref=e2054] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244304/
+                - generic [ref=e2055]: 05:00
+                - generic [ref=e2056]: CNET Japan
+                - generic [ref=e2057]: サムスン「Galaxy S26」発表、100ドルの値上げも強力なAI機能を随所に搭載
+                - generic [ref=e2058]: "38"
+              - link "05:00 日経クロステック スペースX社長がMWC登壇、宇宙通信に脚光 焦る欧州 39" [ref=e2059] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03505/021700002/
+                - generic [ref=e2060]: 05:00
+                - generic [ref=e2061]: 日経クロステック
+                - generic [ref=e2062]: スペースX社長がMWC登壇、宇宙通信に脚光 焦る欧州
+                - generic [ref=e2063]: "39"
+              - link "05:00 日経クロステック 1位は「パナソニックHDのグループ9社に営業停止処分」 39" [ref=e2064] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00241/100900403/
+                - generic [ref=e2065]: 05:00
+                - generic [ref=e2066]: 日経クロステック
+                - generic [ref=e2067]: 1位は「パナソニックHDのグループ9社に営業停止処分」
+                - generic [ref=e2068]: "39"
+              - link "05:00 日経クロステック SkyDriveの空飛ぶクルマ、製造はスズキが全面協力 年100機まで拡張可能 39" [ref=e2069] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/02892/020600043/
+                - generic [ref=e2070]: 05:00
+                - generic [ref=e2071]: 日経クロステック
+                - generic [ref=e2072]: SkyDriveの空飛ぶクルマ、製造はスズキが全面協力 年100機まで拡張可能
+                - generic [ref=e2073]: "39"
+              - link "05:00 日経クロステック トヨタ自動車、特許は「ハード」が主軸 「ソフト」はグループで補完 39" [ref=e2074] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03491/00002/
+                - generic [ref=e2075]: 05:00
+                - generic [ref=e2076]: 日経クロステック
+                - generic [ref=e2077]: トヨタ自動車、特許は「ハード」が主軸 「ソフト」はグループで補完
+                - generic [ref=e2078]: "39"
+              - link "05:00 日経クロステック Excelの構造化参照で「テーブル232」、なぜ不思議な番号が付くのか？ 39" [ref=e2079] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00286/022400401/
+                - generic [ref=e2080]: 05:00
+                - generic [ref=e2081]: 日経クロステック
+                - generic [ref=e2082]: Excelの構造化参照で「テーブル232」、なぜ不思議な番号が付くのか？
+                - generic [ref=e2083]: "39"
+              - link "05:00 日経クロステック 劇的な業績回復を実現したユニチカ、再生支援決定からわずか1年 39" [ref=e2084] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/02373/022400038/
+                - generic [ref=e2085]: 05:00
+                - generic [ref=e2086]: 日経クロステック
+                - generic [ref=e2087]: 劇的な業績回復を実現したユニチカ、再生支援決定からわずか1年
+                - generic [ref=e2088]: "39"
+              - link "05:00 日経クロステック JR10線をまたぐ京急線の八ツ山橋、一晩で架設 曲線軌道で77m送り出し 39" [ref=e2089] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00110/00514/
+                - generic [ref=e2090]: 05:00
+                - generic [ref=e2091]: 日経クロステック
+                - generic [ref=e2092]: JR10線をまたぐ京急線の八ツ山橋、一晩で架設 曲線軌道で77m送り出し
+                - generic [ref=e2093]: "39"
+              - link "05:00 日経クロステック 八潮道路陥没、「重度」の腐食見落とす 有識者委が下水道点検の不備指摘 39" [ref=e2094] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00142/02553/
+                - generic [ref=e2095]: 05:00
+                - generic [ref=e2096]: 日経クロステック
+                - generic [ref=e2097]: 八潮道路陥没、「重度」の腐食見落とす 有識者委が下水道点検の不備指摘
+                - generic [ref=e2098]: "39"
+              - link "05:00 日経クロステック 研究者が推奨、AI大手のAPIドキュメントから学ぶコンテキスト設計 40" [ref=e2099] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00138/022401963/
+                - generic [ref=e2100]: 05:00
+                - generic [ref=e2101]: 日経クロステック
+                - generic [ref=e2102]: 研究者が推奨、AI大手のAPIドキュメントから学ぶコンテキスト設計
+                - generic [ref=e2103]: "40"
+              - link "05:00 日経クロステック 転職は能力だけで決まらない、採用後の「すわり具合」が決め手の1つ 39" [ref=e2104] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/01775/022500258/
+                - generic [ref=e2105]: 05:00
+                - generic [ref=e2106]: 日経クロステック
+                - generic [ref=e2107]: 転職は能力だけで決まらない、採用後の「すわり具合」が決め手の1つ
+                - generic [ref=e2108]: "39"
+              - link "05:00 日経クロステック 北國銀行が前代未聞の基盤ソフト内製 ソースコード無し、手作業で実装 39" [ref=e2109] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03444/022400010/
+                - generic [ref=e2110]: 05:00
+                - generic [ref=e2111]: 日経クロステック
+                - generic [ref=e2112]: 北國銀行が前代未聞の基盤ソフト内製 ソースコード無し、手作業で実装
+                - generic [ref=e2113]: "39"
+              - link "05:00 日経クロステック YKKAPが造園会社を傘下に、緑化の売り上げ100億円へ 海外進出も 39" [ref=e2114] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00154/02718/
+                - generic [ref=e2115]: 05:00
+                - generic [ref=e2116]: 日経クロステック
+                - generic [ref=e2117]: YKKAPが造園会社を傘下に、緑化の売り上げ100億円へ 海外進出も
+                - generic [ref=e2118]: "39"
+              - link "05:00 日経クロステック きっかけはガンダム、能作「伝える力」がブランド力に 39" [ref=e2119] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/02827/021800031/
+                - generic [ref=e2120]: 05:00
+                - generic [ref=e2121]: 日経クロステック
+                - generic [ref=e2122]: きっかけはガンダム、能作「伝える力」がブランド力に
+                - generic [ref=e2123]: "39"
+              - link "05:00 日経クロステック 南海トラフ巨大地震への危機感から転勤を機に防災士、パシフィックコンサルタンツ 39" [ref=e2124] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03508/021300003/
+                - generic [ref=e2125]: 05:00
+                - generic [ref=e2126]: 日経クロステック
+                - generic [ref=e2127]: 南海トラフ巨大地震への危機感から転勤を機に防災士、パシフィックコンサルタンツ
+                - generic [ref=e2128]: "39"
+              - link "05:00 日経クロステック Windows 11の新機能「スナップバー」は目障り？ 設定画面の広告も非表示に 39" [ref=e2129] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03457/122600010/
+                - generic [ref=e2130]: 05:00
+                - generic [ref=e2131]: 日経クロステック
+                - generic [ref=e2132]: Windows 11の新機能「スナップバー」は目障り？ 設定画面の広告も非表示に
+                - generic [ref=e2133]: "39"
+              - link "05:00 日経クロステック パソコンの紛失・盗難はリスク大、まずは強固なPINと生体認証を設定しよう 39" [ref=e2134] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03459/010600005/
+                - generic [ref=e2135]: 05:00
+                - generic [ref=e2136]: 日経クロステック
+                - generic [ref=e2137]: パソコンの紛失・盗難はリスク大、まずは強固なPINと生体認証を設定しよう
+                - generic [ref=e2138]: "39"
+              - link "05:00 日経クロステック 戸建て分譲のLPガス、“無償配管”の商慣行にメス 最高裁判決を読み解く 39" [ref=e2139] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03234/021200009/
+                - generic [ref=e2140]: 05:00
+                - generic [ref=e2141]: 日経クロステック
+                - generic [ref=e2142]: 戸建て分譲のLPガス、“無償配管”の商慣行にメス 最高裁判決を読み解く
+                - generic [ref=e2143]: "39"
+              - link "05:00 日経クロステック TOTOは受発注業務を9割短縮、AIエージェント仕様に業務プロセス定義 39" [ref=e2144] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03465/021700003/
+                - generic [ref=e2145]: 05:00
+                - generic [ref=e2146]: 日経クロステック
+                - generic [ref=e2147]: TOTOは受発注業務を9割短縮、AIエージェント仕様に業務プロセス定義
+                - generic [ref=e2148]: "39"
+              - link "05:00 日経クロステック 第一生命と清水建設の木造混構造ビル3棟目、賃貸マンションに初適用 39" [ref=e2149] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/00154/02721/
+                - generic [ref=e2150]: 05:00
+                - generic [ref=e2151]: 日経クロステック
+                - generic [ref=e2152]: 第一生命と清水建設の木造混構造ビル3棟目、賃貸マンションに初適用
+                - generic [ref=e2153]: "39"
+              - link "05:00 日経クロステック HTML＋JavaScriptも楽々開発、AIにWebアプリを作ってもらおう 39" [ref=e2154] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03487/013000003/
+                - generic [ref=e2155]: 05:00
+                - generic [ref=e2156]: 日経クロステック
+                - generic [ref=e2157]: HTML＋JavaScriptも楽々開発、AIにWebアプリを作ってもらおう
+                - generic [ref=e2158]: "39"
+              - link "05:00 日経クロステック NVIDIAのGPU、消費電力が激増 27年に1ラック1000kW超 39" [ref=e2159] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03498/021200002/
+                - generic [ref=e2160]: 05:00
+                - generic [ref=e2161]: 日経クロステック
+                - generic [ref=e2162]: NVIDIAのGPU、消費電力が激増 27年に1ラック1000kW超
+                - generic [ref=e2163]: "39"
+              - link "05:00 日経クロステック データと電力を同軸に流すPoC、インダクターに広帯域化と大電流化要求 39" [ref=e2164] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03484/020300008/
+                - generic [ref=e2165]: 05:00
+                - generic [ref=e2166]: 日経クロステック
+                - generic [ref=e2167]: データと電力を同軸に流すPoC、インダクターに広帯域化と大電流化要求
+                - generic [ref=e2168]: "39"
+              - link "05:00 日経クロステック 富士通の「空間」世界モデルは行動意図を理解、フィジカルAIを街中へ 39" [ref=e2169] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03515/022300003/
+                - generic [ref=e2170]: 05:00
+                - generic [ref=e2171]: 日経クロステック
+                - generic [ref=e2172]: 富士通の「空間」世界モデルは行動意図を理解、フィジカルAIを街中へ
+                - generic [ref=e2173]: "39"
+              - link "05:00 日経クロステック 浮体式原発に挑む、東京電力HD元幹部「発電会社が技術力を持つ」 39" [ref=e2174] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/column/18/03181/021700024/
+                - generic [ref=e2175]: 05:00
+                - generic [ref=e2176]: 日経クロステック
+                - generic [ref=e2177]: 浮体式原発に挑む、東京電力HD元幹部「発電会社が技術力を持つ」
+                - generic [ref=e2178]: "39"
+              - link "04:17 Zenn コミュニティ figma make で作成したモックをnextに組み込む 65" [ref=e2179] [cursor=pointer]:
+                - /url: https://zenn.dev/green_chariot/articles/87b8a4f9ef3437
+                - generic [ref=e2180]: 04:17
+                - generic [ref=e2181]: Zenn
+                - generic [ref=e2182]: コミュニティ
+                - generic [ref=e2183]: figma make で作成したモックをnextに組み込む
+                - generic [ref=e2184]: "65"
+              - link "03:50 X @karpathy この2ヶ月の間に、AIによってプログラミングがどれだけ変化したかを伝えるのは難しい。 38k 43" [ref=e2185] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2026731645169185220
+                - generic [ref=e2186]: 03:50
+                - generic [ref=e2187]: X @karpathy
+                - generic [ref=e2188]: この2ヶ月の間に、AIによってプログラミングがどれだけ変化したかを伝えるのは難しい。
+                - generic "エンゲージメント" [ref=e2189]: 38k
+                - generic [ref=e2190]: "43"
+              - 'link "03:03 Reddit r/ClaudeAI コミュニティ Cowork の新機能: スケジュールされたタスク 65" [ref=e2191] [cursor=pointer]':
+                - /url: https://v.redd.it/shq1vh2ckolg1
+                - generic [ref=e2192]: 03:03
+                - generic [ref=e2193]: Reddit r/ClaudeAI
+                - generic [ref=e2194]: コミュニティ
+                - generic [ref=e2195]: "Cowork の新機能: スケジュールされたタスク"
+                - generic [ref=e2196]: "65"
+              - link "03:00 Google AI Blog 全体像を見て、丸で検索して外観を見つけてください 39" [ref=e2197] [cursor=pointer]:
+                - /url: https://blog.google/products-and-platforms/products/search/circle-to-search-february-2026/
+                - generic [ref=e2198]: 03:00
+                - generic [ref=e2199]: Google AI Blog
+                - generic [ref=e2200]: 全体像を見て、丸で検索して外観を見つけてください
+                - generic [ref=e2201]: "39"
+              - link "03:00 Google AI Blog Samsung Galaxy S26 のよりインテリジェントな Android 39" [ref=e2202] [cursor=pointer]:
+                - /url: https://blog.google/products-and-platforms/platforms/android/samsung-unpacked-2026/
+                - generic [ref=e2203]: 03:00
+                - generic [ref=e2204]: Google AI Blog
+                - generic [ref=e2205]: Samsung Galaxy S26 のよりインテリジェントな Android
+                - generic [ref=e2206]: "39"
+              - link "02:54 X @cursor_ai ソフトウェアは変化している。 3.2k 43" [ref=e2207] [cursor=pointer]:
+                - /url: https://x.com/cursor_ai/status/2026717494426173917
+                - generic [ref=e2208]: 02:54
+                - generic [ref=e2209]: X @cursor_ai
+                - generic [ref=e2210]: ソフトウェアは変化している。
+                - generic "エンゲージメント" [ref=e2211]: 3.2k
+                - generic [ref=e2212]: "43"
+              - link "02:20 X @figma スロット？ 1.2k 43" [ref=e2213] [cursor=pointer]:
+                - /url: https://x.com/figma/status/2026708847809982638
+                - generic [ref=e2214]: 02:20
+                - generic [ref=e2215]: X @figma
+                - generic [ref=e2216]: スロット？
+                - generic "エンゲージメント" [ref=e2217]: 1.2k
+                - generic [ref=e2218]: "43"
+              - 'link "X @AnthropicAI EN 02:08 注目 community-trend Anthropicは@Vercept_aiを買収し、Claudeのコンピューター利用能力を向上させた。 続きを読む: https://www.anthropic.com/news/acquires-vercept ↗ 70 NVA" [ref=e2219] [cursor=pointer]':
+                - /url: https://x.com/AnthropicAI/status/2026705792033026465
+                - generic [ref=e2220]:
+                  - generic [ref=e2221]:
+                    - generic [ref=e2222]:
+                      - generic [ref=e2223]: X @AnthropicAI
+                      - generic [ref=e2224]: EN
+                      - generic [ref=e2225]: 02:08
+                      - generic [ref=e2226]: 注目
+                      - generic [ref=e2227]: community-trend
+                    - 'heading "Anthropicは@Vercept_aiを買収し、Claudeのコンピューター利用能力を向上させた。 続きを読む: https://www.anthropic.com/news/acquires-vercept ↗" [level=3] [ref=e2228]':
+                      - text: "Anthropicは@Vercept_aiを買収し、Claudeのコンピューター利用能力を向上させた。 続きを読む: https://www.anthropic.com/news/acquires-vercept"
+                      - generic [ref=e2229]: ↗
+                  - generic [ref=e2230]:
+                    - generic [ref=e2231]: "70"
+                    - generic [ref=e2232]: NVA
+              - link "02:07 日経クロステック 20条認定の省略で普及前進か、建設3Dプリンター人材は不足 39" [ref=e2233] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/na/18/00305/021600007/
+                - generic [ref=e2234]: 02:07
+                - generic [ref=e2235]: 日経クロステック
+                - generic [ref=e2236]: 20条認定の省略で普及前進か、建設3Dプリンター人材は不足
+                - generic [ref=e2237]: "39"
+              - link "02:06 日経クロステック 世界一高い3Dプリンター建築、32本の柱で支持する「白い巨塔」 39" [ref=e2238] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/na/18/00305/021600006/
+                - generic [ref=e2239]: 02:06
+                - generic [ref=e2240]: 日経クロステック
+                - generic [ref=e2241]: 世界一高い3Dプリンター建築、32本の柱で支持する「白い巨塔」
+                - generic [ref=e2242]: "39"
+              - link "02:05 日経クロステック 生産性向上や市場開拓にまい進、「3Dプリンター成長期」の土台に 39" [ref=e2243] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/na/18/00305/021600005/
+                - generic [ref=e2244]: 02:05
+                - generic [ref=e2245]: 日経クロステック
+                - generic [ref=e2246]: 生産性向上や市場開拓にまい進、「3Dプリンター成長期」の土台に
+                - generic [ref=e2247]: "39"
+              - link "02:04 日経クロステック 25年の住宅着工は約74万戸、法改正など影響 39" [ref=e2248] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/na/18/00006/021600682/
+                - generic [ref=e2249]: 02:04
+                - generic [ref=e2250]: 日経クロステック
+                - generic [ref=e2251]: 25年の住宅着工は約74万戸、法改正など影響
+                - generic [ref=e2252]: "39"
+              - link "02:04 日経クロステック 材料別・3Dプリンター大集合 39" [ref=e2253] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/na/18/00305/021600004/
+                - generic [ref=e2254]: 02:04
+                - generic [ref=e2255]: 日経クロステック
+                - generic [ref=e2256]: 材料別・3Dプリンター大集合
+                - generic [ref=e2257]: "39"
+              - link "02:04 日経クロステック どこでもケーブル「フラット収納タイプ・プロ」 39" [ref=e2258] [cursor=pointer]:
+                - /url: https://xtech.nikkei.com/atcl/nxt/mag/na/18/00014/021600934/
+                - generic [ref=e2259]: 02:04
+                - generic [ref=e2260]: 日経クロステック
+                - generic [ref=e2261]: どこでもケーブル「フラット収納タイプ・プロ」
+                - generic [ref=e2262]: "39"
+              - link "00:47 Publickey 「Java to Kotlinコンバータ for VS Code」、JetBrainsがリリース 41" [ref=e2263] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/java_to_kotlin_for_vs_codejetbrains.html
+                - generic [ref=e2264]: 00:47
+                - generic [ref=e2265]: Publickey
+                - generic [ref=e2266]: 「Java to Kotlinコンバータ for VS Code」、JetBrainsがリリース
+                - generic [ref=e2267]: "41"
+              - link "00:41 Publickey LibreOfficeがWebブラウザから利用できる「LibreOffice Online」開発の再始動を発表 39" [ref=e2268] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/libreofficeweblibreoffice_online.html
+                - generic [ref=e2269]: 00:41
+                - generic [ref=e2270]: Publickey
+                - generic [ref=e2271]: LibreOfficeがWebブラウザから利用できる「LibreOffice Online」開発の再始動を発表
+                - generic [ref=e2272]: "39"
+              - link "00:23 ProductHunt コミュニティ MaxClaw by MiniMax 56" [ref=e2273] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/minimax-agent
+                - generic [ref=e2274]: 00:23
+                - generic [ref=e2275]: ProductHunt
+                - generic [ref=e2276]: コミュニティ
+                - generic [ref=e2277]: MaxClaw by MiniMax
+                - generic [ref=e2278]: "56"
+              - link "16:52 CNET Japan Oura Ringが女性向けAIモデル導入、生理・更年期・妊娠もサポート 38" [ref=e2279] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244288/
+                - generic [ref=e2280]: 16:52
+                - generic [ref=e2281]: CNET Japan
+                - generic [ref=e2282]: Oura Ringが女性向けAIモデル導入、生理・更年期・妊娠もサポート
+                - generic [ref=e2283]: "38"
+              - link "16:45 CNET Japan iPhoneの「探す」に対応した車載充電器、そのメリットは？--実機をレビュー 38" [ref=e2284] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244292/
+                - generic [ref=e2285]: 16:45
+                - generic [ref=e2286]: CNET Japan
+                - generic [ref=e2287]: iPhoneの「探す」に対応した車載充電器、そのメリットは？--実機をレビュー
+                - generic [ref=e2288]: "38"
+              - link "16:24 CNET Japan フーデリ「Wolt」日本撤退 3月4日サービス終了 38" [ref=e2289] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244296/
+                - generic [ref=e2290]: 16:24
+                - generic [ref=e2291]: CNET Japan
+                - generic [ref=e2292]: フーデリ「Wolt」日本撤退 3月4日サービス終了
+                - generic [ref=e2293]: "38"
+              - link "16:04 ProductHunt コミュニティ Claude Code リモコン 65" [ref=e2294] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/claude-code-remote-access
+                - generic [ref=e2295]: 16:04
+                - generic [ref=e2296]: ProductHunt
+                - generic [ref=e2297]: コミュニティ
+                - generic [ref=e2298]: Claude Code リモコン
+                - generic [ref=e2299]: "65"
+              - link "15:05 CNET Japan エレコム、発火しにくい「半固体電池」のモバイルバッテリー発売 6280円から 38" [ref=e2300] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244291/
+                - generic [ref=e2301]: 15:05
+                - generic [ref=e2302]: CNET Japan
+                - generic [ref=e2303]: エレコム、発火しにくい「半固体電池」のモバイルバッテリー発売 6280円から
+                - generic [ref=e2304]: "38"
+              - link "13:10 CNET Japan YouTube、低価格プランでもバックグラウンド再生とオフライン再生が可能に 38" [ref=e2305] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244283/
+                - generic [ref=e2306]: 13:10
+                - generic [ref=e2307]: CNET Japan
+                - generic [ref=e2308]: YouTube、低価格プランでもバックグラウンド再生とオフライン再生が可能に
+                - generic [ref=e2309]: "38"
+              - link "12:06 CNET Japan アップル、「Mac mini」を米国で初製造へ アジアから一部移管 38" [ref=e2310] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244279/
+                - generic [ref=e2311]: 12:06
+                - generic [ref=e2312]: CNET Japan
+                - generic [ref=e2313]: アップル、「Mac mini」を米国で初製造へ アジアから一部移管
+                - generic [ref=e2314]: "38"
+              - link "10:55 CNET Japan 有事に頼もしい「災害支援ローソン」1号店が千葉県富津市に開設--水、食料、電源、スターリンク完備 38" [ref=e2315] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244273/
+                - generic [ref=e2316]: 10:55
+                - generic [ref=e2317]: CNET Japan
+                - generic [ref=e2318]: 有事に頼もしい「災害支援ローソン」1号店が千葉県富津市に開設--水、食料、電源、スターリンク完備
+                - generic [ref=e2319]: "38"
+              - link "10:38 X @figma 電話で次のステップについて話す。 149 40" [ref=e2320] [cursor=pointer]:
+                - /url: https://x.com/figma/status/2026471877586334148
+                - generic [ref=e2321]: 10:38
+                - generic [ref=e2322]: X @figma
+                - generic [ref=e2323]: 電話で次のステップについて話す。
+                - generic "エンゲージメント" [ref=e2324]: "149"
+                - generic [ref=e2325]: "40"
+              - link "10:35 CNET Japan いわばタッチ決済のオンライン版、「クリック決済」に三井住友カードが対応 38" [ref=e2326] [cursor=pointer]:
+                - /url: https://japan.cnet.com/article/35244272/
+                - generic [ref=e2327]: 10:35
+                - generic [ref=e2328]: CNET Japan
+                - generic [ref=e2329]: いわばタッチ決済のオンライン版、「クリック決済」に三井住友カードが対応
+                - generic [ref=e2330]: "38"
+              - link "09:21 X @karpathy トークンの需要が津波となって押し寄せてくる中、LLMのために基礎となるメモリとコンピューティングを適切にオーケストレーションする大きなチャンスがある。 7.7k 43" [ref=e2331] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2026452488434651264
+                - generic [ref=e2332]: 09:21
+                - generic [ref=e2333]: X @karpathy
+                - generic [ref=e2334]: トークンの需要が津波となって押し寄せてくる中、LLMのために基礎となるメモリとコンピューティングを適切にオーケストレーションする大きなチャンスがある。
+                - generic "エンゲージメント" [ref=e2335]: 7.7k
+                - generic [ref=e2336]: "43"
+              - link "09:02 Zenn コミュニティ Figma MCPの精度を更に上げるTips：Claude Code to Figma、Code Connect、Skills等 65" [ref=e2337] [cursor=pointer]:
+                - /url: https://zenn.dev/canly/articles/78dcc98c3dfb46
+                - generic [ref=e2338]: 09:02
+                - generic [ref=e2339]: Zenn
+                - generic [ref=e2340]: コミュニティ
+                - generic [ref=e2341]: Figma MCPの精度を更に上げるTips：Claude Code to Figma、Code Connect、Skills等
+                - generic [ref=e2342]: "65"
+              - link "09:00 Anthropic News Anthropic がclaudeのコンピュータ使用能力を向上させるために Vercept を買収 66" [ref=e2343] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/acquires-vercept
+                - generic [ref=e2344]: 09:00
+                - generic [ref=e2345]: Anthropic News
+                - generic [ref=e2346]: Anthropic がclaudeのコンピュータ使用能力を向上させるために Vercept を買収
+                - generic [ref=e2347]: "66"
+              - link "09:00 OpenAI News AIの悪意ある利用を阻止する｜2026年2月 39" [ref=e2348] [cursor=pointer]:
+                - /url: https://openai.com/index/disrupting-malicious-ai-uses
+                - generic [ref=e2349]: 09:00
+                - generic [ref=e2350]: OpenAI News
+                - generic [ref=e2351]: AIの悪意ある利用を阻止する｜2026年2月
+                - generic [ref=e2352]: "39"
+              - link "09:00 Figma Release Notes リリースノート'26年2月号ライブストリームでカバーしたすべて 59" [ref=e2353] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=february-2026-livestream
+                - generic [ref=e2354]: 09:00
+                - generic [ref=e2355]: Figma Release Notes
+                - generic [ref=e2356]: リリースノート'26年2月号ライブストリームでカバーしたすべて
+                - generic [ref=e2357]: "59"
+          - generic [ref=e2358]:
+            - generic [ref=e2359]:
+              - generic [ref=e2360]:
+                - heading "2月24日（火）" [level=2] [ref=e2362]
+                - generic [ref=e2363]: 13件
+              - generic [ref=e2364]:
+                - generic [ref=e2365]: Meta 1
+                - generic [ref=e2366]: "|OpenAI 1"
+                - generic [ref=e2367]: "|Figma 1"
+                - generic [ref=e2368]: "|Anthropic 1"
+            - generic [ref=e2369]:
+              - link "07:23 ProductHunt コミュニティ マストラコード 56" [ref=e2370] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/mastra
+                - generic [ref=e2371]: 07:23
+                - generic [ref=e2372]: ProductHunt
+                - generic [ref=e2373]: コミュニティ
+                - generic [ref=e2374]: マストラコード
+                - generic [ref=e2375]: "56"
+              - link "06:43 X @OpenAI AIは仕事の進め方を変えつつあり、私たちはその移行を責任を持ってリードしていきたいと考えています。 アルヴィンドKCを最高人材責任者として迎え、OpenA... 1.8k 52" [ref=e2376] [cursor=pointer]:
+                - /url: https://x.com/OpenAI/status/2026412700583317815
+                - generic [ref=e2377]: 06:43
+                - generic [ref=e2378]: X @OpenAI
+                - generic [ref=e2379]: AIは仕事の進め方を変えつつあり、私たちはその移行を責任を持ってリードしていきたいと考えています。 アルヴィンドKCを最高人材責任者として迎え、OpenA...
+                - generic "エンゲージメント" [ref=e2380]: 1.8k
+                - generic [ref=e2381]: "52"
+              - 'link "06:30 Meta AI Blog RCCLX: AMD プラットフォームでの GPU 通信の革新 39" [ref=e2382] [cursor=pointer]':
+                - /url: https://engineering.fb.com/2026/02/24/data-center-engineering/rrcclx-innovating-gpu-communications-amd-platforms-meta/
+                - generic [ref=e2383]: 06:30
+                - generic [ref=e2384]: Meta AI Blog
+                - generic [ref=e2385]: "RCCLX: AMD プラットフォームでの GPU 通信の革新"
+                - generic [ref=e2386]: "39"
+              - link "04:24 ProductHunt コミュニティ Opal 2.0 by Google Labs 56" [ref=e2387] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/google
+                - generic [ref=e2388]: 04:24
+                - generic [ref=e2389]: ProductHunt
+                - generic [ref=e2390]: コミュニティ
+                - generic [ref=e2391]: Opal 2.0 by Google Labs
+                - generic [ref=e2392]: "56"
+              - link "X @karpathy EN 03:17 注目 community-trend CLIが非常にエキサイティングなのは、まさにそれが「レガシー」テクノロジーだからである。 ↗ 70 NVA" [ref=e2393] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2026360908398862478
+                - generic [ref=e2394]:
+                  - generic [ref=e2395]:
+                    - generic [ref=e2396]:
+                      - generic [ref=e2397]: X @karpathy
+                      - generic [ref=e2398]: EN
+                      - generic [ref=e2399]: 03:17
+                      - generic [ref=e2400]: 注目
+                      - generic [ref=e2401]: community-trend
+                    - heading "CLIが非常にエキサイティングなのは、まさにそれが「レガシー」テクノロジーだからである。 ↗" [level=3] [ref=e2402]:
+                      - text: CLIが非常にエキサイティングなのは、まさにそれが「レガシー」テクノロジーだからである。
+                      - generic [ref=e2403]: ↗
+                  - generic [ref=e2404]:
+                    - generic [ref=e2405]: "70"
+                    - generic [ref=e2406]: NVA
+              - link "02:23 ProductHunt コミュニティ Notion カスタム エージェント 56" [ref=e2407] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/notion
+                - generic [ref=e2408]: 02:23
+                - generic [ref=e2409]: ProductHunt
+                - generic [ref=e2410]: コミュニティ
+                - generic [ref=e2411]: Notion カスタム エージェント
+                - generic [ref=e2412]: "56"
+              - link "00:38 Publickey AWS、サブエージェントごとにフロントエンド担当、バックエンド担当などカスタマイズによる高性能化が可能な「Kiro 0.9」リリース 41" [ref=e2413] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/awskiro_09.html
+                - generic [ref=e2414]: 00:38
+                - generic [ref=e2415]: Publickey
+                - generic [ref=e2416]: AWS、サブエージェントごとにフロントエンド担当、バックエンド担当などカスタマイズによる高性能化が可能な「Kiro 0.9」リリース
+                - generic [ref=e2417]: "41"
+              - link "22:40 OpenAI News アルヴィンドKCがチーフ・ピープル・オフィサーに就任 48" [ref=e2418] [cursor=pointer]:
+                - /url: https://openai.com/index/arvind-kc-chief-people-officer
+                - generic [ref=e2419]: 22:40
+                - generic [ref=e2420]: OpenAI News
+                - generic [ref=e2421]: アルヴィンドKCがチーフ・ピープル・オフィサーに就任
+                - generic [ref=e2422]: "48"
+              - link "16:31 ProductHunt コミュニティ ライナーライト 65" [ref=e2423] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/liner-write
+                - generic [ref=e2424]: 16:31
+                - generic [ref=e2425]: ProductHunt
+                - generic [ref=e2426]: コミュニティ
+                - generic [ref=e2427]: ライナーライト
+                - generic [ref=e2428]: "65"
+              - link "12:27 ProductHunt コミュニティ Ziva.sh 65" [ref=e2429] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/ziva-sh-ai-agent-for-game-engines
+                - generic [ref=e2430]: 12:27
+                - generic [ref=e2431]: ProductHunt
+                - generic [ref=e2432]: コミュニティ
+                - generic [ref=e2433]: Ziva.sh
+                - generic [ref=e2434]: "65"
+              - link "09:45 X @AnthropicAI LACMAのアート＋テクノロジー・ラボは、アート、サイエンス、そして新たなテクノロジーの境界において、アーティストがアイデアをプロトタイプ化できるよう支援するプログラムです。 1.7k 43" [ref=e2435] [cursor=pointer]:
+                - /url: https://x.com/AnthropicAI/status/2026096054253564002
+                - generic [ref=e2436]: 09:45
+                - generic [ref=e2437]: X @AnthropicAI
+                - generic [ref=e2438]: LACMAのアート＋テクノロジー・ラボは、アート、サイエンス、そして新たなテクノロジーの境界において、アーティストがアイデアをプロトタイプ化できるよう支援するプログラムです。
+                - generic "エンゲージメント" [ref=e2439]: 1.7k
+                - generic [ref=e2440]: "43"
+              - link "09:00 Figma Release Notes FigJamとNotionの接続 66" [ref=e2441] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=connect-figjam-to-notion
+                - generic [ref=e2442]: 09:00
+                - generic [ref=e2443]: Figma Release Notes
+                - generic [ref=e2444]: FigJamとNotionの接続
+                - generic [ref=e2445]: "66"
+              - 'link "09:00 Anthropic News Anthropic の責任あるスケーリング ポリシー: バージョン 3.0 60" [ref=e2446] [cursor=pointer]':
+                - /url: https://www.anthropic.com/news/responsible-scaling-policy-v3
+                - generic [ref=e2447]: 09:00
+                - generic [ref=e2448]: Anthropic News
+                - generic [ref=e2449]: "Anthropic の責任あるスケーリング ポリシー: バージョン 3.0"
+                - generic [ref=e2450]: "60"
+          - generic [ref=e2451]:
+            - generic [ref=e2452]:
+              - generic [ref=e2453]:
+                - heading "2月23日（月）" [level=2] [ref=e2455]
+                - generic [ref=e2456]: 10件
+              - generic [ref=e2457]:
+                - generic [ref=e2458]: OpenAI 2
+                - generic [ref=e2459]: "|Figma 2"
+                - generic [ref=e2460]: "|Anthropic 1"
+            - generic [ref=e2461]:
+              - link "01:15 Publickey NIST（米国国立標準技術研究所）がAIエージェントの技術標準を作る取り組み「AI Agent Standards Initiative」発表。相互運用可能かつ安全なイノベーションのために 57" [ref=e2462] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/nistaiai_agent_standards_initiative.html
+                - generic [ref=e2463]: 01:15
+                - generic [ref=e2464]: Publickey
+                - generic [ref=e2465]: NIST（米国国立標準技術研究所）がAIエージェントの技術標準を作る取り組み「AI Agent Standards Initiative」発表。相互運用可能かつ安全なイノベーションのために
+                - generic [ref=e2466]: "57"
+              - link "00:18 ProductHunt コミュニティ OpenClaw の切り替え 56" [ref=e2467] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/togglex-openclaw
+                - generic [ref=e2468]: 00:18
+                - generic [ref=e2469]: ProductHunt
+                - generic [ref=e2470]: コミュニティ
+                - generic [ref=e2471]: OpenClaw の切り替え
+                - generic [ref=e2472]: "56"
+              - link "00:18 ProductHunt コミュニティ トクトラック 65" [ref=e2473] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/toktrack
+                - generic [ref=e2474]: 00:18
+                - generic [ref=e2475]: ProductHunt
+                - generic [ref=e2476]: コミュニティ
+                - generic [ref=e2477]: トクトラック
+                - generic [ref=e2478]: "65"
+              - link "Publickey 00:11 注目 security-vulnerability Anthropic、ルールベースではなく、コード分析により複雑な脆弱性も発見できる新機能「claude code Security」を提供開始 ↗ AnthropicはClaude Codeの新機能として、複雑な脆弱性も発見できる「Claude Code Security」をリサーチプレビューとして提供開始したことを発表しました。 人間のセキュリティ専門家のようにコードを分析 Calu... www.publickey1.jp 81 NVA" [ref=e2479] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/anthropicclaude_code_security.html
+                - generic [ref=e2480]:
+                  - generic [ref=e2481]:
+                    - generic [ref=e2482]:
+                      - generic [ref=e2483]: Publickey
+                      - generic [ref=e2484]: 00:11
+                      - generic [ref=e2485]: 注目
+                      - generic [ref=e2486]: security-vulnerability
+                    - heading "Anthropic、ルールベースではなく、コード分析により複雑な脆弱性も発見できる新機能「claude code Security」を提供開始 ↗" [level=3] [ref=e2487]:
+                      - text: Anthropic、ルールベースではなく、コード分析により複雑な脆弱性も発見できる新機能「claude code Security」を提供開始
+                      - generic [ref=e2488]: ↗
+                    - paragraph [ref=e2489]: AnthropicはClaude Codeの新機能として、複雑な脆弱性も発見できる「Claude Code Security」をリサーチプレビューとして提供開始したことを発表しました。 人間のセキュリティ専門家のようにコードを分析 Calu...
+                    - generic [ref=e2490]: www.publickey1.jp
+                  - generic [ref=e2491]:
+                    - generic [ref=e2492]: "81"
+                    - generic [ref=e2493]: NVA
+              - link "20:00 OpenAI News SWEベンチ検証の評価がなくなった理由 38" [ref=e2494] [cursor=pointer]:
+                - /url: https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified
+                - generic [ref=e2495]: 20:00
+                - generic [ref=e2496]: OpenAI News
+                - generic [ref=e2497]: SWEベンチ検証の評価がなくなった理由
+                - generic [ref=e2498]: "38"
+              - link "17:02 ProductHunt コミュニティ エピスモ・スキル 56" [ref=e2499] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/epismo
+                - generic [ref=e2500]: 17:02
+                - generic [ref=e2501]: ProductHunt
+                - generic [ref=e2502]: コミュニティ
+                - generic [ref=e2503]: エピスモ・スキル
+                - generic [ref=e2504]: "56"
+              - link "14:30 OpenAI News OpenAI、フロンティア・アライアンス・パートナーを発表 52" [ref=e2505] [cursor=pointer]:
+                - /url: https://openai.com/index/frontier-alliance-partners
+                - generic [ref=e2506]: 14:30
+                - generic [ref=e2507]: OpenAI News
+                - generic [ref=e2508]: OpenAI、フロンティア・アライアンス・パートナーを発表
+                - generic [ref=e2509]: "52"
+              - link "09:00 Figma Release Notes AIホスティングコントロール（Governance+) 39" [ref=e2510] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=ai-hosting-controls-governance
+                - generic [ref=e2511]: 09:00
+                - generic [ref=e2512]: Figma Release Notes
+                - generic [ref=e2513]: AIホスティングコントロール（Governance+)
+                - generic [ref=e2514]: "39"
+              - link "09:00 Figma Release Notes エンタープライズ向けワークスペースレベルの共有 39" [ref=e2515] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=workspace-level-sharing-for-enterprise
+                - generic [ref=e2516]: 09:00
+                - generic [ref=e2517]: Figma Release Notes
+                - generic [ref=e2518]: エンタープライズ向けワークスペースレベルの共有
+                - generic [ref=e2519]: "39"
+              - link "09:00 Anthropic News 蒸留攻撃の検出と防止 39" [ref=e2520] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks
+                - generic [ref=e2521]: 09:00
+                - generic [ref=e2522]: Anthropic News
+                - generic [ref=e2523]: 蒸留攻撃の検出と防止
+                - generic [ref=e2524]: "39"
+          - generic [ref=e2525]:
+            - generic [ref=e2527]:
+              - heading "2月22日（日）" [level=2] [ref=e2529]
+              - generic [ref=e2530]: 4件
+            - generic [ref=e2531]:
+              - link "08:07 X @y_matsuwitter コミュニティ 連続投稿50日目、今日は実際どんなAgentを少数スタートアップが実装しているのか分析した中で考えたこと。 ソロプレナーのAgent構成から見える、業務自動化の4つ... 78 55" [ref=e2532] [cursor=pointer]:
+                - /url: https://x.com/y_matsuwitter/status/2025708958925853062
+                - generic [ref=e2533]: 08:07
+                - generic [ref=e2534]: X @y_matsuwitter
+                - generic [ref=e2535]: コミュニティ
+                - generic [ref=e2536]: 連続投稿50日目、今日は実際どんなAgentを少数スタートアップが実装しているのか分析した中で考えたこと。 ソロプレナーのAgent構成から見える、業務自動化の4つ...
+                - generic "エンゲージメント" [ref=e2537]: "78"
+                - generic [ref=e2538]: "55"
+              - link "04:33 ProductHunt コミュニティ カリオ 56" [ref=e2539] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/callio-3
+                - generic [ref=e2540]: 04:33
+                - generic [ref=e2541]: ProductHunt
+                - generic [ref=e2542]: コミュニティ
+                - generic [ref=e2543]: カリオ
+                - generic [ref=e2544]: "56"
+              - link "00:40 Zenn コミュニティ コードからFigmaへ・フィグちゃんとクロちゃんのよもやま話 65" [ref=e2545] [cursor=pointer]:
+                - /url: https://zenn.dev/kozarusha/articles/cff65938151c31
+                - generic [ref=e2546]: 00:40
+                - generic [ref=e2547]: Zenn
+                - generic [ref=e2548]: コミュニティ
+                - generic [ref=e2549]: コードからFigmaへ・フィグちゃんとクロちゃんのよもやま話
+                - generic [ref=e2550]: "65"
+              - link "11:22 Zenn コミュニティ Figma MCP × Claude Codeで1ページ8時間の作業が20分になった話 65" [ref=e2551] [cursor=pointer]:
+                - /url: https://zenn.dev/kimmaru/articles/6c0f67f6003b94
+                - generic [ref=e2552]: 11:22
+                - generic [ref=e2553]: Zenn
+                - generic [ref=e2554]: コミュニティ
+                - generic [ref=e2555]: Figma MCP × Claude Codeで1ページ8時間の作業が20分になった話
+                - generic [ref=e2556]: "65"
+          - generic [ref=e2557]:
+            - generic [ref=e2559]:
+              - heading "2月21日（土）" [level=2] [ref=e2561]
+              - generic [ref=e2562]: 1件
+            - link "06:42 X @zoink 連邦機密の機密解除に関するタスクフォースの委員長は、単にきれいな写真を掲載するのが好きなだけである。 2.5k 42" [ref=e2564] [cursor=pointer]:
+              - /url: https://x.com/zoink/status/2025325200993386619
+              - generic [ref=e2565]: 06:42
+              - generic [ref=e2566]: X @zoink
+              - generic [ref=e2567]: 連邦機密の機密解除に関するタスクフォースの委員長は、単にきれいな写真を掲載するのが好きなだけである。
+              - generic "エンゲージメント" [ref=e2568]: 2.5k
+              - generic [ref=e2569]: "42"
+          - generic [ref=e2570]:
+            - generic [ref=e2571]:
+              - generic [ref=e2572]:
+                - heading "2月20日（金）" [level=2] [ref=e2574]
+                - generic [ref=e2575]: 7件
+              - generic [ref=e2576]:
+                - generic [ref=e2577]: OpenAI 1
+                - generic [ref=e2578]: "|Anthropic 1"
+                - generic [ref=e2579]: "|Figma 1"
+            - generic [ref=e2580]:
+              - link "04:16 X @zoink 誰も見たことのないものをデザインする。 (@jordihays と @johncoogan に感謝！) 165 39" [ref=e2581] [cursor=pointer]:
+                - /url: https://x.com/zoink/status/2024926061449150698
+                - generic [ref=e2582]: 04:16
+                - generic [ref=e2583]: X @zoink
+                - generic [ref=e2584]: 誰も見たことのないものをデザインする。 (@jordihays と @johncoogan に感謝！)
+                - generic "エンゲージメント" [ref=e2585]: "165"
+                - generic [ref=e2586]: "39"
+              - link "23:30 OpenAI News 初のプルーフ提出 40" [ref=e2587] [cursor=pointer]:
+                - /url: https://openai.com/index/first-proof-submissions
+                - generic [ref=e2588]: 23:30
+                - generic [ref=e2589]: OpenAI News
+                - generic [ref=e2590]: 初のプルーフ提出
+                - generic [ref=e2591]: "40"
+              - link "21:41 X @sama 今日、@narendramodi首相と素晴らしい会談を行い、インドにおけるAIをめぐる驚くべきエネルギーについて話をした。 インドは、コーデックス・グローバル市場にとって最も急成長している市場だ... 30k 43" [ref=e2592] [cursor=pointer]:
+                - /url: https://x.com/sama/status/2024826822060290508
+                - generic [ref=e2593]: 21:41
+                - generic [ref=e2594]: X @sama
+                - generic [ref=e2595]: 今日、@narendramodi首相と素晴らしい会談を行い、インドにおけるAIをめぐる驚くべきエネルギーについて話をした。 インドは、コーデックス・グローバル市場にとって最も急成長している市場だ...
+                - generic "エンゲージメント" [ref=e2596]: 30k
+                - generic [ref=e2597]: "43"
+              - link "20:35 Zenn コミュニティ 新デザインツールPencilはなぜエンジニアに刺さるのか 65" [ref=e2598] [cursor=pointer]:
+                - /url: https://zenn.dev/aria3/articles/pencil-dev-why-engineers-love-it
+                - generic [ref=e2599]: 20:35
+                - generic [ref=e2600]: Zenn
+                - generic [ref=e2601]: コミュニティ
+                - generic [ref=e2602]: 新デザインツールPencilはなぜエンジニアに刺さるのか
+                - generic [ref=e2603]: "65"
+              - link "16:05 Zenn コミュニティ Claude + Figma MCPでLPを自動生成したら普通にやばかった話 65" [ref=e2604] [cursor=pointer]:
+                - /url: https://zenn.dev/marcio/articles/2e14d5299f32cc
+                - generic [ref=e2605]: 16:05
+                - generic [ref=e2606]: Zenn
+                - generic [ref=e2607]: コミュニティ
+                - generic [ref=e2608]: Claude + Figma MCPでLPを自動生成したら普通にやばかった話
+                - generic [ref=e2609]: "65"
+              - link "09:00 Anthropic News フロンティアのサイバーセキュリティ能力を防衛側に提供する 39" [ref=e2610] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/claude-code-security
+                - generic [ref=e2611]: 09:00
+                - generic [ref=e2612]: Anthropic News
+                - generic [ref=e2613]: フロンティアのサイバーセキュリティ能力を防衛側に提供する
+                - generic [ref=e2614]: "39"
+              - link "09:00 Figma Release Notes 新型メイク・コネクター 40" [ref=e2615] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=new-make-connectors
+                - generic [ref=e2616]: 09:00
+                - generic [ref=e2617]: Figma Release Notes
+                - generic [ref=e2618]: 新型メイク・コネクター
+                - generic [ref=e2619]: "40"
+          - generic [ref=e2620]:
+            - generic [ref=e2621]:
+              - generic [ref=e2622]:
+                - heading "2月19日（木）" [level=2] [ref=e2624]
+                - generic [ref=e2625]: 12件
+              - generic [ref=e2626]:
+                - generic [ref=e2627]: Google 2
+                - generic [ref=e2628]: "|OpenAI 1"
+            - generic [ref=e2629]:
+              - link "05:35 X @karpathy 高度にオーダーメイドのソフトウェアがどのような時代を迎えるのか、非常に興味がある。 今朝からの例-私は自分のC... 13k 44" [ref=e2630] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2024583544157458452
+                - generic [ref=e2631]: 05:35
+                - generic [ref=e2632]: X @karpathy
+                - generic [ref=e2633]: 高度にオーダーメイドのソフトウェアがどのような時代を迎えるのか、非常に興味がある。 今朝からの例-私は自分のC...
+                - generic "エンゲージメント" [ref=e2634]: 13k
+                - generic [ref=e2635]: "44"
+              - link "X @cursor_ai EN 03:00 注目 case-study この3ヶ月間、私たちはmacOS、Linux、Windows上でエージェントのサンドボックス化を展開しました。 サンドボックス化により、エージェントは自由かつ安全に実行することができ、再送信されるのは... ↗ 77 NVA" [ref=e2636] [cursor=pointer]:
+                - /url: https://x.com/cursor_ai/status/2024544628687687879
+                - generic [ref=e2637]:
+                  - generic [ref=e2638]:
+                    - generic [ref=e2639]:
+                      - generic [ref=e2640]: X @cursor_ai
+                      - generic [ref=e2641]: EN
+                      - generic [ref=e2642]: 03:00
+                      - generic [ref=e2643]: 注目
+                      - generic [ref=e2644]: case-study
+                    - heading "この3ヶ月間、私たちはmacOS、Linux、Windows上でエージェントのサンドボックス化を展開しました。 サンドボックス化により、エージェントは自由かつ安全に実行することができ、再送信されるのは... ↗" [level=3] [ref=e2645]:
+                      - text: この3ヶ月間、私たちはmacOS、Linux、Windows上でエージェントのサンドボックス化を展開しました。 サンドボックス化により、エージェントは自由かつ安全に実行することができ、再送信されるのは...
+                      - generic [ref=e2646]: ↗
+                  - generic [ref=e2647]:
+                    - generic [ref=e2648]: "77"
+                    - generic [ref=e2649]: NVA
+              - link "00:28 Publickey GitHub、リポジトリに対するプルリクエストをコラボレーターのみに制限する、あるいは完全に無効にする設定を可能に 66" [ref=e2650] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/github_14.html
+                - generic [ref=e2651]: 00:28
+                - generic [ref=e2652]: Publickey
+                - generic [ref=e2653]: GitHub、リポジトリに対するプルリクエストをコラボレーターのみに制限する、あるいは完全に無効にする設定を可能に
+                - generic [ref=e2654]: "66"
+              - link "19:52 X @FigmaJapan アクセンチュア／ゆめみが登壇✨ Figma Makeで企画・構想をどう高速化するかをご紹介。議論の土台となるプロトタイプを、プロンプト活用とともに解説。アイデア... 61 39" [ref=e2655] [cursor=pointer]:
+                - /url: https://x.com/FigmaJapan/status/2024436850723868972
+                - generic [ref=e2656]: 19:52
+                - generic [ref=e2657]: X @FigmaJapan
+                - generic [ref=e2658]: アクセンチュア／ゆめみが登壇✨ Figma Makeで企画・構想をどう高速化するかをご紹介。議論の土台となるプロトタイプを、プロンプト活用とともに解説。アイデア...
+                - generic "エンゲージメント" [ref=e2659]: "61"
+                - generic [ref=e2660]: "39"
+              - link "19:31 X @FigmaJapan メルカリ様がご登壇🎤 これまでのネックは「つくること」＝限られた人の特別なスキル。今は「そろえること」が難しい。共通ルールなき開発は品質がずれる⚠️ ... 74 66" [ref=e2661] [cursor=pointer]:
+                - /url: https://x.com/FigmaJapan/status/2024431653972824328
+                - generic [ref=e2662]: 19:31
+                - generic [ref=e2663]: X @FigmaJapan
+                - generic [ref=e2664]: メルカリ様がご登壇🎤 これまでのネックは「つくること」＝限られた人の特別なスキル。今は「そろえること」が難しい。共通ルールなき開発は品質がずれる⚠️ ...
+                - generic "エンゲージメント" [ref=e2665]: "74"
+                - generic [ref=e2666]: "66"
+              - link "19:13 X @FigmaJapan 社員15万人のグローバル企業。デザインシステム運用はわずか8人👀 三菱電機様はMCPサーバーを活用し、Serendie Design SystemのFAQを自動回答化。「聞けばすぐ... 35 65" [ref=e2667] [cursor=pointer]:
+                - /url: https://x.com/FigmaJapan/status/2024427123180716074
+                - generic [ref=e2668]: 19:13
+                - generic [ref=e2669]: X @FigmaJapan
+                - generic [ref=e2670]: 社員15万人のグローバル企業。デザインシステム運用はわずか8人👀 三菱電機様はMCPサーバーを活用し、Serendie Design SystemのFAQを自動回答化。「聞けばすぐ...
+                - generic "エンゲージメント" [ref=e2671]: "35"
+                - generic [ref=e2672]: "65"
+              - link "19:00 OpenAI News AIアライメントに関する独自の研究を推進 49" [ref=e2673] [cursor=pointer]:
+                - /url: https://openai.com/index/advancing-independent-research-ai-alignment
+                - generic [ref=e2674]: 19:00
+                - generic [ref=e2675]: OpenAI News
+                - generic [ref=e2676]: AIアライメントに関する独自の研究を推進
+                - generic [ref=e2677]: "49"
+              - link "18:56 X @FigmaJapan 🙌#DSFigmaTokyo で @hiloki が 世界初めてかもしれない？Claude Code to Figmaのデモを初披露！ 73 66" [ref=e2678] [cursor=pointer]:
+                - /url: https://x.com/FigmaJapan/status/2024422715873251433
+                - generic [ref=e2679]: 18:56
+                - generic [ref=e2680]: X @FigmaJapan
+                - generic [ref=e2681]: 🙌#DSFigmaTokyo で @hiloki が 世界初めてかもしれない？Claude Code to Figmaのデモを初披露！
+                - generic "エンゲージメント" [ref=e2682]: "73"
+                - generic [ref=e2683]: "66"
+              - link "17:25 X @FigmaJapan まもなく18時より「Design Systems with Figma」@表参道ヒルズ・スペース オーを開演します🙌 オンラインでもお待ちしております！ご視聴はこちら👀https://... 23 38" [ref=e2684] [cursor=pointer]:
+                - /url: https://x.com/FigmaJapan/status/2024399988282052707
+                - generic [ref=e2685]: 17:25
+                - generic [ref=e2686]: X @FigmaJapan
+                - generic [ref=e2687]: まもなく18時より「Design Systems with Figma」@表参道ヒルズ・スペース オーを開演します🙌 オンラインでもお待ちしております！ご視聴はこちら👀https://...
+                - generic "エンゲージメント" [ref=e2688]: "23"
+                - generic [ref=e2689]: "38"
+              - link "16:35 Zenn コミュニティ FigmaとClaude Codeの新連携「Code to Canvas」を試してみた 65" [ref=e2690] [cursor=pointer]:
+                - /url: https://zenn.dev/daishiro/articles/figma-code-to-canvas-trial
+                - generic [ref=e2691]: 16:35
+                - generic [ref=e2692]: Zenn
+                - generic [ref=e2693]: コミュニティ
+                - generic [ref=e2694]: FigmaとClaude Codeの新連携「Code to Canvas」を試してみた
+                - generic [ref=e2695]: "65"
+              - link "13:30 Google AI Blog AIインパクト・サミット2026 39" [ref=e2696] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-collection/
+                - generic [ref=e2697]: 13:30
+                - generic [ref=e2698]: Google AI Blog
+                - generic [ref=e2699]: AIインパクト・サミット2026
+                - generic [ref=e2700]: "39"
+              - link "13:30 Google AI Blog 「AIほど大きな夢を抱かせてくれるテクノロジーはない 39" [ref=e2701] [cursor=pointer]:
+                - /url: https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/
+                - generic [ref=e2702]: 13:30
+                - generic [ref=e2703]: Google AI Blog
+                - generic [ref=e2704]: 「AIほど大きな夢を抱かせてくれるテクノロジーはない
+                - generic [ref=e2705]: "39"
+          - generic [ref=e2706]:
+            - generic [ref=e2707]:
+              - generic [ref=e2708]:
+                - heading "2月18日（水）" [level=2] [ref=e2710]
+                - generic [ref=e2711]: 10件
+              - generic [ref=e2712]:
+                - generic [ref=e2713]: OpenAI 2
+                - generic [ref=e2714]: "|Google 2"
+                - generic [ref=e2715]: "|Figma 1"
+            - generic [ref=e2716]:
+              - link "06:00 OpenAI News インド向けOpenAIの紹介 48" [ref=e2717] [cursor=pointer]:
+                - /url: https://openai.com/index/openai-for-india
+                - generic [ref=e2718]: 06:00
+                - generic [ref=e2719]: OpenAI News
+                - generic [ref=e2720]: インド向けOpenAIの紹介
+                - generic [ref=e2721]: "48"
+              - link "03:46 X @OpenAI EVMbenchは、AIエージェントがスマート・コントラクトの重大な脆弱性をどれだけ検出、悪用、パッチ適用できるかを測定する新しいベンチマークです。 10.0k 68" [ref=e2722] [cursor=pointer]:
+                - /url: https://x.com/OpenAI/status/2024193883748651102
+                - generic [ref=e2723]: 03:46
+                - generic [ref=e2724]: X @OpenAI
+                - generic [ref=e2725]: EVMbenchは、AIエージェントがスマート・コントラクトの重大な脆弱性をどれだけ検出、悪用、パッチ適用できるかを測定する新しいベンチマークです。
+                - generic "エンゲージメント" [ref=e2726]: 10.0k
+                - generic [ref=e2727]: "68"
+              - link "01:00 Google AI Blog 自分を表現する新しい方法：Geminiは音楽を創作できるようになった 48" [ref=e2728] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/products/gemini-app/lyria-3/
+                - generic [ref=e2729]: 01:00
+                - generic [ref=e2730]: Google AI Blog
+                - generic [ref=e2731]: 自分を表現する新しい方法：Geminiは音楽を創作できるようになった
+                - generic [ref=e2732]: "48"
+              - link "00:40 Zenn コミュニティ 【神機能】Claudeで書いたコードがFigmaになる！？「Claude Code to Figma」が爆誕 65" [ref=e2733] [cursor=pointer]:
+                - /url: https://zenn.dev/pochaneco/articles/69e9075e0fbf89
+                - generic [ref=e2734]: 00:40
+                - generic [ref=e2735]: Zenn
+                - generic [ref=e2736]: コミュニティ
+                - generic [ref=e2737]: 【神機能】Claudeで書いたコードがFigmaになる！？「Claude Code to Figma」が爆誕
+                - generic [ref=e2738]: "65"
+              - link "00:38 Publickey Amazon EC2が仮想化のネスト（Nested Virtualization）に対応。KVMやHyper-Vを用いた仮想マシンを設定可能に 39" [ref=e2739] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/amazon_ec2nested_virtualizationkvmhyper-v.html
+                - generic [ref=e2740]: 00:38
+                - generic [ref=e2741]: Publickey
+                - generic [ref=e2742]: Amazon EC2が仮想化のネスト（Nested Virtualization）に対応。KVMやHyper-Vを用いた仮想マシンを設定可能に
+                - generic [ref=e2743]: "39"
+              - link "00:36 Publickey Slackが「リアルタイムサーチAPI」と「Slack MCP Server」を発表。生成AIがSlack上のやりとりを基にコンテキストを理解可能 66" [ref=e2744] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/slackapislack_mcp_serveraislack.html
+                - generic [ref=e2745]: 00:36
+                - generic [ref=e2746]: Publickey
+                - generic [ref=e2747]: Slackが「リアルタイムサーチAPI」と「Slack MCP Server」を発表。生成AIがSlack上のやりとりを基にコンテキストを理解可能
+                - generic [ref=e2748]: "66"
+              - link "19:30 Google AI Blog AIインパクト・サミット2026：すべての人のためにAIを機能させるために私たちはどのように提携しているか 35" [ref=e2749] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-india/
+                - generic [ref=e2750]: 19:30
+                - generic [ref=e2751]: Google AI Blog
+                - generic [ref=e2752]: AIインパクト・サミット2026：すべての人のためにAIを機能させるために私たちはどのように提携しているか
+                - generic [ref=e2753]: "35"
+              - link "14:47 X @FigmaJapan 明日は「Design Systems with Figma」@表参道ヒルズ・スペース オー開催🎉 会場当選の皆さま、ジャケット着用のFigmatesがお迎えします！ オンライン参加もま... 62 39" [ref=e2754] [cursor=pointer]:
+                - /url: https://x.com/FigmaJapan/status/2023997760513405153
+                - generic [ref=e2755]: 14:47
+                - generic [ref=e2756]: X @FigmaJapan
+                - generic [ref=e2757]: 明日は「Design Systems with Figma」@表参道ヒルズ・スペース オー開催🎉 会場当選の皆さま、ジャケット着用のFigmatesがお迎えします！ オンライン参加もま...
+                - generic "エンゲージメント" [ref=e2758]: "62"
+                - generic [ref=e2759]: "39"
+              - link "14:00 Figma Blog データサイエンティストとしてのインパクトを再定義する 39" [ref=e2760] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/redefining-impact-as-a-data-scientist/
+                - generic [ref=e2761]: 14:00
+                - generic [ref=e2762]: Figma Blog
+                - generic [ref=e2763]: データサイエンティストとしてのインパクトを再定義する
+                - generic [ref=e2764]: "39"
+              - link "09:00 OpenAI News EVMbenchのご紹介 68" [ref=e2765] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-evmbench
+                - generic [ref=e2766]: 09:00
+                - generic [ref=e2767]: OpenAI News
+                - generic [ref=e2768]: EVMbenchのご紹介
+                - generic [ref=e2769]: "68"
+          - generic [ref=e2770]:
+            - generic [ref=e2771]:
+              - generic [ref=e2772]:
+                - heading "2月17日（火）" [level=2] [ref=e2774]
+                - generic [ref=e2775]: 12件
+              - generic [ref=e2776]:
+                - generic [ref=e2777]: Figma 4
+                - generic [ref=e2778]: "|Anthropic 3"
+                - generic [ref=e2779]: "|Google 1"
+            - generic [ref=e2780]:
+              - link "07:30 Google AI Blog 2026年責任あるAIの進捗報告 39" [ref=e2781] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/products/responsible-ai-2026-report-ongoing-work/
+                - generic [ref=e2782]: 07:30
+                - generic [ref=e2783]: Google AI Blog
+                - generic [ref=e2784]: 2026年責任あるAIの進捗報告
+                - generic [ref=e2785]: "39"
+              - link "X @cursor_ai EN 04:27 注目 product-update Sonnet4.6がCursorで利用可能になった。 ベンチマークによれば、長時間のタスクではSonnet4.5より顕著な改善が見られるが、インテリジェントなタスクではOpus4.6を下回る。 ↗ Sonnet 4.6 is now available in Cursor. Our benchmarks show it as a notable improvement over Sonnet 4.5 on longer tasks, but below Opus 4.6 for intelli... x.com/cursor_ai 85 NVA" [ref=e2786] [cursor=pointer]:
+                - /url: https://x.com/cursor_ai/status/2023841746577485894
+                - generic [ref=e2787]:
+                  - generic [ref=e2788]:
+                    - generic [ref=e2789]:
+                      - generic [ref=e2790]: X @cursor_ai
+                      - generic [ref=e2791]: EN
+                      - generic [ref=e2792]: 04:27
+                      - generic [ref=e2793]: 注目
+                      - generic [ref=e2794]: product-update
+                    - heading "Sonnet4.6がCursorで利用可能になった。 ベンチマークによれば、長時間のタスクではSonnet4.5より顕著な改善が見られるが、インテリジェントなタスクではOpus4.6を下回る。 ↗" [level=3] [ref=e2795]:
+                      - text: Sonnet4.6がCursorで利用可能になった。 ベンチマークによれば、長時間のタスクではSonnet4.5より顕著な改善が見られるが、インテリジェントなタスクではOpus4.6を下回る。
+                      - generic [ref=e2796]: ↗
+                    - paragraph [ref=e2797]: Sonnet 4.6 is now available in Cursor. Our benchmarks show it as a notable improvement over Sonnet 4.5 on longer tasks, but below Opus 4.6 for intelli...
+                    - generic [ref=e2798]: x.com/cursor_ai
+                  - generic [ref=e2799]:
+                    - generic [ref=e2800]: "85"
+                    - generic [ref=e2801]: NVA
+              - link "01:00 Figma Blog デザインの未来はコードとキャンバス 66" [ref=e2802] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/the-future-of-design-is-code-and-canvas/
+                - generic [ref=e2803]: 01:00
+                - generic [ref=e2804]: Figma Blog
+                - generic [ref=e2805]: デザインの未来はコードとキャンバス
+                - generic [ref=e2806]: "66"
+              - link "00:44 Publickey マイクロソフト、.NETランタイムでWebAssemblyの実行をサポートへ、CoreCLRに実装を開始 39" [ref=e2807] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/netwebassemblycoreclr.html
+                - generic [ref=e2808]: 00:44
+                - generic [ref=e2809]: Publickey
+                - generic [ref=e2810]: マイクロソフト、.NETランタイムでWebAssemblyの実行をサポートへ、CoreCLRに実装を開始
+                - generic [ref=e2811]: "39"
+              - link "00:41 Publickey 中国アリババ、MySQLのブランチとしてInnoDBエンジン、DuckDBカラムナエンジン、ベクトルサーチなどを統合した「AliSQL 8.0」オープンソースで公開 39" [ref=e2812] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/mysqlinnodbduckdbalisql_80.html
+                - generic [ref=e2813]: 00:41
+                - generic [ref=e2814]: Publickey
+                - generic [ref=e2815]: 中国アリババ、MySQLのブランチとしてInnoDBエンジン、DuckDBカラムナエンジン、ベクトルサーチなどを統合した「AliSQL 8.0」オープンソースで公開
+                - generic [ref=e2816]: "39"
+              - link "23:04 X @zoink http://x.com/i/article/2023758580525182976 3.1k 42" [ref=e2817] [cursor=pointer]:
+                - /url: https://x.com/zoink/status/2023760388530307167
+                - generic [ref=e2818]: 23:04
+                - generic [ref=e2819]: X @zoink
+                - generic [ref=e2820]: http://x.com/i/article/2023758580525182976
+                - generic "エンゲージメント" [ref=e2821]: 3.1k
+                - generic [ref=e2822]: "42"
+              - link "22:42 Figma Blog Claude CodeからFigmaへ：プロダクション・コードを編集可能なFigmaデザインに変える 66" [ref=e2823] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/introducing-claude-code-to-figma/
+                - generic [ref=e2824]: 22:42
+                - generic [ref=e2825]: Figma Blog
+                - generic [ref=e2826]: Claude CodeからFigmaへ：プロダクション・コードを編集可能なFigmaデザインに変える
+                - generic [ref=e2827]: "66"
+              - link "09:00 Anthropic News Anthropicとルワンダ政府、健康と教育におけるAIに関する覚書に調印 66" [ref=e2828] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/anthropic-rwanda-mou
+                - generic [ref=e2829]: 09:00
+                - generic [ref=e2830]: Anthropic News
+                - generic [ref=e2831]: Anthropicとルワンダ政府、健康と教育におけるAIに関する覚書に調印
+                - generic [ref=e2832]: "66"
+              - link "09:00 Figma Release Notes ClaudeコードからFigmaへ 66" [ref=e2833] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=claude-code-to-figma
+                - generic [ref=e2834]: 09:00
+                - generic [ref=e2835]: Figma Release Notes
+                - generic [ref=e2836]: ClaudeコードからFigmaへ
+                - generic [ref=e2837]: "66"
+              - link "09:00 Figma Release Notes Makeのモデルピッカー 39" [ref=e2838] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=model-picker-in-make
+                - generic [ref=e2839]: 09:00
+                - generic [ref=e2840]: Figma Release Notes
+                - generic [ref=e2841]: Makeのモデルピッカー
+                - generic [ref=e2842]: "39"
+              - link "09:00 Anthropic News ソネット4.6の紹介 66" [ref=e2843] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/claude-sonnet-4-6
+                - generic [ref=e2844]: 09:00
+                - generic [ref=e2845]: Anthropic News
+                - generic [ref=e2846]: ソネット4.6の紹介
+                - generic [ref=e2847]: "66"
+              - link "09:00 Anthropic News AnthropicとInfosys、電気通信やその他の規制産業向けAIエージェントの構築で協業 66" [ref=e2848] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/anthropic-infosys
+                - generic [ref=e2849]: 09:00
+                - generic [ref=e2850]: Anthropic News
+                - generic [ref=e2851]: AnthropicとInfosys、電気通信やその他の規制産業向けAIエージェントの構築で協業
+                - generic [ref=e2852]: "66"
+          - generic [ref=e2853]:
+            - generic [ref=e2854]:
+              - generic [ref=e2855]:
+                - heading "2月16日（月）" [level=2] [ref=e2857]
+                - generic [ref=e2858]: 6件
+              - generic [ref=e2860]: Anthropic 1
+            - generic [ref=e2861]:
+              - link "06:31 X @zoink 最初の一歩は、センス、デザイン、技術、視点が重要であることを認識することである。 しかし、認識する上で重要なことは、これは人生の第一歩に過ぎないということである。 520 41" [ref=e2862] [cursor=pointer]:
+                - /url: https://x.com/zoink/status/2023510487716295100
+                - generic [ref=e2863]: 06:31
+                - generic [ref=e2864]: X @zoink
+                - generic [ref=e2865]: 最初の一歩は、センス、デザイン、技術、視点が重要であることを認識することである。 しかし、認識する上で重要なことは、これは人生の第一歩に過ぎないということである。
+                - generic "エンゲージメント" [ref=e2866]: "520"
+                - generic [ref=e2867]: "41"
+              - link "04:15 X @karpathy プログラミング言語や形式的手法に携わるには、とても興味深い時代だと思います。 8.8k 45" [ref=e2868] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2023476423055601903
+                - generic [ref=e2869]: 04:15
+                - generic [ref=e2870]: X @karpathy
+                - generic [ref=e2871]: プログラミング言語や形式的手法に携わるには、とても興味深い時代だと思います。
+                - generic "エンゲージメント" [ref=e2872]: 8.8k
+                - generic [ref=e2873]: "45"
+              - link "03:14 X @zoink 僕が世界最高のジオメトリー・ダッシュ・プレーヤーの一人だと思われているのが面白い。 それがもうひとつのゾインクだ。 77 38" [ref=e2874] [cursor=pointer]:
+                - /url: https://x.com/zoink/status/2023461034384826854
+                - generic [ref=e2875]: 03:14
+                - generic [ref=e2876]: X @zoink
+                - generic [ref=e2877]: 僕が世界最高のジオメトリー・ダッシュ・プレーヤーの一人だと思われているのが面白い。 それがもうひとつのゾインクだ。
+                - generic "エンゲージメント" [ref=e2878]: "77"
+                - generic [ref=e2879]: "38"
+              - link "00:23 Publickey 生成AIがGoogleテクノロジーの公式ドキュメントを参照できる「Developer Knowledge API & MCP Server」、Googleが発表 66" [ref=e2880] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/aigoogledeveloper_knowledge_api_mcp_servergoogle.html
+                - generic [ref=e2881]: 00:23
+                - generic [ref=e2882]: Publickey
+                - generic [ref=e2883]: 生成AIがGoogleテクノロジーの公式ドキュメントを参照できる「Developer Knowledge API & MCP Server」、Googleが発表
+                - generic [ref=e2884]: "66"
+              - link "00:20 Publickey クラウドインフラのシェア、AWSがトップを維持するも28％、AzureとGoogle Cloudが少しずつ差を詰めていく。2025年第4四半期、Synergy Researchの調査結果 40" [ref=e2885] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/aws28azuregoogle_cloud20254synergy_research.html
+                - generic [ref=e2886]: 00:20
+                - generic [ref=e2887]: Publickey
+                - generic [ref=e2888]: クラウドインフラのシェア、AWSがトップを維持するも28％、AzureとGoogle Cloudが少しずつ差を詰めていく。2025年第4四半期、Synergy Researchの調査結果
+                - generic [ref=e2889]: "40"
+              - link "09:00 Anthropic News Anthropicがベンガルールオフィスを開設、インド全土で新たなパートナーシップを発表 66" [ref=e2890] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/bengaluru-office-partnerships-across-india
+                - generic [ref=e2891]: 09:00
+                - generic [ref=e2892]: Anthropic News
+                - generic [ref=e2893]: Anthropicがベンガルールオフィスを開設、インド全土で新たなパートナーシップを発表
+                - generic [ref=e2894]: "66"
+          - generic [ref=e2895]:
+            - generic [ref=e2897]:
+              - heading "2月15日（日）" [level=2] [ref=e2899]
+              - generic [ref=e2900]: 2件
+            - generic [ref=e2901]:
+              - link "00:31 Publickey オープンソースの公式サポート終了後も、最小限のコストで安全に脆弱性対応を可能にする「TuxCare ELS」提供開始［PR］ 39" [ref=e2902] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/tuxcare_elspr.html
+                - generic [ref=e2903]: 00:31
+                - generic [ref=e2904]: Publickey
+                - generic [ref=e2905]: オープンソースの公式サポート終了後も、最小限のコストで安全に脆弱性対応を可能にする「TuxCare ELS」提供開始［PR］
+                - generic [ref=e2906]: "39"
+              - link "00:29 Publickey GitHub、YAMLではなく自然言語でビルドやデプロイなどのワークフローを記述できる「GitHub Agentic Workflows」テクニカルプレビュー 66" [ref=e2907] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/githubyamlgithub_agentic_workflows.html
+                - generic [ref=e2908]: 00:29
+                - generic [ref=e2909]: Publickey
+                - generic [ref=e2910]: GitHub、YAMLではなく自然言語でビルドやデプロイなどのワークフローを記述できる「GitHub Agentic Workflows」テクニカルプレビュー
+                - generic [ref=e2911]: "66"
+          - generic [ref=e2912]:
+            - generic [ref=e2914]:
+              - heading "2月14日（土）" [level=2] [ref=e2916]
+              - generic [ref=e2917]: 2件
+            - generic [ref=e2918]:
+              - link "05:57 X @zoink コンウェイはFigmaの最初のユーザーの一人だった。 常に直接的なフィードバックをくれた。 素晴らしいセンス👌。 346 40" [ref=e2919] [cursor=pointer]:
+                - /url: https://x.com/zoink/status/2022777354347778259
+                - generic [ref=e2920]: 05:57
+                - generic [ref=e2921]: X @zoink
+                - generic [ref=e2922]: コンウェイはFigmaの最初のユーザーの一人だった。 常に直接的なフィードバックをくれた。 素晴らしいセンス👌。
+                - generic "エンゲージメント" [ref=e2923]: "346"
+                - generic [ref=e2924]: "40"
+              - link "05:30 X @zoink バレンタインデーが届けられた。 228 40" [ref=e2925] [cursor=pointer]:
+                - /url: https://x.com/zoink/status/2022770350140883166
+                - generic [ref=e2926]: 05:30
+                - generic [ref=e2927]: X @zoink
+                - generic [ref=e2928]: バレンタインデーが届けられた。
+                - generic "エンゲージメント" [ref=e2929]: "228"
+                - generic [ref=e2930]: "40"
+          - generic [ref=e2931]:
+            - generic [ref=e2932]:
+              - generic [ref=e2933]:
+                - heading "2月13日（金）" [level=2] [ref=e2935]
+                - generic [ref=e2936]: 8件
+              - generic [ref=e2937]:
+                - generic [ref=e2938]: OpenAI 4
+                - generic [ref=e2939]: "|Anthropic 2"
+                - generic [ref=e2940]: "|Figma 1"
+            - generic [ref=e2941]:
+              - link "20:00 OpenAI News GPT-5.2が理論物理学の新しい結果を導く 48" [ref=e2942] [cursor=pointer]:
+                - /url: https://openai.com/index/new-result-theoretical-physics
+                - generic [ref=e2943]: 20:00
+                - generic [ref=e2944]: OpenAI News
+                - generic [ref=e2945]: GPT-5.2が理論物理学の新しい結果を導く
+                - generic [ref=e2946]: "48"
+              - link "19:00 OpenAI News ChatGPTにロックダウンモードと高リスクラベルを導入 48" [ref=e2947] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-lockdown-mode-and-elevated-risk-labels-in-chatgpt
+                - generic [ref=e2948]: 19:00
+                - generic [ref=e2949]: OpenAI News
+                - generic [ref=e2950]: ChatGPTにロックダウンモードと高リスクラベルを導入
+                - generic [ref=e2951]: "48"
+              - link "18:00 OpenAI News 社会科学研究のスケールアップ 49" [ref=e2952] [cursor=pointer]:
+                - /url: https://openai.com/index/scaling-social-science-research
+                - generic [ref=e2953]: 18:00
+                - generic [ref=e2954]: OpenAI News
+                - generic [ref=e2955]: 社会科学研究のスケールアップ
+                - generic [ref=e2956]: "49"
+              - link "18:00 OpenAI News レートの限界を超えて：コーデックスとソラへのアクセス拡大 56" [ref=e2957] [cursor=pointer]:
+                - /url: https://openai.com/index/beyond-rate-limits
+                - generic [ref=e2958]: 18:00
+                - generic [ref=e2959]: OpenAI News
+                - generic [ref=e2960]: レートの限界を超えて：コーデックスとソラへのアクセス拡大
+                - generic [ref=e2961]: "56"
+              - link "09:00 Anthropic News Anthropic、CodePathと提携し、米国最大の大学コンピューターサイエンス・プログラムにClaudeを導入 66" [ref=e2962] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/anthropic-codepath-partnership
+                - generic [ref=e2963]: 09:00
+                - generic [ref=e2964]: Anthropic News
+                - generic [ref=e2965]: Anthropic、CodePathと提携し、米国最大の大学コンピューターサイエンス・プログラムにClaudeを導入
+                - generic [ref=e2966]: "66"
+              - link "09:00 Figma Release Notes デスクトップアプリでのタブナビゲーションの高速化 39" [ref=e2967] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=faster-tab-navigation-on-the-desktop-app
+                - generic [ref=e2968]: 09:00
+                - generic [ref=e2969]: Figma Release Notes
+                - generic [ref=e2970]: デスクトップアプリでのタブナビゲーションの高速化
+                - generic [ref=e2971]: "39"
+              - link "09:00 Anthropic News クリス・リデルがAnthropicの取締役に就任 66" [ref=e2972] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/chris-liddell-appointed-anthropic-board
+                - generic [ref=e2973]: 09:00
+                - generic [ref=e2974]: Anthropic News
+                - generic [ref=e2975]: クリス・リデルがAnthropicの取締役に就任
+                - generic [ref=e2976]: "66"
+              - link "09:00 Huggingface.co コミュニティ ClaudeとCodexによるすべての人のためのカスタムカーネル 65" [ref=e2977] [cursor=pointer]:
+                - /url: https://huggingface.co/blog/custom-cuda-kernels-agent-skills
+                - generic [ref=e2978]: 09:00
+                - generic [ref=e2979]: Huggingface.co
+                - generic [ref=e2980]: コミュニティ
+                - generic [ref=e2981]: ClaudeとCodexによるすべての人のためのカスタムカーネル
+                - generic [ref=e2982]: "65"
+          - generic [ref=e2983]:
+            - generic [ref=e2984]:
+              - generic [ref=e2985]:
+                - heading "2月12日（木）" [level=2] [ref=e2987]
+                - generic [ref=e2988]: 10件
+              - generic [ref=e2989]:
+                - generic [ref=e2990]: Figma 2
+                - generic [ref=e2991]: "|Anthropic 2"
+                - generic [ref=e2992]: "|Google 1"
+                - generic [ref=e2993]: "|OpenAI 1"
+            - generic [ref=e2994]:
+              - link "05:12 X @karpathy simile_aiの立ち上げおめでとう！（そして、小さなエンジェルとして関われることに興奮している。 8.6k 63" [ref=e2995] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2022041235188580788
+                - generic [ref=e2996]: 05:12
+                - generic [ref=e2997]: X @karpathy
+                - generic [ref=e2998]: simile_aiの立ち上げおめでとう！（そして、小さなエンジェルとして関われることに興奮している。
+                - generic "エンゲージメント" [ref=e2999]: 8.6k
+                - generic [ref=e3000]: "63"
+              - link "02:00 Figma Blog デザイナーの現状2026：デザイナーは厄介なミドルに傾きつつある 39" [ref=e3001] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/state-of-the-designer-2026/
+                - generic [ref=e3002]: 02:00
+                - generic [ref=e3003]: Figma Blog
+                - generic [ref=e3004]: デザイナーの現状2026：デザイナーは厄介なミドルに傾きつつある
+                - generic [ref=e3005]: "39"
+              - link "01:23 Hacker News コミュニティ AI エージェントが私に関するヒット作品を出版しました 56" [ref=e3006] [cursor=pointer]:
+                - /url: https://theshamblog.com/an-ai-agent-published-a-hit-piece-on-me/
+                - generic [ref=e3007]: 01:23
+                - generic [ref=e3008]: Hacker News
+                - generic [ref=e3009]: コミュニティ
+                - generic [ref=e3010]: AI エージェントが私に関するヒット作品を出版しました
+                - generic [ref=e3011]: "56"
+              - link "01:13 Google AI Blog Gemini 3 ディープ・シンク：科学、研究、工学の発展 62" [ref=e3012] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/
+                - generic [ref=e3013]: 01:13
+                - generic [ref=e3014]: Google AI Blog
+                - generic [ref=e3015]: Gemini 3 ディープ・シンク：科学、研究、工学の発展
+                - generic [ref=e3016]: "62"
+              - link "00:54 Publickey なぜTypeScriptは成功しているのか。作者ヘイルスバーグ氏が語る7つの教訓 39" [ref=e3017] [cursor=pointer]:
+                - /url: https://www.publickey1.jp/blog/26/typescript7.html
+                - generic [ref=e3018]: 00:54
+                - generic [ref=e3019]: Publickey
+                - generic [ref=e3020]: なぜTypeScriptは成功しているのか。作者ヘイルスバーグ氏が語る7つの教訓
+                - generic [ref=e3021]: "39"
+              - link "19:08 ProductHunt コミュニティ テスル 59" [ref=e3022] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/tessl
+                - generic [ref=e3023]: 19:08
+                - generic [ref=e3024]: ProductHunt
+                - generic [ref=e3025]: コミュニティ
+                - generic [ref=e3026]: テスル
+                - generic [ref=e3027]: "59"
+              - link "19:00 OpenAI News GPT-5.3-コーデックスパークの紹介 49" [ref=e3028] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-gpt-5-3-codex-spark
+                - generic [ref=e3029]: 19:00
+                - generic [ref=e3030]: OpenAI News
+                - generic [ref=e3031]: GPT-5.3-コーデックスパークの紹介
+                - generic [ref=e3032]: "49"
+              - link "09:00 Anthropic News AnthropicがシリーズGで300億ドルの資金を調達、資金調達後の評価額は3800億ドル 62" [ref=e3033] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation
+                - generic [ref=e3034]: 09:00
+                - generic [ref=e3035]: Anthropic News
+                - generic [ref=e3036]: AnthropicがシリーズGで300億ドルの資金を調達、資金調達後の評価額は3800億ドル
+                - generic [ref=e3037]: "62"
+              - link "09:00 Anthropic News AnthropicはPublic First Actionに2000万ドルを寄付する。 66" [ref=e3038] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/donate-public-first-action
+                - generic [ref=e3039]: 09:00
+                - generic [ref=e3040]: Anthropic News
+                - generic [ref=e3041]: AnthropicはPublic First Actionに2000万ドルを寄付する。
+                - generic [ref=e3042]: "66"
+              - link "09:00 Figma Release Notes UAとインドのローカル・データ・ホスティング 39" [ref=e3043] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=au-india-local-data-hosting
+                - generic [ref=e3044]: 09:00
+                - generic [ref=e3045]: Figma Release Notes
+                - generic [ref=e3046]: UAとインドのローカル・データ・ホスティング
+                - generic [ref=e3047]: "39"
+          - generic [ref=e3048]:
+            - generic [ref=e3049]:
+              - generic [ref=e3050]:
+                - heading "2月11日（水）" [level=2] [ref=e3052]
+                - generic [ref=e3053]: 4件
+              - generic [ref=e3054]:
+                - generic [ref=e3055]: Meta 1
+                - generic [ref=e3056]: "|OpenAI 1"
+                - generic [ref=e3057]: "|Anthropic 1"
+            - generic [ref=e3058]:
+              - link "X @karpathy EN 02:12 注目 community-trend DeepWikiとソフトウェアの可鍛性の向上について。 これは部分的にはDeepWikiへの感謝の投稿として始まる。 ↗ 70 NVA" [ref=e3059] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2021633574089416993
+                - generic [ref=e3060]:
+                  - generic [ref=e3061]:
+                    - generic [ref=e3062]:
+                      - generic [ref=e3063]: X @karpathy
+                      - generic [ref=e3064]: EN
+                      - generic [ref=e3065]: 02:12
+                      - generic [ref=e3066]: 注目
+                      - generic [ref=e3067]: community-trend
+                    - heading "DeepWikiとソフトウェアの可鍛性の向上について。 これは部分的にはDeepWikiへの感謝の投稿として始まる。 ↗" [level=3] [ref=e3068]:
+                      - text: DeepWikiとソフトウェアの可鍛性の向上について。 これは部分的にはDeepWikiへの感謝の投稿として始まる。
+                      - generic [ref=e3069]: ↗
+                  - generic [ref=e3070]:
+                    - generic [ref=e3071]: "70"
+                    - generic [ref=e3072]: NVA
+              - link "02:00 Meta AI Blog 伝統的なテストの死：エージェント開発は50年前の分野を破壊したが、JiTTestingはそれを復活させることができる 39" [ref=e3073] [cursor=pointer]:
+                - /url: https://engineering.fb.com/2026/02/11/developer-tools/the-death-of-traditional-testing-agentic-development-jit-testing-revival/
+                - generic [ref=e3074]: 02:00
+                - generic [ref=e3075]: Meta AI Blog
+                - generic [ref=e3076]: 伝統的なテストの死：エージェント開発は50年前の分野を破壊したが、JiTTestingはそれを復活させることができる
+                - generic [ref=e3077]: "39"
+              - link "18:00 OpenAI News ハーネス・エンジニアリング：エージェント・ファーストの世界でCodexを活用する 57" [ref=e3078] [cursor=pointer]:
+                - /url: https://openai.com/index/harness-engineering
+                - generic [ref=e3079]: 18:00
+                - generic [ref=e3080]: OpenAI News
+                - generic [ref=e3081]: ハーネス・エンジニアリング：エージェント・ファーストの世界でCodexを活用する
+                - generic [ref=e3082]: "57"
+              - link "09:00 Anthropic News データセンターの電気料金値上げをカバー 39" [ref=e3083] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/covering-electricity-price-increases
+                - generic [ref=e3084]: 09:00
+                - generic [ref=e3085]: Anthropic News
+                - generic [ref=e3086]: データセンターの電気料金値上げをカバー
+                - generic [ref=e3087]: "39"
+          - generic [ref=e3088]:
+            - generic [ref=e3089]:
+              - generic [ref=e3090]:
+                - heading "2月10日（火）" [level=2] [ref=e3092]
+                - generic [ref=e3093]: 6件
+              - generic [ref=e3094]:
+                - generic [ref=e3095]: Figma 2
+                - generic [ref=e3096]: "|Google 2"
+            - generic [ref=e3097]:
+              - link "03:25 ProductHunt コミュニティ スーパーセット 65" [ref=e3098] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/superset-5
+                - generic [ref=e3099]: 03:25
+                - generic [ref=e3100]: ProductHunt
+                - generic [ref=e3101]: コミュニティ
+                - generic [ref=e3102]: スーパーセット
+                - generic [ref=e3103]: "65"
+              - link "02:00 Figma Blog デザイナーへの需要が高まる理由 40" [ref=e3104] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/why-demand-for-designers-is-on-the-rise/
+                - generic [ref=e3105]: 02:00
+                - generic [ref=e3106]: Figma Blog
+                - generic [ref=e3107]: デザイナーへの需要が高まる理由
+                - generic [ref=e3108]: "40"
+              - link "02:00 Google AI Blog グーグルフォトへの9つの楽しい質問 39" [ref=e3109] [cursor=pointer]:
+                - /url: https://blog.google/products-and-platforms/products/photos/ask-button-ask-photos-tips/
+                - generic [ref=e3110]: 02:00
+                - generic [ref=e3111]: Google AI Blog
+                - generic [ref=e3112]: グーグルフォトへの9つの楽しい質問
+                - generic [ref=e3113]: "39"
+              - link "11:30 Google AI Blog セーファーインターネット・デーに子供とティーンエイジャーがオンラインで学び、成長するのを助ける 39" [ref=e3114] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/technology/safety-security/safer-internet-day-2026-kids-teens/
+                - generic [ref=e3115]: 11:30
+                - generic [ref=e3116]: Google AI Blog
+                - generic [ref=e3117]: セーファーインターネット・デーに子供とティーンエイジャーがオンラインで学び、成長するのを助ける
+                - generic [ref=e3118]: "39"
+              - link "11:15 X @zoink デザインは新しいコードだ。 1.5k 42" [ref=e3119] [cursor=pointer]:
+                - /url: https://x.com/zoink/status/2021045430952526275
+                - generic [ref=e3120]: 11:15
+                - generic [ref=e3121]: X @zoink
+                - generic [ref=e3122]: デザインは新しいコードだ。
+                - generic "エンゲージメント" [ref=e3123]: 1.5k
+                - generic [ref=e3124]: "42"
+              - link "09:00 Figma Release Notes メイク・コネクターに言及 39" [ref=e3125] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=mentions-in-make-connectors
+                - generic [ref=e3126]: 09:00
+                - generic [ref=e3127]: Figma Release Notes
+                - generic [ref=e3128]: メイク・コネクターに言及
+                - generic [ref=e3129]: "39"
+          - generic [ref=e3130]:
+            - generic [ref=e3131]:
+              - generic [ref=e3132]:
+                - heading "2月9日（月）" [level=2] [ref=e3134]
+                - generic [ref=e3135]: 5件
+              - generic [ref=e3136]:
+                - generic [ref=e3137]: OpenAI 2
+                - generic [ref=e3138]: "|Figma 1"
+            - generic [ref=e3139]:
+              - link "05:41 X @zoink https://www.justice.gov/epstein/files/DataSet%209/EFTA00064309.pdf 528 41" [ref=e3140] [cursor=pointer]:
+                - /url: https://x.com/zoink/status/2020961396188758280
+                - generic [ref=e3141]: 05:41
+                - generic [ref=e3142]: X @zoink
+                - generic [ref=e3143]: https://www.justice.gov/epstein/files/DataSet%209/EFTA00064309.pdf
+                - generic "エンゲージメント" [ref=e3144]: "528"
+                - generic [ref=e3145]: "41"
+              - link "04:03 X @OpenAI ChatGPTの広告は、ChatGPTの回答に影響を与えません。 広告は、ChatGPTの回答に影響を与えません。 4.5k 53" [ref=e3146] [cursor=pointer]:
+                - /url: https://x.com/OpenAI/status/2020936703763153010
+                - generic [ref=e3147]: 04:03
+                - generic [ref=e3148]: X @OpenAI
+                - generic [ref=e3149]: ChatGPTの広告は、ChatGPTの回答に影響を与えません。 広告は、ChatGPTの回答に影響を与えません。
+                - generic "エンゲージメント" [ref=e3150]: 4.5k
+                - generic [ref=e3151]: "53"
+              - link "20:00 OpenAI News GenAI.milにChatGPTをもたらす 48" [ref=e3152] [cursor=pointer]:
+                - /url: https://openai.com/index/bringing-chatgpt-to-genaimil
+                - generic [ref=e3153]: 20:00
+                - generic [ref=e3154]: OpenAI News
+                - generic [ref=e3155]: GenAI.milにChatGPTをもたらす
+                - generic [ref=e3156]: "48"
+              - link "20:00 OpenAI News ChatGPTで広告をテストする 48" [ref=e3157] [cursor=pointer]:
+                - /url: https://openai.com/index/testing-ads-in-chatgpt
+                - generic [ref=e3158]: 20:00
+                - generic [ref=e3159]: OpenAI News
+                - generic [ref=e3160]: ChatGPTで広告をテストする
+                - generic [ref=e3161]: "48"
+              - link "09:00 Figma Release Notes ユーザーグループが利用可能に 39" [ref=e3162] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=user-groups-now-available
+                - generic [ref=e3163]: 09:00
+                - generic [ref=e3164]: Figma Release Notes
+                - generic [ref=e3165]: ユーザーグループが利用可能に
+                - generic [ref=e3166]: "39"
+          - generic [ref=e3167]:
+            - generic [ref=e3168]:
+              - generic [ref=e3169]:
+                - heading "2月6日（金）" [level=2] [ref=e3171]
+                - generic [ref=e3172]: 1件
+              - generic [ref=e3174]: OpenAI 1
+            - link "19:00 OpenAI News AIを誰でも、どこでも使えるようにする：ローカリゼーションへのアプローチ 48" [ref=e3176] [cursor=pointer]:
+              - /url: https://openai.com/index/our-approach-to-localization
+              - generic [ref=e3177]: 19:00
+              - generic [ref=e3178]: OpenAI News
+              - generic [ref=e3179]: AIを誰でも、どこでも使えるようにする：ローカリゼーションへのアプローチ
+              - generic [ref=e3180]: "48"
+          - generic [ref=e3181]:
+            - generic [ref=e3182]:
+              - generic [ref=e3183]:
+                - heading "2月5日（木）" [level=2] [ref=e3185]
+                - generic [ref=e3186]: 11件
+              - generic [ref=e3187]:
+                - generic [ref=e3188]: OpenAI 6
+                - generic [ref=e3189]: "|Google 3"
+                - generic [ref=e3190]: "|Anthropic 1"
+            - generic [ref=e3191]:
+              - link "02:00 Google AI Blog ネイティブ・アダプティブ・インターフェイス：AIアクセシビリティのための新しいフレームワーク 39" [ref=e3192] [cursor=pointer]:
+                - /url: https://blog.google/company-news/outreach-and-initiatives/accessibility/natively-adaptive-interfaces-ai-accessibility/
+                - generic [ref=e3193]: 02:00
+                - generic [ref=e3194]: Google AI Blog
+                - generic [ref=e3195]: ネイティブ・アダプティブ・インターフェイス：AIアクセシビリティのための新しいフレームワーク
+                - generic [ref=e3196]: "39"
+              - link "01:00 Google AI Blog Google CloudがチームUSAのAIによるトリックのレベルアップをどのように支援しているか 47" [ref=e3197] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/us-ski-snowboard-tool-winter-olympics-2026/
+                - generic [ref=e3198]: 01:00
+                - generic [ref=e3199]: Google AI Blog
+                - generic [ref=e3200]: Google CloudがチームUSAのAIによるトリックのレベルアップをどのように支援しているか
+                - generic [ref=e3201]: "47"
+              - link "23:30 Google AI Blog サッカー最大の週末を前に、Geminiの新広告を見る 48" [ref=e3202] [cursor=pointer]:
+                - /url: https://blog.google/company-news/inside-google/company-announcements/gemini-ad-new-home/
+                - generic [ref=e3203]: 23:30
+                - generic [ref=e3204]: Google AI Blog
+                - generic [ref=e3205]: サッカー最大の週末を前に、Geminiの新広告を見る
+                - generic [ref=e3206]: "48"
+              - link "20:00 OpenAI News GPT-5は無細胞タンパク質合成のコストを下げる 48" [ref=e3207] [cursor=pointer]:
+                - /url: https://openai.com/index/gpt-5-lowers-protein-synthesis-cost
+                - generic [ref=e3208]: 20:00
+                - generic [ref=e3209]: OpenAI News
+                - generic [ref=e3210]: GPT-5は無細胞タンパク質合成のコストを下げる
+                - generic [ref=e3211]: "48"
+              - link "19:00 OpenAI News トラステッド・アクセスの導入 48" [ref=e3212] [cursor=pointer]:
+                - /url: https://openai.com/index/trusted-access-for-cyber
+                - generic [ref=e3213]: 19:00
+                - generic [ref=e3214]: OpenAI News
+                - generic [ref=e3215]: トラステッド・アクセスの導入
+                - generic [ref=e3216]: "48"
+              - link "15:00 OpenAI News OpenAIフロンティアの紹介 48" [ref=e3217] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-openai-frontier
+                - generic [ref=e3218]: 15:00
+                - generic [ref=e3219]: OpenAI News
+                - generic [ref=e3220]: OpenAIフロンティアの紹介
+                - generic [ref=e3221]: "48"
+              - link "09:18 X @karpathy 毎日20回ほどローンの承認が下りた人はいるだろうか？ 喜びに打ち震えている。 2.7k 42" [ref=e3222] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2019203959404347851
+                - generic [ref=e3223]: 09:18
+                - generic [ref=e3224]: X @karpathy
+                - generic [ref=e3225]: 毎日20回ほどローンの承認が下りた人はいるだろうか？ 喜びに打ち震えている。
+                - generic "エンゲージメント" [ref=e3226]: 2.7k
+                - generic [ref=e3227]: "42"
+              - link "09:00 Anthropic News Claude作品4.6のご紹介 66" [ref=e3228] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/claude-opus-4-6
+                - generic [ref=e3229]: 09:00
+                - generic [ref=e3230]: Anthropic News
+                - generic [ref=e3231]: Claude作品4.6のご紹介
+                - generic [ref=e3232]: "66"
+              - link "09:00 OpenAI News GPT-5.3-コーデックス・システム・カード 48" [ref=e3233] [cursor=pointer]:
+                - /url: https://openai.com/index/gpt-5-3-codex-system-card
+                - generic [ref=e3234]: 09:00
+                - generic [ref=e3235]: OpenAI News
+                - generic [ref=e3236]: GPT-5.3-コーデックス・システム・カード
+                - generic [ref=e3237]: "48"
+              - link "09:00 OpenAI News GPT-5.3-コーデックスのご紹介 57" [ref=e3238] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-gpt-5-3-codex
+                - generic [ref=e3239]: 09:00
+                - generic [ref=e3240]: OpenAI News
+                - generic [ref=e3241]: GPT-5.3-コーデックスのご紹介
+                - generic [ref=e3242]: "57"
+              - link "09:00 OpenAI News ChatGPTで健康に関する質問をナビゲートする 48" [ref=e3243] [cursor=pointer]:
+                - /url: https://openai.com/index/navigating-health-questions
+                - generic [ref=e3244]: 09:00
+                - generic [ref=e3245]: OpenAI News
+                - generic [ref=e3246]: ChatGPTで健康に関する質問をナビゲートする
+                - generic [ref=e3247]: "48"
+          - generic [ref=e3248]:
+            - generic [ref=e3249]:
+              - generic [ref=e3250]:
+                - heading "2月4日（水）" [level=2] [ref=e3252]
+                - generic [ref=e3253]: 9件
+              - generic [ref=e3254]:
+                - generic [ref=e3255]: Figma 2
+                - generic [ref=e3256]: "|OpenAI 2"
+                - generic [ref=e3257]: "|Google 1"
+                - generic [ref=e3258]: "|Anthropic 1"
+            - generic [ref=e3259]:
+              - link "04:55 X @karpathy バイブ・コーディング1周年記念として、多くの人がこのツイートを引用している。 若干の回顧 - 私はツイッター・アカウントを持って17年になる（オーム）、そして私は ... 9.3k 61" [ref=e3260] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2019137879310836075
+                - generic [ref=e3261]: 04:55
+                - generic [ref=e3262]: X @karpathy
+                - generic [ref=e3263]: バイブ・コーディング1周年記念として、多くの人がこのツイートを引用している。 若干の回顧 - 私はツイッター・アカウントを持って17年になる（オーム）、そして私は ...
+                - generic "エンゲージメント" [ref=e3264]: 9.3k
+                - generic [ref=e3265]: "61"
+              - link "01:55 Google AI Blog 1月に発表した最新のAIニュース 48" [ref=e3266] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/products/google-ai-updates-january-2026/
+                - generic [ref=e3267]: 01:55
+                - generic [ref=e3268]: Google AI Blog
+                - generic [ref=e3269]: 1月に発表した最新のAIニュース
+                - generic [ref=e3270]: "48"
+              - link "01:54 Figma Blog 工芸への愛のために：Figmaで画像をベクター化する 39" [ref=e3271] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/introducing-vectorize/
+                - generic [ref=e3272]: 01:54
+                - generic [ref=e3273]: Figma Blog
+                - generic [ref=e3274]: 工芸への愛のために：Figmaで画像をベクター化する
+                - generic [ref=e3275]: "39"
+              - link "22:00 OpenAI News コーデックス・ハーネスを解き明かす：アプリ・サーバーの構築方法 67" [ref=e3276] [cursor=pointer]:
+                - /url: https://openai.com/index/unlocking-the-codex-harness
+                - generic [ref=e3277]: 22:00
+                - generic [ref=e3278]: OpenAI News
+                - generic [ref=e3279]: コーデックス・ハーネスを解き明かす：アプリ・サーバーの構築方法
+                - generic [ref=e3280]: "67"
+              - link "15:50 X @FigmaJapan 🍜【福岡開催】Design Systems by Figma 今年も福岡（＆大阪）にうかがいます！ 🗓3/3(火)18:00〜 対面開催 📍福岡・大名カンファレンス 詳細はこちら👇... 24 38" [ref=e3281] [cursor=pointer]:
+                - /url: https://x.com/FigmaJapan/status/2018940234197848278
+                - generic [ref=e3282]: 15:50
+                - generic [ref=e3283]: X @FigmaJapan
+                - generic [ref=e3284]: 🍜【福岡開催】Design Systems by Figma 今年も福岡（＆大阪）にうかがいます！ 🗓3/3(火)18:00〜 対面開催 📍福岡・大名カンファレンス 詳細はこちら👇...
+                - generic "エンゲージメント" [ref=e3285]: "24"
+                - generic [ref=e3286]: "38"
+              - link "15:23 X @FigmaJapan 🏯【大阪開催】Design Systems by Figma 今年も大阪（＆福岡）にうかがいます！ 🗓3/6(金)18:00〜 対面開催 📍大阪・ナレッジキャピタル 詳細はこちら👇... 26 38" [ref=e3287] [cursor=pointer]:
+                - /url: https://x.com/FigmaJapan/status/2018933324178473187
+                - generic [ref=e3288]: 15:23
+                - generic [ref=e3289]: X @FigmaJapan
+                - generic [ref=e3290]: 🏯【大阪開催】Design Systems by Figma 今年も大阪（＆福岡）にうかがいます！ 🗓3/6(金)18:00〜 対面開催 📍大阪・ナレッジキャピタル 詳細はこちら👇...
+                - generic "エンゲージメント" [ref=e3291]: "26"
+                - generic [ref=e3292]: "38"
+              - link "09:00 Anthropic News Claudeは考えるための空間である。 66" [ref=e3293] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/claude-is-a-space-to-think
+                - generic [ref=e3294]: 09:00
+                - generic [ref=e3295]: Anthropic News
+                - generic [ref=e3296]: Claudeは考えるための空間である。
+                - generic [ref=e3297]: "66"
+              - link "09:00 Figma Release Notes デザインとドローで画像をベクトル化する 39" [ref=e3298] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=vectorize-images-in-design-and-draw
+                - generic [ref=e3299]: 09:00
+                - generic [ref=e3300]: Figma Release Notes
+                - generic [ref=e3301]: デザインとドローで画像をベクトル化する
+                - generic [ref=e3302]: "39"
+              - link "09:00 OpenAI News VfLヴォルフスブルク、ChatGPTをクラブ全体の機能に変える 48" [ref=e3303] [cursor=pointer]:
+                - /url: https://openai.com/index/vfl-wolfsburg
+                - generic [ref=e3304]: 09:00
+                - generic [ref=e3305]: OpenAI News
+                - generic [ref=e3306]: VfLヴォルフスブルク、ChatGPTをクラブ全体の機能に変える
+                - generic [ref=e3307]: "48"
+          - generic [ref=e3308]:
+            - generic [ref=e3309]:
+              - generic [ref=e3310]:
+                - heading "2月3日（火）" [level=2] [ref=e3312]
+                - generic [ref=e3313]: 6件
+              - generic [ref=e3314]:
+                - generic [ref=e3315]: Figma 3
+                - generic [ref=e3316]: "|Anthropic 1"
+                - generic [ref=e3317]: "|OpenAI 1"
+            - generic [ref=e3318]:
+              - link "06:49 X @karpathy fp8トレーニングを有効にすると、「GPT-2までの時間」が+4.3%改善され、2.91時間になりました。 また、8XH100のスポット・インスタンス価格を使用すると、... 4.3k 65" [ref=e3319] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2018804068874064198
+                - generic [ref=e3320]: 06:49
+                - generic [ref=e3321]: X @karpathy
+                - generic [ref=e3322]: fp8トレーニングを有効にすると、「GPT-2までの時間」が+4.3%改善され、2.91時間になりました。 また、8XH100のスポット・インスタンス価格を使用すると、...
+                - generic "エンゲージメント" [ref=e3323]: 4.3k
+                - generic [ref=e3324]: "65"
+              - link "23:00 Figma Blog Figma が C5 認定を取得し、DACH 地域全体の顧客のクラウド・セキュリティが強化される 55" [ref=e3325] [cursor=pointer]:
+                - /url: https://www.figma.com/blog/figma-c5-accreditation/
+                - generic [ref=e3326]: 23:00
+                - generic [ref=e3327]: Figma Blog
+                - generic [ref=e3328]: Figma が C5 認定を取得し、DACH 地域全体の顧客のクラウド・セキュリティが強化される
+                - generic [ref=e3329]: "55"
+              - link "09:00 Anthropic News AppleのXcodeがClaude Agent SDKをサポートしました。 66" [ref=e3330] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/apple-xcode-claude-agent-sdk
+                - generic [ref=e3331]: 09:00
+                - generic [ref=e3332]: Anthropic News
+                - generic [ref=e3333]: AppleのXcodeがClaude Agent SDKをサポートしました。
+                - generic [ref=e3334]: "66"
+              - link "09:00 Figma Release Notes 自動ゲスト削除 39" [ref=e3335] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=automatic-guest-removal
+                - generic [ref=e3336]: 09:00
+                - generic [ref=e3337]: Figma Release Notes
+                - generic [ref=e3338]: 自動ゲスト削除
+                - generic [ref=e3339]: "39"
+              - link "09:00 Figma Release Notes バウンディングボックスを使用して、高速かつ正確にベクトルを編集する 39" [ref=e3340] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=use-bounding-boxes-to-edit-vectors-with-speed-and-precision
+                - generic [ref=e3341]: 09:00
+                - generic [ref=e3342]: Figma Release Notes
+                - generic [ref=e3343]: バウンディングボックスを使用して、高速かつ正確にベクトルを編集する
+                - generic [ref=e3344]: "39"
+              - link "09:00 OpenAI News そらのフィード哲学 47" [ref=e3345] [cursor=pointer]:
+                - /url: https://openai.com/index/sora-feed-philosophy
+                - generic [ref=e3346]: 09:00
+                - generic [ref=e3347]: OpenAI News
+                - generic [ref=e3348]: そらのフィード哲学
+                - generic [ref=e3349]: "47"
+          - generic [ref=e3350]:
+            - generic [ref=e3351]:
+              - generic [ref=e3352]:
+                - heading "2月2日（月）" [level=2] [ref=e3354]
+                - generic [ref=e3355]: 7件
+              - generic [ref=e3356]:
+                - generic [ref=e3357]: Google 2
+                - generic [ref=e3358]: "|OpenAI 2"
+                - generic [ref=e3359]: "|Figma 2"
+                - generic [ref=e3360]: "|Anthropic 1"
+            - generic [ref=e3361]:
+              - link "03:00 Google AI Blog 絶滅危惧種の遺伝情報をAIで保護する方法 39" [ref=e3362] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/technology/ai/ai-to-preserve-endangered-species/
+                - generic [ref=e3363]: 03:00
+                - generic [ref=e3364]: Google AI Blog
+                - generic [ref=e3365]: 絶滅危惧種の遺伝情報をAIで保護する方法
+                - generic [ref=e3366]: "39"
+              - link "02:00 Google AI Blog Game ArenaでAIベンチマークを進化させる 48" [ref=e3367] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/kaggle-game-arena-updates/
+                - generic [ref=e3368]: 02:00
+                - generic [ref=e3369]: Google AI Blog
+                - generic [ref=e3370]: Game ArenaでAIベンチマークを進化させる
+                - generic [ref=e3371]: "48"
+              - link "15:00 OpenAI News SnowflakeとOpenAIが提携、企業データにフロンティア・インテリジェンスをもたらす 43" [ref=e3372] [cursor=pointer]:
+                - /url: https://openai.com/index/snowflake-partnership
+                - generic [ref=e3373]: 15:00
+                - generic [ref=e3374]: OpenAI News
+                - generic [ref=e3375]: SnowflakeとOpenAIが提携、企業データにフロンティア・インテリジェンスをもたらす
+                - generic [ref=e3376]: "43"
+              - link "09:00 OpenAI News コーデックス・アプリの紹介 39" [ref=e3377] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-the-codex-app
+                - generic [ref=e3378]: 09:00
+                - generic [ref=e3379]: OpenAI News
+                - generic [ref=e3380]: コーデックス・アプリの紹介
+                - generic [ref=e3381]: "39"
+              - link "09:00 Anthropic News Anthropic、アレン研究所およびハワード・ヒューズ医学研究所と提携し、科学的発見を加速させる 66" [ref=e3382] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/anthropic-partners-with-allen-institute-and-howard-hughes-medical-institute
+                - generic [ref=e3383]: 09:00
+                - generic [ref=e3384]: Anthropic News
+                - generic [ref=e3385]: Anthropic、アレン研究所およびハワード・ヒューズ医学研究所と提携し、科学的発見を加速させる
+                - generic [ref=e3386]: "66"
+              - link "09:00 Figma Release Notes Figma政府携帯アプリ 39" [ref=e3387] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=figma-for-government-mobile-app
+                - generic [ref=e3388]: 09:00
+                - generic [ref=e3389]: Figma Release Notes
+                - generic [ref=e3390]: Figma政府携帯アプリ
+                - generic [ref=e3391]: "39"
+              - link "09:00 Figma Release Notes すべての絵文字は、FigJamスタンプホイールでご利用いただけます。 39" [ref=e3392] [cursor=pointer]:
+                - /url: https://www.figma.com/release-notes/?title=all-emojis-are-available-in-the-figjam-stamp-wheel
+                - generic [ref=e3393]: 09:00
+                - generic [ref=e3394]: Figma Release Notes
+                - generic [ref=e3395]: すべての絵文字は、FigJamスタンプホイールでご利用いただけます。
+                - generic [ref=e3396]: "39"
+          - generic [ref=e3397]:
+            - generic [ref=e3399]:
+              - heading "2月1日（日）" [level=2] [ref=e3401]
+              - generic [ref=e3402]: 2件
+            - generic [ref=e3403]:
+              - link "05:36 ProductHunt コミュニティ ローバー by rtrvr.ai 56" [ref=e3404] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/rtrvr-ai
+                - generic [ref=e3405]: 05:36
+                - generic [ref=e3406]: ProductHunt
+                - generic [ref=e3407]: コミュニティ
+                - generic [ref=e3408]: ローバー by rtrvr.ai
+                - generic [ref=e3409]: "56"
+              - link "04:26 X @karpathy 最近、RSS/Atomフィードに戻ることが多くなった。 より質の高い長文が多くなり、挑発を目的としたくだらないものはかなり減った。 A... 9.7k 43" [ref=e3410] [cursor=pointer]:
+                - /url: https://x.com/karpathy/status/2018043254986703167
+                - generic [ref=e3411]: 04:26
+                - generic [ref=e3412]: X @karpathy
+                - generic [ref=e3413]: 最近、RSS/Atomフィードに戻ることが多くなった。 より質の高い長文が多くなり、挑発を目的としたくだらないものはかなり減った。 A...
+                - generic "エンゲージメント" [ref=e3414]: 9.7k
+                - generic [ref=e3415]: "43"
+          - generic [ref=e3416]:
+            - generic [ref=e3418]:
+              - heading "1月31日（土）" [level=2] [ref=e3420]
+              - generic [ref=e3421]: 1件
+            - link "05:55 X @karpathy nanochatでは、GPT-2グレードのLLMを<<$100でトレーニングできるようになった（～$73、8XH100ノード1台で3時間）。 GPT-2は私のお気に入りのLLMだ。 7.8k 52" [ref=e3423] [cursor=pointer]:
+              - /url: https://x.com/karpathy/status/2017703360393318587
+              - generic [ref=e3424]: 05:55
+              - generic [ref=e3425]: X @karpathy
+              - generic [ref=e3426]: nanochatでは、GPT-2グレードのLLMを<<$100でトレーニングできるようになった（～$73、8XH100ノード1台で3時間）。 GPT-2は私のお気に入りのLLMだ。
+              - generic "エンゲージメント" [ref=e3427]: 7.8k
+              - generic [ref=e3428]: "52"
+      - link "← トップページに戻る" [ref=e3430] [cursor=pointer]:
+        - /url: /
+  - contentinfo [ref=e3431]:
+    - generic [ref=e3432]:
+      - paragraph [ref=e3433]: AI Solo Craft — AIソロ開発者のための日本語ニュースキュレーション
+      - paragraph [ref=e3434]: "毎日配信: 🗞️ ダイジェスト 8:00（プロダクトは随時更新）"
+  - button "Open Next.js Dev Tools" [ref=e3440] [cursor=pointer]:
+    - img [ref=e3441]
+  - alert [ref=e3444]
