@@ -134,15 +134,19 @@ export default function TimelineView({ groups, sources, companies }: TimelineVie
         <div className="relative">
           {filteredGroups.map((group, groupIdx) => (
             <div key={group.date} className={groupIdx > 0 ? 'mt-8' : ''}>
-              {/* Date Marker */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-3 h-3 rounded-full bg-accent-leaf ring-4 ring-bg-cream flex-shrink-0" />
-                <h2 className="font-heading text-base font-bold text-text-deep">
-                  {group.displayDate}
-                </h2>
-                <span className="text-xs text-text-light">
-                  {group.items.length}件
-                </span>
+              {/* Date Marker + Company Summary */}
+              <div className="mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 rounded-full bg-accent-leaf ring-4 ring-bg-cream flex-shrink-0" />
+                  <h2 className="font-heading text-base font-bold text-text-deep">
+                    {group.displayDate}
+                  </h2>
+                  <span className="text-xs text-text-light">
+                    {group.items.length}件
+                  </span>
+                </div>
+                {/* [Feature 3] Company breakdown summary */}
+                <DateGroupSummary items={group.items} companies={companies} />
               </div>
 
               {/* Items */}
@@ -165,6 +169,43 @@ export default function TimelineView({ groups, sources, companies }: TimelineVie
           </p>
         </div>
       )}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// [Feature 3] Date Group Summary — company breakdown per day
+// ---------------------------------------------------------------------------
+
+function DateGroupSummary({ items, companies }: { items: TimelineItem[]; companies: TimelineCompany[] }) {
+  const companyMap = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const c of companies) map.set(c.id, c.name);
+    return map;
+  }, [companies]);
+
+  const breakdown = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const item of items) {
+      if (item.companyId && item.companyName) {
+        counts.set(item.companyName, (counts.get(item.companyName) || 0) + 1);
+      }
+    }
+    return [...counts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5);
+  }, [items, companyMap]);
+
+  if (breakdown.length === 0) return null;
+
+  return (
+    <div className="ml-6 mt-1 text-[11px] text-text-light">
+      {breakdown.map(([name, count], i) => (
+        <span key={name}>
+          {i > 0 && <span className="mx-1 opacity-40">|</span>}
+          {name} <span className="opacity-60">{count}</span>
+        </span>
+      ))}
     </div>
   );
 }
@@ -200,7 +241,25 @@ function FilterChip({
 }
 
 // ---------------------------------------------------------------------------
-// Timeline Card
+// Helpers
+// ---------------------------------------------------------------------------
+
+/** Returns true if summary is too similar to title to be worth showing */
+function isSimilarToTitle(summary: string, title: string, titleJa: string | null): boolean {
+  const norm = (s: string) => s.toLowerCase().replace(/[\s\u3000]+/g, '').replace(/[^\w\u3000-\u9fff]/g, '');
+  const ns = norm(summary);
+  const nt = norm(title);
+  const ntj = titleJa ? norm(titleJa) : '';
+  // Exact or near-exact match
+  if (ns === nt || ns === ntj) return true;
+  // One contains the other
+  if (ns.length > 0 && nt.length > 0 && (ns.includes(nt) || nt.includes(ns))) return true;
+  if (ntj.length > 0 && ns.length > 0 && (ns.includes(ntj) || ntj.includes(ns))) return true;
+  return false;
+}
+
+// ---------------------------------------------------------------------------
+// Timeline Card — with all 5 improvements
 // ---------------------------------------------------------------------------
 
 function TimelineCard({ item }: { item: TimelineItem }) {
@@ -212,17 +271,26 @@ function TimelineCard({ item }: { item: TimelineItem }) {
     hour12: false,
   });
 
+  // [Feature 1] NVA-based visual hierarchy
+  const isHighNva = item.nvaTotal != null && item.nvaTotal >= 75;
+  const cardBorderClass = isHighNva
+    ? 'border-l-[3px] border-l-accent-moss border border-border'
+    : 'border border-border';
+
+  // [Feature 4] Language badge — show EN for non-Japanese sources
+  const showLangBadge = !item.isJapaneseSource;
+
   return (
     <a
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block rounded-xl border border-border bg-bg-card p-4 transition-all hover:ring-2 hover:ring-accent-leaf/30 hover:border-border-hover group"
+      className={`block rounded-xl ${cardBorderClass} bg-bg-card p-4 transition-all hover:ring-2 hover:ring-accent-leaf/30 hover:border-border-hover group`}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
-          {/* Source badge + company + time */}
-          <div className="flex items-center gap-2 mb-1.5">
+          {/* Source badge + company + lang + time + classification + article link */}
+          <div className="flex items-center flex-wrap gap-1.5 mb-1.5">
             <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-accent-leaf/15 text-accent-leaf">
               {item.sourceName}
             </span>
@@ -231,26 +299,66 @@ function TimelineCard({ item }: { item: TimelineItem }) {
                 {item.companyName}
               </span>
             )}
+            {/* [Feature 4] Language badge */}
+            {showLangBadge && (
+              <span className="inline-flex items-center px-1 py-0.5 rounded text-[9px] font-medium bg-blue-50 text-blue-400 border border-blue-100">
+                EN
+              </span>
+            )}
             <span className="text-[10px] text-text-light">{time}</span>
+            {/* [Feature 1] NVA highlight badge */}
+            {isHighNva && (
+              <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-accent-moss/15 text-accent-moss">
+                注目
+              </span>
+            )}
             {item.classification && (
               <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] bg-bg-warm text-text-muted">
                 {item.classification}
               </span>
             )}
+            {/* [Feature 5] Internal article link badge */}
+            {item.contentSlug && (
+              <span
+                className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-nadeshiko/10 text-nadeshiko cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  window.location.href = `/news/${item.contentSlug}`;
+                }}
+              >
+                記事あり
+              </span>
+            )}
           </div>
 
           {/* Title */}
-          <h3 className="text-sm font-semibold text-text-deep leading-snug group-hover:text-accent-moss transition-colors">
+          <h3 className={`font-semibold text-text-deep leading-snug group-hover:text-accent-moss transition-colors ${isHighNva ? 'text-[15px]' : 'text-sm'}`}>
             {displayTitle}
             <span className="inline-block ml-1 text-text-light text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">
               ↗
             </span>
           </h3>
-          {/* Original title (shown when translated) */}
-          {item.titleJa && item.originalTitle && item.titleJa !== item.originalTitle && (
+
+          {/* Original title (shown only for non-Japanese sources when translated) */}
+          {!item.isJapaneseSource && item.titleJa && item.originalTitle && item.titleJa !== item.originalTitle && (
             <p className="text-[11px] text-text-light leading-snug mt-0.5">
               {item.originalTitle}
             </p>
+          )}
+
+          {/* [Feature 2] Content summary — hide if too similar to title */}
+          {item.contentSummary && !isSimilarToTitle(item.contentSummary, item.title, item.titleJa) && (
+            <p className="text-xs text-text-muted leading-relaxed mt-1 line-clamp-2">
+              {item.contentSummary}
+            </p>
+          )}
+
+          {/* [Feature 4] Source domain */}
+          {item.sourceDomain && (
+            <span className="text-[10px] text-text-light opacity-60 mt-1 inline-block">
+              {item.sourceDomain}
+            </span>
           )}
         </div>
 

@@ -14,11 +14,14 @@ export interface TimelineItem {
   collectedAt: string;
   classification: string | null;
   nvaTotal: number | null;
+  contentSummary: string | null;
+  contentSlug: string | null;
   sourceName: string;
   sourceDomain: string | null;
   companyId: string | null;
   companyName: string | null;
   companySlug: string | null;
+  isJapaneseSource: boolean;
 }
 
 export interface TimelineGroup {
@@ -95,6 +98,8 @@ export async function getTimelineItems(): Promise<TimelineGroup[]> {
       collected_at,
       classification,
       nva_total,
+      content_summary,
+      content_id,
       source_id,
       sources!inner (
         id,
@@ -107,6 +112,9 @@ export async function getTimelineItems(): Promise<TimelineGroup[]> {
           slug,
           name
         )
+      ),
+      contents!collected_items_content_id_fkey (
+        slug
       )
     `)
     .eq('sources.source_type', 'primary')
@@ -124,9 +132,11 @@ export async function getTimelineItems(): Promise<TimelineGroup[]> {
   if (!data || data.length === 0) return [];
 
   // Map to TimelineItem
+  const JAPANESE_RE = /[ぁ-んァ-ヶ一-龯々〆ヵヶ]/u;
   const allItems: TimelineItem[] = (data as any[]).map((row) => {
     const source = row.sources;
     const company = source?.companies ?? null;
+    const content = row.contents;
     return {
       id: row.id,
       title: row.title,
@@ -137,11 +147,14 @@ export async function getTimelineItems(): Promise<TimelineGroup[]> {
       collectedAt: row.collected_at,
       classification: row.classification,
       nvaTotal: row.nva_total,
+      contentSummary: row.content_summary || null,
+      contentSlug: content?.slug ?? null,
       sourceName: source?.name ?? 'Unknown',
       sourceDomain: source?.domain ?? null,
       companyId: company?.id ?? null,
       companyName: company?.name ?? null,
       companySlug: company?.slug ?? null,
+      isJapaneseSource: JAPANESE_RE.test(row.title || ''),
     };
   });
 
