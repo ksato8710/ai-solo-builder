@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getAdminSupabaseClient } from '@/lib/admin-supabase';
-import { computeNvaScores, DEFAULT_WEIGHTS, type ScoringWeights } from '@/lib/scorer';
+import { computeNvaScores, DEFAULT_WEIGHTS, type ScoringWeights, type MyToolsConfig } from '@/lib/scorer';
 
 export const dynamic = 'force-dynamic';
 
@@ -74,8 +74,18 @@ async function handleScoreItems(request: NextRequest): Promise<NextResponse> {
       };
     }
 
-    // 2. Fetch unscored items (status = 'new')
-    const { data: items, error: fetchError } = await supabase
+    // 1b. Load MyToolsConfig for V2 scoring
+    const { data: myToolsConfig } = await supabase
+      .from('scoring_config')
+      .select('config_value')
+      .eq('config_key', 'my_tools')
+      .single();
+
+    const myTools = (myToolsConfig?.config_value as MyToolsConfig) ?? null;
+
+    // 2. Fetch items to score
+    const rescore = searchParams.get('rescore');
+    let query = supabase
       .from('collected_items')
       .select(`
         id,
@@ -92,9 +102,17 @@ async function handleScoreItems(request: NextRequest): Promise<NextResponse> {
           entity_kind
         )
       `)
-      .eq('status', 'new')
       .order('collected_at', { ascending: true })
       .limit(limit);
+
+    if (rescore === 'all') {
+      // Rescore both new and already-scored items (for V2 migration)
+      query = query.in('status', ['new', 'scored']);
+    } else {
+      query = query.eq('status', 'new');
+    }
+
+    const { data: items, error: fetchError } = await query;
 
     if (fetchError) {
       console.error('[cron/score-items] Fetch error:', fetchError);
@@ -133,7 +151,8 @@ async function handleScoreItems(request: NextRequest): Promise<NextResponse> {
           item.source_tier,
           credibility,
           weights,
-          engagement
+          engagement,
+          myTools,
         );
 
         const { error: updateError } = await supabase
@@ -175,6 +194,8 @@ async function handleScoreItems(request: NextRequest): Promise<NextResponse> {
       total_items: items.length,
       scored,
       errors,
+      scoring_version: myTools ? 'V2' : 'V1',
+      rescore: rescore === 'all',
       weights_used: weights,
     });
   } catch (error) {

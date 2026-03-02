@@ -1,8 +1,10 @@
 /**
  * NVA (News Value Assessment) rule-based scorer.
  *
- * Computes 5-axis scores (social, media, community, technical, solo_relevance)
- * for collected items using keyword matching and source metadata.
+ * V1: 5-axis weighted average (social, media, community, technical, solo_relevance)
+ * V2: 3-component model (workflow_impact×0.45 + signal_strength×0.30 + classification_mod×0.25)
+ *     Activated when myTools config is provided.
+ *
  * No AI/LLM calls -- purely deterministic rules.
  */
 
@@ -32,6 +34,12 @@ export interface ScoringWeights {
   community: number;
   technical: number;
   solo_relevance: number;
+}
+
+export interface MyToolsConfig {
+  S: string[];  // daily-use tools (highest relevance)
+  A: string[];  // would-try tools
+  B: string[];  // might-use tools
 }
 
 export const DEFAULT_WEIGHTS: ScoringWeights = {
@@ -335,6 +343,64 @@ function extractRelevanceTags(text: string): string[] {
 }
 
 // ---------------------------------------------------------------------------
+// V2 scoring helpers
+// ---------------------------------------------------------------------------
+
+/** Classification → fixed score for classification_modifier component */
+const CLASSIFICATION_SCORES: Record<string, number> = {
+  'product-release': 90,
+  'product-update': 75,
+  'security-vulnerability': 80,
+  'tutorial-guide': 65,
+  'case-study': 60,
+  'benchmark-comparison': 55,
+  'research-paper': 50,
+  'community-trend': 45,
+  'opinion-analysis': 40,
+  'funding-acquisition': 30,
+  'partnership': 25,
+  'regulatory-policy': 20,
+};
+
+/** Classification → bonus for workflow_impact component */
+const CLASSIFICATION_WORKFLOW_BONUS: Record<string, number> = {
+  'product-release': 20,
+  'product-update': 15,
+  'security-vulnerability': 15,
+  'tutorial-guide': 10,
+  'case-study': 10,
+};
+
+/** Compute workflow_impact (0-100) using MyToolsConfig + classification */
+function computeWorkflowImpact(
+  relevanceTags: string[],
+  classification: string,
+  myTools: MyToolsConfig,
+): number {
+  // Find highest tier match
+  let base = 20; // no match
+  for (const tag of relevanceTags) {
+    if (myTools.S.includes(tag)) { base = Math.max(base, 80); break; }
+    if (myTools.A.includes(tag)) { base = Math.max(base, 60); }
+    if (myTools.B.includes(tag)) { base = Math.max(base, 40); }
+  }
+
+  const bonus = CLASSIFICATION_WORKFLOW_BONUS[classification] ?? 0;
+  return Math.min(100, base + bonus);
+}
+
+/** Compute signal_strength (0-100) from existing social/media/community scores (each 0-20) */
+function computeSignalStrength(social: number, media: number, community: number): number {
+  const avg = (social + media + community) / 3;
+  return Math.min(100, Math.round(avg * 5));
+}
+
+/** Compute classification_modifier (0-100) from classification */
+function computeClassificationModifier(classification: string): number {
+  return CLASSIFICATION_SCORES[classification] ?? 40;
+}
+
+// ---------------------------------------------------------------------------
 // Routing logic
 // ---------------------------------------------------------------------------
 
@@ -390,12 +456,13 @@ export function computeNvaScores(
   sourceTier: 'primary' | 'secondary' | 'tertiary',
   sourceCredibility: number,
   weights: ScoringWeights,
-  engagement?: { likes?: number | null; retweets?: number | null; replies?: number | null; views?: number | null }
+  engagement?: { likes?: number | null; retweets?: number | null; replies?: number | null; views?: number | null },
+  myTools?: MyToolsConfig | null,
 ): NvaScores {
   // Combine title and summary for analysis
   const combinedText = [title, contentSummary || ''].join(' ');
 
-  // Compute individual axis scores
+  // Compute individual axis scores (used by both V1 and V2)
   const social = scoreSocial(sourceTier, contentSummary, engagement);
   const media = scoreMedia(sourceTier, sourceCredibility);
   const community = scoreCommunity(sourceTier);
@@ -408,7 +475,66 @@ export function computeNvaScores(
   // Relevance tags
   const relevanceTags = extractRelevanceTags(combinedText);
 
-  // Weighted total
+  let nvaTotal: number;
+  let reasoningParts: string[];
+
+  if (myTools) {
+    // --- V2 path: 3-component model ---
+    const workflowImpact = computeWorkflowImpact(relevanceTags, classification, myTools);
+    const signalStrength = computeSignalStrength(social, media, community);
+    const classificationMod = computeClassificationModifier(classification);
+
+    nvaTotal = Math.round(
+      workflowImpact * 0.45 + signalStrength * 0.30 + classificationMod * 0.25
+    );
+
+    reasoningParts = [
+      `[V2][${sourceTier}] workflow=${workflowImpact} signal=${signalStrength} class_mod=${classificationMod}`,
+      `classification=${classification}(${confidence.toFixed(2)})`,
+    ];
+    if (relevanceTags.length > 0) {
+      reasoningParts.push(`tags=[${relevanceTags.join(',')}]`);
+    }
+    // Find matched tool tier for reasoning
+    const matchedTiers: string[] = [];
+    for (const tag of relevanceTags) {
+      if (myTools.S.includes(tag)) matchedTiers.push(`S:${tag}`);
+      else if (myTools.A.includes(tag)) matchedTiers.push(`A:${tag}`);
+      else if (myTools.B.includes(tag)) matchedTiers.push(`B:${tag}`);
+    }
+    if (matchedTiers.length > 0) {
+      reasoningParts.push(`tool_match=[${matchedTiers.join(',')}]`);
+    }
+
+    // Store V2 component values in existing DB columns:
+    // nva_technical ← workflow_impact (0-100 scaled to 0-20)
+    // nva_solo_relevance ← classification_modifier (0-100 scaled to 0-20)
+    const v2Technical = Math.round(workflowImpact / 5);
+    const v2SoloRelevance = Math.round(classificationMod / 5);
+
+    const clampedTotal = Math.min(100, Math.max(0, nvaTotal));
+    const routingTargets = computeRoutingTargets(clampedTotal, v2SoloRelevance, classification, relevanceTags);
+
+    if (routingTargets.length > 0) {
+      reasoningParts.push(`routing=[${routingTargets.join(',')}]`);
+    }
+
+    return {
+      nva_total: clampedTotal,
+      nva_social: social,
+      nva_media: media,
+      nva_community: community,
+      nva_technical: v2Technical,
+      nva_solo_relevance: v2SoloRelevance,
+      classification,
+      classification_confidence: Math.round(confidence * 100) / 100,
+      relevance_tags: relevanceTags,
+      routing_targets: routingTargets,
+      score_reasoning: reasoningParts.join(' | '),
+    };
+  }
+
+  // --- V1 path: weighted average ---
   const totalWeight =
     weights.social + weights.media + weights.community + weights.technical + weights.solo_relevance;
 
@@ -420,10 +546,10 @@ export function computeNvaScores(
     soloRelevance * weights.solo_relevance;
 
   // Scale from 0-20 axis range to 0-100 total range
-  const nvaTotal = Math.round((weightedSum / totalWeight) * 5);
+  nvaTotal = Math.round((weightedSum / totalWeight) * 5);
 
   // Build reasoning
-  const reasoningParts: string[] = [
+  reasoningParts = [
     `[${sourceTier}] social=${social} media=${media} community=${community} tech=${technical} solo=${soloRelevance}`,
     `classification=${classification}(${confidence.toFixed(2)})`,
   ];

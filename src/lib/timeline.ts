@@ -22,6 +22,7 @@ export interface TimelineItem {
   companyName: string | null;
   companySlug: string | null;
   isJapaneseSource: boolean;
+  sourceTier: 'primary' | 'secondary' | 'tertiary';
 }
 
 export interface TimelineGroup {
@@ -74,6 +75,64 @@ function formatDisplayDate(dateStr: string): string {
 // Data fetching
 // ---------------------------------------------------------------------------
 
+const SELECT_COLUMNS = `
+  id,
+  title,
+  title_ja,
+  url,
+  published_at,
+  collected_at,
+  classification,
+  nva_total,
+  content_summary,
+  content_id,
+  source_id,
+  sources!inner (
+    id,
+    name,
+    domain,
+    source_type,
+    company_id,
+    companies (
+      id,
+      slug,
+      name
+    )
+  ),
+  contents!collected_items_content_id_fkey (
+    slug
+  )
+`;
+
+const JAPANESE_RE = /[ぁ-んァ-ヶ一-龯々〆ヵヶ]/u;
+
+function mapRowToTimelineItem(row: any): TimelineItem {
+  const source = row.sources;
+  const company = source?.companies ?? null;
+  const content = row.contents;
+  const sourceType: string = source?.source_type ?? 'primary';
+  return {
+    id: row.id,
+    title: row.title,
+    titleJa: row.title_ja,
+    originalTitle: row.title,
+    url: row.url,
+    publishedAt: row.published_at,
+    collectedAt: row.collected_at,
+    classification: row.classification,
+    nvaTotal: row.nva_total,
+    contentSummary: row.content_summary || null,
+    contentSlug: content?.slug ?? null,
+    sourceName: source?.name ?? 'Unknown',
+    sourceDomain: source?.domain ?? null,
+    companyId: company?.id ?? null,
+    companyName: company?.name ?? null,
+    companySlug: company?.slug ?? null,
+    isJapaneseSource: JAPANESE_RE.test(row.title || ''),
+    sourceTier: sourceType as 'primary' | 'secondary' | 'tertiary',
+  };
+}
+
 export async function getTimelineItems(): Promise<TimelineGroup[]> {
   const supabase = getSupabaseClient();
   if (!supabase) {
@@ -84,81 +143,62 @@ export async function getTimelineItems(): Promise<TimelineGroup[]> {
   const thirtyDaysAgo = new Date();
   thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
   const cutoff = thirtyDaysAgo.toISOString();
+  const dateFilter = `published_at.gte.${cutoff},and(published_at.is.null,collected_at.gte.${cutoff})`;
 
-  // Fetch all primary-tier collected items (explicit limit to avoid default 1000 cap).
-  // Use OR filter: published_at in last 30 days, or no published_at and collected_at in last 30 days.
-  const query: any = supabase
+  // 3 queries: PostgREST embedded resource filter doesn't support .in(),
+  // so we query each tier separately and merge.
+
+  // Query 1: Primary sources (all items)
+  const q1: any = supabase
     .from('collected_items')
-    .select(`
-      id,
-      title,
-      title_ja,
-      url,
-      published_at,
-      collected_at,
-      classification,
-      nva_total,
-      content_summary,
-      content_id,
-      source_id,
-      sources!inner (
-        id,
-        name,
-        domain,
-        source_type,
-        company_id,
-        companies (
-          id,
-          slug,
-          name
-        )
-      ),
-      contents!collected_items_content_id_fkey (
-        slug
-      )
-    `)
+    .select(SELECT_COLUMNS)
     .eq('sources.source_type', 'primary')
-    .or(`published_at.gte.${cutoff},and(published_at.is.null,collected_at.gte.${cutoff})`)
+    .or(dateFilter)
     .order('published_at', { ascending: false, nullsFirst: false })
     .limit(3000);
 
-  const { data, error } = await query;
+  // Query 2: Secondary sources (all items)
+  const q2: any = supabase
+    .from('collected_items')
+    .select(SELECT_COLUMNS)
+    .eq('sources.source_type', 'secondary')
+    .or(dateFilter)
+    .order('published_at', { ascending: false, nullsFirst: false })
+    .limit(1000);
 
-  if (error) {
-    console.error('[timeline] Query error:', error);
-    return [];
+  // Query 3: Tertiary sources with NVA quality threshold
+  const q3: any = supabase
+    .from('collected_items')
+    .select(SELECT_COLUMNS)
+    .eq('sources.source_type', 'tertiary')
+    .gte('nva_total', 55)
+    .or(dateFilter)
+    .order('published_at', { ascending: false, nullsFirst: false })
+    .limit(500);
+
+  const [result1, result2, result3] = await Promise.all([q1, q2, q3]);
+
+  if (result1.error) {
+    console.error('[timeline] Query 1 (primary) error:', result1.error);
+  }
+  if (result2.error) {
+    console.error('[timeline] Query 2 (secondary) error:', result2.error);
+  }
+  if (result3.error) {
+    console.error('[timeline] Query 3 (tertiary) error:', result3.error);
   }
 
-  if (!data || data.length === 0) return [];
+  const data1 = (result1.data as any[]) ?? [];
+  const data2 = (result2.data as any[]) ?? [];
+  const data3 = (result3.data as any[]) ?? [];
+
+  const allData = [...data1, ...data2, ...data3];
+  if (allData.length === 0) return [];
 
   // Map to TimelineItem
-  const JAPANESE_RE = /[ぁ-んァ-ヶ一-龯々〆ヵヶ]/u;
-  const allItems: TimelineItem[] = (data as any[]).map((row) => {
-    const source = row.sources;
-    const company = source?.companies ?? null;
-    const content = row.contents;
-    return {
-      id: row.id,
-      title: row.title,
-      titleJa: row.title_ja,
-      originalTitle: row.title,
-      url: row.url,
-      publishedAt: row.published_at,
-      collectedAt: row.collected_at,
-      classification: row.classification,
-      nvaTotal: row.nva_total,
-      contentSummary: row.content_summary || null,
-      contentSlug: content?.slug ?? null,
-      sourceName: source?.name ?? 'Unknown',
-      sourceDomain: source?.domain ?? null,
-      companyId: company?.id ?? null,
-      companyName: company?.name ?? null,
-      companySlug: company?.slug ?? null,
-      isJapaneseSource: JAPANESE_RE.test(row.title || ''),
-    };
-  });
+  const allItems: TimelineItem[] = allData.map(mapRowToTimelineItem);
 
-  // Deduplicate by (source_id, title) — keep most recent collected_at
+  // Deduplicate by (sourceName, title) — keep most recent collected_at
   const seen = new Map<string, TimelineItem>();
   for (const item of allItems) {
     const key = `${item.sourceName}::${item.title}`;
@@ -198,14 +238,14 @@ export async function getTimelineItems(): Promise<TimelineGroup[]> {
   return groups;
 }
 
-export async function getPrimarySources(): Promise<TimelineSource[]> {
+export async function getAllSources(): Promise<TimelineSource[]> {
   const supabase = getSupabaseClient();
   if (!supabase) return [];
 
   const { data, error } = await supabase
     .from('sources')
     .select('id, name, domain')
-    .eq('source_type', 'primary')
+    .in('source_type', ['primary', 'secondary', 'tertiary'])
     .eq('is_active', true)
     .order('name');
 

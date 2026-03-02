@@ -11,9 +11,19 @@ interface TimelineViewProps {
 
 const ALL_KEY = '__all__';
 
+type TierFilter = typeof ALL_KEY | 'primary' | 'secondary' | 'tertiary';
+
+const TIER_LABELS: { key: TierFilter; label: string }[] = [
+  { key: ALL_KEY, label: 'すべて' },
+  { key: 'primary', label: '公式' },
+  { key: 'secondary', label: 'メディア' },
+  { key: 'tertiary', label: 'コミュニティ' },
+];
+
 export default function TimelineView({ groups, sources, companies }: TimelineViewProps) {
   const [activeSource, setActiveSource] = useState(ALL_KEY);
   const [activeCompany, setActiveCompany] = useState(ALL_KEY);
+  const [activeTier, setActiveTier] = useState<TierFilter>(ALL_KEY);
 
   // Count items per source
   const sourceCounts = useMemo(() => {
@@ -39,14 +49,28 @@ export default function TimelineView({ groups, sources, companies }: TimelineVie
     return counts;
   }, [groups]);
 
+  // Count items per tier
+  const tierCounts = useMemo(() => {
+    const counts = new Map<TierFilter, number>();
+    let total = 0;
+    for (const group of groups) {
+      for (const item of group.items) {
+        counts.set(item.sourceTier, (counts.get(item.sourceTier) || 0) + 1);
+        total++;
+      }
+    }
+    counts.set(ALL_KEY, total);
+    return counts;
+  }, [groups]);
+
   const totalCount = useMemo(
     () => groups.reduce((sum, g) => sum + g.items.length, 0),
     [groups]
   );
 
-  // 3-axis AND filter
+  // 3-axis AND filter (source × company × tier)
   const filteredGroups = useMemo(() => {
-    const noFilter = activeSource === ALL_KEY && activeCompany === ALL_KEY;
+    const noFilter = activeSource === ALL_KEY && activeCompany === ALL_KEY && activeTier === ALL_KEY;
     if (noFilter) return groups;
 
     return groups
@@ -55,11 +79,12 @@ export default function TimelineView({ groups, sources, companies }: TimelineVie
         items: g.items.filter((item) => {
           if (activeSource !== ALL_KEY && item.sourceName !== activeSource) return false;
           if (activeCompany !== ALL_KEY && item.companyId !== activeCompany) return false;
+          if (activeTier !== ALL_KEY && item.sourceTier !== activeTier) return false;
           return true;
         }),
       }))
       .filter((g) => g.items.length > 0);
-  }, [groups, activeSource, activeCompany]);
+  }, [groups, activeSource, activeCompany, activeTier]);
 
   // Sources that actually have items, sorted by count desc
   const activeSources = useMemo(() => {
@@ -105,7 +130,7 @@ export default function TimelineView({ groups, sources, companies }: TimelineVie
 
       {/* Company Filter Chips */}
       {activeCompanies.length > 0 && (
-        <div className="mb-8">
+        <div className="mb-4">
           <div className="text-[10px] font-semibold text-text-light uppercase tracking-wider mb-2">
             企業
           </div>
@@ -128,6 +153,24 @@ export default function TimelineView({ groups, sources, companies }: TimelineVie
           </div>
         </div>
       )}
+
+      {/* Tier Filter Chips */}
+      <div className="mb-8">
+        <div className="text-[10px] font-semibold text-text-light uppercase tracking-wider mb-2">
+          タイプ
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {TIER_LABELS.map(({ key, label }) => (
+            <FilterChip
+              key={key}
+              label={label}
+              count={tierCounts.get(key) || 0}
+              isActive={activeTier === key}
+              onClick={() => setActiveTier(activeTier === key ? ALL_KEY : key)}
+            />
+          ))}
+        </div>
+      </div>
 
       {/* Timeline */}
       {filteredGroups.length > 0 ? (
@@ -271,8 +314,8 @@ function TimelineCard({ item }: { item: TimelineItem }) {
     hour12: false,
   });
 
-  // [Feature 1] NVA-based visual hierarchy
-  const isHighNva = item.nvaTotal != null && item.nvaTotal >= 75;
+  // [Feature 1] NVA-based visual hierarchy (V2: lowered to ≥70)
+  const isHighNva = item.nvaTotal != null && item.nvaTotal >= 70;
   const cardBorderClass = isHighNva
     ? 'border-l-[3px] border-l-accent-moss border border-border'
     : 'border border-border';
@@ -303,6 +346,12 @@ function TimelineCard({ item }: { item: TimelineItem }) {
             {showLangBadge && (
               <span className="inline-flex items-center px-1 py-0.5 rounded text-[9px] font-medium bg-blue-50 text-blue-400 border border-blue-100">
                 EN
+              </span>
+            )}
+            {/* Tier badge for community sources */}
+            {item.sourceTier === 'tertiary' && (
+              <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-medium bg-amber-50 text-amber-500 border border-amber-100">
+                コミュニティ
               </span>
             )}
             <span className="text-[10px] text-text-light">{time}</span>
@@ -367,9 +416,9 @@ function TimelineCard({ item }: { item: TimelineItem }) {
           <div className="flex-shrink-0 text-right">
             <div
               className={`text-xs font-bold tabular-nums ${
-                item.nvaTotal >= 75
+                item.nvaTotal >= 70
                   ? 'text-accent-moss'
-                  : item.nvaTotal >= 60
+                  : item.nvaTotal >= 50
                   ? 'text-accent-bark'
                   : 'text-text-light'
               }`}
