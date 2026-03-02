@@ -1,1 +1,0 @@
-/Users/satokeita/.openclaw/skills/x-rsshub/SKILL.md
