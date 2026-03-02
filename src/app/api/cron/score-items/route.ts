@@ -85,9 +85,7 @@ async function handleScoreItems(request: NextRequest): Promise<NextResponse> {
 
     // 2. Fetch items to score
     const rescore = searchParams.get('rescore');
-    let query = supabase
-      .from('collected_items')
-      .select(`
+    const selectCols = `
         id,
         source_id,
         source_tier,
@@ -101,15 +99,24 @@ async function handleScoreItems(request: NextRequest): Promise<NextResponse> {
           credibility_score,
           entity_kind
         )
-      `)
-      .order('collected_at', { ascending: true })
-      .limit(limit);
+    `;
 
+    let query;
     if (rescore === 'all') {
-      // Rescore both new and already-scored items (for V2 migration)
-      query = query.in('status', ['new', 'scored']);
+      // Rescore: order by scored_at ASC NULLS FIRST so unscored/oldest come first
+      query = supabase
+        .from('collected_items')
+        .select(selectCols)
+        .in('status', ['new', 'scored'])
+        .order('scored_at', { ascending: true, nullsFirst: true })
+        .limit(limit);
     } else {
-      query = query.eq('status', 'new');
+      query = supabase
+        .from('collected_items')
+        .select(selectCols)
+        .eq('status', 'new')
+        .order('collected_at', { ascending: true })
+        .limit(limit);
     }
 
     const { data: items, error: fetchError } = await query;
