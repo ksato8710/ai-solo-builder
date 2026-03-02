@@ -38,44 +38,26 @@ export default function NewsFilterChips({ posts }: NewsFilterChipsProps) {
 
   return (
     <div>
-      {/* Chips */}
-      {tagCounts.size > 0 && (
-        <div className="flex flex-wrap gap-2 mb-8">
-          {/* "All" chip */}
+      {/* Active filter indicator */}
+      {activeTag !== ALL_KEY && (
+        <div className="flex items-center gap-2 mb-6">
+          <span className="text-sm text-text-muted">フィルター:</span>
+          <span
+            className="px-3 py-1 rounded-full text-xs font-semibold"
+            style={{
+              backgroundColor: chipColor(activeTag) + '33',
+              color: chipColor(activeTag),
+              border: `1px solid ${chipColor(activeTag)}66`,
+            }}
+          >
+            {chipLabel(activeTag)}
+          </span>
           <button
             onClick={() => setActiveTag(ALL_KEY)}
-            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
-              activeTag === ALL_KEY
-                ? 'bg-accent-bark/20 text-text-deep border border-accent-bark/40'
-                : 'bg-bg-card text-text-muted border border-transparent'
-            }`}
+            className="text-xs text-text-muted hover:text-text-deep transition-colors"
           >
-            すべて
-            <span className="ml-1.5 opacity-60">{posts.length}</span>
+            ✕ クリア
           </button>
-
-          {/* Dynamic tag chips */}
-          {[...tagCounts.entries()].map(([tag, count]) => {
-            const isActive = activeTag === tag;
-            const color = chipColor(tag);
-            return (
-              <button
-                key={tag}
-                onClick={() => setActiveTag(isActive ? ALL_KEY : tag)}
-                className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                  !isActive ? 'bg-bg-card text-text-muted border border-transparent' : ''
-                }`}
-                style={isActive ? {
-                  backgroundColor: color + '33',
-                  color,
-                  border: `1px solid ${color}66`,
-                } : undefined}
-              >
-                {chipLabel(tag)}
-                <span className="ml-1.5 opacity-60">{count}</span>
-              </button>
-            );
-          })}
         </div>
       )}
 
@@ -91,6 +73,50 @@ export default function NewsFilterChips({ posts }: NewsFilterChipsProps) {
           <p className="text-6xl mb-4 opacity-20">📰</p>
           <h3 className="font-heading text-xl font-bold text-text-deep mb-2">記事がありません</h3>
           <p className="text-text-muted text-sm">このタグにはまだ記事がありません。</p>
+        </div>
+      )}
+
+      {/* Tag Chips — bottom of page */}
+      {tagCounts.size > 0 && (
+        <div className="mt-12 pt-8 border-t border-border-subtle">
+          <h2 className="text-sm font-semibold text-text-muted mb-4">タグで絞り込む</h2>
+          <div className="flex flex-wrap gap-2">
+            {/* "All" chip */}
+            <button
+              onClick={() => setActiveTag(ALL_KEY)}
+              className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                activeTag === ALL_KEY
+                  ? 'bg-accent-bark/20 text-text-deep border border-accent-bark/40'
+                  : 'bg-bg-card text-text-muted border border-transparent'
+              }`}
+            >
+              すべて
+              <span className="ml-1.5 opacity-60">{posts.length}</span>
+            </button>
+
+            {/* Dynamic tag chips */}
+            {[...tagCounts.entries()].map(([tag, count]) => {
+              const isActive = activeTag === tag;
+              const color = chipColor(tag);
+              return (
+                <button
+                  key={tag}
+                  onClick={() => setActiveTag(isActive ? ALL_KEY : tag)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                    !isActive ? 'bg-bg-card text-text-muted border border-transparent' : ''
+                  }`}
+                  style={isActive ? {
+                    backgroundColor: color + '33',
+                    color,
+                    border: `1px solid ${color}66`,
+                  } : undefined}
+                >
+                  {chipLabel(tag)}
+                  <span className="ml-1.5 opacity-60">{count}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>
