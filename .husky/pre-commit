@@ -1,3 +1,3 @@
 #!/bin/sh
 node scripts/validate-content-db.mjs
-npm run check:images:db
+npm run check:images
