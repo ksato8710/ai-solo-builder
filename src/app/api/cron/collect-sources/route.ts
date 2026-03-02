@@ -302,7 +302,7 @@ async function handleCollectSources(request: NextRequest): Promise<NextResponse>
 
           let { error: insertError } = await supabase
             .from('collected_items')
-            .insert(rows);
+            .upsert(rows, { onConflict: 'url_hash', ignoreDuplicates: true });
 
           // Backward compatibility: if migration isn't applied yet, retry without title_ja.
           if (insertError?.message?.includes('title_ja')) {
@@ -322,7 +322,7 @@ async function handleCollectSources(request: NextRequest): Promise<NextResponse>
             }));
             const retry = await supabase
               .from('collected_items')
-              .insert(rowsWithoutTitleJa);
+              .upsert(rowsWithoutTitleJa, { onConflict: 'url_hash', ignoreDuplicates: true });
             insertError = retry.error;
           }
 

@@ -103,6 +103,7 @@ export default function RootLayout({
                 <a href="/#digest-summary" className="text-text-muted hover:text-accent-leaf transition-colors">🗞️ ダイジェスト</a>
                 <a href="/news" className="text-text-muted hover:text-accent-leaf transition-colors">📰 ニュース</a>
                 <a href="/category/products" className="text-text-muted hover:text-accent-leaf transition-colors">🏷️ プロダクト</a>
+                <a href="/timeline" className="text-text-muted hover:text-accent-leaf transition-colors">📡 タイムライン</a>
               </nav>
 
               {/* Actions */}
@@ -113,10 +114,11 @@ export default function RootLayout({
             </div>
 
             {/* Mobile Navigation - Bottom Row */}
-            <nav className="md:hidden flex items-center justify-center gap-6 pb-2 text-xs">
+            <nav className="md:hidden flex items-center justify-center gap-4 pb-2 text-xs">
               <a href="/#digest-summary" className="text-text-muted hover:text-accent-leaf transition-colors">🗞️ ダイジェスト</a>
               <a href="/news" className="text-text-muted hover:text-accent-leaf transition-colors">📰 ニュース</a>
               <a href="/category/products" className="text-text-muted hover:text-accent-leaf transition-colors">🏷️ プロダクト</a>
+              <a href="/timeline" className="text-text-muted hover:text-accent-leaf transition-colors">📡 タイムライン</a>
             </nav>
           </div>
 
