@@ -5,6 +5,8 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod';
 import {
   CreateArticleSchema,
+  PublishArticleSchema,
+  UpdateArticleSchema,
   type ArticleType,
   GetArticleSchema,
   ListArticlesSchema,
@@ -504,10 +506,9 @@ server.registerTool(
       const db = getDb();
       const typeMapping = mapInputType(input.type);
 
-      const baseSlug = generateSlug(input.title);
+      const baseSlug = input.slug ?? generateSlug(input.title);
       const slug = await ensureUniqueSlug(baseSlug);
-      const now = new Date();
-      const today = now.toISOString().slice(0, 10);
+      const today = new Date().toISOString().slice(0, 10);
 
       const tagCodes = normalizeTags([
         ...input.tags,
@@ -517,12 +518,14 @@ server.registerTool(
       const insertPayload: ContentInsert = {
         slug,
         title: input.title,
-        description: buildDescription(input.body),
+        description: input.description ?? buildDescription(input.body),
         body_markdown: input.body,
         content_type: typeMapping.contentType,
         status: 'draft',
-        date: today,
-        read_time: estimateReadTime(input.body),
+        date: input.date ?? today,
+        read_time: input.readTime ?? estimateReadTime(input.body),
+        featured: input.featured ?? false,
+        hero_image_url: input.heroImageUrl ?? null,
         authoring_source: 'db',
       };
 
@@ -627,6 +630,205 @@ server.registerTool(
 
       return success({
         message: `記事ステータスを ${currentStatus} から ${nextStatus} に更新しました`,
+      });
+    } catch (error) {
+      return failure(error);
+    }
+  }
+);
+
+server.registerTool(
+  'publish_article',
+  {
+    description:
+      '記事を作成して即座に公開する（ワンステップ公開）。slug必須。hero_image_urlは自動で /thumbnails/{slug}.png に設定される。',
+    inputSchema: PublishArticleSchema,
+  },
+  async (params) => {
+    try {
+      const input = PublishArticleSchema.parse(params);
+      const db = getDb();
+      const typeMapping = mapInputType(input.type);
+      const today = new Date().toISOString().slice(0, 10);
+      const now = new Date().toISOString();
+
+      // slug重複チェック
+      const { data: existingSlug } = await db
+        .from('contents')
+        .select('id')
+        .eq('slug', input.slug)
+        .maybeSingle();
+
+      if (existingSlug) {
+        throw new Error(
+          `slug "${input.slug}" は既に使用されています。別のslugを指定してください。`
+        );
+      }
+
+      const tagCodes = normalizeTags([
+        ...input.tags,
+        ...(typeMapping.forcedTag ? [typeMapping.forcedTag] : []),
+      ]);
+
+      const insertPayload: ContentInsert = {
+        slug: input.slug,
+        title: input.title,
+        description: input.description ?? buildDescription(input.body),
+        body_markdown: input.body,
+        content_type: typeMapping.contentType,
+        status: 'published',
+        date: input.date ?? today,
+        read_time: input.readTime ?? estimateReadTime(input.body),
+        featured: input.featured ?? false,
+        hero_image_url: `/thumbnails/${input.slug}.png`,
+        published_at: now,
+        authoring_source: 'db',
+      };
+
+      const { data: created, error: createError } = await db
+        .from('contents')
+        .insert(insertPayload)
+        .select('*')
+        .single();
+
+      if (createError) {
+        throw new Error(`記事作成失敗: ${createError.message}`);
+      }
+
+      // digest_details
+      if (typeMapping.digestEdition) {
+        const { error: digestError } = await db.from('digest_details').upsert(
+          {
+            content_id: created.id,
+            edition: typeMapping.digestEdition,
+            digest_date: input.date ?? today,
+          },
+          { onConflict: 'content_id' }
+        );
+
+        if (digestError) {
+          throw new Error(`digest_details 作成失敗: ${digestError.message}`);
+        }
+      }
+
+      // タグリンク
+      if (tagCodes.length > 0) {
+        const tagIds = await ensureTagIds(tagCodes);
+        if (tagIds.length > 0) {
+          const { error: linkError } = await db.from('content_tags').upsert(
+            tagIds.map((tagId) => ({
+              content_id: created.id,
+              tag_id: tagId,
+            })),
+            { onConflict: 'content_id,tag_id' }
+          );
+
+          if (linkError) {
+            throw new Error(`content_tags 作成失敗: ${linkError.message}`);
+          }
+        }
+      }
+
+      const publicUrl = `https://ai-solo-craft.craftgarden.studio/news/${created.slug}`;
+
+      return success({
+        id: created.id,
+        slug: created.slug,
+        status: 'published',
+        publicUrl,
+        heroImageUrl: created.hero_image_url,
+        message: `記事を公開しました: ${publicUrl}`,
+        note: 'サムネイル画像は /thumbnails/{slug}.png を想定しています。サムネイル生成が必要な場合は ai-solo-craft プロジェクトで npm run generate:thumbnail -- --slug "${created.slug}" --no-ai を実行してください。Vercel再デプロイ後にホーム画面に反映されます。',
+      });
+    } catch (error) {
+      return failure(error);
+    }
+  }
+);
+
+server.registerTool(
+  'update_article',
+  {
+    description:
+      '既存記事の内容・メタデータを更新する。id または slug で対象を指定し、更新したいフィールドのみを渡す。',
+    inputSchema: UpdateArticleSchema,
+  },
+  async (params) => {
+    try {
+      const input = UpdateArticleSchema.parse(params);
+      const db = getDb();
+
+      // 対象記事を取得
+      let query = db.from('contents').select('*').limit(1);
+      query = input.id ? query.eq('id', input.id) : query.eq('slug', input.slug!);
+      const { data: existing, error: findError } = await query.maybeSingle();
+
+      if (findError) {
+        throw new Error(`記事検索失敗: ${findError.message}`);
+      }
+
+      if (!existing) {
+        throw new Error('指定された記事が見つかりません');
+      }
+
+      // 更新ペイロード構築
+      const updatePayload: ContentUpdate = {};
+
+      if (input.title !== undefined) updatePayload.title = input.title;
+      if (input.body !== undefined) updatePayload.body_markdown = input.body;
+      if (input.description !== undefined) updatePayload.description = input.description;
+      if (input.featured !== undefined) updatePayload.featured = input.featured;
+      if (input.date !== undefined) updatePayload.date = input.date;
+      if (input.heroImageUrl !== undefined) updatePayload.hero_image_url = input.heroImageUrl;
+
+      if (input.body !== undefined && input.readTime === undefined) {
+        updatePayload.read_time = estimateReadTime(input.body);
+      }
+
+      if (input.readTime !== undefined) {
+        updatePayload.read_time = input.readTime;
+      }
+
+      // コンテンツ更新
+      if (Object.keys(updatePayload).length > 0) {
+        const { error: updateError } = await db
+          .from('contents')
+          .update(updatePayload)
+          .eq('id', existing.id);
+
+        if (updateError) {
+          throw new Error(`記事更新失敗: ${updateError.message}`);
+        }
+      }
+
+      // タグ更新（指定時は全置換）
+      if (input.tags !== undefined) {
+        // 既存タグリンクを削除
+        await db.from('content_tags').delete().eq('content_id', existing.id);
+
+        const tagCodes = normalizeTags(input.tags);
+        if (tagCodes.length > 0) {
+          const tagIds = await ensureTagIds(tagCodes);
+          if (tagIds.length > 0) {
+            const { error: linkError } = await db.from('content_tags').upsert(
+              tagIds.map((tagId) => ({
+                content_id: existing.id,
+                tag_id: tagId,
+              })),
+              { onConflict: 'content_id,tag_id' }
+            );
+
+            if (linkError) {
+              throw new Error(`content_tags 更新失敗: ${linkError.message}`);
+            }
+          }
+        }
+      }
+
+      return success({
+        id: existing.id,
+        slug: existing.slug,
+        message: `記事を更新しました (${existing.slug})`,
       });
     } catch (error) {
       return failure(error);

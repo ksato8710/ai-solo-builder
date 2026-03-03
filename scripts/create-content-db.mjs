@@ -67,13 +67,14 @@ async function main() {
       let { data: tag } = await supabase
         .from('tags')
         .select('id')
-        .eq('name', tagName)
+        .eq('code', tagName)
         .single();
-      
+
       if (!tag) {
+        const label = tagName.split(/[-_]/).filter(Boolean).map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
         const { data: newTag } = await supabase
           .from('tags')
-          .insert({ name: tagName, slug: tagName.toLowerCase().replace(/\s+/g, '-') })
+          .insert({ code: tagName, label })
           .select()
           .single();
         tag = newTag;
