@@ -6,9 +6,9 @@ import type { EvolutionEntry, ProductKey } from '@/components/EvolutionView';
 export const revalidate = 300; // ISR 5 minutes
 
 export const metadata = {
-  title: 'AI Evolution — Claude・Codex・Gemini・Figma の最新動向 | AI Solo Craft',
+  title: 'AI Evolution — Claude・Codex・Gemini・Figma・Grok の最新動向 | AI Solo Craft',
   description:
-    'Claude, Codex, Gemini, Figma — 主要AIツールの公式アップデートとコミュニティの反応をリアルタイムで追跡',
+    'Claude, Codex, Gemini, Figma, Grok — 主要AIツールの公式アップデートとコミュニティの反応をリアルタイムで追跡',
 };
 
 // ---------------------------------------------------------------------------
@@ -20,6 +20,7 @@ const SLUG_TO_PRODUCT: Record<string, ProductKey> = {
   openai: 'codex',
   google: 'gemini',
   figma: 'figma',
+  xai: 'grok',
 };
 
 const TARGET_SLUGS = new Set(Object.keys(SLUG_TO_PRODUCT));

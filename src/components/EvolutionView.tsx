@@ -7,7 +7,7 @@ import type { TimelineItem } from '@/lib/timeline';
 // Public types (shared with page.tsx)
 // ---------------------------------------------------------------------------
 
-export type ProductKey = 'claude' | 'codex' | 'gemini' | 'figma';
+export type ProductKey = 'claude' | 'codex' | 'gemini' | 'figma' | 'grok';
 
 export interface EvolutionEntry {
   id: string;
@@ -91,9 +91,21 @@ const PRODUCTS: Record<ProductKey, ProductDef> = {
     gradientFrom: 'from-violet-500',
     gradientTo: 'to-purple-400',
   },
+  grok: {
+    key: 'grok',
+    label: 'Grok',
+    abbr: 'GR',
+    companyName: 'xAI',
+    badge: 'bg-rose-50 text-rose-700 border-rose-200',
+    badgeActive: 'bg-rose-600 text-white border-rose-600',
+    accent: 'border-l-rose-500',
+    dot: 'bg-rose-500',
+    gradientFrom: 'from-rose-500',
+    gradientTo: 'to-pink-400',
+  },
 };
 
-const PRODUCT_LIST: ProductKey[] = ['claude', 'codex', 'gemini', 'figma'];
+const PRODUCT_LIST: ProductKey[] = ['claude', 'codex', 'gemini', 'figma', 'grok'];
 const ALL_KEY = '__all__';
 
 // ---------------------------------------------------------------------------
@@ -228,6 +240,7 @@ function HeroSection({ stats }: { stats: { updates: number; resources: number; s
         <div className="absolute top-20 right-1/4 w-64 h-64 bg-emerald-200/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-blue-200/15 rounded-full blur-3xl" />
         <div className="absolute top-0 right-1/3 w-48 h-48 bg-violet-200/15 rounded-full blur-3xl" />
+        <div className="absolute top-16 right-1/6 w-56 h-56 bg-rose-200/15 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto px-4">
@@ -241,14 +254,14 @@ function HeroSection({ stats }: { stats: { updates: number; resources: number; s
         {/* Title */}
         <h1 className="font-heading text-5xl sm:text-6xl font-extrabold tracking-tight leading-none mb-4">
           <span className="text-text-deep">AI</span>{' '}
-          <span className="bg-gradient-to-r from-amber-500 via-emerald-500 via-blue-500 to-violet-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-amber-500 via-emerald-500 via-blue-500 via-violet-500 to-rose-500 bg-clip-text text-transparent">
             Evolution
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-text-muted text-base sm:text-lg max-w-md mx-auto mb-8">
-          Claude・Codex・Gemini・Figma
+          Claude・Codex・Gemini・Figma・Grok
           <br className="sm:hidden" />
           — 主要AIツールの進化を追跡
         </p>
@@ -266,7 +279,7 @@ function HeroSection({ stats }: { stats: { updates: number; resources: number; s
           </div>
           <div className="w-px h-8 bg-border" />
           <div>
-            <div className="text-2xl font-bold text-text-deep">4</div>
+            <div className="text-2xl font-bold text-text-deep">5</div>
             <div className="text-[11px] text-text-light uppercase tracking-wider">Products</div>
           </div>
         </div>
