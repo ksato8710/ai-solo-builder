@@ -117,8 +117,9 @@ const CLASSIFICATION_RULES: [RegExp, string][] = [
   [/\brolling\s+out\b/i, 'product-release'],
   // Model version releases (e.g., "Grok 4", "Claude 4", "GPT-5", "Gemini 2.0")
   [/\b(?:grok|claude|gpt|gemini|llama|mistral|codex)\s*[-]?\s*\d+(?:\.\d+)?(?:\s+(?:fast|mini|pro|ultra|nano|flash|beta|preview))?\b/i, 'product-release'],
-  // Named API products (e.g., "Grok Imagine API", "Collections API")
-  [/\b(?:grok|claude|gemini)\s+\w+\s+API\b/i, 'product-release'],
+  // Named API/product variants (e.g., "Grok Imagine API", "Grok Code Fast 1", "Grok Voice Agent")
+  [/\b(?:grok|claude|gemini)\s+\w+(?:\s+\w+)?\s+API\b/i, 'product-release'],
+  [/\b(?:grok|claude|gemini)\s+(?:code|voice|vision|image|video)\s+\w+/i, 'product-release'],
   // Product updates (features, improvements, integrations)
   [/\b(upgrades?|v\d+\.\d|patch(?:es)?|hotfix(?:es)?|new\s*features?|new\s*capabilit(?:y|ies)|アップデート|新機能|機能追加|対応開始)\b/i, 'product-update'],
   [/\b(connect(?:s|ed|ing|or)?|integration)\s+(?:to|for|with)\b/i, 'product-update'],

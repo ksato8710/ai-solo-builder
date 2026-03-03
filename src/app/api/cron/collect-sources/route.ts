@@ -88,9 +88,9 @@ async function handleCollectSources(request: NextRequest): Promise<NextResponse>
   const { searchParams } = request.nextUrl;
   const tierFilter = searchParams.get('tier'); // primary | secondary | tertiary
   const forceAll = searchParams.get('force') === 'true'; // skip interval check
-  const lookbackDaysParam = parseInt(searchParams.get('lookback_days') || '0', 10);
+  const lookbackDaysParam = parseInt(searchParams.get('lookback_days') || '30', 10);
   const lookbackDays = Number.isNaN(lookbackDaysParam)
-    ? 0
+    ? 30
     : Math.max(0, lookbackDaysParam);
 
   try {
@@ -266,12 +266,12 @@ async function handleCollectSources(request: NextRequest): Promise<NextResponse>
             }
           }
 
-          // Tertiary sources: only save items with minimum engagement signal
-          // This prevents storing thousands of zero-engagement community posts
+          // Tertiary sources: only save items with strong engagement signal
+          // This prevents storing low-engagement community posts
           if (sourceTier === 'tertiary') {
             const likes = item.engagement?.likes ?? 0;
             const replies = item.engagement?.replies ?? 0;
-            if (likes + replies < 5) {
+            if (likes + replies < 100) {
               engagementFiltered++;
               return false;
             }
@@ -393,7 +393,10 @@ async function handleCollectSources(request: NextRequest): Promise<NextResponse>
       results.push(result);
     }
 
-    // 7. Summary
+    // 7. Post-collection cleanup — enforce retention rules
+    const cleanup = await enforceRetentionRules(supabase);
+
+    // 8. Summary
     const totalCollected = results.reduce((sum, r) => sum + r.collected, 0);
     const totalDuplicates = results.reduce((sum, r) => sum + r.duplicates, 0);
     const errorCount = results.filter((r) => r.error).length;
@@ -406,6 +409,7 @@ async function handleCollectSources(request: NextRequest): Promise<NextResponse>
       total_collected: totalCollected,
       total_duplicates: totalDuplicates,
       errors: errorCount,
+      cleanup,
       results,
     });
   } catch (error) {
@@ -434,6 +438,65 @@ function mapSourceType(sourceType: string): 'primary' | 'secondary' | 'tertiary'
     default:
       return 'secondary';
   }
+}
+
+// ---------------------------------------------------------------------------
+// Retention rules — run after each collection to keep data volume in check
+// ---------------------------------------------------------------------------
+
+const RETENTION_PRIMARY_NVA_MIN = 55;
+const RETENTION_PRIMARY_MAX_AGE_DAYS = 90;
+const RETENTION_SECONDARY_MAX_AGE_DAYS = 90;
+
+interface CleanupResult {
+  primaryRemoved: number;
+  tertiaryRemoved: number;
+  secondaryRemoved: number;
+  totalAfter: number;
+}
+
+async function enforceRetentionRules(
+  supabase: ReturnType<typeof getAdminSupabaseClient>
+): Promise<CleanupResult> {
+  if (!supabase) return { primaryRemoved: 0, tertiaryRemoved: 0, secondaryRemoved: 0, totalAfter: 0 };
+
+  const now = new Date();
+  const primaryCutoff = new Date(now.getTime() - RETENTION_PRIMARY_MAX_AGE_DAYS * 86_400_000).toISOString();
+  const secondaryCutoff = new Date(now.getTime() - RETENTION_SECONDARY_MAX_AGE_DAYS * 86_400_000).toISOString();
+
+  // 1. Primary: remove items with NVA < 55 OR older than 90 days (keep published content)
+  const { data: primaryDel } = await supabase
+    .from('collected_items')
+    .delete()
+    .eq('source_tier', 'primary')
+    .is('content_id', null)
+    .or(`nva_total.lt.${RETENTION_PRIMARY_NVA_MIN},published_at.lt.${primaryCutoff},published_at.is.null`)
+    .select('id');
+
+  // 2. Tertiary: engagement gate is enforced at collection time (>= 100).
+  // No additional tertiary cleanup needed — low-engagement items are never stored.
+  const tertiaryRemoved = 0;
+
+  // 3. Secondary: same rules as primary — NVA < 55 OR older than 90 days (keep published content)
+  const { data: secondaryDel } = await supabase
+    .from('collected_items')
+    .delete()
+    .eq('source_tier', 'secondary')
+    .is('content_id', null)
+    .or(`nva_total.lt.${RETENTION_PRIMARY_NVA_MIN},published_at.lt.${secondaryCutoff},published_at.is.null`)
+    .select('id');
+
+  // 4. Count remaining items
+  const { count: totalAfter } = await supabase
+    .from('collected_items')
+    .select('id', { count: 'exact', head: true });
+
+  return {
+    primaryRemoved: primaryDel?.length ?? 0,
+    tertiaryRemoved,
+    secondaryRemoved: secondaryDel?.length ?? 0,
+    totalAfter: totalAfter ?? 0,
+  };
 }
 
 // ---------------------------------------------------------------------------

@@ -94,7 +94,7 @@ function buildEntries(allItems: TimelineItem[]): EvolutionEntry[] {
 // ---------------------------------------------------------------------------
 
 export default async function EvolutionPage() {
-  const [groups] = await Promise.all([getTimelineItems()]);
+  const [groups] = await Promise.all([getTimelineItems({ lookbackDays: 365 })]);
 
   const allItems = groups.flatMap((g) => g.items);
   const entries = buildEntries(allItems);

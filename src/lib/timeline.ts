@@ -143,16 +143,17 @@ function mapRowToTimelineItem(row: any): TimelineItem {
   };
 }
 
-export async function getTimelineItems(): Promise<TimelineGroup[]> {
+export async function getTimelineItems(options?: { lookbackDays?: number }): Promise<TimelineGroup[]> {
   const supabase = getSupabaseClient();
   if (!supabase) {
     console.error('[timeline] DB credentials not configured');
     return [];
   }
 
-  const thirtyDaysAgo = new Date();
-  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-  const cutoff = thirtyDaysAgo.toISOString();
+  const lookbackDays = options?.lookbackDays ?? 30;
+  const cutoffDate = new Date();
+  cutoffDate.setDate(cutoffDate.getDate() - lookbackDays);
+  const cutoff = cutoffDate.toISOString();
   const dateFilter = `published_at.gte.${cutoff},and(published_at.is.null,collected_at.gte.${cutoff})`;
 
   // 3 queries: PostgREST embedded resource filter doesn't support .in(),
