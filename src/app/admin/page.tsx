@@ -45,7 +45,7 @@ export default function AdminPage() {
 function StatusBar() {
   const indicators = [
     { label: '収集パイプライン', value: '稼働中', color: 'bg-accent-moss' },
-    { label: '朝刊配信', value: 'アクティブ', color: 'bg-accent-leaf' },
+    { label: 'ダイジェスト配信', value: 'アクティブ', color: 'bg-accent-leaf' },
     { label: 'NVAスコアリング', value: '自動', color: 'bg-accent-leaf' },
     { label: 'データソース', value: 'DB-first', color: 'bg-accent-bloom' },
   ];
@@ -239,7 +239,7 @@ function PipelineReference() {
           <div className="text-sm space-y-1.5 text-text-muted">
             <div className="flex justify-between"><span>ソース階層:</span><span>一次 / 二次 / 三次（124ソース）</span></div>
             <div className="flex justify-between"><span>配信タイプ:</span><span>news / product / digest</span></div>
-            <div className="flex justify-between"><span>Digest:</span><span>朝刊（毎日）</span></div>
+            <div className="flex justify-between"><span>Digest:</span><span>デイリー（毎日）</span></div>
           </div>
         </div>
       </div>

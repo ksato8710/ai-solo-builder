@@ -18,12 +18,15 @@
       { "handle": "dylanf", "category": "ceo", "company": "Figma", "priority": "high" },
       { "handle": "karpathy", "category": "researcher", "priority": "high" },
       { "handle": "swyx", "category": "influencer", "priority": "medium" },
-      { "handle": "levelsio", "category": "indie-hacker", "priority": "medium" }
+      { "handle": "levelsio", "category": "indie-hacker", "priority": "medium" },
+      { "handle": "skiaborning", "category": "indie-hacker", "priority": "medium" },
+      { "handle": "TheRundownAI", "category": "ai-newsletter", "priority": "medium" }
     ],
     "tier3_japanese": [
       { "handle": "kgsi", "category": "japanese-influencer", "priority": "medium" },
       { "handle": "y_matsuwitter", "category": "japanese-influencer", "priority": "medium" },
-      { "handle": "kajikent", "category": "japanese-influencer", "priority": "medium" }
+      { "handle": "kajikent", "category": "japanese-influencer", "priority": "medium" },
+      { "handle": "maubaron", "category": "japanese-influencer", "priority": "medium" }
     ]
   },
   "keywords": {

@@ -111,25 +111,25 @@ const CRON_JOBS: CronJob[] = [
     endpoint: '/api/cron/send-newsletter',
     runner: 'vercel',
     status: 'active',
-    description: '最新の朝刊Digestをアクティブな購読者にメール配信',
+    description: '最新のダイジェストをアクティブな購読者にメール配信',
     details: [
       '当日配信済みチェック（重複防止）',
-      '最新の morning digest を取得',
+      '最新のダイジェストを取得',
       'アクティブ購読者リストを取得',
       'Resend API でバッチ送信（50件/バッチ）',
       '配信ログを send_logs に記録',
     ],
   },
   {
-    id: 'morning-digest',
-    name: '朝刊Digest作成',
+    id: 'daily-digest',
+    name: 'ダイジェスト作成',
     schedule: '—',
     timeJST: '07:30 目標',
     frequency: '毎日（手動）',
     endpoint: 'Claude Code / Clawdbot',
     runner: 'clawdbot',
     status: 'manual',
-    description: '5 Phase パイプラインで朝刊Digestを作成・公開',
+    description: '5 Phase パイプラインでダイジェストを作成・公開',
     details: [
       'Phase 1: news-research — ソース巡回・候補収集',
       'Phase 2: news-evaluation — NVAスコアリング・Top10/Top3選定',
@@ -168,8 +168,8 @@ interface TimelineEntry {
 }
 
 const TIMELINE: TimelineEntry[] = [
-  { time: '07:30', cronId: 'morning-digest', label: '朝刊Digest作成（手動）', color: 'bg-accent-bloom' },
-  { time: '08:00', cronId: 'morning-digest', label: '→ 公開完了 目標', color: 'bg-accent-bloom/60' },
+  { time: '07:30', cronId: 'daily-digest', label: 'ダイジェスト作成（手動）', color: 'bg-accent-bloom' },
+  { time: '08:00', cronId: 'daily-digest', label: '→ 公開完了 目標', color: 'bg-accent-bloom/60' },
   { time: '08:15', cronId: 'send-newsletter', label: 'ニュースレター配信', color: 'bg-accent-leaf' },
   { time: '15:00', cronId: 'collect-sources', label: 'ソース自動収集', color: 'bg-accent-bark' },
 ];
@@ -480,7 +480,7 @@ collected_items (status=new)
   ▼
 collected_items (status=scored)
   │
-  │  朝刊Digest作成 (Claude Code / 手動)
+  │  ダイジェスト作成 (Claude Code / 手動)
   │  Phase 1-5: 調査 → 評価 → 執筆 → UI最適化 → 公開
   ▼
 contents テーブル + 本番サイト公開
@@ -505,7 +505,7 @@ function PipelineTab() {
       {/* Digest pipeline */}
       <section className="rounded-[var(--radius-card)] border border-border bg-bg-card p-5">
         <div className="mb-4">
-          <h2 className="text-lg font-semibold font-heading text-text-deep">朝刊Digest パイプライン</h2>
+          <h2 className="text-lg font-semibold font-heading text-text-deep">ダイジェスト パイプライン</h2>
           <p className="text-sm text-text-light mt-1">
             07:30 開始 → 08:00 公開目標。現在は Claude Code / Clawdbot による手動実行。
           </p>

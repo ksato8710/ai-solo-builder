@@ -253,10 +253,41 @@ async function main() {
     is_active: true,
   }));
 
+  // Home timeline source (algorithmic discovery)
+  const homeTimelineSource = {
+    tierKey: '_home_timeline',
+    handle: '_home_timeline',
+    sourceType: 'tertiary',
+    verificationLevel: 'community',
+    crawlIntervalMinutes: 120,
+    name: 'X Home Timeline',
+    url: 'https://x.com/home',
+    domain: 'x.com/_home_timeline',
+    description: 'X home timeline (latest) for discovering new accounts and content',
+  };
+
+  const homeTimelineSourcePayload = {
+    name: homeTimelineSource.name,
+    url: homeTimelineSource.url,
+    domain: homeTimelineSource.domain,
+    source_type: homeTimelineSource.sourceType,
+    verification_level: homeTimelineSource.verificationLevel,
+    description: homeTimelineSource.description,
+    entity_kind: 'social',
+    locale: 'en',
+    region: 'global',
+    is_active: true,
+  };
+
+  sourcePayloads.push(homeTimelineSourcePayload);
+  accountRecords.push(homeTimelineSource);
+
   const crawlPayloadPreview = accountRecords.map((item) => ({
     domain: item.domain,
-    crawl_method: 'rss',
-    crawl_url: buildCrawlUrl(options.rsshubBaseUrl, item.handle),
+    crawl_method: item.handle === '_home_timeline' ? 'json_feed' : 'rss',
+    crawl_url: item.handle === '_home_timeline'
+      ? `${options.rsshubBaseUrl.replace(/\/+$/, '')}/twitter/home_latest?format=json`
+      : buildCrawlUrl(options.rsshubBaseUrl, item.handle),
     crawl_interval_minutes: item.crawlIntervalMinutes,
   }));
 
@@ -305,17 +336,22 @@ async function main() {
     .map((item) => {
       const sourceId = domainToSourceId.get(item.domain);
       if (!sourceId) return null;
+      const isHomeTimeline = item.handle === '_home_timeline';
       return {
         source_id: sourceId,
-        crawl_method: 'rss',
-        crawl_url: buildCrawlUrl(options.rsshubBaseUrl, item.handle),
-        crawl_config: {
-          x_handle: item.handle,
-          watchlist_tier: item.tierKey,
-          via: 'rsshub',
-          include_replies: false,
-          include_rts: false,
-        },
+        crawl_method: isHomeTimeline ? 'json_feed' : 'rss',
+        crawl_url: isHomeTimeline
+          ? `${options.rsshubBaseUrl.replace(/\/+$/, '')}/twitter/home_latest?format=json`
+          : buildCrawlUrl(options.rsshubBaseUrl, item.handle),
+        crawl_config: isHomeTimeline
+          ? { via: 'rsshub', type: 'home_timeline' }
+          : {
+              x_handle: item.handle,
+              watchlist_tier: item.tierKey,
+              via: 'rsshub',
+              include_replies: false,
+              include_rts: false,
+            },
         crawl_interval_minutes: item.crawlIntervalMinutes,
         is_active: true,
       };
