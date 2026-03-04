@@ -1,8 +1,10 @@
 #!/bin/sh
 
 # 🚨 mdファイル作成禁止チェック（DB直接投入ルール）
-if ls content/news/*.md 1> /dev/null 2>&1; then
-  echo "❌ ERROR: content/news/*.md ファイルが存在します"
+# README.mdは除外
+NEWS_MD_COUNT=$(find content/news -maxdepth 1 -name "*.md" ! -name "README.md" 2>/dev/null | wc -l)
+if [ "$NEWS_MD_COUNT" -gt 0 ]; then
+  echo "❌ ERROR: content/news/*.md ファイルが存在します（README.md以外）"
   echo "   DB直接投入ルール違反です。mdファイルを削除してください。"
   echo "   正しい方法: node scripts/create-content-db.mjs --stdin < article.json"
   exit 1
